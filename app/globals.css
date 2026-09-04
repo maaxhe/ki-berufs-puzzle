@@ -1,26 +1,88 @@
 @import "tailwindcss";
 
+@theme {
+  --color-paper: #f5f4f1;
+  --color-paper-2: #efece5;
+  --color-ink: #262019;
+  --color-ink-2: #6a6258;
+  --color-ki: #52646d; /* Maschinen-Seite: kühles Pewter */
+  --color-ki-wash: #e7eaea;
+  --color-mensch: #8a3a2c; /* Menschen-Seite: Ziegelrot */
+  --color-mensch-wash: #efe1dc;
+  --color-rule: #ddd6c9;
+
+  /* Auswertung: Übereinstimmung vs. Abweichung */
+  --color-ok: #47653c;
+  --color-ok-wash: #e7edde;
+  --color-miss: #9c3320;
+  --color-miss-wash: #f1ddd5;
+
+  --font-display: var(--font-bricolage), "Bricolage Grotesque", system-ui, sans-serif;
+  --font-prose: var(--font-newsreader), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-bricolage), system-ui, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.06;
+}
+
+/* Fließtext: Serif, ruhige Zeilenlänge – wie ein gut gesetzter Workshop-Handzettel */
+.prose-text {
+  font-family: var(--font-prose);
+  font-size: 1.0625rem;
+  line-height: 1.62;
+}
+.prose-text p {
+  max-width: 62ch;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+[data-draggable] {
+  touch-action: none;
+}
+
+/* Ein einziger Bewegungsmoment: die Aufgabenzettel setzen sich beim Laden. */
+@keyframes slip-in {
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.slip-in {
+  animation: slip-in 300ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

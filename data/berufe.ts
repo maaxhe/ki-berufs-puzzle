@@ -1,0 +1,472 @@
+import type { Beruf } from "@/types";
+import { STANDARD_QUELLEN } from "@/types";
+
+const { jobFuturomat, iabKurzbericht, freyOsborne, ilo } = STANDARD_QUELLEN;
+
+/**
+ * Die KI-Eignungswerte sind didaktische Schätzwerte zur Diskussionsanregung,
+ * keine wissenschaftlichen Prognosen. Der Durchschnitt je Beruf ist grob an
+ * zwei realen Datenquellen kalibriert:
+ *  - Frey & Osborne (2013): Wahrscheinlichkeit der Computerisierung (USA, vor
+ *    generativer KI – daher bei IT/Kreativberufen bewusst nach oben korrigiert).
+ *  - IAB Job-Futuromat / Dengler & Matthes: Substituierbarkeitspotenzial je
+ *    Beruf in Deutschland (Stand 2022, Kurzbericht 5|2024).
+ * Die konkreten Vergleichswerte stehen in den `quellen`-Einträgen.
+ */
+export const berufe: Beruf[] = [
+  // ─────────────────────────── Gesundheit & Soziales ───────────────────────────
+  {
+    slug: "pflegefachkraft",
+    title: "Pflegefachkraft",
+    shortDescription:
+      "Betreut und versorgt kranke, alte oder pflegebedürftige Menschen im Klinik- oder Pflegealltag.",
+    kategorie: "gesundheit-soziales",
+    zukunftsausblick:
+      "Pflege bleibt stark von direktem menschlichem Kontakt geprägt. KI kann bei Dokumentation, Medikamentenlogik und Frühwarnsystemen entlasten, ersetzt aber weder die körperliche Versorgung noch die Beziehungsarbeit. Der Bedarf an Pflegekräften wächst weiter.",
+    tippsMenschlich: [
+      "Empathie und echte Gespräche mit Patient:innen und Angehörigen",
+      "Verantwortung in Notfällen und schnelles Handeln unter Druck",
+      "Körperliche Versorgung und feinfühlige Pflege am Menschen",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Registered Nurses: 0,9 %" },
+      { ...iabKurzbericht, wert: "Gesundheits-/Pflegeberufe: unterdurchschnittlich" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "pf-1", title: "Medikamente vorbereiten und dosieren", description: "Nach ärztlichem Plan Medikamente richten und kontrollieren.", kiEignung: 40, category: "routine" },
+      { id: "pf-2", title: "Patient:innen waschen und pflegen", description: "Körperpflege, Ankleiden und Unterstützung im Alltag.", kiEignung: 10, category: "physisch" },
+      { id: "pf-3", title: "Blutdruck und Vitalwerte messen", description: "Regelmäßige Kontrolle von Puls, Blutdruck und Temperatur.", kiEignung: 60, category: "routine" },
+      { id: "pf-4", title: "Pflegedokumentation schreiben", description: "Maßnahmen, Beobachtungen und Verläufe schriftlich festhalten.", kiEignung: 70, category: "analytisch" },
+      { id: "pf-5", title: "Patientengespräche führen", description: "Zuhören, beruhigen und über den Behandlungsverlauf sprechen.", kiEignung: 15, category: "sozial" },
+      { id: "pf-6", title: "Notfallsituationen erkennen und handeln", description: "Verschlechterungen früh bemerken und sofort reagieren.", kiEignung: 5, category: "analytisch" },
+      { id: "pf-7", title: "Ärztliche Anweisungen umsetzen", description: "Verordnete Maßnahmen fachgerecht durchführen.", kiEignung: 50, category: "routine" },
+      { id: "pf-8", title: "Angehörige beraten", description: "Familien über Pflege zu Hause und Hilfsangebote informieren.", kiEignung: 20, category: "sozial" },
+      { id: "pf-9", title: "Lagerungswechsel zur Dekubitusprophylaxe", description: "Bettlägerige Menschen regelmäßig umlagern, um Druckstellen zu vermeiden.", kiEignung: 10, category: "physisch" },
+      { id: "pf-10", title: "Schichtübergabe im Team besprechen", description: "Wichtige Infos zu jeder Patientin und jedem Patienten weitergeben.", kiEignung: 25, category: "sozial" },
+    ],
+  },
+  {
+    slug: "medizinische-fachangestellte",
+    title: "Medizinische:r Fachangestellte:r",
+    shortDescription:
+      "Organisiert eine Arztpraxis, assistiert bei Behandlungen und betreut Patient:innen an Empfang und Labor.",
+    kategorie: "gesundheit-soziales",
+    zukunftsausblick:
+      "Der Verwaltungsteil – Termine, Abrechnung, Karteiführung – ist stark automatisierbar und wird es zunehmend. Die Assistenz am Menschen, das Beruhigen ängstlicher Patient:innen und Handgriffe wie Blutabnahme bleiben. Der Beruf verschiebt sich Richtung Patientenbegleitung und Praxiskoordination.",
+    tippsMenschlich: [
+      "Ängstliche oder kranke Menschen freundlich durch den Praxisbesuch führen",
+      "Sicheres, ruhiges Arbeiten bei Blutabnahme und Assistenz",
+      "Den Überblick behalten, wenn Wartezimmer und Telefon gleichzeitig voll sind",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Medical Assistants: 30 %, Medical Secretaries: 81 %" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "mfa-1", title: "Termine und Praxisorganisation koordinieren", description: "Sprechstunde planen, Wartezeiten steuern, Rückrufe managen.", kiEignung: 80, category: "routine" },
+      { id: "mfa-2", title: "Patient:innen empfangen und aufnehmen", description: "Begrüßen, Versichertenkarte einlesen, Anliegen aufnehmen.", kiEignung: 35, category: "sozial" },
+      { id: "mfa-3", title: "Blut abnehmen und Verbände anlegen", description: "Kleine medizinische Eingriffe sicher am Menschen durchführen.", kiEignung: 15, category: "physisch" },
+      { id: "mfa-4", title: "Abrechnung mit Krankenkassen erstellen", description: "Leistungen nach EBM/GOÄ erfassen und quartalsweise abrechnen.", kiEignung: 85, category: "routine" },
+      { id: "mfa-5", title: "Laborproben vorbereiten und versenden", description: "Proben beschriften, dokumentieren und ans Labor weiterleiten.", kiEignung: 60, category: "routine" },
+      { id: "mfa-6", title: "Ärzt:innen bei Untersuchungen assistieren", description: "Instrumente reichen, Patient:innen lagern, Abläufe unterstützen.", kiEignung: 20, category: "physisch" },
+      { id: "mfa-7", title: "Patient:innen zu Vorsorge und Abläufen informieren", description: "Erklären, wie eine Untersuchung abläuft oder worauf zu achten ist.", kiEignung: 30, category: "sozial" },
+      { id: "mfa-8", title: "Karteikarten und Befunde digital pflegen", description: "Befunde einscannen, zuordnen und in der Praxissoftware ablegen.", kiEignung: 75, category: "analytisch" },
+    ],
+  },
+  {
+    slug: "erzieher",
+    title: "Erzieher:in",
+    shortDescription:
+      "Begleitet und fördert Kinder in Kita oder Hort – im Spiel, im Alltag und in ihrer Entwicklung.",
+    kategorie: "gesundheit-soziales",
+    zukunftsausblick:
+      "Pädagogische Arbeit lebt von Beziehung, Beobachtung und spontanem Reagieren – das lässt sich kaum automatisieren. KI kann bei Entwicklungsberichten und Planung unterstützen. Der Bedarf an Fachkräften ist hoch und steigt.",
+    tippsMenschlich: [
+      "Bindung aufbauen und Kinder emotional sicher begleiten",
+      "Im Moment reagieren, wenn im Gruppenalltag etwas passiert",
+      "Eltern als Partner:innen in der Erziehung gewinnen",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Preschool Teachers: ~1 %, Childcare Workers: 8 %" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "erz-1", title: "Kinder beim Spielen begleiten und fördern", description: "Spielsituationen aufgreifen und Lernanlässe daraus machen.", kiEignung: 5, category: "sozial" },
+      { id: "erz-2", title: "Konflikte zwischen Kindern schlichten", description: "Streit begleiten und Kindern helfen, Lösungen zu finden.", kiEignung: 5, category: "sozial" },
+      { id: "erz-3", title: "Elterngespräche führen", description: "Über Entwicklung, Auffälligkeiten und Alltag der Kinder sprechen.", kiEignung: 10, category: "sozial" },
+      { id: "erz-4", title: "Entwicklungsberichte schreiben", description: "Beobachtungen strukturiert für Portfolio und Gespräche festhalten.", kiEignung: 45, category: "analytisch" },
+      { id: "erz-5", title: "Tagesablauf und Ausflüge planen", description: "Wochenplan, Angebote und Ausflüge organisieren.", kiEignung: 25, category: "analytisch" },
+      { id: "erz-6", title: "Bastel- und Bewegungsangebote gestalten", description: "Kreative und motorische Angebote für die Gruppe vorbereiten.", kiEignung: 20, category: "kreativ" },
+      { id: "erz-7", title: "Kinder trösten und bei Ängsten begleiten", description: "Nähe geben, wenn ein Kind weint, wütend oder überfordert ist.", kiEignung: 5, category: "sozial" },
+      { id: "erz-8", title: "Anwesenheit und Dokumentation pflegen", description: "Anwesenheitslisten, Vorfälle und Formalitäten festhalten.", kiEignung: 45, category: "routine" },
+    ],
+  },
+
+  // ─────────────────────────── Technik & Handwerk ───────────────────────────
+  {
+    slug: "industriemechaniker",
+    title: "Industriemechaniker:in",
+    shortDescription:
+      "Baut, wartet und repariert Maschinen und Produktionsanlagen in der Industrie.",
+    kategorie: "technik-handwerk",
+    zukunftsausblick:
+      "Routineprüfung und Programmierung werden zunehmend von Software und Automatisierung übernommen. Diagnose komplexer Störungen, Handarbeit an schwer zugänglichen Stellen und Improvisation bei ungeplanten Ausfällen bleiben menschlich. Der Beruf verschiebt sich Richtung Anlagenüberwachung und Instandhaltung.",
+    tippsMenschlich: [
+      "Störungen an realen Maschinen mit Erfahrung und Gespür diagnostizieren",
+      "Handwerkliches Geschick bei Montage und Reparatur vor Ort",
+      "Pragmatische Lösungen finden, wenn Pläne in der Praxis nicht passen",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Industrial Machinery Mechanics: 67 %, Machinists: 65 %" },
+      { ...iabKurzbericht, wert: "Fertigungsberufe: höchstes Potenzial aller Segmente" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "im-1", title: "Bauteile nach technischer Zeichnung fertigen", description: "Werkstücke durch Fräsen, Drehen und Bohren herstellen.", kiEignung: 60, category: "analytisch" },
+      { id: "im-2", title: "Maschinen warten und instand halten", description: "Verschleißteile prüfen, schmieren und austauschen.", kiEignung: 35, category: "physisch" },
+      { id: "im-3", title: "Störungen an Anlagen diagnostizieren", description: "Fehlerursachen an laufenden Produktionslinien eingrenzen.", kiEignung: 50, category: "analytisch" },
+      { id: "im-4", title: "Werkstücke von Hand entgraten und montieren", description: "Kanten säubern und Baugruppen millimetergenau zusammenbauen.", kiEignung: 30, category: "physisch" },
+      { id: "im-5", title: "CNC-Programme einrichten", description: "Fertigungsprogramme laden, Werkzeuge einmessen, Nullpunkt setzen.", kiEignung: 70, category: "analytisch" },
+      { id: "im-6", title: "Qualität mit Messmitteln prüfen", description: "Maße mit Messschieber und Lehren gegen die Toleranz prüfen.", kiEignung: 70, category: "routine" },
+      { id: "im-7", title: "Ersatzteile bestellen und Lager verwalten", description: "Bestände überwachen und Nachschub rechtzeitig auslösen.", kiEignung: 80, category: "routine" },
+      { id: "im-8", title: "Arbeitsschritte dokumentieren", description: "Wartungen und Reparaturen für die Nachvollziehbarkeit festhalten.", kiEignung: 75, category: "routine" },
+      { id: "im-9", title: "Auszubildende anleiten", description: "Handgriffe zeigen, Fragen beantworten, Sicherheit vermitteln.", kiEignung: 15, category: "sozial" },
+      { id: "im-10", title: "Prototypen mit der Konstruktion verbessern", description: "Aus der Fertigungspraxis Vorschläge für bessere Bauteile einbringen.", kiEignung: 35, category: "kreativ" },
+    ],
+  },
+  {
+    slug: "kfz-mechatroniker",
+    title: "Kraftfahrzeugmechatroniker:in",
+    shortDescription:
+      "Wartet, diagnostiziert und repariert Fahrzeuge – von der Bremse bis zum Steuergerät.",
+    kategorie: "technik-handwerk",
+    zukunftsausblick:
+      "Diagnosegeräte und Hersteller-Software geben immer mehr vor, wo der Fehler liegt. Die eigentliche Reparatur am Fahrzeug, das Prüfen widersprüchlicher Symptome und der Kundenkontakt bleiben. Mit E-Autos und Assistenzsystemen verschiebt sich der Beruf Richtung Elektronik und Software.",
+    tippsMenschlich: [
+      "Am realen Fahrzeug schrauben, dort wo kein Roboter hinkommt",
+      "Aus mehreren Fehlerbildern die tatsächliche Ursache herausfiltern",
+      "Kund:innen verständlich erklären, was gemacht werden muss und warum",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Automotive Service Technicians and Mechanics: 59 %" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "kfz-1", title: "Fahrzeuge nach Fehlerspeicher diagnostizieren", description: "Steuergeräte auslesen und Fehlercodes interpretieren.", kiEignung: 55, category: "analytisch" },
+      { id: "kfz-2", title: "Verschleißteile wie Bremsen und Reifen wechseln", description: "Standardarbeiten fachgerecht und sicher ausführen.", kiEignung: 25, category: "physisch" },
+      { id: "kfz-3", title: "Motor und Getriebe reparieren", description: "Komplexe mechanische Baugruppen zerlegen und instand setzen.", kiEignung: 20, category: "physisch" },
+      { id: "kfz-4", title: "Software-Updates und Steuergeräte codieren", description: "Fahrzeugsoftware aktualisieren und neue Teile anlernen.", kiEignung: 70, category: "analytisch" },
+      { id: "kfz-5", title: "Hauptuntersuchung vorbereiten", description: "Fahrzeug nach Prüfkatalog kontrollieren und Mängel beheben.", kiEignung: 55, category: "routine" },
+      { id: "kfz-6", title: "Kund:innen Reparaturen erklären und beraten", description: "Notwendige Arbeiten und Alternativen nachvollziehbar darstellen.", kiEignung: 20, category: "sozial" },
+      { id: "kfz-7", title: "Kostenvoranschläge erstellen", description: "Arbeitswerte und Teilepreise zu einem Angebot zusammenstellen.", kiEignung: 80, category: "routine" },
+      { id: "kfz-8", title: "Elektrik und Bordnetz prüfen", description: "Kabelbäume, Sensoren und Verbraucher systematisch durchmessen.", kiEignung: 50, category: "analytisch" },
+    ],
+  },
+  {
+    slug: "berufskraftfahrer",
+    title: "Berufskraftfahrer:in",
+    shortDescription:
+      "Transportiert Güter im Straßenverkehr und ist für Ladung, Fahrzeug und Termine verantwortlich.",
+    kategorie: "technik-handwerk",
+    zukunftsausblick:
+      "Frey & Osborne schätzten das Automatisierungsrisiko sehr hoch ein – autonome LKW kommen aber deutlich langsamer als erwartet. Routenplanung und Papierkram sind schon heute stark digitalisiert; Beladen, Ladungssicherung und Reagieren in kniffligen Verkehrslagen bleiben menschlich.",
+    tippsMenschlich: [
+      "In unübersichtlichen Verkehrs- und Baustellensituationen sicher entscheiden",
+      "Ladung fachgerecht sichern und Verantwortung für die Fracht übernehmen",
+      "Flexibel umplanen, wenn Rampe, Wetter oder Kunde nicht mitspielen",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Heavy and Tractor-Trailer Truck Drivers: 79 %" },
+      { ...iabKurzbericht, wert: "Verkehrs-/Logistikberufe: überdurchschnittlich" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "bkf-1", title: "Güter auf festen Routen transportieren", description: "Planbare Strecken zwischen Depots und Kunden abfahren.", kiEignung: 75, category: "routine" },
+      { id: "bkf-2", title: "Lenk- und Ruhezeiten dokumentieren", description: "Fahrtenschreiber bedienen und gesetzliche Zeiten einhalten.", kiEignung: 80, category: "routine" },
+      { id: "bkf-3", title: "Fahrzeug beladen und Ladung sichern", description: "Gewicht verteilen, zurren, gegen Verrutschen sichern.", kiEignung: 40, category: "physisch" },
+      { id: "bkf-4", title: "Route bei Stau und Sperrung anpassen", description: "Kurzfristig umplanen und Kunden über Verzug informieren.", kiEignung: 55, category: "analytisch" },
+      { id: "bkf-5", title: "Abfahrtkontrolle am Fahrzeug durchführen", description: "Reifen, Licht, Bremsen und Flüssigkeiten vor Fahrtantritt prüfen.", kiEignung: 45, category: "routine" },
+      { id: "bkf-6", title: "Lieferpapiere und Zollformalitäten abwickeln", description: "Frachtbriefe, Zoll- und Ablieferbelege bearbeiten.", kiEignung: 78, category: "routine" },
+      { id: "bkf-7", title: "Ware beim Kunden übergeben", description: "Abladen, Abnahme klären, Reklamationen vor Ort aufnehmen.", kiEignung: 25, category: "sozial" },
+      { id: "bkf-8", title: "In schwierigen Verkehrssituationen sicher reagieren", description: "Enge Zufahrten, Baustellen und plötzliche Gefahren meistern.", kiEignung: 30, category: "analytisch" },
+    ],
+  },
+
+  // ─────────────────────────── Büro & Verwaltung ───────────────────────────
+  {
+    slug: "steuerfachangestellte",
+    title: "Steuerfachangestellte:r",
+    shortDescription:
+      "Erstellt Buchführung und Steuererklärungen und betreut Mandant:innen einer Steuerkanzlei.",
+    kategorie: "buero-verwaltung",
+    zukunftsausblick:
+      "Buchung, Belegerfassung und Standard-Steuererklärungen sind stark automatisierbar und werden es zunehmend. Was bleibt, ist die Beratung in unklaren Fällen, das Einordnen individueller Lebens- und Geschäftslagen und das Vertrauensverhältnis zu Mandant:innen. Der Beruf verschiebt sich von Erfassung zu Beratung.",
+    tippsMenschlich: [
+      "Mandant:innen ihre steuerliche Lage verständlich erklären",
+      "Gestaltungsspielräume für individuelle Situationen abwägen",
+      "Verantwortung übernehmen und mit dem Finanzamt verhandeln",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Tax Preparers: 99 %, Bookkeeping Clerks: 98 %, Accountants: 94 %" },
+      { ...ilo, wert: "Büro-/Sachbearbeitungsberufe: höchste GenAI-Exposition" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "st-1", title: "Steuererklärungen vorbereiten", description: "Angaben zusammenstellen und Formulare vorausfüllen.", kiEignung: 88, category: "analytisch" },
+      { id: "st-2", title: "Buchungen erfassen", description: "Belege kontieren und in der Finanzbuchhaltung verbuchen.", kiEignung: 92, category: "routine" },
+      { id: "st-3", title: "Mandantengespräche führen", description: "Rückfragen klären und Ergebnisse persönlich besprechen.", kiEignung: 30, category: "sozial" },
+      { id: "st-4", title: "Steuerbescheide prüfen", description: "Bescheide des Finanzamts mit den eigenen Berechnungen abgleichen.", kiEignung: 82, category: "analytisch" },
+      { id: "st-5", title: "Gesetzesänderungen recherchieren", description: "Neue Regelungen und Urteile auf Relevanz für Mandate prüfen.", kiEignung: 85, category: "analytisch" },
+      { id: "st-6", title: "Individuelle Steuerstrategien entwickeln", description: "Gestaltungsmöglichkeiten für konkrete Lebenslagen abwägen.", kiEignung: 50, category: "kreativ" },
+      { id: "st-7", title: "Betriebsprüfungen vorbereiten", description: "Unterlagen sortieren und mögliche Streitpunkte antizipieren.", kiEignung: 78, category: "analytisch" },
+      { id: "st-8", title: "Mandant:innen beraten", description: "Bei Entscheidungen zu Rechtsform, Investitionen und Fristen unterstützen.", kiEignung: 25, category: "sozial" },
+      { id: "st-9", title: "Umsatzsteuer-Voranmeldung erstellen", description: "Monatliche Meldungen berechnen und fristgerecht übermitteln.", kiEignung: 92, category: "routine" },
+      { id: "st-10", title: "Lohnabrechnungen durchführen", description: "Gehälter, Abzüge und Sozialabgaben monatlich abrechnen.", kiEignung: 90, category: "routine" },
+    ],
+  },
+  {
+    slug: "kaufmann-bueromanagement",
+    title: "Kaufmann/-frau für Büromanagement",
+    shortDescription:
+      "Hält den Bürobetrieb am Laufen: Korrespondenz, Termine, Rechnungen, Organisation.",
+    kategorie: "buero-verwaltung",
+    zukunftsausblick:
+      "Sachbearbeitung, Terminlogistik und Textarbeit gehören zu den am stärksten von generativer KI betroffenen Tätigkeiten überhaupt. Persönliche Betreuung, das Priorisieren zwischen widersprüchlichen Anfragen und das Zusammenhalten eines Teams bleiben. Der Beruf wandelt sich Richtung Koordination und Assistenz.",
+    tippsMenschlich: [
+      "Zwischen vielen gleichzeitigen Anfragen sinnvoll priorisieren",
+      "Kolleg:innen, Kund:innen und Chef:innen persönlich zusammenbringen",
+      "Verstehen, was gemeint ist – nicht nur, was geschrieben steht",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Office Clerks, General: 96 %, Secretaries: 96 %" },
+      { ...ilo, wert: "Clerical support workers: höchste Exposition aller Gruppen" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "bm-1", title: "E-Mails und Post bearbeiten", description: "Eingang sichten, zuordnen, beantworten oder weiterleiten.", kiEignung: 82, category: "routine" },
+      { id: "bm-2", title: "Termine und Besprechungen organisieren", description: "Kalender abstimmen, Räume buchen, Unterlagen bereitstellen.", kiEignung: 75, category: "routine" },
+      { id: "bm-3", title: "Rechnungen erstellen und prüfen", description: "Ausgangsrechnungen schreiben, Eingangsrechnungen kontieren.", kiEignung: 88, category: "routine" },
+      { id: "bm-4", title: "Präsentationen und Serienbriefe erstellen", description: "Aus Stichpunkten fertige Dokumente und Folien bauen.", kiEignung: 80, category: "analytisch" },
+      { id: "bm-5", title: "Reisen buchen und abrechnen", description: "Verbindungen und Hotels organisieren, Reisekosten abrechnen.", kiEignung: 85, category: "routine" },
+      { id: "bm-6", title: "Telefonate annehmen und weiterleiten", description: "Anliegen erfassen und an die richtige Stelle vermitteln.", kiEignung: 55, category: "sozial" },
+      { id: "bm-7", title: "Kolleg:innen und Kund:innen persönlich betreuen", description: "Am Empfang und im Alltag ansprechbar sein und helfen.", kiEignung: 25, category: "sozial" },
+      { id: "bm-8", title: "Daten in Tabellen auswerten", description: "Listen pflegen, Kennzahlen zusammenstellen, Berichte vorbereiten.", kiEignung: 78, category: "analytisch" },
+    ],
+  },
+  {
+    slug: "bankkaufmann",
+    title: "Bankkaufmann/-frau",
+    shortDescription:
+      "Betreut Kund:innen in Geldangelegenheiten: Konten, Zahlungsverkehr, Kredite, Anlage.",
+    kategorie: "buero-verwaltung",
+    zukunftsausblick:
+      "Zahlungsverkehr, Kontoführung und Standardkredite laufen weitgehend automatisch, Filialen und Schaltergeschäft gehen zurück. Was bleibt, ist die Beratung bei größeren Entscheidungen, das Einschätzen von Menschen und Situationen und der Umgang mit Beschwerden. Der Beruf verschiebt sich klar Richtung Beratung.",
+    tippsMenschlich: [
+      "Vertrauen aufbauen, wenn es um das Geld anderer Menschen geht",
+      "Bei Anlage und Finanzierung die Lebenssituation wirklich verstehen",
+      "In Beschwerde- und Konfliktgesprächen souverän bleiben",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Tellers: 98 %, Loan Officers: 98 %, Personal Financial Advisors: 58 %" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "bk-1", title: "Überweisungen und Daueraufträge bearbeiten", description: "Zahlungsaufträge erfassen, prüfen und ausführen.", kiEignung: 90, category: "routine" },
+      { id: "bk-2", title: "Konten eröffnen und verwalten", description: "Neukunden anlegen, Stammdaten und Vollmachten pflegen.", kiEignung: 82, category: "routine" },
+      { id: "bk-3", title: "Standardkredite prüfen und bewilligen", description: "Ratenkredite anhand von Score und Regeln entscheiden.", kiEignung: 75, category: "analytisch" },
+      { id: "bk-4", title: "Kund:innen zu Geldanlage beraten", description: "Anlageziele klären und passende Produkte empfehlen.", kiEignung: 30, category: "sozial" },
+      { id: "bk-5", title: "Bonität und Risiken bewerten", description: "Unterlagen sichten und die Rückzahlungsfähigkeit einschätzen.", kiEignung: 65, category: "analytisch" },
+      { id: "bk-6", title: "Beschwerden persönlich klären", description: "Verärgerte Kund:innen anhören und Lösungen aushandeln.", kiEignung: 25, category: "sozial" },
+      { id: "bk-7", title: "Bargeld am Schalter aus- und einzahlen", description: "Kassengeschäfte abwickeln und Kasse führen.", kiEignung: 70, category: "routine" },
+      { id: "bk-8", title: "Vertragsunterlagen erstellen", description: "Konto-, Kredit- und Depotverträge aufsetzen und erläutern.", kiEignung: 85, category: "routine" },
+    ],
+  },
+
+  // ─────────────────────────── IT & Medien ───────────────────────────
+  {
+    slug: "softwareentwickler",
+    title: "Softwareentwickler:in",
+    shortDescription:
+      "Entwirft, schreibt und wartet Software – von der Idee über den Code bis zum laufenden Betrieb.",
+    kategorie: "it-medien",
+    zukunftsausblick:
+      "Frey & Osborne stuften den Beruf 2013 als kaum gefährdet ein – generative KI hat das verändert und schreibt heute große Teile des Routinecodes, erzeugt Tests und erklärt fremden Code. Architektur, das Klären unscharfer Anforderungen, Abwägen von Trade-offs und Verantwortung für Sicherheit bleiben menschlich. Der Beruf verschiebt sich vom Tippen zum Entscheiden und Prüfen.",
+    tippsMenschlich: [
+      "Unklare Wünsche in tragfähige Anforderungen übersetzen",
+      "Architektur- und Trade-off-Entscheidungen verantworten",
+      "Im Team Lösungswege aushandeln und Code kritisch prüfen",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Software Developers, Applications: 4 % (Schätzung von 2013, vor generativer KI)" },
+      { ...ilo, wert: "Professionals: mittlere Aufgaben-Exposition" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "sw-1", title: "Wiederkehrenden Code schreiben", description: "Standard-Bausteine (Boilerplate) für neue Features anlegen.", kiEignung: 85, category: "routine" },
+      { id: "sw-2", title: "Automatisierte Tests erstellen", description: "Unit- und Integrationstests für bestehende Funktionen schreiben.", kiEignung: 70, category: "analytisch" },
+      { id: "sw-3", title: "Bugs in bestehendem Code finden", description: "Fehlermeldungen nachvollziehen und Ursachen eingrenzen.", kiEignung: 55, category: "analytisch" },
+      { id: "sw-4", title: "Software-Architektur entwerfen", description: "Module, Schnittstellen und Datenflüsse eines Systems festlegen.", kiEignung: 35, category: "kreativ" },
+      { id: "sw-5", title: "Anforderungen mit Kundschaft klären", description: "Wünsche hinterfragen und in umsetzbare Aufgaben übersetzen.", kiEignung: 20, category: "sozial" },
+      { id: "sw-6", title: "Code im Team reviewen", description: "Änderungen von Kolleg:innen auf Qualität und Risiken prüfen.", kiEignung: 45, category: "analytisch" },
+      { id: "sw-7", title: "Dokumentation schreiben", description: "Funktionen, Setup und Entscheidungen nachvollziehbar festhalten.", kiEignung: 75, category: "routine" },
+      { id: "sw-8", title: "Bibliotheken und Frameworks auswählen", description: "Werkzeuge nach Reife, Wartung und Passung bewerten.", kiEignung: 50, category: "analytisch" },
+      { id: "sw-9", title: "Legacy-System verstehen und umbauen", description: "Alten, schlecht dokumentierten Code sicher weiterentwickeln.", kiEignung: 40, category: "analytisch" },
+      { id: "sw-10", title: "Im Team über Lösungswege diskutieren", description: "Ansätze vergleichen und sich auf einen Weg einigen.", kiEignung: 25, category: "sozial" },
+    ],
+  },
+  {
+    slug: "fachinformatiker-systemintegration",
+    title: "Fachinformatiker:in Systemintegration",
+    shortDescription:
+      "Plant, richtet ein und betreibt IT-Systeme, Netzwerke und Server – und hilft, wenn es klemmt.",
+    kategorie: "it-medien",
+    zukunftsausblick:
+      "Standard-Setups, Monitoring und Skripte übernehmen viel Routine, Cloud-Dienste reduzieren eigene Serverarbeit. Vor-Ort-Support an Hardware, das Zusammendenken vieler Systeme und der geduldige Umgang mit ratlosen Nutzer:innen bleiben. Der Beruf verschiebt sich Richtung Cloud, Automatisierung und Sicherheit.",
+    tippsMenschlich: [
+      "Nutzer:innen ohne IT-Wissen ruhig und ohne Fachjargon helfen",
+      "Bei Ausfällen unter Zeitdruck den Überblick über viele Systeme behalten",
+      "Vor Ort an Geräten und Verkabelung anpacken",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Computer Support Specialists: 65 %, Network/Systems Administrators: 3 %" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "fi-1", title: "Standard-Software installieren und konfigurieren", description: "Arbeitsplätze und Server nach Vorgabe einrichten.", kiEignung: 65, category: "routine" },
+      { id: "fi-2", title: "Nutzeranfragen im 1st-Level-Support lösen", description: "Tickets aufnehmen, einordnen und häufige Probleme beheben.", kiEignung: 55, category: "analytisch" },
+      { id: "fi-3", title: "Server und Netzwerke überwachen", description: "Auslastung und Störungen im Monitoring im Blick behalten.", kiEignung: 50, category: "analytisch" },
+      { id: "fi-4", title: "Backups einrichten und Wiederherstellung testen", description: "Sicherungen automatisieren und regelmäßig prüfen.", kiEignung: 55, category: "routine" },
+      { id: "fi-5", title: "Störungen vor Ort an Hardware beheben", description: "Defekte Geräte, Kabel und Peripherie austauschen.", kiEignung: 20, category: "physisch" },
+      { id: "fi-6", title: "IT-Sicherheitsvorfälle analysieren", description: "Verdächtige Ereignisse untersuchen und Gegenmaßnahmen einleiten.", kiEignung: 35, category: "analytisch" },
+      { id: "fi-7", title: "Systeme dokumentieren", description: "Netzpläne, Konfigurationen und Abläufe schriftlich festhalten.", kiEignung: 70, category: "routine" },
+      { id: "fi-8", title: "Anwender:innen schulen", description: "Neue Tools und Sicherheitsregeln verständlich erklären.", kiEignung: 20, category: "sozial" },
+    ],
+  },
+  {
+    slug: "grafikdesigner",
+    title: "Grafikdesigner:in",
+    shortDescription:
+      "Gestaltet visuelle Kommunikation – Logos, Layouts, Anzeigen, Social-Media- und Printmedien.",
+    kategorie: "it-medien",
+    zukunftsausblick:
+      "Frey & Osborne sahen hier fast kein Risiko – Bildgeneratoren haben das Bild stark verändert und liefern in Sekunden Varianten, Freisteller und Reinzeichnungen. Konzept, Markenverständnis, Kundenführung und der geschmackssichere letzte Schliff bleiben. Der Beruf verschiebt sich vom Ausführen zum Kuratieren und Konzipieren.",
+    tippsMenschlich: [
+      "Aus einem vagen Briefing die eigentliche Gestaltungsaufgabe herausarbeiten",
+      "Eine Marke über viele Medien hinweg konsistent halten",
+      "Entscheiden, welcher von hundert KI-Entwürfen wirklich trägt",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Graphic Designers: 8 % (Schätzung von 2013, vor Bildgeneratoren)" },
+      { ...ilo, wert: "Kreativ-/Medienberufe: durch generative KI neu betroffen" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "gd-1", title: "Bildvarianten und Moodboards erzeugen", description: "Schnell viele visuelle Richtungen zur Auswahl erstellen.", kiEignung: 70, category: "kreativ" },
+      { id: "gd-2", title: "Layouts für Print und Web umsetzen", description: "Inhalte in Raster, Typografie und Format bringen.", kiEignung: 55, category: "analytisch" },
+      { id: "gd-3", title: "Logos und Corporate Design entwickeln", description: "Eine tragfähige visuelle Identität für eine Marke erarbeiten.", kiEignung: 35, category: "kreativ" },
+      { id: "gd-4", title: "Fotos freistellen und retuschieren", description: "Bilder ausschneiden, Farben und Makel korrigieren.", kiEignung: 80, category: "routine" },
+      { id: "gd-5", title: "Mit Kund:innen Briefings klären", description: "Ziele, Zielgruppe und Geschmack im Gespräch herausarbeiten.", kiEignung: 15, category: "sozial" },
+      { id: "gd-6", title: "Konzept und Gestaltungsidee entwickeln", description: "Die inhaltliche Leitidee hinter der Gestaltung festlegen.", kiEignung: 25, category: "kreativ" },
+      { id: "gd-7", title: "Reinzeichnung und Druckdaten vorbereiten", description: "Farbräume, Beschnitt und Formate druckfertig machen.", kiEignung: 65, category: "routine" },
+      { id: "gd-8", title: "Illustrationen anfertigen", description: "Eigene Bildmotive passend zum Projekt zeichnen.", kiEignung: 55, category: "kreativ" },
+    ],
+  },
+
+  // ─────────────────────────── Handel & Dienstleistung ───────────────────────────
+  {
+    slug: "einzelhandelskaufmann",
+    title: "Kaufmann/-frau im Einzelhandel",
+    shortDescription:
+      "Verkauft Waren, berät Kund:innen und organisiert Sortiment, Lager und Kasse im Handel.",
+    kategorie: "handel-dienstleistung",
+    zukunftsausblick:
+      "Kasse, Bestellwesen und Auswertungen werden weitgehend automatisiert, Selbstbedienungskassen breiten sich aus. Persönliche Beratung, das Lösen von Konflikten an der Ladentheke und das Gestalten eines einladenden Ladens bleiben menschlich. Der stationäre Handel setzt verstärkt auf Erlebnis und Servicequalität.",
+    tippsMenschlich: [
+      "Kund:innen echt beraten und auf ihre Situation eingehen",
+      "Reklamationen und schwierige Gespräche freundlich lösen",
+      "Ein Gespür dafür haben, was sich im Laden gut präsentiert",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Retail Salespersons: 92 %, Cashiers: 97 %" },
+      { ...iabKurzbericht, wert: "Kassierer:innen: 100 % Substituierbarkeit" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "eh-1", title: "Waren einräumen und Regale auffüllen", description: "Lieferungen auspacken, einsortieren und Präsentation pflegen.", kiEignung: 50, category: "physisch" },
+      { id: "eh-2", title: "Kund:innen persönlich beraten", description: "Bedürfnisse erfragen und passende Produkte empfehlen.", kiEignung: 20, category: "sozial" },
+      { id: "eh-3", title: "Kasse bedienen und abrechnen", description: "Zahlungen abwickeln und den Kassenbestand abschließen.", kiEignung: 90, category: "routine" },
+      { id: "eh-4", title: "Warenbestand kontrollieren und nachbestellen", description: "Lücken im Sortiment erkennen und Nachschub ordern.", kiEignung: 85, category: "routine" },
+      { id: "eh-5", title: "Reklamationen bearbeiten", description: "Beschwerden aufnehmen und kulante Lösungen finden.", kiEignung: 35, category: "sozial" },
+      { id: "eh-6", title: "Werbeaktionen und Schaufenster gestalten", description: "Aktionsflächen und Auslagen ansprechend aufbauen.", kiEignung: 45, category: "kreativ" },
+      { id: "eh-7", title: "Verkaufszahlen auswerten", description: "Umsätze und Renner-Penner-Listen analysieren.", kiEignung: 80, category: "analytisch" },
+      { id: "eh-8", title: "Preise auszeichnen", description: "Etiketten erstellen und Preisänderungen im Regal umsetzen.", kiEignung: 88, category: "routine" },
+      { id: "eh-9", title: "Diebstahl vorbeugen", description: "Im Laden aufmerksam bleiben und Auffälligkeiten bemerken.", kiEignung: 35, category: "physisch" },
+      { id: "eh-10", title: "Team für die Schicht einteilen", description: "Personal nach Stoßzeiten und Aufgaben planen.", kiEignung: 60, category: "analytisch" },
+    ],
+  },
+  {
+    slug: "friseur",
+    title: "Friseur:in",
+    shortDescription:
+      "Schneidet, färbt und stylt Haare und berät Kund:innen rund um Frisur und Pflege.",
+    kategorie: "handel-dienstleistung",
+    zukunftsausblick:
+      "Die eigentliche Arbeit ist Handwerk am Menschen – Schneiden, Färben, Föhnen lassen sich nicht automatisieren. Nur die Organisation (Termine, Kasse, Warenwirtschaft) ist digitalisierbar. Persönlicher Kontakt und Vertrauen machen den Beruf krisenfest.",
+    tippsMenschlich: [
+      "Mit ruhiger Hand am Kopf der Kund:innen arbeiten",
+      "Aus Wünschen und Haartyp eine machbare Frisur ableiten",
+      "Durch Gespräch und Atmosphäre Stammkundschaft binden",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Hairdressers, Hairstylists, and Cosmetologists: 11 %" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "fr-1", title: "Haare schneiden und stylen", description: "Schnitt und Finish handwerklich am Menschen umsetzen.", kiEignung: 10, category: "physisch" },
+      { id: "fr-2", title: "Kund:innen zu Frisur und Pflege beraten", description: "Passende Schnitte, Farben und Produkte empfehlen.", kiEignung: 20, category: "sozial" },
+      { id: "fr-3", title: "Farben und Tönungen anmischen und auftragen", description: "Coloration nach Rezeptur mischen und präzise auftragen.", kiEignung: 15, category: "physisch" },
+      { id: "fr-4", title: "Termine und Kasse verwalten", description: "Terminbuch führen, abrechnen, Tagesabschluss machen.", kiEignung: 80, category: "routine" },
+      { id: "fr-5", title: "Kopfhaut- und Haaranalyse durchführen", description: "Haarzustand beurteilen und Behandlung darauf abstimmen.", kiEignung: 40, category: "analytisch" },
+      { id: "fr-6", title: "Small Talk und Kundenbindung pflegen", description: "Während der Behandlung Beziehung und Wohlfühlatmosphäre schaffen.", kiEignung: 10, category: "sozial" },
+      { id: "fr-7", title: "Produkte im Salon verkaufen", description: "Pflegeprodukte passend zur Behandlung anbieten.", kiEignung: 35, category: "sozial" },
+      { id: "fr-8", title: "Arbeitsplatz reinigen und Hygiene sichern", description: "Werkzeuge desinfizieren, Platz für die nächste Kundin herrichten.", kiEignung: 30, category: "physisch" },
+    ],
+  },
+  {
+    slug: "koch",
+    title: "Koch/Köchin",
+    shortDescription:
+      "Bereitet Speisen zu, entwickelt Gerichte und hält den Küchenbetrieb organisiert.",
+    kategorie: "handel-dienstleistung",
+    zukunftsausblick:
+      "Kalkulation, Bestellung und Standardisierung sind digitalisierbar, in der Systemgastronomie ist vieles vorgefertigt. Das Kochen selbst, das Abschmecken, das Anrichten und das Koordinieren im Stress bleiben menschlich. In der gehobenen Küche zählt Kreativität mehr denn je.",
+    tippsMenschlich: [
+      "Nach Geschmack abschmecken statt nur nach Rezept kochen",
+      "Im Service-Stress ein Team und viele Bestellungen koordinieren",
+      "Eigene Gerichte und Menüs mit Handschrift entwickeln",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Cooks, Restaurant: 96 %, Chefs and Head Cooks: 10 %" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "ko-1", title: "Speisen nach Rezept zubereiten", description: "Komponenten vorbereiten, garen und würzen.", kiEignung: 30, category: "physisch" },
+      { id: "ko-2", title: "Gerichte anrichten und garnieren", description: "Teller ansprechend und gleichmäßig präsentieren.", kiEignung: 25, category: "physisch" },
+      { id: "ko-3", title: "Neue Gerichte und Menüs entwickeln", description: "Saisonale Karten und eigene Kreationen erarbeiten.", kiEignung: 20, category: "kreativ" },
+      { id: "ko-4", title: "Waren bestellen und Lager verwalten", description: "Bedarf planen, bestellen, Verfall und Bestand kontrollieren.", kiEignung: 80, category: "routine" },
+      { id: "ko-5", title: "Speisekarten kalkulieren", description: "Wareneinsatz und Preise pro Gericht berechnen.", kiEignung: 75, category: "analytisch" },
+      { id: "ko-6", title: "Küche reinigen und HACCP-Hygiene dokumentieren", description: "Temperaturen, Reinigung und Kühlketten protokollieren.", kiEignung: 55, category: "routine" },
+      { id: "ko-7", title: "Küchenteam während des Service koordinieren", description: "Bestellungen takten, Posten abstimmen, Ausgabe steuern.", kiEignung: 25, category: "sozial" },
+      { id: "ko-8", title: "Lebensmittelqualität bei Anlieferung prüfen", description: "Frische, Temperatur und Menge der Ware kontrollieren.", kiEignung: 45, category: "analytisch" },
+    ],
+  },
+];
+
+export function getBeruf(slug: string): Beruf | undefined {
+  return berufe.find((b) => b.slug === slug);
+}
+
+export function getAlleSlugs(): string[] {
+  return berufe.map((b) => b.slug);
+}
