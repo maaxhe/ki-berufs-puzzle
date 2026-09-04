@@ -11,8 +11,10 @@ import {
   useDraggable,
   useSensor,
   useSensors,
+  type Announcements,
   type DragEndEvent,
   type DragStartEvent,
+  type ScreenReaderInstructions,
 } from "@dnd-kit/core";
 import type { Beruf, UserZuordnung } from "@/types";
 import DropZone, { type ZoneId } from "./DropZone";
@@ -23,6 +25,17 @@ import Quellen from "./Quellen";
 import Legend from "./Legend";
 
 type SlotMap = Record<string, ZoneId>;
+
+const ZONE_NAME: Record<ZoneId, string> = {
+  offen: "Noch nicht sortiert",
+  mensch: "Bleibt beim Menschen",
+  ki: "KI kann das übernehmen",
+};
+
+const screenReaderInstructions: ScreenReaderInstructions = {
+  draggable:
+    "Aufgabe mit den Pfeiltasten auf eine der beiden Spalten ziehen. Mit der Leertaste oder Enter aufnehmen und wieder ablegen, mit Escape abbrechen.",
+};
 
 function DraggableTask({
   taskId,
@@ -140,6 +153,11 @@ export default function TaskPuzzle({
   const tasksIn = (zone: ZoneId) =>
     beruf.tasks.filter((t) => slots[t.id] === zone);
 
+  const [liveMessage, setLiveMessage] = useState("");
+
+  const taskTitle = (taskId: string) =>
+    beruf.tasks.find((t) => t.id === taskId)?.title ?? taskId;
+
   const handleDragStart = (event: DragStartEvent) =>
     setActiveId(String(event.active.id));
 
@@ -147,8 +165,10 @@ export default function TaskPuzzle({
     setActiveId(null);
     const { active, over } = event;
     if (!over) return;
-    setSlots((prev) => ({ ...prev, [String(active.id)]: over.id as ZoneId }));
+    const zone = over.id as ZoneId;
+    setSlots((prev) => ({ ...prev, [String(active.id)]: zone }));
     setSelectedId(null);
+    setLiveMessage(`${taskTitle(String(active.id))} einsortiert bei „${ZONE_NAME[zone]}“.`);
   };
 
   const handleTaskTap = (taskId: string) => {
@@ -156,6 +176,7 @@ export default function TaskPuzzle({
     if (current !== "offen") {
       setSlots((prev) => ({ ...prev, [taskId]: "offen" }));
       setSelectedId(null);
+      setLiveMessage(`${taskTitle(taskId)} zurück zu „Noch nicht sortiert“.`);
       return;
     }
     setSelectedId((cur) => (cur === taskId ? null : taskId));
@@ -164,7 +185,25 @@ export default function TaskPuzzle({
   const handleZoneClick = (zone: ZoneId) => {
     if (!selectedId) return;
     setSlots((prev) => ({ ...prev, [selectedId]: zone }));
+    setLiveMessage(`${taskTitle(selectedId)} einsortiert bei „${ZONE_NAME[zone]}“.`);
     setSelectedId(null);
+  };
+
+  const announcements: Announcements = {
+    onDragStart({ active }) {
+      return `${taskTitle(String(active.id))} aufgenommen.`;
+    },
+    onDragOver({ active, over }) {
+      if (!over) return undefined;
+      return `${taskTitle(String(active.id))} über „${ZONE_NAME[over.id as ZoneId]}“.`;
+    },
+    onDragEnd({ active, over }) {
+      if (!over) return `${taskTitle(String(active.id))} nicht abgelegt.`;
+      return `${taskTitle(String(active.id))} einsortiert bei „${ZONE_NAME[over.id as ZoneId]}“.`;
+    },
+    onDragCancel({ active }) {
+      return `Verschieben von ${taskTitle(String(active.id))} abgebrochen.`;
+    },
   };
 
   const resetPuzzle = () => {
@@ -238,10 +277,15 @@ export default function TaskPuzzle({
         </p>
       )}
 
+      <p role="status" aria-live="polite" className="sr-only">
+        {liveMessage}
+      </p>
+
       <DndContext
         sensors={sensors}
         onDragStart={handleDragStart}
         onDragEnd={handleDragEnd}
+        accessibility={{ announcements, screenReaderInstructions }}
       >
         <div className="mt-8 space-y-4">
           <DropZone

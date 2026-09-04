@@ -16,8 +16,8 @@ export default function BerufCard({ beruf }: { beruf: Beruf }) {
         </p>
       </div>
 
-      <span className="shrink-0 translate-x-0 font-prose text-sm italic text-ink-2 opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:opacity-100">
-        Sortieren
+      <span className="shrink-0 font-prose text-sm italic text-ink-2 opacity-70 transition group-hover:opacity-100 group-focus-visible:opacity-100 sm:opacity-0">
+        Sortieren →
       </span>
     </Link>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import type { Beruf, UserZuordnung } from "@/types";
 import {
   kiRisikoGesamt,
@@ -40,6 +41,48 @@ export default function ErgebnisView({
     (t) => userZuordnung[t.id] === "ki",
   ).length;
   const userPct = total === 0 ? 0 : Math.round((userMaschine / total) * 100);
+
+  const [exportStatus, setExportStatus] = useState<"idle" | "kopiert" | "fehler">(
+    "idle",
+  );
+
+  const zusammenfassungText = () => {
+    const zeilen = beruf.tasks.map((task) => {
+      const deine = userZuordnung[task.id];
+      const modell = modellZuordnung(task);
+      const ok = deine === modell;
+      return `${ok ? "✓" : "✗"} ${task.title}: du „${deine ? ZONE_TEXT[deine] : "—"}“, Modell „${ZONE_TEXT[modell]}“ (${task.kiEignung}% KI)`;
+    });
+    return [
+      `KI-Berufs-Puzzle – ${beruf.title}`,
+      `${richtig} von ${total} Aufgaben stimmten mit dem Modell überein (${genauigkeit}%).`,
+      `Eigene Einschätzung: ${userPct}% der Aufgaben bei der KI. Modell im Schnitt: ${risiko}% KI.`,
+      "",
+      ...zeilen,
+      "",
+      "https://ki-berufs-puzzle.netlify.app/puzzle/" + beruf.slug,
+    ].join("\n");
+  };
+
+  const handleExport = async () => {
+    const text = zusammenfassungText();
+    try {
+      if (navigator.share) {
+        await navigator.share({ title: `KI-Berufs-Puzzle – ${beruf.title}`, text });
+        return;
+      }
+    } catch {
+      // Nutzer:in hat Teilen abgebrochen – dann Zwischenablage versuchen.
+    }
+    try {
+      await navigator.clipboard.writeText(text);
+      setExportStatus("kopiert");
+      window.setTimeout(() => setExportStatus("idle"), 2500);
+    } catch {
+      setExportStatus("fehler");
+      window.setTimeout(() => setExportStatus("idle"), 2500);
+    }
+  };
 
   return (
     <div className="space-y-14">
@@ -176,7 +219,7 @@ export default function ErgebnisView({
         <Disclaimer />
       </div>
 
-      <div className="flex flex-wrap gap-x-6 gap-y-2 border-t border-rule pt-6 text-sm">
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-rule pt-6 text-sm">
         <button
           type="button"
           onClick={onRetry}
@@ -190,6 +233,12 @@ export default function ErgebnisView({
         >
           Alle Berufe
         </Link>
+        <Link
+          href="/vergleich"
+          className="font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
+        >
+          Berufe im Vergleich
+        </Link>
         {nextSlug && (
           <Link
             href={`/puzzle/${nextSlug}`}
@@ -198,6 +247,17 @@ export default function ErgebnisView({
             Nächster Beruf
           </Link>
         )}
+        <button
+          type="button"
+          onClick={handleExport}
+          className="ml-auto rounded-[2px] border border-ink px-4 py-2 font-semibold text-ink transition-colors hover:bg-ink hover:text-paper"
+        >
+          {exportStatus === "kopiert"
+            ? "In Zwischenablage kopiert ✓"
+            : exportStatus === "fehler"
+              ? "Kopieren fehlgeschlagen"
+              : "Ergebnis teilen"}
+        </button>
       </div>
     </div>
   );

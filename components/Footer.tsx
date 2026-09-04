@@ -16,6 +16,12 @@ export default function Footer() {
             Alle Berufe
           </Link>
           <Link
+            href="/vergleich"
+            className="text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
+          >
+            Berufe im Vergleich
+          </Link>
+          <Link
             href="/methodik"
             className="text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
           >

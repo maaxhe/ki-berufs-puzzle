@@ -192,6 +192,35 @@ export const berufe: Beruf[] = [
       { id: "bkf-8", title: "In schwierigen Verkehrssituationen sicher reagieren", description: "Enge Zufahrten, Baustellen und plötzliche Gefahren meistern.", kiEignung: 30, category: "analytisch", warum: "Enge Baustelle, plötzliche Gefahr – hier entscheidet der Mensch am Steuer noch immer schneller und sicherer." },
     ],
   },
+  {
+    slug: "elektroniker-energie-gebaeudetechnik",
+    title: "Elektroniker:in für Energie- und Gebäudetechnik",
+    shortDescription:
+      "Installiert und wartet elektrische Anlagen in Gebäuden – von der Verkabelung bis zur Photovoltaikanlage.",
+    kategorie: "technik-handwerk",
+    zukunftsausblick:
+      "Verkabeln, Klemmen und Prüfen vor Ort bleibt körperliche Arbeit, die kein Roboter im engen Altbau oder auf dem Dach übernimmt. Planungssoftware und automatische Fehlerdiagnose entlasten zunehmend – der Umgang mit Smart-Home- und PV-Technik wird wichtiger, die Handarbeit an der Anlage bleibt.",
+    tippsMenschlich: [
+      "Handwerkliches Geschick bei Verkabelung und Montage unter beengten Bedingungen",
+      "Verantwortung für Sicherheit – ein Fehler kann Brände oder Stromschläge verursachen",
+      "Beratung von Kund:innen zu Smart Home, PV und Fördermöglichkeiten",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Electricians: 15 %" },
+      { ...iabKurzbericht, wert: "Elektroberufe: leicht überdurchschnittlich" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "eg-1", title: "Elektroinstallationen verlegen", description: "Kabel, Leitungen und Verteiler in Neubau oder Bestand einbauen.", kiEignung: 15, category: "physisch", warum: "Kabel durch Wände und Decken ziehen ist Handarbeit an einem konkreten Gebäude – nichts davon läuft am Bildschirm." },
+      { id: "eg-2", title: "Schaltpläne lesen und umsetzen", description: "Technische Zeichnungen in reale Verkabelung übersetzen.", kiEignung: 45, category: "analytisch", warum: "Software kann Pläne generieren. Sie vor Ort korrekt umzusetzen, mit allen Abweichungen im echten Gebäude, bleibt Handwerk." },
+      { id: "eg-3", title: "Fehler in der Elektrik diagnostizieren", description: "Störungen mit Messgeräten eingrenzen und beheben.", kiEignung: 40, category: "analytisch", warum: "Diagnosegeräte schlagen Ursachen vor. Das Nachprüfen im echten Sicherungskasten bleibt beim Menschen." },
+      { id: "eg-4", title: "Photovoltaikanlagen installieren", description: "Module montieren, verkabeln und ans Netz anschließen.", kiEignung: 15, category: "physisch", warum: "Module aufs Dach montieren und sicher verkabeln ist körperliche Arbeit in der Höhe – da hilft keine Software." },
+      { id: "eg-5", title: "Smart-Home-Systeme einrichten", description: "Steuerungen für Licht, Heizung und Sicherheit programmieren.", kiEignung: 55, category: "analytisch", warum: "Standard-Konfigurationen kann Software zunehmend selbst vorschlagen. Die Einrichtung im echten Haus bleibt Handarbeit." },
+      { id: "eg-6", title: "Anlagen auf Sicherheit prüfen (VDE-Prüfung)", description: "Vorgeschriebene Prüfungen durchführen und protokollieren.", kiEignung: 55, category: "routine", warum: "Prüfgeräte liefern die Werte automatisch. Die Verantwortung für die Freigabe trägt die Fachkraft." },
+      { id: "eg-7", title: "Kund:innen zu Energielösungen beraten", description: "Fördermöglichkeiten und passende Technik erklären.", kiEignung: 30, category: "sozial", warum: "Fördertöpfe kann ein Chatbot auflisten. Welche Lösung zu diesem Haus und Budget passt, wägt ein Mensch ab." },
+      { id: "eg-8", title: "Wartungsprotokolle dokumentieren", description: "Durchgeführte Arbeiten und Messwerte digital festhalten.", kiEignung: 75, category: "routine", warum: "Messwerte und Stichpunkte in ein Protokoll bringen ist strukturierte Textarbeit – ein Fall für Software." },
+    ],
+  },
 
   // ─────────────────────────── Büro & Verwaltung ───────────────────────────
   {

@@ -21,7 +21,7 @@ const TaskCard = forwardRef<HTMLButtonElement, TaskCardProps>(function TaskCard(
       type="button"
       data-draggable
       aria-pressed={selected}
-      className={`w-full cursor-grab rounded-[2px] border px-3 py-2.5 text-left transition-colors active:cursor-grabbing focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mensch ${
+      className={`w-full min-h-11 cursor-grab touch-manipulation rounded-[2px] border px-3 py-3 text-left transition-colors active:cursor-grabbing focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mensch sm:py-2.5 ${
         selected
           ? "border-ink bg-ink text-paper"
           : "border-rule bg-paper text-ink hover:border-ink"

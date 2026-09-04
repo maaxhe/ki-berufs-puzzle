@@ -1,15 +1,9 @@
-import BerufCard from "@/components/BerufCard";
+import BerufListe from "@/components/BerufListe";
 import Disclaimer from "@/components/Disclaimer";
 import Legend from "@/components/Legend";
 import { berufe } from "@/data/berufe";
-import { KATEGORIE_LABELS, KATEGORIE_REIHENFOLGE } from "@/types";
 
 export default function Home() {
-  const nachKategorie = KATEGORIE_REIHENFOLGE.map((kat) => ({
-    kat,
-    liste: berufe.filter((b) => b.kategorie === kat),
-  })).filter((g) => g.liste.length > 0);
-
   return (
     <div className="mx-auto max-w-[68rem] px-5 py-14 sm:px-8 sm:py-20">
       <section className="max-w-[46rem]">
@@ -30,18 +24,7 @@ export default function Home() {
         <Disclaimer />
       </div>
 
-      {nachKategorie.map(({ kat, liste }) => (
-        <section key={kat} className="mt-16">
-          <h2 className="border-b-2 border-ink pb-2 font-display text-[1.4rem] font-semibold text-ink">
-            {KATEGORIE_LABELS[kat]}
-          </h2>
-          <div>
-            {liste.map((beruf) => (
-              <BerufCard key={beruf.slug} beruf={beruf} />
-            ))}
-          </div>
-        </section>
-      ))}
+      <BerufListe berufe={berufe} />
     </div>
   );
 }
