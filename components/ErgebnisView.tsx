@@ -134,6 +134,10 @@ export default function ErgebnisView({
                     <span className="text-ink">{ZONE_TEXT[modell]}</span>
                   </span>
                 </div>
+
+                <p className="mt-2.5 border-t border-ink/10 pt-2.5 font-prose text-[0.95rem] leading-relaxed text-ink-2">
+                  {task.warum}
+                </p>
               </li>
             );
           })}

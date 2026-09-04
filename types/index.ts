@@ -15,6 +15,8 @@ export interface Task {
   /** 0–100: wie gut KI diese Aufgabe heute übernehmen kann (didaktischer Schätzwert). */
   kiEignung: number;
   category: TaskCategory;
+  /** Ein Satz, warum der Wert so hoch oder niedrig ist – wird im Ergebnis gezeigt. */
+  warum: string;
 }
 
 /** Verweis auf eine reale Datenquelle zur Automatisierbarkeit eines Berufs. */
