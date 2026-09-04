@@ -102,6 +102,35 @@ export const berufe: Beruf[] = [
       { id: "erz-8", title: "Anwesenheit und Dokumentation pflegen", description: "Anwesenheitslisten, Vorfälle und Formalitäten festhalten.", kiEignung: 45, category: "routine", warum: "Anwesenheit und Vorfälle festhalten ist Formkram – der lässt sich weitgehend automatisieren." },
     ],
   },
+  {
+    slug: "lehrer",
+    title: "Lehrer:in",
+    shortDescription:
+      "Unterrichtet, begleitet und bewertet Schüler:innen – vom Stundenplan bis zum Elterngespräch.",
+    kategorie: "gesundheit-soziales",
+    zukunftsausblick:
+      "Übungsaufgaben, Korrekturen und individuelle Übungspläne kann KI schon heute gut unterstützen – das entlastet spürbar bei der Vorbereitung. Eine Klasse führen, für einen Streit sensibel bleiben oder merken, wenn es einem Kind gerade nicht gut geht, bleibt an einer Person im Raum hängen. Der Beruf wird sich stärker in Richtung Begleitung und weniger reine Wissensvermittlung verschieben.",
+    tippsMenschlich: [
+      "Eine Klasse als Gruppe führen und für Ruhe und Fairness sorgen",
+      "Merken, wenn es einem Kind nicht gut geht, auch ohne dass es das sagt",
+      "Vertrauen aufbauen, das über ein Schuljahr trägt",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Postsecondary Teachers: 3 %" },
+      { ...iabKurzbericht, wert: "Lehrberufe: deutlich unterdurchschnittlich" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "leh-1", title: "Unterricht vorbereiten", description: "Stundenverlauf, Materialien und Übungsaufgaben zusammenstellen.", kiEignung: 65, category: "analytisch", warum: "Ein Sprachmodell liefert in Minuten einen Entwurf. Ob er zu genau dieser Klasse passt, entscheidest du." },
+      { id: "leh-2", title: "Vor der Klasse unterrichten", description: "Inhalte erklären, Fragen beantworten, auf Reaktionen eingehen.", kiEignung: 20, category: "sozial", warum: "Live auf 25 unterschiedliche Reaktionen gleichzeitig eingehen ist etwas anderes als ein Video abzuspielen." },
+      { id: "leh-3", title: "Klassenarbeiten und Hausaufgaben korrigieren", description: "Ergebnisse bewerten und Fehler nachvollziehbar markieren.", kiEignung: 55, category: "routine", warum: "Multiple-Choice und Rechtschreibung prüft Software zuverlässig. Bei Aufsätzen und Argumenten bleibt die Einschätzung schwieriger." },
+      { id: "leh-4", title: "Konflikte in der Klasse schlichten", description: "Streit zwischen Schüler:innen ansprechen und lösen helfen.", kiEignung: 5, category: "sozial", warum: "Wer im Streit recht hat und wie man beide wieder ins Gespräch bringt, entscheidet niemand aus der Ferne." },
+      { id: "leh-5", title: "Individuelle Förderpläne erstellen", description: "Übungen und Tempo an einzelne Schüler:innen anpassen.", kiEignung: 50, category: "analytisch", warum: "Adaptive Lernsoftware schlägt passende Übungen vor. Ob sie beim Kind ankommen, siehst nur du im Unterricht." },
+      { id: "leh-6", title: "Elterngespräche führen", description: "Über Leistung, Verhalten und Entwicklung des Kindes sprechen.", kiEignung: 10, category: "sozial", warum: "Ein schwieriges Gespräch mit besorgten Eltern führen ist Vertrauensarbeit, kein Bericht zum Vorlesen." },
+      { id: "leh-7", title: "Noten und Zeugnisse verwalten", description: "Bewertungen erfassen und Zeugnistexte formulieren.", kiEignung: 70, category: "routine", warum: "Noten eintragen und Standardformulierungen erzeugen ist genau das, was Verwaltungssoftware übernimmt." },
+      { id: "leh-8", title: "Auf schwierige Situationen im Klassenzimmer reagieren", description: "Störungen, Überforderung oder Mobbing im Moment erkennen und handeln.", kiEignung: 5, category: "sozial", warum: "Im Moment merken, dass gerade etwas kippt, und richtig reagieren – das ist Präsenz, die kein Tool ersetzt." },
+    ],
+  },
 
   // ─────────────────────────── Technik & Handwerk ───────────────────────────
   {
@@ -311,6 +340,35 @@ export const berufe: Beruf[] = [
       { id: "bk-8", title: "Vertragsunterlagen erstellen", description: "Konto-, Kredit- und Depotverträge aufsetzen und erläutern.", kiEignung: 85, category: "routine", warum: "Verträge aus Bausteinen aufsetzen ist Textarbeit nach Vorlage." },
     ],
   },
+  {
+    slug: "personaldienstleistungskaufmann",
+    title: "Personaldienstleistungskaufmann/-frau",
+    shortDescription:
+      "Vermittelt zwischen Unternehmen und Bewerber:innen – von der Stellenausschreibung bis zum Vertragsabschluss.",
+    kategorie: "buero-verwaltung",
+    zukunftsausblick:
+      "KI-Systeme sichten heute schon einen Großteil eingehender Bewerbungen vor – das spart Zeit, birgt aber ein bekanntes Risiko: Wenn die Trainingsdaten verzerrt sind, sortiert das System systematisch bestimmte Gruppen aus, oft unbemerkt. Genau deshalb bleibt eine Person nötig, die Vorauswahlen gegenprüft und im Gespräch entscheidet, wen sie wirklich vorschlägt.",
+    tippsMenschlich: [
+      "Automatisierte Vorauswahlen kritisch gegenprüfen, statt sie blind zu übernehmen",
+      "Im persönlichen Gespräch einschätzen, ob jemand ins Team passt",
+      "Verhandeln zwischen den Interessen von Unternehmen und Bewerber:innen",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "HR Assistants: 73 %" },
+      { ...iabKurzbericht, wert: "Kaufmännische Verwaltungsberufe: überdurchschnittlich" },
+      ilo,
+    ],
+    tasks: [
+      { id: "pdk-1", title: "Stellenanzeigen formulieren", description: "Anforderungsprofile in ansprechende Ausschreibungen übersetzen.", kiEignung: 80, category: "routine", warum: "Aus Stichpunkten eine Anzeige formulieren ist Textarbeit, die Sprachmodelle heute zuverlässig übernehmen." },
+      { id: "pdk-2", title: "Bewerbungen vorsortieren", description: "Eingehende Unterlagen nach Kriterien filtern und einordnen.", kiEignung: 75, category: "analytisch", warum: "Software filtert Hunderte Unterlagen in Sekunden nach Kriterien – nur läuft dabei bekanntermaßen Bias mit, den jemand gegenprüfen muss." },
+      { id: "pdk-3", title: "Vorstellungsgespräche führen", description: "Bewerber:innen persönlich kennenlernen und einschätzen.", kiEignung: 15, category: "sozial", warum: "Ob jemand ins Team passt, entscheidet sich im Gespräch – ein Zwischenmenschliches, das kein Score ersetzt." },
+      { id: "pdk-4", title: "Zeugnisse und Referenzen prüfen", description: "Angaben auf Plausibilität und Echtheit kontrollieren.", kiEignung: 60, category: "analytisch", warum: "Formale Prüfung auf Vollständigkeit und Plausibilität kann Software gut vorfiltern." },
+      { id: "pdk-5", title: "Gehalt und Vertragskonditionen verhandeln", description: "Zwischen den Interessen von Unternehmen und Bewerber:in vermitteln.", kiEignung: 20, category: "sozial", warum: "Verhandeln heißt, Interessen beider Seiten abzuwägen und im Moment auf Reaktionen einzugehen." },
+      { id: "pdk-6", title: "Vertragsunterlagen erstellen", description: "Arbeitsverträge nach Vorlage aufsetzen und anpassen.", kiEignung: 85, category: "routine", warum: "Verträge aus Textbausteinen zusammensetzen ist strukturierte Arbeit nach festen Regeln." },
+      { id: "pdk-7", title: "Bewerber:innen zu Absagen und Feedback beraten", description: "Entscheidungen nachvollziehbar und wertschätzend kommunizieren.", kiEignung: 30, category: "sozial", warum: "Eine Absage so zu formulieren, dass sie fair ankommt, ist Fingerspitzengefühl, kein Textbaustein." },
+      { id: "pdk-8", title: "Personalstatistiken auswerten", description: "Fluktuation, Bewerbungszahlen und Trends analysieren.", kiEignung: 75, category: "analytisch", warum: "Zahlen aus dem System ziehen und Trends erkennen ist klassische Datenauswertung." },
+    ],
+  },
 
   // ─────────────────────────── IT & Medien ───────────────────────────
   {
@@ -488,6 +546,35 @@ export const berufe: Beruf[] = [
       { id: "ko-6", title: "Küche reinigen und HACCP-Hygiene dokumentieren", description: "Temperaturen, Reinigung und Kühlketten protokollieren.", kiEignung: 55, category: "routine", warum: "Temperaturen und Reinigung protokollieren lässt sich weitgehend automatisch erfassen." },
       { id: "ko-7", title: "Küchenteam während des Service koordinieren", description: "Bestellungen takten, Posten abstimmen, Ausgabe steuern.", kiEignung: 25, category: "sozial", warum: "Im Service-Stress Bestellungen takten und Posten abstimmen ist Führung im Moment." },
       { id: "ko-8", title: "Lebensmittelqualität bei Anlieferung prüfen", description: "Frische, Temperatur und Menge der Ware kontrollieren.", kiEignung: 45, category: "analytisch", warum: "Frische und Temperatur bei der Anlieferung checken heißt anfassen und riechen." },
+    ],
+  },
+  {
+    slug: "tourismuskaufmann",
+    title: "Tourismuskaufmann/-frau",
+    shortDescription:
+      "Berät zu Reisen, bucht Leistungen und stellt Reisepakete für Kund:innen zusammen.",
+    kategorie: "handel-dienstleistung",
+    zukunftsausblick:
+      "Kaum ein Ausbildungsberuf ist so stark unter Druck wie dieser: Buchungsplattformen und KI-Chatbots übernehmen längst, was früher am Schalter passierte – Preise vergleichen, Flüge buchen, Standardreisen zusammenstellen. Das klassische Reisebüro ist dadurch real geschrumpft. Wer bleibt, verschiebt sich in Richtung komplexer, individueller Beratung und Krisenmanagement, wo ein Mensch am anderen Ende noch einen echten Unterschied macht.",
+    tippsMenschlich: [
+      "Komplexe, individuelle Wünsche verstehen, die keine Suchmaske erfasst",
+      "In Krisen (Ausfälle, Naturkatastrophen, Insolvenzen) schnell und verantwortlich reagieren",
+      "Vertrauen aufbauen bei Menschen, die viel Geld für ihren Urlaub ausgeben",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Travel Agents: 96 %" },
+      { ...iabKurzbericht, wert: "Reiseverkehrsberufe: deutlich überdurchschnittlich" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "tk-1", title: "Standardreisen zusammenstellen", description: "Pauschalreisen aus Flug, Hotel und Transfer buchen.", kiEignung: 90, category: "routine", warum: "Flug, Hotel und Transfer zu einem Paket kombinieren ist genau das, was Buchungsplattformen längst automatisch machen." },
+      { id: "tk-2", title: "Preise und Verfügbarkeiten vergleichen", description: "Angebote verschiedener Anbieter gegenüberstellen.", kiEignung: 90, category: "routine", warum: "Preise über Anbieter hinweg vergleichen ist eine Datenbankabfrage, keine Beratungsleistung." },
+      { id: "tk-3", title: "Individuelle Reisewünsche beraten", description: "Ungewöhnliche oder komplexe Reiseziele passend planen.", kiEignung: 40, category: "sozial", warum: "Wenn Wünsche vage oder widersprüchlich sind, hilft Nachfragen und Erfahrung – mehr als eine Suchmaske leisten kann." },
+      { id: "tk-4", title: "Reiseunterlagen und Buchungen abwickeln", description: "Tickets, Vouchers und Bestätigungen erstellen und versenden.", kiEignung: 92, category: "routine", warum: "Dokumente aus Buchungsdaten generieren läuft heute fast vollständig automatisch." },
+      { id: "tk-5", title: "Bei Reiseproblemen vor Ort helfen", description: "Ausfälle, Umbuchungen oder Notfälle während der Reise klären.", kiEignung: 20, category: "sozial", warum: "Wenn ein Flug gestrichen wird und jemand am Flughafen feststeckt, zählt ein Mensch, der wirklich hilft, nicht ein FAQ." },
+      { id: "tk-6", title: "Reiseversicherungen und Zusatzleistungen erklären", description: "Bedingungen und Sinnhaftigkeit verständlich vermitteln.", kiEignung: 65, category: "analytisch", warum: "Standardbedingungen erklären kann ein Chatbot inzwischen ordentlich." },
+      { id: "tk-7", title: "Reklamationen nach der Reise bearbeiten", description: "Beschwerden prüfen und Entschädigungen aushandeln.", kiEignung: 45, category: "sozial", warum: "Eine verärgerte Kundschaft ernst nehmen und fair verhandeln ist mehr als ein Formular abzuarbeiten." },
+      { id: "tk-8", title: "Reisetrends und Zielgebiete recherchieren", description: "Neue Angebote und Destinationen für das Portfolio sichten.", kiEignung: 60, category: "analytisch", warum: "Trends aus Daten und Berichten zusammenfassen kann KI heute schon unterstützend leisten." },
     ],
   },
 ];
