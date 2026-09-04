@@ -88,7 +88,12 @@ export const KATEGORIE_REIHENFOLGE: BerufKategorie[] = [
 
 /** Wiederverwendbare Verweise auf die zugrunde liegenden Studien. */
 export const STANDARD_QUELLEN: Record<
-  "jobFuturomat" | "iabKurzbericht" | "freyOsborne" | "ilo",
+  | "jobFuturomat"
+  | "iabKurzbericht"
+  | "freyOsborne"
+  | "ilo"
+  | "wef"
+  | "iabBetriebe",
   Quelle
 > = {
   jobFuturomat: {
@@ -109,5 +114,15 @@ export const STANDARD_QUELLEN: Record<
     label:
       "ILO Working Paper 96 (Gmyrek et al. 2023): Generative AI and Jobs – Aufgaben-Exposition",
     url: "https://www.ilo.org/sites/default/files/2024-07/WP96_web.pdf",
+  },
+  wef: {
+    label:
+      "World Economic Forum: Future of Jobs Report 2025 – Arbeitgeber-Erwartungen bis 2030",
+    url: "https://www.weforum.org/publications/the-future-of-jobs-report-2025/",
+  },
+  iabBetriebe: {
+    label:
+      "IAB (2025): Jeder vierte Betrieb in Deutschland nutzt generative KI – IAB-Betriebspanel",
+    url: "https://iab.de/presseinfo/jeder-vierte-betrieb-in-deutschland-nutzt-generative-ki/",
   },
 };

@@ -15,7 +15,7 @@ import Disclaimer from "./Disclaimer";
 import Quellen from "./Quellen";
 
 const ZONE_TEXT: Record<"ki" | "mensch", string> = {
-  ki: "Maschine",
+  ki: "KI",
   mensch: "Mensch",
 };
 
@@ -65,10 +65,16 @@ export default function ErgebnisView({
       <section>
         <RiskGauge value={risiko} compareValue={userPct} size="lg" />
         <p className="prose-text mt-3 text-ink">
-          Du hast <span className="tnum">{userPct}%</span> der Aufgaben der
-          Maschine zugeordnet. Über alle Aufgaben gemittelt verortet das Modell{" "}
+          Du hast <span className="tnum">{userPct}%</span> der Aufgaben der KI
+          zugeordnet. Über alle Aufgaben gemittelt verortet das Modell{" "}
           <span className="font-semibold">{beruf.title}</span> bei{" "}
-          <span className="tnum">{risiko}%</span> Maschine.
+          <span className="tnum">{risiko}%</span> KI.
+        </p>
+        <p className="mt-4 border-l-2 border-mensch pl-4 font-prose text-[0.95rem] italic leading-relaxed text-ink-2">
+          „KI kann das“ heißt nicht „KI macht das“. Ob eine Aufgabe wirklich
+          automatisiert wird, hängt an Kosten, Recht, Verantwortung – und daran,
+          ob Menschen das überhaupt wollen. Meist verschwindet nicht der Beruf,
+          sondern der Aufgabenmix verschiebt sich.
         </p>
       </section>
 
@@ -129,7 +135,7 @@ export default function ErgebnisView({
                   <span>
                     <span className="block text-xs text-ink-2">
                       Modell{" "}
-                      <span className="tnum">({task.kiEignung}% Maschine)</span>
+                      <span className="tnum">({task.kiEignung}% KI)</span>
                     </span>
                     <span className="text-ink">{ZONE_TEXT[modell]}</span>
                   </span>

@@ -234,7 +234,7 @@ export default function TaskPuzzle({
           role="status"
           className="mt-6 border-l-2 border-ink bg-paper-2 py-2 pl-3 text-sm text-ink"
         >
-          Aufgabe ausgewählt – tipp jetzt auf „Maschine“ oder „Mensch“.
+          Aufgabe ausgewählt – tipp jetzt auf eine der beiden Spalten.
         </p>
       )}
 
@@ -275,8 +275,8 @@ export default function TaskPuzzle({
           <div className="grid gap-4 md:grid-cols-2">
             <DropZone
               id="mensch"
-              title="Mensch macht"
-              hint="Bleibt auf absehbare Zeit menschliche Arbeit."
+              title="Bleibt beim Menschen"
+              hint="Präsenz, Beziehung, Urteil oder Verantwortung stehen im Mittelpunkt."
               count={tasksIn("mensch").length}
               onZoneClick={() => handleZoneClick("mensch")}
             >
@@ -295,8 +295,8 @@ export default function TaskPuzzle({
 
             <DropZone
               id="ki"
-              title="Maschine übernimmt"
-              hint="Kann Software heute weitgehend erledigen."
+              title="KI kann das übernehmen"
+              hint="Software kann große Teile davon heute schon erledigen."
               count={tasksIn("ki").length}
               onZoneClick={() => handleZoneClick("ki")}
             >

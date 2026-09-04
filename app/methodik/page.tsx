@@ -8,7 +8,8 @@ export const metadata: Metadata = {
     "Woher die KI-Werte im KI-Berufs-Puzzle kommen, wie sie zu lesen sind und was sie nicht bedeuten.",
 };
 
-const { freyOsborne, jobFuturomat, iabKurzbericht, ilo } = STANDARD_QUELLEN;
+const { freyOsborne, jobFuturomat, iabKurzbericht, ilo, wef, iabBetriebe } =
+  STANDARD_QUELLEN;
 
 export default function MethodikPage() {
   return (
@@ -28,39 +29,45 @@ export default function MethodikPage() {
         <section className="space-y-3">
           <p>
             Jede Aufgabe in diesem Tool hat einen Wert zwischen 0 und 100. Er
-            sagt: So gut könnte eine Maschine diese Aufgabe heute übernehmen. 0
-            heißt „reine Menschensache“, 100 heißt „das kann Software praktisch
-            allein“. Diese Einzelwerte sind meine Einschätzung. Sie sind dazu da,
-            ein Gespräch anzustoßen – nicht, um eine Prognose abzugeben.
+            sagt: So stark könnte KI diese Aufgabe heute übernehmen oder
+            unterstützen. 0 heißt nicht „KI kann gar nichts“, sondern:
+            Präsenz, Beziehung, Urteil oder Verantwortung stehen im Mittelpunkt.
+            100 heißt nicht „der Beruf verschwindet“, sondern: Ein großer Teil
+            der Aufgabe lässt sich unter guten Bedingungen digital erledigen.
           </p>
           <p>
-            Damit die Einschätzung nicht aus der Luft gegriffen ist, habe ich den
-            Durchschnitt jedes Berufs an zwei ernsthaften Quellen geeicht.
+            Diese Einzelwerte sind meine Einschätzung – keine Messwerte und keine
+            Prognose. Sie sollen im Workshop ein Gespräch anstoßen.
           </p>
         </section>
 
         <section className="space-y-3">
           <h2 className="font-display text-[1.4rem] font-semibold text-ink">
-            Die zwei Quellen
+            Die zwei Anker
           </h2>
           <p>
-            Die erste ist die Studie von <strong>Frey &amp; Osborne (2013)</strong>{" "}
-            aus Oxford. Sie hat für über 700 Berufe geschätzt, wie
-            wahrscheinlich es ist, dass Computer sie übernehmen. Sie ist berühmt,
-            wird aber auch viel kritisiert – die Zahlen sind eher eine Obergrenze
-            als eine Vorhersage.
+            Damit die Werte nicht aus der Luft gegriffen sind, habe ich sie an
+            zwei ernsthaften Quellen orientiert.
           </p>
           <p>
-            Die zweite ist der <strong>IAB Job-Futuromat</strong> vom Institut
-            für Arbeitsmarkt- und Berufsforschung. Er zeigt für deutsche Berufe,
-            welcher Anteil der Tätigkeiten sich <em>technisch</em> ersetzen ließe
-            – das sogenannte Substituierbarkeitspotenzial, zuletzt für das Jahr
-            2022. Diese Zahlen passen besser auf deutsche Ausbildungsberufe.
+            <strong>Frey &amp; Osborne (2013)</strong> aus Oxford haben für über
+            700 Berufe geschätzt, wie wahrscheinlich es ist, dass Computer den{" "}
+            <em>ganzen Beruf</em> übernehmen. Die Studie ist berühmt und wird viel
+            kritisiert – die Zahlen sind eher eine Obergrenze als eine Vorhersage.
           </p>
           <p>
-            Ich habe beide nebeneinandergelegt und für jeden Beruf einen
-            plausiblen Mittelwert gewählt. Den Vergleichswert der Studie findest
-            du im Ergebnis bei jedem Beruf unter „Datengrundlage“.
+            Der <strong>IAB Job-Futuromat</strong> misst etwas anderes: den{" "}
+            <em>Anteil der Tätigkeiten</em> eines deutschen Berufs, die sich
+            technisch ersetzen ließen – zuletzt für 2022. Das passt besser auf
+            deutsche Ausbildungsberufe.
+          </p>
+          <p>
+            Diese beiden Werte messen also nicht dasselbe und lassen sich nicht
+            sauber verrechnen. Ich habe sie als Orientierungsrahmen genommen und
+            daraus für jeden Beruf einen <strong>didaktischen Richtwert</strong>{" "}
+            abgeleitet – ein begründetes Urteil, keine statistische Kombination.
+            Den jeweiligen Vergleichswert der Studie findest du im Ergebnis unter
+            „Datengrundlage“.
           </p>
         </section>
 
@@ -75,30 +82,70 @@ export default function MethodikPage() {
             schreibt inzwischen große Teile des Alltagscodes und liefert
             Bildentwürfe im Sekundentakt. Für diese Berufe habe ich die Werte
             deshalb bewusst nach oben gezogen und im Ausblick erklärt, warum.
-          </p>
-          <p>
-            Umgekehrt beim Berufskraftfahrer: Da war die alte Schätzung sehr
-            hoch, aber selbstfahrende LKW kommen viel langsamer als gedacht.
+            Umgekehrt beim Berufskraftfahrer: Da war die alte Schätzung sehr hoch,
+            aber selbstfahrende LKW kommen viel langsamer als gedacht.
           </p>
         </section>
 
         <section className="space-y-3">
           <h2 className="font-display text-[1.4rem] font-semibold text-ink">
-            „Die Maschine kann das“ heißt nicht „die Maschine macht das“
+            Technisch möglich heißt nicht: im Betrieb angekommen
+          </h2>
+          <p>„KI kann diese Aufgabe“ kann drei ganz verschiedene Dinge heißen:</p>
+          <ul className="ml-5 list-disc space-y-1">
+            <li>Ein System kann die Aufgabe grundsätzlich ausführen.</li>
+            <li>Es funktioniert zuverlässig in echten Situationen.</li>
+            <li>
+              Es wird in Betrieben schon eingesetzt – und ist rechtlich erlaubt.
+            </li>
+          </ul>
+          <p>
+            Ein Sprachmodell kann einen Pflegebericht formulieren. Das heißt noch
+            nicht, dass er klinisch korrekt ist, dass sensible Daten so
+            verarbeitet werden dürfen oder dass die Fachkraft überflüssig wird.
+          </p>
+          <p>
+            In der Praxis nutzt in Deutschland derzeit etwa jeder vierte Betrieb
+            generative KI – stark steigend, aber sehr ungleich verteilt. Manche
+            Branchen bauen ihre Abläufe schon um, andere probieren gerade erst.
+          </p>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="font-display text-[1.4rem] font-semibold text-ink">
+            Können heißt nicht Machen
           </h2>
           <p>
-            Das ist der wichtigste Punkt. Dass eine Aufgabe technisch
-            automatisierbar ist, entscheidet nicht, ob sie auch automatisiert
-            wird. Dazwischen stehen: Kosten – ein Mensch ist oft billiger oder
-            flexibler. Recht – manche Entscheidungen darf keine Software treffen.
-            Verantwortung – wenn etwas schiefgeht, muss jemand geradestehen. Und
-            schlicht der Wunsch der Kundschaft, mit einem Menschen zu tun zu
-            haben.
+            Das ist der wichtigste Punkt. Dass eine Aufgabe automatisierbar ist,
+            entscheidet nicht, ob sie auch automatisiert wird. Dazwischen stehen:
+            Kosten – ein Mensch ist oft billiger oder flexibler. Recht – manche
+            Entscheidungen darf keine Software treffen. Verantwortung – wenn
+            etwas schiefgeht, muss jemand geradestehen. Und schlicht der Wunsch
+            der Kundschaft, mit einem Menschen zu tun zu haben.
           </p>
           <p>
             Ein hoher Wert bedeutet also nicht „dieser Beruf verschwindet“. Er
-            bedeutet: In diesem Beruf verschiebt sich die Arbeit – weg von dem,
-            was die Maschine übernimmt, hin zu dem, was sie nicht kann.
+            bedeutet: Die Arbeit verschiebt sich – weg von dem, was die KI
+            übernimmt, hin zu dem, was sie nicht kann. Neue Aufgaben kommen
+            dazu, andere fallen weg.
+          </p>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="font-display text-[1.4rem] font-semibold text-ink">
+            Wie dieses Tool entstanden ist
+          </h2>
+          <p>
+            Dieses Tool wurde mit Unterstützung generativer KI entwickelt – bei
+            Code, Textentwürfen, Struktur und einzelnen Formulierungen. Die
+            Auswahl der Berufe und Aufgaben, die didaktische Gestaltung, die
+            Quellenprüfung, die Einordnung und die Verantwortung für die
+            Veröffentlichung liegen bei mir.
+          </p>
+          <p>
+            Genau darum geht es im Workshop: KI kann Vorschläge machen – Menschen
+            müssen Ziele setzen, Ergebnisse prüfen, den Kontext verstehen und
+            geradestehen.
           </p>
         </section>
 
@@ -116,18 +163,20 @@ export default function MethodikPage() {
         <section className="space-y-2 border-t border-rule pt-6">
           <h2 className="font-display text-sm font-semibold text-ink">Quellen</h2>
           <ol className="mt-1 list-inside list-decimal space-y-1.5 text-[0.95rem] leading-relaxed">
-            {[freyOsborne, jobFuturomat, iabKurzbericht, ilo].map((q) => (
-              <li key={q.url}>
-                <a
-                  href={q.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch"
-                >
-                  {q.label}
-                </a>
-              </li>
-            ))}
+            {[freyOsborne, jobFuturomat, iabKurzbericht, ilo, iabBetriebe, wef].map(
+              (q) => (
+                <li key={q.url}>
+                  <a
+                    href={q.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+                  >
+                    {q.label}
+                  </a>
+                </li>
+              ),
+            )}
           </ol>
         </section>
       </div>

@@ -20,7 +20,7 @@ const newsreader = Newsreader({
 export const metadata: Metadata = {
   title: "KI-Berufs-Puzzle",
   description:
-    "Sortier die Aufgaben eines Berufs selbst: Was übernimmt eine Maschine, was bleibt beim Menschen? Ein Werkzeug für Berufsorientierungs-Workshops.",
+    "Sortier die Aufgaben eines Berufs selbst: Was kann KI heute übernehmen, was bleibt beim Menschen? Ein Werkzeug für Berufsorientierungs-Workshops.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

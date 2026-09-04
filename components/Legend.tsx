@@ -9,8 +9,8 @@ export default function Legend() {
       </div>
       <div className="flex items-baseline gap-2">
         <span className="relative top-[1px] h-3 w-3 shrink-0 bg-ki" />
-        <dt className="font-semibold text-ink">Maschine</dt>
-        <dd className="text-ink-2">kann KI heute übernehmen</dd>
+        <dt className="font-semibold text-ink">KI</dt>
+        <dd className="text-ink-2">kann das heute übernehmen</dd>
       </div>
     </dl>
   );

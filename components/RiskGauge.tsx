@@ -1,5 +1,5 @@
 /**
- * Ein-Achsen-Anzeige: links der Mensch, rechts die Maschine.
+ * Ein-Achsen-Anzeige: links der Mensch, rechts die KI.
  * - Strich (Ziegelrot) = wie das Modell den Beruf im Schnitt verortet.
  * - Dreieck (Ink) = wie die Nutzer:in die Aufgaben selbst aufgeteilt hat.
  * 0 % = ganz menschlich, 100 % = ganz maschinell.
@@ -23,10 +23,10 @@ export default function RiskGauge({
       {lg && user != null && (
         <div className="flex flex-wrap gap-x-6 gap-y-0.5 text-xs">
           <span className="font-semibold text-ink">
-            Deine Aufteilung: <span className="tnum">{user}%</span> Maschine
+            Deine Aufteilung: <span className="tnum">{user}%</span> zur KI
           </span>
           <span className="font-semibold text-mensch">
-            Modell: <span className="tnum">{model}%</span> Maschine
+            Modell: <span className="tnum">{model}%</span> KI
           </span>
         </div>
       )}
@@ -71,7 +71,7 @@ export default function RiskGauge({
       {lg && (
         <div className="flex justify-between pt-1 font-prose text-xs italic text-ink-2">
           <span>ganz beim Menschen</span>
-          <span>ganz bei der Maschine</span>
+          <span>ganz bei der KI</span>
         </div>
       )}
     </div>

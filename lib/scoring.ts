@@ -24,7 +24,7 @@ export function richtigeAnzahl(
   }, 0);
 }
 
-/** Durchschnittliches KI-Risiko eines Berufs in ganzen Prozent. */
+/** Durchschnittlicher KI-Wert eines Berufs in ganzen Prozent. */
 export function kiRisikoGesamt(tasks: Task[]): number {
   if (tasks.length === 0) return 0;
   const summe = tasks.reduce((acc, task) => acc + task.kiEignung, 0);
