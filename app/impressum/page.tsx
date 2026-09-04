@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function ImpressumPage() {
   return (
-    <div className="mx-auto max-w-[68rem] px-5 py-14 sm:px-8 sm:py-20">
+    <div className="mx-auto max-w-[68rem] px-5 py-14 sm:px-8 sm:py-16">
       <Link
         href="/"
         className="font-prose text-sm italic text-ink-2 underline decoration-ink/20 underline-offset-2 hover:text-mensch hover:decoration-mensch"
@@ -15,24 +15,21 @@ export default function ImpressumPage() {
         Alle Berufe
       </Link>
 
-      <h1 className="mt-4 font-display text-[clamp(1.9rem,4.5vw,2.8rem)] font-semibold tracking-[-0.015em] text-ink">
+      <h1 className="mt-6 font-display text-lg font-semibold text-ink">
         Impressum
       </h1>
-
-      <div className="prose-text mt-6 text-ink">
-        <p>
-          Maximilian Herrmann
-          <br />
-          Osnabrück, Deutschland
-          <br />
-          <a
-            href="mailto:contact@maximilianherrmann.com"
-            className="underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch"
-          >
-            contact@maximilianherrmann.com
-          </a>
-        </p>
-      </div>
+      <p className="mt-3 font-prose text-sm leading-relaxed text-ink-2">
+        Maximilian Herrmann
+        <br />
+        Osnabrück, Deutschland
+        <br />
+        <a
+          href="mailto:contact@maximilianherrmann.com"
+          className="underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+        >
+          contact@maximilianherrmann.com
+        </a>
+      </p>
     </div>
   );
 }

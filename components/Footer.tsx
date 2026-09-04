@@ -27,8 +27,8 @@ export default function Footer() {
           </Link>
         </p>
         <p className="mt-6 font-prose text-xs italic text-ink-2">
-          Diese Website wurde mit KI (Claude) erstellt – Konzept, Code, Text und
-          Datenrecherche.
+          Konzept von Maximilian Herrmann. Code, Texte und Datenrecherche wurden
+          mit KI (Claude) erstellt.
         </p>
       </div>
     </footer>
