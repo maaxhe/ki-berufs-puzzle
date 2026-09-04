@@ -131,6 +131,64 @@ export const berufe: Beruf[] = [
       { id: "leh-8", title: "Auf schwierige Situationen im Klassenzimmer reagieren", description: "Störungen, Überforderung oder Mobbing im Moment erkennen und handeln.", kiEignung: 5, category: "sozial", warum: "Im Moment merken, dass gerade etwas kippt, und richtig reagieren – das ist Präsenz, die kein Tool ersetzt." },
     ],
   },
+  {
+    slug: "physiotherapeut",
+    title: "Physiotherapeut:in",
+    shortDescription:
+      "Behandelt Bewegungseinschränkungen und Schmerzen durch gezielte Übungen, Massage und manuelle Therapie.",
+    kategorie: "gesundheit-soziales",
+    zukunftsausblick:
+      "Trainingspläne und Fortschrittsdokumentation kann Software gut unterstützen, Apps leiten inzwischen sogar einfache Übungen an. Die Behandlung am Körper – ertasten, wo es klemmt, mit den Händen mobilisieren – bleibt Handwerk am Menschen. Der Beruf bleibt gefragt und verschiebt sich leicht Richtung Beratung und Eigenübungen zwischen den Terminen.",
+    tippsMenschlich: [
+      "Mit den Händen ertasten, wo genau eine Bewegung blockiert ist",
+      "Übungen im Moment an Schmerz und Tagesform anpassen",
+      "Vertrauen aufbauen bei Menschen, die Schmerzen haben",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Physical Therapists: 0,3 %" },
+      { ...iabKurzbericht, wert: "Therapieberufe: deutlich unterdurchschnittlich" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "pt-1", title: "Befund erheben und Beweglichkeit testen", description: "Bewegungsausmaß und Schmerzpunkte am Körper prüfen.", kiEignung: 20, category: "physisch", warum: "Ertasten, wo es klemmt, und die Reaktion im Moment spüren – das geht nur mit den Händen am Patienten." },
+      { id: "pt-2", title: "Manuelle Therapie und Massage durchführen", description: "Gelenke mobilisieren und Muskulatur mit den Händen behandeln.", kiEignung: 5, category: "physisch", warum: "Mit den Händen am Körper arbeiten ist der Kern der Behandlung – kein Gerät ersetzt das." },
+      { id: "pt-3", title: "Trainings- und Übungspläne erstellen", description: "Passende Übungen nach Diagnose zusammenstellen.", kiEignung: 55, category: "analytisch", warum: "Software schlägt Standardübungen zuverlässig vor. Ob sie zu diesem Körper heute passen, prüfst du." },
+      { id: "pt-4", title: "Behandlungsfortschritt dokumentieren", description: "Verlauf und Ergebnisse je Sitzung festhalten.", kiEignung: 70, category: "routine", warum: "Verlauf in Stichpunkten festhalten ist Textarbeit, die Software gut abnimmt." },
+      { id: "pt-5", title: "Patient:innen zu Übungen zuhause anleiten", description: "Eigenübungen erklären und korrigieren.", kiEignung: 35, category: "sozial", warum: "Erklären kann eine App. Ob die Ausführung wirklich stimmt, siehst nur du im Raum." },
+      { id: "pt-6", title: "Mit Ärzt:innen Behandlungspläne abstimmen", description: "Diagnosen einholen und Therapieziele klären.", kiEignung: 40, category: "analytisch", warum: "Befunde austauschen läuft zunehmend digital. Die Abstimmung im Zweifelsfall bleibt ein Gespräch." },
+      { id: "pt-7", title: "Auf akute Schmerzreaktionen reagieren", description: "Während der Behandlung sofort auf Schmerz oder Widerstand eingehen.", kiEignung: 5, category: "sozial", warum: "Wenn jemand vor Schmerz zusammenzuckt, musst du im selben Moment reagieren – keine Zeit für ein Tool." },
+      { id: "pt-8", title: "Abrechnung mit Kassen erstellen", description: "Behandlungen nach Rezept erfassen und abrechnen.", kiEignung: 85, category: "routine", warum: "Behandlungen nach festem Schema abrechnen ist reine Regelarbeit." },
+    ],
+  },
+  {
+    slug: "notfallsanitaeter",
+    title: "Notfallsanitäter:in",
+    shortDescription:
+      "Rettet und versorgt Menschen in medizinischen Notfällen – im Rettungswagen und am Einsatzort.",
+    kategorie: "gesundheit-soziales",
+    zukunftsausblick:
+      "Software hilft heute schon bei der Einsatzplanung und beim Auswerten von Vitaldaten. Die Versorgung am Einsatzort unter Zeitdruck, oft unter widrigen Bedingungen, mit einer Person, die im Moment entscheiden muss, bleibt zutiefst menschlich. Der Bedarf an Rettungskräften bleibt hoch.",
+    tippsMenschlich: [
+      "In Sekunden unter Stress die richtige Entscheidung treffen",
+      "Am Einsatzort improvisieren, wenn nichts nach Lehrbuch läuft",
+      "Angehörigen in Ausnahmesituationen Halt geben",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "EMTs and Paramedics: 3 %" },
+      { ...iabKurzbericht, wert: "Rettungsdienst: deutlich unterdurchschnittlich" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "ns-1", title: "Notfall am Einsatzort einschätzen", description: "Zustand der Patient:innen schnell beurteilen.", kiEignung: 5, category: "analytisch", warum: "In Sekunden am echten Menschen einschätzen, was los ist – das kann kein Algorithmus aus der Ferne." },
+      { id: "ns-2", title: "Erste-Hilfe-Maßnahmen durchführen", description: "Wiederbelebung, Wundversorgung und Stabilisierung vor Ort.", kiEignung: 5, category: "physisch", warum: "Reanimation und Wundversorgung sind Handarbeit am Körper unter Zeitdruck." },
+      { id: "ns-3", title: "Vitalwerte überwachen und dokumentieren", description: "Puls, Blutdruck und Sauerstoff während des Transports messen.", kiEignung: 55, category: "routine", warum: "Geräte messen und protokollieren Werte längst automatisch mit." },
+      { id: "ns-4", title: "Patient:innen ins Krankenhaus übergeben", description: "Befund an die Klinik mündlich und schriftlich weitergeben.", kiEignung: 30, category: "sozial", warum: "Eine mündliche Übergabe unter Zeitdruck, mit allen Nuancen, macht ein Mensch am anderen Ende sicherer." },
+      { id: "ns-5", title: "Angehörige am Einsatzort beruhigen", description: "In akuten Notfällen Angehörige informieren und begleiten.", kiEignung: 5, category: "sozial", warum: "Menschen in Panik beruhigen, während du gleichzeitig arbeitest, ist reine Präsenz." },
+      { id: "ns-6", title: "Rettungswagen und Ausrüstung einsatzbereit halten", description: "Material prüfen, auffüllen und Fahrzeug warten.", kiEignung: 40, category: "routine", warum: "Checklisten abarbeiten ist Routine, aber am realen Fahrzeug und Material." },
+      { id: "ns-7", title: "Einsatzberichte schreiben", description: "Verlauf und Maßnahmen für die Dokumentation festhalten.", kiEignung: 70, category: "routine", warum: "Einen Bericht aus Stichpunkten formulieren kann Software gut übernehmen." },
+      { id: "ns-8", title: "Unter schwierigen Bedingungen den Einsatzort sichern", description: "Gefahrenstellen einschätzen und Eigen- und Fremdschutz organisieren.", kiEignung: 10, category: "analytisch", warum: "Eine unübersichtliche Unfallstelle einschätzen und sichern braucht Erfahrung vor Ort." },
+    ],
+  },
 
   // ─────────────────────────── Technik & Handwerk ───────────────────────────
   {
@@ -248,6 +306,62 @@ export const berufe: Beruf[] = [
       { id: "eg-6", title: "Anlagen auf Sicherheit prüfen (VDE-Prüfung)", description: "Vorgeschriebene Prüfungen durchführen und protokollieren.", kiEignung: 45, category: "routine", warum: "Prüfgeräte liefern die Werte automatisch. Die Freigabe unterschreibt gesetzlich trotzdem die Elektrofachkraft – mit persönlicher Haftung." },
       { id: "eg-7", title: "Kund:innen zu Energielösungen beraten", description: "Fördermöglichkeiten und passende Technik erklären.", kiEignung: 30, category: "sozial", warum: "Fördertöpfe kann ein Chatbot auflisten. Welche Lösung zu diesem Haus und Budget passt, wägt ein Mensch ab." },
       { id: "eg-8", title: "Wartungsprotokolle dokumentieren", description: "Durchgeführte Arbeiten und Messwerte digital festhalten.", kiEignung: 75, category: "routine", warum: "Messwerte und Stichpunkte in ein Protokoll bringen ist strukturierte Textarbeit – ein Fall für Software." },
+    ],
+  },
+  {
+    slug: "tischler",
+    title: "Tischler:in",
+    shortDescription:
+      "Fertigt und montiert Möbel, Einbauten und Holzkonstruktionen – vom Entwurf bis zur Montage.",
+    kategorie: "technik-handwerk",
+    zukunftsausblick:
+      "CAD-Software plant Möbelstücke längst mit, und CNC-Maschinen übernehmen präzise Zuschnitte. Das Zusammenbauen, Anpassen vor Ort und der handwerkliche Feinschliff bleiben Handarbeit. Individuelle Möbel und Restaurierung bleiben ein Feld, in dem Handwerk gefragt ist.",
+    tippsMenschlich: [
+      "Mit Werkzeug und Material umgehen, das sich nie exakt gleich verhält",
+      "Möbelstücke vor Ort an reale Räume anpassen",
+      "Aus Kundenwünschen ein machbares, schönes Möbelstück entwickeln",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Furniture Finishers: 68 %, Cabinetmakers and Bench Carpenters: 70 %" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "ti-1", title: "Möbel und Einbauten konstruieren", description: "Maße aufnehmen und Konstruktionspläne erstellen.", kiEignung: 45, category: "analytisch", warum: "CAD-Software unterstützt die Zeichnung. Ob die Lösung zum realen Raum passt, prüfst du vor Ort." },
+      { id: "ti-2", title: "Holz zuschneiden und bearbeiten", description: "Werkstücke sägen, hobeln und fräsen.", kiEignung: 55, category: "routine", warum: "CNC-Maschinen schneiden längst maßgenau nach Programm." },
+      { id: "ti-3", title: "Möbelstücke von Hand zusammenbauen", description: "Bauteile passgenau verleimen und verschrauben.", kiEignung: 15, category: "physisch", warum: "Ein Möbelstück von Hand zusammenfügen, mit Gefühl für Spannung und Passung, ist Handwerk." },
+      { id: "ti-4", title: "Oberflächen behandeln und lackieren", description: "Holz schleifen, ölen oder lackieren.", kiEignung: 25, category: "physisch", warum: "Eine Oberfläche gleichmäßig behandeln braucht eine geübte Hand." },
+      { id: "ti-5", title: "Einbaumöbel vor Ort montieren", description: "Fertige Teile im Kundenhaus einbauen und anpassen.", kiEignung: 15, category: "physisch", warum: "Im echten Raum passt selten alles exakt – Nacharbeit vor Ort ist Handarbeit." },
+      { id: "ti-6", title: "Kund:innen zu Material und Design beraten", description: "Wünsche aufnehmen und passende Lösungen vorschlagen.", kiEignung: 25, category: "sozial", warum: "Aus einem vagen Wunsch ein passendes Möbelstück entwickeln ist ein Gespräch, kein Katalog." },
+      { id: "ti-7", title: "Angebote und Kostenvoranschläge kalkulieren", description: "Material- und Arbeitsaufwand zu einem Preis zusammenstellen.", kiEignung: 75, category: "routine", warum: "Aufwand und Material zu einem Preis rechnen ist strukturierte Kalkulation." },
+      { id: "ti-8", title: "Werkstatt und Maschinen instand halten", description: "Werkzeuge pflegen und Maschinen warten.", kiEignung: 30, category: "physisch", warum: "Maschinen warten und Werkzeug pflegen ist Handarbeit in der Werkstatt." },
+    ],
+  },
+  {
+    slug: "landwirt",
+    title: "Landwirt:in",
+    shortDescription:
+      "Bewirtschaftet Felder und hält Nutztiere – von der Aussaat bis zur Ernte, von der Fütterung bis zum Melken.",
+    kategorie: "technik-handwerk",
+    zukunftsausblick:
+      "Präzisionslandwirtschaft ist längst Realität: Sensoren, GPS-gesteuerte Maschinen und Software planen Aussaat, Düngung und Ernte zunehmend selbst. Tierpflege, das Reagieren auf Wetter und Boden vor Ort und die körperliche Arbeit bleiben. Der Beruf verschiebt sich stark Richtung Technik-Bedienung und Datenauswertung.",
+    tippsMenschlich: [
+      "Wetter, Boden und Tiere vor Ort richtig einschätzen",
+      "Bei Maschinenausfall oder Notfall improvisieren",
+      "Tiere handfest versorgen und ihr Verhalten lesen",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Farmworkers and Laborers: 79 %, Farmers and Ranchers: 78 %" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "la-1", title: "Aussaat und Düngung planen", description: "Zeitpunkt und Menge nach Boden- und Wetterdaten festlegen.", kiEignung: 65, category: "analytisch", warum: "Sensoren und Software liefern längst datenbasierte Empfehlungen für Aussaat und Düngung." },
+      { id: "la-2", title: "Felder bestellen und ernten", description: "Maschinen führen oder GPS-gesteuert einsetzen.", kiEignung: 60, category: "routine", warum: "GPS-gesteuerte Traktoren fahren viele Bahnen inzwischen selbstständig." },
+      { id: "la-3", title: "Tiere füttern und versorgen", description: "Fütterung, Stallpflege und Gesundheitskontrolle der Tiere.", kiEignung: 25, category: "physisch", warum: "Ein Tier anfassen, sein Verhalten lesen und merken, wenn es ihm schlecht geht, bleibt Handarbeit." },
+      { id: "la-4", title: "Maschinen und Anlagen warten", description: "Traktoren, Melkanlagen und Geräte instand halten.", kiEignung: 30, category: "physisch", warum: "Reparaturen an realer Technik im Feld oder Stall sind Handwerk." },
+      { id: "la-5", title: "Ernteerträge und Bestände dokumentieren", description: "Mengen, Qualität und Lagerbestände erfassen.", kiEignung: 75, category: "routine", warum: "Erträge und Bestände in Systeme eintragen ist strukturierte Datenpflege." },
+      { id: "la-6", title: "Auf Wetter und Krankheiten reagieren", description: "Kurzfristig auf Unwetter, Schädlinge oder Tierkrankheiten reagieren.", kiEignung: 30, category: "analytisch", warum: "Frühwarnsysteme helfen, aber die Entscheidung vor Ort unter Zeitdruck triffst du." },
+      { id: "la-7", title: "Förderanträge und Bürokratie erledigen", description: "Anträge und Nachweise für Subventionen einreichen.", kiEignung: 70, category: "routine", warum: "Formulare und Nachweise nach festem Schema ausfüllen ist Verwaltungsarbeit." },
+      { id: "la-8", title: "Hofprodukte direkt vermarkten", description: "Kund:innen am Hofladen oder Markt beraten und verkaufen.", kiEignung: 20, category: "sozial", warum: "Am Marktstand ein Gespräch führen und verkaufen ist Kontakt von Mensch zu Mensch." },
     ],
   },
 
@@ -369,6 +483,63 @@ export const berufe: Beruf[] = [
       { id: "pdk-8", title: "Personalstatistiken auswerten", description: "Fluktuation, Bewerbungszahlen und Trends analysieren.", kiEignung: 75, category: "analytisch", warum: "Zahlen aus dem System ziehen und Trends erkennen ist klassische Datenauswertung." },
     ],
   },
+  {
+    slug: "rechtsanwaltsfachangestellte",
+    title: "Rechtsanwaltsfachangestellte:r",
+    shortDescription:
+      "Organisiert den Kanzleialltag – Fristen, Schriftsätze, Mandantenkontakt und Abrechnung.",
+    kategorie: "buero-verwaltung",
+    zukunftsausblick:
+      "Standardschreiben, Fristenberechnung und Aktenverwaltung sind stark automatisierbar, KI-Tools entwerfen heute schon Schriftsatz-Rohfassungen. Der direkte Mandantenkontakt in oft belastenden Situationen und die Verantwortung für fehlerfreie Fristen bleiben. Der Beruf verschiebt sich Richtung Koordination und Mandantenbetreuung.",
+    tippsMenschlich: [
+      "Mandant:innen in oft belastenden Situationen einfühlsam begleiten",
+      "Verantwortung für fehlerfreie Fristen übernehmen",
+      "Zwischen Anwalt:in, Gericht und Mandant:in koordinieren",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Paralegals and Legal Assistants: 94 %, Legal Secretaries: 97 %" },
+      { ...ilo, wert: "Büro-/Sachbearbeitungsberufe: höchste GenAI-Exposition" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "ra-1", title: "Fristen berechnen und überwachen", description: "Gesetzliche und gerichtliche Fristen im System eintragen.", kiEignung: 80, category: "routine", warum: "Fristen nach festen Regeln berechnen ist genau das, was Software zuverlässig kann." },
+      { id: "ra-2", title: "Schriftsätze und Standardschreiben vorbereiten", description: "Aus Vorlagen erste Entwürfe für Anwält:innen erstellen.", kiEignung: 75, category: "routine", warum: "Aus Textbausteinen einen Entwurf zusammensetzen können Sprachmodelle heute gut." },
+      { id: "ra-3", title: "Mandant:innen empfangen und betreuen", description: "Anliegen aufnehmen und durch belastende Situationen begleiten.", kiEignung: 20, category: "sozial", warum: "Menschen in oft belastenden rechtlichen Situationen empfangen ist Beziehungsarbeit." },
+      { id: "ra-4", title: "Akten führen und Dokumente verwalten", description: "Schriftverkehr sortieren und Akten aktuell halten.", kiEignung: 78, category: "routine", warum: "Dokumente einsortieren und Akten pflegen ist strukturierte Ablage." },
+      { id: "ra-5", title: "Kostenrechnungen erstellen", description: "Gebühren nach RVG berechnen und abrechnen.", kiEignung: 85, category: "routine", warum: "Gebühren nach festem Gesetz berechnen ist Regelarbeit." },
+      { id: "ra-6", title: "Mit Gerichten und Behörden kommunizieren", description: "Anfragen klären und Termine abstimmen.", kiEignung: 40, category: "analytisch", warum: "Rückfragen bei Gericht klären braucht oft Kontext, den kein Formular abdeckt." },
+      { id: "ra-7", title: "Telefonate mit verunsicherten Mandant:innen führen", description: "Fragen zum Verfahrensstand beantworten und beruhigen.", kiEignung: 25, category: "sozial", warum: "Jemandem am Telefon Sicherheit geben, während er sich um sein Verfahren sorgt, ist Menschenarbeit." },
+      { id: "ra-8", title: "Termine und Gerichtstermine koordinieren", description: "Kalender von Anwält:innen und Gerichten abstimmen.", kiEignung: 70, category: "routine", warum: "Kalender abstimmen ist Regelarbeit, die Software fast allein schafft." },
+    ],
+  },
+  {
+    slug: "immobilienkaufmann",
+    title: "Immobilienkaufmann/-frau",
+    shortDescription:
+      "Vermittelt, verwaltet und vermarktet Immobilien – von der Besichtigung bis zum Kaufvertrag.",
+    kategorie: "buero-verwaltung",
+    zukunftsausblick:
+      "Exposés, Preisrecherche und Vorqualifizierung von Interessent:innen sind heute schon stark digitalisiert. Die Besichtigung, das Verhandeln und das Vertrauen, das Menschen bei einer der größten Anschaffungen ihres Lebens brauchen, bleiben menschlich. Der Beruf verschiebt sich Richtung Beratung und Verhandlung.",
+    tippsMenschlich: [
+      "Bei Besichtigungen echte Bedürfnisse und Bedenken erkennen",
+      "Zwischen Käufer:innen und Verkäufer:innen vermitteln und verhandeln",
+      "Vertrauen aufbauen bei einer der größten Entscheidungen im Leben der Kundschaft",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Real Estate Sales Agents: 86 %" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "ik-1", title: "Exposés für Immobilien erstellen", description: "Texte, Fotos und Kennzahlen zu einem Angebot zusammenstellen.", kiEignung: 75, category: "routine", warum: "Aus Fotos und Daten ein Exposé bauen ist eine Paradedisziplin von KI-Tools." },
+      { id: "ik-2", title: "Marktpreise recherchieren", description: "Vergleichsobjekte und Preisentwicklung analysieren.", kiEignung: 80, category: "analytisch", warum: "Vergleichsdaten aus vielen Quellen ziehen macht Software schneller und breiter." },
+      { id: "ik-3", title: "Besichtigungen durchführen", description: "Interessent:innen durch die Immobilie führen.", kiEignung: 25, category: "sozial", warum: "Bei einer Besichtigung merken, was jemand wirklich sucht und befürchtet, ist Gespür im Moment." },
+      { id: "ik-4", title: "Interessent:innen vorqualifizieren", description: "Budget und Ernsthaftigkeit von Anfragen einschätzen.", kiEignung: 65, category: "analytisch", warum: "Anfragen nach Kriterien filtern kann Software zuverlässig vorsortieren." },
+      { id: "ik-5", title: "Kaufverhandlungen führen", description: "Zwischen Käufer:in und Verkäufer:in einen Preis aushandeln.", kiEignung: 15, category: "sozial", warum: "Verhandeln heißt, Menschen und ihre Grenzen im Moment zu lesen." },
+      { id: "ik-6", title: "Kaufverträge vorbereiten", description: "Vertragsunterlagen mit dem Notariat abstimmen.", kiEignung: 60, category: "routine", warum: "Verträge aus Bausteinen zusammensetzen ist Textarbeit nach Vorlage, die Feinheiten prüft aber ein Mensch." },
+      { id: "ik-7", title: "Immobilien bewerten", description: "Zustand, Lage und Ausstattung in einen Marktwert übersetzen.", kiEignung: 55, category: "analytisch", warum: "Modelle schätzen Werte aus Daten gut. Den Zustand vor Ort sehen muss trotzdem jemand." },
+      { id: "ik-8", title: "Mit Notariat und Banken koordinieren", description: "Termine und Unterlagen für den Kaufabschluss abstimmen.", kiEignung: 65, category: "routine", warum: "Termine und Unterlagen zwischen mehreren Stellen abstimmen ist Koordinationsarbeit nach Regeln." },
+    ],
+  },
 
   // ─────────────────────────── IT & Medien ───────────────────────────
   {
@@ -457,6 +628,35 @@ export const berufe: Beruf[] = [
       { id: "gd-6", title: "Konzept und Gestaltungsidee entwickeln", description: "Die inhaltliche Leitidee hinter der Gestaltung festlegen.", kiEignung: 25, category: "kreativ", warum: "Die Leitidee hinter der Gestaltung festlegen ist der kreative Kern. KI liefert nur Material." },
       { id: "gd-7", title: "Reinzeichnung und Druckdaten vorbereiten", description: "Farbräume, Beschnitt und Formate druckfertig machen.", kiEignung: 65, category: "routine", warum: "Farbräume, Beschnitt und Formate druckfertig machen ist regelbasiert." },
       { id: "gd-8", title: "Illustrationen anfertigen", description: "Eigene Bildmotive passend zum Projekt zeichnen.", kiEignung: 55, category: "kreativ", warum: "KI zeichnet Motive auf Zuruf. Ob es zur Marke passt, entscheidet der Mensch." },
+    ],
+  },
+  {
+    slug: "mediengestalter",
+    title: "Mediengestalter:in Digital und Print",
+    shortDescription:
+      "Produziert Bild-, Video- und Druckmedien – von Social-Media-Content bis zur fertigen Broschüre.",
+    kategorie: "it-medien",
+    zukunftsausblick:
+      "Bild- und Videogeneratoren sowie automatisches Layout haben die Produktion von Standardcontent stark beschleunigt. Konzeption, das Zusammenspiel von Text, Bild und Marke sowie der letzte qualitative Check bleiben. Der Beruf verschiebt sich von der reinen Umsetzung hin zu Auswahl, Konzept und Qualitätssicherung.",
+    tippsMenschlich: [
+      "Aus vielen KI-Entwürfen die passenden auswählen und verfeinern",
+      "Text, Bild und Ton zu einer stimmigen Botschaft zusammenführen",
+      "Ein Gespür für Marke und Zielgruppe in jedem Detail behalten",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Graphic Designers: 8 % (Schätzung von 2013, vor Bildgeneratoren)" },
+      { ...ilo, wert: "Kreativ-/Medienberufe: durch generative KI neu betroffen" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "me-1", title: "Social-Media-Grafiken und Kurzvideos erstellen", description: "Content für verschiedene Plattformen produzieren.", kiEignung: 70, category: "kreativ", warum: "Vorlagen und Varianten für Social Media erzeugen KI-Tools inzwischen in Sekunden." },
+      { id: "me-2", title: "Layouts für Broschüren und Anzeigen umsetzen", description: "Text und Bild in ein druckfertiges Format bringen.", kiEignung: 60, category: "routine", warum: "Text und Bild in ein Raster bringen geht zunehmend automatisch, der Feinschliff nicht." },
+      { id: "me-3", title: "Konzepte für Kampagnen entwickeln", description: "Die Idee hinter einer Kampagne über mehrere Medien festlegen.", kiEignung: 25, category: "kreativ", warum: "Die Leitidee einer Kampagne festlegen ist der kreative Kern, den KI nur zuliefert." },
+      { id: "me-4", title: "Bildmaterial auswählen und bearbeiten", description: "Aus vielen Optionen die passenden Bilder wählen und optimieren.", kiEignung: 55, category: "analytisch", warum: "Optionen erzeugen kann KI massenhaft. Welche zur Marke passt, entscheidet ein Mensch." },
+      { id: "me-5", title: "Mit Kund:innen Briefings besprechen", description: "Ziele und Wünsche im Gespräch klären.", kiEignung: 15, category: "sozial", warum: "Ein vages Briefing in eine klare Aufgabe übersetzen ist ein Gespräch." },
+      { id: "me-6", title: "Videos schneiden und vertonen", description: "Rohmaterial zu einem fertigen Video zusammenschneiden.", kiEignung: 50, category: "analytisch", warum: "KI schneidet erste Fassungen inzwischen mit. Timing und Wirkung prüft ein Mensch." },
+      { id: "me-7", title: "Druckdaten und Farbprofile prüfen", description: "Dateien für den Druck technisch korrekt vorbereiten.", kiEignung: 75, category: "routine", warum: "Technische Druckvorgaben prüfen ist regelbasiert." },
+      { id: "me-8", title: "Corporate-Design-Vorgaben einhalten", description: "Alle Materialien konsistent zur Marke gestalten.", kiEignung: 35, category: "analytisch", warum: "Ob etwas wirklich zur Marke passt, ist eine Geschmacksfrage, die ein Mensch entscheidet." },
     ],
   },
 
@@ -575,6 +775,35 @@ export const berufe: Beruf[] = [
       { id: "tk-6", title: "Reiseversicherungen und Zusatzleistungen erklären", description: "Bedingungen und Sinnhaftigkeit verständlich vermitteln.", kiEignung: 65, category: "analytisch", warum: "Standardbedingungen erklären kann ein Chatbot inzwischen ordentlich." },
       { id: "tk-7", title: "Reklamationen nach der Reise bearbeiten", description: "Beschwerden prüfen und Entschädigungen aushandeln.", kiEignung: 45, category: "sozial", warum: "Eine verärgerte Kundschaft ernst nehmen und fair verhandeln ist mehr als ein Formular abzuarbeiten." },
       { id: "tk-8", title: "Reisetrends und Zielgebiete recherchieren", description: "Neue Angebote und Destinationen für das Portfolio sichten.", kiEignung: 60, category: "analytisch", warum: "Trends aus Daten und Berichten zusammenfassen kann KI heute schon unterstützend leisten." },
+    ],
+  },
+  {
+    slug: "hotelfachmann",
+    title: "Hotelfachmann/-frau",
+    shortDescription:
+      "Sorgt für den Aufenthalt der Gäste – von der Reservierung über den Check-in bis zum Service.",
+    kategorie: "handel-dienstleistung",
+    zukunftsausblick:
+      "Buchung, Check-in und Rechnungsstellung laufen zunehmend über Automaten und Apps. Was bleibt, ist echte Gastfreundschaft: auf besondere Wünsche eingehen, in Beschwerdefällen souverän bleiben und einen Aufenthalt persönlich machen. Der Beruf verschiebt sich klar Richtung Gästebetreuung und Erlebnis.",
+    tippsMenschlich: [
+      "Auf spontane und besondere Wünsche von Gästen eingehen",
+      "In Beschwerdesituationen ruhig bleiben und Lösungen finden",
+      "Einen Aufenthalt durch persönliche Aufmerksamkeit besonders machen",
+    ],
+    quellen: [
+      { ...freyOsborne, wert: "Hotel, Motel, and Resort Desk Clerks: 94 %" },
+      { ...iabKurzbericht, wert: "Hotel-/Gaststättenberufe: überdurchschnittlich" },
+      jobFuturomat,
+    ],
+    tasks: [
+      { id: "ho-1", title: "Zimmer reservieren und verwalten", description: "Buchungen entgegennehmen und im System pflegen.", kiEignung: 85, category: "routine", warum: "Buchungen erfassen und verwalten läuft heute größtenteils automatisch über Buchungsplattformen." },
+      { id: "ho-2", title: "Gäste am Empfang begrüßen und einchecken", description: "Ankunft organisieren und Zimmer zuweisen.", kiEignung: 45, category: "sozial", warum: "Check-in-Automaten übernehmen die Formalität. Die persönliche Begrüßung macht den ersten Eindruck." },
+      { id: "ho-3", title: "Auf individuelle Gästewünsche eingehen", description: "Besondere Anfragen erkennen und erfüllen.", kiEignung: 15, category: "sozial", warum: "Merken, was ein Gast eigentlich braucht, auch wenn er es nicht direkt sagt, ist Gespür." },
+      { id: "ho-4", title: "Rechnungen erstellen und abrechnen", description: "Leistungen erfassen und beim Check-out abrechnen.", kiEignung: 88, category: "routine", warum: "Leistungen aus dem System zu einer Rechnung zusammenfassen ist reine Regelarbeit." },
+      { id: "ho-5", title: "Beschwerden lösen", description: "Unzufriedene Gäste anhören und Lösungen anbieten.", kiEignung: 20, category: "sozial", warum: "Eine verärgerte Person beruhigen und eine faire Lösung finden ist Beziehungsarbeit." },
+      { id: "ho-6", title: "Zimmer und Gemeinschaftsflächen kontrollieren", description: "Sauberkeit und Ausstattung vor Ankunft prüfen.", kiEignung: 40, category: "physisch", warum: "Ob ein Zimmer wirklich gästefertig ist, prüft man am besten mit eigenen Augen vor Ort." },
+      { id: "ho-7", title: "Veranstaltungen und Tagungen organisieren", description: "Räume, Technik und Catering für Events koordinieren.", kiEignung: 55, category: "analytisch", warum: "Planungssoftware koordiniert Standardabläufe. Auf Änderungen im Moment reagiert ein Mensch." },
+      { id: "ho-8", title: "Auslastung und Zimmerpreise steuern", description: "Preise nach Nachfrage und Saison anpassen.", kiEignung: 80, category: "analytisch", warum: "Preise dynamisch nach Nachfrage anpassen ist längst Algorithmus-Domäne im Hotelgewerbe." },
     ],
   },
 ];
