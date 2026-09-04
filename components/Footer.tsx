@@ -12,12 +12,18 @@ export default function Footer() {
           didaktische Schätzungen zur Diskussion, keine Prognosen – grob
           kalibriert an Frey &amp; Osborne (2013) und dem IAB Job-Futuromat.
         </p>
-        <p className="mt-4 text-sm">
+        <p className="mt-4 flex gap-x-6 text-sm">
           <Link
             href="/"
             className="text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
           >
             Alle Berufe
+          </Link>
+          <Link
+            href="/impressum"
+            className="text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
+          >
+            Impressum
           </Link>
         </p>
         <p className="mt-6 font-prose text-xs italic text-ink-2">

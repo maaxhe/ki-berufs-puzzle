@@ -3,7 +3,7 @@
 import { forwardRef } from "react";
 import type { ComponentPropsWithoutRef } from "react";
 import type { Task } from "@/types";
-import CategoryMark from "./CategoryMark";
+import { CATEGORY_LABELS } from "@/types";
 
 interface TaskCardProps extends ComponentPropsWithoutRef<"button"> {
   task: Task;
@@ -28,11 +28,7 @@ const TaskCard = forwardRef<HTMLButtonElement, TaskCardProps>(function TaskCard(
       } ${dragging ? "opacity-40" : ""} ${className}`}
       {...rest}
     >
-      <span className="flex items-start gap-2.5">
-        <CategoryMark
-          category={task.category}
-          className={`mt-[3px] ${selected ? "text-paper" : "text-ink-2"}`}
-        />
+      <span className="flex items-start justify-between gap-3">
         <span className="min-w-0">
           <span className="block text-[0.9rem] font-semibold leading-snug">
             {task.title}
@@ -44,6 +40,13 @@ const TaskCard = forwardRef<HTMLButtonElement, TaskCardProps>(function TaskCard(
           >
             {task.description}
           </span>
+        </span>
+        <span
+          className={`shrink-0 pt-0.5 text-[0.72rem] ${
+            selected ? "text-paper/70" : "text-ink-2"
+          }`}
+        >
+          {CATEGORY_LABELS[task.category]}
         </span>
       </span>
     </button>

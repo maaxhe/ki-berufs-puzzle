@@ -9,7 +9,7 @@ import {
   richtigeAnzahl,
   treffergenauigkeit,
 } from "@/lib/scoring";
-import CategoryMark from "./CategoryMark";
+import { CATEGORY_LABELS } from "@/types";
 import RiskGauge from "./RiskGauge";
 import Disclaimer from "./Disclaimer";
 import Quellen from "./Quellen";
@@ -36,6 +36,10 @@ export default function ErgebnisView({
   const risiko = kiRisikoGesamt(beruf.tasks);
   const nextSlug = naechsterBerufSlug(beruf.slug, alleBerufe);
   const abweichungen = total - richtig;
+  const userMaschine = beruf.tasks.filter(
+    (t) => userZuordnung[t.id] === "ki",
+  ).length;
+  const userPct = total === 0 ? 0 : Math.round((userMaschine / total) * 100);
 
   return (
     <div className="space-y-14">
@@ -59,9 +63,10 @@ export default function ErgebnisView({
       </header>
 
       <section>
-        <RiskGauge value={risiko} size="lg" />
+        <RiskGauge value={risiko} compareValue={userPct} size="lg" />
         <p className="prose-text mt-3 text-ink">
-          Über alle Aufgaben gemittelt verortet das Modell{" "}
+          Du hast <span className="tnum">{userPct}%</span> der Aufgaben der
+          Maschine zugeordnet. Über alle Aufgaben gemittelt verortet das Modell{" "}
           <span className="font-semibold">{beruf.title}</span> bei{" "}
           <span className="tnum">{risiko}%</span> Maschine.
         </p>
@@ -96,13 +101,10 @@ export default function ErgebnisView({
                 }`}
               >
                 <div className="flex items-start justify-between gap-3">
-                  <span className="flex items-start gap-2.5">
-                    <CategoryMark
-                      category={task.category}
-                      className="mt-[3px] text-ink-2"
-                    />
-                    <span className="text-[0.95rem] font-semibold leading-snug text-ink">
-                      {task.title}
+                  <span className="text-[0.95rem] font-semibold leading-snug text-ink">
+                    {task.title}
+                    <span className="ml-2 text-xs font-normal text-ink-2">
+                      {CATEGORY_LABELS[task.category]}
                     </span>
                   </span>
                   <span
@@ -117,7 +119,7 @@ export default function ErgebnisView({
                   </span>
                 </div>
 
-                <div className="mt-2.5 grid grid-cols-2 gap-3 pl-[1.6rem] text-sm">
+                <div className="mt-2.5 grid grid-cols-2 gap-3 text-sm">
                   <span>
                     <span className="block text-xs text-ink-2">Deine Wahl</span>
                     <span className={ok ? "text-ink" : "font-semibold text-miss"}>
