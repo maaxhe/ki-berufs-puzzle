@@ -60,7 +60,9 @@ export default function ErgebnisView({
       "",
       ...zeilen,
       "",
-      "https://ki-berufs-puzzle.netlify.app/puzzle/" + beruf.slug,
+      typeof window !== "undefined"
+        ? `${window.location.origin}/puzzle/${beruf.slug}`
+        : `/puzzle/${beruf.slug}`,
     ].join("\n");
   };
 

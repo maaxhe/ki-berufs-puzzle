@@ -44,8 +44,9 @@ export default function BerufListe({ berufe }: { berufe: Beruf[] }) {
           className="w-full max-w-[26rem] rounded-[2px] border border-rule bg-paper px-4 py-3 text-[0.95rem] text-ink placeholder:text-ink-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mensch"
         />
 
+        <div className="relative -mx-5 sm:mx-0">
         <div
-          className="-mx-5 flex gap-2 overflow-x-auto px-5 pb-1 sm:mx-0 sm:flex-wrap sm:px-0"
+          className="flex gap-2 overflow-x-auto px-5 pb-1 sm:flex-wrap sm:px-0"
           role="group"
           aria-label="Nach Kategorie filtern"
         >
@@ -80,6 +81,11 @@ export default function BerufListe({ berufe }: { berufe: Beruf[] }) {
               </button>
             ),
           )}
+        </div>
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-paper to-transparent sm:hidden"
+          />
         </div>
       </div>
 
