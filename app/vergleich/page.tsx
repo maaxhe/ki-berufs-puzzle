@@ -48,22 +48,22 @@ export default function VergleichPage() {
           <li key={beruf.slug}>
             <Link
               href={`/puzzle/${beruf.slug}`}
-              className="group flex items-center gap-4 border-b border-rule py-3 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mensch"
+              className="group flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-rule py-3 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mensch"
             >
               <span className="tnum w-6 shrink-0 text-right text-sm text-ink-2">
                 {i + 1}.
               </span>
-              <span className="w-full min-w-[9rem] shrink-0 font-display text-[0.95rem] font-semibold text-ink transition-colors group-hover:text-mensch sm:w-56">
+              <span className="min-w-0 flex-1 font-display text-[0.95rem] font-semibold leading-snug text-ink transition-colors group-hover:text-mensch sm:w-56 sm:flex-none">
                 {beruf.title}
               </span>
-              <span className="relative hidden h-2.5 flex-1 bg-paper-2 sm:block">
+              <span className="tnum shrink-0 text-sm font-semibold text-ink">
+                {risiko}% KI
+              </span>
+              <span className="relative order-4 h-2 w-full basis-full bg-paper-2 sm:order-none sm:h-2.5 sm:w-auto sm:basis-auto sm:flex-1">
                 <span
                   className={`absolute inset-y-0 left-0 ${STUFE_FARBE[risikoStufe(risiko)]}`}
                   style={{ width: `${risiko}%` }}
                 />
-              </span>
-              <span className="tnum shrink-0 text-sm font-semibold text-ink">
-                {risiko}% KI
               </span>
             </Link>
           </li>
