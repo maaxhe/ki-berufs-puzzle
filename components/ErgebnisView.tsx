@@ -15,6 +15,7 @@ import {
   treffergenauigkeit,
 } from "@/lib/scoring";
 import { CATEGORY_LABELS, STUFE_TEXT } from "@/types";
+import { erstelleErgebnisBild } from "@/lib/shareImage";
 import RiskGauge from "./RiskGauge";
 import Disclaimer from "./Disclaimer";
 import Quellen from "./Quellen";
@@ -60,9 +61,9 @@ export default function ErgebnisView({
   ).length;
   const userPct = total === 0 ? 0 : Math.round((userMaschine / total) * 100);
 
-  const [exportStatus, setExportStatus] = useState<"idle" | "kopiert" | "fehler">(
-    "idle",
-  );
+  const [exportStatus, setExportStatus] = useState<
+    "idle" | "geteilt" | "heruntergeladen" | "kopiert" | "fehler"
+  >("idle");
 
   const zusammenfassungText = () => {
     const zeilen = beruf.tasks.map((task) => {
@@ -93,11 +94,92 @@ export default function ErgebnisView({
     ].join("\n");
   };
 
+  const zuruecksetzenNach = (status: typeof exportStatus, ms = 2500) => {
+    setExportStatus(status);
+    window.setTimeout(() => setExportStatus("idle"), ms);
+  };
+
   const handleExport = async () => {
+    const url =
+      typeof window !== "undefined"
+        ? `${window.location.origin}/puzzle/${beruf.slug}`
+        : `/puzzle/${beruf.slug}`;
+    const kurztext = `${richtig} von ${eindeutig} eindeutigen Aufgaben stimmten mit dem Modell überein. Modell insgesamt: ${STUFE_TEXT[stufe]}.`;
+
+    // 1. Bild erzeugen – geht das schief (sehr alter Browser o. Ä.), auf
+    // reinen Text zurückfallen statt komplett zu scheitern.
+    let bild: Blob | null = null;
+    try {
+      const root = getComputedStyle(document.documentElement);
+      const lesen = (name: string, fallback: string) => {
+        const wert = root.getPropertyValue(name).trim();
+        return wert || fallback;
+      };
+      bild = await erstelleErgebnisBild({
+        appTitel,
+        titel: beruf.title,
+        stufeText: STUFE_TEXT[stufe],
+        saetze: [
+          `${userMaschine} von ${total} Aufgaben wurden der KI zugeordnet.`,
+          kurztext,
+          beruf.tippsMenschlich[0],
+        ],
+        risiko,
+        userAnteil: userPct,
+        url,
+        farben: {
+          paper: lesen("--color-paper", "#f5f4f1"),
+          ink: lesen("--color-ink", "#262019"),
+          inkMuted: lesen("--color-ink-2", "#6a6258"),
+          rule: lesen("--color-rule", "#ddd6c9"),
+          menschWash: lesen("--color-mensch-wash", "#efe1dc"),
+          kiWash: lesen("--color-ki-wash", "#e7eaea"),
+          accent: lesen("--color-mensch", "#8a3a2c"),
+        },
+      });
+    } catch {
+      bild = null;
+    }
+
+    const titel = `${appTitel} – ${beruf.title}`;
+
+    if (bild) {
+      const datei = new File([bild], `ki-berufs-puzzle-${beruf.slug}.png`, {
+        type: "image/png",
+      });
+      try {
+        if (
+          navigator.canShare &&
+          navigator.canShare({ files: [datei] }) &&
+          navigator.share
+        ) {
+          await navigator.share({ files: [datei], title: titel, text: kurztext });
+          zuruecksetzenNach("geteilt");
+          return;
+        }
+      } catch {
+        // Abgebrochen oder nicht unterstützt – Download versuchen.
+      }
+      try {
+        const objektUrl = URL.createObjectURL(bild);
+        const a = document.createElement("a");
+        a.href = objektUrl;
+        a.download = `ki-berufs-puzzle-${beruf.slug}.png`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(objektUrl);
+        zuruecksetzenNach("heruntergeladen");
+        return;
+      } catch {
+        // Auch das ging schief – auf Text-Teilen zurückfallen.
+      }
+    }
+
     const text = zusammenfassungText();
     try {
       if (navigator.share) {
-        await navigator.share({ title: `${appTitel} – ${beruf.title}`, text });
+        await navigator.share({ title: titel, text });
         return;
       }
     } catch {
@@ -105,11 +187,9 @@ export default function ErgebnisView({
     }
     try {
       await navigator.clipboard.writeText(text);
-      setExportStatus("kopiert");
-      window.setTimeout(() => setExportStatus("idle"), 2500);
+      zuruecksetzenNach("kopiert");
     } catch {
-      setExportStatus("fehler");
-      window.setTimeout(() => setExportStatus("idle"), 2500);
+      zuruecksetzenNach("fehler");
     }
   };
 
@@ -324,13 +404,69 @@ export default function ErgebnisView({
         <button
           type="button"
           onClick={handleExport}
-          className="ml-auto rounded-[2px] border border-ink px-4 py-2 font-semibold text-ink transition-colors hover:bg-ink hover:text-paper"
+          className="ml-auto inline-flex items-center gap-2 rounded-[2px] border border-ink px-4 py-2 font-semibold text-ink transition-colors hover:bg-ink hover:text-paper"
         >
-          {exportStatus === "kopiert"
-            ? "In Zwischenablage kopiert ✓"
-            : exportStatus === "fehler"
-              ? "Kopieren fehlgeschlagen"
-              : "Ergebnis teilen"}
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 20 20"
+            fill="none"
+            aria-hidden="true"
+            className="shrink-0"
+          >
+            <line
+              x1="5"
+              y1="10"
+              x2="15"
+              y2="5"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            />
+            <line
+              x1="5"
+              y1="10"
+              x2="15"
+              y2="15"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            />
+            <rect
+              x="1.5"
+              y="7.5"
+              width="7"
+              height="7"
+              rx="1.5"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            />
+            <rect
+              x="12.5"
+              y="1.5"
+              width="7"
+              height="7"
+              rx="1.5"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            />
+            <rect
+              x="12.5"
+              y="11.5"
+              width="7"
+              height="7"
+              rx="1.5"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            />
+          </svg>
+          {exportStatus === "geteilt"
+            ? "Geteilt ✓"
+            : exportStatus === "heruntergeladen"
+              ? "Bild gespeichert ✓"
+              : exportStatus === "kopiert"
+                ? "In Zwischenablage kopiert ✓"
+                : exportStatus === "fehler"
+                  ? "Teilen fehlgeschlagen"
+                  : "Ergebnis teilen"}
         </button>
       </div>
     </div>
