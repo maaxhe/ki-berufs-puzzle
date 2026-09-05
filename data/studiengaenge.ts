@@ -229,7 +229,7 @@ export const studiengaenge: Studiengang[] = [
         id: "phy-5",
         title: "Fachliteratur zusammenfassen",
         description: "Überblick über den Stand der Forschung erstellen.",
-        kiEignung: 80,
+        kiEignung: 75,
         category: "routine",
         warum:
           "KI fasst Paper und Literaturstände heute schon brauchbar zusammen, Fachprüfung bleibt aber nötig.",
