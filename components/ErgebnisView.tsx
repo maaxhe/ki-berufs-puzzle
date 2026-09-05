@@ -105,6 +105,13 @@ export default function ErgebnisView({
         ? `${window.location.origin}/puzzle/${beruf.slug}`
         : `/puzzle/${beruf.slug}`;
     const kurztext = `${richtig} von ${eindeutig} eindeutigen Aufgaben stimmten mit dem Modell überein. Modell insgesamt: ${STUFE_TEXT[stufe]}.`;
+    // Das Bild soll den Beruf/Studiengang selbst einordnen (wie stark KI-
+    // betroffen, was menschlich bleibt) statt das persönliche Sortier-
+    // ergebnis der/des Teilenden – also der erste Satz vom Ausblick statt
+    // der eigenen Trefferquote.
+    const ersterAusblickSatz =
+      beruf.zukunftsausblick.match(/^.*?[.!?](?=\s|$)/)?.[0] ??
+      beruf.zukunftsausblick;
 
     // 1. Bild erzeugen – geht das schief (sehr alter Browser o. Ä.), auf
     // reinen Text zurückfallen statt komplett zu scheitern.
@@ -120,12 +127,11 @@ export default function ErgebnisView({
         titel: beruf.title,
         stufeText: STUFE_TEXT[stufe],
         saetze: [
-          `${userMaschine} von ${total} Aufgaben wurden der KI zugeordnet.`,
-          kurztext,
-          beruf.tippsMenschlich[0],
+          ersterAusblickSatz,
+          `Menschlich bleibt wichtig: ${beruf.tippsMenschlich[0]}`,
+          beruf.tippsMenschlich[1],
         ],
         risiko,
-        userAnteil: userPct,
         url,
         farben: {
           paper: lesen("--color-paper", "#f5f4f1"),
