@@ -768,10 +768,10 @@ export const studiengaenge: Studiengang[] = [
         id: "wi-2",
         title: "Anforderungen in ein IT-System übersetzen",
         description: "Fachliche Wünsche in technische Spezifikation gießen.",
-        kiEignung: 57,
-        category: "analytisch",
+        kiEignung: 25,
+        category: "sozial",
         warum:
-          "Welche Anforderung wirklich gemeint ist und wie sie ins System passt, erfordert Verständnis auf beiden Seiten.",
+          "Das ist der eigentliche Kern des Berufs: zwischen dem, was eine Fachabteilung sagt, und dem, was technisch gemeint ist, zu vermitteln. Genau dieses Verknüpfen zweier Welten ist eine menschliche Stärke, an der KI bislang scheitert.",
       },
       {
         id: "wi-3",
@@ -1252,10 +1252,10 @@ export const studiengaenge: Studiengang[] = [
         id: "wing-2",
         title: "Technische Machbarkeit einschätzen",
         description: "Prüfen, ob eine Idee technisch realistisch umsetzbar ist.",
-        kiEignung: 62,
-        category: "analytisch",
+        kiEignung: 35,
+        category: "sozial",
         warum:
-          "KI liefert Anhaltspunkte, die belastbare Einschätzung für ein konkretes Projekt bleibt Erfahrungssache.",
+          "Technik-Wissen mit Kostendruck, Lieferzeiten und Kundenwünschen zusammenzubringen ist genau die Verknüpfung zweier Fachwelten, für die dieser Studiengang erfunden wurde – und die KI bislang nicht leisten kann.",
       },
       {
         id: "wing-3",
