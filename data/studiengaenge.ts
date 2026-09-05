@@ -1708,6 +1708,246 @@ export const studiengaenge: Studiengang[] = [
       },
     ],
   },
+  {
+    slug: "data-science",
+    title: "Data Science",
+    shortDescription:
+      "Der Studiengang, der die eigene Automatisierung mitentwickelt – mit interessanten Folgen für sich selbst.",
+    kategorie: "interdisziplinaer",
+    zukunftsausblick:
+      "Kaum ein Feld ist so eng mit dem eigenen Automatisierungswerkzeug verflochten: Modelltraining und Standardanalysen erledigen KI-Assistenten inzwischen selbst weite Strecken. Was bleibt, ist die Frage, die kein Modell sich selbst stellt – ob die Daten überhaupt die richtige Frage beantworten und wem das Ergebnis nützt.",
+    tippsMenschlich: [
+      "Kritisches Hinterfragen von Daten, Modellen und ihren Grenzen trainieren",
+      "Verantwortung für Entscheidungen übernehmen, die auf Modellen basieren",
+      "Domänenwissen aufbauen, um Ergebnisse richtig einzuordnen",
+    ],
+    quellen: [eloundou, wef],
+    tasks: [
+      {
+        id: "ds-1",
+        title: "Standardmodell trainieren und evaluieren",
+        description: "Gängiges Machine-Learning-Modell auf einen Datensatz anwenden.",
+        kiEignung: 80,
+        category: "routine",
+        warum:
+          "Für bekannte Aufgabentypen schlägt KI-gestützte Software heute passende Modelle samt Code weitgehend selbstständig vor.",
+      },
+      {
+        id: "ds-2",
+        title: "Daten bereinigen und aufbereiten",
+        description: "Rohdaten von Fehlern und Lücken befreien.",
+        kiEignung: 65,
+        category: "routine",
+        warum:
+          "Typische Datenqualitätsprobleme erkennt und behebt KI-gestützte Software inzwischen weitgehend automatisch.",
+      },
+      {
+        id: "ds-3",
+        title: "Die richtige Fragestellung an die Daten finden",
+        description: "Klären, welches Problem mit den Daten eigentlich gelöst werden soll.",
+        kiEignung: 15,
+        category: "kreativ",
+        warum:
+          "Zu erkennen, welche Frage für ein Unternehmen oder eine Forschungsfrage wirklich relevant ist, bleibt menschliches Urteil.",
+      },
+      {
+        id: "ds-4",
+        title: "Modellergebnis für Entscheider:innen einordnen",
+        description: "Erklären, was ein Modell tatsächlich aussagt – und was nicht.",
+        kiEignung: 20,
+        category: "sozial",
+        warum:
+          "Verzerrungen, Grenzen und Unsicherheit eines Modells verständlich zu kommunizieren ist Vermittlungsarbeit mit Verantwortung.",
+      },
+      {
+        id: "ds-5",
+        title: "Datenpipeline und Infrastruktur aufsetzen",
+        description: "Technische Grundlage für laufende Datenverarbeitung bauen.",
+        kiEignung: 60,
+        category: "routine",
+        warum:
+          "Für Standard-Infrastruktur nach bekanntem Muster liefert KI-gestützte Entwicklung heute brauchbaren Code.",
+      },
+      {
+        id: "ds-6",
+        title: "Verzerrungen und ethische Risiken eines Modells prüfen",
+        description: "Modell auf unfaire oder schädliche Effekte untersuchen.",
+        kiEignung: 15,
+        category: "analytisch",
+        warum:
+          "Ob ein Modell bestimmte Gruppen benachteiligt und was das gesellschaftlich bedeutet, erfordert menschliche Verantwortung, kein Modell prüft sich selbst hinreichend kritisch.",
+      },
+      {
+        id: "ds-7",
+        title: "Ergebnisse mit Fachabteilung diskutieren",
+        description: "Analyseergebnisse gemeinsam mit Praktiker:innen einordnen.",
+        kiEignung: 15,
+        category: "sozial",
+        warum:
+          "Ob eine statistische Auffälligkeit fachlich überhaupt sinnvoll ist, klärt sich im Gespräch mit Menschen vor Ort.",
+      },
+    ],
+  },
+  {
+    slug: "nachhaltigkeitswissenschaft",
+    title: "Nachhaltigkeits- & Umweltwissenschaften",
+    shortDescription:
+      "Klima, Ökonomie und Politik zusammendenken – in einem der laut WEF am stärksten wachsenden Berufsfelder.",
+    kategorie: "interdisziplinaer",
+    zukunftsausblick:
+      "Der WEF Future of Jobs Report zählt Rollen im Bereich Umwelt und grüner Transformation zu den am stärksten wachsenden Berufsfeldern bis 2030. KI hilft enorm bei Modellierung und Monitoring, die politische Abwägung zwischen ökologischen, wirtschaftlichen und sozialen Interessen bleibt aber eine zutiefst menschliche Aufgabe.",
+    tippsMenschlich: [
+      "Interessenkonflikte zwischen Ökologie, Wirtschaft und Sozialem moderieren können",
+      "Vor Ort mit Betroffenen und Institutionen kommunizieren",
+      "Kritische Distanz zu Modellprognosen bewahren",
+    ],
+    quellen: [wef, ilo],
+    tasks: [
+      {
+        id: "nw-1",
+        title: "Klima- oder Umweltdaten modellieren",
+        description: "Entwicklung eines Umweltparameters simulieren.",
+        kiEignung: 60,
+        category: "analytisch",
+        warum:
+          "Für etablierte Modelltypen liefert KI-gestützte Simulation heute schnelle, brauchbare Ergebnisse.",
+      },
+      {
+        id: "nw-2",
+        title: "Messdaten aus Sensoren und Feldstudien auswerten",
+        description: "Monitoring-Daten zu Umweltzuständen analysieren.",
+        kiEignung: 65,
+        category: "analytisch",
+        warum:
+          "Große Mengen an Sensordaten automatisiert auszuwerten ist eine Stärke aktueller KI-Systeme.",
+      },
+      {
+        id: "nw-3",
+        title: "Vor Ort Proben nehmen oder Ökosysteme untersuchen",
+        description: "Praktische Feldarbeit in der Natur durchführen.",
+        kiEignung: 15,
+        category: "physisch",
+        warum:
+          "Arbeit unter realen, unvorhersehbaren Feldbedingungen bleibt praktische menschliche Tätigkeit.",
+      },
+      {
+        id: "nw-4",
+        title: "Interessenkonflikt zwischen Klimaschutz und Wirtschaft moderieren",
+        description: "Zwischen widerstreitenden Interessengruppen vermitteln.",
+        kiEignung: 5,
+        category: "sozial",
+        warum:
+          "Politische und wirtschaftliche Interessen gegeneinander abzuwägen und Kompromisse zu finden ist Kern menschlicher Verantwortung.",
+      },
+      {
+        id: "nw-5",
+        title: "Nachhaltigkeitsbericht für ein Unternehmen erstellen",
+        description: "Kennzahlen und Fortschritt strukturiert dokumentieren.",
+        kiEignung: 70,
+        category: "routine",
+        warum:
+          "Standardisierte Berichte aus vorhandenen Kennzahlen erzeugt KI-Software heute weitgehend selbstständig.",
+      },
+      {
+        id: "nw-6",
+        title: "Mit betroffenen Gemeinden vor Ort kommunizieren",
+        description: "Ein Projekt gegenüber Anwohnerschaft erklären und Bedenken aufnehmen.",
+        kiEignung: 5,
+        category: "sozial",
+        warum:
+          "Vertrauen bei Menschen vor Ort aufzubauen, deren Lebensraum betroffen ist, gelingt nur im echten Gespräch.",
+      },
+      {
+        id: "nw-7",
+        title: "Politikempfehlung zur Klimaanpassung entwickeln",
+        description: "Aus Datenlage konkrete Handlungsvorschläge ableiten.",
+        kiEignung: 25,
+        category: "kreativ",
+        warum:
+          "Welche Maßnahme politisch und gesellschaftlich tragfähig ist, erfordert Abwägung, die über reine Modellergebnisse hinausgeht.",
+      },
+    ],
+  },
+  {
+    slug: "digital-humanities",
+    title: "Digital Humanities",
+    shortDescription:
+      "Geisteswissenschaft mit Rechenpower – Texte, Kultur und Geschichte computergestützt erschließen.",
+    kategorie: "interdisziplinaer",
+    zukunftsausblick:
+      "KI beschleunigt die computergestützte Analyse riesiger Textkorpora enorm – Aufgaben, für die früher Jahre manueller Auszeichnung nötig waren, laufen heute automatisiert. Die geisteswissenschaftliche Interpretation, die kuratorische Auswahl und der Umgang mit unvollständigen historischen Quellen bleiben aber eine Fachleistung von Menschen.",
+    tippsMenschlich: [
+      "Fundierte geisteswissenschaftliche Interpretation nicht an KI delegieren",
+      "Quellenkritik bei historischen und kulturellen Materialien schärfen",
+      "Programmierkenntnisse als Werkzeug begreifen, nicht als Selbstzweck",
+    ],
+    quellen: [eloundou, freyOsborne],
+    tasks: [
+      {
+        id: "dh-1",
+        title: "Textkorpus digitalisieren und strukturieren",
+        description: "Historische oder literarische Texte maschinenlesbar aufbereiten.",
+        kiEignung: 65,
+        category: "routine",
+        warum:
+          "Texterkennung und Grundstrukturierung großer Textmengen erledigt KI-gestützte Software heute weitgehend automatisch.",
+      },
+      {
+        id: "dh-2",
+        title: "Muster in großen Textmengen computergestützt finden",
+        description: "Auffälligkeiten über tausende Dokumente hinweg aufspüren.",
+        kiEignung: 70,
+        category: "analytisch",
+        warum:
+          "Statistische Musteranalyse über riesige Textmengen ist eine der Stärken aktueller KI-Systeme.",
+      },
+      {
+        id: "dh-3",
+        title: "Historische Quelle kritisch einordnen",
+        description: "Herkunft, Verzerrung und Kontext einer Quelle einschätzen.",
+        kiEignung: 20,
+        category: "analytisch",
+        warum:
+          "Quellenkritik verlangt Fachwissen über den historischen Kontext, das über reine Textmusteranalyse hinausgeht.",
+      },
+      {
+        id: "dh-4",
+        title: "Eigene Forschungsfrage aus einem Fund entwickeln",
+        description: "Aus einem überraschenden Textbefund eine neue These ableiten.",
+        kiEignung: 20,
+        category: "kreativ",
+        warum:
+          "Aus einem Datenmuster eine kulturhistorisch bedeutsame Interpretation zu entwickeln bleibt geisteswissenschaftliche Kreativarbeit.",
+      },
+      {
+        id: "dh-5",
+        title: "Tool oder Datenbank für Forschungszwecke programmieren",
+        description: "Eigene Software zur Analyse historischer Daten entwickeln.",
+        kiEignung: 55,
+        category: "routine",
+        warum:
+          "Für klar umrissene Analysewerkzeuge liefert KI heute brauchbaren Code als Startpunkt.",
+      },
+      {
+        id: "dh-6",
+        title: "Ergebnisse einem Fachpublikum vermitteln",
+        description: "Forschungsergebnis auf einer Tagung präsentieren.",
+        kiEignung: 15,
+        category: "sozial",
+        warum:
+          "Auf kritische Rückfragen von Fachkolleg:innen einzugehen ist Live-Kommunikation zwischen Menschen.",
+      },
+      {
+        id: "dh-7",
+        title: "Kulturelle Sammlung kuratieren",
+        description: "Auswahl treffen, was in ein digitales Archiv aufgenommen wird.",
+        kiEignung: 15,
+        category: "kreativ",
+        warum:
+          "Was kulturell bedeutsam genug ist, um bewahrt zu werden, ist eine Werturteilsfrage, die Menschen verantworten.",
+      },
+    ],
+  },
 ];
 
 export function getStudiengang(slug: string): Studiengang | undefined {
