@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import type { PuzzleEinheit, UserZuordnung } from "@/types";
 import {
+  grenzfaelleAnzahl,
+  istGrenzfall,
   kiRisikoGesamt,
   konfidenzLabel,
   modellZuordnung,
@@ -44,11 +46,13 @@ export default function ErgebnisView({
   appTitel?: string;
 }) {
   const total = beruf.tasks.length;
+  const grenzfaelle = grenzfaelleAnzahl(beruf.tasks);
+  const eindeutig = total - grenzfaelle;
   const richtig = richtigeAnzahl(userZuordnung, beruf.tasks);
   const genauigkeit = treffergenauigkeit(userZuordnung, beruf.tasks);
   const risiko = kiRisikoGesamt(beruf.tasks);
   const nextSlug = naechsterBerufSlug(beruf.slug, alleBerufe);
-  const abweichungen = total - richtig;
+  const abweichungen = eindeutig - richtig;
   const userMaschine = beruf.tasks.filter(
     (t) => userZuordnung[t.id] === "ki",
   ).length;
@@ -62,12 +66,21 @@ export default function ErgebnisView({
     const zeilen = beruf.tasks.map((task) => {
       const deine = userZuordnung[task.id];
       const modell = modellZuordnung(task);
+      const grenz = istGrenzfall(task.kiEignung);
       const ok = deine === modell;
-      return `${ok ? "✓" : "✗"} ${task.title}: du „${deine ? ZONE_TEXT[deine] : "—"}“, Modell „${ZONE_TEXT[modell]}“ – ${konfidenzLabel(task.kiEignung)}`;
+      const marker = grenz ? "•" : ok ? "✓" : "✗";
+      return `${marker} ${task.title}: du „${deine ? ZONE_TEXT[deine] : "—"}“, Modell „${ZONE_TEXT[modell]}“ – ${konfidenzLabel(task.kiEignung)}`;
     });
     return [
       `${appTitel} – ${beruf.title}`,
-      `${richtig} von ${total} Aufgaben stimmten mit dem Modell überein (${genauigkeit}%).`,
+      `${richtig} von ${eindeutig} eindeutigen Aufgaben stimmten mit dem Modell überein (${genauigkeit}%).` +
+        (grenzfaelle > 0
+          ? ` ${
+              grenzfaelle === 1
+                ? "1 weitere Aufgabe war ein echter Grenzfall"
+                : `${grenzfaelle} weitere Aufgaben waren echte Grenzfälle`
+            } – die zählen nicht als richtig oder falsch.`
+          : ""),
       `Eigene Einschätzung: ${userMaschine} von ${total} Aufgaben bei der KI. Modell insgesamt: ${STUFE_TEXT[risikoStufe(risiko)]}.`,
       "",
       ...zeilen,
@@ -106,16 +119,26 @@ export default function ErgebnisView({
         </p>
         <p className="mt-3 font-display text-[clamp(1.8rem,4.5vw,2.7rem)] font-semibold leading-[1.1] tracking-[-0.015em] text-ink">
           <span className="tnum">{richtig}</span> von{" "}
-          <span className="tnum">{total}</span> Aufgaben hast du wie das Modell
-          sortiert.
+          <span className="tnum">{eindeutig}</span> eindeutigen Aufgaben hast
+          du wie das Modell sortiert.
         </p>
         <p className="prose-text mt-3 text-ink">
           {abweichungen === 0
-            ? "Deckungsgleich mit der Forschungseinschätzung."
+            ? "Bei allen eindeutigen Aufgaben deckungsgleich mit der Forschungseinschätzung."
             : `Bei ${abweichungen} ${
-                abweichungen === 1 ? "Aufgabe" : "Aufgaben"
-              } lagst du anders – das sind meist die spannenden Grenzfälle.`}{" "}
+                abweichungen === 1 ? "eindeutigen Aufgabe" : "eindeutigen Aufgaben"
+              } lagst du anders.`}{" "}
           Übereinstimmung: <span className="tnum">{genauigkeit}%</span>.
+          {grenzfaelle > 0 && (
+            <>
+              {" "}
+              {grenzfaelle === 1
+                ? "1 weitere Aufgabe war ein echter Grenzfall"
+                : `${grenzfaelle} weitere Aufgaben waren echte Grenzfälle`}{" "}
+              – die zählen wir gar nicht erst als richtig oder falsch, denn da
+              wäre auch die Forschung uneins.
+            </>
+          )}
         </p>
       </header>
 
@@ -153,19 +176,48 @@ export default function ErgebnisView({
             <span aria-hidden="true">✗</span>
             <span className="tnum">{abweichungen}</span> anders eingeschätzt
           </span>
+          {grenzfaelle > 0 && (
+            <span className="inline-flex items-center gap-1.5 font-semibold text-ink-2">
+              <span aria-hidden="true">•</span>
+              <span className="tnum">{grenzfaelle}</span> Grenzfall
+              {grenzfaelle === 1 ? "" : "e"} (zählt nicht)
+            </span>
+          )}
         </div>
 
         <ul className="mt-4 space-y-2.5">
           {beruf.tasks.map((task) => {
             const deine = userZuordnung[task.id];
             const modell = modellZuordnung(task);
+            const grenz = istGrenzfall(task.kiEignung);
             const ok = deine === modell;
+            // Grenzfälle sind bewusst neutral (grau) statt rot/grün – hier
+            // gibt es keine "richtige" Antwort, die man verfehlen könnte.
+            const status: "ok" | "miss" | "grenzfall" = grenz
+              ? "grenzfall"
+              : ok
+                ? "ok"
+                : "miss";
+            const STATUS_STYLE = {
+              ok: "border-ok bg-ok-wash",
+              miss: "border-miss bg-miss-wash",
+              grenzfall: "border-rule bg-paper-2",
+            } as const;
+            const STATUS_TEXT_COLOR = {
+              ok: "text-ok",
+              miss: "text-miss",
+              grenzfall: "text-ink-2",
+            } as const;
+            const STATUS_ICON = { ok: "✓", miss: "✗", grenzfall: "•" } as const;
+            const STATUS_LABEL = {
+              ok: "stimmt überein",
+              miss: "anders",
+              grenzfall: "Grenzfall",
+            } as const;
             return (
               <li
                 key={task.id}
-                className={`border-l-4 p-3.5 ${
-                  ok ? "border-ok bg-ok-wash" : "border-miss bg-miss-wash"
-                }`}
+                className={`border-l-4 p-3.5 ${STATUS_STYLE[status]}`}
               >
                 <div className="flex items-start justify-between gap-3">
                   <span className="text-[0.95rem] font-semibold leading-snug text-ink">
@@ -175,13 +227,11 @@ export default function ErgebnisView({
                     </span>
                   </span>
                   <span
-                    className={`inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold ${
-                      ok ? "text-ok" : "text-miss"
-                    }`}
+                    className={`inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold ${STATUS_TEXT_COLOR[status]}`}
                   >
-                    <span aria-hidden="true">{ok ? "✓" : "✗"}</span>
+                    <span aria-hidden="true">{STATUS_ICON[status]}</span>
                     <span className="hidden sm:inline">
-                      {ok ? "stimmt überein" : "anders"}
+                      {STATUS_LABEL[status]}
                     </span>
                   </span>
                 </div>
@@ -189,7 +239,13 @@ export default function ErgebnisView({
                 <div className="mt-2.5 grid grid-cols-2 gap-3 text-sm">
                   <span>
                     <span className="block text-xs text-ink-2">Deine Wahl</span>
-                    <span className={ok ? "text-ink" : "font-semibold text-miss"}>
+                    <span
+                      className={
+                        status === "miss"
+                          ? "font-semibold text-miss"
+                          : "text-ink"
+                      }
+                    >
                       {deine ? ZONE_TEXT[deine] : "—"}
                     </span>
                   </span>

@@ -14,12 +14,34 @@ export function modellZuordnung(task: Task): Zuordnung {
   return task.kiEignung >= KI_SCHWELLE ? "ki" : "mensch";
 }
 
-/** Anzahl Aufgaben, bei denen Nutzer:in und Modell übereinstimmen. */
+/** Spanne um die 50-Punkte-Schwelle, in der die Einschätzung als echter
+ *  Grenzfall gilt – hier ist "richtig" oder "falsch" keine sinnvolle
+ *  Kategorie mehr, weil sich selbst die zugrunde liegenden Studien nicht
+ *  einig wären. */
+const GRENZFALL_MIN = 41;
+const GRENZFALL_MAX = 59;
+
+/** Ob eine Aufgabe im echten Grenzbereich um die 50-Punkte-Schwelle liegt. */
+export function istGrenzfall(kiEignung: number): boolean {
+  return kiEignung >= GRENZFALL_MIN && kiEignung <= GRENZFALL_MAX;
+}
+
+/** Anzahl der Grenzfall-Aufgaben in einer Aufgabenliste. */
+export function grenzfaelleAnzahl(tasks: Task[]): number {
+  return tasks.filter((t) => istGrenzfall(t.kiEignung)).length;
+}
+
+/**
+ * Anzahl Aufgaben, bei denen Nutzer:in und Modell übereinstimmen – gezählt
+ * nur unter den eindeutigen Aufgaben. Grenzfälle fließen bewusst nicht als
+ * "richtig" oder "falsch" ein, weil dort jede Antwort vertretbar ist.
+ */
 export function richtigeAnzahl(
   userZuordnung: UserZuordnung,
   tasks: Task[],
 ): number {
   return tasks.reduce((summe, task) => {
+    if (istGrenzfall(task.kiEignung)) return summe;
     return summe + (userZuordnung[task.id] === modellZuordnung(task) ? 1 : 0);
   }, 0);
 }
@@ -46,21 +68,24 @@ export function risikoStufe(wert: number): RisikoStufe {
 export function konfidenzLabel(kiEignung: number): string {
   if (kiEignung <= 20) return "Eindeutig beim Menschen";
   if (kiEignung <= 40) return "Eher beim Menschen, aber diskutierbar";
-  if (kiEignung <= 59) return "Echter Grenzfall – hier widersprechen sich auch die Studien";
+  if (istGrenzfall(kiEignung))
+    return "Echter Grenzfall – hier widersprechen sich auch die Studien";
   if (kiEignung <= 79) return "Eher bei der KI, aber diskutierbar";
   return "Eindeutig bei der KI";
 }
 
 /**
- * Treffergenauigkeit in Prozent (0–100): Anteil der Aufgaben, die wie das
- * Modell zugeordnet wurden. Gleiche Basis wie richtigeAnzahl, nur als Quote.
+ * Treffergenauigkeit in Prozent (0–100): Anteil der eindeutigen Aufgaben
+ * (ohne Grenzfälle), die wie das Modell zugeordnet wurden. Gleiche Basis
+ * wie richtigeAnzahl, nur als Quote über die eindeutigen Aufgaben.
  */
 export function treffergenauigkeit(
   userZuordnung: UserZuordnung,
   tasks: Task[],
 ): number {
-  if (tasks.length === 0) return 0;
-  return Math.round((richtigeAnzahl(userZuordnung, tasks) / tasks.length) * 100);
+  const eindeutig = tasks.length - grenzfaelleAnzahl(tasks);
+  if (eindeutig === 0) return 0;
+  return Math.round((richtigeAnzahl(userZuordnung, tasks) / eindeutig) * 100);
 }
 
 /**
