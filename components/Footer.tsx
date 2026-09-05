@@ -33,6 +33,12 @@ export default function Footer() {
           >
             Methodik
           </Link>
+          <Link
+            href="/erkenntnisse"
+            className="text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
+          >
+            Erkenntnisse
+          </Link>
         </p>
 
         <p className="mt-6 max-w-[54ch] font-prose text-sm italic leading-relaxed text-ink-2">

@@ -166,6 +166,18 @@ export default function MethodikPage() {
             Werte sind grob, sie altern, und sie stehen hier vor allem, damit man
             im Workshop darüber streiten kann. Stand der Zahlen: 2025.
           </p>
+          <p>
+            Was mir beim Kalibrieren all dieser Aufgaben inhaltlich aufgefallen
+            ist – z. B. dass ein Studium nicht automatisch sicherer vor KI ist
+            als eine Ausbildung – steht auf der{" "}
+            <Link
+              href="/erkenntnisse"
+              className="underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+            >
+              Erkenntnisse-Seite
+            </Link>
+            .
+          </p>
         </section>
 
         <section className="space-y-2 border-t border-rule pt-6">
