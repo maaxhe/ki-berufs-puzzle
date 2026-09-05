@@ -60,7 +60,8 @@ export type StudiengangKategorie =
   | "technik-informatik"
   | "naturwissenschaft-medizin"
   | "wirtschaft-recht"
-  | "geistes-sozialwissenschaft";
+  | "geistes-sozialwissenschaft"
+  | "interdisziplinaer";
 
 export interface Studiengang extends PuzzleEinheit {
   kategorie: StudiengangKategorie;
@@ -71,6 +72,7 @@ export const STUDIENGANG_KATEGORIE_LABELS: Record<StudiengangKategorie, string> 
   "naturwissenschaft-medizin": "Naturwissenschaft & Medizin",
   "wirtschaft-recht": "Wirtschaft & Recht",
   "geistes-sozialwissenschaft": "Geistes- & Sozialwissenschaft",
+  interdisziplinaer: "Interdisziplinär",
 };
 
 /** Anzeige-Reihenfolge der Kategorien auf der Studiengänge-Startseite. */
@@ -79,6 +81,7 @@ export const STUDIENGANG_KATEGORIE_REIHENFOLGE: StudiengangKategorie[] = [
   "naturwissenschaft-medizin",
   "wirtschaft-recht",
   "geistes-sozialwissenschaft",
+  "interdisziplinaer",
 ];
 
 export type RisikoStufe = "niedrig" | "mittel" | "hoch";
@@ -126,7 +129,9 @@ export const STANDARD_QUELLEN: Record<
   | "freyOsborne"
   | "ilo"
   | "wef"
-  | "iabBetriebe",
+  | "iabBetriebe"
+  | "eloundou"
+  | "clioLegal",
   Quelle
 > = {
   jobFuturomat: {
@@ -157,5 +162,15 @@ export const STANDARD_QUELLEN: Record<
     label:
       "IAB (2025): Jeder vierte Betrieb in Deutschland nutzt generative KI – IAB-Betriebspanel",
     url: "https://iab.de/presseinfo/jeder-vierte-betrieb-in-deutschland-nutzt-generative-ki/",
+  },
+  eloundou: {
+    label:
+      "Eloundou, Manning, Mishkin & Rock (2023/24): GPTs are GPTs – Aufgaben-Exposition akademischer Berufsgruppen, Science 384",
+    url: "https://arxiv.org/abs/2303.10130",
+  },
+  clioLegal: {
+    label:
+      "Clio Legal Trends Report 2024/2025: Anteil automatisierbarer Aufgaben bei Anwält:innen, Paralegals und Kanzleifachangestellten",
+    url: "https://www.clio.com/resources/legal-trends/",
   },
 };
