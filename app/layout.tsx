@@ -3,6 +3,7 @@ import { Bricolage_Grotesque, Newsreader } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ThemeRoot from "@/components/ThemeRoot";
 
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
@@ -29,10 +30,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="de"
       className={`${bricolage.variable} ${newsreader.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+      <body className="min-h-full">
+        <ThemeRoot>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </ThemeRoot>
       </body>
     </html>
   );
