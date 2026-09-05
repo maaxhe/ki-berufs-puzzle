@@ -22,6 +22,12 @@ export default function Footer() {
             Berufe im Vergleich
           </Link>
           <Link
+            href="/studium"
+            className="text-ink underline decoration-ink/30 underline-offset-4 hover:text-uni hover:decoration-uni"
+          >
+            Studiengänge
+          </Link>
+          <Link
             href="/methodik"
             className="text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
           >

@@ -2,6 +2,8 @@ import BerufListe from "@/components/BerufListe";
 import Disclaimer from "@/components/Disclaimer";
 import Legend from "@/components/Legend";
 import { berufe } from "@/data/berufe";
+import { KATEGORIE_LABELS, KATEGORIE_REIHENFOLGE } from "@/types";
+import type { BerufKategorie } from "@/types";
 
 export default function Home() {
   return (
@@ -24,7 +26,12 @@ export default function Home() {
         <Disclaimer />
       </div>
 
-      <BerufListe berufe={berufe} />
+      <BerufListe<BerufKategorie>
+        berufe={berufe}
+        kategorieLabels={KATEGORIE_LABELS}
+        kategorieReihenfolge={KATEGORIE_REIHENFOLGE}
+        hrefBase="/puzzle"
+      />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import type {
-  Beruf,
+  PuzzleEinheit,
   RisikoStufe,
   Task,
   UserZuordnung,
@@ -49,12 +49,15 @@ export function treffergenauigkeit(
   return Math.round((richtigeAnzahl(userZuordnung, tasks) / tasks.length) * 100);
 }
 
-/** Liefert einen zufälligen anderen Beruf-Slug (oder null, wenn es keinen gibt). */
+/**
+ * Liefert einen zufälligen anderen Slug aus derselben Liste (Beruf oder
+ * Studiengang) – oder null, wenn es keinen gibt.
+ */
 export function naechsterBerufSlug(
   aktuellerSlug: string,
-  alleBerufe: Beruf[],
+  alleEinheiten: PuzzleEinheit[],
 ): string | null {
-  const andere = alleBerufe.filter((b) => b.slug !== aktuellerSlug);
+  const andere = alleEinheiten.filter((b) => b.slug !== aktuellerSlug);
   if (andere.length === 0) return null;
   const index = Math.floor(Math.random() * andere.length);
   return andere[index].slug;

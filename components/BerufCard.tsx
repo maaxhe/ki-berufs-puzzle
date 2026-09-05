@@ -1,10 +1,17 @@
 import Link from "next/link";
-import type { Beruf } from "@/types";
+import type { PuzzleEinheit } from "@/types";
 
-export default function BerufCard({ beruf }: { beruf: Beruf }) {
+export default function BerufCard({
+  beruf,
+  hrefBase = "/puzzle",
+}: {
+  beruf: PuzzleEinheit;
+  /** Basis-Route der Detailseite, z. B. "/puzzle" oder "/studium". */
+  hrefBase?: string;
+}) {
   return (
     <Link
-      href={`/puzzle/${beruf.slug}`}
+      href={`${hrefBase}/${beruf.slug}`}
       className="group grid grid-cols-[1fr_auto] items-baseline gap-4 border-b border-rule py-5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mensch"
     >
       <div>

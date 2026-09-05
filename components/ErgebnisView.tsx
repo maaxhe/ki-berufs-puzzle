@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import type { Beruf, UserZuordnung } from "@/types";
+import type { PuzzleEinheit, UserZuordnung } from "@/types";
 import {
   kiRisikoGesamt,
   modellZuordnung,
@@ -25,11 +25,21 @@ export default function ErgebnisView({
   userZuordnung,
   alleBerufe,
   onRetry,
+  alleHref = "/",
+  alleLabel = "Alle Berufe",
+  vergleichHref = "/vergleich",
+  vergleichLabel = "Berufe im Vergleich",
+  appTitel = "KI-Berufs-Puzzle",
 }: {
-  beruf: Beruf;
+  beruf: PuzzleEinheit;
   userZuordnung: UserZuordnung;
-  alleBerufe: Beruf[];
+  alleBerufe: PuzzleEinheit[];
   onRetry: () => void;
+  alleHref?: string;
+  alleLabel?: string;
+  vergleichHref?: string;
+  vergleichLabel?: string;
+  appTitel?: string;
 }) {
   const total = beruf.tasks.length;
   const richtig = richtigeAnzahl(userZuordnung, beruf.tasks);
@@ -54,7 +64,7 @@ export default function ErgebnisView({
       return `${ok ? "✓" : "✗"} ${task.title}: du „${deine ? ZONE_TEXT[deine] : "—"}“, Modell „${ZONE_TEXT[modell]}“ (${task.kiEignung}% KI)`;
     });
     return [
-      `KI-Berufs-Puzzle – ${beruf.title}`,
+      `${appTitel} – ${beruf.title}`,
       `${richtig} von ${total} Aufgaben stimmten mit dem Modell überein (${genauigkeit}%).`,
       `Eigene Einschätzung: ${userPct}% der Aufgaben bei der KI. Modell im Schnitt: ${risiko}% KI.`,
       "",
@@ -70,7 +80,7 @@ export default function ErgebnisView({
     const text = zusammenfassungText();
     try {
       if (navigator.share) {
-        await navigator.share({ title: `KI-Berufs-Puzzle – ${beruf.title}`, text });
+        await navigator.share({ title: `${appTitel} – ${beruf.title}`, text });
         return;
       }
     } catch {
@@ -230,16 +240,16 @@ export default function ErgebnisView({
           Nochmal sortieren
         </button>
         <Link
-          href="/"
+          href={alleHref}
           className="font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
         >
-          Alle Berufe
+          {alleLabel}
         </Link>
         <Link
-          href="/vergleich"
+          href={vergleichHref}
           className="font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
         >
-          Berufe im Vergleich
+          {vergleichLabel}
         </Link>
         {nextSlug && (
           <Link

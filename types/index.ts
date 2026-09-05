@@ -34,19 +34,52 @@ export type BerufKategorie =
   | "it-medien"
   | "handel-dienstleistung";
 
-export interface Beruf {
+/**
+ * Gemeinsame Form von Beruf und Studiengang: alles, was das Puzzle, die
+ * Ergebnisauswertung und die Kartenliste brauchen, unabhängig davon, ob es
+ * sich um einen Beruf oder einen Studiengang handelt.
+ */
+export interface PuzzleEinheit {
   slug: string;
   title: string;
   shortDescription: string;
-  kategorie: BerufKategorie;
-  /** 8–12 Tasks, Anzahl innerhalb eines Berufs einheitlich. */
+  /** 6–12 Tasks, Anzahl innerhalb einer Einheit einheitlich. */
   tasks: Task[];
   zukunftsausblick: string;
-  /** Genau 3 kurze Tipps, was in diesem Beruf menschlich wichtig bleibt. */
+  /** Genau 3 kurze Tipps, was hier menschlich wichtig bleibt. */
   tippsMenschlich: [string, string, string];
-  /** Reale Studien/Tools, an denen das Modell für diesen Beruf kalibriert ist. */
+  /** Reale Studien/Tools, an denen das Modell hier kalibriert ist. */
   quellen: Quelle[];
 }
+
+export interface Beruf extends PuzzleEinheit {
+  kategorie: BerufKategorie;
+}
+
+export type StudiengangKategorie =
+  | "technik-informatik"
+  | "naturwissenschaft-medizin"
+  | "wirtschaft-recht"
+  | "geistes-sozialwissenschaft";
+
+export interface Studiengang extends PuzzleEinheit {
+  kategorie: StudiengangKategorie;
+}
+
+export const STUDIENGANG_KATEGORIE_LABELS: Record<StudiengangKategorie, string> = {
+  "technik-informatik": "Technik & Informatik",
+  "naturwissenschaft-medizin": "Naturwissenschaft & Medizin",
+  "wirtschaft-recht": "Wirtschaft & Recht",
+  "geistes-sozialwissenschaft": "Geistes- & Sozialwissenschaft",
+};
+
+/** Anzeige-Reihenfolge der Kategorien auf der Studiengänge-Startseite. */
+export const STUDIENGANG_KATEGORIE_REIHENFOLGE: StudiengangKategorie[] = [
+  "technik-informatik",
+  "naturwissenschaft-medizin",
+  "wirtschaft-recht",
+  "geistes-sozialwissenschaft",
+];
 
 export type RisikoStufe = "niedrig" | "mittel" | "hoch";
 

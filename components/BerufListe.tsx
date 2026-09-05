@@ -1,16 +1,31 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { Beruf, BerufKategorie } from "@/types";
-import { KATEGORIE_LABELS, KATEGORIE_REIHENFOLGE } from "@/types";
+import type { PuzzleEinheit } from "@/types";
 import BerufCard from "./BerufCard";
 
-/** Startseiten-Liste mit Textsuche und Kategorie-Filter über alle Berufe. */
-export default function BerufListe({ berufe }: { berufe: Beruf[] }) {
+/**
+ * Liste mit Textsuche und Kategorie-Filter über alle Einheiten (Berufe oder
+ * Studiengänge). Generisch über die Kategorie, damit sie für beide Reiter
+ * dieselbe Such-/Filterlogik verwendet.
+ */
+type MitKategorie<K extends string> = PuzzleEinheit & { kategorie: K };
+
+export default function BerufListe<K extends string>({
+  berufe,
+  kategorieLabels,
+  kategorieReihenfolge,
+  hrefBase = "/puzzle",
+  leerText = "Nichts gefunden. Versuch einen anderen Suchbegriff.",
+}: {
+  berufe: MitKategorie<K>[];
+  kategorieLabels: Record<K, string>;
+  kategorieReihenfolge: K[];
+  hrefBase?: string;
+  leerText?: string;
+}) {
   const [query, setQuery] = useState("");
-  const [aktivKategorie, setAktivKategorie] = useState<BerufKategorie | null>(
-    null,
-  );
+  const [aktivKategorie, setAktivKategorie] = useState<K | null>(null);
 
   const gefiltert = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -25,10 +40,12 @@ export default function BerufListe({ berufe }: { berufe: Beruf[] }) {
     });
   }, [berufe, query, aktivKategorie]);
 
-  const nachKategorie = KATEGORIE_REIHENFOLGE.map((kat) => ({
-    kat,
-    liste: gefiltert.filter((b) => b.kategorie === kat),
-  })).filter((g) => g.liste.length > 0);
+  const nachKategorie = kategorieReihenfolge
+    .map((kat) => ({
+      kat,
+      liste: gefiltert.filter((b) => b.kategorie === kat),
+    }))
+    .filter((g) => g.liste.length > 0);
 
   const vorhandeneKategorien = new Set(berufe.map((b) => b.kategorie));
 
@@ -39,8 +56,8 @@ export default function BerufListe({ berufe }: { berufe: Beruf[] }) {
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Beruf suchen …"
-          aria-label="Beruf suchen"
+          placeholder="Suchen …"
+          aria-label="Suchen"
           className="w-full max-w-[26rem] rounded-[2px] border border-rule bg-paper px-4 py-3 text-[0.95rem] text-ink placeholder:text-ink-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mensch"
         />
 
@@ -62,8 +79,9 @@ export default function BerufListe({ berufe }: { berufe: Beruf[] }) {
           >
             Alle
           </button>
-          {KATEGORIE_REIHENFOLGE.filter((k) => vorhandeneKategorien.has(k)).map(
-            (kat) => (
+          {kategorieReihenfolge
+            .filter((k) => vorhandeneKategorien.has(k))
+            .map((kat) => (
               <button
                 key={kat}
                 type="button"
@@ -77,10 +95,9 @@ export default function BerufListe({ berufe }: { berufe: Beruf[] }) {
                     : "border-rule text-ink-2 hover:border-ink hover:text-ink"
                 }`}
               >
-                {KATEGORIE_LABELS[kat]}
+                {kategorieLabels[kat]}
               </button>
-            ),
-          )}
+            ))}
         </div>
           <span
             aria-hidden="true"
@@ -91,17 +108,17 @@ export default function BerufListe({ berufe }: { berufe: Beruf[] }) {
 
       {nachKategorie.length === 0 ? (
         <p className="mt-14 font-prose text-[0.95rem] italic text-ink-2">
-          Kein Beruf gefunden. Versuch einen anderen Suchbegriff.
+          {leerText}
         </p>
       ) : (
         nachKategorie.map(({ kat, liste }) => (
           <section key={kat} className="mt-16">
             <h2 className="border-b-2 border-ink pb-2 font-display text-[1.4rem] font-semibold text-ink">
-              {KATEGORIE_LABELS[kat]}
+              {kategorieLabels[kat]}
             </h2>
             <div>
               {liste.map((beruf) => (
-                <BerufCard key={beruf.slug} beruf={beruf} />
+                <BerufCard key={beruf.slug} beruf={beruf} hrefBase={hrefBase} />
               ))}
             </div>
           </section>

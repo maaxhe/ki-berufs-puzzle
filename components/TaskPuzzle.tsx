@@ -16,7 +16,7 @@ import {
   type DragStartEvent,
   type ScreenReaderInstructions,
 } from "@dnd-kit/core";
-import type { Beruf, UserZuordnung } from "@/types";
+import type { PuzzleEinheit, UserZuordnung } from "@/types";
 import DropZone, { type ZoneId } from "./DropZone";
 import TaskCard from "./TaskCard";
 import ErgebnisView from "./ErgebnisView";
@@ -46,7 +46,7 @@ function DraggableTask({
   index,
 }: {
   taskId: string;
-  beruf: Beruf;
+  beruf: PuzzleEinheit;
   selected: boolean;
   onTap: () => void;
   animate: boolean;
@@ -81,9 +81,21 @@ function DraggableTask({
 export default function TaskPuzzle({
   beruf,
   alleBerufe,
+  zurueckHref = "/",
+  zurueckLabel = "Alle Berufe",
+  vergleichHref = "/vergleich",
+  vergleichLabel = "Berufe im Vergleich",
+  appTitel = "KI-Berufs-Puzzle",
 }: {
-  beruf: Beruf;
-  alleBerufe: Beruf[];
+  beruf: PuzzleEinheit;
+  alleBerufe: PuzzleEinheit[];
+  /** Link zurück zur Übersichtsliste dieses Reiters. */
+  zurueckHref?: string;
+  zurueckLabel?: string;
+  /** Link zur Vergleichsseite dieses Reiters. */
+  vergleichHref?: string;
+  vergleichLabel?: string;
+  appTitel?: string;
 }) {
   const storageKey = `puzzle:${beruf.slug}`;
 
@@ -237,6 +249,11 @@ export default function TaskPuzzle({
           userZuordnung={userZuordnung}
           alleBerufe={alleBerufe}
           onRetry={resetPuzzle}
+          alleHref={zurueckHref}
+          alleLabel={zurueckLabel}
+          vergleichHref={vergleichHref}
+          vergleichLabel={vergleichLabel}
+          appTitel={appTitel}
         />
       </div>
     );
@@ -245,10 +262,10 @@ export default function TaskPuzzle({
   return (
     <div className="mx-auto max-w-[68rem] px-5 pt-14 pb-10 sm:px-8 sm:pt-16">
       <Link
-        href="/"
+        href={zurueckHref}
         className="font-prose text-sm italic text-ink-2 underline decoration-ink/20 underline-offset-2 hover:text-mensch hover:decoration-mensch"
       >
-        Alle Berufe
+        {zurueckLabel}
       </Link>
 
       <h1 className="mt-4 font-display text-[clamp(1.9rem,4.5vw,2.8rem)] font-semibold leading-[1.05] tracking-[-0.015em] text-ink">
