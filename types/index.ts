@@ -107,8 +107,8 @@ export const STUFE_TEXT: Record<RisikoStufe, string> = {
   "eindeutig-mensch": "Eindeutig menschlich geprägt",
   "eher-mensch": "Eher menschlich geprägt",
   gemischt: "Gemischtes Bild",
-  "eher-ki": "Eher KI-nah",
-  "eindeutig-ki": "Stark KI-nah",
+  "eher-ki": "Eher KI-geprägt",
+  "eindeutig-ki": "Eindeutig KI-geprägt",
 };
 
 /** Zuordnung der Nutzer:innen: Task-ID -> Spalte. */

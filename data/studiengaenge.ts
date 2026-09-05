@@ -111,7 +111,7 @@ export const studiengaenge: Studiengang[] = [
         id: "et-1",
         title: "Schaltungen simulieren",
         description: "Verhalten einer Schaltung am Rechner durchspielen.",
-        kiEignung: 72,
+        kiEignung: 80,
         category: "analytisch",
         warum:
           "Simulationssoftware mit KI-Unterstützung schlägt heute schon plausible Bauteilwerte und Layouts vor.",
@@ -138,7 +138,7 @@ export const studiengaenge: Studiengang[] = [
         id: "et-4",
         title: "Regelungstechnik berechnen",
         description: "Parameter für ein Regelsystem bestimmen.",
-        kiEignung: 62,
+        kiEignung: 70,
         category: "analytisch",
         warum:
           "Für Standardregelkreise liefert KI-gestützte Software brauchbare Startwerte, Feinschliff bleibt Aufgabe der Ingenieurin.",
@@ -147,7 +147,7 @@ export const studiengaenge: Studiengang[] = [
         id: "et-5",
         title: "Abnahme nach VDE-Norm verantworten",
         description: "Anlage offiziell zur Nutzung freigeben.",
-        kiEignung: 22,
+        kiEignung: 30,
         category: "analytisch",
         warum:
           "Prüfgeräte liefern die Werte automatisch, die gesetzliche Freigabe unterschreibt trotzdem eine Elektrofachkraft mit persönlicher Haftung.",
@@ -156,7 +156,7 @@ export const studiengaenge: Studiengang[] = [
         id: "et-6",
         title: "Schaltpläne und Dokumentation erstellen",
         description: "Aufbau einer Anlage nachvollziehbar festhalten.",
-        kiEignung: 77,
+        kiEignung: 85,
         category: "routine",
         warum:
           "Aus einer fertigen Schaltung strukturierte Dokumentation zu erzeugen ist eine Standardaufgabe für Software.",
@@ -679,7 +679,7 @@ export const studiengaenge: Studiengang[] = [
         id: "mb-1",
         title: "Bauteile in CAD konstruieren",
         description: "3D-Modell eines Bauteils erstellen.",
-        kiEignung: 62,
+        kiEignung: 70,
         category: "routine",
         warum:
           "Für Standardbauteile schlagen KI-gestützte CAD-Tools heute brauchbare erste Entwürfe vor.",
@@ -688,7 +688,7 @@ export const studiengaenge: Studiengang[] = [
         id: "mb-2",
         title: "Festigkeitsberechnung und Simulation",
         description: "Belastung eines Bauteils rechnerisch prüfen.",
-        kiEignung: 57,
+        kiEignung: 65,
         category: "analytisch",
         warum:
           "Simulationssoftware übernimmt die Rechenarbeit, die Interpretation der Ergebnisse für den Einsatzfall bleibt Ingenieursarbeit.",
@@ -706,7 +706,7 @@ export const studiengaenge: Studiengang[] = [
         id: "mb-4",
         title: "Serienfertigung technisch verantworten",
         description: "Freigabe für die Produktion erteilen.",
-        kiEignung: 22,
+        kiEignung: 30,
         category: "analytisch",
         warum:
           "Für Sicherheit und Funktion einer in Serie gefertigten Maschine haftet am Ende eine konkrete Person.",
@@ -715,7 +715,7 @@ export const studiengaenge: Studiengang[] = [
         id: "mb-5",
         title: "Technische Dokumentation erstellen",
         description: "Konstruktionsunterlagen und Stücklisten schreiben.",
-        kiEignung: 77,
+        kiEignung: 85,
         category: "routine",
         warum:
           "Aus einem fertigen CAD-Modell strukturierte Dokumentation abzuleiten ist eine klassische Automatisierungsaufgabe.",
@@ -759,7 +759,7 @@ export const studiengaenge: Studiengang[] = [
         id: "wi-1",
         title: "Geschäftsprozess analysieren und dokumentieren",
         description: "Ablauf eines Unternehmensprozesses erfassen.",
-        kiEignung: 82,
+        kiEignung: 65,
         category: "analytisch",
         warum:
           "Standardprozesse aus Interviews und Dokumenten zu strukturieren kann KI heute weitgehend vorbereiten.",
@@ -777,7 +777,7 @@ export const studiengaenge: Studiengang[] = [
         id: "wi-3",
         title: "Standard-Software anpassen und konfigurieren",
         description: "ERP- oder CRM-System einrichten.",
-        kiEignung: 90,
+        kiEignung: 75,
         category: "routine",
         warum:
           "Konfigurationsaufgaben nach bekanntem Muster übernehmen KI-Assistenten in Business-Software zunehmend selbst.",
@@ -795,7 +795,7 @@ export const studiengaenge: Studiengang[] = [
         id: "wi-5",
         title: "Datenmodell für ein System entwerfen",
         description: "Struktur einer Datenbank planen.",
-        kiEignung: 77,
+        kiEignung: 58,
         category: "analytisch",
         warum:
           "Für gängige Anwendungsfälle liefert KI brauchbare Datenmodell-Vorschläge, Sonderfälle prüft weiterhin ein Mensch.",
@@ -804,7 +804,7 @@ export const studiengaenge: Studiengang[] = [
         id: "wi-6",
         title: "Wirtschaftlichkeit einer IT-Investition bewerten",
         description: "Kosten-Nutzen-Rechnung für ein Projekt erstellen.",
-        kiEignung: 72,
+        kiEignung: 50,
         category: "analytisch",
         warum:
           "Zahlen liefert KI schnell, die Einschätzung strategischer Risiken bleibt unternehmerisches Urteil.",
