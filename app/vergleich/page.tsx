@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { berufe } from "@/data/berufe";
-import { kiRisikoGesamt, risikoStufe } from "@/lib/scoring";
+import { kiRisikoGesamt, risikoStufeInListe } from "@/lib/scoring";
 import { STUFE_TEXT } from "@/types";
 import Disclaimer from "@/components/Disclaimer";
 
@@ -12,15 +12,18 @@ export const metadata: Metadata = {
 };
 
 const STUFE_FARBE: Record<string, string> = {
-  niedrig: "bg-mensch",
-  mittel: "bg-ink-2",
-  hoch: "bg-ki",
+  "eindeutig-mensch": "bg-mensch",
+  "eher-mensch": "bg-mensch/60",
+  gemischt: "bg-ink-2",
+  "eher-ki": "bg-ki/60",
+  "eindeutig-ki": "bg-ki",
 };
 
 export default function VergleichPage() {
   const sortiert = [...berufe]
     .map((b) => ({ beruf: b, risiko: kiRisikoGesamt(b.tasks) }))
     .sort((a, b) => b.risiko - a.risiko);
+  const alleWerte = sortiert.map((s) => s.risiko);
 
   return (
     <div className="mx-auto max-w-[68rem] px-5 py-14 sm:px-8 sm:py-16">
@@ -57,12 +60,12 @@ export default function VergleichPage() {
               <span className="min-w-0 flex-1 font-display text-[0.95rem] font-semibold leading-snug text-ink transition-colors group-hover:text-mensch sm:w-56 sm:flex-none">
                 {beruf.title}
               </span>
-              <span className="shrink-0 text-sm font-semibold text-ink">
-                {STUFE_TEXT[risikoStufe(risiko)]}
+              <span className="shrink-0 text-sm font-semibold text-ink sm:w-44">
+                {STUFE_TEXT[risikoStufeInListe(risiko, alleWerte)]}
               </span>
               <span className="relative order-4 h-2 w-full basis-full bg-paper-2 sm:order-none sm:h-2.5 sm:w-auto sm:basis-auto sm:flex-1">
                 <span
-                  className={`absolute inset-y-0 left-0 ${STUFE_FARBE[risikoStufe(risiko)]}`}
+                  className={`absolute inset-y-0 left-0 ${STUFE_FARBE[risikoStufeInListe(risiko, alleWerte)]}`}
                   style={{ width: `${risiko}%` }}
                 />
               </span>

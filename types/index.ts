@@ -84,7 +84,18 @@ export const STUDIENGANG_KATEGORIE_REIHENFOLGE: StudiengangKategorie[] = [
   "interdisziplinaer",
 ];
 
-export type RisikoStufe = "niedrig" | "mittel" | "hoch";
+/**
+ * Fünf statt drei Stufen: Mit nur drei Stufen (niedrig/mittel/hoch) landete
+ * fast jeder Beruf/Studiengang im breiten Mittelband und zeigte überall
+ * "Gemischtes Bild" an, obwohl sich die Durchschnittswerte sichtbar
+ * unterschieden – zu wenig Differenzierung für eine Vergleichsliste.
+ */
+export type RisikoStufe =
+  | "eindeutig-mensch"
+  | "eher-mensch"
+  | "gemischt"
+  | "eher-ki"
+  | "eindeutig-ki";
 
 /**
  * Sprechende Labels statt Prozentzahlen: Wie stark eine ganze
@@ -93,9 +104,11 @@ export type RisikoStufe = "niedrig" | "mittel" | "hoch";
  * Präzision vortäuschte, die die zugrunde liegenden Schätzwerte nicht haben.
  */
 export const STUFE_TEXT: Record<RisikoStufe, string> = {
-  niedrig: "Eher menschlich geprägt",
-  mittel: "Gemischtes Bild",
-  hoch: "Stark KI-nah",
+  "eindeutig-mensch": "Eindeutig menschlich geprägt",
+  "eher-mensch": "Eher menschlich geprägt",
+  gemischt: "Gemischtes Bild",
+  "eher-ki": "Eher KI-nah",
+  "eindeutig-ki": "Stark KI-nah",
 };
 
 /** Zuordnung der Nutzer:innen: Task-ID -> Spalte. */

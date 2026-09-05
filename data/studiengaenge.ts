@@ -40,7 +40,7 @@ export const studiengaenge: Studiengang[] = [
         id: "inf-2",
         title: "Systemarchitektur entwerfen",
         description: "Entscheiden, wie ein größeres System aufgebaut wird.",
-        kiEignung: 45,
+        kiEignung: 57,
         category: "analytisch",
         warum:
           "Welche Trade-offs für dieses Produkt, dieses Team und dieses Budget richtig sind, erfordert Erfahrung und Kontext, den KI nicht hat.",
@@ -49,7 +49,7 @@ export const studiengaenge: Studiengang[] = [
         id: "inf-3",
         title: "Bugs in fremdem Code debuggen",
         description: "Ursache eines Fehlers in gewachsenem Code finden.",
-        kiEignung: 70,
+        kiEignung: 82,
         category: "analytisch",
         warum:
           "KI findet viele Fehlerklassen selbst, aber bei verteilten Systemen und Legacy-Code bleibt die Ursachenforschung oft Handarbeit.",
@@ -76,7 +76,7 @@ export const studiengaenge: Studiengang[] = [
         id: "inf-6",
         title: "Code-Review verantworten",
         description: "Eine Änderung zur Freigabe prüfen und unterschreiben.",
-        kiEignung: 40,
+        kiEignung: 52,
         category: "analytisch",
         warum:
           "KI kommentiert Stil und Muster – die Freigabeentscheidung mit Haftung trifft weiterhin ein Mensch.",
@@ -111,7 +111,7 @@ export const studiengaenge: Studiengang[] = [
         id: "et-1",
         title: "Schaltungen simulieren",
         description: "Verhalten einer Schaltung am Rechner durchspielen.",
-        kiEignung: 80,
+        kiEignung: 72,
         category: "analytisch",
         warum:
           "Simulationssoftware mit KI-Unterstützung schlägt heute schon plausible Bauteilwerte und Layouts vor.",
@@ -138,7 +138,7 @@ export const studiengaenge: Studiengang[] = [
         id: "et-4",
         title: "Regelungstechnik berechnen",
         description: "Parameter für ein Regelsystem bestimmen.",
-        kiEignung: 70,
+        kiEignung: 62,
         category: "analytisch",
         warum:
           "Für Standardregelkreise liefert KI-gestützte Software brauchbare Startwerte, Feinschliff bleibt Aufgabe der Ingenieurin.",
@@ -147,7 +147,7 @@ export const studiengaenge: Studiengang[] = [
         id: "et-5",
         title: "Abnahme nach VDE-Norm verantworten",
         description: "Anlage offiziell zur Nutzung freigeben.",
-        kiEignung: 30,
+        kiEignung: 22,
         category: "analytisch",
         warum:
           "Prüfgeräte liefern die Werte automatisch, die gesetzliche Freigabe unterschreibt trotzdem eine Elektrofachkraft mit persönlicher Haftung.",
@@ -156,7 +156,7 @@ export const studiengaenge: Studiengang[] = [
         id: "et-6",
         title: "Schaltpläne und Dokumentation erstellen",
         description: "Aufbau einer Anlage nachvollziehbar festhalten.",
-        kiEignung: 85,
+        kiEignung: 77,
         category: "routine",
         warum:
           "Aus einer fertigen Schaltung strukturierte Dokumentation zu erzeugen ist eine Standardaufgabe für Software.",
@@ -193,7 +193,7 @@ export const studiengaenge: Studiengang[] = [
         id: "phy-1",
         title: "Messdaten auswerten",
         description: "Aus Rohdaten eines Experiments Ergebnisse extrahieren.",
-        kiEignung: 85,
+        kiEignung: 77,
         category: "analytisch",
         warum:
           "Statistische Auswertung großer Datensätze ist eine der stärksten Domänen aktueller KI-Tools.",
@@ -202,7 +202,7 @@ export const studiengaenge: Studiengang[] = [
         id: "phy-2",
         title: "Simulationen programmieren",
         description: "Physikalisches Verhalten am Rechner nachbilden.",
-        kiEignung: 70,
+        kiEignung: 62,
         category: "analytisch",
         warum:
           "Standardsimulationen lassen sich KI-gestützt aufsetzen, komplexe Modellannahmen erfordern aber Fachverständnis.",
@@ -229,7 +229,7 @@ export const studiengaenge: Studiengang[] = [
         id: "phy-5",
         title: "Fachliteratur zusammenfassen",
         description: "Überblick über den Stand der Forschung erstellen.",
-        kiEignung: 75,
+        kiEignung: 67,
         category: "routine",
         warum:
           "KI fasst Paper und Literaturstände heute schon brauchbar zusammen, Fachprüfung bleibt aber nötig.",
@@ -273,7 +273,7 @@ export const studiengaenge: Studiengang[] = [
         id: "med-1",
         title: "Röntgen-/MRT-Bilder auf Auffälligkeiten prüfen",
         description: "Erste Durchsicht bildgebender Diagnostik.",
-        kiEignung: 80,
+        kiEignung: 72,
         category: "analytisch",
         warum:
           "Bilderkennungs-KI erreicht bei klar definierten Mustern wie Tumoren oder Frakturen inzwischen sehr hohe Trefferquoten.",
@@ -291,7 +291,7 @@ export const studiengaenge: Studiengang[] = [
         id: "med-3",
         title: "Diagnose stellen und Behandlung verantworten",
         description: "Aus Befunden eine verbindliche Entscheidung treffen.",
-        kiEignung: 40,
+        kiEignung: 32,
         category: "analytisch",
         warum:
           "KI liefert Vorschläge, die approbierte Entscheidung mit Haftung trifft weiterhin ein Mensch.",
@@ -318,7 +318,7 @@ export const studiengaenge: Studiengang[] = [
         id: "med-6",
         title: "Arztbrief und Dokumentation schreiben",
         description: "Behandlung strukturiert festhalten.",
-        kiEignung: 75,
+        kiEignung: 67,
         category: "routine",
         warum:
           "Aus Gesprächsnotizen einen strukturierten Arztbrief zu erzeugen ist eine der am weitesten verbreiteten KI-Anwendungen in Kliniken.",
@@ -327,7 +327,7 @@ export const studiengaenge: Studiengang[] = [
         id: "med-7",
         title: "Leitlinien und aktuelle Studienlage einordnen",
         description: "Neue Forschung auf den Einzelfall übertragen.",
-        kiEignung: 60,
+        kiEignung: 52,
         category: "analytisch",
         warum:
           "KI kann Studien zusammenfassen, die Übertragung auf eine individuelle Patientin mit Vorerkrankungen bleibt ärztliches Urteilsvermögen.",
@@ -364,7 +364,7 @@ export const studiengaenge: Studiengang[] = [
         id: "bwl-2",
         title: "Marktanalyse recherchieren",
         description: "Wettbewerb und Marktumfeld zusammentragen.",
-        kiEignung: 75,
+        kiEignung: 85,
         category: "analytisch",
         warum:
           "Öffentlich verfügbare Marktdaten zu sammeln und zusammenzufassen erledigt KI heute in einem Bruchteil der Zeit.",
@@ -373,7 +373,7 @@ export const studiengaenge: Studiengang[] = [
         id: "bwl-3",
         title: "Strategieentscheidung mit Unsicherheit treffen",
         description: "Bei unklarer Datenlage eine Richtung festlegen.",
-        kiEignung: 35,
+        kiEignung: 47,
         category: "analytisch",
         warum:
           "Verantwortung für eine Entscheidung zu übernehmen, deren Ausgang niemand kennt, bleibt eine menschliche Führungsaufgabe.",
@@ -409,7 +409,7 @@ export const studiengaenge: Studiengang[] = [
         id: "bwl-7",
         title: "Businessplan-Zahlen modellieren",
         description: "Finanzmodell für ein Vorhaben aufstellen.",
-        kiEignung: 85,
+        kiEignung: 90,
         category: "routine",
         warum:
           "Standard-Finanzmodelle mit üblichen Annahmen baut KI-gestützte Software heute weitgehend selbstständig.",
@@ -444,7 +444,7 @@ export const studiengaenge: Studiengang[] = [
         id: "jur-2",
         title: "Standardvertrag aus Textbausteinen erstellen",
         description: "Verträge nach Muster zusammenstellen.",
-        kiEignung: 80,
+        kiEignung: 90,
         category: "routine",
         warum:
           "Für wiederkehrende Vertragstypen generiert Legal-Tech-Software heute brauchbare erste Entwürfe.",
@@ -462,7 +462,7 @@ export const studiengaenge: Studiengang[] = [
         id: "jur-4",
         title: "Neuartigen Fall juristisch argumentieren",
         description: "Für eine Situation ohne klare Präzedenzfälle argumentieren.",
-        kiEignung: 35,
+        kiEignung: 47,
         category: "analytisch",
         warum:
           "Wo es noch keine etablierte Rechtsprechung gibt, ist juristische Kreativität und Verantwortung gefragt, keine Mustererkennung.",
@@ -480,7 +480,7 @@ export const studiengaenge: Studiengang[] = [
         id: "jur-6",
         title: "Vertragsentwurf gegenlesen und Risiken einschätzen",
         description: "Vertrag auf Fallstricke prüfen.",
-        kiEignung: 60,
+        kiEignung: 72,
         category: "analytisch",
         warum:
           "KI markiert ungewöhnliche Klauseln zuverlässig, die endgültige Risikoeinschätzung für die Mandantschaft bleibt juristisches Urteil.",
@@ -489,7 +489,7 @@ export const studiengaenge: Studiengang[] = [
         id: "jur-7",
         title: "Ethisch schwierige Güterabwägung entscheiden",
         description: "Zwischen widerstreitenden Interessen abwägen.",
-        kiEignung: 25,
+        kiEignung: 37,
         category: "analytisch",
         warum:
           "Wo Recht und Moral in Konflikt geraten, braucht es eine Person, die die Entscheidung verantwortet – keinen Algorithmus.",
@@ -517,7 +517,7 @@ export const studiengaenge: Studiengang[] = [
         id: "psy-1",
         title: "Fragebogendaten statistisch auswerten",
         description: "Studienergebnisse quantitativ auswerten.",
-        kiEignung: 85,
+        kiEignung: 77,
         category: "analytisch",
         warum:
           "Statistische Standardauswertungen an Studiendaten sind eine Kernstärke aktueller KI- und Statistik-Tools.",
@@ -535,7 +535,7 @@ export const studiengaenge: Studiengang[] = [
         id: "psy-3",
         title: "Studiendesign entwickeln",
         description: "Untersuchung methodisch sauber planen.",
-        kiEignung: 50,
+        kiEignung: 42,
         category: "analytisch",
         warum:
           "KI schlägt gängige Designs vor, methodische Fallstricke für eine konkrete Fragestellung zu erkennen bleibt Fachwissen.",
@@ -553,7 +553,7 @@ export const studiengaenge: Studiengang[] = [
         id: "psy-5",
         title: "Literaturbericht schreiben",
         description: "Forschungsstand zu einem Thema zusammenfassen.",
-        kiEignung: 70,
+        kiEignung: 62,
         category: "routine",
         warum:
           "Bestehende Literatur zusammenzufassen ist eine der Aufgaben, bei denen KI-Textwerkzeuge heute schon spürbar entlasten.",
@@ -571,7 +571,7 @@ export const studiengaenge: Studiengang[] = [
         id: "psy-7",
         title: "Testverfahren auswerten und Gutachten erstellen",
         description: "Diagnostische Tests interpretieren und dokumentieren.",
-        kiEignung: 60,
+        kiEignung: 52,
         category: "analytisch",
         warum:
           "Die Auswertung folgt klaren Normwerten, die Einordnung in die individuelle Lebenssituation bleibt fachliches Urteil.",
@@ -597,7 +597,7 @@ export const studiengaenge: Studiengang[] = [
         id: "ger-1",
         title: "Textzusammenfassung und Rechtschreibkorrektur",
         description: "Texte kürzen und formal korrigieren.",
-        kiEignung: 90,
+        kiEignung: 82,
         category: "routine",
         warum:
           "Zusammenfassen und Korrigieren von Texten gehört zu den zuverlässigsten Fähigkeiten heutiger Sprachmodelle.",
@@ -633,7 +633,7 @@ export const studiengaenge: Studiengang[] = [
         id: "ger-5",
         title: "Quellenrecherche im Archiv",
         description: "Historische oder seltene Quellen auffinden.",
-        kiEignung: 55,
+        kiEignung: 47,
         category: "analytisch",
         warum:
           "Digitalisierte Bestände durchsucht KI gut, unerschlossene oder physische Archivbestände erfordern weiterhin Handarbeit vor Ort.",
@@ -642,7 +642,7 @@ export const studiengaenge: Studiengang[] = [
         id: "ger-6",
         title: "Sprachliche Nuancen und Ironie erkennen",
         description: "Zwischen den Zeilen lesen.",
-        kiEignung: 50,
+        kiEignung: 42,
         category: "analytisch",
         warum:
           "Ironie, Anspielungen und kulturellen Kontext zuverlässig zu erkennen ist eine der bekannten Schwachstellen aktueller Sprachmodelle.",
@@ -679,7 +679,7 @@ export const studiengaenge: Studiengang[] = [
         id: "mb-1",
         title: "Bauteile in CAD konstruieren",
         description: "3D-Modell eines Bauteils erstellen.",
-        kiEignung: 70,
+        kiEignung: 62,
         category: "routine",
         warum:
           "Für Standardbauteile schlagen KI-gestützte CAD-Tools heute brauchbare erste Entwürfe vor.",
@@ -688,7 +688,7 @@ export const studiengaenge: Studiengang[] = [
         id: "mb-2",
         title: "Festigkeitsberechnung und Simulation",
         description: "Belastung eines Bauteils rechnerisch prüfen.",
-        kiEignung: 65,
+        kiEignung: 57,
         category: "analytisch",
         warum:
           "Simulationssoftware übernimmt die Rechenarbeit, die Interpretation der Ergebnisse für den Einsatzfall bleibt Ingenieursarbeit.",
@@ -706,7 +706,7 @@ export const studiengaenge: Studiengang[] = [
         id: "mb-4",
         title: "Serienfertigung technisch verantworten",
         description: "Freigabe für die Produktion erteilen.",
-        kiEignung: 30,
+        kiEignung: 22,
         category: "analytisch",
         warum:
           "Für Sicherheit und Funktion einer in Serie gefertigten Maschine haftet am Ende eine konkrete Person.",
@@ -715,7 +715,7 @@ export const studiengaenge: Studiengang[] = [
         id: "mb-5",
         title: "Technische Dokumentation erstellen",
         description: "Konstruktionsunterlagen und Stücklisten schreiben.",
-        kiEignung: 85,
+        kiEignung: 77,
         category: "routine",
         warum:
           "Aus einem fertigen CAD-Modell strukturierte Dokumentation abzuleiten ist eine klassische Automatisierungsaufgabe.",
@@ -759,7 +759,7 @@ export const studiengaenge: Studiengang[] = [
         id: "wi-1",
         title: "Geschäftsprozess analysieren und dokumentieren",
         description: "Ablauf eines Unternehmensprozesses erfassen.",
-        kiEignung: 70,
+        kiEignung: 82,
         category: "analytisch",
         warum:
           "Standardprozesse aus Interviews und Dokumenten zu strukturieren kann KI heute weitgehend vorbereiten.",
@@ -768,7 +768,7 @@ export const studiengaenge: Studiengang[] = [
         id: "wi-2",
         title: "Anforderungen in ein IT-System übersetzen",
         description: "Fachliche Wünsche in technische Spezifikation gießen.",
-        kiEignung: 45,
+        kiEignung: 57,
         category: "analytisch",
         warum:
           "Welche Anforderung wirklich gemeint ist und wie sie ins System passt, erfordert Verständnis auf beiden Seiten.",
@@ -777,7 +777,7 @@ export const studiengaenge: Studiengang[] = [
         id: "wi-3",
         title: "Standard-Software anpassen und konfigurieren",
         description: "ERP- oder CRM-System einrichten.",
-        kiEignung: 80,
+        kiEignung: 90,
         category: "routine",
         warum:
           "Konfigurationsaufgaben nach bekanntem Muster übernehmen KI-Assistenten in Business-Software zunehmend selbst.",
@@ -795,7 +795,7 @@ export const studiengaenge: Studiengang[] = [
         id: "wi-5",
         title: "Datenmodell für ein System entwerfen",
         description: "Struktur einer Datenbank planen.",
-        kiEignung: 65,
+        kiEignung: 77,
         category: "analytisch",
         warum:
           "Für gängige Anwendungsfälle liefert KI brauchbare Datenmodell-Vorschläge, Sonderfälle prüft weiterhin ein Mensch.",
@@ -804,7 +804,7 @@ export const studiengaenge: Studiengang[] = [
         id: "wi-6",
         title: "Wirtschaftlichkeit einer IT-Investition bewerten",
         description: "Kosten-Nutzen-Rechnung für ein Projekt erstellen.",
-        kiEignung: 60,
+        kiEignung: 72,
         category: "analytisch",
         warum:
           "Zahlen liefert KI schnell, die Einschätzung strategischer Risiken bleibt unternehmerisches Urteil.",
@@ -857,7 +857,7 @@ export const studiengaenge: Studiengang[] = [
         id: "arch-3",
         title: "Bauantrag und Pläne erstellen",
         description: "Genehmigungsfähige Unterlagen zeichnen.",
-        kiEignung: 80,
+        kiEignung: 90,
         category: "routine",
         warum:
           "Pläne nach Norm aus einem fertigen Entwurf abzuleiten ist eine der am stärksten automatisierten Aufgaben im Büroalltag.",
@@ -875,7 +875,7 @@ export const studiengaenge: Studiengang[] = [
         id: "arch-5",
         title: "Statik und Bauausführung verantworten",
         description: "Sicherheit und Umsetzbarkeit eines Entwurfs freigeben.",
-        kiEignung: 30,
+        kiEignung: 42,
         category: "analytisch",
         warum:
           "Für die Standsicherheit eines gebauten Gebäudes haftet am Ende eine konkrete verantwortliche Person.",
@@ -893,7 +893,7 @@ export const studiengaenge: Studiengang[] = [
         id: "arch-7",
         title: "Visualisierungen und Renderings erstellen",
         description: "Entwurf für Präsentationen ansprechend darstellen.",
-        kiEignung: 85,
+        kiEignung: 90,
         category: "routine",
         warum:
           "Fotorealistische Renderings aus einem 3D-Modell erzeugt KI-Software heute in Sekunden statt Stunden.",
@@ -921,7 +921,7 @@ export const studiengaenge: Studiengang[] = [
         id: "bio-1",
         title: "Genom- oder Proteindaten auswerten",
         description: "Große biologische Datensätze computergestützt analysieren.",
-        kiEignung: 80,
+        kiEignung: 72,
         category: "analytisch",
         warum:
           "KI-Modelle wie AlphaFold lösen heute Teile der Strukturvorhersage, für die früher aufwendige Laborarbeit nötig war.",
@@ -957,7 +957,7 @@ export const studiengaenge: Studiengang[] = [
         id: "bio-5",
         title: "Fachliteratur zusammenfassen",
         description: "Überblick über bestehende Studien erstellen.",
-        kiEignung: 75,
+        kiEignung: 67,
         category: "routine",
         warum:
           "KI fasst Fachliteratur heute brauchbar zusammen, die fachliche Prüfung bleibt aber nötig.",
@@ -1001,7 +1001,7 @@ export const studiengaenge: Studiengang[] = [
         id: "che-1",
         title: "Molekülstruktur und Reaktionswege berechnen",
         description: "Chemische Reaktionen am Rechner simulieren.",
-        kiEignung: 80,
+        kiEignung: 85,
         category: "analytisch",
         warum:
           "KI-gestützte Simulationen sagen molekulare Eigenschaften heute oft treffsicherer und schneller vorher als klassische Methoden.",
@@ -1019,7 +1019,7 @@ export const studiengaenge: Studiengang[] = [
         id: "che-3",
         title: "Messdaten aus Spektroskopie auswerten",
         description: "Analysegeräte-Ausgabe interpretieren.",
-        kiEignung: 70,
+        kiEignung: 82,
         category: "analytisch",
         warum:
           "Für bekannte Substanzklassen liefert KI-gestützte Auswertungssoftware zuverlässige Vorschläge.",
@@ -1028,7 +1028,7 @@ export const studiengaenge: Studiengang[] = [
         id: "che-4",
         title: "Gescheitertes Experiment analysieren",
         description: "Herausfinden, warum ein Versuch nicht wie erwartet lief.",
-        kiEignung: 40,
+        kiEignung: 52,
         category: "analytisch",
         warum:
           "Unerwartete Ergebnisse im Labor auf ihre wahre Ursache zurückzuführen braucht Erfahrung und Fingerspitzengefühl.",
@@ -1037,7 +1037,7 @@ export const studiengaenge: Studiengang[] = [
         id: "che-5",
         title: "Sicherheitsdatenblätter und Dokumentation erstellen",
         description: "Umgang mit Stoffen normgerecht dokumentieren.",
-        kiEignung: 85,
+        kiEignung: 90,
         category: "routine",
         warum:
           "Standarddokumentation nach bekannten Vorlagen ist eine klassische Automatisierungsaufgabe.",
@@ -1108,7 +1108,7 @@ export const studiengaenge: Studiengang[] = [
         id: "pha-4",
         title: "Wechselwirkungen und Interaktionen prüfen",
         description: "Medikamentenkombination auf Risiken checken.",
-        kiEignung: 70,
+        kiEignung: 82,
         category: "analytisch",
         warum:
           "Bekannte Wechselwirkungen listet Software zuverlässig auf, die Einschätzung im Einzelfall bleibt fachliches Urteil.",
@@ -1117,7 +1117,7 @@ export const studiengaenge: Studiengang[] = [
         id: "pha-5",
         title: "Klinische Studiendaten auswerten",
         description: "Wirksamkeit und Sicherheit eines Präparats prüfen.",
-        kiEignung: 65,
+        kiEignung: 77,
         category: "analytisch",
         warum:
           "Statistische Auswertung großer Studiendaten ist eine Stärke aktueller KI-Systeme, die Zulassungsentscheidung bleibt reguliert und menschlich.",
@@ -1126,7 +1126,7 @@ export const studiengaenge: Studiengang[] = [
         id: "pha-6",
         title: "Qualitätskontrolle im Herstellungsprozess verantworten",
         description: "Charge vor der Freigabe prüfen.",
-        kiEignung: 35,
+        kiEignung: 47,
         category: "analytisch",
         warum:
           "Für die Freigabe einer Arzneimittelcharge haftet am Ende eine konkrete approbierte Person.",
@@ -1135,7 +1135,7 @@ export const studiengaenge: Studiengang[] = [
         id: "pha-7",
         title: "Über neue Arzneimittel und Studienlage informieren",
         description: "Ärzt:innen und Fachpersonal auf dem Laufenden halten.",
-        kiEignung: 60,
+        kiEignung: 72,
         category: "routine",
         warum:
           "Zusammenfassungen liefert KI gut, die Einordnung für eine konkrete Praxis bleibt Fachaustausch zwischen Menschen.",
@@ -1172,7 +1172,7 @@ export const studiengaenge: Studiengang[] = [
         id: "vwl-2",
         title: "Politikempfehlung ausarbeiten",
         description: "Aus Analyse eine konkrete Handlungsempfehlung ableiten.",
-        kiEignung: 40,
+        kiEignung: 52,
         category: "analytisch",
         warum:
           "Welche Empfehlung politisch tragfähig und gesellschaftlich vertretbar ist, erfordert Abwägung, die über reine Daten hinausgeht.",
@@ -1208,7 +1208,7 @@ export const studiengaenge: Studiengang[] = [
         id: "vwl-6",
         title: "Literaturüberblick zu einem Thema erstellen",
         description: "Forschungsstand zusammenfassen.",
-        kiEignung: 75,
+        kiEignung: 87,
         category: "routine",
         warum:
           "Bestehende Literatur zusammenzufassen gehört zu den Aufgaben, bei denen KI-Textwerkzeuge heute spürbar entlasten.",
@@ -1243,7 +1243,7 @@ export const studiengaenge: Studiengang[] = [
         id: "wing-1",
         title: "Produktionskosten kalkulieren",
         description: "Kosten eines technischen Vorhabens berechnen.",
-        kiEignung: 80,
+        kiEignung: 90,
         category: "routine",
         warum:
           "Standard-Kalkulationen aus bekannten Kostentreibern erstellt KI-gestützte Software heute weitgehend selbst.",
@@ -1252,7 +1252,7 @@ export const studiengaenge: Studiengang[] = [
         id: "wing-2",
         title: "Technische Machbarkeit einschätzen",
         description: "Prüfen, ob eine Idee technisch realistisch umsetzbar ist.",
-        kiEignung: 50,
+        kiEignung: 62,
         category: "analytisch",
         warum:
           "KI liefert Anhaltspunkte, die belastbare Einschätzung für ein konkretes Projekt bleibt Erfahrungssache.",
@@ -1270,7 +1270,7 @@ export const studiengaenge: Studiengang[] = [
         id: "wing-4",
         title: "Lieferkette und Logistik optimieren",
         description: "Materialfluss effizienter gestalten.",
-        kiEignung: 75,
+        kiEignung: 85,
         category: "analytisch",
         warum:
           "Optimierungsprobleme mit klaren Zielgrößen löst KI-gestützte Software heute oft besser als manuelle Planung.",
@@ -1279,7 +1279,7 @@ export const studiengaenge: Studiengang[] = [
         id: "wing-5",
         title: "Investitionsentscheidung vorbereiten und verantworten",
         description: "Für ein technisches Vorhaben grünes Licht geben.",
-        kiEignung: 35,
+        kiEignung: 47,
         category: "analytisch",
         warum:
           "Verantwortung für eine größere Investition mit unsicherem Ausgang bleibt eine unternehmerische Entscheidung von Menschen.",
@@ -1485,7 +1485,7 @@ export const studiengaenge: Studiengang[] = [
         id: "pol-1",
         title: "Umfragedaten und Wahlergebnisse auswerten",
         description: "Politische Datensätze statistisch analysieren.",
-        kiEignung: 85,
+        kiEignung: 77,
         category: "analytisch",
         warum:
           "Statistische Auswertung von Umfrage- und Wahldaten ist eine Stärke aktueller KI-Tools.",
@@ -1494,7 +1494,7 @@ export const studiengaenge: Studiengang[] = [
         id: "pol-2",
         title: "Politisches Ereignis einordnen",
         description: "Bedeutung eines aktuellen Ereignisses erklären.",
-        kiEignung: 40,
+        kiEignung: 32,
         category: "analytisch",
         warum:
           "Ein Ereignis im richtigen historischen und gesellschaftlichen Kontext zu deuten erfordert mehr als Musterabgleich.",
@@ -1530,7 +1530,7 @@ export const studiengaenge: Studiengang[] = [
         id: "pol-6",
         title: "Literatur- und Quellenrecherche",
         description: "Relevante Studien und Dokumente zu einem Thema finden.",
-        kiEignung: 80,
+        kiEignung: 72,
         category: "routine",
         warum:
           "Große Textmengen zu durchsuchen und zusammenzufassen gehört zu den stärksten Fähigkeiten aktueller Sprachmodelle.",
@@ -1583,7 +1583,7 @@ export const studiengaenge: Studiengang[] = [
         id: "kom-3",
         title: "Medienanalyse durchführen",
         description: "Berichterstattung zu einem Thema systematisch auswerten.",
-        kiEignung: 80,
+        kiEignung: 85,
         category: "analytisch",
         warum:
           "Große Mengen an Medienbeiträgen automatisiert auszuwerten ist eine Stärke aktueller KI-Systeme.",
@@ -1647,7 +1647,7 @@ export const studiengaenge: Studiengang[] = [
         id: "cs-1",
         title: "Verhaltensexperiment programmieren und auswerten",
         description: "Experiment am Rechner umsetzen und Daten analysieren.",
-        kiEignung: 80,
+        kiEignung: 72,
         category: "analytisch",
         warum:
           "Standard-Experimentcode und -Auswertung nach bekanntem Muster erstellt KI heute zuverlässig aus einer Beschreibung.",
@@ -1656,7 +1656,7 @@ export const studiengaenge: Studiengang[] = [
         id: "cs-2",
         title: "Neuronales Netz oder Rechenmodell des Denkens bauen",
         description: "Kognitive Prozesse computational modellieren.",
-        kiEignung: 60,
+        kiEignung: 52,
         category: "analytisch",
         warum:
           "Für Standardmodelle hilft KI stark bei der Umsetzung, welches Modell die richtige Frage beantwortet, bleibt fachliche Entscheidung.",
@@ -1683,7 +1683,7 @@ export const studiengaenge: Studiengang[] = [
         id: "cs-5",
         title: "Fachliteratur aus mehreren Feldern zusammenfassen",
         description: "Überblick über interdisziplinären Forschungsstand erstellen.",
-        kiEignung: 75,
+        kiEignung: 67,
         category: "routine",
         warum:
           "Zusammenfassen bekannter Literatur gehört zu den zuverlässigsten Fähigkeiten aktueller Sprachmodelle.",
@@ -1692,7 +1692,7 @@ export const studiengaenge: Studiengang[] = [
         id: "cs-6",
         title: "Ethische Fragen zu KI-Systemen einordnen",
         description: "Gesellschaftliche Implikationen kognitiver Technologien bewerten.",
-        kiEignung: 25,
+        kiEignung: 17,
         category: "analytisch",
         warum:
           "Eine KI kann Argumente zu ihrer eigenen Ethik zusammenfassen, die verantwortliche Abwägung bleibt eine zutiefst menschliche Aufgabe.",
@@ -1736,7 +1736,7 @@ export const studiengaenge: Studiengang[] = [
         id: "ds-2",
         title: "Daten bereinigen und aufbereiten",
         description: "Rohdaten von Fehlern und Lücken befreien.",
-        kiEignung: 80,
+        kiEignung: 90,
         category: "routine",
         warum:
           "Typische Datenqualitätsprobleme erkennt und behebt KI-gestützte Software inzwischen weitgehend automatisch.",
@@ -1763,7 +1763,7 @@ export const studiengaenge: Studiengang[] = [
         id: "ds-5",
         title: "Datenpipeline und Infrastruktur aufsetzen",
         description: "Technische Grundlage für laufende Datenverarbeitung bauen.",
-        kiEignung: 75,
+        kiEignung: 87,
         category: "routine",
         warum:
           "Für Standard-Infrastruktur nach bekanntem Muster liefert KI-gestützte Entwicklung heute brauchbaren Code.",
@@ -1772,7 +1772,7 @@ export const studiengaenge: Studiengang[] = [
         id: "ds-6",
         title: "Verzerrungen und ethische Risiken eines Modells prüfen",
         description: "Modell auf unfaire oder schädliche Effekte untersuchen.",
-        kiEignung: 30,
+        kiEignung: 42,
         category: "analytisch",
         warum:
           "Ob ein Modell bestimmte Gruppen benachteiligt und was das gesellschaftlich bedeutet, erfordert menschliche Verantwortung, kein Modell prüft sich selbst hinreichend kritisch.",
@@ -1807,7 +1807,7 @@ export const studiengaenge: Studiengang[] = [
         id: "nw-1",
         title: "Klima- oder Umweltdaten modellieren",
         description: "Entwicklung eines Umweltparameters simulieren.",
-        kiEignung: 75,
+        kiEignung: 67,
         category: "analytisch",
         warum:
           "Für etablierte Modelltypen liefert KI-gestützte Simulation heute schnelle, brauchbare Ergebnisse.",
@@ -1816,7 +1816,7 @@ export const studiengaenge: Studiengang[] = [
         id: "nw-2",
         title: "Messdaten aus Sensoren und Feldstudien auswerten",
         description: "Monitoring-Daten zu Umweltzuständen analysieren.",
-        kiEignung: 80,
+        kiEignung: 72,
         category: "analytisch",
         warum:
           "Große Mengen an Sensordaten automatisiert auszuwerten ist eine Stärke aktueller KI-Systeme.",
@@ -1843,7 +1843,7 @@ export const studiengaenge: Studiengang[] = [
         id: "nw-5",
         title: "Nachhaltigkeitsbericht für ein Unternehmen erstellen",
         description: "Kennzahlen und Fortschritt strukturiert dokumentieren.",
-        kiEignung: 85,
+        kiEignung: 77,
         category: "routine",
         warum:
           "Standardisierte Berichte aus vorhandenen Kennzahlen erzeugt KI-Software heute weitgehend selbstständig.",
@@ -1887,7 +1887,7 @@ export const studiengaenge: Studiengang[] = [
         id: "dh-1",
         title: "Textkorpus digitalisieren und strukturieren",
         description: "Historische oder literarische Texte maschinenlesbar aufbereiten.",
-        kiEignung: 80,
+        kiEignung: 90,
         category: "routine",
         warum:
           "Texterkennung und Grundstrukturierung großer Textmengen erledigt KI-gestützte Software heute weitgehend automatisch.",
@@ -1905,7 +1905,7 @@ export const studiengaenge: Studiengang[] = [
         id: "dh-3",
         title: "Historische Quelle kritisch einordnen",
         description: "Herkunft, Verzerrung und Kontext einer Quelle einschätzen.",
-        kiEignung: 35,
+        kiEignung: 47,
         category: "analytisch",
         warum:
           "Quellenkritik verlangt Fachwissen über den historischen Kontext, das über reine Textmusteranalyse hinausgeht.",
@@ -1923,7 +1923,7 @@ export const studiengaenge: Studiengang[] = [
         id: "dh-5",
         title: "Tool oder Datenbank für Forschungszwecke programmieren",
         description: "Eigene Software zur Analyse historischer Daten entwickeln.",
-        kiEignung: 70,
+        kiEignung: 82,
         category: "routine",
         warum:
           "Für klar umrissene Analysewerkzeuge liefert KI heute brauchbaren Code als Startpunkt.",

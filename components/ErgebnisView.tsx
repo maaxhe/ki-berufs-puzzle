@@ -11,7 +11,7 @@ import {
   modellZuordnung,
   naechsterBerufSlug,
   richtigeAnzahl,
-  risikoStufe,
+  risikoStufeInListe,
   treffergenauigkeit,
 } from "@/lib/scoring";
 import { CATEGORY_LABELS, STUFE_TEXT } from "@/types";
@@ -51,6 +51,8 @@ export default function ErgebnisView({
   const richtig = richtigeAnzahl(userZuordnung, beruf.tasks);
   const genauigkeit = treffergenauigkeit(userZuordnung, beruf.tasks);
   const risiko = kiRisikoGesamt(beruf.tasks);
+  const alleWerte = alleBerufe.map((b) => kiRisikoGesamt(b.tasks));
+  const stufe = risikoStufeInListe(risiko, alleWerte);
   const nextSlug = naechsterBerufSlug(beruf.slug, alleBerufe);
   const abweichungen = eindeutig - richtig;
   const userMaschine = beruf.tasks.filter(
@@ -81,7 +83,7 @@ export default function ErgebnisView({
                 : `${grenzfaelle} weitere Aufgaben waren echte Grenzfälle`
             } – die zählen nicht als richtig oder falsch.`
           : ""),
-      `Eigene Einschätzung: ${userMaschine} von ${total} Aufgaben bei der KI. Modell insgesamt: ${STUFE_TEXT[risikoStufe(risiko)]}.`,
+      `Eigene Einschätzung: ${userMaschine} von ${total} Aufgaben bei der KI. Modell insgesamt: ${STUFE_TEXT[stufe]}.`,
       "",
       ...zeilen,
       "",
@@ -149,9 +151,7 @@ export default function ErgebnisView({
           <span className="tnum">{total}</span> Aufgaben der KI zugeordnet.
           Über alle Aufgaben gemittelt schätzt das Modell{" "}
           <span className="font-semibold">{beruf.title}</span> als{" "}
-          <span className="font-semibold">
-            {STUFE_TEXT[risikoStufe(risiko)]}
-          </span>{" "}
+          <span className="font-semibold">{STUFE_TEXT[stufe]}</span>{" "}
           ein.
         </p>
         <p className="mt-4 border-l-2 border-mensch pl-4 font-prose text-[0.95rem] italic leading-relaxed text-ink-2">

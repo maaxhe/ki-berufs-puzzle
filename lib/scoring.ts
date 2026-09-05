@@ -53,10 +53,39 @@ export function kiRisikoGesamt(tasks: Task[]): number {
   return Math.round(summe / tasks.length);
 }
 
+/** Feste Bänder über die volle 0–100-Skala – Fallback, wenn keine
+ *  Vergleichsliste zur Verfügung steht. */
 export function risikoStufe(wert: number): RisikoStufe {
-  if (wert < 40) return "niedrig";
-  if (wert <= 60) return "mittel";
-  return "hoch";
+  if (wert <= 20) return "eindeutig-mensch";
+  if (wert <= 40) return "eher-mensch";
+  if (wert <= 59) return "gemischt";
+  if (wert <= 79) return "eher-ki";
+  return "eindeutig-ki";
+}
+
+/**
+ * Stufe relativ zu allen anderen Werten in derselben Liste (Quintile) statt
+ * über feste 0–100-Bänder. Grund: Die Durchschnittswerte realer Berufe und
+ * Studiengänge liegen selten an den Rändern der Skala – ein ganzes Berufs-
+ * feld, das im Schnitt "eindeutig KI" (>80) wäre, gibt es praktisch nicht,
+ * weil fast überall ein paar Aufgaben mit Beziehungsarbeit/Verantwortung
+ * dazwischenstehen. Feste Bänder liefen deshalb Gefahr, dass fast alles im
+ * mittleren Band landet ("überall Gemischtes Bild"). Die Quintil-Einteilung
+ * verteilt stattdessen relativ zur tatsächlichen Bandbreite der Liste.
+ */
+export function risikoStufeInListe(
+  wert: number,
+  alleWerte: number[],
+): RisikoStufe {
+  if (alleWerte.length < 5) return risikoStufe(wert);
+  const sortiert = [...alleWerte].sort((a, b) => a - b);
+  const quantil = (p: number) =>
+    sortiert[Math.min(sortiert.length - 1, Math.floor(p * sortiert.length))];
+  if (wert <= quantil(0.2)) return "eindeutig-mensch";
+  if (wert <= quantil(0.4)) return "eher-mensch";
+  if (wert <= quantil(0.6)) return "gemischt";
+  if (wert <= quantil(0.8)) return "eher-ki";
+  return "eindeutig-ki";
 }
 
 /**
