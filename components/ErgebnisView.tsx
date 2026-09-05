@@ -5,12 +5,14 @@ import { useState } from "react";
 import type { PuzzleEinheit, UserZuordnung } from "@/types";
 import {
   kiRisikoGesamt,
+  konfidenzLabel,
   modellZuordnung,
   naechsterBerufSlug,
   richtigeAnzahl,
+  risikoStufe,
   treffergenauigkeit,
 } from "@/lib/scoring";
-import { CATEGORY_LABELS } from "@/types";
+import { CATEGORY_LABELS, STUFE_TEXT } from "@/types";
 import RiskGauge from "./RiskGauge";
 import Disclaimer from "./Disclaimer";
 import Quellen from "./Quellen";
@@ -61,12 +63,12 @@ export default function ErgebnisView({
       const deine = userZuordnung[task.id];
       const modell = modellZuordnung(task);
       const ok = deine === modell;
-      return `${ok ? "✓" : "✗"} ${task.title}: du „${deine ? ZONE_TEXT[deine] : "—"}“, Modell „${ZONE_TEXT[modell]}“ (${task.kiEignung}% KI)`;
+      return `${ok ? "✓" : "✗"} ${task.title}: du „${deine ? ZONE_TEXT[deine] : "—"}“, Modell „${ZONE_TEXT[modell]}“ – ${konfidenzLabel(task.kiEignung)}`;
     });
     return [
       `${appTitel} – ${beruf.title}`,
       `${richtig} von ${total} Aufgaben stimmten mit dem Modell überein (${genauigkeit}%).`,
-      `Eigene Einschätzung: ${userPct}% der Aufgaben bei der KI. Modell im Schnitt: ${risiko}% KI.`,
+      `Eigene Einschätzung: ${userMaschine} von ${total} Aufgaben bei der KI. Modell insgesamt: ${STUFE_TEXT[risikoStufe(risiko)]}.`,
       "",
       ...zeilen,
       "",
@@ -120,10 +122,14 @@ export default function ErgebnisView({
       <section>
         <RiskGauge value={risiko} compareValue={userPct} size="lg" />
         <p className="prose-text mt-3 text-ink">
-          Du hast <span className="tnum">{userPct}%</span> der Aufgaben der KI
-          zugeordnet. Über alle Aufgaben gemittelt verortet das Modell{" "}
-          <span className="font-semibold">{beruf.title}</span> bei{" "}
-          <span className="tnum">{risiko}%</span> KI.
+          Du hast <span className="tnum">{userMaschine}</span> von{" "}
+          <span className="tnum">{total}</span> Aufgaben der KI zugeordnet.
+          Über alle Aufgaben gemittelt schätzt das Modell{" "}
+          <span className="font-semibold">{beruf.title}</span> als{" "}
+          <span className="font-semibold">
+            {STUFE_TEXT[risikoStufe(risiko)]}
+          </span>{" "}
+          ein.
         </p>
         <p className="mt-4 border-l-2 border-mensch pl-4 font-prose text-[0.95rem] italic leading-relaxed text-ink-2">
           „KI kann das“ heißt nicht „KI macht das“. Ob eine Aufgabe wirklich
@@ -188,15 +194,15 @@ export default function ErgebnisView({
                     </span>
                   </span>
                   <span>
-                    <span className="block text-xs text-ink-2">
-                      Modell{" "}
-                      <span className="tnum">({task.kiEignung}% KI)</span>
-                    </span>
+                    <span className="block text-xs text-ink-2">Modell</span>
                     <span className="text-ink">{ZONE_TEXT[modell]}</span>
                   </span>
                 </div>
 
-                <p className="mt-2.5 border-t border-ink/10 pt-2.5 font-prose text-[0.95rem] leading-relaxed text-ink-2">
+                <p className="mt-2.5 border-t border-ink/10 pt-2.5 font-prose text-[0.95rem] italic text-ink-2">
+                  {konfidenzLabel(task.kiEignung)}
+                </p>
+                <p className="mt-1.5 font-prose text-[0.95rem] leading-relaxed text-ink-2">
                   {task.warum}
                 </p>
               </li>

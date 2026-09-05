@@ -86,6 +86,18 @@ export const STUDIENGANG_KATEGORIE_REIHENFOLGE: StudiengangKategorie[] = [
 
 export type RisikoStufe = "niedrig" | "mittel" | "hoch";
 
+/**
+ * Sprechende Labels statt Prozentzahlen: Wie stark eine ganze
+ * Einheit (Beruf/Studiengang) im Schnitt Richtung KI oder Mensch tendiert.
+ * Ersetzt die früher direkt angezeigte Durchschnitts-Prozentzahl, die eine
+ * Präzision vortäuschte, die die zugrunde liegenden Schätzwerte nicht haben.
+ */
+export const STUFE_TEXT: Record<RisikoStufe, string> = {
+  niedrig: "Eher menschlich geprägt",
+  mittel: "Gemischtes Bild",
+  hoch: "Stark KI-nah",
+};
+
 /** Zuordnung der Nutzer:innen: Task-ID -> Spalte. */
 export type UserZuordnung = Record<string, Zuordnung>;
 

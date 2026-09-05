@@ -1,8 +1,12 @@
+import { konfidenzLabel } from "@/lib/scoring";
+
 /**
  * Ein-Achsen-Anzeige: links der Mensch, rechts die KI.
  * - Strich (Ziegelrot) = wie das Modell den Beruf im Schnitt verortet.
  * - Dreieck (Ink) = wie die Nutzer:in die Aufgaben selbst aufgeteilt hat.
- * 0 % = ganz menschlich, 100 % = ganz maschinell.
+ * Bewusst ohne Prozentzahl: Die Position auf der Achse zeigt die Tendenz,
+ * das Label darüber beschreibt sie in Worten statt mit einer Zahl, die eine
+ * Präzision vortäuschen würde, die die Schätzung nicht hat.
  */
 export default function RiskGauge({
   value,
@@ -23,10 +27,10 @@ export default function RiskGauge({
       {lg && user != null && (
         <div className="flex flex-wrap gap-x-6 gap-y-0.5 text-xs">
           <span className="font-semibold text-ink">
-            Deine Aufteilung: <span className="tnum">{user}%</span> zur KI
+            Deine Aufteilung: {konfidenzLabel(user)}
           </span>
           <span className="font-semibold text-mensch">
-            Modell: <span className="tnum">{model}%</span> KI
+            Modell: {konfidenzLabel(model)}
           </span>
         </div>
       )}

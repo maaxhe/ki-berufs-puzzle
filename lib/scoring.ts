@@ -38,6 +38,20 @@ export function risikoStufe(wert: number): RisikoStufe {
 }
 
 /**
+ * Sprechendes Label statt Prozentzahl für eine einzelne Aufgabe. Der
+ * interne kiEignung-Wert bleibt für Sortierung und Schwelle bestehen, wird
+ * aber nirgends mehr als scheinbar präzise Zahl angezeigt – niemand kann
+ * "62% KI" seriös von "58%" unterscheiden, ein Grenzfall dagegen schon.
+ */
+export function konfidenzLabel(kiEignung: number): string {
+  if (kiEignung <= 20) return "Eindeutig beim Menschen";
+  if (kiEignung <= 40) return "Eher beim Menschen, aber diskutierbar";
+  if (kiEignung <= 59) return "Echter Grenzfall – hier widersprechen sich auch die Studien";
+  if (kiEignung <= 79) return "Eher bei der KI, aber diskutierbar";
+  return "Eindeutig bei der KI";
+}
+
+/**
  * Treffergenauigkeit in Prozent (0–100): Anteil der Aufgaben, die wie das
  * Modell zugeordnet wurden. Gleiche Basis wie richtigeAnzahl, nur als Quote.
  */

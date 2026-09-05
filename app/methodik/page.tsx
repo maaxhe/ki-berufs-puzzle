@@ -39,6 +39,14 @@ export default function MethodikPage() {
             Diese Einzelwerte sind meine Einschätzung – keine Messwerte und keine
             Prognose. Sie sollen im Workshop ein Gespräch anstoßen.
           </p>
+          <p>
+            Angezeigt wird die Zahl selbst bewusst nirgends. Niemand kann seriös
+            zwischen „58 %“ und „62 %“ unterscheiden – das wäre eine Präzision,
+            die es nicht gibt. Statt einer Zahl siehst du deshalb ein Label wie
+            „Eindeutig bei der KI“ oder „Echter Grenzfall“. Der Zahlenwert
+            steckt nur noch intern dahinter, um Aufgaben zu sortieren und die
+            50-Punkte-Schwelle zwischen „Mensch“ und „KI“ zu ziehen.
+          </p>
         </section>
 
         <section className="space-y-3">

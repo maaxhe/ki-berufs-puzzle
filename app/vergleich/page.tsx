@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { berufe } from "@/data/berufe";
 import { kiRisikoGesamt, risikoStufe } from "@/lib/scoring";
+import { STUFE_TEXT } from "@/types";
 import Disclaimer from "@/components/Disclaimer";
 
 export const metadata: Metadata = {
   title: "Berufe im Vergleich – KI-Berufs-Puzzle",
   description:
-    "Alle Berufe sortiert danach, wie viel Prozent ihrer Aufgaben das Modell heute der KI zutraut.",
+    "Alle Berufe sortiert danach, wie stark das Modell ihre Aufgaben heute der KI zutraut.",
 };
 
 const STUFE_FARBE: Record<string, string> = {
@@ -34,9 +35,9 @@ export default function VergleichPage() {
         Berufe im Vergleich
       </h1>
       <p className="prose-text mt-3 max-w-[46rem] text-ink">
-        Über alle Aufgaben gemittelt: Wie viel Prozent traut das Modell je
-        Beruf heute der KI zu? Ganz oben stehen die Berufe mit dem höchsten
-        Anteil, ganz unten die mit dem niedrigsten.
+        Über alle Aufgaben gemittelt: Wie stark tendiert das Modell je Beruf
+        Richtung KI oder Richtung Mensch? Ganz oben stehen die Berufe, die am
+        stärksten KI-nah eingeschätzt werden, ganz unten die menschlichsten.
       </p>
 
       <div className="mt-8 max-w-[46rem]">
@@ -56,8 +57,8 @@ export default function VergleichPage() {
               <span className="min-w-0 flex-1 font-display text-[0.95rem] font-semibold leading-snug text-ink transition-colors group-hover:text-mensch sm:w-56 sm:flex-none">
                 {beruf.title}
               </span>
-              <span className="tnum shrink-0 text-sm font-semibold text-ink">
-                {risiko}% KI
+              <span className="shrink-0 text-sm font-semibold text-ink">
+                {STUFE_TEXT[risikoStufe(risiko)]}
               </span>
               <span className="relative order-4 h-2 w-full basis-full bg-paper-2 sm:order-none sm:h-2.5 sm:w-auto sm:basis-auto sm:flex-1">
                 <span
