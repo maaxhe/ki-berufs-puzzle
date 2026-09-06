@@ -1,5 +1,3 @@
-import { konfidenzLabel } from "@/lib/scoring";
-
 /**
  * Ein-Achsen-Anzeige: links der Mensch, rechts die KI.
  * - Strich (Ziegelrot) = wie das Modell den Beruf im Schnitt verortet.
@@ -7,14 +5,26 @@ import { konfidenzLabel } from "@/lib/scoring";
  * Bewusst ohne Prozentzahl: Die Position auf der Achse zeigt die Tendenz,
  * das Label darüber beschreibt sie in Worten statt mit einer Zahl, die eine
  * Präzision vortäuschen würde, die die Schätzung nicht hat.
+ *
+ * Die Labels werden bewusst als fertiger Text übergeben statt hier selbst
+ * berechnet: Für den Modell-Wert gilt derselbe Stufen-Maßstab wie im
+ * restlichen Ergebnis (STUFE_TEXT, relativ zu allen anderen Berufen/
+ * Studiengängen) – würde die Gauge stattdessen konfidenzLabel() (feste
+ * Schwellen für einzelne Aufgaben) benutzen, könnte hier ein anderer Text
+ * stehen als im Fließtext direkt darunter, obwohl beide denselben Wert
+ * meinen.
  */
 export default function RiskGauge({
   value,
   compareValue,
+  modelLabel,
+  userLabel,
   size = "sm",
 }: {
   value: number;
   compareValue?: number;
+  modelLabel?: string;
+  userLabel?: string;
   size?: "sm" | "lg";
 }) {
   const clamp = (n: number) => Math.max(0, Math.min(100, n));
@@ -26,12 +36,16 @@ export default function RiskGauge({
     <div className={lg ? "space-y-2" : undefined}>
       {lg && user != null && (
         <div className="flex flex-wrap gap-x-6 gap-y-0.5 text-xs">
-          <span className="font-semibold text-ink">
-            Deine Aufteilung: {konfidenzLabel(user)}
-          </span>
-          <span className="font-semibold text-mensch">
-            Modell: {konfidenzLabel(model)}
-          </span>
+          {userLabel && (
+            <span className="font-semibold text-ink">
+              Deine Aufteilung: {userLabel}
+            </span>
+          )}
+          {modelLabel && (
+            <span className="font-semibold text-mensch">
+              Modell: {modelLabel}
+            </span>
+          )}
         </div>
       )}
 

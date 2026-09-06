@@ -11,6 +11,7 @@ import {
   modellZuordnung,
   naechsterBerufSlug,
   richtigeAnzahl,
+  risikoStufe,
   risikoStufeInListe,
   treffergenauigkeit,
 } from "@/lib/scoring";
@@ -231,7 +232,13 @@ export default function ErgebnisView({
       </header>
 
       <section>
-        <RiskGauge value={risiko} compareValue={userPct} size="lg" />
+        <RiskGauge
+          value={risiko}
+          compareValue={userPct}
+          modelLabel={STUFE_TEXT[stufe]}
+          userLabel={STUFE_TEXT[risikoStufe(userPct)]}
+          size="lg"
+        />
         <p className="prose-text mt-3 text-ink">
           Du hast <span className="tnum">{userMaschine}</span> von{" "}
           <span className="tnum">{total}</span> Aufgaben der KI zugeordnet.
