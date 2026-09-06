@@ -25,16 +25,23 @@ export default function ErkenntnissePage() {
         <section className="space-y-3">
           <p>
             Studium oder Ausbildung – was ist eigentlich sicherer vor KI? Das
-            war die Frage, die mich zu diesem Tool gebracht hat. Ich bin davon
-            ausgegangen, dass ein Studium tendenziell die sicherere Wahl ist.
-            Immerhin heißt es ja ständig, akademische Berufe seien komplexer,
-            abstrakter, schwerer zu automatisieren als handwerkliche.
+            war die Frage, die mich zu diesem Tool gebracht hat. Und meine
+            Ausgangsvermutung war eher andersrum, als man erwarten würde:
+            Handwerk ist am wenigsten betroffen – da geht es um echte
+            Hände, echte Werkstoffe, echte Räume, das kann kein Modell
+            einfach übernehmen. Die eigentlich unbequeme Frage ist doch, ob
+            sich ein Studium in Zeiten von KI überhaupt noch lohnt, wenn
+            Sprachmodelle immer zuverlässiger akademische Texte schreiben,
+            Code produzieren, Analysen liefern – also genau die Dinge, für
+            die man früher jahrelang studiert hat.
           </p>
           <p>
             Dann habe ich angefangen, Aufgabe für Aufgabe durchzugehen – erst
             für 27 Berufe, dann für 24 Studiengänge, am Ende über 350
             einzelne Aufgaben. Und je mehr ich kalibriert habe, desto klarer
-            wurde: Diese Annahme stimmt so nicht.
+            wurde: Ein Studium ist nicht automatisch die sicherere Wahl. Der
+            Bildungsweg selbst sagt fast nichts darüber aus, wie gut du vor
+            KI geschützt bist.
           </p>
         </section>
 
