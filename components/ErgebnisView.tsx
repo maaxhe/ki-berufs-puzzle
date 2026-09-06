@@ -36,6 +36,8 @@ export default function ErgebnisView({
   vergleichHref = "/vergleich",
   vergleichLabel = "Berufe im Vergleich",
   appTitel = "KI-Berufs-Puzzle",
+  puzzleBasePath = "/puzzle",
+  naechstesLabel = "Nächster Beruf",
 }: {
   beruf: PuzzleEinheit;
   userZuordnung: UserZuordnung;
@@ -46,6 +48,8 @@ export default function ErgebnisView({
   vergleichHref?: string;
   vergleichLabel?: string;
   appTitel?: string;
+  puzzleBasePath?: string;
+  naechstesLabel?: string;
 }) {
   const total = beruf.tasks.length;
   const grenzfaelle = grenzfaelleAnzahl(beruf.tasks);
@@ -408,10 +412,10 @@ export default function ErgebnisView({
         </Link>
         {nextSlug && (
           <Link
-            href={`/puzzle/${nextSlug}`}
+            href={`${puzzleBasePath}/${nextSlug}`}
             className="inline-flex min-h-11 items-center font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
           >
-            Nächster Beruf
+            {naechstesLabel}
           </Link>
         )}
         <button

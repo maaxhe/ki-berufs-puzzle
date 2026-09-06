@@ -39,6 +39,8 @@ export default async function StudiumPuzzlePage({
         vergleichHref="/studium-vergleich"
         vergleichLabel="Studiengänge im Vergleich"
         appTitel="KI-Studiengänge-Puzzle"
+        puzzleBasePath="/studium"
+        naechstesLabel="Nächster Studiengang"
       />
     </div>
   );

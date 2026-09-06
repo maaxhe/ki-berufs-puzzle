@@ -86,6 +86,8 @@ export default function TaskPuzzle({
   vergleichHref = "/vergleich",
   vergleichLabel = "Berufe im Vergleich",
   appTitel = "KI-Berufs-Puzzle",
+  puzzleBasePath = "/puzzle",
+  naechstesLabel = "Nächster Beruf",
 }: {
   beruf: PuzzleEinheit;
   alleBerufe: PuzzleEinheit[];
@@ -96,6 +98,9 @@ export default function TaskPuzzle({
   vergleichHref?: string;
   vergleichLabel?: string;
   appTitel?: string;
+  /** Basis-Route dieses Reiters für den "Nächster Beruf/Studiengang"-Link. */
+  puzzleBasePath?: string;
+  naechstesLabel?: string;
 }) {
   const storageKey = `puzzle:${beruf.slug}`;
 
@@ -254,6 +259,8 @@ export default function TaskPuzzle({
           vergleichHref={vergleichHref}
           vergleichLabel={vergleichLabel}
           appTitel={appTitel}
+          puzzleBasePath={puzzleBasePath}
+          naechstesLabel={naechstesLabel}
         />
       </div>
     );
