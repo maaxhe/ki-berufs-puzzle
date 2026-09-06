@@ -26,17 +26,17 @@ export default function ErkenntnissePage() {
           <p>
             Studium oder Ausbildung – was ist eigentlich sicherer vor KI? Das
             war die Frage, die mich zu diesem Tool gebracht hat. Und meine
-            Ausgangsvermutung war eher andersrum, als man erwarten würde:
-            Handwerk ist am wenigsten betroffen – da geht es um echte
-            Hände, echte Werkstoffe, echte Räume, das kann kein Modell
-            einfach übernehmen. Die eigentlich unbequeme Frage ist doch, ob
-            sich ein Studium in Zeiten von KI überhaupt noch lohnt, wenn
-            Sprachmodelle immer zuverlässiger akademische Texte schreiben,
-            Code produzieren, Analysen liefern – also genau die Dinge, für
-            die man früher jahrelang studiert hat.
+            Vermutung ging eher in die andere Richtung, als man erwarten
+            würde: Handwerk trifft es am wenigsten. Da geht es um echte
+            Hände, echte Werkstoffe, echte Räume – das übernimmt kein Modell
+            einfach so. Die eigentlich unbequeme Frage ist doch: Lohnt sich
+            ein Studium überhaupt noch, wenn Sprachmodelle immer
+            zuverlässiger akademische Texte schreiben, Code produzieren,
+            Analysen liefern – also genau die Dinge, für die man früher
+            jahrelang studiert hat?
           </p>
           <p>
-            Dann habe ich angefangen, Aufgabe für Aufgabe durchzugehen – erst
+            Also habe ich angefangen, Aufgabe für Aufgabe durchzugehen. Erst
             für 27 Berufe, dann für 24 Studiengänge, am Ende über 350
             einzelne Aufgaben. Und je mehr ich kalibriert habe, desto klarer
             wurde: Ein Studium ist nicht automatisch die sicherere Wahl. Der
@@ -51,20 +51,20 @@ export default function ErkenntnissePage() {
           </h2>
           <p>
             Jura und BWL – zwei Studiengänge, die man eher selten mit
-            Automatisierungsangst verbindet – stecken voller Routine, die KI
-            heute schon gut kann: Standardverträge, Kennzahlen berechnen,
-            Rechtsrecherche. Bei Kanzleifachangestellten gelten laut{" "}
-            <em>Clio Legal Trends</em> um die 81 % der Aufgaben als
-            automatisierbar. Bei Anwält:innen selbst sind es nur rund 57 % –
-            allein das zeigt schon, wie sehr sich das innerhalb eines
-            einzigen Berufsfelds unterscheidet, je nachdem, wer die Aufgabe
+            Automatisierungsangst verbindet. Und trotzdem: voller Routine,
+            die KI heute schon gut kann. Standardverträge, Kennzahlen
+            berechnen, Rechtsrecherche. Bei Kanzleifachangestellten gelten
+            laut <em>Clio Legal Trends</em> um die 81 % der Aufgaben als
+            automatisierbar. Bei Anwält:innen selbst sind es nur rund 57 %.
+            Allein das zeigt schon: Innerhalb eines einzigen Berufsfelds
+            kann der Unterschied riesig sein – je nachdem, wer die Aufgabe
             eigentlich macht.
           </p>
           <p>
             Auf der anderen Seite: Pflegefachkraft, Erzieher:in, Soziale
-            Arbeit – alles Berufe bzw. Studiengänge ohne großen akademischen
-            Nimbus, aber mit einem Kern, an den KI nicht rankommt. Da geht es
-            um Vertrauen, um Präsenz, um Verantwortung für einen anderen
+            Arbeit. Alles Berufe bzw. Studiengänge ohne großen akademischen
+            Nimbus – aber mit einem Kern, an den KI nicht rankommt. Da geht
+            es um Vertrauen, um Präsenz, um Verantwortung für einen anderen
             Menschen. Das lässt sich nicht outsourcen, egal wie gut das
             nächste Sprachmodell wird.
           </p>
@@ -84,17 +84,17 @@ export default function ErkenntnissePage() {
             Am Anfang stand bei jeder Aufgabe eine Zahl: „62 % KI“. Wirkt
             erstmal seriös. Ist es aber nicht. Niemand – auch keine Studie,
             die ich für dieses Tool gelesen habe – kann seriös zwischen 58 %
-            und 62 % unterscheiden. Das ist eine Präzision, die es einfach
-            nicht gibt.
+            und 62 % unterscheiden. Diese Präzision gibt es einfach nicht.
           </p>
           <p>
-            Also habe ich die Zahl aus der Oberfläche genommen. Was du jetzt
-            siehst, ist ein Label wie „Eindeutig bei der KI“ oder – genau bei
-            den Aufgaben, wo es wirklich knapp ist – „Echter Grenzfall, hier
-            widersprechen sich auch die Studien“. Und genau diese Grenzfälle
-            werden im Ergebnis nicht mehr als richtig oder falsch gewertet.
-            Wenn selbst die Forschung uneins wäre, kann ich dich nicht dafür
-            bestrafen, dass du anders getippt hast als mein Modell.
+            Also habe ich die Zahl wieder aus der Oberfläche genommen. Was du
+            jetzt siehst, ist ein Label wie „Eindeutig bei der KI“ – oder,
+            genau bei den Aufgaben, wo es wirklich knapp ist: „Echter
+            Grenzfall, hier widersprechen sich auch die Studien“. Und genau
+            diese Grenzfälle werden im Ergebnis nicht mehr als richtig oder
+            falsch gewertet. Wenn selbst die Forschung uneins ist, kann ich
+            dich nicht dafür bestrafen, dass du anders getippt hast als mein
+            Modell.
           </p>
         </section>
 
@@ -103,14 +103,13 @@ export default function ErkenntnissePage() {
             Können heißt nicht Machen
           </h2>
           <p>
-            Das war mir schon vorher klar, aber beim Kalibrieren von 350
+            Das war mir vorher schon klar, aber beim Kalibrieren von 350
             Aufgaben ist es mir noch mal richtig bewusst geworden: Dass eine
             Aufgabe automatisierbar <em>ist</em>, heißt nicht, dass sie
             automatisiert <em>wird</em>. Dazwischen stehen Kosten, Recht,
             Haftung – und schlicht der Wunsch, mit einem Menschen zu tun zu
             haben. Ein Sprachmodell kann heute einen Pflegebericht
-            formulieren. Das heißt noch lange nicht, dass die Fachkraft
-            überflüssig wird.
+            formulieren. Heißt das, die Fachkraft wird überflüssig? Nein.
           </p>
           <p>
             Fast jeder Beruf und jeder Studiengang, den ich mir angeschaut
@@ -154,6 +153,8 @@ export default function ErkenntnissePage() {
             .
           </p>
         </section>
+
+        <p className="pt-2 text-sm text-ink-2">Bis zum nächsten Mal, Euer Max</p>
       </div>
     </div>
   );
