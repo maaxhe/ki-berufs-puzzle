@@ -33,6 +33,12 @@ export default function Footer() {
           >
             Methodik
           </Link>
+          <Link
+            href="/entstehung"
+            className="inline-flex min-h-11 items-center text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
+          >
+            Wie dieses Tool entstanden ist
+          </Link>
         </nav>
 
         <p className="mt-6 max-w-[54ch] font-prose text-sm italic leading-relaxed text-ink-2">

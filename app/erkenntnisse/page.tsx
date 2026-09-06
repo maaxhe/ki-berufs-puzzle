@@ -150,6 +150,14 @@ export default function ErkenntnissePage() {
             >
               Methodik-Seite
             </Link>
+            . Und wie dieses Tool selbst mit KI gebaut wurde – inklusive der
+            Stellen, an denen ich der KI widersprechen musste – steht auf der{" "}
+            <Link
+              href="/entstehung"
+              className="underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+            >
+              Entstehungs-Seite
+            </Link>
             .
           </p>
         </section>
