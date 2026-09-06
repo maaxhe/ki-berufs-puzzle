@@ -280,6 +280,13 @@ export default function TaskPuzzle({
         <Legend />
       </div>
 
+      <p className="mt-4 max-w-[46rem] border-l-2 border-ink bg-paper-2 px-3 py-2.5 text-sm text-ink sm:hidden">
+        <span className="font-semibold">So sortierst du auf dem Handy:</span>{" "}
+        Entweder <span className="font-semibold">Karte antippen</span>, dann{" "}
+        <span className="font-semibold">Spalte antippen</span> – oder die
+        Karte direkt mit dem Finger in die Spalte ziehen.
+      </p>
+
       <div className="mt-8 max-w-[46rem] space-y-4">
         <Disclaimer />
         <Quellen quellen={beruf.quellen} compact />

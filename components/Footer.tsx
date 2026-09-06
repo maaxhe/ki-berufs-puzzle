@@ -8,38 +8,38 @@ export default function Footer() {
           KI-Berufs-Puzzle
         </p>
 
-        <p className="mt-4 flex gap-x-6 text-sm">
+        <nav className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <Link
             href="/"
-            className="text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
+            className="inline-flex min-h-11 items-center text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
           >
             Alle Berufe
           </Link>
           <Link
             href="/vergleich"
-            className="text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
+            className="inline-flex min-h-11 items-center text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
           >
             Berufe im Vergleich
           </Link>
           <Link
             href="/studium"
-            className="text-ink underline decoration-ink/30 underline-offset-4 hover:text-uni hover:decoration-uni"
+            className="inline-flex min-h-11 items-center text-ink underline decoration-ink/30 underline-offset-4 hover:text-uni hover:decoration-uni"
           >
             Studiengänge
           </Link>
           <Link
             href="/methodik"
-            className="text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
+            className="inline-flex min-h-11 items-center text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
           >
             Methodik
           </Link>
           <Link
             href="/erkenntnisse"
-            className="text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
+            className="inline-flex min-h-11 items-center text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
           >
             Erkenntnisse
           </Link>
-        </p>
+        </nav>
 
         <p className="mt-6 max-w-[54ch] font-prose text-sm italic leading-relaxed text-ink-2">
           Ein Werkzeug für Berufsorientierungs-Workshops. Die KI-Werte sind

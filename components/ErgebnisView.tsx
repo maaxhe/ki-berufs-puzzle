@@ -390,26 +390,26 @@ export default function ErgebnisView({
         <button
           type="button"
           onClick={onRetry}
-          className="font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
+          className="inline-flex min-h-11 items-center font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
         >
           Nochmal sortieren
         </button>
         <Link
           href={alleHref}
-          className="font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
+          className="inline-flex min-h-11 items-center font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
         >
           {alleLabel}
         </Link>
         <Link
           href={vergleichHref}
-          className="font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
+          className="inline-flex min-h-11 items-center font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
         >
           {vergleichLabel}
         </Link>
         {nextSlug && (
           <Link
             href={`/puzzle/${nextSlug}`}
-            className="font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
+            className="inline-flex min-h-11 items-center font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
           >
             Nächster Beruf
           </Link>
