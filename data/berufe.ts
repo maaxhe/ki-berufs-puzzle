@@ -797,7 +797,7 @@ export const berufe: Beruf[] = [
     ],
     tasks: [
       { id: "ho-1", title: "Zimmer reservieren und verwalten", description: "Buchungen entgegennehmen und im System pflegen.", kiEignung: 85, category: "routine", warum: "Buchungen erfassen und verwalten läuft heute größtenteils automatisch über Buchungsplattformen." },
-      { id: "ho-2", title: "Gäste am Empfang begrüßen und einchecken", description: "Ankunft organisieren und Zimmer zuweisen.", kiEignung: 45, category: "sozial", warum: "Check-in-Automaten übernehmen die Formalität. Die persönliche Begrüßung macht den ersten Eindruck." },
+      { id: "ho-2", title: "Gäste am Empfang begrüßen und einchecken", description: "Ankunft organisieren und Zimmer zuweisen.", kiEignung: 25, category: "sozial", warum: "Check-in-Automaten übernehmen die Formalität. Die persönliche Begrüßung macht den ersten Eindruck." },
       { id: "ho-3", title: "Auf individuelle Gästewünsche eingehen", description: "Besondere Anfragen erkennen und erfüllen.", kiEignung: 15, category: "sozial", warum: "Merken, was ein Gast eigentlich braucht, auch wenn er es nicht direkt sagt, ist Gespür." },
       { id: "ho-4", title: "Rechnungen erstellen und abrechnen", description: "Leistungen erfassen und beim Check-out abrechnen.", kiEignung: 88, category: "routine", warum: "Leistungen aus dem System zu einer Rechnung zusammenfassen ist reine Regelarbeit." },
       { id: "ho-5", title: "Beschwerden lösen", description: "Unzufriedene Gäste anhören und Lösungen anbieten.", kiEignung: 20, category: "sozial", warum: "Eine verärgerte Person beruhigen und eine faire Lösung finden ist Beziehungsarbeit." },

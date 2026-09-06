@@ -1081,10 +1081,10 @@ export const studiengaenge: Studiengang[] = [
         id: "pha-1",
         title: "Wirkstoffkandidaten am Rechner vorschlagen",
         description: "Mögliche neue Moleküle für eine Zielstruktur finden.",
-        kiEignung: 85,
+        kiEignung: 55,
         category: "analytisch",
         warum:
-          "KI-Modelle durchsuchen heute riesige Molekülräume und schlagen Kandidaten deutlich schneller vor als klassisches Screening.",
+          "KI-Modelle durchsuchen riesige Molekülräume deutlich schneller als klassisches Screening – aber das ist ein Spezialgebiet weniger Forschungspharmazeut:innen, nicht der Alltag der meisten Apotheker:innen.",
       },
       {
         id: "pha-2",
@@ -1108,7 +1108,7 @@ export const studiengaenge: Studiengang[] = [
         id: "pha-4",
         title: "Wechselwirkungen und Interaktionen prüfen",
         description: "Medikamentenkombination auf Risiken checken.",
-        kiEignung: 82,
+        kiEignung: 60,
         category: "analytisch",
         warum:
           "Bekannte Wechselwirkungen listet Software zuverlässig auf, die Einschätzung im Einzelfall bleibt fachliches Urteil.",
@@ -1117,10 +1117,10 @@ export const studiengaenge: Studiengang[] = [
         id: "pha-5",
         title: "Klinische Studiendaten auswerten",
         description: "Wirksamkeit und Sicherheit eines Präparats prüfen.",
-        kiEignung: 77,
+        kiEignung: 50,
         category: "analytisch",
         warum:
-          "Statistische Auswertung großer Studiendaten ist eine Stärke aktueller KI-Systeme, die Zulassungsentscheidung bleibt reguliert und menschlich.",
+          "Statistische Auswertung ist eine Stärke von KI-Systemen – aber auch das betrifft vor allem Forschung und Zulassung, nicht die tägliche Arbeit am Tresen.",
       },
       {
         id: "pha-6",
@@ -1135,7 +1135,7 @@ export const studiengaenge: Studiengang[] = [
         id: "pha-7",
         title: "Über neue Arzneimittel und Studienlage informieren",
         description: "Ärzt:innen und Fachpersonal auf dem Laufenden halten.",
-        kiEignung: 72,
+        kiEignung: 50,
         category: "routine",
         warum:
           "Zusammenfassungen liefert KI gut, die Einordnung für eine konkrete Praxis bleibt Fachaustausch zwischen Menschen.",
