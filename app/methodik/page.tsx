@@ -199,6 +199,34 @@ export default function MethodikPage() {
             )}
           </ol>
         </section>
+
+        <section className="space-y-2 border-t border-rule pt-6">
+          <h2 className="font-display text-sm font-semibold text-ink">
+            Für Lehrkräfte
+          </h2>
+          <p className="text-[0.95rem] leading-relaxed">
+            Wer dieses Tool im Unterricht einsetzen will, findet Hintergrund
+            und praktische Tipps dazu in zwei Artikeln von mir:{" "}
+            <a
+              href="https://maximilianherrmann.com/blog/drei-bildungsauftraege-fuer-ki-im-unterricht.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+            >
+              Drei Bildungsaufträge für KI im Unterricht
+            </a>{" "}
+            und{" "}
+            <a
+              href="https://maximilianherrmann.com/blog/welches-tool-fuer-ki-bildung-an-schulen-perfekt-geeignet-ist-und-wie-man-es-richtig-einsetzt.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+            >
+              Welches Tool für KI-Bildung an Schulen perfekt geeignet ist
+            </a>
+            .
+          </p>
+        </section>
       </div>
     </div>
   );
