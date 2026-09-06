@@ -11,9 +11,16 @@
   --color-mensch-wash: #efe1dc;
   --color-rule: #ddd6c9;
 
-  /* Akzent für den Studiengänge-Reiter: Petrol statt Ziegelrot */
-  --color-uni: #2f6d5e;
-  --color-uni-wash: #dfe9e2;
+  /* Feste Berufe-Farbe (Ziegelrot) für den Reiter-Umschalter in Header.tsx –
+     bewusst NICHT von .theme-studium überschrieben (anders als --color-mensch),
+     damit der "Berufe"-Tab immer rot bleibt, egal auf welcher Seite man
+     gerade steht. */
+  --color-beruf: #8a3a2c;
+
+  /* Akzent für den Studiengänge-Reiter: Petrol statt Ziegelrot – kräftiger
+     als ein reines Pastell, damit der Wechsel auf einen Blick auffällt. */
+  --color-uni: #1f5c4d;
+  --color-uni-wash: #d7e6e0;
 
   /* Auswertung: Übereinstimmung vs. Abweichung */
   --color-ok: #47653c;
@@ -41,9 +48,11 @@
 .theme-studium {
   --color-mensch: var(--color-uni);
   --color-mensch-wash: var(--color-uni-wash);
-  --color-paper: #f1f5f3;
-  --color-paper-2: #e7edea;
-  --color-rule: #cbdad3;
+  --color-paper: #edf4f1;
+  --color-paper-2: #dfebe5;
+  --color-rule: #b7d0c5;
+  --color-ink: #1c2624;
+  --color-ink-2: #56655e;
 }
 
 body {

@@ -9,6 +9,9 @@ export default function Header() {
 
   return (
     <header className="border-b border-rule">
+      {/* Akzentleiste: sofort erkennbar, in welchem Bereich man ist, auch
+          nach dem Scrollen und bevor man den Text liest. */}
+      <div className="h-[3px] bg-mensch" aria-hidden="true" />
       <div className="mx-auto flex max-w-[68rem] items-baseline justify-between px-5 py-5 sm:px-8">
         <div className="flex items-baseline gap-5">
           <span className="font-display text-[1.05rem] font-semibold tracking-tight text-ink">
@@ -20,8 +23,8 @@ export default function Header() {
               aria-current={!studiumAktiv ? "page" : undefined}
               className={`rounded-full px-3 py-1 font-semibold transition-colors ${
                 !studiumAktiv
-                  ? "bg-ink text-paper"
-                  : "text-ink-2 hover:text-mensch"
+                  ? "bg-beruf text-paper"
+                  : "text-ink-2 hover:text-beruf"
               }`}
             >
               Berufe{" "}
@@ -32,7 +35,7 @@ export default function Header() {
               aria-current={studiumAktiv ? "page" : undefined}
               className={`rounded-full px-3 py-1 font-semibold transition-colors ${
                 studiumAktiv
-                  ? "bg-ink text-paper"
+                  ? "bg-uni text-paper"
                   : "text-ink-2 hover:text-uni"
               }`}
             >
