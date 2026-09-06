@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 export default function Header() {
   const pathname = usePathname();
   const studiumAktiv = pathname?.startsWith("/studium") ?? false;
+  const erkenntnisseAktiv = pathname === "/erkenntnisse";
 
   return (
     <header className="border-b border-rule">
@@ -43,9 +44,22 @@ export default function Header() {
             </Link>
           </nav>
         </div>
-        <span className="hidden font-prose text-sm italic text-ink-2 sm:block">
-          für Berufsorientierungs-Workshops
-        </span>
+        <div className="flex items-baseline gap-5">
+          <Link
+            href="/erkenntnisse"
+            aria-current={erkenntnisseAktiv ? "page" : undefined}
+            className={`text-sm font-semibold underline decoration-2 underline-offset-4 transition-colors ${
+              erkenntnisseAktiv
+                ? "text-ink decoration-ink/40"
+                : "text-ink-2 decoration-transparent hover:text-ink hover:decoration-ink/30"
+            }`}
+          >
+            Erkenntnisse
+          </Link>
+          <span className="hidden font-prose text-sm italic text-ink-2 sm:block">
+            für Berufsorientierungs-Workshops
+          </span>
+        </div>
       </div>
     </header>
   );
