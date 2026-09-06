@@ -17,10 +17,11 @@
      gerade steht. */
   --color-beruf: #8a3a2c;
 
-  /* Akzent für den Studiengänge-Reiter: Petrol statt Ziegelrot – kräftiger
-     als ein reines Pastell, damit der Wechsel auf einen Blick auffällt. */
-  --color-uni: #1f5c4d;
-  --color-uni-wash: #d7e6e0;
+  /* Akzent für den Studiengänge-Reiter: angenehmes Blau statt Ziegelrot –
+     kräftiger als ein reines Pastell, damit der Wechsel auf einen Blick
+     auffällt. */
+  --color-uni: #2a5a8a;
+  --color-uni-wash: #dbe6f0;
 
   /* Auswertung: Übereinstimmung vs. Abweichung */
   --color-ok: #47653c;
@@ -40,19 +41,19 @@
 /*
  * Studiengänge-Reiter: überschreibt Akzent- UND Grundton, damit der Bereich
  * auf einen Blick als "woanders" erkennbar ist – nicht nur der Ziegelrot-
- * Akzent wird zu Petrol, auch Papier und Trennlinien bekommen einen leicht
- * kühleren, grünlichen statt warm-beigen Unterton. Komponenten selbst
+ * Akzent wird zu Blau, auch Papier und Trennlinien bekommen einen leicht
+ * kühleren, bläulichen statt warm-beigen Unterton. Komponenten selbst
  * müssen dafür nichts wissen: die Klasse umschließt die ganze Seite
  * (ThemeRoot, siehe layout.tsx) inklusive Header und Footer.
  */
 .theme-studium {
   --color-mensch: var(--color-uni);
   --color-mensch-wash: var(--color-uni-wash);
-  --color-paper: #edf4f1;
-  --color-paper-2: #dfebe5;
-  --color-rule: #b7d0c5;
-  --color-ink: #1c2624;
-  --color-ink-2: #56655e;
+  --color-paper: #eef2f7;
+  --color-paper-2: #e0e8f1;
+  --color-rule: #b9c9dc;
+  --color-ink: #1c2430;
+  --color-ink-2: #566175;
 }
 
 body {
