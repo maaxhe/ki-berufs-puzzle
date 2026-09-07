@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -57,6 +58,22 @@ export default function EntstehungPage() {
             geschrieben, den Build laufen lassen, Fehler gefunden und
             korrigiert – bis die Seite tatsächlich lief.
           </p>
+          <figure className="space-y-2">
+            <Image
+              src="/entstehung/claude-code-diff.png"
+              alt="Terminal-Ausschnitt: Claude Code ändert eigenständig CSS-Variablen in app/globals.css, nachdem ich getippt hatte „mache den Kontrast zwischen Beruf und Studium noch etwas deutlicher“."
+              width={1962}
+              height={1196}
+              className="w-full rounded-[2px] border border-rule"
+            />
+            <figcaption className="text-sm text-ink-2">
+              So sieht das in echt aus: Ich tippe „mache den Kontrast
+              zwischen Beruf und Studium noch etwas deutlicher“ – Claude Code
+              findet selbstständig die richtigen CSS-Variablen in{" "}
+              <code className="text-[0.85em]">app/globals.css</code> und
+              ändert sie.
+            </figcaption>
+          </figure>
         </section>
 
         <section className="space-y-3">

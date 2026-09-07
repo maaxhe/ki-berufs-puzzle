@@ -78,28 +78,6 @@ export default function ErkenntnissePage() {
 
         <section className="space-y-3">
           <h2 className="font-display text-[1.4rem] font-semibold text-ink">
-            Warum ich die Prozentzahlen wieder rausgenommen habe
-          </h2>
-          <p>
-            Am Anfang stand bei jeder Aufgabe eine Zahl: „62 % KI“. Wirkt
-            erstmal seriös. Ist es aber nicht. Niemand – auch keine Studie,
-            die ich für dieses Tool gelesen habe – kann seriös zwischen 58 %
-            und 62 % unterscheiden. Diese Präzision gibt es einfach nicht.
-          </p>
-          <p>
-            Also habe ich die Zahl wieder aus der Oberfläche genommen. Was du
-            jetzt siehst, ist ein Label wie „Eindeutig bei der KI“ – oder,
-            genau bei den Aufgaben, wo es wirklich knapp ist: „Echter
-            Grenzfall, hier widersprechen sich auch die Studien“. Und genau
-            diese Grenzfälle werden im Ergebnis nicht mehr als richtig oder
-            falsch gewertet. Wenn selbst die Forschung uneins ist, kann ich
-            dich nicht dafür bestrafen, dass du anders getippt hast als mein
-            Modell.
-          </p>
-        </section>
-
-        <section className="space-y-3">
-          <h2 className="font-display text-[1.4rem] font-semibold text-ink">
             Können heißt nicht Machen
           </h2>
           <p>
