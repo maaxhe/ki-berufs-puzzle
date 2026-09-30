@@ -181,7 +181,7 @@ export const berufe: Beruf[] = [
       "Angehörigen in Ausnahmesituationen Halt geben",
     ],
     quellen: [
-      { ...freyOsborne, wert: "EMTs and Paramedics: 4,9 %" },
+      { ...freyOsborne, wert: "Emergency Medical Technicians and Paramedics: 4,9 %" },
       { ...iabKurzbericht, wert: "Segment Gesundheitsberufe (medizinisch und nicht medizinisch): 26,5 %" },
       jobFuturomat,
     ],
@@ -397,8 +397,8 @@ export const berufe: Beruf[] = [
       "Verantwortung übernehmen und mit dem Finanzamt verhandeln",
     ],
     quellen: [
-      { ...freyOsborne, wert: "Tax Preparers: 99 %, Bookkeeping Clerks: 98 %, Accountants and Auditors: 94 %" },
-      { ...iabKurzbericht, wert: "Segment Unternehmensführung und -organisation: 68,0 %" },
+      { ...freyOsborne, wert: "Tax Preparers: 99 %, Bookkeeping, Accounting, and Auditing Clerks: 98 %, Accountants and Auditors: 94 %" },
+      { ...iabKurzbericht, wert: "Segment Unternehmensbezogene Dienstleistungsberufe: 66,5 %" },
       { ...ilo, wert: "Büro-/Sachbearbeitungsberufe: höchste GenAI-Exposition" },
       jobFuturomat,
     ],
@@ -462,7 +462,7 @@ export const berufe: Beruf[] = [
     ],
     quellen: [
       { ...freyOsborne, wert: "Tellers: 98 %, Loan Officers: 98 %, Personal Financial Advisors: 58 %" },
-      { ...iabKurzbericht, wert: "Segment Unternehmensführung und -organisation: 68,0 %" },
+      { ...iabKurzbericht, wert: "Segment Unternehmensbezogene Dienstleistungsberufe: 66,5 %" },
       jobFuturomat,
     ],
     tasks: [
@@ -522,7 +522,7 @@ export const berufe: Beruf[] = [
     ],
     quellen: [
       { ...freyOsborne, wert: "Paralegals and Legal Assistants: 94 %, Legal Secretaries: 98 %" },
-      { ...iabKurzbericht, wert: "Segment Unternehmensführung und -organisation: 68,0 %" },
+      { ...iabKurzbericht, wert: "Segment Unternehmensbezogene Dienstleistungsberufe: 66,5 %" },
       { ...ilo, wert: "Büro-/Sachbearbeitungsberufe: höchste GenAI-Exposition" },
       jobFuturomat,
     ],
@@ -1015,7 +1015,7 @@ export const berufe: Beruf[] = [
       "Bei Störungen im Ablauf schnell Lösungen organisieren",
     ],
     quellen: [
-      { ...freyOsborne, wert: "Purchasing Agents: 77 %, Production, Planning, and Expediting Clerks: 88 %, Bookkeeping Clerks: 98 %" },
+      { ...freyOsborne, wert: "Purchasing Agents: 77 %, Production, Planning, and Expediting Clerks: 88 %, Bookkeeping, Accounting, and Auditing Clerks: 98 %" },
       { ...iabKurzbericht, wert: "Segment Unternehmensführung und -organisation: 68,0 %" },
       jobFuturomat,
     ],

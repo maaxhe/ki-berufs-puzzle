@@ -113,10 +113,11 @@ export default function MethodikPage() {
           </p>
           <p>
             Die Werte aus dem IAB-Kurzbericht sind <em>Berufssegmente</em>, keine
-            einzelnen Berufe: Ich habe jeden Beruf dem Segment zugeordnet, das
-            am besten passt. Diese Zuordnung ist meine und kann von der
-            amtlichen Einteilung im Einzelfall abweichen. Die Prozentzahlen
-            selbst stammen aus dem Bericht (Stand 2022).
+            einzelnen Berufe: Ich habe jeden Beruf dem Segment zugeordnet, in
+            dem seine Berufshauptgruppe nach der Systematik der Bundesagentur
+            für Arbeit liegt. Im Einzelfall kann ein Beruf trotzdem eher zu
+            einem Nachbarsegment passen. Die Prozentzahlen selbst stammen aus
+            dem Bericht (Stand 2022).
           </p>
         </section>
 
