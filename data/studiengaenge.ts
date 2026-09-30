@@ -47,7 +47,7 @@ export const studiengaenge: Studiengang[] = [
         kontext: "beruf",
         title: "Systemarchitektur entwerfen",
         description: "Entscheiden, wie ein größeres System aufgebaut wird.",
-        kiEignung: 42,
+        kiEignung: 57,
         category: "analytisch",
         warum:
           "Welche Trade-offs für dieses Produkt, dieses Team und dieses Budget richtig sind, erfordert Erfahrung und Kontext, den KI nicht hat.",
@@ -57,7 +57,7 @@ export const studiengaenge: Studiengang[] = [
         kontext: "studium",
         title: "Bugs in fremdem Code debuggen",
         description: "Ursache eines Fehlers in gewachsenem Code finden.",
-        kiEignung: 62,
+        kiEignung: 82,
         category: "analytisch",
         warum:
           "KI findet viele Fehlerklassen selbst, aber bei verteilten Systemen und Legacy-Code bleibt die Ursachenforschung oft Handarbeit.",
@@ -77,7 +77,7 @@ export const studiengaenge: Studiengang[] = [
         kontext: "studium",
         title: "Unit-Tests schreiben",
         description: "Testfälle für einzelne Funktionen formulieren.",
-        kiEignung: 75,
+        kiEignung: 90,
         category: "routine",
         warum:
           "Testfälle aus Funktionssignaturen abzuleiten ist ein Musterbeispiel für generative KI.",

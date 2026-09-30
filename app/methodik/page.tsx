@@ -90,8 +90,11 @@ export default function MethodikPage() {
             schreibt inzwischen große Teile des Alltagscodes und liefert
             Bildentwürfe im Sekundentakt. Für diese Berufe habe ich die Werte
             deshalb bewusst nach oben gezogen und im Ausblick erklärt, warum.
-            Umgekehrt beim Berufskraftfahrer: Da war die alte Schätzung sehr hoch,
-            aber selbstfahrende LKW kommen viel langsamer als gedacht.
+            Umgekehrt beim Berufskraftfahrer: Da war die alte Schätzung sehr hoch.
+            Inzwischen fahren in Texas erste Lkw auf Fernstrecken ohne
+            Fahrer:in, in Deutschland gibt es bisher nur eine Pilotstrecke von
+            wenigen hundert Metern – der Weg vom Pilotprojekt in den Alltag
+            dauert länger, als viele erwartet haben.
           </p>
         </section>
 

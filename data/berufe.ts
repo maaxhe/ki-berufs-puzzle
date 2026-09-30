@@ -128,13 +128,13 @@ export const berufe: Beruf[] = [
     tasks: [
       { id: "leh-1", title: "Unterricht vorbereiten", description: "Stundenverlauf, Materialien und Übungsaufgaben zusammenstellen.", kiEignung: 65, category: "analytisch", warum: "Ein Sprachmodell liefert in Minuten einen Entwurf. Ob er zu genau dieser Klasse passt, entscheidest du." },
       { id: "leh-2", title: "Vor der Klasse unterrichten", description: "Inhalte erklären, Fragen beantworten, auf Reaktionen eingehen.", kiEignung: 20, category: "sozial", warum: "Live auf 25 unterschiedliche Reaktionen gleichzeitig eingehen ist etwas anderes als ein Video abzuspielen." },
-      { id: "leh-3", title: "Klassenarbeiten und Hausaufgaben korrigieren", description: "Ergebnisse bewerten und Fehler nachvollziehbar markieren.", kiEignung: 55, category: "routine", warum: "Multiple-Choice und Rechtschreibung prüft Software zuverlässig. Bei Aufsätzen und Argumenten bleibt die Einschätzung schwieriger." },
-      { id: "leh-4", title: "Elternabende und Klassenfahrten organisieren", description: "Termine, Einverständnisse und Ablauf planen.", kiEignung: 55, category: "routine", warum: "Einladungen, Listen, Einverständniserklärungen – vieles davon ist Organisation, die Software mittlerweile mitträgt. Die Klassenfahrt mit 28 Kindern begleitet sie nicht." },
-      { id: "leh-5", title: "Individuelle Förderpläne erstellen", description: "Übungen und Tempo an einzelne Schüler:innen anpassen.", kiEignung: 50, category: "analytisch", warum: "Adaptive Lernsoftware schlägt passende Übungen vor. Ob sie beim Kind ankommen, siehst nur du im Unterricht." },
+      { id: "leh-3", title: "Klassenarbeiten und Hausaufgaben korrigieren", description: "Ergebnisse bewerten und Fehler nachvollziehbar markieren.", kiEignung: 45, category: "routine", warum: "Multiple-Choice und Rechtschreibung prüft Software zuverlässig. Bei Aufsätzen und Argumenten bleibt die Einschätzung schwieriger." },
+      { id: "leh-4", title: "Elternabende und Klassenfahrten organisieren", description: "Termine, Einverständnisse und Ablauf planen.", kiEignung: 30, category: "routine", warum: "Einladungen, Listen, Einverständniserklärungen – vieles davon ist Organisation, die Software mittlerweile mitträgt. Die Klassenfahrt mit 28 Kindern begleitet sie nicht." },
+      { id: "leh-5", title: "Individuelle Förderpläne erstellen", description: "Übungen und Tempo an einzelne Schüler:innen anpassen.", kiEignung: 40, category: "analytisch", warum: "Adaptive Lernsoftware schlägt passende Übungen vor. Ob sie beim Kind ankommen, siehst nur du im Unterricht." },
       { id: "leh-6", title: "Elterngespräche führen", description: "Über Leistung, Verhalten und Entwicklung des Kindes sprechen.", kiEignung: 10, category: "sozial", warum: "Ein schwieriges Gespräch mit besorgten Eltern führen ist Vertrauensarbeit, kein Bericht zum Vorlesen." },
       { id: "leh-7", title: "Noten und Zeugnisse verwalten", description: "Bewertungen erfassen und Zeugnistexte formulieren.", kiEignung: 70, category: "routine", warum: "Noten eintragen und Standardformulierungen erzeugen ist genau das, was Verwaltungssoftware übernimmt." },
       { id: "leh-8", title: "Auf schwierige Situationen im Klassenzimmer reagieren", description: "Störungen, Überforderung oder Mobbing im Moment erkennen und handeln.", kiEignung: 5, category: "sozial", warum: "Im Moment merken, dass gerade etwas kippt, und richtig reagieren – das ist Präsenz, die kein Tool ersetzt." },
-      { id: "leh-9", title: "Falsch verstandenen Stoff geduldig anders erklären", description: "Einer Schülerin denselben Inhalt auf einem neuen Weg erklären.", kiEignung: 60, category: "sozial", warum: "Ein Chat-Tutor erklärt dieselbe Sache zum fünften Mal und wird nie ungeduldig – erste Studien zeigen echte Lerneffekte. Was ihm fehlt: merken, dass das Kind gerade wegen etwas ganz anderem abschaltet.", ueberraschend: true },
+      { id: "leh-9", title: "Falsch verstandenen Stoff geduldig anders erklären", description: "Einer Schülerin denselben Inhalt auf einem neuen Weg erklären.", kiEignung: 45, category: "sozial", warum: "Ein Chat-Tutor erklärt dieselbe Sache zum fünften Mal und wird nie ungeduldig – erste Studien zeigen echte Lerneffekte. Was ihm fehlt: merken, dass das Kind gerade wegen etwas ganz anderem abschaltet.", ueberraschend: true },
     ],
   },
   {
@@ -268,7 +268,7 @@ export const berufe: Beruf[] = [
       "Transportiert Güter im Straßenverkehr und ist für Ladung, Fahrzeug und Termine verantwortlich.",
     kategorie: "technik-handwerk",
     zukunftsausblick:
-      "Frey & Osborne schätzten das Automatisierungsrisiko sehr hoch ein. Erste fahrerlose Lkw fahren inzwischen auf ausgewählten Strecken in den USA, im deutschen Alltag sind sie aber noch nicht angekommen. Routenplanung und Papierkram sind schon heute stark digitalisiert; Beladen, Ladungssicherung und Reagieren in kniffligen Verkehrslagen bleiben menschlich.",
+      "Frey & Osborne schätzten das Automatisierungsrisiko sehr hoch ein. Inzwischen fahren in Texas die ersten Lkw auf langen Autobahnstrecken ohne Fahrer:in am Steuer (seit 2025), nur die letzten Kilometer beim Kunden übernehmen noch Menschen. In Deutschland ist ein fahrerloser Lkw bisher nur auf einer Pilotstrecke von wenigen hundert Metern zugelassen. Routenplanung und Papierkram sind stark digitalisiert; Beladen, Andocken, Ladungssicherung und Reagieren in kniffligen Verkehrslagen bleiben menschlich. Der Beruf verschiebt sich vermutlich weg von der Fernstrecke hin zu Verteilerfahrten, Kundenkontakt und Überwachung. Routenplanung und Papierkram sind schon heute stark digitalisiert; Beladen, Ladungssicherung und Reagieren in kniffligen Verkehrslagen bleiben menschlich.",
     tippsMenschlich: [
       "In unübersichtlichen Verkehrs- und Baustellensituationen sicher entscheiden",
       "Ladung fachgerecht sichern und Verantwortung für die Fracht übernehmen",
@@ -278,9 +278,19 @@ export const berufe: Beruf[] = [
       { ...freyOsborne, wert: "Heavy and Tractor-Trailer Truck Drivers: 79 %" },
       { ...iabKurzbericht, wert: "Segment Verkehrs- und Logistikberufe: 61,2 %" },
       jobFuturomat,
+      {
+        label:
+          "Aurora (2025): Start des kommerziellen fahrerlosen Lkw-Betriebs zwischen Dallas und Houston",
+        url: "https://www.sec.gov/Archives/edgar/data/1828108/000182810825000078/auroracommerciallaunchpres.htm",
+      },
+      {
+        label:
+          "Wirtschaft und Industrie: Autonomer Lkw in Edermünde – enge Grenzen im Pilotbetrieb (Lidl/Einride, erste Level-4-Zulassung ohne Kabine)",
+        url: "https://www.wirtschaft-und-industrie.de/autonomer-lkw-in-edermuende-enge-grenzen-im-pilotbetrieb/",
+      },
     ],
     tasks: [
-      { id: "bkf-1", title: "Güter auf festen Routen transportieren", description: "Planbare Strecken zwischen Depots und Kunden abfahren.", kiEignung: 45, category: "routine", warum: "Planbare Strecken sind das erklärte Ziel autonomer Systeme – im echten Straßenverkehr sitzt heute aber noch fast überall ein Mensch am Steuer." },
+      { id: "bkf-1", title: "Güter auf festen Routen transportieren", description: "Planbare Strecken zwischen Depots und Kunden abfahren.", kiEignung: 55, category: "routine", warum: "Planbare Autobahnstrecken sind das erklärte Ziel autonomer Systeme: In Texas fahren erste Lkw dort schon ohne Fahrer:in. In Deutschland läuft bisher nur ein Pilot über wenige hundert Meter, der Alltag ist noch weit davon entfernt." },
       { id: "bkf-2", title: "Lenk- und Ruhezeiten dokumentieren", description: "Fahrtenschreiber bedienen und gesetzliche Zeiten einhalten.", kiEignung: 80, category: "routine", warum: "Der Fahrtenschreiber erledigt das ohnehin fast von allein." },
       { id: "bkf-3", title: "Fahrzeug beladen und Ladung sichern", description: "Gewicht verteilen, zurren, gegen Verrutschen sichern.", kiEignung: 40, category: "physisch", warum: "Gewicht verteilen und zurren ist körperliche Arbeit mit Verantwortung – ob es hält oder eben nicht." },
       { id: "bkf-4", title: "Route bei Stau und Sperrung anpassen", description: "Kurzfristig umplanen und Kunden über Verzug informieren.", kiEignung: 55, category: "analytisch", warum: "Bei Stau umplanen können Navi und Software. Der Anruf beim Kunden kommt von dir." },
