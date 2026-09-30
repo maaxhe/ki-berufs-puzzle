@@ -47,6 +47,11 @@ const TaskCard = forwardRef<HTMLButtonElement, TaskCardProps>(function TaskCard(
           }`}
         >
           {CATEGORY_LABELS[task.category]}
+          {task.kontext && (
+            <span className="block text-right">
+              {task.kontext === "studium" ? "im Studium" : "im Beruf danach"}
+            </span>
+          )}
         </span>
       </span>
     </button>

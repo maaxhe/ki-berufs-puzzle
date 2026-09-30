@@ -17,7 +17,8 @@ export async function generateMetadata({
   if (!beruf) return { title: "Beruf nicht gefunden – KI-Berufs-Puzzle" };
   return {
     title: `${beruf.title} – KI-Berufs-Puzzle`,
-    description: `Ordne die Aufgaben einer ${beruf.title} zu: Was übernimmt KI, was bleibt menschlich?`,
+    description: `${beruf.shortDescription} Ordne die Aufgaben selbst zu: Was übernimmt KI, was bleibt menschlich?`,
+    alternates: { canonical: `/puzzle/${beruf.slug}` },
   };
 }
 

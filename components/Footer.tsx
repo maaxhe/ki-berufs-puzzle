@@ -28,6 +28,12 @@ export default function Footer() {
             Studiengänge
           </Link>
           <Link
+            href="/lehrkraefte"
+            className="inline-flex min-h-11 items-center text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
+          >
+            Für Lehrkräfte
+          </Link>
+          <Link
             href="/methodik"
             className="inline-flex min-h-11 items-center text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
           >

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Was mir beim Bauen aufgefallen ist – KI-Berufs-Puzzle",
   description:
-    "Über 350 Aufgaben aus Berufen und Studiengängen kalibriert – was dabei an Mustern sichtbar wurde.",
+    "Fast 500 Aufgaben aus Berufen und Studiengängen kalibriert – was dabei an Mustern sichtbar wurde.",
 };
 
 export default function ErkenntnissePage() {
@@ -37,7 +37,7 @@ export default function ErkenntnissePage() {
           </p>
           <p>
             Also habe ich angefangen, Aufgabe für Aufgabe durchzugehen. Erst
-            für 27 Berufe, dann für 24 Studiengänge, am Ende über 350
+            für 35 Berufe, dann für 24 Studiengänge, am Ende fast 500
             einzelne Aufgaben. Und je mehr ich kalibriert habe, desto klarer
             wurde: Ein Studium ist nicht automatisch die sicherere Wahl. Der
             Bildungsweg selbst sagt fast nichts darüber aus, wie gut du vor

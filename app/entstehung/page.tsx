@@ -26,7 +26,7 @@ export default function EntstehungPage() {
         <section className="space-y-3">
           <p>
             Kurze Frage vorweg: Wie lange, glaubst du, hat es gedauert, dieses
-            Tool zu bauen – 27 Berufe, 24 Studiengänge, über 350 einzelne
+            Tool zu bauen – 35 Berufe, 24 Studiengänge, fast 500 einzelne
             Aufgaben, Drag&amp;Drop, Vergleichsseiten, alles? Ein halbes Jahr?
             Ein Team von Entwickler:innen?
           </p>

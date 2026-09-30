@@ -17,6 +17,14 @@ export interface Task {
   category: TaskCategory;
   /** Ein Satz, warum der Wert so hoch oder niedrig ist – wird im Ergebnis gezeigt. */
   warum: string;
+  /**
+   * Markiert Aufgaben, bei denen die Faustregel "Verwaltung = KI, Beziehung =
+   * Mensch" in die Irre führt – im Ergebnis als "Überraschend" gekennzeichnet
+   * und in der Lehrkräfte-Ansicht als Diskussionsanlass genutzt.
+   */
+  ueberraschend?: boolean;
+  /** Nur bei Studiengängen: Aufgabe aus dem Studium selbst oder aus dem Berufsalltag danach. */
+  kontext?: "studium" | "beruf";
 }
 
 /** Verweis auf eine reale Datenquelle zur Automatisierbarkeit eines Berufs. */
@@ -29,7 +37,10 @@ export interface Quelle {
 
 export type BerufKategorie =
   | "gesundheit-soziales"
+  | "bildung-erziehung"
   | "technik-handwerk"
+  | "bau-ausbau"
+  | "logistik-sicherheit"
   | "buero-verwaltung"
   | "it-medien"
   | "handel-dienstleistung";
@@ -132,7 +143,10 @@ export const CATEGORY_LABELS: Record<TaskCategory, string> = {
 
 export const KATEGORIE_LABELS: Record<BerufKategorie, string> = {
   "gesundheit-soziales": "Gesundheit & Soziales",
+  "bildung-erziehung": "Bildung & Erziehung",
   "technik-handwerk": "Technik & Handwerk",
+  "bau-ausbau": "Bau & Ausbau",
+  "logistik-sicherheit": "Logistik & Sicherheit",
   "buero-verwaltung": "Büro & Verwaltung",
   "it-medien": "IT & Medien",
   "handel-dienstleistung": "Handel & Dienstleistung",
@@ -141,7 +155,10 @@ export const KATEGORIE_LABELS: Record<BerufKategorie, string> = {
 /** Anzeige-Reihenfolge der Kategorien auf der Startseite. */
 export const KATEGORIE_REIHENFOLGE: BerufKategorie[] = [
   "gesundheit-soziales",
+  "bildung-erziehung",
   "technik-handwerk",
+  "bau-ausbau",
+  "logistik-sicherheit",
   "buero-verwaltung",
   "it-medien",
   "handel-dienstleistung",
@@ -165,7 +182,7 @@ export const STANDARD_QUELLEN: Record<
   },
   iabKurzbericht: {
     label:
-      "IAB-Kurzbericht 5|2024: Substituierbarkeitspotenziale von Berufen (Dengler / Matthes)",
+      "IAB-Kurzbericht 5|2024 (Grienberger, Matthes & Paulus): Folgen des technologischen Wandels – Substituierbarkeitspotenziale 2022",
     url: "https://job-futuromat.iab.de/content/text/kb2024-05.pdf",
   },
   freyOsborne: {

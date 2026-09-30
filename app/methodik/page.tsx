@@ -97,6 +97,57 @@ export default function MethodikPage() {
 
         <section className="space-y-3">
           <h2 className="font-display text-[1.4rem] font-semibold text-ink">
+            Warum meine Werte oft von den Studien abweichen
+          </h2>
+          <p>
+            Frey &amp; Osborne bewerten <em>ganze Berufe</em> und sehen bei
+            Kassierer:innen, Köch:innen oder Bürokräften Werte über 95 Prozent.
+            Ich bewerte dagegen <em>einzelne Aufgaben</em> und mittle sie. Weil
+            fast jeder Beruf auch Anteile mit Beziehung, Handarbeit oder
+            Verantwortung hat, landen die Durchschnitte oft deutlich darunter:
+            Koch/Köchin liegt bei mir im mittleren Bereich, obwohl „Cooks,
+            Restaurant“ bei Frey &amp; Osborne 96 Prozent hat. Bei
+            Landwirt:innen unterscheiden Frey &amp; Osborne sogar zwischen den
+            Betriebsleitungen (4,7 Prozent) und den Hilfskräften (87 Prozent) –
+            mein Wert liegt dazwischen.
+          </p>
+          <p>
+            Die Werte aus dem IAB-Kurzbericht sind <em>Berufssegmente</em>, keine
+            einzelnen Berufe: Ich habe jeden Beruf dem Segment zugeordnet, das
+            am besten passt. Diese Zuordnung ist meine und kann von der
+            amtlichen Einteilung im Einzelfall abweichen. Die Prozentzahlen
+            selbst stammen aus dem Bericht (Stand 2022).
+          </p>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="font-display text-[1.4rem] font-semibold text-ink">
+            „Überraschend“, Studium und Beruf, „Dürfen“
+          </h2>
+          <ul className="ml-5 list-disc space-y-2">
+            <li>
+              Aufgaben mit dem Vermerk <strong>Überraschend</strong> führen die
+              Faustregel „Verwaltung = KI, Beziehung = Mensch“ in die Irre.
+              Ein Chatbot kann freundlich auf eine wütende Mail antworten, ein
+              Sonderfall im Papierkram scheitert dagegen oft an der Maschine.
+            </li>
+            <li>
+              Bei Studiengängen steht an jeder Aufgabe, ob sie im{" "}
+              <strong>Studium</strong> anfällt oder erst im{" "}
+              <strong>Beruf danach</strong>. Beides verändert sich durch KI
+              unterschiedlich schnell.
+            </li>
+            <li>
+              Aufgaben mit „… verantworten“ mischen zwei Dinge: was KI{" "}
+              <em>könnte</em> und was sie <em>dürfte</em>. Das ist dort bewusst
+              so und in der Begründung ausdrücklich benannt – hier steckt das
+              „Dürfen“ im Wert.
+            </li>
+          </ul>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="font-display text-[1.4rem] font-semibold text-ink">
             Technisch möglich heißt nicht: im Betrieb angekommen
           </h2>
           <p>„KI kann diese Aufgabe“ kann drei ganz verschiedene Dinge heißen:</p>
@@ -205,8 +256,16 @@ export default function MethodikPage() {
             Für Lehrkräfte
           </h2>
           <p className="text-[0.95rem] leading-relaxed">
-            Wer dieses Tool im Unterricht einsetzen will, findet Hintergrund
-            und praktische Tipps dazu in zwei Artikeln von mir:{" "}
+            Wer dieses Tool im Unterricht einsetzen will, findet auf der{" "}
+            <Link
+              href="/lehrkraefte"
+              className="underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+            >
+              Lehrkräfte-Seite
+            </Link>{" "}
+            einen Ablauf für 45 Minuten, Arbeitsblätter und die
+            Klassenauswertung. Hintergrund und praktische Tipps gibt es in zwei
+            Artikeln von mir:{" "}
             <a
               href="https://maximilianherrmann.com/blog/drei-bildungsauftraege-fuer-ki-im-unterricht.html"
               target="_blank"

@@ -18,7 +18,8 @@ export async function generateMetadata({
     return { title: "Studiengang nicht gefunden – KI-Studiengänge-Puzzle" };
   return {
     title: `${studiengang.title} – KI-Studiengänge-Puzzle`,
-    description: `Ordne die typischen Aufgaben von ${studiengang.title} zu: Was übernimmt KI, was bleibt menschlich?`,
+    description: `${studiengang.shortDescription} Ordne die typischen Aufgaben von ${studiengang.title} zu: Was übernimmt KI, was bleibt menschlich?`,
+    alternates: { canonical: `/studium/${studiengang.slug}` },
   };
 }
 

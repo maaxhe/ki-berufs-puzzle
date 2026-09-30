@@ -1,7 +1,7 @@
 import { STANDARD_QUELLEN } from "@/types";
 import type { Studiengang } from "@/types";
 
-const { jobFuturomat, freyOsborne, ilo, wef, eloundou, clioLegal } =
+const { jobFuturomat, iabKurzbericht, freyOsborne, ilo, wef, eloundou, clioLegal } =
   STANDARD_QUELLEN;
 
 /**
@@ -25,10 +25,16 @@ export const studiengaenge: Studiengang[] = [
       "Kommunikation mit Fachabteilungen und Nutzer:innen üben",
       "Verantwortung für Entscheidungen übernehmen, die KI nicht treffen kann",
     ],
-    quellen: [eloundou, jobFuturomat, wef],
+    quellen: [
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus; Beruf Softwareentwickler:in: rund +30 Prozentpunkte" },
+      eloundou,
+      wef,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "inf-1",
+        kontext: "studium",
         title: "Standard-Code schreiben",
         description: "Übliche Funktionen, CRUD-Logik, Boilerplate.",
         kiEignung: 90,
@@ -38,24 +44,27 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "inf-2",
+        kontext: "beruf",
         title: "Systemarchitektur entwerfen",
         description: "Entscheiden, wie ein größeres System aufgebaut wird.",
-        kiEignung: 57,
+        kiEignung: 42,
         category: "analytisch",
         warum:
           "Welche Trade-offs für dieses Produkt, dieses Team und dieses Budget richtig sind, erfordert Erfahrung und Kontext, den KI nicht hat.",
       },
       {
         id: "inf-3",
+        kontext: "studium",
         title: "Bugs in fremdem Code debuggen",
         description: "Ursache eines Fehlers in gewachsenem Code finden.",
-        kiEignung: 82,
+        kiEignung: 62,
         category: "analytisch",
         warum:
           "KI findet viele Fehlerklassen selbst, aber bei verteilten Systemen und Legacy-Code bleibt die Ursachenforschung oft Handarbeit.",
       },
       {
         id: "inf-4",
+        kontext: "beruf",
         title: "Anforderungen mit der Fachabteilung klären",
         description: "Verstehen, was ein Team eigentlich braucht.",
         kiEignung: 15,
@@ -65,24 +74,27 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "inf-5",
+        kontext: "studium",
         title: "Unit-Tests schreiben",
         description: "Testfälle für einzelne Funktionen formulieren.",
-        kiEignung: 90,
+        kiEignung: 75,
         category: "routine",
         warum:
           "Testfälle aus Funktionssignaturen abzuleiten ist ein Musterbeispiel für generative KI.",
       },
       {
         id: "inf-6",
+        kontext: "beruf",
         title: "Code-Review verantworten",
         description: "Eine Änderung zur Freigabe prüfen und unterschreiben.",
         kiEignung: 52,
         category: "analytisch",
         warum:
-          "KI kommentiert Stil und Muster – die Freigabeentscheidung mit Haftung trifft weiterhin ein Mensch.",
+          "KI kommentiert Stil und Muster – die Freigabeentscheidung mit Haftung trifft weiterhin ein Mensch. Hier steckt das „Dürfen“ im Wert: technisch wäre mehr möglich, rechtlich muss ein Mensch haften.",
       },
       {
         id: "inf-7",
+        kontext: "beruf",
         title: "Nutzer:innen bei einem Problem beobachten",
         description: "Verstehen, woran Menschen in der Anwendung scheitern.",
         kiEignung: 10,
@@ -105,10 +117,15 @@ export const studiengaenge: Studiengang[] = [
       "Normen und rechtliche Verantwortung wirklich verstehen",
       "Kundengespräche und Vor-Ort-Diagnose üben",
     ],
-    quellen: [jobFuturomat, freyOsborne],
+    quellen: [
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      freyOsborne,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "et-1",
+        kontext: "studium",
         title: "Schaltungen simulieren",
         description: "Verhalten einer Schaltung am Rechner durchspielen.",
         kiEignung: 80,
@@ -118,6 +135,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "et-2",
+        kontext: "studium",
         title: "Prototyp aufbauen und verkabeln",
         description: "Bauteile physisch verlöten und verdrahten.",
         kiEignung: 25,
@@ -127,6 +145,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "et-3",
+        kontext: "beruf",
         title: "Fehler in einer Anlage vor Ort suchen",
         description: "Störung in einer bestehenden Installation finden.",
         kiEignung: 20,
@@ -136,6 +155,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "et-4",
+        kontext: "studium",
         title: "Regelungstechnik berechnen",
         description: "Parameter für ein Regelsystem bestimmen.",
         kiEignung: 70,
@@ -145,15 +165,17 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "et-5",
+        kontext: "beruf",
         title: "Abnahme nach VDE-Norm verantworten",
         description: "Anlage offiziell zur Nutzung freigeben.",
         kiEignung: 30,
         category: "analytisch",
         warum:
-          "Prüfgeräte liefern die Werte automatisch, die gesetzliche Freigabe unterschreibt trotzdem eine Elektrofachkraft mit persönlicher Haftung.",
+          "Prüfgeräte liefern die Werte automatisch, die gesetzliche Freigabe unterschreibt trotzdem eine Elektrofachkraft mit persönlicher Haftung. Hier steckt das „Dürfen“ im Wert: technisch wäre mehr möglich, rechtlich muss ein Mensch haften.",
       },
       {
         id: "et-6",
+        kontext: "beruf",
         title: "Schaltpläne und Dokumentation erstellen",
         description: "Aufbau einer Anlage nachvollziehbar festhalten.",
         kiEignung: 85,
@@ -163,6 +185,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "et-7",
+        kontext: "beruf",
         title: "Technische Anforderungen mit Kund:innen klären",
         description: "Herausfinden, was eine Anlage wirklich leisten soll.",
         kiEignung: 15,
@@ -187,10 +210,16 @@ export const studiengaenge: Studiengang[] = [
       "Eigenständig neue Fragestellungen entwickeln",
       "Ergebnisse überzeugend vor Fachpublikum vertreten",
     ],
-    quellen: [freyOsborne, wef],
+    quellen: [
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...freyOsborne, wert: "Physicists: 10 %" },
+      wef,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "phy-1",
+        kontext: "studium",
         title: "Messdaten auswerten",
         description: "Aus Rohdaten eines Experiments Ergebnisse extrahieren.",
         kiEignung: 77,
@@ -200,6 +229,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "phy-2",
+        kontext: "studium",
         title: "Simulationen programmieren",
         description: "Physikalisches Verhalten am Rechner nachbilden.",
         kiEignung: 62,
@@ -209,6 +239,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "phy-3",
+        kontext: "studium",
         title: "Experimentaufbau im Labor justieren",
         description: "Geräte kalibrieren, bis ein Aufbau sauber misst.",
         kiEignung: 20,
@@ -218,6 +249,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "phy-4",
+        kontext: "studium",
         title: "Neue Hypothese aus überraschenden Daten entwickeln",
         description: "Aus einer Anomalie eine neue Idee ableiten.",
         kiEignung: 30,
@@ -227,6 +259,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "phy-5",
+        kontext: "studium",
         title: "Fachliteratur zusammenfassen",
         description: "Überblick über den Stand der Forschung erstellen.",
         kiEignung: 67,
@@ -236,6 +269,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "phy-6",
+        kontext: "studium",
         title: "Ergebnis auf einer Konferenz verteidigen",
         description: "Fragen und Kritik von Fachkolleg:innen live beantworten.",
         kiEignung: 10,
@@ -245,6 +279,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "phy-7",
+        kontext: "studium",
         title: "Fördermittelantrag schreiben und Projekt verkaufen",
         description: "Ein Forschungsvorhaben überzeugend begründen.",
         kiEignung: 35,
@@ -267,10 +302,17 @@ export const studiengaenge: Studiengang[] = [
       "Verantwortung für Diagnosen bewusst übernehmen, nicht outsourcen",
       "Handwerkliche Fertigkeiten (Untersuchung, OP) aktiv trainieren",
     ],
-    quellen: [ilo, wef],
+    quellen: [
+      { ...iabKurzbericht, wert: "Segment Gesundheitsberufe: 26,5 %; Expertenberufe insgesamt: Ø 35,8 %" },
+      { ...freyOsborne, wert: "Physicians and Surgeons: 0,4 %" },
+      ilo,
+      wef,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "med-1",
+        kontext: "beruf",
         title: "Röntgen-/MRT-Bilder auf Auffälligkeiten prüfen",
         description: "Erste Durchsicht bildgebender Diagnostik.",
         kiEignung: 72,
@@ -280,6 +322,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "med-2",
+        kontext: "beruf",
         title: "Anamnese-Gespräch führen",
         description: "Krankengeschichte im Gespräch erheben.",
         kiEignung: 15,
@@ -289,15 +332,17 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "med-3",
+        kontext: "beruf",
         title: "Diagnose stellen und Behandlung verantworten",
         description: "Aus Befunden eine verbindliche Entscheidung treffen.",
         kiEignung: 32,
         category: "analytisch",
         warum:
-          "KI liefert Vorschläge, die approbierte Entscheidung mit Haftung trifft weiterhin ein Mensch.",
+          "KI liefert Vorschläge, die approbierte Entscheidung mit Haftung trifft weiterhin ein Mensch. Hier steckt das „Dürfen“ im Wert: technisch wäre mehr möglich, rechtlich muss ein Mensch haften.",
       },
       {
         id: "med-4",
+        kontext: "beruf",
         title: "Patient:in in schwerer Situation begleiten",
         description: "Schlechte Nachrichten überbringen und da sein.",
         kiEignung: 5,
@@ -307,6 +352,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "med-5",
+        kontext: "beruf",
         title: "Operation durchführen",
         description: "Handwerklicher Eingriff am Patient:innenkörper.",
         kiEignung: 10,
@@ -316,6 +362,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "med-6",
+        kontext: "beruf",
         title: "Arztbrief und Dokumentation schreiben",
         description: "Behandlung strukturiert festhalten.",
         kiEignung: 67,
@@ -325,6 +372,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "med-7",
+        kontext: "studium",
         title: "Leitlinien und aktuelle Studienlage einordnen",
         description: "Neue Forschung auf den Einzelfall übertragen.",
         kiEignung: 52,
@@ -349,10 +397,17 @@ export const studiengaenge: Studiengang[] = [
       "Entscheidungsfähigkeit unter Unsicherheit üben, nicht nur Zahlen liefern",
       "Führungserfahrung früh sammeln, z. B. in Projekten oder Vereinen",
     ],
-    quellen: [eloundou, wef, jobFuturomat],
+    quellen: [
+      { ...iabKurzbericht, wert: "Betriebswirt:in (Hochschule)-Industrie: 46 → 69 %, -Handel: 53 → 68 % (2019 → 2022)" },
+      { ...freyOsborne, wert: "Management Analysts: 13 %, Financial Analysts: 23 %, Marketing Managers: 1,4 %" },
+      eloundou,
+      wef,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "bwl-1",
+        kontext: "studium",
         title: "Finanzkennzahlen berechnen und Reports erstellen",
         description: "Zahlen aufbereiten und in Berichte gießen.",
         kiEignung: 90,
@@ -362,6 +417,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "bwl-2",
+        kontext: "studium",
         title: "Marktanalyse recherchieren",
         description: "Wettbewerb und Marktumfeld zusammentragen.",
         kiEignung: 85,
@@ -371,6 +427,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "bwl-3",
+        kontext: "beruf",
         title: "Strategieentscheidung mit Unsicherheit treffen",
         description: "Bei unklarer Datenlage eine Richtung festlegen.",
         kiEignung: 47,
@@ -380,6 +437,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "bwl-4",
+        kontext: "beruf",
         title: "Verhandlung mit Geschäftspartner:innen führen",
         description: "Konditionen live aushandeln.",
         kiEignung: 10,
@@ -389,6 +447,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "bwl-5",
+        kontext: "beruf",
         title: "Präsentation für die Geschäftsleitung vorbereiten",
         description: "Folien und Argumentation für Entscheider:innen bauen.",
         kiEignung: 65,
@@ -398,6 +457,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "bwl-6",
+        kontext: "beruf",
         title: "Team führen und motivieren",
         description: "Menschen durch schwierige Phasen führen.",
         kiEignung: 5,
@@ -407,6 +467,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "bwl-7",
+        kontext: "studium",
         title: "Businessplan-Zahlen modellieren",
         description: "Finanzmodell für ein Vorhaben aufstellen.",
         kiEignung: 90,
@@ -429,10 +490,18 @@ export const studiengaenge: Studiengang[] = [
       "Mandant:innenvertrauen als eigenständige Kompetenz begreifen",
       "Ethisches Urteilsvermögen bei Grenzfällen bewusst schärfen",
     ],
-    quellen: [clioLegal, wef, ilo],
+    quellen: [
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...freyOsborne, wert: "Lawyers: 3,5 %, Paralegals and Legal Assistants: 94 %" },
+      clioLegal,
+      wef,
+      ilo,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "jur-1",
+        kontext: "studium",
         title: "Gesetzestexte und Urteile recherchieren",
         description: "Relevante Rechtsprechung zu einem Fall finden.",
         kiEignung: 90,
@@ -442,6 +511,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "jur-2",
+        kontext: "beruf",
         title: "Standardvertrag aus Textbausteinen erstellen",
         description: "Verträge nach Muster zusammenstellen.",
         kiEignung: 90,
@@ -451,6 +521,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "jur-3",
+        kontext: "beruf",
         title: "Mandant:in beraten und Vertrauen aufbauen",
         description: "Persönliche Situation verstehen und einordnen.",
         kiEignung: 10,
@@ -460,6 +531,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "jur-4",
+        kontext: "studium",
         title: "Neuartigen Fall juristisch argumentieren",
         description: "Für eine Situation ohne klare Präzedenzfälle argumentieren.",
         kiEignung: 47,
@@ -469,6 +541,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "jur-5",
+        kontext: "beruf",
         title: "Vor Gericht plädieren",
         description: "Argumentation live vor Richter:in vertreten.",
         kiEignung: 10,
@@ -478,6 +551,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "jur-6",
+        kontext: "beruf",
         title: "Vertragsentwurf gegenlesen und Risiken einschätzen",
         description: "Vertrag auf Fallstricke prüfen.",
         kiEignung: 72,
@@ -487,6 +561,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "jur-7",
+        kontext: "beruf",
         title: "Ethisch schwierige Güterabwägung entscheiden",
         description: "Zwischen widerstreitenden Interessen abwägen.",
         kiEignung: 37,
@@ -511,10 +586,16 @@ export const studiengaenge: Studiengang[] = [
       "Belastbarkeit für emotional fordernde Situationen entwickeln",
       "Statistik-Tools als Werkzeug nutzen, nicht als Ersatz für klinisches Urteil",
     ],
-    quellen: [freyOsborne, wef],
+    quellen: [
+      { ...iabKurzbericht, wert: "Segment Gesundheitsberufe: 26,5 %; Expertenberufe insgesamt: Ø 35,8 %" },
+      { ...freyOsborne, wert: "Clinical, Counseling, and School Psychologists: 0,5 %" },
+      wef,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "psy-1",
+        kontext: "studium",
         title: "Fragebogendaten statistisch auswerten",
         description: "Studienergebnisse quantitativ auswerten.",
         kiEignung: 77,
@@ -524,6 +605,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "psy-2",
+        kontext: "beruf",
         title: "Therapiegespräch führen",
         description: "Klient:in durch ein Gespräch begleiten.",
         kiEignung: 10,
@@ -533,6 +615,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "psy-3",
+        kontext: "studium",
         title: "Studiendesign entwickeln",
         description: "Untersuchung methodisch sauber planen.",
         kiEignung: 42,
@@ -542,6 +625,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "psy-4",
+        kontext: "beruf",
         title: "Vertrauensvolle Beziehung zu Klient:innen aufbauen",
         description: "Über Zeit Vertrauen entwickeln.",
         kiEignung: 5,
@@ -551,6 +635,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "psy-5",
+        kontext: "studium",
         title: "Literaturbericht schreiben",
         description: "Forschungsstand zu einem Thema zusammenfassen.",
         kiEignung: 62,
@@ -560,6 +645,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "psy-6",
+        kontext: "beruf",
         title: "Verhalten in einer Krisensituation einschätzen",
         description: "Akute Gefährdung erkennen und richtig reagieren.",
         kiEignung: 10,
@@ -569,6 +655,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "psy-7",
+        kontext: "beruf",
         title: "Testverfahren auswerten und Gutachten erstellen",
         description: "Diagnostische Tests interpretieren und dokumentieren.",
         kiEignung: 52,
@@ -585,16 +672,22 @@ export const studiengaenge: Studiengang[] = [
       "Oft als „brotlos“ belächelt – ausgerechnet hier zeigt sich, was KI wirklich nicht kann.",
     kategorie: "geistes-sozialwissenschaft",
     zukunftsausblick:
-      "Sprachliche KI ist in Grammatik und Zusammenfassung stark, an eigenständiger Interpretation, echter literarischer Stimme und der Vermittlung von Inhalten an Menschen scheitert sie noch regelmäßig. Germanistik verschiebt sich vom reinen Textwissen zur Fähigkeit, mit Sprache und Menschen umzugehen.",
+      "Sprachliche KI ist in Grammatik und Zusammenfassung stark, bei eigenständiger Interpretation, echter literarischer Stimme und der Vermittlung von Inhalten an Menschen bleibt sie deutlich schwächer. Germanistik verschiebt sich vom reinen Textwissen zur Fähigkeit, mit Sprache und Menschen umzugehen.",
     tippsMenschlich: [
       "Eigene Deutungen und Thesen entwickeln, nicht nur referieren",
       "Vermittlung und Diskussionsleitung als Kernkompetenz trainieren",
       "Eigenständige kreative Stimme in Texten bewusst pflegen",
     ],
-    quellen: [freyOsborne, ilo],
+    quellen: [
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...freyOsborne, wert: "Writers and Authors: 3,8 %, Editors: 5,5 %, Interpreters and Translators: 38 %" },
+      ilo,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "ger-1",
+        kontext: "studium",
         title: "Textzusammenfassung und Rechtschreibkorrektur",
         description: "Texte kürzen und formal korrigieren.",
         kiEignung: 82,
@@ -604,6 +697,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "ger-2",
+        kontext: "studium",
         title: "Literaturinterpretation mit eigener These entwickeln",
         description: "Einen eigenständigen Deutungsansatz zu einem Werk finden.",
         kiEignung: 35,
@@ -613,6 +707,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "ger-3",
+        kontext: "studium",
         title: "Seminar leiten und Diskussion moderieren",
         description: "Gespräch einer Gruppe strukturieren und lenken.",
         kiEignung: 15,
@@ -622,6 +717,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "ger-4",
+        kontext: "beruf",
         title: "Text mit eigener Stimme schreiben",
         description: "Essay oder literarischer Text mit klarer Handschrift.",
         kiEignung: 30,
@@ -631,6 +727,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "ger-5",
+        kontext: "studium",
         title: "Quellenrecherche im Archiv",
         description: "Historische oder seltene Quellen auffinden.",
         kiEignung: 47,
@@ -640,6 +737,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "ger-6",
+        kontext: "studium",
         title: "Sprachliche Nuancen und Ironie erkennen",
         description: "Zwischen den Zeilen lesen.",
         kiEignung: 42,
@@ -649,12 +747,13 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "ger-7",
+        kontext: "beruf",
         title: "Feedback zu Texten geben, das weiterhilft",
         description: "Andere beim Schreiben wirklich voranbringen.",
-        kiEignung: 15,
+        kiEignung: 40,
         category: "sozial",
         warum:
-          "Gutes Feedback braucht Einfühlung in die Absicht und den Entwicklungsstand der schreibenden Person, nicht nur Regelwissen.",
+          "Sprachmodelle geben heute brauchbares Feedback zu Aufbau und Stil. Was fehlt, ist die Einfühlung in die Absicht und den Entwicklungsstand der schreibenden Person.",
       },
     ],
   },
@@ -673,10 +772,15 @@ export const studiengaenge: Studiengang[] = [
       "Technische Verantwortung und Normen wirklich verstehen, nicht nur abhaken",
       "Interdisziplinäre Projektarbeit mit anderen Gewerken üben",
     ],
-    quellen: [jobFuturomat, freyOsborne],
+    quellen: [
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...freyOsborne, wert: "Mechanical Engineers: 1,1 %" },
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "mb-1",
+        kontext: "studium",
         title: "Bauteile in CAD konstruieren",
         description: "3D-Modell eines Bauteils erstellen.",
         kiEignung: 70,
@@ -686,6 +790,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "mb-2",
+        kontext: "studium",
         title: "Festigkeitsberechnung und Simulation",
         description: "Belastung eines Bauteils rechnerisch prüfen.",
         kiEignung: 65,
@@ -695,6 +800,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "mb-3",
+        kontext: "studium",
         title: "Prototyp bauen und testen",
         description: "Physisches Modell fertigen und ausprobieren.",
         kiEignung: 20,
@@ -704,15 +810,17 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "mb-4",
+        kontext: "beruf",
         title: "Serienfertigung technisch verantworten",
         description: "Freigabe für die Produktion erteilen.",
         kiEignung: 30,
         category: "analytisch",
         warum:
-          "Für Sicherheit und Funktion einer in Serie gefertigten Maschine haftet am Ende eine konkrete Person.",
+          "Für Sicherheit und Funktion einer in Serie gefertigten Maschine haftet am Ende eine konkrete Person. Hier steckt das „Dürfen“ im Wert: technisch wäre mehr möglich, rechtlich muss ein Mensch haften.",
       },
       {
         id: "mb-5",
+        kontext: "beruf",
         title: "Technische Dokumentation erstellen",
         description: "Konstruktionsunterlagen und Stücklisten schreiben.",
         kiEignung: 85,
@@ -722,6 +830,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "mb-6",
+        kontext: "beruf",
         title: "Mit Fertigung und Einkauf abstimmen",
         description: "Machbarkeit und Kosten mit anderen Abteilungen klären.",
         kiEignung: 15,
@@ -731,6 +840,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "mb-7",
+        kontext: "beruf",
         title: "Neuartiges technisches Problem kreativ lösen",
         description: "Für eine ungewöhnliche Anforderung eine Lösung finden.",
         kiEignung: 35,
@@ -744,19 +854,25 @@ export const studiengaenge: Studiengang[] = [
     slug: "wirtschaftsinformatik",
     title: "Wirtschaftsinformatik",
     shortDescription:
-      "Die Schnittstelle zwischen IT und Business – und damit doppelt im KI-Fokus.",
+      "Die Schnittstelle zwischen IT und Business – wer hier arbeitet, übersetzt zwischen zwei Welten.",
     kategorie: "technik-informatik",
     zukunftsausblick:
-      "Wirtschaftsinformatik sitzt genau dort, wo Automatisierung am stärksten zuschlägt: Programmieren und Prozessanalyse werden beide KI-unterstützt. Wer übrig bleibt, übersetzt zwischen Business-Bedarf und technischer Umsetzung – eine Rolle, die KI bisher schlecht ausfüllt.",
+      "Wirtschaftsinformatik verbindet zwei Felder, in denen KI viel übernimmt: Programmieren und Prozessanalyse werden beide KI-unterstützt. Wer übrig bleibt, übersetzt zwischen Business-Bedarf und technischer Umsetzung – eine Rolle, die KI bisher schlecht ausfüllt.",
     tippsMenschlich: [
       "Vermittlung zwischen Fachabteilung und IT als Kernkompetenz ausbauen",
       "Projektverantwortung und Priorisierung üben",
       "Prozesse End-to-End verstehen, nicht nur einzelne Tools bedienen",
     ],
-    quellen: [eloundou, jobFuturomat],
+    quellen: [
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus; Beruf Softwareentwickler:in: rund +30 Prozentpunkte" },
+      { ...freyOsborne, wert: "Computer Systems Analysts: 0,65 %" },
+      eloundou,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "wi-1",
+        kontext: "beruf",
         title: "Geschäftsprozess analysieren und dokumentieren",
         description: "Ablauf eines Unternehmensprozesses erfassen.",
         kiEignung: 65,
@@ -766,6 +882,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "wi-2",
+        kontext: "beruf",
         title: "Anforderungen in ein IT-System übersetzen",
         description: "Fachliche Wünsche in technische Spezifikation gießen.",
         kiEignung: 25,
@@ -775,6 +892,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "wi-3",
+        kontext: "beruf",
         title: "Standard-Software anpassen und konfigurieren",
         description: "ERP- oder CRM-System einrichten.",
         kiEignung: 75,
@@ -784,6 +902,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "wi-4",
+        kontext: "beruf",
         title: "IT-Projekt mit Stakeholdern abstimmen",
         description: "Erwartungen verschiedener Abteilungen zusammenführen.",
         kiEignung: 15,
@@ -793,6 +912,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "wi-5",
+        kontext: "studium",
         title: "Datenmodell für ein System entwerfen",
         description: "Struktur einer Datenbank planen.",
         kiEignung: 58,
@@ -802,6 +922,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "wi-6",
+        kontext: "beruf",
         title: "Wirtschaftlichkeit einer IT-Investition bewerten",
         description: "Kosten-Nutzen-Rechnung für ein Projekt erstellen.",
         kiEignung: 50,
@@ -811,6 +932,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "wi-7",
+        kontext: "beruf",
         title: "Mitarbeitende bei neuer Software schulen",
         description: "Team im Umgang mit einem neuen System anleiten.",
         kiEignung: 20,
@@ -833,10 +955,16 @@ export const studiengaenge: Studiengang[] = [
       "Bauherrengespräche und Behördenkommunikation aktiv üben",
       "Verantwortung für Statik und Bauausführung ernst nehmen",
     ],
-    quellen: [jobFuturomat, wef],
+    quellen: [
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...freyOsborne, wert: "Architects, Except Landscape and Naval: 1,8 %" },
+      wef,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "arch-1",
+        kontext: "studium",
         title: "Erste Entwurfsvarianten generieren",
         description: "Mögliche Gebäudeformen für ein Grundstück skizzieren.",
         kiEignung: 65,
@@ -846,6 +974,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "arch-2",
+        kontext: "studium",
         title: "Entwurfsidee mit eigener Handschrift entwickeln",
         description: "Das Gebäude finden, das zu Ort und Auftrag passt.",
         kiEignung: 35,
@@ -855,6 +984,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "arch-3",
+        kontext: "beruf",
         title: "Bauantrag und Pläne erstellen",
         description: "Genehmigungsfähige Unterlagen zeichnen.",
         kiEignung: 90,
@@ -864,6 +994,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "arch-4",
+        kontext: "beruf",
         title: "Mit Bauherrschaft Wünsche klären",
         description: "Herausfinden, wie Menschen wirklich leben und arbeiten wollen.",
         kiEignung: 10,
@@ -873,15 +1004,17 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "arch-5",
+        kontext: "beruf",
         title: "Statik und Bauausführung verantworten",
         description: "Sicherheit und Umsetzbarkeit eines Entwurfs freigeben.",
         kiEignung: 42,
         category: "analytisch",
         warum:
-          "Für die Standsicherheit eines gebauten Gebäudes haftet am Ende eine konkrete verantwortliche Person.",
+          "Für die Standsicherheit eines gebauten Gebäudes haftet am Ende eine konkrete verantwortliche Person. Hier steckt das „Dürfen“ im Wert: technisch wäre mehr möglich, rechtlich muss ein Mensch haften.",
       },
       {
         id: "arch-6",
+        kontext: "beruf",
         title: "Auf der Baustelle Probleme lösen",
         description: "Unerwartete Situationen vor Ort klären.",
         kiEignung: 15,
@@ -891,6 +1024,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "arch-7",
+        kontext: "studium",
         title: "Visualisierungen und Renderings erstellen",
         description: "Entwurf für Präsentationen ansprechend darstellen.",
         kiEignung: 90,
@@ -915,10 +1049,16 @@ export const studiengaenge: Studiengang[] = [
       "Eigenständige Fragestellungen statt nur Datenauswertung entwickeln",
       "Interdisziplinäre Zusammenarbeit mit Informatik und Chemie suchen",
     ],
-    quellen: [freyOsborne, ilo],
+    quellen: [
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...freyOsborne, wert: "Biological Scientists, All Other: 1,5 %" },
+      ilo,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "bio-1",
+        kontext: "studium",
         title: "Genom- oder Proteindaten auswerten",
         description: "Große biologische Datensätze computergestützt analysieren.",
         kiEignung: 72,
@@ -928,6 +1068,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "bio-2",
+        kontext: "studium",
         title: "Feldbeobachtungen durchführen",
         description: "Tiere oder Pflanzen in ihrem Lebensraum untersuchen.",
         kiEignung: 15,
@@ -937,6 +1078,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "bio-3",
+        kontext: "studium",
         title: "Experiment im Labor planen und durchführen",
         description: "Versuchsaufbau festlegen und Proben bearbeiten.",
         kiEignung: 25,
@@ -946,6 +1088,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "bio-4",
+        kontext: "studium",
         title: "Neue Forschungsfrage entwickeln",
         description: "Aus bestehendem Wissen eine offene Lücke identifizieren.",
         kiEignung: 30,
@@ -955,6 +1098,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "bio-5",
+        kontext: "studium",
         title: "Fachliteratur zusammenfassen",
         description: "Überblick über bestehende Studien erstellen.",
         kiEignung: 67,
@@ -964,6 +1108,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "bio-6",
+        kontext: "studium",
         title: "Ergebnis in einem Paper verteidigen",
         description: "Kritische Rückfragen von Gutachter:innen beantworten.",
         kiEignung: 10,
@@ -973,6 +1118,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "bio-7",
+        kontext: "beruf",
         title: "Naturschutzprojekt vor Ort koordinieren",
         description: "Mit Behörden und Anwohner:innen zusammenarbeiten.",
         kiEignung: 15,
@@ -995,10 +1141,16 @@ export const studiengaenge: Studiengang[] = [
       "Fehleranalyse bei gescheiterten Experimenten als Kompetenz begreifen",
       "Anwendungsfelder abseits reiner Berechnung im Blick behalten",
     ],
-    quellen: [freyOsborne, wef],
+    quellen: [
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...freyOsborne, wert: "Chemists: 10 %" },
+      wef,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "che-1",
+        kontext: "studium",
         title: "Molekülstruktur und Reaktionswege berechnen",
         description: "Chemische Reaktionen am Rechner simulieren.",
         kiEignung: 85,
@@ -1008,6 +1160,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "che-2",
+        kontext: "studium",
         title: "Synthese im Labor durchführen",
         description: "Reaktion praktisch ansetzen und überwachen.",
         kiEignung: 20,
@@ -1017,6 +1170,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "che-3",
+        kontext: "studium",
         title: "Messdaten aus Spektroskopie auswerten",
         description: "Analysegeräte-Ausgabe interpretieren.",
         kiEignung: 82,
@@ -1026,6 +1180,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "che-4",
+        kontext: "studium",
         title: "Gescheitertes Experiment analysieren",
         description: "Herausfinden, warum ein Versuch nicht wie erwartet lief.",
         kiEignung: 52,
@@ -1035,6 +1190,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "che-5",
+        kontext: "beruf",
         title: "Sicherheitsdatenblätter und Dokumentation erstellen",
         description: "Umgang mit Stoffen normgerecht dokumentieren.",
         kiEignung: 90,
@@ -1044,6 +1200,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "che-6",
+        kontext: "beruf",
         title: "Neues Material oder Verfahren entwickeln",
         description: "Für ein Problem eine neuartige chemische Lösung finden.",
         kiEignung: 35,
@@ -1053,6 +1210,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "che-7",
+        kontext: "beruf",
         title: "Laborteam bei einem Sicherheitsvorfall anleiten",
         description: "In einer kritischen Situation richtig reagieren.",
         kiEignung: 5,
@@ -1075,19 +1233,27 @@ export const studiengaenge: Studiengang[] = [
       "Verantwortung für Arzneimittelsicherheit bewusst wahrnehmen",
       "Praktische Herstellung und Qualitätskontrolle beherrschen",
     ],
-    quellen: [ilo, wef],
+    quellen: [
+      { ...iabKurzbericht, wert: "Segment Gesundheitsberufe: 26,5 %; Expertenberufe insgesamt: Ø 35,8 %" },
+      { ...freyOsborne, wert: "Pharmacists: 1,2 %, Pharmacy Technicians: 92 %" },
+      ilo,
+      wef,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "pha-1",
+        kontext: "beruf",
         title: "Wirkstoffkandidaten am Rechner vorschlagen",
         description: "Mögliche neue Moleküle für eine Zielstruktur finden.",
-        kiEignung: 55,
+        kiEignung: 70,
         category: "analytisch",
         warum:
           "KI-Modelle durchsuchen riesige Molekülräume deutlich schneller als klassisches Screening – aber das ist ein Spezialgebiet weniger Forschungspharmazeut:innen, nicht der Alltag der meisten Apotheker:innen.",
       },
       {
         id: "pha-2",
+        kontext: "beruf",
         title: "Patient:in am Tresen beraten",
         description: "Fragen zu Medikamenten und Wechselwirkungen beantworten.",
         kiEignung: 15,
@@ -1097,6 +1263,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "pha-3",
+        kontext: "beruf",
         title: "Rezeptur in der Apotheke herstellen",
         description: "Individuelle Arzneimittel praktisch anfertigen.",
         kiEignung: 20,
@@ -1106,6 +1273,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "pha-4",
+        kontext: "studium",
         title: "Wechselwirkungen und Interaktionen prüfen",
         description: "Medikamentenkombination auf Risiken checken.",
         kiEignung: 60,
@@ -1115,6 +1283,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "pha-5",
+        kontext: "studium",
         title: "Klinische Studiendaten auswerten",
         description: "Wirksamkeit und Sicherheit eines Präparats prüfen.",
         kiEignung: 50,
@@ -1124,18 +1293,20 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "pha-6",
+        kontext: "beruf",
         title: "Qualitätskontrolle im Herstellungsprozess verantworten",
         description: "Charge vor der Freigabe prüfen.",
         kiEignung: 47,
         category: "analytisch",
         warum:
-          "Für die Freigabe einer Arzneimittelcharge haftet am Ende eine konkrete approbierte Person.",
+          "Für die Freigabe einer Arzneimittelcharge haftet am Ende eine konkrete approbierte Person. Hier steckt das „Dürfen“ im Wert: technisch wäre mehr möglich, rechtlich muss ein Mensch haften.",
       },
       {
         id: "pha-7",
+        kontext: "beruf",
         title: "Über neue Arzneimittel und Studienlage informieren",
         description: "Ärzt:innen und Fachpersonal auf dem Laufenden halten.",
-        kiEignung: 50,
+        kiEignung: 62,
         category: "routine",
         warum:
           "Zusammenfassungen liefert KI gut, die Einordnung für eine konkrete Praxis bleibt Fachaustausch zwischen Menschen.",
@@ -1157,10 +1328,17 @@ export const studiengaenge: Studiengang[] = [
       "Politische und gesellschaftliche Abwägungen nicht der KI überlassen",
       "Kritisches Hinterfragen von Modellannahmen trainieren",
     ],
-    quellen: [eloundou, wef],
+    quellen: [
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...freyOsborne, wert: "Economists: 43 %, Statisticians: 22 %" },
+      eloundou,
+      wef,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "vwl-1",
+        kontext: "studium",
         title: "Ökonometrische Modelle rechnen",
         description: "Wirtschaftsdaten statistisch auswerten.",
         kiEignung: 85,
@@ -1170,6 +1348,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "vwl-2",
+        kontext: "beruf",
         title: "Politikempfehlung ausarbeiten",
         description: "Aus Analyse eine konkrete Handlungsempfehlung ableiten.",
         kiEignung: 52,
@@ -1179,6 +1358,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "vwl-3",
+        kontext: "studium",
         title: "Wirtschaftsdaten aufbereiten und visualisieren",
         description: "Rohdaten in verständliche Grafiken übersetzen.",
         kiEignung: 90,
@@ -1188,6 +1368,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "vwl-4",
+        kontext: "beruf",
         title: "Entscheider:innen komplexe Zusammenhänge erklären",
         description: "Wirtschaftliche Modelle für Laien verständlich machen.",
         kiEignung: 15,
@@ -1197,6 +1378,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "vwl-5",
+        kontext: "studium",
         title: "Neues Marktphänomen theoretisch einordnen",
         description: "Unerwartetes wirtschaftliches Verhalten erklären.",
         kiEignung: 35,
@@ -1206,6 +1388,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "vwl-6",
+        kontext: "studium",
         title: "Literaturüberblick zu einem Thema erstellen",
         description: "Forschungsstand zusammenfassen.",
         kiEignung: 87,
@@ -1215,6 +1398,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "vwl-7",
+        kontext: "beruf",
         title: "In Gremien oder Ausschüssen verhandeln",
         description: "Position gegenüber anderen Interessengruppen vertreten.",
         kiEignung: 10,
@@ -1237,10 +1421,16 @@ export const studiengaenge: Studiengang[] = [
       "Projektverantwortung über Abteilungsgrenzen hinweg üben",
       "Verhandlungs- und Präsentationskompetenz gezielt trainieren",
     ],
-    quellen: [jobFuturomat, wef],
+    quellen: [
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...freyOsborne, wert: "Industrial Engineers: 2,9 %" },
+      wef,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "wing-1",
+        kontext: "beruf",
         title: "Produktionskosten kalkulieren",
         description: "Kosten eines technischen Vorhabens berechnen.",
         kiEignung: 90,
@@ -1250,6 +1440,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "wing-2",
+        kontext: "beruf",
         title: "Technische Machbarkeit einschätzen",
         description: "Prüfen, ob eine Idee technisch realistisch umsetzbar ist.",
         kiEignung: 35,
@@ -1259,6 +1450,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "wing-3",
+        kontext: "beruf",
         title: "Projekt zwischen Technik und Vertrieb koordinieren",
         description: "Anforderungen verschiedener Abteilungen zusammenführen.",
         kiEignung: 10,
@@ -1268,6 +1460,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "wing-4",
+        kontext: "beruf",
         title: "Lieferkette und Logistik optimieren",
         description: "Materialfluss effizienter gestalten.",
         kiEignung: 85,
@@ -1277,15 +1470,17 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "wing-5",
+        kontext: "beruf",
         title: "Investitionsentscheidung vorbereiten und verantworten",
         description: "Für ein technisches Vorhaben grünes Licht geben.",
         kiEignung: 47,
         category: "analytisch",
         warum:
-          "Verantwortung für eine größere Investition mit unsicherem Ausgang bleibt eine unternehmerische Entscheidung von Menschen.",
+          "Verantwortung für eine größere Investition mit unsicherem Ausgang bleibt eine unternehmerische Entscheidung von Menschen. Hier steckt das „Dürfen“ im Wert: technisch wäre mehr möglich, rechtlich muss ein Mensch haften.",
       },
       {
         id: "wing-6",
+        kontext: "beruf",
         title: "Präsentation für Management erstellen",
         description: "Komplexen Sachverhalt kompakt aufbereiten.",
         kiEignung: 65,
@@ -1295,6 +1490,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "wing-7",
+        kontext: "beruf",
         title: "Verhandlung mit Lieferanten führen",
         description: "Konditionen für Bauteile oder Dienstleistungen aushandeln.",
         kiEignung: 10,
@@ -1319,10 +1515,16 @@ export const studiengaenge: Studiengang[] = [
       "Belastbarkeit für emotional fordernde Situationen entwickeln",
       "KI-Tools für Dokumentation nutzen, um mehr Zeit für Menschen zu haben",
     ],
-    quellen: [freyOsborne, ilo],
+    quellen: [
+      { ...iabKurzbericht, wert: "Segment Soziale und kulturelle Dienstleistungsberufe: 13,5 % (niedrigstes aller Segmente)" },
+      { ...freyOsborne, wert: "Child, Family, and School Social Workers: 2,8 %, Mental Health and Substance Abuse Social Workers: 0,3 %" },
+      ilo,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "sa-1",
+        kontext: "beruf",
         title: "Falldokumentation schreiben",
         description: "Betreuungsverlauf strukturiert festhalten.",
         kiEignung: 70,
@@ -1332,6 +1534,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "sa-2",
+        kontext: "beruf",
         title: "Vertrauensvolle Beziehung zu Klient:innen aufbauen",
         description: "Über Zeit Vertrauen in einer belasteten Lebenslage entwickeln.",
         kiEignung: 5,
@@ -1341,6 +1544,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "sa-3",
+        kontext: "beruf",
         title: "Krisensituation einschätzen und intervenieren",
         description: "Akute Gefährdung erkennen und richtig reagieren.",
         kiEignung: 5,
@@ -1350,6 +1554,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "sa-4",
+        kontext: "beruf",
         title: "Zwischen Ämtern und Institutionen vermitteln",
         description: "Klient:innen durch bürokratische Prozesse begleiten.",
         kiEignung: 20,
@@ -1359,6 +1564,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "sa-5",
+        kontext: "beruf",
         title: "Fördermittel und Anträge recherchieren",
         description: "Passende Unterstützungsangebote finden.",
         kiEignung: 75,
@@ -1368,6 +1574,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "sa-6",
+        kontext: "beruf",
         title: "Gruppenangebot planen und leiten",
         description: "Workshop oder Gruppentreffen für Klient:innen gestalten.",
         kiEignung: 30,
@@ -1377,6 +1584,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "sa-7",
+        kontext: "beruf",
         title: "Mit Kolleg:innen im Team beraten",
         description: "Schwierige Fälle im Team besprechen.",
         kiEignung: 10,
@@ -1399,10 +1607,16 @@ export const studiengaenge: Studiengang[] = [
       "Pädagogisches Urteilsvermögen für individuelle Situationen schärfen",
       "KI-Tools zur Materialerstellung nutzen, um mehr Zeit für Menschen zu haben",
     ],
-    quellen: [wef, jobFuturomat],
+    quellen: [
+      { ...iabKurzbericht, wert: "Segment Soziale und kulturelle Dienstleistungsberufe: 13,5 % (niedrigstes aller Segmente)" },
+      { ...freyOsborne, wert: "Elementary School Teachers: 0,4 %, Secondary School Teachers: 0,8 %" },
+      wef,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "paed-1",
+        kontext: "beruf",
         title: "Unterrichtsmaterial erstellen",
         description: "Übungen und Arbeitsblätter für ein Thema entwickeln.",
         kiEignung: 85,
@@ -1412,6 +1626,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "paed-2",
+        kontext: "beruf",
         title: "Lernstand individuell einschätzen",
         description: "Verstehen, wo eine einzelne Person gerade steht.",
         kiEignung: 40,
@@ -1421,6 +1636,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "paed-3",
+        kontext: "beruf",
         title: "Lerngruppe anleiten und motivieren",
         description: "Eine Gruppe durch eine Lernsituation führen.",
         kiEignung: 10,
@@ -1430,6 +1646,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "paed-4",
+        kontext: "studium",
         title: "Bildungskonzept wissenschaftlich entwickeln",
         description: "Neuen pädagogischen Ansatz theoretisch begründen.",
         kiEignung: 40,
@@ -1439,6 +1656,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "paed-5",
+        kontext: "beruf",
         title: "Elterngespräch führen",
         description: "Sensible Themen mit Eltern besprechen.",
         kiEignung: 5,
@@ -1448,6 +1666,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "paed-6",
+        kontext: "beruf",
         title: "Verwaltung und Dokumentation erledigen",
         description: "Berichte und Nachweise erstellen.",
         kiEignung: 80,
@@ -1457,6 +1676,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "paed-7",
+        kontext: "beruf",
         title: "Auf ungeplante Konfliktsituation reagieren",
         description: "Spontanen Streit oder Krise in der Gruppe klären.",
         kiEignung: 5,
@@ -1479,10 +1699,16 @@ export const studiengaenge: Studiengang[] = [
       "Rhetorik und Debattenfähigkeit gezielt trainieren",
       "Kritische Distanz zu KI-generierten Einordnungen bewahren",
     ],
-    quellen: [freyOsborne, wef],
+    quellen: [
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...freyOsborne, wert: "Political Scientists: 3,9 %" },
+      wef,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "pol-1",
+        kontext: "studium",
         title: "Umfragedaten und Wahlergebnisse auswerten",
         description: "Politische Datensätze statistisch analysieren.",
         kiEignung: 77,
@@ -1492,6 +1718,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "pol-2",
+        kontext: "studium",
         title: "Politisches Ereignis einordnen",
         description: "Bedeutung eines aktuellen Ereignisses erklären.",
         kiEignung: 32,
@@ -1501,6 +1728,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "pol-3",
+        kontext: "beruf",
         title: "Positionspapier oder Gutachten schreiben",
         description: "Fundierte Argumentation zu einer politischen Frage verfassen.",
         kiEignung: 55,
@@ -1510,6 +1738,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "pol-4",
+        kontext: "beruf",
         title: "In einer Debatte überzeugend argumentieren",
         description: "Live vor Publikum für eine Position eintreten.",
         kiEignung: 10,
@@ -1519,6 +1748,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "pol-5",
+        kontext: "studium",
         title: "Interviews mit Akteur:innen führen",
         description: "Einschätzungen von Politiker:innen oder Verbänden einholen.",
         kiEignung: 10,
@@ -1528,6 +1758,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "pol-6",
+        kontext: "studium",
         title: "Literatur- und Quellenrecherche",
         description: "Relevante Studien und Dokumente zu einem Thema finden.",
         kiEignung: 72,
@@ -1537,6 +1768,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "pol-7",
+        kontext: "beruf",
         title: "Politische Kommunikation strategisch beraten",
         description: "Botschaft und Auftreten für eine Kampagne entwickeln.",
         kiEignung: 30,
@@ -1559,10 +1791,17 @@ export const studiengaenge: Studiengang[] = [
       "Persönliche Netzwerke zu Journalist:innen und Multiplikator:innen pflegen",
       "Krisenkommunikation und schnelle Entscheidungen unter Druck üben",
     ],
-    quellen: [wef, eloundou],
+    quellen: [
+      { ...iabKurzbericht, wert: "Journalist:in und Schriftsteller:in: 20 → 40 %, Hörfunk- und Fernsehsprecher:in: 14 → 43 % (2019 → 2022)" },
+      { ...freyOsborne, wert: "Public Relations Specialists: 18 %, Reporters and Correspondents: 11 %, Editors: 5,5 %" },
+      wef,
+      eloundou,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "kom-1",
+        kontext: "beruf",
         title: "Pressemitteilung oder Social-Media-Post schreiben",
         description: "Standardtext für ein Thema verfassen.",
         kiEignung: 90,
@@ -1572,6 +1811,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "kom-2",
+        kontext: "beruf",
         title: "Kommunikationsstrategie entwickeln",
         description: "Langfristigen Plan für ein Thema oder eine Marke entwerfen.",
         kiEignung: 35,
@@ -1581,6 +1821,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "kom-3",
+        kontext: "studium",
         title: "Medienanalyse durchführen",
         description: "Berichterstattung zu einem Thema systematisch auswerten.",
         kiEignung: 85,
@@ -1590,6 +1831,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "kom-4",
+        kontext: "beruf",
         title: "In einer Krisensituation kommunizieren",
         description: "Schnell und richtig auf eine akute Krise reagieren.",
         kiEignung: 10,
@@ -1599,6 +1841,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "kom-5",
+        kontext: "beruf",
         title: "Persönlichen Kontakt zu Journalist:innen pflegen",
         description: "Beziehungen zu Medienvertreter:innen aufbauen.",
         kiEignung: 10,
@@ -1608,6 +1851,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "kom-6",
+        kontext: "beruf",
         title: "Interview vorbereiten und führen",
         description: "Gesprächspartner:in befragen und Antworten einordnen.",
         kiEignung: 20,
@@ -1617,6 +1861,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "kom-7",
+        kontext: "beruf",
         title: "Bewegtbild oder Podcast produzieren",
         description: "Multimedialen Inhalt konzipieren und schneiden.",
         kiEignung: 55,
@@ -1641,10 +1886,17 @@ export const studiengaenge: Studiengang[] = [
       "Experimentelle Studien mit echten Proband:innen selbst durchführen",
       "Philosophische und ethische Fragen zu KI nicht der KI überlassen",
     ],
-    quellen: [eloundou, ilo, freyOsborne],
+    quellen: [
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...freyOsborne, wert: "Computer and Information Research Scientists: 1,5 %" },
+      eloundou,
+      ilo,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "cs-1",
+        kontext: "studium",
         title: "Verhaltensexperiment programmieren und auswerten",
         description: "Experiment am Rechner umsetzen und Daten analysieren.",
         kiEignung: 72,
@@ -1654,6 +1906,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "cs-2",
+        kontext: "studium",
         title: "Neuronales Netz oder Rechenmodell des Denkens bauen",
         description: "Kognitive Prozesse computational modellieren.",
         kiEignung: 52,
@@ -1663,6 +1916,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "cs-3",
+        kontext: "studium",
         title: "Erkenntnisse aus mehreren Disziplinen verknüpfen",
         description: "Befunde aus Psychologie, Informatik und Linguistik zusammenführen.",
         kiEignung: 25,
@@ -1672,6 +1926,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "cs-4",
+        kontext: "studium",
         title: "Proband:innenstudie durchführen",
         description: "Menschen im Labor durch ein Experiment begleiten.",
         kiEignung: 15,
@@ -1681,6 +1936,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "cs-5",
+        kontext: "studium",
         title: "Fachliteratur aus mehreren Feldern zusammenfassen",
         description: "Überblick über interdisziplinären Forschungsstand erstellen.",
         kiEignung: 67,
@@ -1690,6 +1946,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "cs-6",
+        kontext: "beruf",
         title: "Ethische Fragen zu KI-Systemen einordnen",
         description: "Gesellschaftliche Implikationen kognitiver Technologien bewerten.",
         kiEignung: 17,
@@ -1699,6 +1956,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "cs-7",
+        kontext: "beruf",
         title: "Interdisziplinäres Team koordinieren",
         description: "Zusammenarbeit zwischen Psycholog:innen, Informatiker:innen und Linguist:innen organisieren.",
         kiEignung: 10,
@@ -1721,10 +1979,17 @@ export const studiengaenge: Studiengang[] = [
       "Verantwortung für Entscheidungen übernehmen, die auf Modellen basieren",
       "Domänenwissen aufbauen, um Ergebnisse richtig einzuordnen",
     ],
-    quellen: [eloundou, wef],
+    quellen: [
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...freyOsborne, wert: "Statisticians: 22 %, Mathematicians: 4,7 %" },
+      eloundou,
+      wef,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "ds-1",
+        kontext: "studium",
         title: "Standardmodell trainieren und evaluieren",
         description: "Gängiges Machine-Learning-Modell auf einen Datensatz anwenden.",
         kiEignung: 90,
@@ -1734,6 +1999,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "ds-2",
+        kontext: "beruf",
         title: "Daten bereinigen und aufbereiten",
         description: "Rohdaten von Fehlern und Lücken befreien.",
         kiEignung: 90,
@@ -1743,6 +2009,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "ds-3",
+        kontext: "beruf",
         title: "Die richtige Fragestellung an die Daten finden",
         description: "Klären, welches Problem mit den Daten eigentlich gelöst werden soll.",
         kiEignung: 25,
@@ -1752,6 +2019,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "ds-4",
+        kontext: "beruf",
         title: "Modellergebnis für Entscheider:innen einordnen",
         description: "Erklären, was ein Modell tatsächlich aussagt – und was nicht.",
         kiEignung: 20,
@@ -1761,6 +2029,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "ds-5",
+        kontext: "beruf",
         title: "Datenpipeline und Infrastruktur aufsetzen",
         description: "Technische Grundlage für laufende Datenverarbeitung bauen.",
         kiEignung: 87,
@@ -1770,6 +2039,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "ds-6",
+        kontext: "beruf",
         title: "Verzerrungen und ethische Risiken eines Modells prüfen",
         description: "Modell auf unfaire oder schädliche Effekte untersuchen.",
         kiEignung: 42,
@@ -1779,6 +2049,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "ds-7",
+        kontext: "beruf",
         title: "Ergebnisse mit Fachabteilung diskutieren",
         description: "Analyseergebnisse gemeinsam mit Praktiker:innen einordnen.",
         kiEignung: 15,
@@ -1801,10 +2072,17 @@ export const studiengaenge: Studiengang[] = [
       "Vor Ort mit Betroffenen und Institutionen kommunizieren",
       "Kritische Distanz zu Modellprognosen bewahren",
     ],
-    quellen: [wef, ilo],
+    quellen: [
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...freyOsborne, wert: "Environmental Scientists and Specialists: 3,3 %" },
+      wef,
+      ilo,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "nw-1",
+        kontext: "studium",
         title: "Klima- oder Umweltdaten modellieren",
         description: "Entwicklung eines Umweltparameters simulieren.",
         kiEignung: 67,
@@ -1814,6 +2092,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "nw-2",
+        kontext: "studium",
         title: "Messdaten aus Sensoren und Feldstudien auswerten",
         description: "Monitoring-Daten zu Umweltzuständen analysieren.",
         kiEignung: 72,
@@ -1823,6 +2102,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "nw-3",
+        kontext: "studium",
         title: "Vor Ort Proben nehmen oder Ökosysteme untersuchen",
         description: "Praktische Feldarbeit in der Natur durchführen.",
         kiEignung: 15,
@@ -1832,6 +2112,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "nw-4",
+        kontext: "beruf",
         title: "Interessenkonflikt zwischen Klimaschutz und Wirtschaft moderieren",
         description: "Zwischen widerstreitenden Interessengruppen vermitteln.",
         kiEignung: 5,
@@ -1841,6 +2122,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "nw-5",
+        kontext: "beruf",
         title: "Nachhaltigkeitsbericht für ein Unternehmen erstellen",
         description: "Kennzahlen und Fortschritt strukturiert dokumentieren.",
         kiEignung: 77,
@@ -1850,6 +2132,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "nw-6",
+        kontext: "beruf",
         title: "Mit betroffenen Gemeinden vor Ort kommunizieren",
         description: "Ein Projekt gegenüber Anwohnerschaft erklären und Bedenken aufnehmen.",
         kiEignung: 5,
@@ -1859,6 +2142,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "nw-7",
+        kontext: "beruf",
         title: "Politikempfehlung zur Klimaanpassung entwickeln",
         description: "Aus Datenlage konkrete Handlungsvorschläge ableiten.",
         kiEignung: 35,
@@ -1881,10 +2165,16 @@ export const studiengaenge: Studiengang[] = [
       "Quellenkritik bei historischen und kulturellen Materialien schärfen",
       "Programmierkenntnisse als Werkzeug begreifen, nicht als Selbstzweck",
     ],
-    quellen: [eloundou, freyOsborne],
+    quellen: [
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...freyOsborne, wert: "Historians: 44 %, Curators: 0,7 %" },
+      eloundou,
+      jobFuturomat,
+    ],
     tasks: [
       {
         id: "dh-1",
+        kontext: "studium",
         title: "Textkorpus digitalisieren und strukturieren",
         description: "Historische oder literarische Texte maschinenlesbar aufbereiten.",
         kiEignung: 90,
@@ -1894,6 +2184,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "dh-2",
+        kontext: "studium",
         title: "Muster in großen Textmengen computergestützt finden",
         description: "Auffälligkeiten über tausende Dokumente hinweg aufspüren.",
         kiEignung: 85,
@@ -1903,6 +2194,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "dh-3",
+        kontext: "studium",
         title: "Historische Quelle kritisch einordnen",
         description: "Herkunft, Verzerrung und Kontext einer Quelle einschätzen.",
         kiEignung: 47,
@@ -1912,6 +2204,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "dh-4",
+        kontext: "studium",
         title: "Eigene Forschungsfrage aus einem Fund entwickeln",
         description: "Aus einem überraschenden Textbefund eine neue These ableiten.",
         kiEignung: 30,
@@ -1921,6 +2214,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "dh-5",
+        kontext: "studium",
         title: "Tool oder Datenbank für Forschungszwecke programmieren",
         description: "Eigene Software zur Analyse historischer Daten entwickeln.",
         kiEignung: 82,
@@ -1930,6 +2224,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "dh-6",
+        kontext: "beruf",
         title: "Ergebnisse einem Fachpublikum vermitteln",
         description: "Forschungsergebnis auf einer Tagung präsentieren.",
         kiEignung: 15,
@@ -1939,6 +2234,7 @@ export const studiengaenge: Studiengang[] = [
       },
       {
         id: "dh-7",
+        kontext: "beruf",
         title: "Kulturelle Sammlung kuratieren",
         description: "Auswahl treffen, was in ein digitales Archiv aufgenommen wird.",
         kiEignung: 25,

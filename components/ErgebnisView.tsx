@@ -20,6 +20,7 @@ import { erstelleErgebnisBild } from "@/lib/shareImage";
 import RiskGauge from "./RiskGauge";
 import Disclaimer from "./Disclaimer";
 import Quellen from "./Quellen";
+import KlassencodeBox from "./KlassencodeBox";
 
 const ZONE_TEXT: Record<"ki" | "mensch", string> = {
   ki: "KI",
@@ -321,7 +322,14 @@ export default function ErgebnisView({
                     {task.title}
                     <span className="ml-2 text-xs font-normal text-ink-2">
                       {CATEGORY_LABELS[task.category]}
+                      {task.kontext === "studium" && " · im Studium"}
+                      {task.kontext === "beruf" && " · im Beruf danach"}
                     </span>
+                    {task.ueberraschend && (
+                      <span className="ml-2 rounded-[2px] bg-paper px-1.5 py-0.5 text-xs font-semibold text-ink-2 ring-1 ring-rule">
+                        Überraschend
+                      </span>
+                    )}
                   </span>
                   <span
                     className={`inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold ${STATUS_TEXT_COLOR[status]}`}
@@ -389,6 +397,12 @@ export default function ErgebnisView({
         <Quellen quellen={beruf.quellen} />
         <Disclaimer />
       </div>
+
+      <KlassencodeBox
+        einheit={beruf}
+        userZuordnung={userZuordnung}
+        art={puzzleBasePath === "/studium" ? "studium" : "beruf"}
+      />
 
       <div className="flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-rule pt-6 text-sm">
         <button
