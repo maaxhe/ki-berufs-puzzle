@@ -7,6 +7,7 @@ import { leseCodes } from "@/lib/klassencode";
 import { istGrenzfall, modellZuordnung } from "@/lib/scoring";
 import { diskussionsfragen } from "@/lib/diskussion";
 import type { PuzzleEinheit } from "@/types";
+import Streitfaelle from "./Streitfaelle";
 
 interface Zeile {
   id: string;
@@ -29,6 +30,7 @@ export default function KlasseAuswertung() {
     "uneinig",
   );
   const [aktiv, setAktiv] = useState<string | null>(null);
+  const [praesentiert, setPraesentiert] = useState(false);
 
   const { gueltig, ungueltig } = useMemo(() => leseCodes(text), [text]);
 
@@ -95,7 +97,9 @@ export default function KlasseAuswertung() {
         </label>
         <p className="mt-1 font-prose text-sm italic text-ink-2">
           Ein Code pro Schüler:in, getrennt durch Zeilenumbruch, Leerzeichen
-          oder Komma. Alles bleibt in deinem Browser.
+          oder Komma. Alles bleibt in deinem Browser. Tipp: Lass die Klasse
+          ihre Codes in einen gemeinsamen Chat oder ein Padlet schreiben und
+          kopiere alles auf einmal hierher.
         </p>
         <textarea
           id="codes"
@@ -161,6 +165,22 @@ export default function KlasseAuswertung() {
                 <span className="tnum">{aktuelle.codes.length}</span>{" "}
                 {aktuelle.codes.length === 1 ? "Person" : "Personen"}
               </h2>
+              {aktuelle.codes.length >= 2 && (
+                <div className="mt-4">
+                  <button
+                    type="button"
+                    onClick={() => setPraesentiert(true)}
+                    className="min-h-12 rounded-[2px] bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition-colors hover:bg-mensch"
+                  >
+                    Streitfälle präsentieren →
+                  </button>
+                  <p className="mt-1.5 text-sm text-ink-2">
+                    Vollbild für den Beamer: Die Klasse rät erst, dann wird
+                    die Verteilung und zuletzt die Einschätzung des Modells
+                    aufgedeckt.
+                  </p>
+                </div>
+              )}
               <div className="mt-3 flex flex-wrap gap-2 text-sm">
                 <button
                   type="button"
@@ -247,6 +267,13 @@ export default function KlasseAuswertung() {
                 </ul>
               </div>
             </section>
+          )}
+          {praesentiert && aktuelle && (
+            <Streitfaelle
+              einheit={aktuelle.einheit}
+              codes={aktuelle.codes}
+              onClose={() => setPraesentiert(false)}
+            />
           )}
         </>
       )}
