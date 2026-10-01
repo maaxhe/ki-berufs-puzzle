@@ -39,6 +39,7 @@ export default function ErgebnisView({
   appTitel = "KI-Berufs-Puzzle",
   puzzleBasePath = "/puzzle",
   naechstesLabel = "Nächster Beruf",
+  listeZugeklappt = false,
 }: {
   beruf: PuzzleEinheit;
   userZuordnung: UserZuordnung;
@@ -51,6 +52,8 @@ export default function ErgebnisView({
   appTitel?: string;
   puzzleBasePath?: string;
   naechstesLabel?: string;
+  /** Aufgabenliste einklappen (z. B. nach der Schnellrunde, die jede Aufgabe schon aufgedeckt hat). */
+  listeZugeklappt?: boolean;
 }) {
   const total = beruf.tasks.length;
   const grenzfaelle = grenzfaelleAnzahl(beruf.tasks);
@@ -66,6 +69,13 @@ export default function ErgebnisView({
     (t) => userZuordnung[t.id] === "ki",
   ).length;
   const userPct = total === 0 ? 0 : Math.round((userMaschine / total) * 100);
+
+  const groessteAbweichung = beruf.tasks
+    .filter(
+      (t) =>
+        !istGrenzfall(t.kiEignung) && userZuordnung[t.id] !== modellZuordnung(t),
+    )
+    .sort((a, b) => Math.abs(b.kiEignung - 50) - Math.abs(a.kiEignung - 50))[0];
 
   const [exportStatus, setExportStatus] = useState<
     "idle" | "geteilt" | "heruntergeladen" | "kopiert" | "fehler"
@@ -260,10 +270,33 @@ export default function ErgebnisView({
         </p>
       </section>
 
-      <section>
-        <h2 className="border-b-2 border-ink pb-2 font-display text-[1.4rem] font-semibold text-ink">
-          Aufgabe für Aufgabe
-        </h2>
+      {groessteAbweichung && (
+        <section className="max-w-[46rem] border-l-4 border-miss bg-miss-wash p-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-miss">
+            Deine größte Abweichung
+          </p>
+          <p className="mt-1 font-display text-lg font-semibold text-ink">
+            {groessteAbweichung.title}
+          </p>
+          <p className="mt-1 text-sm text-ink">
+            Du: {ZONE_TEXT[userZuordnung[groessteAbweichung.id]]} · Modell:{" "}
+            {ZONE_TEXT[modellZuordnung(groessteAbweichung)]}
+          </p>
+          <p className="mt-1.5 font-prose text-[0.95rem] leading-relaxed text-ink-2">
+            {groessteAbweichung.warum}
+          </p>
+        </section>
+      )}
+
+      <details open={!listeZugeklappt} className="group">
+        <summary className="flex cursor-pointer list-none items-baseline justify-between border-b-2 border-ink pb-2">
+          <h2 className="font-display text-[1.4rem] font-semibold text-ink">
+            Aufgabe für Aufgabe
+          </h2>
+          <span className="text-sm text-ink-2 group-open:hidden">
+            Alle {total} anzeigen
+          </span>
+        </summary>
 
         <div className="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-sm">
           <span className="inline-flex items-center gap-1.5 font-semibold text-ok">
@@ -370,7 +403,7 @@ export default function ErgebnisView({
             );
           })}
         </ul>
-      </section>
+      </details>
 
       <section className="max-w-[46rem]">
         <h2 className="font-display text-[1.4rem] font-semibold text-ink">

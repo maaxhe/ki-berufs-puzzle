@@ -20,6 +20,7 @@ import type { PuzzleEinheit, UserZuordnung } from "@/types";
 import DropZone, { type ZoneId } from "./DropZone";
 import TaskCard from "./TaskCard";
 import ErgebnisView from "./ErgebnisView";
+import SchnellRunde from "./SchnellRunde";
 import Disclaimer from "./Disclaimer";
 import Quellen from "./Quellen";
 import Legend from "./Legend";
@@ -114,6 +115,7 @@ export default function TaskPuzzle({
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [activeId, setActiveId] = useState<string | null>(null);
   const [view, setView] = useState<"puzzle" | "ergebnis">("puzzle");
+  const [modus, setModus] = useState<"schnell" | "alle">("schnell");
   const [restored, setRestored] = useState(false);
   const [justMounted, setJustMounted] = useState(true);
 
@@ -261,6 +263,7 @@ export default function TaskPuzzle({
           appTitel={appTitel}
           puzzleBasePath={puzzleBasePath}
           naechstesLabel={naechstesLabel}
+          listeZugeklappt={modus === "schnell"}
         />
       </div>
     );
@@ -279,25 +282,49 @@ export default function TaskPuzzle({
         {beruf.title}
       </h1>
       <p className="prose-text mt-3 text-ink">
-        Zieh jede Aufgabe in die Spalte, die besser passt – oder tipp auf dem
-        Handy erst die Aufgabe an, dann die Spalte.
+        {modus === "schnell"
+          ? "Wer macht diese Aufgabe in Zukunft – Mensch oder KI? Entscheide Karte für Karte und sieh sofort, was die Forschung dazu sagt."
+          : "Zieh jede Aufgabe in die Spalte, die besser passt – oder tipp auf dem Handy erst die Aufgabe an, dann die Spalte."}
       </p>
 
       <div className="mt-6">
         <Legend />
       </div>
 
-      <p className="mt-4 max-w-[46rem] border-l-2 border-ink bg-paper-2 px-3 py-2.5 text-sm text-ink sm:hidden">
-        <span className="font-semibold">So sortierst du auf dem Handy:</span>{" "}
-        Entweder <span className="font-semibold">Karte antippen</span>, dann{" "}
-        <span className="font-semibold">Spalte antippen</span> – oder die
-        Karte direkt mit dem Finger in die Spalte ziehen.
-      </p>
-
-      <div className="mt-8 max-w-[46rem] space-y-4">
-        <Disclaimer />
-        <Quellen quellen={beruf.quellen} compact />
+      <div className="mt-4 flex gap-1 text-sm" role="group" aria-label="Modus">
+        {(
+          [
+            ["schnell", "Schnellrunde"],
+            ["alle", "Alle Karten auf einmal"],
+          ] as const
+        ).map(([id, label]) => (
+          <button
+            key={id}
+            type="button"
+            aria-pressed={modus === id}
+            onClick={() => {
+              setModus(id);
+              setSelectedId(null);
+            }}
+            className={`min-h-9 rounded-[2px] border px-3 py-1.5 font-semibold transition-colors ${
+              modus === id
+                ? "border-ink bg-ink text-paper"
+                : "border-rule text-ink hover:border-ink"
+            }`}
+          >
+            {label}
+          </button>
+        ))}
       </div>
+
+      {modus === "alle" && (
+        <p className="mt-4 max-w-[46rem] border-l-2 border-ink bg-paper-2 px-3 py-2.5 text-sm text-ink sm:hidden">
+          <span className="font-semibold">So sortierst du auf dem Handy:</span>{" "}
+          Entweder <span className="font-semibold">Karte antippen</span>, dann{" "}
+          <span className="font-semibold">Spalte antippen</span> – oder die
+          Karte direkt mit dem Finger in die Spalte ziehen.
+        </p>
+      )}
 
       {selectedId && (
         <p
@@ -312,6 +339,17 @@ export default function TaskPuzzle({
         {liveMessage}
       </p>
 
+      {modus === "schnell" ? (
+        <SchnellRunde
+          beruf={beruf}
+          slots={slots}
+          onAnswer={(taskId, zone) =>
+            setSlots((prev) => ({ ...prev, [taskId]: zone }))
+          }
+          onFinish={() => setView("ergebnis")}
+        />
+      ) : (
+        <>
       <DndContext
         sensors={sensors}
         onDragStart={handleDragStart}
@@ -418,6 +456,18 @@ export default function TaskPuzzle({
           </button>
         </div>
       </div>
+        </>
+      )}
+
+      <details className="mt-12 max-w-[46rem] border-t border-rule pt-4">
+        <summary className="cursor-pointer text-sm font-semibold text-ink-2 hover:text-ink">
+          Woher kommen die Werte?
+        </summary>
+        <div className="mt-4 space-y-4">
+          <Disclaimer />
+          <Quellen quellen={beruf.quellen} compact />
+        </div>
+      </details>
     </div>
   );
 }
