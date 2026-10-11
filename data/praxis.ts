@@ -11,6 +11,7 @@ export interface PraxisBeispiel {
   wasMachtDieKI: string;
   wasBleibtMenschlich: string;
   diskussionsFrage: string;
+  video?: { id: string; titel: string; quelle: string; hinweis?: string };
 }
 
 export const praxisBeispiele: PraxisBeispiel[] = [
@@ -31,6 +32,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Warenpräsentation, Reklamationen, persönliche Beratung an der Frischetheke, Einräumen und die soziale Atmosphäre im Markt.",
     diskussionsFrage:
       "Nimmt der Roboter dem Verkaufspersonal die Arbeit weg – oder nimmt er die nervigsten Routinefragen ab, damit mehr Zeit für echte Kundengespräche bleibt?",
+    video: { id: "aiTFvqoSj1E", titel: "Putzroboter sorgt im Supermarkt für Sauberkeit", quelle: "SWR Landesschau Baden-Württemberg", hinweis: "Ein verwandter Fall: ein anderer Roboter, derselbe Alltag im Supermarkt." },
   },
   {
     id: "arztpraxis-ki-telefon-anamnese",
@@ -67,6 +69,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Die herzliche Begrüßung, Weinberatung, Sonderwünsche aufnehmen, Beschwerden lösen und das Gefühl von Gastfreundschaft vermitteln.",
     diskussionsFrage:
       "Macht der Roboter das Restaurant unpersönlicher – oder ermöglicht er es den Kellner:innen erst, weniger gestresst bei den Gästen am Tisch zu sein?",
+    video: { id: "YqraKGOBN2I", titel: "BellaBot: Gastro-Roboter im Einsatz", quelle: "ZDF Drehscheibe (hochgeladen von Alpha11)" },
   },
   {
     id: "pflege-exoskelette-und-hebehilfen",
@@ -85,6 +88,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Jede einzelne Berührung, das Eingehen auf Schmerzen, das Beruhigen von Patient:innen und das empathische Gespräch bei der Pflege.",
     diskussionsFrage:
       "Warum können Roboter zwar beim Heben den Rücken entlasten, aber das eigentliche Waschen und Trösten niemals selbstständig übernehmen?",
+    video: { id: "ni1yB2Im0pQ", titel: "Exoskelette: Der Pflege den Rücken stärken", quelle: "Projekt EXPERTISE 4.0" },
   },
   {
     id: "handwerk-holz-spritzroboter",
