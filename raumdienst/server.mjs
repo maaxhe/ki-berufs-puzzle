@@ -121,15 +121,17 @@ http
     const room = rooms.get((parts[1] || "").toUpperCase());
     if (!room) return send(res, 404, { error: "Raum nicht gefunden oder abgelaufen" }, origin);
 
-    // Schüler:in schickt Klassencode. clientId = zufällige ID aus dem Browser, damit erneutes Senden ersetzt statt verdoppelt.
+    // Schüler:in schickt Klassencode. clientId = zufällige ID aus dem Browser, damit erneutes Senden desselben Berufs ersetzt statt verdoppelt.
     if (req.method === "POST" && parts[2] === "codes") {
       if (limited(ip, "submit", 60, 10 * 60 * 1000)) return send(res, 429, { error: "zu schnell" }, origin);
       const body = await readBody(req);
       const code = String(body.code || "").trim();
       const clientId = String(body.clientId || "").slice(0, 40);
       if (!CODE_RE.test(code) || !clientId) return send(res, 400, { error: "ungültiger Code" }, origin);
-      if (!room.codes.has(clientId) && room.codes.size >= MAX_CODES) return send(res, 409, { error: "Raum ist voll" }, origin);
-      room.codes.set(clientId, code);
+      // Schlüssel = Browser + Beruf/Studiengang: Eine neue Bewertung desselben Berufs ersetzt die alte, andere Berufe kommen dazu.
+      const key = `${clientId}:${code.split(".").slice(0, 2).join(".")}`;
+      if (!room.codes.has(key) && room.codes.size >= MAX_CODES) return send(res, 409, { error: "Raum ist voll" }, origin);
+      room.codes.set(key, code);
       save();
       return send(res, 201, { ok: true }, origin);
     }
