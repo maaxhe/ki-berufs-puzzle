@@ -2,6 +2,8 @@ export interface PraxisBeispiel {
   id: string;
   titel: string;
   berufSlug?: string;
+  /** Studiengänge, bei denen dieser Fall ebenfalls zeigt, wohin sich der Berufsalltag entwickelt. */
+  studiengangSlugs?: string[];
   berufTitel: string;
   ort: string;
   zeitpunkt: string;
@@ -21,6 +23,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     id: "rewe-supermarkt-roboter-ahlen",
     titel: "Roboter „Rob“ hilft Kund:innen im Supermarkt",
     berufSlug: "einzelhandelskaufmann",
+    studiengangSlugs: ["betriebswirtschaftslehre"],
     berufTitel: "Kaufmann/-frau im Einzelhandel",
     ort: "Ahlen, NRW",
     zeitpunkt: "Aktuell",
@@ -40,6 +43,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     id: "arztpraxis-ki-telefon-anamnese",
     titel: "KI-Telefonassistenz und Vorab-Anamnese in der Arztpraxis",
     berufSlug: "medizinische-fachangestellte",
+    studiengangSlugs: ["medizin"],
     berufTitel: "Medizinische:r Fachangestellte:r",
     ort: "Bundesweit (u. a. Virchowbund Praxistests)",
     zeitpunkt: "Aktuell",
@@ -78,6 +82,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     id: "pflege-exoskelette-und-hebehilfen",
     titel: "Aktive Exoskelette beim Heben und Betten in Kliniken",
     berufSlug: "pflegefachkraft",
+    studiengangSlugs: ["medizin"],
     berufTitel: "Pflegefachkraft",
     ort: "BG Kliniken & Pflegeheime in DE",
     zeitpunkt: "Aktuell",
@@ -120,6 +125,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     id: "anwaltskanzlei-vertragsanalyse-harvey",
     titel: "KI-Vertragsprüfung und Aktenanalyse in Großkanzleien",
     berufSlug: "rechtsanwaltsfachangestellte",
+    studiengangSlugs: ["jura"],
     berufTitel: "Rechtsanwalts- und Notarfachangestellte:r (ReNo)",
     ort: "Wirtschaftskanzleien in Frankfurt, Hamburg, Düsseldorf",
     zeitpunkt: "Aktuell",
@@ -139,6 +145,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     id: "lkw-fernride-teleoperation",
     titel: "Lkw ohne Fahrer an Bord – gesteuert aus der Ferne",
     berufSlug: "berufskraftfahrer",
+    studiengangSlugs: ["maschinenbau"],
     berufTitel: "Berufskraftfahrer:in",
     ort: "HHLA & Fernride (Hamburg / Terminal Tallinn)",
     zeitpunkt: "Aktuell",
@@ -195,6 +202,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     id: "landwirt-feldroboter-unkraut",
     titel: "Autonomer Roboter jätet Unkraut ohne Chemie",
     berufSlug: "landwirt",
+    studiengangSlugs: ["nachhaltigkeitswissenschaft"],
     berufTitel: "Landwirt:in",
     ort: "Höfe in Deutschland (Farming Revolution u. a.)",
     zeitpunkt: "Aktuell",
@@ -214,6 +222,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     id: "maurer-3d-druck-wallenhausen",
     titel: "Ein Mehrfamilienhaus aus dem 3D-Drucker",
     berufSlug: "maurer",
+    studiengangSlugs: ["architektur"],
     berufTitel: "Maurer:in",
     ort: "Wallenhausen, Bayern",
     zeitpunkt: "Fertiggestellt",
@@ -235,6 +244,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     id: "bank-ki-assistent-sparkasse",
     titel: "KI-Assistent unterstützt Berater:innen in der Sparkasse",
     berufSlug: "bankkaufmann",
+    studiengangSlugs: ["betriebswirtschaftslehre"],
     berufTitel: "Bankkaufmann/-frau",
     ort: "Sparkassen in Deutschland",
     zeitpunkt: "Aktuell",
@@ -254,6 +264,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     id: "notfall-ki-leitstelle",
     titel: "KI hilft in der Leitstelle, den Einsatzort zu finden",
     berufSlug: "notfallsanitaeter",
+    studiengangSlugs: ["medizin"],
     berufTitel: "Notfallsanitäter:in",
     ort: "Ravensburg (DRK-Pilotprojekt)",
     zeitpunkt: "Testphase",

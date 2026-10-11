@@ -4,6 +4,7 @@ import BerufListe from "@/components/BerufListe";
 import Disclaimer from "@/components/Disclaimer";
 import Legend from "@/components/Legend";
 import { berufe } from "@/data/berufe";
+import { studiengaenge } from "@/data/studiengaenge";
 import { KATEGORIE_LABELS, KATEGORIE_REIHENFOLGE } from "@/types";
 import type { BerufKategorie } from "@/types";
 
@@ -42,6 +43,7 @@ export default function Home() {
         kategorieLabels={KATEGORIE_LABELS}
         kategorieReihenfolge={KATEGORIE_REIHENFOLGE}
         hrefBase="/puzzle"
+        querverweis={{ einheiten: studiengaenge, hrefBase: "/studium", label: "Studiengängen" }}
       />
     </div>
   );

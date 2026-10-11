@@ -14,6 +14,7 @@ export const studiengaenge: Studiengang[] = [
   // ─── Technik & Informatik ───
   {
     slug: "informatik",
+    suchbegriffe: ["Programmierer", "Softwareentwickler", "Entwickler", "IT"],
     title: "Informatik",
     shortDescription:
       "Vom Bachelor direkt in die Disziplin, die KI selbst hervorgebracht hat.",
@@ -106,6 +107,7 @@ export const studiengaenge: Studiengang[] = [
   },
   {
     slug: "elektrotechnik",
+    suchbegriffe: ["Elektroingenieur"],
     title: "Elektrotechnik",
     shortDescription:
       "Von der Schaltung auf dem Papier bis zur Anlage, die tatsächlich läuft.",
@@ -199,6 +201,7 @@ export const studiengaenge: Studiengang[] = [
   // ─── Naturwissenschaft & Medizin ───
   {
     slug: "physik",
+    suchbegriffe: ["Physiker", "Physikerin"],
     title: "Physik",
     shortDescription:
       "Grundlagenforschung zwischen Rechenpower und dem einen überraschenden Messwert.",
@@ -291,6 +294,7 @@ export const studiengaenge: Studiengang[] = [
   },
   {
     slug: "medizin",
+    suchbegriffe: ["Arzt", "Ärztin", "Mediziner", "Chirurg", "Hausarzt", "Zahnarzt", "Doktor"],
     title: "Medizin",
     shortDescription:
       "Gilt als KI-fest – bei genauerem Hinsehen ist das nur die halbe Wahrheit.",
@@ -386,6 +390,7 @@ export const studiengaenge: Studiengang[] = [
   // ─── Wirtschaft & Recht ───
   {
     slug: "betriebswirtschaftslehre",
+    suchbegriffe: ["Manager", "Controller", "Marketing"],
     title: "Betriebswirtschaftslehre (BWL)",
     shortDescription:
       "Der Klassiker unter den Studiengängen – und einer mit vielen automatisierbaren Routinen.",
@@ -479,6 +484,7 @@ export const studiengaenge: Studiengang[] = [
   },
   {
     slug: "jura",
+    suchbegriffe: ["Anwalt", "Anwältin", "Richter", "Staatsanwalt", "Jurist"],
     title: "Rechtswissenschaft (Jura)",
     shortDescription:
       "Viel Textarbeit, viel Recherche – und trotzdem ein zutiefst menschlicher Kern.",
@@ -575,6 +581,7 @@ export const studiengaenge: Studiengang[] = [
   // ─── Geistes- & Sozialwissenschaft ───
   {
     slug: "psychologie",
+    suchbegriffe: ["Psychotherapeut", "Therapeut"],
     title: "Psychologie",
     shortDescription:
       "Zwischen harter Statistik im Studium und zutiefst menschlicher Arbeit im Beruf.",
@@ -667,6 +674,7 @@ export const studiengaenge: Studiengang[] = [
   },
   {
     slug: "germanistik",
+    suchbegriffe: ["Lektor", "Autor"],
     title: "Germanistik",
     shortDescription:
       "Oft als „brotlos“ belächelt – ausgerechnet hier zeigt sich, was KI wirklich nicht kann.",
@@ -761,6 +769,7 @@ export const studiengaenge: Studiengang[] = [
   // ─── Technik & Informatik (Fortsetzung) ───
   {
     slug: "maschinenbau",
+    suchbegriffe: ["Ingenieur", "Konstrukteur"],
     title: "Maschinenbau",
     shortDescription:
       "Konstruktion, Simulation und die Frage, wer für eine fehlerhafte Maschine geradesteht.",
@@ -944,6 +953,7 @@ export const studiengaenge: Studiengang[] = [
   },
   {
     slug: "architektur",
+    suchbegriffe: ["Architekt", "Architektin"],
     title: "Architektur",
     shortDescription:
       "Entwurf zwischen KI-generierten Varianten und der Verantwortung für ein bewohnbares Gebäude.",
@@ -1038,6 +1048,7 @@ export const studiengaenge: Studiengang[] = [
   // ─── Naturwissenschaft & Medizin (Fortsetzung) ───
   {
     slug: "biologie",
+    suchbegriffe: ["Biologe", "Biologin"],
     title: "Biologie",
     shortDescription:
       "Von der Feldarbeit bis zur Genanalyse am Rechner.",
@@ -1130,6 +1141,7 @@ export const studiengaenge: Studiengang[] = [
   },
   {
     slug: "chemie",
+    suchbegriffe: ["Chemiker", "Chemikerin"],
     title: "Chemie",
     shortDescription:
       "Reaktionen vorhersagen am Rechner, sie im Labor tatsächlich zum Laufen bringen.",
@@ -1222,6 +1234,7 @@ export const studiengaenge: Studiengang[] = [
   },
   {
     slug: "pharmazie",
+    suchbegriffe: ["Apotheker", "Apothekerin"],
     title: "Pharmazie",
     shortDescription:
       "Zwischen Wirkstoffentwicklung am Rechner und persönlicher Beratung am Apothekentresen.",
@@ -1504,6 +1517,7 @@ export const studiengaenge: Studiengang[] = [
   // ─── Geistes- & Sozialwissenschaft (Fortsetzung) ───
   {
     slug: "soziale-arbeit",
+    suchbegriffe: ["Sozialarbeiter", "Sozialpädagoge"],
     title: "Soziale Arbeit",
     shortDescription:
       "Einer der Studiengänge mit dem geringsten KI-Risiko überhaupt – aus gutem Grund.",
@@ -1596,6 +1610,7 @@ export const studiengaenge: Studiengang[] = [
   },
   {
     slug: "paedagogik",
+    suchbegriffe: ["Lehrer", "Lehramt", "Erzieher"],
     title: "Pädagogik / Erziehungswissenschaft",
     shortDescription:
       "Lernen erforschen und gestalten – in einem Berufsfeld, das explizit als Wachstumsbranche gilt.",
@@ -1688,6 +1703,7 @@ export const studiengaenge: Studiengang[] = [
   },
   {
     slug: "politikwissenschaft",
+    suchbegriffe: ["Politiker"],
     title: "Politikwissenschaft",
     shortDescription:
       "Analyse politischer Prozesse – zwischen Datenauswertung und dem Ringen um Deutungshoheit.",
@@ -1780,6 +1796,7 @@ export const studiengaenge: Studiengang[] = [
   },
   {
     slug: "kommunikationswissenschaft",
+    suchbegriffe: ["Journalist", "Journalistin", "PR"],
     title: "Kommunikations- & Medienwissenschaft",
     shortDescription:
       "Ausgerechnet der Studiengang, der Medien erforscht, steht mitten im KI-Umbruch der Medienbranche.",
@@ -1968,6 +1985,7 @@ export const studiengaenge: Studiengang[] = [
   },
   {
     slug: "data-science",
+    suchbegriffe: ["Data Scientist", "KI-Entwickler"],
     title: "Data Science",
     shortDescription:
       "Der Studiengang, der die eigene Automatisierung mitentwickelt – mit interessanten Folgen für sich selbst.",

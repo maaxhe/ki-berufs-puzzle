@@ -54,6 +54,8 @@ export interface PuzzleEinheit {
   slug: string;
   title: string;
   shortDescription: string;
+  /** Alltagsbegriffe, die in der Suche zu dieser Einheit führen (z. B. „Arzt“ → Medizin). */
+  suchbegriffe?: string[];
   /** 6–12 Tasks, Anzahl innerhalb einer Einheit einheitlich. */
   tasks: Task[];
   zukunftsausblick: string;

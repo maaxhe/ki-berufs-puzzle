@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import VideoEmbed from "@/components/VideoEmbed";
 import { praxisBeispiele } from "@/data/praxis";
+import { getStudiengang } from "@/data/studiengaenge";
 
 export const metadata: Metadata = {
   title: "Schon heute Realität – Reale KI- und Roboter-Fälle aus der Praxis",
@@ -124,14 +125,30 @@ export default function PraxisPage() {
                   {bsp.diskussionsFrage}
                 </p>
               </blockquote>
-              {bsp.berufSlug && (
-                <div className="flex items-end lg:justify-end">
-                  <Link
-                    href={`/puzzle/${bsp.berufSlug}`}
-                    className="font-prose text-[1.02rem] italic text-ink underline decoration-mensch decoration-2 underline-offset-4 hover:text-mensch"
-                  >
-                    Diesen Beruf selbst sortieren →
-                  </Link>
+              {(bsp.berufSlug || bsp.studiengangSlugs?.length) && (
+                <div className="flex flex-col gap-1.5 lg:items-end lg:justify-end">
+                  {bsp.berufSlug && (
+                    <Link
+                      href={`/puzzle/${bsp.berufSlug}`}
+                      className="font-prose text-[1.02rem] italic text-ink underline decoration-mensch decoration-2 underline-offset-4 hover:text-mensch"
+                    >
+                      Diesen Beruf selbst sortieren →
+                    </Link>
+                  )}
+                  {bsp.studiengangSlugs?.map((slug) => {
+                    const sg = getStudiengang(slug);
+                    return (
+                      sg && (
+                        <Link
+                          key={slug}
+                          href={`/studium/${slug}`}
+                          className="font-prose text-[1.02rem] italic text-ink underline decoration-mensch decoration-2 underline-offset-4 hover:text-mensch"
+                        >
+                          Passendes Studium: {sg.title} →
+                        </Link>
+                      )
+                    );
+                  })}
                 </div>
               )}
             </div>

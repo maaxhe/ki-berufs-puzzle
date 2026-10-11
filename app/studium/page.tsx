@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import BerufListe from "@/components/BerufListe";
 import Disclaimer from "@/components/Disclaimer";
 import Legend from "@/components/Legend";
+import { berufe } from "@/data/berufe";
 import { studiengaenge } from "@/data/studiengaenge";
 import {
   STUDIENGANG_KATEGORIE_LABELS,
@@ -40,6 +41,7 @@ export default function StudiumPage() {
         kategorieLabels={STUDIENGANG_KATEGORIE_LABELS}
         kategorieReihenfolge={STUDIENGANG_KATEGORIE_REIHENFOLGE}
         hrefBase="/studium"
+        querverweis={{ einheiten: berufe, hrefBase: "/puzzle", label: "Berufen" }}
         leerText="Kein Studiengang gefunden. Versuch einen anderen Suchbegriff."
       />
     </div>

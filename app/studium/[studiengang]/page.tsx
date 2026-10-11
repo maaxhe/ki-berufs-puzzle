@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import TaskPuzzle from "@/components/TaskPuzzle";
+import PraxisHinweis from "@/components/PraxisHinweis";
 import { studiengaenge, getStudiengang } from "@/data/studiengaenge";
+import { praxisBeispiele } from "@/data/praxis";
 
 export function generateStaticParams() {
   return studiengaenge.map((s) => ({ studiengang: s.slug }));
@@ -30,6 +32,10 @@ export default async function StudiumPuzzlePage({
   const studiengang = getStudiengang(slug);
   if (!studiengang) notFound();
 
+  const praxisFaelle = praxisBeispiele.filter((p) =>
+    p.studiengangSlugs?.includes(studiengang.slug),
+  );
+
   return (
     <div className="theme-studium">
       <TaskPuzzle
@@ -42,6 +48,15 @@ export default async function StudiumPuzzlePage({
         appTitel="KI-Studiengänge-Puzzle"
         puzzleBasePath="/studium"
         naechstesLabel="Nächster Studiengang"
+        zusatz={
+          praxisFaelle.length > 0 && (
+            <>
+              {praxisFaelle.map((fall) => (
+                <PraxisHinweis key={fall.id} fall={fall} />
+              ))}
+            </>
+          )
+        }
       />
     </div>
   );

@@ -2,7 +2,24 @@
 
 import { useMemo, useState } from "react";
 import type { PuzzleEinheit } from "@/types";
+import Link from "next/link";
 import BerufCard from "./BerufCard";
+
+/** Die jeweils andere Liste (Berufe ↔ Studiengänge), die bei der Suche mitdurchsucht wird. */
+export interface Querverweis {
+  einheiten: PuzzleEinheit[];
+  hrefBase: string;
+  /** z. B. „Studiengängen“ → „Auch gefunden bei Studiengängen“ */
+  label: string;
+}
+
+function trifft(b: PuzzleEinheit, q: string) {
+  return (
+    b.title.toLowerCase().includes(q) ||
+    b.shortDescription.toLowerCase().includes(q) ||
+    (b.suchbegriffe ?? []).some((t) => t.toLowerCase().includes(q))
+  );
+}
 
 /**
  * Liste mit Textsuche und Kategorie-Filter über alle Einheiten (Berufe oder
@@ -17,12 +34,14 @@ export default function BerufListe<K extends string>({
   kategorieReihenfolge,
   hrefBase = "/puzzle",
   leerText = "Nichts gefunden. Versuch einen anderen Suchbegriff.",
+  querverweis,
 }: {
   berufe: MitKategorie<K>[];
   kategorieLabels: Record<K, string>;
   kategorieReihenfolge: K[];
   hrefBase?: string;
   leerText?: string;
+  querverweis?: Querverweis;
 }) {
   const [query, setQuery] = useState("");
   const [aktivKategorie, setAktivKategorie] = useState<K | null>(null);
@@ -33,12 +52,15 @@ export default function BerufListe<K extends string>({
       const matchtKategorie = !aktivKategorie || b.kategorie === aktivKategorie;
       if (!matchtKategorie) return false;
       if (!q) return true;
-      return (
-        b.title.toLowerCase().includes(q) ||
-        b.shortDescription.toLowerCase().includes(q)
-      );
+      return trifft(b, q);
     });
   }, [berufe, query, aktivKategorie]);
+
+  const querTreffer = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q || !querverweis) return [];
+    return querverweis.einheiten.filter((b) => trifft(b, q));
+  }, [querverweis, query]);
 
   const nachKategorie = kategorieReihenfolge
     .map((kat) => ({
@@ -105,6 +127,26 @@ export default function BerufListe<K extends string>({
           />
         </div>
       </div>
+
+      {querTreffer.length > 0 && (
+        <aside className="mt-10 border-l-2 border-mensch bg-paper-2 py-3 pl-4">
+          <p className="font-display text-xs font-semibold uppercase tracking-wider text-mensch">
+            Auch gefunden bei {querverweis!.label}
+          </p>
+          <ul className="mt-2 space-y-1.5">
+            {querTreffer.map((b) => (
+              <li key={b.slug}>
+                <Link
+                  href={`${querverweis!.hrefBase}/${b.slug}`}
+                  className="font-prose text-[1.02rem] italic text-ink underline decoration-mensch decoration-2 underline-offset-4 hover:text-mensch"
+                >
+                  {b.title} →
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )}
 
       {nachKategorie.length === 0 ? (
         <p className="mt-14 font-prose text-[0.95rem] italic text-ink-2">
