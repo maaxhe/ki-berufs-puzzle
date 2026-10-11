@@ -93,12 +93,9 @@ export default function Header() {
       <div className="h-[3px] bg-mensch" aria-hidden="true" />
       {/* Mobil: oben Logo + Klasse starten, darunter eine wischbare Navigationszeile. */}
       <div className="mx-auto max-w-[68rem] px-5 pt-4 sm:hidden">
-        <div className="flex items-center justify-between">
-          <span className="font-display text-[1.05rem] font-semibold tracking-tight text-ink">
-            KI-Puzzle
-          </span>
-          {klasseLink}
-        </div>
+        <span className="font-display text-[1.05rem] font-semibold tracking-tight text-ink">
+          KI-Puzzle
+        </span>
         <nav
           className="-mx-5 mt-3 flex items-center gap-1 overflow-x-auto whitespace-nowrap px-5 pb-3 text-sm [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           aria-label="Bereich wählen"
@@ -108,6 +105,7 @@ export default function Header() {
           <span className="mx-1 h-4 w-px shrink-0 bg-rule" aria-hidden="true" />
           {praxisLink}
           {erkenntnisseLink}
+          {klasseLink}
         </nav>
       </div>
 
