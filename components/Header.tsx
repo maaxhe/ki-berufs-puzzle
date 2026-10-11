@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { klasseVerlassen, useKlasse } from "@/lib/useKlasse";
 
 export default function Header() {
   const pathname = usePathname();
 
-  const [klasse, setKlasse] = useState<string | null>(null);
+  const klasse = useKlasse();
 
   // QR-Code der Lehrkraft: /?raum=ABCD merkt sich den Raumcode für das Senden am Ende.
   useEffect(() => {
@@ -15,16 +16,9 @@ export default function Header() {
     if (raum && /^[A-Z0-9]{4}$/.test(raum)) {
       try {
         localStorage.setItem("raum-code", raum);
+        window.dispatchEvent(new Event("raum-geaendert"));
       } catch {}
     }
-    const lesen = () => {
-      try {
-        setKlasse(localStorage.getItem("raum-code"));
-      } catch {}
-    };
-    lesen();
-    window.addEventListener("raum-geaendert", lesen);
-    return () => window.removeEventListener("raum-geaendert", lesen);
   }, []);
   const studiumAktiv = pathname?.startsWith("/studium") ?? false;
   const erkenntnisseAktiv = pathname === "/erkenntnisse";
@@ -77,11 +71,7 @@ export default function Header() {
           >
             Erkenntnisse
           </Link>
-          {klasse && (
-            <span className="rounded-full border border-ink/30 px-3 py-1 text-sm font-semibold text-ink">
-              In Klasse <span className="font-mono tracking-widest">{klasse}</span>
-            </span>
-          )}
+          {!klasse && (
           <Link
             href="/klasse"
             aria-current={pathname === "/klasse" ? "page" : undefined}
@@ -89,11 +79,20 @@ export default function Header() {
           >
             Klasse starten
           </Link>
+          )}
           <span className="hidden font-prose text-sm italic text-ink-2 sm:block">
             für Berufsorientierungs-Workshops
           </span>
         </div>
       </div>
+      {klasse && (
+        <div className="border-t border-rule bg-ink px-5 py-2 text-center text-sm font-semibold text-paper" role="status">
+          Du bist in Klasse <span className="font-mono tracking-widest">{klasse}</span> ·{" "}
+          <button type="button" onClick={klasseVerlassen} className="font-normal underline underline-offset-4">
+            verlassen
+          </button>
+        </div>
+      )}
     </header>
   );
 }

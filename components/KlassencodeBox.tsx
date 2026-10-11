@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import type { PuzzleEinheit, UserZuordnung } from "@/types";
 import { erzeugeCode } from "@/lib/klassencode";
 import { raumApi } from "@/lib/raumApi";
+import { klasseVerlassen } from "@/lib/useKlasse";
 
 /** Kurzer Code für den Klassenmodus – enthält nur die Zuordnung, keine Namen. */
 export default function KlassencodeBox({
@@ -58,10 +59,7 @@ export default function KlassencodeBox({
   }, [verbunden, raum, code]);
 
   const raumVerlassen = () => {
-    try {
-      localStorage.removeItem("raum-code");
-      window.dispatchEvent(new Event("raum-geaendert"));
-    } catch {}
+    klasseVerlassen();
     setVerbunden(false);
     setRaum("");
     setRaumStatus("idle");
