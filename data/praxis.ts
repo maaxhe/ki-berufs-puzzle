@@ -166,4 +166,99 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Würdest du nachts allein in ein Auto ohne Fahrer steigen – und was müsste passieren, damit du dich sicher fühlst?",
     video: { id: "KX9Y4stS76s", titel: "MOIA-Busse ohne Fahrer in Hamburg unterwegs", quelle: "SAT.1 REGIONAL" },
   },
+  {
+    id: "koch-rewe-kochroboter",
+    titel: "Zwei Roboterarme kochen im Supermarkt",
+    berufSlug: "koch",
+    berufTitel: "Koch/Köchin",
+    ort: "REWE in Düsseldorf",
+    zeitpunkt: "Aktuell",
+    medium: "Business Punk",
+    url: "https://www.business-punk.com/tech/roboter-koch-uebernimmt-bei-rewe-ki-serviert-120-mahlzeiten-pro-stunde/",
+    teaser:
+      "In einem Düsseldorfer REWE-Markt bereitet der KI-Roboter CA-1 hinter einer Glasscheibe Gerichte zu. Kund:innen wählen am Display eines von acht Gerichten, der Roboter schneidet, erhitzt, serviert und reinigt seine Utensilien selbst.",
+    wasMachtDieKI:
+      "Immer gleiche Rezepte nach Bestellung: Zutaten schneiden, braten, portionieren, servieren und die Küchenwerkzeuge säubern.",
+    wasBleibtMenschlich:
+      "Eigene Rezepte entwickeln, Geschmack abschmecken und anpassen, auf Unverträglichkeiten und Sonderwünsche eingehen, Menüplanung und Warenkunde, Improvisieren, wenn etwas fehlt.",
+    diskussionsFrage:
+      "Ein Roboter kocht acht Gerichte immer gleich gut. Was kann eine Köchin oder ein Koch, das darüber hinausgeht?",
+    video: { id: "vows9BODG7M", titel: "Düsseldorfer Rewe präsentiert KI-Kochroboter", quelle: "RTL West" },
+  },
+  {
+    id: "landwirt-feldroboter-unkraut",
+    titel: "Autonomer Roboter jätet Unkraut ohne Chemie",
+    berufSlug: "landwirt",
+    berufTitel: "Landwirt:in",
+    ort: "Höfe in Deutschland (Farming Revolution u. a.)",
+    zeitpunkt: "Aktuell",
+    medium: "KfW Stories",
+    url: "https://www.kfw.de/stories/wirtschaft/gruenden/farming-revolution/",
+    teaser:
+      "Das Start-up Farming Revolution baut einen Feldroboter, der mit Hilfe von KI auf dem Acker Unkraut entfernt. Nach Angaben des Gründers rechnet er sich für Biobetriebe in ein bis zwei Jahren, für konventionelle Betriebe in drei bis fünf. Für kleinere Höfe gibt es ihn auch zur Miete.",
+    wasMachtDieKI:
+      "Stundenlang Reihen abfahren, Bilder auswerten, Unkraut erkennen und gezielt entfernen, ohne Spritzmittel.",
+    wasBleibtMenschlich:
+      "Entscheiden, was wann angebaut wird, Boden und Wetter einschätzen, Technik warten und einrichten, Tiere versorgen, den Betrieb wirtschaftlich führen.",
+    diskussionsFrage:
+      "Der Roboter ersetzt Handarbeit auf dem Acker. Verändert das den Beruf eher in Richtung Technik – und wärst du dafür der richtige Typ?",
+    video: { id: "z22WSxc6Xm4", titel: "Revolution auf dem Acker? Ein Feldroboter gegen Unkraut ohne Gift", quelle: "BR – Schwaben + Altbayern" },
+  },
+  {
+    id: "maurer-3d-druck-wallenhausen",
+    titel: "Ein Mehrfamilienhaus aus dem 3D-Drucker",
+    berufSlug: "maurer",
+    berufTitel: "Maurer:in",
+    ort: "Wallenhausen, Bayern",
+    zeitpunkt: "Fertiggestellt",
+    medium: "Handwerksblatt",
+    url: "https://www.handwerksblatt.de/betriebsfuehrung/3d-gebaeudedruck-wallenhausen-rupp-gebaeudedruck-peri-cobod",
+    teaser:
+      "In Wallenhausen entstand ein Fünf-Familienhaus mit drei Stockwerken, dessen Wände ein 3D-Betondrucker Schicht für Schicht aufgebaut hat. Die reine Druckzeit lag bei 72 Stunden. Einschließlich Rüstzeiten waren es laut Bauunternehmer etwa fünf Wochen.",
+    wasMachtDieKI:
+      "Die Wände präzise Schicht für Schicht drucken und dabei Öffnungen für Fenster, Türen und Leitungen aussparen.",
+    wasBleibtMenschlich:
+      "Baustelle einrichten, Drucker aufbauen und bedienen, Decken und Bodenplatte als Fertigteile einsetzen, Fenster, Türen, Elektrik und Ausbau, Qualität prüfen.",
+    diskussionsFrage:
+      "Wenn die Wände gedruckt werden: Was an einer Baustelle braucht trotzdem Menschen mit Erfahrung?",
+    video: { id: "zLbVrC8V2TE", titel: "Das erste 3D gedruckte Mehrfamilienhaus Deutschlands", quelle: "mobiheat Reportage" },
+  },
+  {
+    id: "bank-ki-assistent-sparkasse",
+    titel: "KI-Assistent unterstützt Berater:innen in der Sparkasse",
+    berufSlug: "bankkaufmann",
+    berufTitel: "Bankkaufmann/-frau",
+    ort: "Sparkassen in Deutschland",
+    zeitpunkt: "Aktuell",
+    medium: "IT Finanzmagazin",
+    url: "https://www.it-finanzmagazin.de/?p=245306",
+    teaser:
+      "Der IT-Dienstleister der Sparkassen hat den KI-Assistenten „S-KIPilot“ ausgebaut. Er ist tief in das Kernbankensystem eingebunden und soll Berater:innen unter anderem bei der Vorbereitung von Gesprächen unterstützen.",
+    wasMachtDieKI:
+      "Kundendaten zusammenfassen, Informationen zu Konten, Umsätzen und Verträgen aufbereiten und Gespräche vorbereiten.",
+    wasBleibtMenschlich:
+      "Das Beratungsgespräch selbst, Vertrauen aufbauen, die persönliche Lebenssituation verstehen, Verantwortung für die Empfehlung und der Umgang mit Kund:innen in Krisen.",
+    diskussionsFrage:
+      "Bei Geld geht es um Vertrauen. Würdest du lieber von einem Menschen beraten werden, der eine KI nutzt, oder direkt von der KI?",
+    video: { id: "phDaiXysZDM", titel: "Artificial Banking. Entscheidet die KI bald über meinen Kredit?", quelle: "WU Wien", hinweis: "Allgemeiner Beitrag zu KI im Bankwesen aus Österreich, nicht speziell zum Sparkassen-Assistenten." },
+  },
+  {
+    id: "notfall-ki-leitstelle",
+    titel: "KI hilft in der Leitstelle, den Einsatzort zu finden",
+    berufSlug: "notfallsanitaeter",
+    berufTitel: "Notfallsanitäter:in",
+    ort: "Ravensburg (DRK-Pilotprojekt)",
+    zeitpunkt: "Testphase",
+    medium: "Schwäbische Zeitung (dpa)",
+    url: "https://www.schwaebische.de/regional/baden-wuerttemberg/wie-kuenstliche-intelligenz-bei-notrufen-helfen-koennte-4113290",
+    teaser:
+      "Im Projekt „112 – KI rettet Leben“ erprobte der DRK-Rettungsdienst in Ravensburg, wie eine KI aus den Angaben von Anrufenden mögliche Einsatzorte eingrenzt. In Testläufen mit erfundenen Notrufen sank die Zahl der infrage kommenden Orte von rund 20 auf drei. Das Projekt lief in einer Testumgebung und ist nicht an die echte Leitstelle angeschlossen.",
+    wasMachtDieKI:
+      "Ortsangaben von Anrufenden mit Kartendaten abgleichen und mögliche Einsatzorte vorschlagen.",
+    wasBleibtMenschlich:
+      "Entscheiden, welche Hilfe losgeschickt wird, Anrufende am Telefon beruhigen, am Einsatzort Menschen versorgen, in Sekunden Lage und Gefahr einschätzen und Verantwortung tragen.",
+    diskussionsFrage:
+      "Eine KI kann Orte eingrenzen. Wer sollte bei einem Notruf am Ende entscheiden, und warum?",
+    video: { id: "hRYBa5nvBng", titel: "Feuerwehr-Leitstelle: Der erste Kontaktpunkt bei Notfällen", quelle: "WDR – Feuer & Flamme", hinweis: "Zeigt die Arbeit in der Leitstelle, in der das Pilotprojekt ansetzt. Von KI ist im Video nicht die Rede." },
+  },
 ];

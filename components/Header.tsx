@@ -93,7 +93,7 @@ export default function Header() {
       <div className="h-[3px] bg-mensch" aria-hidden="true" />
       {/* Mobil: oben Logo + Klasse starten, darunter eine wischbare Navigationszeile. */}
       <div className="mx-auto max-w-[68rem] px-5 pt-4 sm:hidden">
-        <span className="font-display text-[1.05rem] font-semibold tracking-tight text-ink">
+        <span className="block font-display text-[1.05rem] font-semibold tracking-tight text-ink">
           KI-Puzzle
         </span>
         <nav
