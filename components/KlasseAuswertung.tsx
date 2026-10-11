@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { QRCodeSVG } from "qrcode.react";
 import { getBeruf } from "@/data/berufe";
 import { getStudiengang } from "@/data/studiengaenge";
 import { leseCodes } from "@/lib/klassencode";
@@ -144,11 +145,17 @@ export default function KlasseAuswertung() {
       <section className="max-w-[46rem] border border-rule bg-paper-2 p-4">
         <h2 className="font-display text-base font-semibold text-ink">Live-Raum (optional)</h2>
         {raum ? (
-          <p className="mt-1 font-prose text-[0.95rem] text-ink-2">
-            Raumcode für die Klasse:{" "}
-            <b className="font-mono text-2xl tracking-widest text-ink">{raum.code}</b> · {raumCodes.length} Code(s)
-            eingegangen. Schüler:innen tippen ihn unter ihrem Ergebnis ein. Räume verfallen nach 24 Stunden.
-          </p>
+          <div className="mt-1 flex flex-wrap items-start gap-5">
+            <div className="bg-white p-2" aria-label={`QR-Code für Raum ${raum.code}`}>
+              <QRCodeSVG value={`https://jobs.coxilab.de/?raum=${raum.code}`} size={144} />
+            </div>
+            <p className="min-w-[16rem] flex-1 font-prose text-[0.95rem] text-ink-2">
+              Raumcode für die Klasse:{" "}
+              <b className="font-mono text-2xl tracking-widest text-ink">{raum.code}</b> · {raumCodes.length} Code(s)
+              eingegangen. Schüler:innen scannen den QR-Code (der Raumcode ist dann schon eingetragen) oder tippen
+              den Code unter ihrem Ergebnis ein. Räume verfallen nach 24 Stunden.
+            </p>
+          </div>
         ) : (
           <>
             <p className="mt-1 font-prose text-[0.95rem] text-ink-2">

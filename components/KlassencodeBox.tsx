@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { PuzzleEinheit, UserZuordnung } from "@/types";
 import { erzeugeCode } from "@/lib/klassencode";
 import { raumApi } from "@/lib/raumApi";
@@ -21,6 +21,15 @@ export default function KlassencodeBox({
 
   const [raum, setRaum] = useState("");
   const [raumStatus, setRaumStatus] = useState<"idle" | "sendet" | "ok" | string>("idle");
+
+  // Raumcode aus dem QR-Code (vom Header gespeichert) vorbelegen.
+  useEffect(() => {
+    try {
+      const gespeichert = localStorage.getItem("raum-code");
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      if (gespeichert) setRaum(gespeichert);
+    } catch {}
+  }, []);
 
   const senden = async () => {
     setRaumStatus("sendet");

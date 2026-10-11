@@ -2,9 +2,20 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Header() {
   const pathname = usePathname();
+
+  // QR-Code der Lehrkraft: /?raum=ABCD merkt sich den Raumcode für das Senden am Ende.
+  useEffect(() => {
+    const raum = new URLSearchParams(window.location.search).get("raum")?.toUpperCase();
+    if (raum && /^[A-Z0-9]{4}$/.test(raum)) {
+      try {
+        localStorage.setItem("raum-code", raum);
+      } catch {}
+    }
+  }, []);
   const studiumAktiv = pathname?.startsWith("/studium") ?? false;
   const erkenntnisseAktiv = pathname === "/erkenntnisse";
 
