@@ -127,7 +127,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Verhandlungsstrategie vor Gericht, Mandantengespräche in emotional aufgeladenen Situationen, ethische Abwägungen und die juristische Endverantwortung.",
     diskussionsFrage:
       "Wenn eine KI Verträge in Sekunden scannt: Verändert sich dadurch der Einstieg für junge Jurist:innen und Fachangestellte, die früher genau das gelernt haben?",
-    video: { id: "zZj6CoTJ7Ps", titel: "Legal-KI-Software Noxtua im Einsatz bei der Kanzlei CMS", quelle: "Legal Tech & Legal KI Podcast", hinweis: "Podcast-Gespräch, kein Bildmaterial aus der Kanzlei." },
+    video: { id: "SzljgvXeM28", titel: "KI im Vertragsmanagement: 2.000 Verträge in 30 Sekunden analysiert", quelle: "Genius Bytes Software Solutions", hinweis: "Produktvorstellung eines Anbieters: zeigt, was die Technik kann, nicht wie unabhängig sie bewertet wird." },
   },
   {
     id: "lkw-fernride-teleoperation",
