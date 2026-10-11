@@ -68,6 +68,18 @@ export default function Header() {
         </div>
         <div className="flex items-baseline gap-5">
           <Link
+            href="/praxis"
+            aria-current={pathname === "/praxis" ? "page" : undefined}
+            className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-semibold transition-all ${
+              pathname === "/praxis"
+                ? "bg-mensch text-paper shadow-sm"
+                : "border border-mensch/40 text-ink hover:border-mensch hover:bg-mensch/10"
+            }`}
+          >
+            <span className="h-2 w-2 rounded-full bg-mensch" />
+            Aus der Praxis
+          </Link>
+          <Link
             href="/erkenntnisse"
             aria-current={erkenntnisseAktiv ? "page" : undefined}
             className={`text-sm font-semibold underline decoration-2 underline-offset-4 transition-colors ${

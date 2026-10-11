@@ -18,7 +18,16 @@ export default function Home() {
           übernehmen kann und was beim Menschen bleibt. Danach siehst du, wie
           Arbeitsmarktforschung dieselben Aufgaben einschätzt.
         </p>
-        <KlasseStartButton />
+        <div className="mt-7 flex flex-wrap items-center gap-3">
+          <KlasseStartButton />
+          <a
+            href="/praxis"
+            className="inline-flex items-center gap-2 rounded-full border-2 border-mensch bg-paper px-4 py-2 text-sm font-semibold text-ink shadow-sm transition-all hover:bg-mensch hover:text-paper"
+          >
+            <span className="flex h-2 w-2 rounded-full bg-mensch" />
+            Schon heute Realität: Praxis-Fälle ansehen →
+          </a>
+        </div>
         <div className="mt-7">
           <Legend />
         </div>

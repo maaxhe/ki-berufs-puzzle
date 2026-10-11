@@ -22,6 +22,12 @@ export default function Footer() {
             Berufe im Vergleich
           </Link>
           <Link
+            href="/praxis"
+            className="inline-flex min-h-11 items-center text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
+          >
+            Aus der Praxis
+          </Link>
+          <Link
             href="/studium"
             className="inline-flex min-h-11 items-center text-ink underline decoration-ink/30 underline-offset-4 hover:text-uni hover:decoration-uni"
           >
@@ -53,12 +59,12 @@ export default function Footer() {
           </Link>
         </nav>
 
-        <p className="mt-6 max-w-[54ch] font-prose text-sm italic leading-relaxed text-ink-2">
+        <p className="mt-6 max-w-[56ch] font-prose text-sm italic leading-relaxed text-ink-2">
           Ein Werkzeug für Berufsorientierungs-Workshops. Die KI-Werte sind
           didaktische Schätzungen zur Diskussion, keine Prognosen – grob
           kalibriert an Frey &amp; Osborne (2013) und dem IAB Job-Futuromat.
-          Konzept von Maximilian Herrmann; Code, Texte und Datenrecherche
-          entstanden mit KI (Claude).
+          Konzept und Kuration von Maximilian Herrmann; Code, Texte und Recherche
+          entstanden partnerschaftlich mithilfe von KI (Claude Code), nicht allein durch sie.
         </p>
 
         <p className="mt-5 text-xs text-ink-2">
