@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { PuzzleEinheit, UserZuordnung } from "@/types";
 import { erzeugeCode } from "@/lib/klassencode";
+import { raumApi } from "@/lib/raumApi";
 
 /** Kurzer Code für den Klassenmodus – enthält nur die Zuordnung, keine Namen. */
 export default function KlassencodeBox({
@@ -17,6 +18,19 @@ export default function KlassencodeBox({
 }) {
   const code = erzeugeCode(art, einheit, userZuordnung);
   const [status, setStatus] = useState<"idle" | "kopiert" | "fehler">("idle");
+
+  const [raum, setRaum] = useState("");
+  const [raumStatus, setRaumStatus] = useState<"idle" | "sendet" | "ok" | string>("idle");
+
+  const senden = async () => {
+    setRaumStatus("sendet");
+    try {
+      await raumApi.senden(raum, code);
+      setRaumStatus("ok");
+    } catch (e) {
+      setRaumStatus(e instanceof Error ? e.message : "Senden fehlgeschlagen");
+    }
+  };
 
   const kopieren = async () => {
     try {
@@ -52,6 +66,30 @@ export default function KlassencodeBox({
               ? "Kopieren fehlgeschlagen"
               : "Code kopieren"}
         </button>
+      </div>
+      <div className="mt-4 flex flex-wrap items-center gap-3">
+        <label htmlFor="raumcode" className="text-sm text-ink-2">
+          Raumcode deiner Lehrkraft (4 Zeichen):
+        </label>
+        <input
+          id="raumcode"
+          value={raum}
+          onChange={(e) => setRaum(e.target.value.toUpperCase().slice(0, 4))}
+          maxLength={4}
+          autoCapitalize="characters"
+          className="w-24 rounded-[2px] border border-rule bg-paper px-2.5 py-1.5 text-center font-mono text-sm uppercase text-ink"
+        />
+        <button
+          type="button"
+          onClick={senden}
+          disabled={raum.length !== 4 || raumStatus === "sendet"}
+          className="inline-flex min-h-11 items-center rounded-[2px] border border-ink px-3 py-2 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-paper disabled:opacity-40"
+        >
+          {raumStatus === "sendet" ? "Sende …" : raumStatus === "ok" ? "Gesendet ✓" : "An Klasse senden"}
+        </button>
+        {raumStatus !== "idle" && raumStatus !== "ok" && raumStatus !== "sendet" && (
+          <span className="text-sm text-miss" role="status">{raumStatus}</span>
+        )}
       </div>
       <p className="mt-3 text-sm">
         <Link

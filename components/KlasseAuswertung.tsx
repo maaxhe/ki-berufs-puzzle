@@ -1,9 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { getBeruf } from "@/data/berufe";
 import { getStudiengang } from "@/data/studiengaenge";
 import { leseCodes } from "@/lib/klassencode";
+import { raumApi } from "@/lib/raumApi";
 import { istGrenzfall, modellZuordnung } from "@/lib/scoring";
 import { diskussionsfragen } from "@/lib/diskussion";
 import type { PuzzleEinheit } from "@/types";
@@ -32,7 +33,59 @@ export default function KlasseAuswertung() {
   const [aktiv, setAktiv] = useState<string | null>(null);
   const [praesentiert, setPraesentiert] = useState(false);
 
-  const { gueltig, ungueltig } = useMemo(() => leseCodes(text), [text]);
+  // Live-Raum: Schüler:innen schicken ihren Code direkt, die eingefügten Codes kommen dazu.
+  const [raum, setRaum] = useState<{ code: string; hostKey: string } | null>(null);
+  const [raumCodes, setRaumCodes] = useState<string[]>([]);
+  const [raumFehler, setRaumFehler] = useState<string | null>(null);
+
+  useEffect(() => {
+    try {
+      const s = sessionStorage.getItem("klassen-raum");
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- sessionStorage gibt es erst im Browser
+      if (s) setRaum(JSON.parse(s));
+    } catch {
+      /* ohne Speicher: einfach neu erstellen */
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!raum) return;
+    let aktiv = true;
+    const holen = async () => {
+      try {
+        const r = await raumApi.codes(raum.code, raum.hostKey);
+        if (aktiv) {
+          setRaumCodes(r.codes);
+          setRaumFehler(null);
+        }
+      } catch (e) {
+        if (aktiv) setRaumFehler(e instanceof Error ? e.message : "Raum nicht erreichbar");
+      }
+    };
+    holen();
+    const id = window.setInterval(holen, 4000);
+    return () => {
+      aktiv = false;
+      window.clearInterval(id);
+    };
+  }, [raum]);
+
+  const raumErstellen = async () => {
+    try {
+      const r = await raumApi.erstellen();
+      setRaum(r);
+      try {
+        sessionStorage.setItem("klassen-raum", JSON.stringify(r));
+      } catch {
+        /* egal */
+      }
+    } catch (e) {
+      setRaumFehler(e instanceof Error ? e.message : "Raum konnte nicht erstellt werden");
+    }
+  };
+
+  const gesamtText = useMemo(() => `${raumCodes.join("\n")}\n${text}`, [raumCodes, text]);
+  const { gueltig, ungueltig } = useMemo(() => leseCodes(gesamtText), [gesamtText]);
 
   // Codes nach Einheit gruppieren; Codes mit unpassender Aufgabenzahl fallen raus.
   const gruppen = useMemo(() => {
@@ -88,6 +141,31 @@ export default function KlasseAuswertung() {
 
   return (
     <div className="space-y-8">
+      <section className="max-w-[46rem] border border-rule bg-paper-2 p-4">
+        <h2 className="font-display text-base font-semibold text-ink">Live-Raum (optional)</h2>
+        {raum ? (
+          <p className="mt-1 font-prose text-[0.95rem] text-ink-2">
+            Raumcode für die Klasse:{" "}
+            <b className="font-mono text-2xl tracking-widest text-ink">{raum.code}</b> · {raumCodes.length} Code(s)
+            eingegangen. Schüler:innen tippen ihn unter ihrem Ergebnis ein. Räume verfallen nach 24 Stunden.
+          </p>
+        ) : (
+          <>
+            <p className="mt-1 font-prose text-[0.95rem] text-ink-2">
+              Statt Codes einzusammeln: Erstelle einen Raum, die Klasse schickt ihre Codes direkt und du siehst sie live.
+              Gespeichert wird nur die anonyme Zuordnung.
+            </p>
+            <button
+              type="button"
+              onClick={raumErstellen}
+              className="mt-3 inline-flex min-h-11 items-center rounded-[2px] border border-ink px-3 py-2 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-paper"
+            >
+              Raum erstellen
+            </button>
+          </>
+        )}
+        {raumFehler && <p className="mt-2 text-sm text-miss" role="status">{raumFehler}</p>}
+      </section>
       <div>
         <label
           htmlFor="codes"
