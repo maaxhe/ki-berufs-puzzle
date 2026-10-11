@@ -36,4 +36,12 @@ export const raumApi = {
     call<{ codes: string[]; count: number }>(`/raeume/${encodeURIComponent(raum)}/codes`, {
       headers: { "X-Host-Key": hostKey },
     }),
+  info: (raum: string) => call<{ code: string; count: number; fokus: string | null }>(`/raeume/${encodeURIComponent(raum)}`),
+  /** Lehrkraft: alle auf "b.slug"/"s.slug" festlegen, null hebt die Sperre auf. */
+  fokus: (raum: string, hostKey: string, fokus: string | null) =>
+    call<{ ok: true; fokus: string | null }>(`/raeume/${encodeURIComponent(raum)}/fokus`, {
+      method: "POST",
+      headers: { "X-Host-Key": hostKey },
+      body: JSON.stringify({ fokus }),
+    }),
 };

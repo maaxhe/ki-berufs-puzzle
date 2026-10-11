@@ -12,9 +12,10 @@ const TTL_MS = 24 * 60 * 60 * 1000;
 const MAX_ROOMS = 500;
 const MAX_CODES = 300;
 const ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+const FOKUS_RE = /^[bs]\.[a-z0-9-]{1,60}$/;
 const CODE_RE = /^[bs]\.[a-z0-9-]{1,60}\.\d{1,2}\.[0-9a-z]{1,20}$/;
 
-/** @type {Map<string, {code:string, hostKey:string, createdAt:number, codes: Map<string,string>}>} */
+/** @type {Map<string, {code:string, hostKey:string, createdAt:number, fokus?:string|null, codes: Map<string,string>}>} */
 const rooms = new Map();
 
 try {
@@ -139,8 +140,19 @@ http
       return send(res, 200, { codes: [...room.codes.values()], count: room.codes.size }, origin);
     }
 
-    // Schüler:in prüft nur, ob der Raum existiert.
-    if (req.method === "GET" && parts.length === 2) return send(res, 200, { code: room.code, count: room.codes.size }, origin);
+    // Lehrkraft sperrt alle auf einen Beruf/Studiengang (fokus = "b.slug" / "s.slug") oder hebt die Sperre auf (null).
+    if (req.method === "POST" && parts[2] === "fokus") {
+      if (!sameKey(req.headers["x-host-key"] || "", room.hostKey)) return send(res, 403, { error: "Host-Key nötig" }, origin);
+      const body = await readBody(req);
+      const fokus = body.fokus == null ? null : String(body.fokus);
+      if (fokus !== null && !FOKUS_RE.test(fokus)) return send(res, 400, { error: "ungültiger Fokus" }, origin);
+      room.fokus = fokus;
+      save();
+      return send(res, 200, { ok: true, fokus }, origin);
+    }
+
+    // Schüler:in prüft, ob der Raum existiert und ob die Lehrkraft gesperrt hat.
+    if (req.method === "GET" && parts.length === 2) return send(res, 200, { code: room.code, count: room.codes.size, fokus: room.fokus ?? null }, origin);
 
     return send(res, 404, { error: "not found" }, origin);
   })

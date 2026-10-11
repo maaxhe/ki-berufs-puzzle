@@ -38,6 +38,7 @@ export default function KlasseAuswertung() {
   const [raum, setRaum] = useState<{ code: string; hostKey: string } | null>(null);
   const [raumCodes, setRaumCodes] = useState<string[]>([]);
   const [raumFehler, setRaumFehler] = useState<string | null>(null);
+  const [gesperrt, setGesperrt] = useState<string | null>(null);
 
   useEffect(() => {
     try {
@@ -85,6 +86,26 @@ export default function KlasseAuswertung() {
     }
   };
 
+  // Lehrkraft legt alle Schüler:innen auf den gerade gezeigten Beruf fest (oder hebt es wieder auf).
+  const sperren = async (fokus: string | null) => {
+    if (!raum) return;
+    try {
+      await raumApi.fokus(raum.code, raum.hostKey, fokus);
+      setGesperrt(fokus);
+      setRaumFehler(null);
+    } catch (e) {
+      setRaumFehler(e instanceof Error ? e.message : "Sperren nicht möglich");
+    }
+  };
+
+  useEffect(() => {
+    if (!raum) return;
+    raumApi
+      .info(raum.code)
+      .then((r) => setGesperrt(r.fokus))
+      .catch(() => {});
+  }, [raum]);
+
   const gesamtText = useMemo(() => `${raumCodes.join("\n")}\n${text}`, [raumCodes, text]);
   const { gueltig, ungueltig } = useMemo(() => leseCodes(gesamtText), [gesamtText]);
 
@@ -114,6 +135,12 @@ export default function KlasseAuswertung() {
       ? aktiv
       : (gruppen.liste[0]?.[0] ?? null);
   const aktuelle = gruppen.liste.find(([k]) => k === aktivKey)?.[1];
+  const aktivIndex = gruppen.liste.findIndex(([k]) => k === aktivKey);
+  const springe = (d: number) => {
+    const n = gruppen.liste.length;
+    if (n > 0) setAktiv(gruppen.liste[(aktivIndex + d + n) % n][0]);
+  };
+  const aktuellerFokus = aktuelle ? `${aktuelle.art === "beruf" ? "b" : "s"}.${aktuelle.einheit.slug}` : null;
 
   const zeilen: Zeile[] = useMemo(() => {
     if (!aktuelle) return [];
@@ -219,6 +246,52 @@ export default function KlasseAuswertung() {
         </p>
       ) : (
         <>
+          <div className="flex flex-wrap items-center gap-2">
+            {gruppen.liste.length > 1 && (
+              <>
+                <button
+                  type="button"
+                  onClick={() => springe(-1)}
+                  className="min-h-11 rounded-[2px] border border-ink px-3 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-paper"
+                >
+                  ← Voriger
+                </button>
+                <span className="tnum text-sm text-ink-2">
+                  {aktivIndex + 1} / {gruppen.liste.length}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => springe(1)}
+                  className="min-h-11 rounded-[2px] border border-ink px-3 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-paper"
+                >
+                  Nächster →
+                </button>
+              </>
+            )}
+            {raum && aktuellerFokus && (
+              <>
+                <button
+                  type="button"
+                  onClick={() => sperren(aktuellerFokus)}
+                  aria-pressed={gesperrt === aktuellerFokus}
+                  className={`min-h-11 rounded-[2px] border border-ink px-3 py-2 text-sm font-semibold ${
+                    gesperrt === aktuellerFokus ? "bg-ink text-paper" : "text-ink hover:bg-ink hover:text-paper"
+                  }`}
+                >
+                  {gesperrt === aktuellerFokus ? "Für alle gesperrt ✓" : "Für alle auf diesen Beruf sperren"}
+                </button>
+                {gesperrt && (
+                  <button
+                    type="button"
+                    onClick={() => sperren(null)}
+                    className="min-h-11 rounded-[2px] border border-rule px-3 py-2 text-sm text-ink hover:border-ink"
+                  >
+                    Sperre aufheben
+                  </button>
+                )}
+              </>
+            )}
+          </div>
           {gruppen.liste.length > 1 && (
             <div
               role="group"

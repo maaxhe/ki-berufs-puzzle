@@ -1,14 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect } from "react";
-import { klasseVerlassen, useKlasse } from "@/lib/useKlasse";
+import { fokusPfad, klasseVerlassen, useKlasse, useKlassenFokus } from "@/lib/useKlasse";
 
 export default function Header() {
   const pathname = usePathname();
 
   const klasse = useKlasse();
+  const router = useRouter();
+  const fokus = useKlassenFokus(klasse);
+  const ziel = fokus ? fokusPfad(fokus) : null;
+  // Lehrkraft hat die Klasse auf einen Beruf festgelegt: alles andere führt dorthin zurück.
+  useEffect(() => {
+    if (ziel && pathname !== ziel) router.replace(ziel);
+  }, [ziel, pathname, router]);
 
   // QR-Code der Lehrkraft: /?raum=ABCD merkt sich den Raumcode für das Senden am Ende.
   useEffect(() => {
@@ -87,7 +94,8 @@ export default function Header() {
       </div>
       {klasse && (
         <div className="border-t border-rule bg-ink px-5 py-2 text-center text-sm font-semibold text-paper" role="status">
-          Du bist in Klasse <span className="font-mono tracking-widest">{klasse}</span> ·{" "}
+          Du bist in Klasse <span className="font-mono tracking-widest">{klasse}</span>
+          {fokus ? " · Die Lehrkraft hat diese Aufgabe für alle festgelegt" : ""} ·{" "}
           <button type="button" onClick={klasseVerlassen} className="font-normal underline underline-offset-4">
             verlassen
           </button>
