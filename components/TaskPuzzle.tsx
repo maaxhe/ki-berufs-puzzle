@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import {
   DndContext,
   DragOverlay,
@@ -89,6 +89,7 @@ export default function TaskPuzzle({
   appTitel = "KI-Berufs-Puzzle",
   puzzleBasePath = "/puzzle",
   naechstesLabel = "Nächster Beruf",
+  zusatz,
 }: {
   beruf: PuzzleEinheit;
   alleBerufe: PuzzleEinheit[];
@@ -102,6 +103,8 @@ export default function TaskPuzzle({
   /** Basis-Route dieses Reiters für den "Nächster Beruf/Studiengang"-Link. */
   puzzleBasePath?: string;
   naechstesLabel?: string;
+  /** Zusatzinhalt (z. B. Praxisfall), unter Puzzle und Ergebnis. */
+  zusatz?: ReactNode;
 }) {
   const storageKey = `puzzle:${beruf.slug}`;
 
@@ -265,6 +268,7 @@ export default function TaskPuzzle({
           naechstesLabel={naechstesLabel}
           listeZugeklappt={modus === "schnell"}
         />
+        {zusatz}
       </div>
     );
   }
@@ -458,6 +462,8 @@ export default function TaskPuzzle({
       </div>
         </>
       )}
+
+      {zusatz}
 
       <details className="mt-12 max-w-[46rem] border-t border-rule pt-4">
         <summary className="cursor-pointer text-sm font-semibold text-ink-2 hover:text-ink">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import PraxisHinweis from "@/components/PraxisHinweis";
 import TaskPuzzle from "@/components/TaskPuzzle";
 import { berufe, getBeruf } from "@/data/berufe";
 import { praxisBeispiele } from "@/data/praxis";
@@ -38,30 +39,12 @@ export default async function PuzzlePage({
 
   return (
     <>
-      <TaskPuzzle beruf={beruf} alleBerufe={berufe} />
+      <TaskPuzzle
+        beruf={beruf}
+        alleBerufe={berufe}
+        zusatz={passendesPraxisBeispiel && <PraxisHinweis fall={passendesPraxisBeispiel} />}
+      />
       
-      {passendesPraxisBeispiel && (
-        <aside className="mx-auto mb-10 max-w-3xl px-4">
-          <div className="border-l-2 border-mensch pl-4">
-            <p className="font-display text-xs font-semibold uppercase tracking-wider text-mensch">
-              Schon heute Realität · {passendesPraxisBeispiel.ort}
-            </p>
-            <p className="mt-1 font-display text-[1.05rem] font-semibold text-ink">
-              {passendesPraxisBeispiel.titel}
-            </p>
-            <p className="mt-1 font-prose text-[0.95rem] leading-snug text-ink-2">
-              {passendesPraxisBeispiel.teaser}
-            </p>
-            <Link
-              href={`/praxis#${passendesPraxisBeispiel.id}`}
-              className="mt-2 inline-block font-prose text-[0.95rem] italic text-ink underline decoration-mensch decoration-2 underline-offset-4 hover:text-mensch"
-            >
-              Fall und Video ansehen →
-            </Link>
-          </div>
-        </aside>
-      )}
-
       {ROBOTER_BERUFE.includes(beruf.slug) && (
         <aside className="mx-auto mb-10 max-w-3xl px-4">
           <div className="rounded-xl border border-black/10 p-4 text-sm dark:border-white/15">
