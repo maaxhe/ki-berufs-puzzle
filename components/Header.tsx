@@ -56,6 +56,13 @@ export default function Header() {
           >
             Erkenntnisse
           </Link>
+          <Link
+            href="/klasse"
+            aria-current={pathname === "/klasse" ? "page" : undefined}
+            className="rounded-full bg-ink px-3.5 py-1.5 text-sm font-semibold text-paper transition-opacity hover:opacity-85"
+          >
+            Klasse starten
+          </Link>
           <span className="hidden font-prose text-sm italic text-ink-2 sm:block">
             für Berufsorientierungs-Workshops
           </span>

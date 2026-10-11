@@ -1,3 +1,4 @@
+import Link from "next/link";
 import BerufListe from "@/components/BerufListe";
 import Disclaimer from "@/components/Disclaimer";
 import Legend from "@/components/Legend";
@@ -17,6 +18,14 @@ export default function Home() {
           übernehmen kann und was beim Menschen bleibt. Danach siehst du, wie
           Arbeitsmarktforschung dieselben Aufgaben einschätzt.
         </p>
+        <div className="mt-7">
+          <Link
+            href="/klasse"
+            className="inline-block rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition-opacity hover:opacity-85"
+          >
+            Mit einer Klasse starten
+          </Link>
+        </div>
         <div className="mt-7">
           <Legend />
         </div>
