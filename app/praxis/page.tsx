@@ -67,6 +67,11 @@ export default function PraxisPage() {
                   {bsp.titel}
                 </h2>
                 <p className="prose-text mt-4 text-ink">{bsp.teaser}</p>
+                {bsp.einordnung && (
+                  <p className="mt-3 font-prose text-sm italic text-ink-2">
+                    Einordnung: {bsp.einordnung}
+                  </p>
+                )}
                 <p className="mt-4 font-prose text-sm text-ink-2">
                   Quelle:{" "}
                   <a

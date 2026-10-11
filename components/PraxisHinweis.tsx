@@ -13,6 +13,11 @@ export default function PraxisHinweis({ fall }: { fall: PraxisBeispiel }) {
         {fall.titel}
       </h2>
       <p className="prose-text mt-3 text-ink">{fall.teaser}</p>
+      {fall.einordnung && (
+                  <p className="mt-3 font-prose text-sm italic text-ink-2">
+                    Einordnung: {fall.einordnung}
+                  </p>
+                )}
 
       <div className="mt-5 grid gap-5 sm:grid-cols-2">
         <div className="border-l-2 border-ki pl-4">

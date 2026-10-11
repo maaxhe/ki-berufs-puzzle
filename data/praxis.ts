@@ -11,6 +11,8 @@ export interface PraxisBeispiel {
   wasMachtDieKI: string;
   wasBleibtMenschlich: string;
   diskussionsFrage: string;
+  /** Hinweis, wenn der Fall Automatisierung statt KI im engeren Sinn zeigt. */
+  einordnung?: string;
   video?: { id: string; titel: string; quelle: string; hinweis?: string };
 }
 
@@ -81,6 +83,8 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     zeitpunkt: "Aktuell",
     medium: "Berufsgenossenschaft & Pflegeforschung",
     url: "https://www.bg-kliniken.de",
+    einordnung:
+      "Sensoren steuern die Unterstützung. Das ist Regelungstechnik, kein KI-Modell im engeren Sinn.",
     teaser:
       "Pflegekräfte testen sensorunterstützte Exoskelette am Rücken, die beim Heben von Patient:innen und bei gebeugter Haltung bis zu 30 kg Last von der Lendenwirbelsäule nehmen.",
     wasMachtDieKI:
@@ -93,13 +97,15 @@ export const praxisBeispiele: PraxisBeispiel[] = [
   },
   {
     id: "handwerk-holz-spritzroboter",
-    titel: "Cobots und KI-Lackierhilfen in Schreinereien",
+    titel: "Cobots helfen beim Lackieren in Schreinereien",
     berufSlug: "tischler",
     berufTitel: "Tischler:in",
     ort: "Handwerkskammern & innovative Tischlereien",
     zeitpunkt: "Aktuell",
     medium: "Deutsche Handwerks Zeitung",
     url: "https://www.deutsche-handwerks-zeitung.de",
+    einordnung:
+      "Der Cobot fährt programmierte Bahnen ab. Das ist Automatisierung, keine KI im engeren Sinn.",
     teaser:
       "Kollaborierende Roboterarme (Cobots) lackieren in Tischlereien Fensterrahmen und Möbeloberflächen mit mikrometergenauer Gleichmäßigkeit – während der Meister nebenan Unikate entwirft.",
     wasMachtDieKI:
@@ -213,6 +219,8 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     zeitpunkt: "Fertiggestellt",
     medium: "Handwerksblatt",
     url: "https://www.handwerksblatt.de/betriebsfuehrung/3d-gebaeudedruck-wallenhausen-rupp-gebaeudedruck-peri-cobod",
+    einordnung:
+      "Der Drucker folgt einem vorgegebenen Bauplan. Das ist Automatisierung, keine KI: Er lernt nichts und entscheidet nichts selbst. Den Beruf verändert er trotzdem.",
     teaser:
       "In Wallenhausen entstand ein Fünf-Familienhaus mit drei Stockwerken, dessen Wände ein 3D-Betondrucker Schicht für Schicht aufgebaut hat. Die reine Druckzeit lag bei 72 Stunden. Einschließlich Rüstzeiten waren es laut Bauunternehmer etwa fünf Wochen.",
     wasMachtDieKI:
