@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Header() {
   const pathname = usePathname();
+
+  const [klasse, setKlasse] = useState<string | null>(null);
 
   // QR-Code der Lehrkraft: /?raum=ABCD merkt sich den Raumcode für das Senden am Ende.
   useEffect(() => {
@@ -15,6 +17,14 @@ export default function Header() {
         localStorage.setItem("raum-code", raum);
       } catch {}
     }
+    const lesen = () => {
+      try {
+        setKlasse(localStorage.getItem("raum-code"));
+      } catch {}
+    };
+    lesen();
+    window.addEventListener("raum-geaendert", lesen);
+    return () => window.removeEventListener("raum-geaendert", lesen);
   }, []);
   const studiumAktiv = pathname?.startsWith("/studium") ?? false;
   const erkenntnisseAktiv = pathname === "/erkenntnisse";
@@ -67,6 +77,11 @@ export default function Header() {
           >
             Erkenntnisse
           </Link>
+          {klasse && (
+            <span className="rounded-full border border-ink/30 px-3 py-1 text-sm font-semibold text-ink">
+              In Klasse <span className="font-mono tracking-widest">{klasse}</span>
+            </span>
+          )}
           <Link
             href="/klasse"
             aria-current={pathname === "/klasse" ? "page" : undefined}

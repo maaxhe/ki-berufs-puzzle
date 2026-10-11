@@ -31,6 +31,42 @@ export default function KlassencodeBox({
     } catch {}
   }, []);
 
+  // Per QR-Code beigetreten: das Ergebnis geht automatisch an die Klasse, auch bei Änderungen.
+  const [verbunden, setVerbunden] = useState(false);
+  useEffect(() => {
+    try {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      if (localStorage.getItem("raum-code")) setVerbunden(true);
+    } catch {}
+  }, []);
+  useEffect(() => {
+    if (!verbunden || raum.length !== 4) return;
+    let aktiv = true;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setRaumStatus("sendet");
+    raumApi
+      .senden(raum, code)
+      .then(() => aktiv && setRaumStatus("ok"))
+      .catch((e) => {
+        if (!aktiv) return;
+        setRaumStatus(e instanceof Error ? e.message : "Senden fehlgeschlagen");
+        setVerbunden(false);
+      });
+    return () => {
+      aktiv = false;
+    };
+  }, [verbunden, raum, code]);
+
+  const raumVerlassen = () => {
+    try {
+      localStorage.removeItem("raum-code");
+      window.dispatchEvent(new Event("raum-geaendert"));
+    } catch {}
+    setVerbunden(false);
+    setRaum("");
+    setRaumStatus("idle");
+  };
+
   const senden = async () => {
     setRaumStatus("sendet");
     try {
@@ -76,6 +112,19 @@ export default function KlassencodeBox({
               : "Code kopieren"}
         </button>
       </div>
+      {verbunden && raum.length === 4 ? (
+        <p className="mt-4 text-sm text-ink" role="status">
+          <b>Du bist in Klasse <span className="font-mono tracking-widest">{raum}</span>.</b>{" "}
+          {raumStatus === "ok"
+            ? "Dein Ergebnis wurde automatisch an deine Lehrkraft gesendet ✓"
+            : raumStatus === "sendet"
+              ? "Sende dein Ergebnis …"
+              : raumStatus}{" "}
+          <button type="button" onClick={raumVerlassen} className="underline underline-offset-4 text-ink-2 hover:text-ink">
+            Klasse verlassen
+          </button>
+        </p>
+      ) : (
       <div className="mt-4 flex flex-wrap items-center gap-3">
         <label htmlFor="raumcode" className="text-sm text-ink-2">
           Raumcode deiner Lehrkraft (4 Zeichen):
@@ -100,6 +149,7 @@ export default function KlassencodeBox({
           <span className="text-sm text-miss" role="status">{raumStatus}</span>
         )}
       </div>
+      )}
       <p className="mt-3 text-sm">
         <Link
           href="/lehrkraefte"
