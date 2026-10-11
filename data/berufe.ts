@@ -17,6 +17,7 @@ export const berufe: Beruf[] = [
   // ─────────────────────────── Gesundheit & Soziales ───────────────────────────
   {
     slug: "pflegefachkraft",
+    suchbegriffe: ["Krankenschwester", "Krankenpfleger", "Altenpfleger", "Altenpflege", "Krankenpflege", "Pfleger"],
     title: "Pflegefachkraft",
     shortDescription:
       "Betreut und versorgt kranke, alte oder pflegebedürftige Menschen im Klinik- oder Pflegealltag.",
@@ -49,6 +50,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "medizinische-fachangestellte",
+    suchbegriffe: ["MFA", "Arzthelferin", "Arzthelfer", "Arztpraxis", "Sprechstundenhilfe"],
     title: "Medizinische:r Fachangestellte:r",
     shortDescription:
       "Organisiert eine Arztpraxis, assistiert bei Behandlungen und betreut Patient:innen an Empfang und Labor.",
@@ -79,6 +81,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "erzieher",
+    suchbegriffe: ["Erzieherin", "Kita", "Kindergarten", "Kinderbetreuung"],
     title: "Erzieher:in",
     shortDescription:
       "Begleitet und fördert Kinder in Kita oder Hort – im Spiel, im Alltag und in ihrer Entwicklung.",
@@ -109,6 +112,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "lehrer",
+    suchbegriffe: ["Lehrerin", "Lehramt", "Schule", "Pädagoge"],
     title: "Lehrer:in",
     shortDescription:
       "Unterrichtet, begleitet und bewertet Schüler:innen – vom Stundenplan bis zum Elterngespräch.",
@@ -139,6 +143,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "physiotherapeut",
+    suchbegriffe: ["Krankengymnast", "Physio", "Therapeut"],
     title: "Physiotherapeut:in",
     shortDescription:
       "Behandelt Bewegungseinschränkungen und Schmerzen durch gezielte Übungen, Massage und manuelle Therapie.",
@@ -169,6 +174,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "notfallsanitaeter",
+    suchbegriffe: ["Rettungssanitäter", "Rettungsdienst", "Sanitäter", "Rettungsassistent", "Krankenwagen"],
     title: "Notfallsanitäter:in",
     shortDescription:
       "Rettet und versorgt Menschen in medizinischen Notfällen – im Rettungswagen und am Einsatzort.",
@@ -201,6 +207,7 @@ export const berufe: Beruf[] = [
   // ─────────────────────────── Technik & Handwerk ───────────────────────────
   {
     slug: "industriemechaniker",
+    suchbegriffe: ["Mechaniker", "Maschinenbauer", "Facharbeiter", "Fabrik"],
     title: "Industriemechaniker:in",
     shortDescription:
       "Baut, wartet und repariert Maschinen und Produktionsanlagen in der Industrie.",
@@ -233,6 +240,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "kfz-mechatroniker",
+    suchbegriffe: ["KFZ", "Kfz-Mechaniker", "Automechaniker", "Mechaniker", "Auto", "Werkstatt"],
     title: "Kraftfahrzeugmechatroniker:in",
     shortDescription:
       "Wartet, diagnostiziert und repariert Fahrzeuge – von der Bremse bis zum Steuergerät.",
@@ -263,6 +271,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "berufskraftfahrer",
+    suchbegriffe: ["LKW", "Lkw-Fahrer", "Trucker", "Fahrer", "Busfahrer", "Kraftfahrer"],
     title: "Berufskraftfahrer:in",
     shortDescription:
       "Transportiert Güter im Straßenverkehr und ist für Ladung, Fahrzeug und Termine verantwortlich.",
@@ -303,6 +312,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "elektroniker-energie-gebaeudetechnik",
+    suchbegriffe: ["Elektriker", "Elektro", "Strom", "Solar", "Photovoltaik"],
     title: "Elektroniker:in für Energie- und Gebäudetechnik",
     shortDescription:
       "Installiert und wartet elektrische Anlagen in Gebäuden – von der Verkabelung bis zur Photovoltaikanlage.",
@@ -333,6 +343,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "tischler",
+    suchbegriffe: ["Schreiner", "Holz", "Möbel"],
     title: "Tischler:in",
     shortDescription:
       "Fertigt und montiert Möbel, Einbauten und Holzkonstruktionen – vom Entwurf bis zur Montage.",
@@ -363,6 +374,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "landwirt",
+    suchbegriffe: ["Bauer", "Landwirtschaft", "Agrar", "Bauernhof"],
     title: "Landwirt:in",
     shortDescription:
       "Bewirtschaftet Felder und hält Nutztiere – von der Aussaat bis zur Ernte, von der Fütterung bis zum Melken.",
@@ -395,6 +407,7 @@ export const berufe: Beruf[] = [
   // ─────────────────────────── Büro & Verwaltung ───────────────────────────
   {
     slug: "steuerfachangestellte",
+    suchbegriffe: ["Steuerberater", "Steuer", "Buchhalter"],
     title: "Steuerfachangestellte:r",
     shortDescription:
       "Erstellt Buchführung und Steuererklärungen und betreut Mandant:innen einer Steuerkanzlei.",
@@ -428,6 +441,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "kaufmann-bueromanagement",
+    suchbegriffe: ["Büro", "Sekretär", "Sekretärin", "Verwaltung", "Assistenz"],
     title: "Kaufmann/-frau für Büromanagement",
     shortDescription:
       "Hält den Bürobetrieb am Laufen: Korrespondenz, Termine, Rechnungen, Organisation.",
@@ -459,6 +473,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "bankkaufmann",
+    suchbegriffe: ["Bank", "Sparkasse", "Bankberater", "Finanzen"],
     title: "Bankkaufmann/-frau",
     shortDescription:
       "Betreut Kund:innen in Geldangelegenheiten: Konten, Zahlungsverkehr, Kredite, Anlage.",
@@ -489,6 +504,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "personaldienstleistungskaufmann",
+    suchbegriffe: ["Personal", "HR", "Recruiter", "Zeitarbeit"],
     title: "Personaldienstleistungskaufmann/-frau",
     shortDescription:
       "Vermittelt zwischen Unternehmen und Bewerber:innen – von der Stellenausschreibung bis zum Vertragsabschluss.",
@@ -519,6 +535,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "rechtsanwaltsfachangestellte",
+    suchbegriffe: ["Rechtsanwalt", "Kanzlei", "Anwaltsgehilfin", "ReFa", "Jurist"],
     title: "Rechtsanwalts- und Notarfachangestellte:r (ReNo)",
     shortDescription:
       "Organisiert den Alltag in Anwaltskanzlei oder Notariat – Fristen, Schriftsätze, Mandantenkontakt und Abrechnung.",
@@ -550,6 +567,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "immobilienkaufmann",
+    suchbegriffe: ["Makler", "Immobilien", "Immobilienmakler"],
     title: "Immobilienkaufmann/-frau",
     shortDescription:
       "Vermittelt, verwaltet und vermarktet Immobilien – von der Besichtigung bis zum Kaufvertrag.",
@@ -582,6 +600,7 @@ export const berufe: Beruf[] = [
   // ─────────────────────────── IT & Medien ───────────────────────────
   {
     slug: "softwareentwickler",
+    suchbegriffe: ["Programmierer", "Entwickler", "Coder", "Informatiker", "IT", "Software"],
     title: "Softwareentwickler:in",
     shortDescription:
       "Entwirft, schreibt und wartet Software – von der Idee über den Code bis zum laufenden Betrieb.",
@@ -615,6 +634,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "fachinformatiker-systemintegration",
+    suchbegriffe: ["IT", "Administrator", "Netzwerk", "Informatiker", "FISI", "Systemadministrator"],
     title: "Fachinformatiker:in Systemintegration",
     shortDescription:
       "Plant, richtet ein und betreibt IT-Systeme, Netzwerke und Server – und hilft, wenn es klemmt.",
@@ -645,6 +665,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "grafikdesigner",
+    suchbegriffe: ["Designer", "Grafiker", "Webdesigner", "Gestalter"],
     title: "Grafikdesigner:in",
     shortDescription:
       "Gestaltet visuelle Kommunikation – Logos, Layouts, Anzeigen, Social-Media- und Printmedien.",
@@ -676,6 +697,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "mediengestalter",
+    suchbegriffe: ["Designer", "Grafiker", "Layout", "Druck", "Medien"],
     title: "Mediengestalter:in Digital und Print",
     shortDescription:
       "Produziert Bild-, Video- und Druckmedien – von Social-Media-Content bis zur fertigen Broschüre.",
@@ -709,6 +731,7 @@ export const berufe: Beruf[] = [
   // ─────────────────────────── Handel & Dienstleistung ───────────────────────────
   {
     slug: "einzelhandelskaufmann",
+    suchbegriffe: ["Verkäufer", "Verkäuferin", "Supermarkt", "Kassierer", "Einzelhandel", "Handel"],
     title: "Kaufmann/-frau im Einzelhandel",
     shortDescription:
       "Verkauft Waren, berät Kund:innen und organisiert Sortiment, Lager und Kasse im Handel.",
@@ -741,6 +764,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "friseur",
+    suchbegriffe: ["Friseurin", "Frisör", "Haare", "Barber"],
     title: "Friseur:in",
     shortDescription:
       "Schneidet, färbt und stylt Haare und berät Kund:innen rund um Frisur und Pflege.",
@@ -771,6 +795,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "koch",
+    suchbegriffe: ["Köchin", "Küche", "Gastronomie", "Restaurant"],
     title: "Koch/Köchin",
     shortDescription:
       "Bereitet Speisen zu, entwickelt Gerichte und hält den Küchenbetrieb organisiert.",
@@ -801,6 +826,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "tourismuskaufmann",
+    suchbegriffe: ["Reisebüro", "Reiseverkehr", "Tourismus", "Reiseberater"],
     title: "Tourismuskaufmann/-frau",
     shortDescription:
       "Berät zu Reisen, bucht Leistungen und stellt Reisepakete für Kund:innen zusammen.",
@@ -831,6 +857,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "hotelfachmann",
+    suchbegriffe: ["Hotel", "Rezeption", "Hotelfachfrau", "Gastronomie"],
     title: "Hotelfachmann/-frau",
     shortDescription:
       "Sorgt für den Aufenthalt der Gäste – von der Reservierung über den Check-in bis zum Service.",
@@ -862,6 +889,7 @@ export const berufe: Beruf[] = [
   // ─────────────────────────── Bau & Ausbau ───────────────────────────
   {
     slug: "maurer",
+    suchbegriffe: ["Bau", "Bauarbeiter", "Baustelle", "Hochbau"],
     title: "Maurer:in",
     shortDescription:
       "Mauert Wände, baut Schalungen und betoniert Rohbauten – von der Baugrube bis zur fertigen Decke.",
@@ -892,6 +920,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "maler-lackierer",
+    suchbegriffe: ["Maler", "Lackierer", "Anstreicher"],
     title: "Maler:in und Lackierer:in",
     shortDescription:
       "Gestaltet und schützt Wände, Fassaden und Oberflächen mit Farbe, Lack und Putz.",
@@ -922,6 +951,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "anlagenmechaniker-shk",
+    suchbegriffe: ["Klempner", "Installateur", "Heizung", "Sanitär", "Klima", "Wasser"],
     title: "Anlagenmechaniker:in für Sanitär-, Heizungs- und Klimatechnik",
     shortDescription:
       "Installiert und wartet Heizungs-, Sanitär- und Klimaanlagen – von der Wärmepumpe bis zum Badezimmer.",
@@ -953,6 +983,7 @@ export const berufe: Beruf[] = [
   // ─────────────────────────── Logistik & Sicherheit ───────────────────────────
   {
     slug: "fachkraft-lagerlogistik",
+    suchbegriffe: ["Lager", "Logistik", "Lagerist", "Lagerarbeiter", "Versand"],
     title: "Fachkraft für Lagerlogistik",
     shortDescription:
       "Nimmt Waren an, lagert sie ein, stellt Aufträge zusammen und sorgt dafür, dass alles rechtzeitig rausgeht.",
@@ -983,6 +1014,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "polizeivollzugsbeamter",
+    suchbegriffe: ["Polizist", "Polizistin", "Polizei", "Beamter"],
     title: "Polizeivollzugsbeamt:in",
     shortDescription:
       "Schützt die öffentliche Sicherheit, ermittelt bei Straftaten und hilft in Notlagen – Ausbildung oder duales Studium bei Landes- oder Bundespolizei.",
@@ -1013,6 +1045,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "industriekaufmann",
+    suchbegriffe: ["Kaufmann", "Industrie", "Einkauf", "Vertrieb"],
     title: "Industriekaufmann/-frau",
     shortDescription:
       "Steuert kaufmännische Abläufe in Industrieunternehmen – von Einkauf und Produktionsplanung bis Rechnungswesen und Vertrieb.",
@@ -1043,6 +1076,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "zahnmedizinische-fachangestellte",
+    suchbegriffe: ["ZFA", "Zahnarzthelferin", "Zahnarzt", "Zahnarztpraxis", "Zahnarzthelfer"],
     title: "Zahnmedizinische:r Fachangestellte:r",
     shortDescription:
       "Assistiert bei Zahnbehandlungen, betreut Patient:innen, organisiert die Praxis und rechnet Leistungen ab.",
@@ -1073,6 +1107,7 @@ export const berufe: Beruf[] = [
   },
   {
     slug: "fachinformatiker-anwendungsentwicklung",
+    suchbegriffe: ["Programmierer", "Entwickler", "Fachinformatiker", "Software", "IT", "FIAE"],
     title: "Fachinformatiker:in Anwendungsentwicklung",
     shortDescription:
       "Entwickelt Software für Unternehmen – von der Anforderung über den Code bis zu Test und Betrieb.",

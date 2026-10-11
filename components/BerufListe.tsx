@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import type { PuzzleEinheit } from "@/types";
 import Link from "next/link";
 import BerufCard from "./BerufCard";
+import { suche } from "@/lib/suche";
 
 /** Die jeweils andere Liste (Berufe ↔ Studiengänge), die bei der Suche mitdurchsucht wird. */
 export interface Querverweis {
@@ -11,14 +12,6 @@ export interface Querverweis {
   hrefBase: string;
   /** z. B. „Studiengängen“ → „Auch gefunden bei Studiengängen“ */
   label: string;
-}
-
-function trifft(b: PuzzleEinheit, q: string) {
-  return (
-    b.title.toLowerCase().includes(q) ||
-    b.shortDescription.toLowerCase().includes(q) ||
-    (b.suchbegriffe ?? []).some((t) => t.toLowerCase().includes(q))
-  );
 }
 
 /**
@@ -46,21 +39,22 @@ export default function BerufListe<K extends string>({
   const [query, setQuery] = useState("");
   const [aktivKategorie, setAktivKategorie] = useState<K | null>(null);
 
-  const gefiltert = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    return berufe.filter((b) => {
-      const matchtKategorie = !aktivKategorie || b.kategorie === aktivKategorie;
-      if (!matchtKategorie) return false;
-      if (!q) return true;
-      return trifft(b, q);
-    });
-  }, [berufe, query, aktivKategorie]);
+  const suchWort = query.trim();
+
+  const ergebnis = useMemo(() => {
+    const inKategorie = berufe.filter(
+      (b) => !aktivKategorie || b.kategorie === aktivKategorie,
+    );
+    return suche(inKategorie, suchWort);
+  }, [berufe, suchWort, aktivKategorie]);
 
   const querTreffer = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q || !querverweis) return [];
-    return querverweis.einheiten.filter((b) => trifft(b, q));
-  }, [querverweis, query]);
+    if (!suchWort || !querverweis) return [];
+    const r = suche(querverweis.einheiten, suchWort);
+    return [...r.treffer, ...r.verwandt].slice(0, 6);
+  }, [querverweis, suchWort]);
+
+  const gefiltert = ergebnis.treffer;
 
   const nachKategorie = kategorieReihenfolge
     .map((kat) => ({
@@ -148,7 +142,35 @@ export default function BerufListe<K extends string>({
         </aside>
       )}
 
-      {nachKategorie.length === 0 ? (
+      {suchWort ? (
+        <>
+          {ergebnis.treffer.length > 0 && (
+            <section className="mt-12">
+              <h2 className="border-b-2 border-ink pb-2 font-display text-[1.4rem] font-semibold text-ink">
+                Treffer
+              </h2>
+              {ergebnis.treffer.map((beruf) => (
+                <BerufCard key={beruf.slug} beruf={beruf} hrefBase={hrefBase} />
+              ))}
+            </section>
+          )}
+          {ergebnis.verwandt.length > 0 && (
+            <section className="mt-12">
+              <h2 className="border-b border-rule pb-2 font-display text-[1.15rem] font-semibold text-ink-2">
+                Verwandt – kommt in der Beschreibung oder den Aufgaben vor
+              </h2>
+              {ergebnis.verwandt.map((beruf) => (
+                <BerufCard key={beruf.slug} beruf={beruf} hrefBase={hrefBase} />
+              ))}
+            </section>
+          )}
+          {ergebnis.treffer.length + ergebnis.verwandt.length === 0 && (
+            <p className="mt-14 font-prose text-[0.95rem] italic text-ink-2">
+              {leerText}
+            </p>
+          )}
+        </>
+      ) : nachKategorie.length === 0 ? (
         <p className="mt-14 font-prose text-[0.95rem] italic text-ink-2">
           {leerText}
         </p>
