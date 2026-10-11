@@ -126,4 +126,39 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     diskussionsFrage:
       "Wenn eine KI Verträge in Sekunden scannt: Verändert sich dadurch der Einstieg für junge Jurist:innen und Fachangestellte, die früher genau das gelernt haben?",
   },
+  {
+    id: "lkw-fernride-teleoperation",
+    titel: "Lkw ohne Fahrer an Bord – gesteuert aus der Ferne",
+    berufSlug: "berufskraftfahrer",
+    berufTitel: "Berufskraftfahrer:in",
+    ort: "HHLA & Fernride (Hamburg / Terminal Tallinn)",
+    zeitpunkt: "Aktuell",
+    medium: "Verkehrsrundschau",
+    url: "https://www.verkehrsrundschau.de/nachrichten/lager-umschlag/hhla-und-fernride-bauen-autonomen-gueterverkehr-aus-3397556",
+    teaser:
+      "Das Münchner Start-up Fernride rüstet Zugmaschinen mit Kameras und Sensoren aus. Auf dem Gelände von Hafenterminals fahren sie ohne Fahrer an Bord, bei schwierigen Situationen steuert ein Teleoperator per Mobilfunk von einem Bildschirmarbeitsplatz aus.",
+    wasMachtDieKI:
+      "Containerfahrten auf dem Terminalgelände, immer gleiche Strecken, Fahren bei Nacht und im Schichtbetrieb ohne Ermüdung.",
+    wasBleibtMenschlich:
+      "Eingreifen bei Sonderfällen aus der Ferne, Verantwortung für Ladung und Sicherheit, Fahren auf öffentlichen Straßen, Be- und Entladen sowie der Kontakt zu Kunden und Disponenten.",
+    diskussionsFrage:
+      "Wenn ein Mensch mehrere Lkw von einem Bildschirm aus betreut: Ist das noch Fahren – und wäre das ein Beruf, den du dir vorstellen könntest?",
+  },
+  {
+    id: "robotaxi-moia-hamburg",
+    titel: "Selbstfahrender ID. Buzz bringt Fahrgäste durch Hamburg",
+    berufTitel: "Taxi- und Fahrdienst-Fahrer:in",
+    ort: "Hamburg",
+    zeitpunkt: "Aktuell",
+    medium: "AUTO BILD",
+    url: "https://www.autobild.de/artikel/erste-fahrgaeste-im-selbstfahrenden-id-buzz-meldung-25636531.html",
+    teaser:
+      "MOIA, die Fahrdienst-Tochter von Volkswagen, testet in Hamburg den autonomen ID. Buzz AD. Ausgewählte, vorab registrierte Fahrgäste buchen ihn über die MOIA-App. Zunächst war ein Sicherheitsfahrer an Bord, der nur im Notfall eingreift – später soll er entfallen.",
+    wasMachtDieKI:
+      "Lenken, Bremsen und Spurwechsel im Stadtverkehr, Erkennen von Ampeln, Radfahrenden und Fußgängern, Routenplanung.",
+    wasBleibtMenschlich:
+      "Hilfe beim Einsteigen mit Rollator oder Gepäck, Ansprechperson bei Problemen und Notfällen, Ortskenntnis in Sonderlagen, ein Gespräch unterwegs.",
+    diskussionsFrage:
+      "Würdest du nachts allein in ein Auto ohne Fahrer steigen – und was müsste passieren, damit du dich sicher fühlst?",
+  },
 ];

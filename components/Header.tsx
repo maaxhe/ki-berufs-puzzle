@@ -70,13 +70,12 @@ export default function Header() {
           <Link
             href="/praxis"
             aria-current={pathname === "/praxis" ? "page" : undefined}
-            className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-semibold transition-all ${
+            className={`inline-flex items-center justify-center self-center rounded-full border px-3.5 py-1.5 text-center text-sm font-semibold leading-none transition-colors ${
               pathname === "/praxis"
-                ? "bg-mensch text-paper shadow-sm"
-                : "border border-mensch/40 text-ink hover:border-mensch hover:bg-mensch/10"
+                ? "border-ink bg-ink text-paper"
+                : "border-rule text-ink hover:border-ink"
             }`}
           >
-            <span className="h-2 w-2 rounded-full bg-mensch" />
             Aus der Praxis
           </Link>
           <Link

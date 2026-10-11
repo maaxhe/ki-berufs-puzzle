@@ -29,7 +29,7 @@ export default function PraxisPage() {
           Algorithmen Verträge und federn Exoskelette schwere Lasten ab.
         </p>
         <p className="prose-text mt-3 italic text-ink-2">
-          Sechs Fälle aus dem Alltag. Bei jedem dieselbe Frage wie im Puzzle:
+          {praxisBeispiele.length} Fälle aus dem Alltag. Bei jedem dieselbe Frage wie im Puzzle:
           Was übernimmt die Maschine – und wo bleibt der Mensch?
         </p>
         <nav aria-label="Fälle" className="mt-8 flex flex-wrap gap-x-5 gap-y-2 border-t border-rule pt-4 font-prose text-sm">
@@ -111,11 +111,11 @@ export default function PraxisPage() {
             </div>
 
             <div className="mt-8 grid gap-x-12 gap-y-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-              <blockquote className="rounded-sm bg-paper-2 px-5 py-4">
+              <blockquote>
                 <p className="font-display text-[0.7rem] font-semibold uppercase tracking-wider text-ink-2">
                   Zum Diskutieren
                 </p>
-                <p className="mt-1 font-prose text-[1.02rem] italic leading-snug text-ink">
+                <p className="mt-1 font-prose text-[1.1rem] italic leading-snug text-ink">
                   {bsp.diskussionsFrage}
                 </p>
               </blockquote>

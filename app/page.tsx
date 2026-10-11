@@ -1,3 +1,4 @@
+import Link from "next/link";
 import KlasseStartButton from "@/components/KlasseStartButton";
 import BerufListe from "@/components/BerufListe";
 import Disclaimer from "@/components/Disclaimer";
@@ -20,13 +21,12 @@ export default function Home() {
         </p>
         <div className="mt-7 flex flex-wrap items-center gap-3">
           <KlasseStartButton />
-          <a
+          <Link
             href="/praxis"
-            className="inline-flex items-center gap-2 rounded-full border-2 border-mensch bg-paper px-4 py-2 text-sm font-semibold text-ink shadow-sm transition-all hover:bg-mensch hover:text-paper"
+            className="font-prose text-[1.02rem] italic text-ink underline decoration-mensch decoration-2 underline-offset-4 hover:text-mensch"
           >
-            <span className="flex h-2 w-2 rounded-full bg-mensch" />
-            Schon heute Realität: Praxis-Fälle ansehen →
-          </a>
+            Schon heute Realität: Fälle aus der Praxis →
+          </Link>
         </div>
         <div className="mt-7">
           <Legend />
