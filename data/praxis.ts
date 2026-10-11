@@ -51,6 +51,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Die direkte Betreuung nervöser Patient:innen im Wartezimmer, Blutabnahme, Assistenz bei Behandlungen und das Erkennen von echten Notfällen im Empfangsbereich.",
     diskussionsFrage:
       "Warum ist das Telefon in Praxen oft die größte Stressquelle für MFAs – und warum ist es für Patient:innen trotzdem wichtig, am Tresen von einem echten Menschen empfangen zu werden?",
+    video: { id: "CvmFobMmoU4", titel: "KI-Ordinationshilfen: Arztpraxen automatisieren den Erstkontakt", quelle: "ZIB Magazin (ORF)", hinweis: "Beitrag aus Österreich, die Entwicklung ist dieselbe wie in deutschen Praxen." },
   },
   {
     id: "gastro-bellabot-servierroboter",
@@ -107,6 +108,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Holzauswahl, Maserungs-Beurteilung, kreativer Möbelentwurf, Kundenberatung vor Ort und die individuelle Montage beim Kunden.",
     diskussionsFrage:
       "Wird der Tischlerberuf durch Lackier-Roboter weniger handwerklich – oder befreit es Handwerker von gesundheitsschädlicher Monotonie?",
+    video: { id: "aGVGgnBvA8s", titel: "Cobots für Tischler und Schreiner", quelle: "BM TV – Matthias checkt’s", hinweis: "Zeigt einen Cobot in der Schreinerei, nicht speziell das Lackieren." },
   },
   {
     id: "anwaltskanzlei-vertragsanalyse-harvey",
@@ -125,6 +127,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Verhandlungsstrategie vor Gericht, Mandantengespräche in emotional aufgeladenen Situationen, ethische Abwägungen und die juristische Endverantwortung.",
     diskussionsFrage:
       "Wenn eine KI Verträge in Sekunden scannt: Verändert sich dadurch der Einstieg für junge Jurist:innen und Fachangestellte, die früher genau das gelernt haben?",
+    video: { id: "zZj6CoTJ7Ps", titel: "Legal-KI-Software Noxtua im Einsatz bei der Kanzlei CMS", quelle: "Legal Tech & Legal KI Podcast", hinweis: "Podcast-Gespräch, kein Bildmaterial aus der Kanzlei." },
   },
   {
     id: "lkw-fernride-teleoperation",
@@ -143,6 +146,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Eingreifen bei Sonderfällen aus der Ferne, Verantwortung für Ladung und Sicherheit, Fahren auf öffentlichen Straßen, Be- und Entladen sowie der Kontakt zu Kunden und Disponenten.",
     diskussionsFrage:
       "Wenn ein Mensch mehrere Lkw von einem Bildschirm aus betreut: Ist das noch Fahren – und wäre das ein Beruf, den du dir vorstellen könntest?",
+    video: { id: "1OZe7RNltDQ", titel: "Fernride – fahrerlose Technologie aus Deutschland", quelle: "European Investment Fund (englisch)" },
   },
   {
     id: "robotaxi-moia-hamburg",
@@ -160,5 +164,6 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Hilfe beim Einsteigen mit Rollator oder Gepäck, Ansprechperson bei Problemen und Notfällen, Ortskenntnis in Sonderlagen, ein Gespräch unterwegs.",
     diskussionsFrage:
       "Würdest du nachts allein in ein Auto ohne Fahrer steigen – und was müsste passieren, damit du dich sicher fühlst?",
+    video: { id: "KX9Y4stS76s", titel: "MOIA-Busse ohne Fahrer in Hamburg unterwegs", quelle: "SAT.1 REGIONAL" },
   },
 ];
