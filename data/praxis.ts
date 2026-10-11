@@ -267,5 +267,6 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Entscheiden, welche Hilfe losgeschickt wird, Anrufende am Telefon beruhigen, am Einsatzort Menschen versorgen, in Sekunden Lage und Gefahr einschätzen und Verantwortung tragen.",
     diskussionsFrage:
       "Eine KI kann Orte eingrenzen. Wer sollte bei einem Notruf am Ende entscheiden, und warum?",
+    video: { id: "hRYBa5nvBng", titel: "Feuerwehr-Leitstelle: Der erste Kontaktpunkt bei Notfällen", quelle: "WDR – Feuer & Flamme", hinweis: "Hier geht es nicht um KI. Das Video zeigt, wie wichtig die Arbeit in der Leitstelle ist und wo die KI sie unterstützen kann." },
   },
 ];
