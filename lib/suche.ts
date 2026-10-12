@@ -36,7 +36,7 @@ function distanz(a: string, b: string): number {
 /** Wie gut passt ein Suchwort auf eine Wortliste? 0 = gar nicht. */
 function wortScore(q: string, ws: string[]): number {
   let best = 0;
-  const erlaubt = q.length >= 8 ? 2 : q.length >= 4 ? 1 : 0;
+  const erlaubt = q.length >= 12 ? 2 : q.length >= 4 ? 1 : 0;
   for (const w of ws) {
     if (w === q) return 10;
     if (q.length >= 3 && (w.startsWith(q) || (q.length >= 4 && w.includes(q))))

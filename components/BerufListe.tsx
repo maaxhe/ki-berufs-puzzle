@@ -165,9 +165,20 @@ export default function BerufListe<K extends string>({
             </section>
           )}
           {ergebnis.treffer.length + ergebnis.verwandt.length === 0 && (
-            <p className="mt-14 font-prose text-[0.95rem] italic text-ink-2">
-              {leerText}
-            </p>
+            <div className="mt-14 font-prose text-[0.95rem] text-ink-2">
+              <p className="italic">{leerText}</p>
+              <p className="mt-2">
+                Tipp: Such nach dem Berufsfeld („Pflege“, „Bau“, „IT“) oder wähl oben eine Kategorie.
+                {querTreffer.length > 0 && " Bei der anderen Liste gibt es Treffer – siehe oben."}
+              </p>
+              <button
+                type="button"
+                onClick={() => setQuery("")}
+                className="mt-3 italic text-ink underline decoration-mensch decoration-2 underline-offset-4 hover:text-mensch"
+              >
+                Suche zurücksetzen
+              </button>
+            </div>
           )}
         </>
       ) : nachKategorie.length === 0 ? (
