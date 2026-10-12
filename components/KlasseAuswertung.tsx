@@ -170,7 +170,7 @@ export default function KlasseAuswertung() {
   return (
     <div className="space-y-8">
       <section className="max-w-[46rem] border border-rule bg-paper-2 p-4">
-        <h2 className="font-display text-base font-semibold text-ink">Live-Raum (optional)</h2>
+        <h2 className="font-display text-base font-semibold text-ink">Live-Raum</h2>
         {raum ? (
           <div className="mt-1 flex flex-wrap items-start gap-5">
             <div className="bg-white p-2" aria-label={`QR-Code für Raum ${raum.code}`}>
@@ -179,14 +179,14 @@ export default function KlasseAuswertung() {
             <p className="min-w-[16rem] flex-1 font-prose text-[0.95rem] text-ink-2">
               Raumcode für die Klasse:{" "}
               <b className="font-mono text-2xl tracking-widest text-ink">{raum.code}</b> · {raumCodes.length} Code(s)
-              eingegangen. Schüler:innen scannen den QR-Code (der Raumcode ist dann schon eingetragen) oder tippen
-              den Code unter ihrem Ergebnis ein. Räume verfallen nach 24 Stunden.
+              eingegangen. Schüler:innen scannen den QR-Code, ihr Ergebnis wird danach automatisch gesendet.
+              Räume verfallen nach 24 Stunden.
             </p>
           </div>
         ) : (
           <>
             <p className="mt-1 font-prose text-[0.95rem] text-ink-2">
-              Statt Codes einzusammeln: Erstelle einen Raum, die Klasse schickt ihre Codes direkt und du siehst sie live.
+              Erstelle einen Raum: Die Klasse scannt den QR-Code, schickt ihre Ergebnisse automatisch und du siehst sie live.
               Gespeichert wird nur die anonyme Zuordnung.
             </p>
             <button
@@ -241,8 +241,7 @@ export default function KlasseAuswertung() {
 
       {gruppen.liste.length === 0 ? (
         <p className="prose-text text-ink-2">
-          Noch keine Codes. Den Code sehen Schüler:innen unten auf der
-          Ergebnis-Seite des Puzzles.
+          Noch keine Ergebnisse. Erstelle einen Raum und lass die Klasse den QR-Code scannen.
         </p>
       ) : (
         <>

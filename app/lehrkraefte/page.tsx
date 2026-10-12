@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   title: "Für Lehrkräfte – KI-Berufs-Puzzle",
   description:
-    "Ablauf für 45 Minuten, Klassenauswertung ohne Anmeldung und druckbare Arbeitsblätter zum KI-Berufs-Puzzle.",
+    "Ablauf für 45 Minuten, Klassenauswertung per QR-Code und druckbare Arbeitsblätter zum KI-Berufs-Puzzle.",
 };
 
 const linkKlasse =
@@ -75,20 +75,18 @@ export default function LehrkraeftePage() {
 
         <section className="space-y-3">
           <h2 className="font-display text-[1.4rem] font-semibold text-ink">
-            Klassenauswertung ohne Anmeldung
+            Klassenauswertung per QR-Code
           </h2>
           <p>
-            Nach dem Sortieren zeigt das Ergebnis einen kurzen{" "}
-            <strong>Klassencode</strong>. Er enthält nur die Zuordnung, keine
-            Namen. Sammle die Codes der Schüler:innen ein (Zuruf, Chat,
-            Zettel) und füge sie auf der{" "}
+            Erstelle auf der{" "}
             <Link href="/klasse" className={linkKlasse}>
               Klassenauswertung
             </Link>{" "}
-            ein. Du siehst pro Aufgabe, wie viele Schüler:innen für „KI“ oder
-            „Mensch“ gestimmt haben – und wo die Klasse am meisten
-            auseinanderliegt. Die Auswertung läuft komplett im Browser, nichts
-            wird hochgeladen.
+            einen Raum und zeige den QR-Code. Die Schüler:innen scannen ihn,
+            sortieren und ihr Ergebnis kommt automatisch bei dir an. Gespeichert
+            wird nur die anonyme Zuordnung, keine Namen. Du siehst pro Aufgabe,
+            wie viele für „KI“ oder „Mensch“ gestimmt haben – und wo die Klasse
+            am meisten auseinanderliegt. Räume verfallen nach 24 Stunden.
           </p>
         </section>
 

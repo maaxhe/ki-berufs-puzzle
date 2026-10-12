@@ -22,9 +22,10 @@ Die konkreten Vergleichswerte stehen im Tool bei jedem Beruf.
 
 - `/lehrkraefte` – Ablauf für 45 Minuten und Materialübersicht
 - `/arbeitsblatt/[slug]` (+ `/loesung`) – druckbare Arbeitsblätter, `noindex`
-- `/klasse` – Klassenauswertung: Schüler:innen bekommen am Ende einen Code
-  (`lib/klassencode.ts`, nur die Zuordnung, keine Namen), die Lehrkraft fügt
-  die Codes ein – alles läuft im Browser, ohne Backend.
+- `/klasse` – Klassenauswertung: Die Lehrkraft erstellt einen Raum (QR-Code),
+  die Schüler:innen scannen ihn und ihr Ergebnis wird automatisch gesendet
+  (`components/KlassencodeBox.tsx`, `lib/klassencode.ts`, nur die Zuordnung,
+  keine Namen; Server in `raumdienst/`).
 
 Aufgaben mit `ueberraschend: true` führen die Faustregel „Verwaltung = KI,
 Beziehung = Mensch“ in die Irre und werden im Ergebnis markiert. Bei
