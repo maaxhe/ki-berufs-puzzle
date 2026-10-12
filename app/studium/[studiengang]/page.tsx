@@ -4,6 +4,8 @@ import TaskPuzzle from "@/components/TaskPuzzle";
 import PraxisHinweis from "@/components/PraxisHinweis";
 import { studiengaenge, getStudiengang } from "@/data/studiengaenge";
 import { praxisBeispiele } from "@/data/praxis";
+import VerwandteBox from "@/components/VerwandteBox";
+import { verwandtStudiengaenge } from "@/data/verwandt";
 
 export function generateStaticParams() {
   return studiengaenge.map((s) => ({ studiengang: s.slug }));
@@ -58,6 +60,7 @@ export default async function StudiumPuzzlePage({
           )
         }
       />
+      <VerwandteBox verwandte={verwandtStudiengaenge[studiengang.slug]} />
     </div>
   );
 }

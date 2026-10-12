@@ -99,15 +99,24 @@ export interface Suchergebnis<T extends PuzzleEinheit> {
   verwandt: T[];
 }
 
-export function suche<T extends PuzzleEinheit>(einheiten: T[], query: string): Suchergebnis<T> {
+export function suche<T extends PuzzleEinheit>(
+  einheiten: T[],
+  query: string,
+  /** Kuratierte Verwandte (Slug → Slugs derselben Liste); ergänzen „Verwandt“ um Verwandte der Treffer. */
+  verwandt?: Record<string, string[]>,
+): Suchergebnis<T> {
   const qs = woerter(query);
   if (qs.length === 0) return { treffer: einheiten, verwandt: [] };
   const bewertet = einheiten
     .map((e) => ({ e, ...bewerte(e, qs) }))
     .filter((x) => x.score > 0)
     .sort((a, b) => b.score - a.score);
-  return {
-    treffer: bewertet.filter((x) => x.stark).map((x) => x.e),
-    verwandt: bewertet.filter((x) => !x.stark).map((x) => x.e),
-  };
+  const treffer = bewertet.filter((x) => x.stark).map((x) => x.e);
+  const weitere = bewertet.filter((x) => !x.stark).map((x) => x.e);
+  const gesehen = new Set([...treffer, ...weitere].map((e) => e.slug));
+  const kuratiert = treffer
+    .flatMap((t) => verwandt?.[t.slug] ?? [])
+    .map((slug) => einheiten.find((e) => e.slug === slug))
+    .filter((e): e is T => !!e && !gesehen.has(e.slug) && !gesehen.add(e.slug));
+  return { treffer, verwandt: [...kuratiert, ...weitere] };
 }

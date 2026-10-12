@@ -4,6 +4,8 @@ import PraxisHinweis from "@/components/PraxisHinweis";
 import TaskPuzzle from "@/components/TaskPuzzle";
 import { berufe, getBeruf } from "@/data/berufe";
 import { praxisBeispiele } from "@/data/praxis";
+import VerwandteBox from "@/components/VerwandteBox";
+import { verwandtBerufe } from "@/data/verwandt";
 
 export function generateStaticParams() {
   return berufe.map((beruf) => ({ beruf: beruf.slug }));
@@ -43,7 +45,8 @@ export default async function PuzzlePage({
         alleBerufe={berufe}
         zusatz={passendesPraxisBeispiel && <PraxisHinweis fall={passendesPraxisBeispiel} />}
       />
-      
+      <VerwandteBox verwandte={verwandtBerufe[beruf.slug]} />
+
       {ROBOTER_BERUFE.includes(beruf.slug) && (
         <aside className="mx-auto mb-10 max-w-3xl px-4">
           <div className="rounded-xl border border-black/10 p-4 text-sm dark:border-white/15">

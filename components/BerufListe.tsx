@@ -5,6 +5,7 @@ import type { PuzzleEinheit } from "@/types";
 import Link from "next/link";
 import BerufCard from "./BerufCard";
 import { suche } from "@/lib/suche";
+import { verwandtBerufe, verwandtStudiengaenge } from "@/data/verwandt";
 
 /** Die jeweils andere Liste (Berufe ↔ Studiengänge), die bei der Suche mitdurchsucht wird. */
 export interface Querverweis {
@@ -40,13 +41,19 @@ export default function BerufListe<K extends string>({
   const [aktivKategorie, setAktivKategorie] = useState<K | null>(null);
 
   const suchWort = query.trim();
+  // Kuratierte Verwandte derselben Liste: Berufe → Berufe, Studiengänge → Studiengänge
+  const verwandtMap = useMemo(() => {
+    const quelle = hrefBase === "/studium" ? verwandtStudiengaenge : verwandtBerufe;
+    const key = hrefBase === "/studium" ? "studiengaenge" : "berufe";
+    return Object.fromEntries(Object.entries(quelle).map(([k, v]) => [k, v[key] ?? []]));
+  }, [hrefBase]);
 
   const ergebnis = useMemo(() => {
     const inKategorie = berufe.filter(
       (b) => !aktivKategorie || b.kategorie === aktivKategorie,
     );
-    return suche(inKategorie, suchWort);
-  }, [berufe, suchWort, aktivKategorie]);
+    return suche(inKategorie, suchWort, verwandtMap);
+  }, [berufe, suchWort, aktivKategorie, verwandtMap]);
 
   const querTreffer = useMemo(() => {
     if (!suchWort || !querverweis) return [];
