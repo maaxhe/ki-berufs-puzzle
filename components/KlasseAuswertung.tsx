@@ -27,14 +27,13 @@ function einheitFuer(art: "beruf" | "studium", slug: string) {
 }
 
 export default function KlasseAuswertung() {
-  const [text, setText] = useState("");
   const [sortierung, setSortierung] = useState<"uneinig" | "reihenfolge">(
     "uneinig",
   );
   const [aktiv, setAktiv] = useState<string | null>(null);
   const [praesentiert, setPraesentiert] = useState(false);
 
-  // Live-Raum: Schüler:innen schicken ihren Code direkt, die eingefügten Codes kommen dazu.
+  // Live-Raum: Schüler:innen schicken ihr Ergebnis direkt.
   const [raum, setRaum] = useState<{ code: string; hostKey: string } | null>(null);
   const [raumCodes, setRaumCodes] = useState<string[]>([]);
   const [raumFehler, setRaumFehler] = useState<string | null>(null);
@@ -106,8 +105,8 @@ export default function KlasseAuswertung() {
       .catch(() => {});
   }, [raum]);
 
-  const gesamtText = useMemo(() => `${raumCodes.join("\n")}\n${text}`, [raumCodes, text]);
-  const { gueltig, ungueltig } = useMemo(() => leseCodes(gesamtText), [gesamtText]);
+  const gesamtText = useMemo(() => raumCodes.join("\n"), [raumCodes]);
+  const { gueltig } = useMemo(() => leseCodes(gesamtText), [gesamtText]);
 
   // Codes nach Einheit gruppieren; Codes mit unpassender Aufgabenzahl fallen raus.
   const gruppen = useMemo(() => {
@@ -178,7 +177,7 @@ export default function KlasseAuswertung() {
             </div>
             <p className="min-w-[16rem] flex-1 font-prose text-[0.95rem] text-ink-2">
               Raumcode für die Klasse:{" "}
-              <b className="font-mono text-2xl tracking-widest text-ink">{raum.code}</b> · {raumCodes.length} Code(s)
+              <b className="font-mono text-2xl tracking-widest text-ink">{raum.code}</b> · {raumCodes.length} Ergebnis(se)
               eingegangen. Schüler:innen scannen den QR-Code, ihr Ergebnis wird danach automatisch gesendet.
               Räume verfallen nach 24 Stunden.
             </p>
@@ -201,38 +200,9 @@ export default function KlasseAuswertung() {
         {raumFehler && <p className="mt-2 text-sm text-miss" role="status">{raumFehler}</p>}
       </section>
       <div>
-        <label
-          htmlFor="codes"
-          className="block font-display text-sm font-semibold text-ink"
-        >
-          Klassencodes einfügen
-        </label>
-        <p className="mt-1 font-prose text-sm italic text-ink-2">
-          Ein Code pro Schüler:in, getrennt durch Zeilenumbruch, Leerzeichen
-          oder Komma. Alles bleibt in deinem Browser. Tipp: Lass die Klasse
-          ihre Codes in einen gemeinsamen Chat oder ein Padlet schreiben und
-          kopiere alles auf einmal hierher.
-        </p>
-        <textarea
-          id="codes"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          rows={6}
-          spellCheck={false}
-          placeholder={"b.pflegefachkraft.11.9ab3\nb.pflegefachkraft.11.7f21"}
-          className="mt-2 w-full rounded-[2px] border border-rule bg-paper p-3 font-mono text-sm text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mensch"
-        />
-        {ungueltig.length > 0 && (
-          <p className="mt-2 text-sm text-miss" role="status">
-            {ungueltig.length === 1
-              ? "1 Eintrag konnte nicht gelesen werden."
-              : `${ungueltig.length} Einträge konnten nicht gelesen werden.`}{" "}
-            Erste Zeichen: „{ungueltig[0].slice(0, 24)}“
-          </p>
-        )}
         {gruppen.veraltet > 0 && (
           <p className="mt-2 text-sm text-miss" role="status">
-            {gruppen.veraltet} Code(s) passen nicht mehr zur aktuellen
+            {gruppen.veraltet} Ergebnis(se) passen nicht mehr zur aktuellen
             Aufgabenliste (Beruf unbekannt oder Aufgaben geändert) und werden
             nicht mitgezählt.
           </p>
