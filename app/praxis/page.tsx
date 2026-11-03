@@ -27,10 +27,10 @@ export default function PraxisPage() {
         <p className="prose-text mt-6 text-ink">
           Über KI wird oft geredet, als wäre sie eine Prognose für später. Dabei
           rollen in deutschen Supermärkten längst Serviceroboter, scannen
-          Algorithmen Verträge und federn Exoskelette schwere Lasten ab.
+          Algorithmen Verträge und federn Exoskelette schwere Lasten ab. In der Medizin und Forschung helfen KI-Systeme beim Lesen von Gewebeschnitten, Röntgenbildern und Proteinen.
         </p>
         <p className="prose-text mt-3 italic text-ink-2">
-          {praxisBeispiele.length} Fälle aus dem Alltag. Bei jedem dieselbe Frage wie im Puzzle:
+          {praxisBeispiele.length} Fälle aus Alltag, Medizin und Forschung. Bei jedem dieselbe Frage wie im Puzzle:
           Was übernimmt die Maschine – und wo bleibt der Mensch?
         </p>
         <nav aria-label="Fälle" className="mt-8 flex flex-wrap gap-x-5 gap-y-2 border-t border-rule pt-4 font-prose text-sm">

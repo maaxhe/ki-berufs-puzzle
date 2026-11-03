@@ -280,4 +280,146 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Eine KI kann Orte eingrenzen. Wer sollte bei einem Notruf am Ende entscheiden, und warum?",
     video: { id: "hRYBa5nvBng", titel: "Feuerwehr-Leitstelle: Der erste Kontaktpunkt bei Notfällen", quelle: "WDR – Feuer & Flamme", hinweis: "Hier geht es nicht um KI. Das Video zeigt, wie wichtig die Arbeit in der Leitstelle ist und wo die KI sie unterstützen kann." },
   },
+  {
+    id: "pathologie-ki-gewebeanalyse",
+    titel: "KI markiert Tumorgewebe auf digitalen Gewebeschnitten",
+    studiengangSlugs: ["medizin", "biologie"],
+    berufTitel: "Pathologe/Pathologin",
+    ort: "Charité Berlin & TU Berlin",
+    zeitpunkt: "Entwicklung und Erprobung",
+    medium: "Deutsches Ärzteblatt",
+    url: "https://www.aerzteblatt.de/nachrichten/112337/Digitales-Bildanalysesystem-unterstuetzt-Pathologen-bei-Beurteilung-mikroskopischer-Praeparate",
+    teaser:
+      "Das Pathologische Institut der Charité hat gemeinsam mit der TU Berlin ein Bildanalysesystem entwickelt, das mikroskopische Aufnahmen beurteilt. Die Software lernt aus tausenden digitalen Gewebeschnitten, in denen Pathologen krankhafte Veränderungen markiert haben, und unterscheidet so zum Beispiel Tumorgewebe von gesundem Gewebe.",
+    wasMachtDieKI:
+      "Gewebeschnitte durchsuchen, Tumorgewebe von gesundem Gewebe unterscheiden und per Heatmap zeigen, welche Bildbereiche für die Einordnung ausschlaggebend waren.",
+    wasBleibtMenschlich:
+      "Die Diagnose und die Verantwortung dafür, das Einordnen unklarer Befunde, die Abstimmung mit den behandelnden Ärzt:innen und das Training der KI: Die Markierungen, aus denen sie lernt, stammen von Pathologen.",
+    diskussionsFrage:
+      "Eine KI kann tausende Bilder ermüdungsfrei prüfen. Was spricht trotzdem dafür, dass am Ende ein Mensch den Befund unterschreibt, von dem eine Krebsdiagnose abhängt?",
+    einordnung:
+      "Die Meldung stammt aus dem Jahr 2020 und beschreibt ein Forschungsprojekt. Wie weit solche Systeme heute im Routinebetrieb sind, ist je nach Institut unterschiedlich.",
+  },
+  {
+    id: "radiologie-mammografie-screening-praim",
+    titel: "KI als zweite Meinung beim Brustkrebs-Screening",
+    studiengangSlugs: ["medizin"],
+    berufTitel: "Radiolog:in",
+    ort: "12 Screening-Standorte in Deutschland (PRAIM-Studie)",
+    zeitpunkt: "Studie, veröffentlicht 2025",
+    medium: "Pharmazeutische Zeitung",
+    url: "https://www.pharmazeutische-zeitung.de/ki-verbessert-brustkrebsscreening-signifikant-152367/",
+    teaser:
+      "In einer Studie mit 463.094 Frauen zwischen 50 und 69 Jahren werteten Radiolog:innen einen Teil der Mammografien mit KI-Unterstützung aus. Mit KI stieg die Entdeckungsrate von 5,7 auf 6,7 Brustkrebsfälle pro 1.000 Frauen, die Zahl der Rückrufe sank leicht.",
+    wasMachtDieKI:
+      "Mammografien auf verdächtige Stellen prüfen und die Radiolog:innen auf Auffälligkeiten hinweisen.",
+    wasBleibtMenschlich:
+      "Die endgültige Befundung, das Gespräch mit Frauen nach einem auffälligen Ergebnis, die Entscheidung über weitere Untersuchungen und die Verantwortung für Fehler in beide Richtungen.",
+    diskussionsFrage:
+      "Bisher schauen zwei Radiolog:innen auf jedes Bild. Wäre dir ein Mensch plus KI genauso recht, und was würde sich für dich ändern, wenn der Mensch nur noch bei Auffälligkeiten hinsieht?",
+    einordnung:
+      "Die Teilnahme der Radiolog:innen an der KI-Nutzung war freiwillig, und es war keine Studie mit zufälliger Zuteilung. Die Zahlen zeigen daher einen Zusammenhang, der Vergleich ist nicht perfekt.",
+  },
+  {
+    id: "pharma-ki-wirkstoffforschung-rentosertib",
+    titel: "Ein mit KI entworfener Wirkstoff wirkt in der klinischen Studie",
+    studiengangSlugs: ["pharmazie", "chemie"],
+    berufTitel: "Pharmazeut:in & Chemiker:in",
+    ort: "22 Studienzentren in China (Insilico Medicine)",
+    zeitpunkt: "Studie, veröffentlicht 2025",
+    medium: "BioSpace (Pressemitteilung von Insilico, Fachartikel in Nature Medicine)",
+    url: "https://www.biospace.com/press-releases/insilico-medicine-announces-nature-medicine-publication-of-phase-iia-results-evaluating-rentosertib-the-novel-tnik-inhibitor-for-idiopathic-pulmonary-fibrosis-ipf-discovered-and-designed-with-a-pioneering-ai-approach",
+    teaser:
+      "Der Wirkstoff Rentosertib gegen die Lungenerkrankung idiopathische Lungenfibrose wurde mit Hilfe generativer KI gefunden und entworfen. In einer Phase-IIa-Studie mit 71 Patient:innen stieg die Lungenfunktion in der 60-mg-Gruppe im Mittel um 98 ml, unter Placebo sank sie um 20 ml.",
+    wasMachtDieKI:
+      "Ein Zielmolekül im Körper vorschlagen (TNIK) und passende Wirkstoffmoleküle entwerfen, die sonst in langen Testreihen im Labor gesucht würden.",
+    wasBleibtMenschlich:
+      "Die Synthese und Prüfung im Labor, das Design und die Leitung der klinischen Studie, die Bewertung von Nutzen und Nebenwirkungen und die Entscheidung über eine Zulassung.",
+    diskussionsFrage:
+      "Die KI hat den Wirkstoff vorgeschlagen, geprüft haben ihn Menschen in einer Studie. Wer hat die eigentliche Leistung erbracht, und wie sollte man das bei Medikamenten bewerten?",
+    einordnung:
+      "Die Quelle ist eine Pressemitteilung des Herstellers. Die Studie war mit 71 Personen klein, das Mittel ist noch nicht zugelassen und braucht größere Studien.",
+  },
+  {
+    id: "alphafold-proteinstrukturen",
+    titel: "AlphaFold sagt die Form von Proteinen voraus",
+    studiengangSlugs: ["biologie", "chemie", "pharmazie"],
+    berufTitel: "Biolog:in & Biochemiker:in in der Forschung",
+    ort: "Weltweit (Google DeepMind, Datenbank beim EMBL-EBI)",
+    zeitpunkt: "Seit 2021 im Einsatz, Nobelpreis 2024",
+    medium: "EMBL-EBI",
+    url: "https://www.ebi.ac.uk/about/news/alphafold-wins-nobel-prize-chemistry-2024/",
+    teaser:
+      "Das KI-System AlphaFold sagt voraus, welche dreidimensionale Struktur ein Protein hat. Die Struktur gibt Hinweise auf die Funktion. Die frei zugängliche Datenbank startete 2021 mit rund 360.000 Strukturen und umfasst inzwischen etwa 200 Millionen, mehr als eine Million Menschen nutzen sie. 2024 gab es dafür den Nobelpreis für Chemie.",
+    wasMachtDieKI:
+      "Aus der Abfolge der Bausteine eines Proteins die räumliche Struktur berechnen, ohne dass sie erst aufwendig im Labor bestimmt werden muss.",
+    wasBleibtMenschlich:
+      "Die richtige Forschungsfrage stellen, Vorhersagen im Experiment überprüfen, Ergebnisse einordnen und daraus Medikamente, Enzyme oder neue Therapien entwickeln.",
+    diskussionsFrage:
+      "Wenn die Form eines Proteins in Minuten statt in Jahren vorliegt: Welche Aufgaben in der Forschung werden dann wichtiger, und welche braucht man weniger?",
+    einordnung:
+      "Das ist ein Werkzeug der Forschung und kein Berufsalltag wie in einer Arztpraxis. Es zeigt aber, wie sich die Arbeit in Biologie, Chemie und Pharmazie gerade verändert.",
+  },
+  {
+    id: "wetter-ki-graphcast",
+    titel: "KI-Wettermodell rechnet zehn Tage in unter einer Minute",
+    studiengangSlugs: ["physik", "nachhaltigkeitswissenschaft"],
+    berufTitel: "Meteorolog:in",
+    ort: "Google DeepMind, eingeordnet vom Deutschen Wetterdienst",
+    zeitpunkt: "Vorgestellt 2023",
+    medium: "Deutscher Wetterdienst (DWD)",
+    url: "https://www.wetterdienst.de/Deutschlandwetter/Thema_des_Tages/5615/kuenstliche-intelligenz-in-der-wettervorhersage-was-kann-graphcast",
+    teaser:
+      "GraphCast lernt aus Wetterdaten von 1979 bis 2017, statt physikalische Gleichungen zu lösen, und berechnet eine Zehn-Tage-Vorhersage in unter einer Minute. In einer Studie schlug es den Hauptlauf eines führenden europäischen Wettermodells bei rund 90 Prozent der geprüften Größen.",
+    wasMachtDieKI:
+      "Aus dem aktuellen Wetterzustand und gelernten Mustern den Verlauf der nächsten Tage berechnen, deutlich schneller als klassische Modelle auf Supercomputern.",
+    wasBleibtMenschlich:
+      "Unsichere Wetterlagen einschätzen, kleinräumige Phänomene wie Gewitter beurteilen, mehrere Modelle vergleichen, Warnungen aussprechen und sie verständlich weitergeben.",
+    diskussionsFrage:
+      "GraphCast verschmiert Vorhersagen bei unsicheren Lagen. Wer sollte bei einer Unwetterwarnung entscheiden, die KI oder eine Meteorologin, und warum?",
+    einordnung:
+      "Der Artikel stammt von 2023. Der DWD sieht KI-Modelle als Ergänzung zu den Wettermodellen und nicht als Ersatz für Meteorolog:innen.",
+  },
+  {
+    id: "software-ki-assistenten-entwicklung",
+    titel: "KI schreibt Code, Menschen prüfen ihn",
+    berufSlug: "softwareentwickler",
+    studiengangSlugs: ["informatik"],
+    berufTitel: "Softwareentwickler:in",
+    ort: "Deutschland, Österreich, Schweiz (BearingPoint-Umfrage)",
+    zeitpunkt: "Umfrage vom September 2026",
+    medium: "Retail News (zur BearingPoint-Studie)",
+    url: "https://retail-news.de/bearingpoint-ki-softwareentwicklung-entwickler-2026/",
+    teaser:
+      "In einer Umfrage unter 112 Führungskräften nutzen 91 Prozent der Unternehmen KI in der Softwareentwicklung, aber nur 18 Prozent haben sie dauerhaft in ihre Abläufe eingebaut. Am häufigsten kommt sie bei Dokumentation, Code-Erzeugung und Code-Prüfung zum Einsatz.",
+    wasMachtDieKI:
+      "Code vorschlagen, Dokumentation schreiben und Fehler in Programmen aufspüren.",
+    wasBleibtMenschlich:
+      "KI-Ergebnisse prüfen, sie sicher in bestehende Systeme einbauen, Qualitätsvorgaben durchsetzen und verstehen, was eine Software für die Menschen leisten soll.",
+    diskussionsFrage:
+      "Laut Studie führt KI bisher nicht zu einem breiten Abbau von Stellen, sondern verändert die Aufgaben. Wie viel Programmieren musst du selbst können, um KI-Code überhaupt beurteilen zu können?",
+    einordnung:
+      "Das ist eine Befragung von Führungskräften und keine Messung. Eine Studie mit Stoppuhr (METR) fand, dass erfahrene Entwickler:innen mit KI nicht schneller, aber sich schneller fühlten. Die Ergebnisse sind nicht eindeutig.",
+  },
+  {
+    id: "schule-ki-chatbot-telli",
+    titel: "KI-Chatbot „telli“ für Lehrkräfte und Schüler:innen",
+    berufSlug: "lehrer",
+    studiengangSlugs: ["paedagogik"],
+    berufTitel: "Lehrer:in",
+    ort: "Baden-Württemberg (Start im Oktober 2025)",
+    zeitpunkt: "Seit Oktober 2025 an Schulen",
+    medium: "Landesregierung Baden-Württemberg",
+    url: "https://www.baden-wuerttemberg.de/de/service/presse/pressemitteilung/pid/ki-chatbot-fuer-schulen-geht-an-den-start-1",
+    teaser:
+      "„telli“ ist ein KI-Chatbot, der eigens für Schulen entwickelt wurde. Seit dem 13. Oktober 2025 steht er allen Schulen in Baden-Württemberg zur Verfügung und kann von den Schulleitungen aktiviert werden. Die Eingaben werden laut Landesregierung nicht zum Training der Sprachmodelle verwendet.",
+    wasMachtDieKI:
+      "Unterrichtsmaterial entwerfen, Aufgaben in verschiedenen Schwierigkeitsgraden anbieten, Texte übersetzen und Schüler:innen im Schulalltag unterstützen.",
+    wasBleibtMenschlich:
+      "Entscheiden, was im Unterricht gelernt werden soll, Materialien prüfen, Noten geben, Konflikte in der Klasse lösen und Schüler:innen persönlich begleiten.",
+    diskussionsFrage:
+      "Wenn der Chatbot Aufgaben und Erklärungen liefert: Was sollen Lehrkräfte dann tun, was ein Chatbot nicht kann? Und wo sollte er im Unterricht aus bleiben?",
+    einordnung:
+      "Die Quelle ist eine Pressemitteilung des Landes. Wie viel Zeit Lehrkräfte damit wirklich sparen, ist umstritten. Kritik an KI-Korrekturhilfen gibt es etwa von netzpolitik.org.",
+  },
 ];
