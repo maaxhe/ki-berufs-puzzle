@@ -403,7 +403,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Wenn die Form eines Proteins in Minuten statt in Jahren vorliegt: Welche Aufgaben in der Forschung werden dann wichtiger, und welche braucht man weniger?",
     einordnung:
       "Das ist ein Werkzeug der Forschung und kein Berufsalltag wie in einer Arztpraxis. Es zeigt aber, wie sich die Arbeit in Biologie, Chemie und Pharmazie gerade verändert.",
-    video: { id: "P_fHJIYENdI", titel: "AlphaFold – The Most Useful Thing AI Has Ever Done", quelle: "Veritasium (englisch)", hinweis: "Englisch, in den YouTube-Einstellungen gibt es automatische deutsche Untertitel. Erzählt, wie die KI ein 50 Jahre altes Rätsel der Biologie gelöst hat." },
+    video: { id: "P_fHJIYENdI", titel: "AlphaFold – The Most Useful Thing AI Has Ever Done", quelle: "Veritasium (englisch)", hinweis: "Englisch. Erzählt, wie die KI ein 50 Jahre altes Rätsel der Biologie gelöst hat." },
   },
   {
     id: "wetter-ki-graphcast",
