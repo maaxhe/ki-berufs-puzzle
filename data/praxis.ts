@@ -1,7 +1,29 @@
+export type PraxisKategorie =
+  | "medizin"
+  | "forschung"
+  | "handel-service"
+  | "handwerk-bau"
+  | "verkehr"
+  | "buero-it"
+  | "bildung";
+
+export const praxisKategorien: { id: PraxisKategorie; titel: string; beschreibung: string }[] = [
+  { id: "medizin", titel: "Medizin & Pflege", beschreibung: "Praxis, Klinik, Rettungsdienst und Diagnostik" },
+  { id: "forschung", titel: "Forschung & Wissenschaft", beschreibung: "Wo KI neue Erkenntnisse und Medikamente möglich macht" },
+  { id: "handel-service", titel: "Handel, Gastronomie & Service", beschreibung: "Supermarkt, Restaurant und Küche" },
+  { id: "handwerk-bau", titel: "Handwerk, Bau & Landwirtschaft", beschreibung: "Werkstatt, Baustelle und Acker" },
+  { id: "verkehr", titel: "Verkehr & Mobilität", beschreibung: "Lkw und Taxi ohne Fahrer an Bord" },
+  { id: "buero-it", titel: "Büro, Recht, Finanzen & IT", beschreibung: "Verträge, Beratung und Software" },
+  { id: "bildung", titel: "Bildung & Schule", beschreibung: "Unterricht und Lernen mit KI" },
+];
+
 export interface PraxisBeispiel {
   id: string;
+  kategorie: PraxisKategorie;
   titel: string;
   berufSlug?: string;
+  /** Wenn es keinen eigenen Beruf-Quiz gibt: nächstliegende Berufe, die man stattdessen sortieren kann. */
+  verwandteBerufSlugs?: string[];
   /** Studiengänge, bei denen dieser Fall ebenfalls zeigt, wohin sich der Berufsalltag entwickelt. */
   studiengangSlugs?: string[];
   berufTitel: string;
@@ -21,6 +43,7 @@ export interface PraxisBeispiel {
 export const praxisBeispiele: PraxisBeispiel[] = [
   {
     id: "rewe-supermarkt-roboter-ahlen",
+    kategorie: "handel-service",
     titel: "Roboter „Rob“ hilft Kund:innen im Supermarkt",
     berufSlug: "einzelhandelskaufmann",
     studiengangSlugs: ["betriebswirtschaftslehre"],
@@ -41,6 +64,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
   },
   {
     id: "arztpraxis-ki-telefon-anamnese",
+    kategorie: "medizin",
     titel: "KI-Telefonassistenz und Vorab-Anamnese in der Arztpraxis",
     berufSlug: "medizinische-fachangestellte",
     studiengangSlugs: ["medizin"],
@@ -61,6 +85,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
   },
   {
     id: "gastro-bellabot-servierroboter",
+    kategorie: "handel-service",
     titel: "Katzen-Roboter „BellaBot“ serviert im Restaurant",
     berufSlug: "hotelfachmann",
     berufTitel: "Hotelfachmann/-frau & Gastronomie",
@@ -80,6 +105,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
   },
   {
     id: "pflege-exoskelette-und-hebehilfen",
+    kategorie: "medizin",
     titel: "Aktive Exoskelette beim Heben und Betten in Kliniken",
     berufSlug: "pflegefachkraft",
     studiengangSlugs: ["medizin"],
@@ -102,6 +128,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
   },
   {
     id: "handwerk-holz-spritzroboter",
+    kategorie: "handwerk-bau",
     titel: "Cobots helfen beim Lackieren in Schreinereien",
     berufSlug: "tischler",
     berufTitel: "Tischler:in",
@@ -123,6 +150,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
   },
   {
     id: "anwaltskanzlei-vertragsanalyse-harvey",
+    kategorie: "buero-it",
     titel: "KI-Vertragsprüfung und Aktenanalyse in Großkanzleien",
     berufSlug: "rechtsanwaltsfachangestellte",
     studiengangSlugs: ["jura"],
@@ -143,6 +171,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
   },
   {
     id: "lkw-fernride-teleoperation",
+    kategorie: "verkehr",
     titel: "Lkw ohne Fahrer an Bord – gesteuert aus der Ferne",
     berufSlug: "berufskraftfahrer",
     studiengangSlugs: ["maschinenbau"],
@@ -163,6 +192,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
   },
   {
     id: "robotaxi-moia-hamburg",
+    kategorie: "verkehr",
     titel: "Selbstfahrender ID. Buzz bringt Fahrgäste durch Hamburg",
     berufTitel: "Taxi- und Fahrdienst-Fahrer:in",
     ort: "Hamburg",
@@ -181,6 +211,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
   },
   {
     id: "koch-rewe-kochroboter",
+    kategorie: "handel-service",
     titel: "Zwei Roboterarme kochen im Supermarkt",
     berufSlug: "koch",
     berufTitel: "Koch/Köchin",
@@ -200,6 +231,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
   },
   {
     id: "landwirt-feldroboter-unkraut",
+    kategorie: "handwerk-bau",
     titel: "Autonomer Roboter jätet Unkraut ohne Chemie",
     berufSlug: "landwirt",
     studiengangSlugs: ["nachhaltigkeitswissenschaft"],
@@ -220,6 +252,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
   },
   {
     id: "maurer-3d-druck-wallenhausen",
+    kategorie: "handwerk-bau",
     titel: "Ein Mehrfamilienhaus aus dem 3D-Drucker",
     berufSlug: "maurer",
     studiengangSlugs: ["architektur"],
@@ -242,6 +275,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
   },
   {
     id: "bank-ki-assistent-sparkasse",
+    kategorie: "buero-it",
     titel: "KI-Assistent unterstützt Berater:innen in der Sparkasse",
     berufSlug: "bankkaufmann",
     studiengangSlugs: ["betriebswirtschaftslehre"],
@@ -262,6 +296,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
   },
   {
     id: "notfall-ki-leitstelle",
+    kategorie: "medizin",
     titel: "KI hilft in der Leitstelle, den Einsatzort zu finden",
     berufSlug: "notfallsanitaeter",
     studiengangSlugs: ["medizin"],
@@ -282,7 +317,9 @@ export const praxisBeispiele: PraxisBeispiel[] = [
   },
   {
     id: "pathologie-ki-gewebeanalyse",
+    kategorie: "medizin",
     titel: "KI markiert Tumorgewebe auf digitalen Gewebeschnitten",
+    verwandteBerufSlugs: ["medizinische-fachangestellte", "pflegefachkraft"],
     studiengangSlugs: ["medizin", "biologie"],
     berufTitel: "Pathologe/Pathologin",
     ort: "Charité Berlin & TU Berlin",
@@ -302,7 +339,9 @@ export const praxisBeispiele: PraxisBeispiel[] = [
   },
   {
     id: "radiologie-mammografie-screening-praim",
+    kategorie: "medizin",
     titel: "KI als zweite Meinung beim Brustkrebs-Screening",
+    verwandteBerufSlugs: ["medizinische-fachangestellte", "pflegefachkraft"],
     studiengangSlugs: ["medizin"],
     berufTitel: "Radiolog:in",
     ort: "12 Screening-Standorte in Deutschland (PRAIM-Studie)",
@@ -322,6 +361,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
   },
   {
     id: "pharma-ki-wirkstoffforschung-rentosertib",
+    kategorie: "forschung",
     titel: "Ein mit KI entworfener Wirkstoff wirkt in der klinischen Studie",
     studiengangSlugs: ["pharmazie", "chemie"],
     berufTitel: "Pharmazeut:in & Chemiker:in",
@@ -342,6 +382,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
   },
   {
     id: "alphafold-proteinstrukturen",
+    kategorie: "forschung",
     titel: "AlphaFold sagt die Form von Proteinen voraus",
     studiengangSlugs: ["biologie", "chemie", "pharmazie"],
     berufTitel: "Biolog:in & Biochemiker:in in der Forschung",
@@ -362,6 +403,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
   },
   {
     id: "wetter-ki-graphcast",
+    kategorie: "forschung",
     titel: "KI-Wettermodell rechnet zehn Tage in unter einer Minute",
     studiengangSlugs: ["physik", "nachhaltigkeitswissenschaft"],
     berufTitel: "Meteorolog:in",
@@ -382,6 +424,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
   },
   {
     id: "software-ki-assistenten-entwicklung",
+    kategorie: "buero-it",
     titel: "KI schreibt Code, Menschen prüfen ihn",
     berufSlug: "softwareentwickler",
     studiengangSlugs: ["informatik"],
@@ -403,6 +446,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
   },
   {
     id: "schule-ki-chatbot-telli",
+    kategorie: "bildung",
     titel: "KI-Chatbot „telli“ für Lehrkräfte und Schüler:innen",
     berufSlug: "lehrer",
     studiengangSlugs: ["paedagogik"],

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import VideoEmbed from "@/components/VideoEmbed";
-import { praxisBeispiele } from "@/data/praxis";
+import { praxisBeispiele as unsortiert, praxisKategorien } from "@/data/praxis";
+import { getBeruf } from "@/data/berufe";
 import { getStudiengang } from "@/data/studiengaenge";
 
 export const metadata: Metadata = {
@@ -9,6 +10,9 @@ export const metadata: Metadata = {
   description:
     "Von REWE in Ahlen bis zur Arztpraxis: Wo Roboter und KI in Deutschland schon heute mitarbeiten – und was trotzdem menschlich bleibt.",
 };
+
+// Nach Kategorie gruppiert, innerhalb der Kategorie bleibt die Reihenfolge aus den Daten.
+const praxisBeispiele = praxisKategorien.flatMap((k) => unsortiert.filter((b) => b.kategorie === k.id));
 
 export default function PraxisPage() {
   return (
@@ -30,26 +34,54 @@ export default function PraxisPage() {
           Algorithmen Verträge und federn Exoskelette schwere Lasten ab. In der Medizin und Forschung helfen KI-Systeme beim Lesen von Gewebeschnitten, Röntgenbildern und Proteinen.
         </p>
         <p className="prose-text mt-3 italic text-ink-2">
-          {praxisBeispiele.length} Fälle aus Alltag, Medizin und Forschung. Bei jedem dieselbe Frage wie im Puzzle:
+          {praxisBeispiele.length} Fälle in {praxisKategorien.length} Bereichen. Bei jedem dieselbe Frage wie im Puzzle:
           Was übernimmt die Maschine – und wo bleibt der Mensch?
         </p>
-        <nav aria-label="Fälle" className="mt-8 flex flex-wrap gap-x-5 gap-y-2 border-t border-rule pt-4 font-prose text-sm">
-          {praxisBeispiele.map((b, i) => (
-            <a
-              key={b.id}
-              href={`#${b.id}`}
-              className="text-ink-2 underline decoration-ink/20 underline-offset-2 hover:text-mensch hover:decoration-mensch"
-            >
-              <span className="tnum">{i + 1}</span> {b.berufTitel.split(" & ")[0].split(" (")[0]}
-            </a>
-          ))}
+        <nav aria-label="Kategorien" className="mt-8 border-t border-rule pt-4">
+          <ul className="grid gap-x-8 gap-y-5 font-prose text-sm sm:grid-cols-2">
+            {praxisKategorien.map((k) => {
+              const faelle = praxisBeispiele.filter((b) => b.kategorie === k.id);
+              return (
+                <li key={k.id}>
+                  <a
+                    href={`#kategorie-${k.id}`}
+                    className="font-display text-[0.95rem] font-semibold text-ink underline decoration-ink/20 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+                  >
+                    {k.titel} <span className="tnum font-normal text-ink-2">({faelle.length})</span>
+                  </a>
+                  <p className="mt-0.5 text-ink-2">
+                    {faelle.map((b, i) => (
+                      <span key={b.id}>
+                        {i > 0 && " · "}
+                        <a
+                          href={`#${b.id}`}
+                          className="underline decoration-ink/20 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+                        >
+                          {b.berufTitel.split(" & ")[0].split(" (")[0]}
+                        </a>
+                      </span>
+                    ))}
+                  </p>
+                </li>
+              );
+            })}
+          </ul>
         </nav>
       </header>
 
       <div className="mt-6">
-        {praxisBeispiele.map((bsp, idx) => (
+        {praxisBeispiele.map((bsp, idx) => {
+          const kat = praxisKategorien.find((k) => k.id === bsp.kategorie)!;
+          const neueKategorie = idx === 0 || praxisBeispiele[idx - 1].kategorie !== bsp.kategorie;
+          return (
+          <div key={bsp.id}>
+            {neueKategorie && (
+              <div id={`kategorie-${kat.id}`} className="scroll-mt-20 border-t-2 border-ink pt-10">
+                <h2 className="font-display text-[clamp(1.3rem,2.5vw,1.7rem)] font-semibold text-ink">{kat.titel}</h2>
+                <p className="mt-1 font-prose text-sm italic text-ink-2">{kat.beschreibung}</p>
+              </div>
+            )}
           <article
-            key={bsp.id}
             id={bsp.id}
             className="scroll-mt-20 border-t border-rule py-12 sm:py-14"
           >
@@ -64,9 +96,9 @@ export default function PraxisPage() {
                   <span className="mx-2">·</span>
                   {bsp.ort}
                 </p>
-                <h2 className="mt-3 font-display text-[clamp(1.5rem,3vw,2rem)] font-semibold leading-[1.1] text-ink">
+                <h3 className="mt-3 font-display text-[clamp(1.5rem,3vw,2rem)] font-semibold leading-[1.1] text-ink">
                   {bsp.titel}
-                </h2>
+                </h3>
                 <p className="prose-text mt-4 text-ink">{bsp.teaser}</p>
                 {bsp.einordnung && (
                   <p className="mt-3 font-prose text-sm italic text-ink-2">
@@ -125,14 +157,36 @@ export default function PraxisPage() {
                   {bsp.diskussionsFrage}
                 </p>
               </blockquote>
-              {(bsp.berufSlug || bsp.studiengangSlugs?.length) && (
+              {(
                 <div className="flex flex-col gap-1.5 lg:items-end lg:justify-end">
-                  {bsp.berufSlug && (
+                  {bsp.berufSlug ? (
                     <Link
                       href={`/puzzle/${bsp.berufSlug}`}
                       className="font-prose text-[1.02rem] italic text-ink underline decoration-mensch decoration-2 underline-offset-4 hover:text-mensch"
                     >
                       Diesen Beruf selbst sortieren →
+                    </Link>
+                  ) : bsp.verwandteBerufSlugs?.length ? (
+                    bsp.verwandteBerufSlugs.map((slug) => {
+                      const b = getBeruf(slug);
+                      return (
+                        b && (
+                          <Link
+                            key={slug}
+                            href={`/puzzle/${slug}`}
+                            className="font-prose text-[1.02rem] italic text-ink underline decoration-mensch decoration-2 underline-offset-4 hover:text-mensch"
+                          >
+                            Ähnlicher Beruf zum Sortieren: {b.title} →
+                          </Link>
+                        )
+                      );
+                    })
+                  ) : (
+                    <Link
+                      href="/"
+                      className="font-prose text-[1.02rem] italic text-ink underline decoration-mensch decoration-2 underline-offset-4 hover:text-mensch"
+                    >
+                      Alle Job-Quizze ansehen →
                     </Link>
                   )}
                   {bsp.studiengangSlugs?.map((slug) => {
@@ -153,7 +207,9 @@ export default function PraxisPage() {
               )}
             </div>
           </article>
-        ))}
+          </div>
+          );
+        })}
       </div>
 
       <aside className="border-t border-rule pt-10">
