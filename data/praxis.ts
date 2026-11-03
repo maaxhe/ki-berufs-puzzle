@@ -336,6 +336,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Eine KI kann tausende Bilder ermüdungsfrei prüfen. Was spricht trotzdem dafür, dass am Ende ein Mensch den Befund unterschreibt, von dem eine Krebsdiagnose abhängt?",
     einordnung:
       "Die Meldung stammt aus dem Jahr 2020 und beschreibt ein Forschungsprojekt. Wie weit solche Systeme heute im Routinebetrieb sind, ist je nach Institut unterschiedlich.",
+    video: { id: "k0bCKnxFKA8", titel: "KI-basierte Diagnoseunterstützung in der digitalen Pathologie", quelle: "Fraunhofer IIS", hinweis: "Video eines Forschungsinstituts zur digitalen Pathologie, nicht zum Charité-System." },
   },
   {
     id: "radiologie-mammografie-screening-praim",
@@ -358,6 +359,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Bisher schauen zwei Radiolog:innen auf jedes Bild. Wäre dir ein Mensch plus KI genauso recht, und was würde sich für dich ändern, wenn der Mensch nur noch bei Auffälligkeiten hinsieht?",
     einordnung:
       "Die Teilnahme der Radiolog:innen an der KI-Nutzung war freiwillig, und es war keine Studie mit zufälliger Zuteilung. Die Zahlen zeigen daher einen Zusammenhang, der Vergleich ist nicht perfekt.",
+    video: { id: "KYpWqLl7ogY", titel: "Ersetzt KI bald den Radiologen?", quelle: "Thorax-Schweiz", hinweis: "Beitrag zur KI in der Radiologie allgemein, nicht speziell zum Brustkrebs-Screening." },
   },
   {
     id: "pharma-ki-wirkstoffforschung-rentosertib",
@@ -379,6 +381,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Die KI hat den Wirkstoff vorgeschlagen, geprüft haben ihn Menschen in einer Studie. Wer hat die eigentliche Leistung erbracht, und wie sollte man das bei Medikamenten bewerten?",
     einordnung:
       "Die Quelle ist eine Pressemitteilung des Herstellers. Die Studie war mit 71 Personen klein, das Mittel ist noch nicht zugelassen und braucht größere Studien.",
+    video: { id: "yvLfHJfzn6Q", titel: "Wie hilft KI, neue Medikamente zu finden?", quelle: "Einfach Kapiert", hinweis: "Kurzer Erklärfilm zur KI-Wirkstoffsuche allgemein, nicht zu Rentosertib." },
   },
   {
     id: "alphafold-proteinstrukturen",
@@ -400,6 +403,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Wenn die Form eines Proteins in Minuten statt in Jahren vorliegt: Welche Aufgaben in der Forschung werden dann wichtiger, und welche braucht man weniger?",
     einordnung:
       "Das ist ein Werkzeug der Forschung und kein Berufsalltag wie in einer Arztpraxis. Es zeigt aber, wie sich die Arbeit in Biologie, Chemie und Pharmazie gerade verändert.",
+    video: { id: "iZTd5FcU72Y", titel: "AlphaFold: Die KI, die Proteinstrukturen entschlüsselt – Nobelpreis 2024", quelle: "AnneLysiert" },
   },
   {
     id: "wetter-ki-graphcast",
@@ -421,6 +425,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "GraphCast verschmiert Vorhersagen bei unsicheren Lagen. Wer sollte bei einer Unwetterwarnung entscheiden, die KI oder eine Meteorologin, und warum?",
     einordnung:
       "Der Artikel stammt von 2023. Der DWD sieht KI-Modelle als Ergänzung zu den Wettermodellen und nicht als Ersatz für Meteorolog:innen.",
+    video: { id: "bfJyHQ31B0Y", titel: "Google-KI Graphcast trifft genauere Wettervorhersagen als Meteorologen", quelle: "BuzzClips News", hinweis: "Sehr kurzer Nachrichtenclip. Der DWD-Artikel oben ordnet die Grenzen von GraphCast ein." },
   },
   {
     id: "software-ki-assistenten-entwicklung",
@@ -443,6 +448,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Laut Studie führt KI bisher nicht zu einem breiten Abbau von Stellen, sondern verändert die Aufgaben. Wie viel Programmieren musst du selbst können, um KI-Code überhaupt beurteilen zu können?",
     einordnung:
       "Das ist eine Befragung von Führungskräften und keine Messung. Eine Studie mit Stoppuhr (METR) fand, dass erfahrene Entwickler:innen mit KI nicht schneller, aber sich schneller fühlten. Die Ergebnisse sind nicht eindeutig.",
+    video: { id: "7XTuyPfMUnc", titel: "So verändert KI die Softwareentwicklung", quelle: "Programmieren Starten", hinweis: "Beitrag eines Lernkanals zur Softwareentwicklung allgemein, nicht zur BearingPoint-Umfrage." },
   },
   {
     id: "schule-ki-chatbot-telli",
@@ -465,5 +471,6 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Wenn der Chatbot Aufgaben und Erklärungen liefert: Was sollen Lehrkräfte dann tun, was ein Chatbot nicht kann? Und wo sollte er im Unterricht aus bleiben?",
     einordnung:
       "Die Quelle ist eine Pressemitteilung des Landes. Wie viel Zeit Lehrkräfte damit wirklich sparen, ist umstritten. Kritik an KI-Korrekturhilfen gibt es etwa von netzpolitik.org.",
+    video: { id: "w_51AdefV30", titel: "Bremen führt als erstes Bundesland KI-Chatbot im Unterricht ein", quelle: "SAT.1 REGIONAL", hinweis: "Der Beitrag zeigt den Start in Bremen, nicht in Baden-Württemberg." },
   },
 ];
