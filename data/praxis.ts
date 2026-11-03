@@ -359,7 +359,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Bisher schauen zwei Radiolog:innen auf jedes Bild. Wäre dir ein Mensch plus KI genauso recht, und was würde sich für dich ändern, wenn der Mensch nur noch bei Auffälligkeiten hinsieht?",
     einordnung:
       "Die Teilnahme der Radiolog:innen an der KI-Nutzung war freiwillig, und es war keine Studie mit zufälliger Zuteilung. Die Zahlen zeigen daher einen Zusammenhang, der Vergleich ist nicht perfekt.",
-    video: { id: "gAUZH10-rQE", titel: "KI-gestützte Mammografie: Was die MASAI-Studie ergab", quelle: "Future Health Today (Deutsch)", hinweis: "Behandelt die schwedische MASAI-Studie, nicht die deutsche PRAIM-Studie. Die Frage ist dieselbe: Was bringt KI beim Brustkrebs-Screening?" },
+    video: { id: "-Jp4eI1E-XQ", titel: "How radiologists are using AI to detect breast cancer", quelle: "CBS Los Angeles (englisch)", hinweis: "Englisch, Fernsehbeitrag aus den USA. Radiolog:innen zeigen, wie sie KI beim Brustkrebs-Screening im Alltag nutzen." },
   },
   {
     id: "pharma-ki-wirkstoffforschung-rentosertib",
@@ -403,7 +403,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Wenn die Form eines Proteins in Minuten statt in Jahren vorliegt: Welche Aufgaben in der Forschung werden dann wichtiger, und welche braucht man weniger?",
     einordnung:
       "Das ist ein Werkzeug der Forschung und kein Berufsalltag wie in einer Arztpraxis. Es zeigt aber, wie sich die Arbeit in Biologie, Chemie und Pharmazie gerade verändert.",
-    video: { id: "P_fHJIYENdI", titel: "AlphaFold – The Most Useful Thing AI Has Ever Done", quelle: "Veritasium (englisch)", hinweis: "Englisch. Erzählt, wie die KI ein 50 Jahre altes Rätsel der Biologie gelöst hat." },
+    video: { id: "r4-hXO7MLVU", titel: "AlphaFold: The 50-year grand challenge cracked by AI", quelle: "Google DeepMind (englisch)", hinweis: "Englisch, Video des Herstellers: zeigt, was AlphaFold kann, nicht wie unabhängig es bewertet wird." },
   },
   {
     id: "wetter-ki-graphcast",
