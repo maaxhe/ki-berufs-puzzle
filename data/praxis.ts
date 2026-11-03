@@ -359,7 +359,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Bisher schauen zwei Radiolog:innen auf jedes Bild. Wäre dir ein Mensch plus KI genauso recht, und was würde sich für dich ändern, wenn der Mensch nur noch bei Auffälligkeiten hinsieht?",
     einordnung:
       "Die Teilnahme der Radiolog:innen an der KI-Nutzung war freiwillig, und es war keine Studie mit zufälliger Zuteilung. Die Zahlen zeigen daher einen Zusammenhang, der Vergleich ist nicht perfekt.",
-    video: { id: "KYpWqLl7ogY", titel: "Ersetzt KI bald den Radiologen?", quelle: "Thorax-Schweiz", hinweis: "Beitrag zur KI in der Radiologie allgemein, nicht speziell zum Brustkrebs-Screening." },
+    video: { id: "gAUZH10-rQE", titel: "KI-gestützte Mammografie: Was die MASAI-Studie ergab", quelle: "Future Health Today (Deutsch)", hinweis: "Behandelt die schwedische MASAI-Studie, nicht die deutsche PRAIM-Studie. Die Frage ist dieselbe: Was bringt KI beim Brustkrebs-Screening?" },
   },
   {
     id: "pharma-ki-wirkstoffforschung-rentosertib",
@@ -403,7 +403,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
       "Wenn die Form eines Proteins in Minuten statt in Jahren vorliegt: Welche Aufgaben in der Forschung werden dann wichtiger, und welche braucht man weniger?",
     einordnung:
       "Das ist ein Werkzeug der Forschung und kein Berufsalltag wie in einer Arztpraxis. Es zeigt aber, wie sich die Arbeit in Biologie, Chemie und Pharmazie gerade verändert.",
-    video: { id: "iZTd5FcU72Y", titel: "AlphaFold: Die KI, die Proteinstrukturen entschlüsselt – Nobelpreis 2024", quelle: "AnneLysiert" },
+    video: { id: "P_fHJIYENdI", titel: "AlphaFold – The Most Useful Thing AI Has Ever Done", quelle: "Veritasium (englisch)", hinweis: "Englisch, in den YouTube-Einstellungen gibt es automatische deutsche Untertitel. Erzählt, wie die KI ein 50 Jahre altes Rätsel der Biologie gelöst hat." },
   },
   {
     id: "wetter-ki-graphcast",
