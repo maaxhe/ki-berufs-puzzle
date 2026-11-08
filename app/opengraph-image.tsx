@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { SITE_URL } from "@/lib/site";
 
 export const alt =
   "KI-Berufs-Puzzle – Was kann KI in deinem Beruf, und was bleibt menschlich?";
@@ -56,7 +57,7 @@ export default function OpengraphImage() {
             KI
           </div>
           <div style={{ display: "flex", color: "#6a6258", marginLeft: "auto" }}>
-            jobs.coxilab.de
+            {SITE_URL.replace(/^https?:\/\//, "")}
           </div>
         </div>
       </div>

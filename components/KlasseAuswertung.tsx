@@ -9,6 +9,7 @@ import { raumApi } from "@/lib/raumApi";
 import { istGrenzfall, modellZuordnung } from "@/lib/scoring";
 import { diskussionsfragen } from "@/lib/diskussion";
 import type { PuzzleEinheit } from "@/types";
+import { SITE_URL } from "@/lib/site";
 import Streitfaelle from "./Streitfaelle";
 
 interface Zeile {
@@ -173,7 +174,7 @@ export default function KlasseAuswertung() {
         {raum ? (
           <div className="mt-1 flex flex-wrap items-start gap-5">
             <div className="bg-white p-2" aria-label={`QR-Code für Raum ${raum.code}`}>
-              <QRCodeSVG value={`https://jobs.coxilab.de/?raum=${raum.code}`} size={144} />
+              <QRCodeSVG value={`${SITE_URL}/?raum=${raum.code}`} size={144} />
             </div>
             <p className="min-w-[16rem] flex-1 font-prose text-[0.95rem] text-ink-2">
               Raumcode für die Klasse:{" "}

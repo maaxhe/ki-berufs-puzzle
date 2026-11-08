@@ -86,6 +86,16 @@ export default function Header() {
     </Link>
   );
 
+  // Nur auf future.maximilianherrmann.com gesetzt: Rücksprung zur Auswahlseite der Werkzeuge (kein Next-Link, die Seite liegt außerhalb von /jobs).
+  const werkzeugeLink = process.env.NEXT_PUBLIC_PORTAL_URL && (
+    <a
+      href={process.env.NEXT_PUBLIC_PORTAL_URL}
+      className="shrink-0 rounded-full border border-rule px-3 py-1 text-sm font-semibold text-ink-2 transition-colors hover:border-ink hover:text-ink"
+    >
+      ← Werkzeuge
+    </a>
+  );
+
   return (
     <header className="border-b border-rule">
       {/* Akzentleiste: sofort erkennbar, in welchem Bereich man ist, auch
@@ -93,9 +103,10 @@ export default function Header() {
       <div className="h-[3px] bg-mensch" aria-hidden="true" />
       {/* Mobil: oben Logo + Klasse starten, darunter eine wischbare Navigationszeile. */}
       <div className="mx-auto max-w-[68rem] px-5 pt-4 sm:hidden">
-        <span className="block font-display text-[1.05rem] font-semibold tracking-tight text-ink">
-          KI-Puzzle
-        </span>
+        <div className="flex items-center justify-between gap-3">
+          <span className="font-display text-[1.05rem] font-semibold tracking-tight text-ink">KI-Puzzle</span>
+          {werkzeugeLink}
+        </div>
         <nav
           className="-mx-5 mt-3 flex items-center gap-1 overflow-x-auto whitespace-nowrap px-5 pb-3 text-sm [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           aria-label="Bereich wählen"
@@ -109,12 +120,13 @@ export default function Header() {
         </nav>
       </div>
 
-      <div className="mx-auto hidden max-w-[68rem] items-center justify-between px-5 py-5 sm:flex sm:px-8">
+      {werkzeugeLink && <div className="mx-auto hidden max-w-[68rem] px-5 pt-3 sm:block sm:px-8">{werkzeugeLink}</div>}
+      <div className="mx-auto hidden max-w-[68rem] items-center justify-between gap-4 px-5 py-4 sm:flex sm:px-8">
         <div className="flex items-center gap-5">
-          <span className="font-display text-[1.05rem] font-semibold tracking-tight text-ink">
+          <span className="whitespace-nowrap font-display text-[1.05rem] font-semibold tracking-tight text-ink">
             KI-Puzzle
           </span>
-          <nav className="flex gap-1 text-sm" aria-label="Bereich wählen">
+          <nav className="flex shrink-0 gap-1 whitespace-nowrap text-sm" aria-label="Bereich wählen">
             {berufeLink}
             {studiumLink}
           </nav>
@@ -123,7 +135,7 @@ export default function Header() {
           {praxisLink}
           {erkenntnisseLink}
           {klasseLink}
-          <span className="hidden font-prose text-sm italic text-ink-2 lg:block">
+          <span className="hidden font-prose text-sm italic text-ink-2 2xl:block">
             für Berufsorientierungs-Workshops
           </span>
         </div>

@@ -60,7 +60,7 @@ export default function EntstehungPage() {
           </p>
           <figure className="space-y-2">
             <Image
-              src="/entstehung/claude-code-diff.png"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/entstehung/claude-code-diff.png`}
               alt="Terminal-Ausschnitt: Claude Code ändert eigenständig CSS-Variablen in app/globals.css, nachdem ich getippt hatte „mache den Kontrast zwischen Beruf und Studium noch etwas deutlicher“."
               width={1962}
               height={1196}
