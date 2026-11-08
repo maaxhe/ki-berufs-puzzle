@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Newsreader } from "next/font/google";
+import { Gabarito, Onest } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ThemeRoot from "@/components/ThemeRoot";
 import { SITE_URL } from "@/lib/site";
 
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
-  subsets: ["latin"],
+// Gabarito: geometrisch-freundliche Display-Schrift für Überschriften.
+const gabarito = Gabarito({
+  variable: "--font-gabarito",
+  subsets: ["latin", "latin-ext"],
   display: "swap",
 });
 
-const newsreader = Newsreader({
-  variable: "--font-newsreader",
-  subsets: ["latin"],
-  style: ["normal", "italic"],
+// Onest: offene, gut lesbare Grotesk für Fließtext und UI (auch für jüngere Leser:innen).
+const onest = Onest({
+  variable: "--font-onest",
+  subsets: ["latin", "latin-ext"],
   display: "swap",
 });
 
@@ -37,7 +38,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="de"
-      className={`${bricolage.variable} ${newsreader.variable} h-full`}
+      className={`${gabarito.variable} ${onest.variable} h-full`}
     >
       <body className="min-h-full">
         <ThemeRoot>

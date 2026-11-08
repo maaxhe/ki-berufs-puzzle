@@ -29,9 +29,9 @@
   --color-miss: #9c3320;
   --color-miss-wash: #f1ddd5;
 
-  --font-display: var(--font-bricolage), "Bricolage Grotesque", system-ui, sans-serif;
-  --font-prose: var(--font-newsreader), Georgia, "Times New Roman", serif;
-  --font-sans: var(--font-bricolage), system-ui, sans-serif;
+  --font-display: var(--font-gabarito), "Gabarito", system-ui, sans-serif;
+  --font-prose: var(--font-onest), "Onest", system-ui, sans-serif;
+  --font-sans: var(--font-onest), "Onest", system-ui, sans-serif;
 }
 
 :root {
@@ -75,7 +75,7 @@ h3 {
   line-height: 1.06;
 }
 
-/* Fließtext: Serif, ruhige Zeilenlänge – wie ein gut gesetzter Workshop-Handzettel */
+/* Fließtext: offene Grotesk, ruhige Zeilenlänge – wie ein gut gesetzter Workshop-Handzettel */
 .prose-text {
   font-family: var(--font-prose);
   font-size: 1.0625rem;
