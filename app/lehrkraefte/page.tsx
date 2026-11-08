@@ -92,6 +92,37 @@ export default function LehrkraeftePage() {
 
         <section className="space-y-3">
           <h2 className="font-display text-[1.4rem] font-semibold text-ink">
+            Mit Handzeichen am Beamer besprechen
+          </h2>
+          <p>
+            Für Einstieg und Nachbesprechung gibt es zwei fertige Live-Umfragen
+            bei{" "}
+            <a
+              href="https://vote.maximilianherrmann.com/library"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={linkKlasse}
+            >
+              Handzeichen
+            </a>
+            , ebenfalls ohne Konto für die Schüler:innen. Such in der Bibliothek
+            nach „KI &amp; Berufe“ und übernimm das Deck für deine Klasse:
+          </p>
+          <ul className="ml-5 list-disc space-y-1">
+            <li>
+              <strong>Einstieg:</strong> Stimmung, Wunschberufe, eine Schätzung
+              in Prozent und „Was würdest du nie einer Maschine überlassen?“
+            </li>
+            <li>
+              <strong>Auswertung:</strong> Quiz zu überraschenden Aufgaben aus
+              dem Puzzle, eine 2D-Karte zum Positionieren und eine eigene
+              Faustregel der Klasse
+            </li>
+          </ul>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="font-display text-[1.4rem] font-semibold text-ink">
             Worauf ihr achten solltet
           </h2>
           <ul className="ml-5 list-disc space-y-1">
