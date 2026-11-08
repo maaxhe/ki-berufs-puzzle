@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { PuzzleEinheit, UserZuordnung } from "@/types";
 import {
   grenzfaelleAnzahl,
@@ -21,6 +21,17 @@ import RiskGauge from "./RiskGauge";
 import Disclaimer from "./Disclaimer";
 import Quellen from "./Quellen";
 import KlassencodeBox from "./KlassencodeBox";
+import {
+  GRUENDE,
+  MIN_STIMMEN,
+  einheitKey,
+  gemerkteGruende,
+  ladeStatistik,
+  merkeGruende,
+  sendeStatistik,
+  type GrundWahl,
+  type Statistik,
+} from "@/lib/statistik";
 
 const ZONE_TEXT: Record<"ki" | "mensch", string> = {
   ki: "KI",
@@ -76,6 +87,64 @@ export default function ErgebnisView({
         !istGrenzfall(t.kiEignung) && userZuordnung[t.id] !== modellZuordnung(t),
     )
     .sort((a, b) => Math.abs(b.kiEignung - 50) - Math.abs(a.kiEignung - 50))[0];
+
+  // „So haben andere sortiert“ + vorgegebene Begründungen (anonym, siehe lib/statistik.ts)
+  const statKey = einheitKey(
+    puzzleBasePath === "/studium" ? "studium" : "beruf",
+    beruf.slug,
+  );
+  const [statistik, setStatistik] = useState<Statistik | null>(null);
+  const [statFehler, setStatFehler] = useState(false);
+  const [grundWahl, setGrundWahl] = useState<GrundWahl>(() => {
+    if (typeof window === "undefined") return {};
+    // Nur Gründe behalten, die noch zur aktuellen Zuordnung passen.
+    return Object.fromEntries(
+      Object.entries(gemerkteGruende(statKey)).filter(([tid, gid]) => {
+        const z = userZuordnung[tid];
+        return z && gid.startsWith(z === "ki" ? "k-" : "m-");
+      }),
+    );
+  });
+  const sendeTimer = useRef<number | null>(null);
+  const hatZuordnung = Object.values(userZuordnung).some(
+    (z) => z === "ki" || z === "mensch",
+  );
+
+  useEffect(() => {
+    let aktiv = true;
+    const anfrage = hatZuordnung
+      ? sendeStatistik(statKey, userZuordnung, grundWahl)
+      : ladeStatistik(statKey);
+    anfrage
+      .then((s) => aktiv && setStatistik(s))
+      .catch(() => aktiv && setStatFehler(true));
+    return () => {
+      aktiv = false;
+    };
+    // Bewusst nur beim Anzeigen des Ergebnisses senden; Gründe gehen über waehleGrund raus.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [statKey, userZuordnung]);
+
+  useEffect(
+    () => () => {
+      if (sendeTimer.current) window.clearTimeout(sendeTimer.current);
+    },
+    [],
+  );
+
+  const waehleGrund = (taskId: string, grundId: string) => {
+    const neu = { ...grundWahl };
+    if (neu[taskId] === grundId) delete neu[taskId];
+    else neu[taskId] = grundId;
+    setGrundWahl(neu);
+    merkeGruende(statKey, neu);
+    if (sendeTimer.current) window.clearTimeout(sendeTimer.current);
+    sendeTimer.current = window.setTimeout(() => {
+      sendeStatistik(statKey, userZuordnung, neu)
+        .then(setStatistik)
+        .catch(() => setStatFehler(true));
+    }, 500);
+  };
 
   const [exportStatus, setExportStatus] = useState<
     "idle" | "geteilt" | "heruntergeladen" | "kopiert" | "fehler"
@@ -294,7 +363,7 @@ export default function ErgebnisView({
             Aufgabe für Aufgabe
           </h2>
           <span className="text-sm text-ink-2 group-open:hidden">
-            Alle {total} anzeigen
+            Alle {total} anzeigen{!statFehler && " · mit „Wie andere sortiert haben“"}
           </span>
         </summary>
 
@@ -315,6 +384,22 @@ export default function ErgebnisView({
             </span>
           )}
         </div>
+
+        {!statFehler && (
+          <p className="mt-3 max-w-[46rem] text-xs leading-relaxed text-ink-2">
+            Die Spalte „Alle bisher“ zeigt, wie alle Menschen sortiert haben,
+            die dieses Puzzle schon gemacht haben
+            {statistik && statistik.n > 0 && (
+              <>
+                {" "}
+                (<span className="tnum">{statistik.n.toLocaleString("de-DE")}</span>{" "}
+                {statistik.n === 1 ? "Person" : "Personen"})
+              </>
+            )}
+            . Deine Zuordnung und deine Gründe zählen anonym mit – ohne Namen,
+            ohne Konto, ohne Freitext.
+          </p>
+        )}
 
         <ul className="mt-4 space-y-2.5">
           {beruf.tasks.map((task) => {
@@ -340,6 +425,14 @@ export default function ErgebnisView({
               grenzfall: "text-ink-2",
             } as const;
             const STATUS_ICON = { ok: "✓", miss: "✗", grenzfall: "•" } as const;
+            const taskStat = statistik?.tasks[task.id];
+            const stimmen = statistik
+              ? (taskStat?.ki ?? 0) + (taskStat?.mensch ?? 0)
+              : null;
+            const kiPct =
+              taskStat && stimmen
+                ? Math.round((taskStat.ki / stimmen) * 100)
+                : 0;
             const STATUS_LABEL = {
               ok: "stimmt überein",
               miss: "anders",
@@ -374,7 +467,9 @@ export default function ErgebnisView({
                   </span>
                 </div>
 
-                <div className="mt-2.5 grid grid-cols-2 gap-3 text-sm">
+                <div
+                  className={`mt-2.5 grid gap-3 text-sm ${statFehler ? "grid-cols-2" : "grid-cols-3"}`}
+                >
                   <span>
                     <span className="block text-xs text-ink-2">Deine Wahl</span>
                     <span
@@ -391,6 +486,25 @@ export default function ErgebnisView({
                     <span className="block text-xs text-ink-2">Modell</span>
                     <span className="text-ink">{ZONE_TEXT[modell]}</span>
                   </span>
+                  {!statFehler && (
+                    <span>
+                      <span className="block text-xs text-ink-2">
+                        Alle bisher
+                      </span>
+                      {stimmen === null ? (
+                        <span className="text-ink-2">…</span>
+                      ) : stimmen < MIN_STIMMEN ? (
+                        <span className="text-xs text-ink-2">
+                          noch zu wenige
+                        </span>
+                      ) : (
+                        <span className="text-ink">
+                          <span className="tnum font-semibold">{kiPct}%</span>{" "}
+                          KI
+                        </span>
+                      )}
+                    </span>
+                  )}
                 </div>
 
                 <p className="mt-2.5 border-t border-ink/10 pt-2.5 font-prose text-[0.95rem] italic text-ink-2">
@@ -399,6 +513,42 @@ export default function ErgebnisView({
                 <p className="mt-1.5 font-prose text-[0.95rem] leading-relaxed text-ink-2">
                   {task.warum}
                 </p>
+
+                {deine && !statFehler && (
+                  <div className="mt-3 border-t border-ink/10 pt-2.5">
+                    <p className="text-xs text-ink-2">
+                      Warum hast du „{ZONE_TEXT[deine]}“ gewählt?
+                    </p>
+                    <div className="mt-1.5 flex flex-wrap gap-1.5">
+                      {GRUENDE[deine].map((g) => {
+                        const aktiv = grundWahl[task.id] === g.id;
+                        const anzahl = taskStat?.gruende[g.id] ?? 0;
+                        return (
+                          <button
+                            key={g.id}
+                            type="button"
+                            aria-pressed={aktiv}
+                            onClick={() => waehleGrund(task.id, g.id)}
+                            className={`inline-flex min-h-9 items-center gap-1.5 rounded-full border px-3 py-1 text-xs transition-colors ${
+                              aktiv
+                                ? "border-ink bg-ink text-paper"
+                                : "border-rule bg-paper text-ink hover:border-ink"
+                            }`}
+                          >
+                            {g.label}
+                            {anzahl > 0 && (
+                              <span
+                                className={`tnum ${aktiv ? "text-paper/70" : "text-ink-2"}`}
+                              >
+                                {anzahl}
+                              </span>
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
               </li>
             );
           })}
