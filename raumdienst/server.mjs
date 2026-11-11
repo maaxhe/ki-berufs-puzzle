@@ -14,6 +14,21 @@ const ORIGINS = (
   process.env.ALLOWED_ORIGINS ||
   "https://jobs.coxilab.de,https://future.maximilianherrmann.com,http://localhost:3000"
 ).split(",");
+// Lehrkraft-Passwörter: eine Zeile pro Passwort (Leerzeilen und #-Kommentare werden ignoriert). Wer eines kennt,
+// kann die Leitung eines beliebigen Raums übernehmen, z. B. wenn ein anderes Tool den Raum samt QR-Code schon
+// angelegt hat. Die Datei wird bei jeder Anmeldung neu gelesen: Passwörter lassen sich ohne Neustart ändern.
+const PASSWORT_FILE = process.env.PASSWORT_FILE || new URL("./lehrkraft-passwoerter.txt", import.meta.url).pathname;
+const lehrkraftPasswoerter = () => {
+  const ausEnv = (process.env.LEHRKRAFT_PASSWOERTER || "").split(",");
+  let ausDatei = [];
+  try {
+    ausDatei = fs.readFileSync(PASSWORT_FILE, "utf8").split("\n");
+  } catch {
+    /* keine Datei: nur die Umgebungsvariable zählt */
+  }
+  return [...ausEnv, ...ausDatei].map((p) => p.trim()).filter((p) => p.length >= 8 && !p.startsWith("#"));
+};
+const RAUM_RE = /^[ABCDEFGHJKLMNPQRSTUVWXYZ23456789]{4}$/;
 const TTL_MS = 24 * 60 * 60 * 1000;
 const MAX_ROOMS = 500;
 const MAX_CODES = 300;
@@ -224,6 +239,31 @@ http
       rooms.set(code, room);
       save();
       return send(res, 201, { code, hostKey: room.hostKey }, origin);
+    }
+
+    // Lehrkraft übernimmt mit ihrem Passwort die Leitung eines Raums. Gibt es den Raum noch nicht, wird er angelegt.
+    if (req.method === "POST" && parts[2] === "leitung" && parts.length === 3) {
+      // Eng begrenzt, damit sich das Passwort nicht durchprobieren lässt.
+      if (limited(ip, "leitung", 8, 10 * 60 * 1000)) return send(res, 429, { error: "Zu viele Versuche, bitte später noch einmal" }, origin);
+      const body = await readBody(req);
+      const passwoerter = lehrkraftPasswoerter();
+      if (passwoerter.length === 0) return send(res, 503, { error: "Anmeldung für Lehrkräfte ist nicht eingerichtet" }, origin);
+      const eingabe = String(body.passwort || "");
+      // Alle Passwörter prüfen, nicht beim ersten Treffer abbrechen.
+      const stimmt = passwoerter.map((p) => sameKey(eingabe, p)).some(Boolean);
+      if (!stimmt) return send(res, 403, { error: "Passwort stimmt nicht" }, origin);
+      const code = (parts[1] || "").toUpperCase();
+      if (!RAUM_RE.test(code)) return send(res, 400, { error: "Raumcode besteht aus 4 Zeichen" }, origin);
+      let r = rooms.get(code);
+      let neu = false;
+      if (!r) {
+        if (rooms.size >= MAX_ROOMS) return send(res, 503, { error: "Dienst ist voll" }, origin);
+        r = { code, hostKey: crypto.randomBytes(16).toString("hex"), createdAt: Date.now(), codes: new Map() };
+        rooms.set(code, r);
+        neu = true;
+        save();
+      }
+      return send(res, neu ? 201 : 200, { code, hostKey: r.hostKey, neu }, origin);
     }
 
     const room = rooms.get((parts[1] || "").toUpperCase());

@@ -27,6 +27,12 @@ export function clientId(): string {
 
 export const raumApi = {
   erstellen: () => call<{ code: string; hostKey: string }>("/raeume", { method: "POST" }),
+  /** Lehrkraft übernimmt mit ihrem Passwort die Leitung eines Raums (legt ihn an, falls es ihn noch nicht gibt). */
+  leiten: (raum: string, passwort: string) =>
+    call<{ code: string; hostKey: string; neu: boolean }>(`/raeume/${encodeURIComponent(raum.trim().toUpperCase())}/leitung`, {
+      method: "POST",
+      body: JSON.stringify({ passwort }),
+    }),
   senden: (raum: string, code: string) =>
     call<{ ok: true }>(`/raeume/${encodeURIComponent(raum.trim().toUpperCase())}/codes`, {
       method: "POST",

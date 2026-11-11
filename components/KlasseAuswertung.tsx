@@ -72,18 +72,48 @@ export default function KlasseAuswertung() {
     };
   }, [raum]);
 
+  const raumMerken = (r: { code: string; hostKey: string } | null) => {
+    setRaum(r);
+    try {
+      if (r) sessionStorage.setItem("klassen-raum", JSON.stringify(r));
+      else sessionStorage.removeItem("klassen-raum");
+    } catch {
+      /* egal */
+    }
+  };
+
   const raumErstellen = async () => {
     try {
-      const r = await raumApi.erstellen();
-      setRaum(r);
-      try {
-        sessionStorage.setItem("klassen-raum", JSON.stringify(r));
-      } catch {
-        /* egal */
-      }
+      raumMerken(await raumApi.erstellen());
+      setRaumFehler(null);
     } catch (e) {
       setRaumFehler(e instanceof Error ? e.message : "Raum konnte nicht erstellt werden");
     }
+  };
+
+  // Mit dem Lehrkraft-Passwort einen vorhandenen Raum übernehmen, z. B. wenn ein anderes Tool ihn samt QR-Code angelegt hat.
+  const [uebernahme, setUebernahme] = useState({ code: "", passwort: "" });
+  const [uebernimmt, setUebernimmt] = useState(false);
+  const raumUebernehmen = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setUebernimmt(true);
+    try {
+      const r = await raumApi.leiten(uebernahme.code, uebernahme.passwort);
+      raumMerken({ code: r.code, hostKey: r.hostKey });
+      setUebernahme({ code: "", passwort: "" });
+      setRaumFehler(null);
+    } catch (err) {
+      setRaumFehler(err instanceof Error ? err.message : "Raum konnte nicht übernommen werden");
+    } finally {
+      setUebernimmt(false);
+    }
+  };
+
+  const raumWechseln = () => {
+    raumMerken(null);
+    setRaumCodes([]);
+    setGesperrt(null);
+    setRaumFehler(null);
   };
 
   // Lehrkraft legt alle Schüler:innen auf den gerade gezeigten Beruf fest (oder hebt es wieder auf).
@@ -180,7 +210,14 @@ export default function KlasseAuswertung() {
               Raumcode für die Klasse:{" "}
               <b className="font-mono text-2xl tracking-widest text-ink">{raum.code}</b> · {raumCodes.length} Ergebnis(se)
               eingegangen. Schüler:innen scannen den QR-Code, ihr Ergebnis wird danach automatisch gesendet.
-              Räume verfallen nach 24 Stunden.
+              Räume verfallen nach 24 Stunden.{" "}
+              <button
+                type="button"
+                onClick={raumWechseln}
+                className="underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+              >
+                Anderen Raum öffnen
+              </button>
             </p>
           </div>
         ) : (
@@ -196,6 +233,46 @@ export default function KlasseAuswertung() {
             >
               Raum erstellen
             </button>
+            <form onSubmit={raumUebernehmen} className="mt-5 border-t border-rule pt-4">
+              <h3 className="font-display text-sm font-semibold text-ink">Raum gibt es schon?</h3>
+              <p className="mt-1 font-prose text-[0.95rem] text-ink-2">
+                Mit deinem Lehrkraft-Passwort übernimmst du die Leitung eines Raums, der schon einen Code hat.
+              </p>
+              <div className="mt-3 flex flex-wrap items-end gap-3">
+                <label className="text-sm text-ink">
+                  <span className="block">Raumcode</span>
+                  <input
+                    value={uebernahme.code}
+                    onChange={(e) => setUebernahme((u) => ({ ...u, code: e.target.value.toUpperCase().trim() }))}
+                    required
+                    minLength={4}
+                    maxLength={4}
+                    autoComplete="off"
+                    autoCapitalize="characters"
+                    spellCheck={false}
+                    className="mt-1 min-h-11 w-28 rounded-[2px] border border-ink bg-paper px-3 py-2 font-mono text-lg tracking-widest text-ink"
+                  />
+                </label>
+                <label className="text-sm text-ink">
+                  <span className="block">Lehrkraft-Passwort</span>
+                  <input
+                    type="password"
+                    value={uebernahme.passwort}
+                    onChange={(e) => setUebernahme((u) => ({ ...u, passwort: e.target.value }))}
+                    required
+                    autoComplete="current-password"
+                    className="mt-1 min-h-11 w-56 rounded-[2px] border border-ink bg-paper px-3 py-2 text-ink"
+                  />
+                </label>
+                <button
+                  type="submit"
+                  disabled={uebernimmt}
+                  className="inline-flex min-h-11 items-center rounded-[2px] border border-ink px-3 py-2 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-paper disabled:opacity-50"
+                >
+                  {uebernimmt ? "Prüfe …" : "Raum übernehmen"}
+                </button>
+              </div>
+            </form>
           </>
         )}
         {raumFehler && <p className="mt-2 text-sm text-miss" role="status">{raumFehler}</p>}
