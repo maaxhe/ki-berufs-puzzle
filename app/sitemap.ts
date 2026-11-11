@@ -14,7 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/entstehung",
     "/lehrkraefte",
     "/klasse",
-    "/impressum",
   ];
   return [
     ...seiten.map((pfad) => ({

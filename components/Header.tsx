@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { fokusPfad, klasseVerlassen, useKlasse, useKlassenFokus } from "@/lib/useKlasse";
+import { PuzzleSignet } from "@/components/Signet";
 
 export default function Header() {
   const pathname = usePathname();
@@ -104,7 +105,10 @@ export default function Header() {
       {/* Mobil: oben Logo + Klasse starten, darunter eine wischbare Navigationszeile. */}
       <div className="mx-auto max-w-[68rem] px-5 pt-4 sm:hidden">
         <div className="flex items-center justify-between gap-3">
-          <span className="font-display text-[1.05rem] font-semibold tracking-tight text-ink">KI-Puzzle</span>
+          <Link href="/" className="inline-flex items-center gap-2 font-display text-[1.05rem] font-semibold tracking-tight text-ink">
+            <PuzzleSignet className="h-7 w-7 shrink-0" />
+            KI-Berufs-Puzzle
+          </Link>
           {werkzeugeLink}
         </div>
         <nav
@@ -123,9 +127,13 @@ export default function Header() {
       {werkzeugeLink && <div className="mx-auto hidden max-w-[68rem] px-5 pt-3 sm:block sm:px-8">{werkzeugeLink}</div>}
       <div className="mx-auto hidden max-w-[68rem] items-center justify-between gap-4 px-5 py-4 sm:flex sm:px-8">
         <div className="flex items-center gap-5">
-          <span className="whitespace-nowrap font-display text-[1.05rem] font-semibold tracking-tight text-ink">
-            KI-Puzzle
-          </span>
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 whitespace-nowrap font-display text-[1.05rem] font-semibold tracking-tight text-ink"
+          >
+            <PuzzleSignet className="h-7 w-7 shrink-0" />
+            KI-Berufs-Puzzle
+          </Link>
           <nav className="flex shrink-0 gap-1 whitespace-nowrap text-sm" aria-label="Bereich wählen">
             {berufeLink}
             {studiumLink}
