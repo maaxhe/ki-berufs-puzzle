@@ -101,6 +101,9 @@ export default function Footer() {
             <a href="https://coxilab.de/impressum/" className="inline-flex min-h-11 items-center text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch">
               Impressum
             </a>
+            <a href="https://coxilab.de/impressum/#puzzle" className="inline-flex min-h-11 items-center text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch">
+              Datenschutz
+            </a>
           </nav>
         </div>
       </div>

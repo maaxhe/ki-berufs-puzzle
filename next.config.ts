@@ -19,6 +19,12 @@ const nextConfig: NextConfig = {
         basePath: false,
         permanent: false,
       },
+      {
+        source: `${basePath ?? ""}/datenschutz`,
+        destination: "https://coxilab.de/impressum/#puzzle",
+        basePath: false,
+        permanent: false,
+      },
     ];
   },
   turbopack: {
