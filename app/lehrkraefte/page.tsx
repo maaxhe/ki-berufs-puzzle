@@ -92,31 +92,34 @@ export default function LehrkraeftePage() {
 
         <section className="space-y-3">
           <h2 className="font-display text-[1.4rem] font-semibold text-ink">
-            Mit Handzeichen am Beamer besprechen
+            Nachbesprechen mit Handzeichen
           </h2>
           <p>
-            Für Einstieg und Nachbesprechung gibt es zwei fertige Live-Umfragen
+            Das Puzzle fragt, was KI übernehmen <em>kann</em>. Ob sie es auch
+            soll, ist Meinungssache. Dafür gibt es zu jedem Beruf eine Umfrage
             bei{" "}
             <a
-              href="https://vote.maximilianherrmann.com/library"
+              href="https://handzeichen.com"
               target="_blank"
               rel="noopener noreferrer"
               className={linkKlasse}
             >
               Handzeichen
             </a>
-            , ebenfalls ohne Konto für die Schüler:innen. Such in der Bibliothek
-            nach „KI &amp; Berufe“ und übernimm das Deck für deine Klasse:
+            , verlinkt unten auf jeder Berufsseite. Die Schüler:innen brauchen
+            kein Konto und antworten anonym. Danach sehen sie, wie alle anderen
+            abgestimmt haben, auch Klassen von anderen Schulen.
           </p>
           <ul className="ml-5 list-disc space-y-1">
             <li>
-              <strong>Einstieg:</strong> Stimmung, Wunschberufe, eine Schätzung
-              in Prozent und „Was würdest du nie einer Maschine überlassen?“
+              <strong>Fragen:</strong> drei Aufgaben aus dem Puzzle mit „KI,
+              Mensch oder beide?“, eine Schätzung in Prozent, eine Rangfolge
+              und eine Karte zur Zukunft des Berufs
             </li>
             <li>
-              <strong>Auswertung:</strong> Quiz zu überraschenden Aufgaben aus
-              dem Puzzle, eine 2D-Karte zum Positionieren und eine eigene
-              Faustregel der Klasse
+              <strong>Am Beamer:</strong> Geh die Umfrage nach der Runde selbst
+              bis zum Ende durch. Dort zeigt „Alle Ergebnisse ansehen“ alle
+              Antworten auf einen Blick.
             </li>
           </ul>
         </section>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import HandzeichenHinweis from "@/components/HandzeichenHinweis";
 import PraxisHinweis from "@/components/PraxisHinweis";
 import TaskPuzzle from "@/components/TaskPuzzle";
 import { berufe, getBeruf } from "@/data/berufe";
@@ -43,7 +44,12 @@ export default async function PuzzlePage({
       <TaskPuzzle
         beruf={beruf}
         alleBerufe={berufe}
-        zusatz={passendesPraxisBeispiel && <PraxisHinweis fall={passendesPraxisBeispiel} />}
+        zusatz={
+          <>
+            {passendesPraxisBeispiel && <PraxisHinweis fall={passendesPraxisBeispiel} />}
+            <HandzeichenHinweis slug={beruf.slug} title={beruf.title} />
+          </>
+        }
       />
       <VerwandteBox verwandte={verwandtBerufe[beruf.slug]} />
 
