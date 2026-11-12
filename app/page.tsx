@@ -1,5 +1,5 @@
 import Link from "next/link";
-import KlasseStartButton from "@/components/KlasseStartButton";
+import Wege from "@/components/Wege";
 import BerufListe from "@/components/BerufListe";
 import Disclaimer from "@/components/Disclaimer";
 import Legend from "@/components/Legend";
@@ -20,8 +20,8 @@ export default function Home() {
           übernehmen kann und was beim Menschen bleibt. Danach siehst du, wie
           Arbeitsmarktforschung dieselben Aufgaben einschätzt.
         </p>
+        <Wege />
         <div className="mt-7 flex flex-wrap items-center gap-3">
-          <KlasseStartButton />
           <Link
             href="/praxis"
             className="font-prose text-[1.02rem] text-ink underline decoration-akzent decoration-2 underline-offset-4 hover:text-akzent"
@@ -38,6 +38,7 @@ export default function Home() {
         <Disclaimer />
       </div>
 
+      <div id="berufe" className="scroll-mt-6" />
       <BerufListe<BerufKategorie>
         berufe={berufe}
         kategorieLabels={KATEGORIE_LABELS}

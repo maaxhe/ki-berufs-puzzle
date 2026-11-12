@@ -213,3 +213,22 @@ h3 {
   --c-akzent: #a9b8ff;
   --c-linie: #8196e0;
 }
+
+/* Startseite: zwei gleich große Wege und Codefeld, identisch zum Dilemma (dilemma.coxilab.de) */
+.wege{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1.75rem}
+.weg{display:flex;flex-direction:column;gap:.35rem;padding:1.1rem 1.2rem 1.2rem;border:3px solid var(--c-ink);border-radius:16px;background:var(--c-ink);color:var(--c-paper);text-decoration:none;transition:transform .15s}
+.weg strong{font-family:var(--font-kopf);font-weight:800;font-size:1.9rem;line-height:1.05}
+.weg span{font-size:1rem;line-height:1.4}
+.weg.hell{border-width:2px;background:var(--c-karte);color:var(--c-ink)}
+.weg:hover strong{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.weg:hover{transform:translateY(-1px)}
+@media (max-width:30rem){.wege{grid-template-columns:1fr}}
+.beitritt{max-width:34rem;margin-top:1.6rem;padding:1rem 1.2rem 1.2rem;background:var(--c-karte);border:2px solid var(--c-rule);border-radius:16px}
+.beitritt label{display:block;font-weight:800;font-size:1.1rem;margin-bottom:.6rem}
+.beitritt .zeile{display:flex;gap:.6rem;flex-wrap:wrap}
+.code-feld{flex:1 1 9rem;min-width:0;height:3.4rem;padding:0 1rem;border:2px solid var(--c-rule);border-radius:12px;background:var(--c-karte);font-family:var(--font-kopf);font-weight:800;font-size:1.9rem;letter-spacing:.3em;text-transform:uppercase;text-align:center;color:var(--c-ink)}
+.code-feld::placeholder{color:color-mix(in srgb,var(--c-ink) 45%,transparent);letter-spacing:.3em}
+.beitritt .btn{flex:1 1 8rem;height:3.4rem;display:inline-flex;align-items:center;justify-content:center;border:3px solid var(--c-ink);border-radius:999px;background:var(--c-ink);color:var(--c-paper);font-family:var(--font-display);font-weight:800;font-size:1.05rem;line-height:1.2;cursor:pointer;transition:background .12s,color .12s}
+.beitritt .btn:hover{background:var(--c-paper);color:var(--c-ink)}
+.beitritt .btn:disabled{opacity:.6;cursor:default}
+.beitritt .fehler{margin:.6rem 0 0;color:var(--c-miss);font-weight:600}
