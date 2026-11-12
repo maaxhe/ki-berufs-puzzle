@@ -1,10 +1,12 @@
-/* Haltestellen-Liste mit Bahn (Logik in Fahrplan.tsx) */
-.fahrplan { --sx: calc(0.6rem + 5px); --sy: 1.3rem; list-style: none; margin: 2rem 0 0; padding: 0; max-width: 40rem; position: relative; }
+/* Haltestellen-Liste mit Bahn (Logik in useStrecke.ts).
+   Alle Maße hängen an --sx (Mitte der Linie von links) und --sy (Höhe des Rings ab Oberkante des Eintrags):
+   Linie, Ring und Bahn sitzen damit exakt auf derselben Achse. */
+.fahrplan { --sx: 15px; --sy: 1.3rem; --gleis: 10px; list-style: none; margin: 2rem 0 0; padding: 0; max-width: 40rem; position: relative; }
 .fahrplan li { position: relative; padding-left: 2.6rem; margin: 0; }
-.fahrplan li::before { content: ""; position: absolute; left: 0.6rem; top: 0; bottom: 0; width: 10px; background: var(--c-linie); }
+.fahrplan li::before { content: ""; position: absolute; left: calc(var(--sx) - var(--gleis) / 2); top: 0; bottom: 0; width: var(--gleis); background: var(--c-linie); }
 .fahrplan li:first-child::before { top: var(--sy); }
 .fahrplan li:last-of-type::before { bottom: calc(100% - var(--sy)); }
-.fahrplan li::after { content: ""; position: absolute; left: 0.2rem; top: var(--sy); width: 18px; height: 18px; margin-top: -9px; box-sizing: border-box; border-radius: 50%; background: var(--c-paper); border: 4px solid var(--c-ink); }
+.fahrplan li::after { content: ""; position: absolute; left: calc(var(--sx) - 9px); top: calc(var(--sy) - 9px); width: 18px; height: 18px; box-sizing: border-box; border-radius: 50%; background: var(--c-paper); border: 4px solid var(--c-ink); }
 .fahrplan .halt { display: block; padding: 0.55rem 0 1.1rem; color: inherit; text-decoration: none; }
 .fahrplan .halt-titel { display: block; font-family: var(--font-kopf); font-weight: 700; font-size: 1.55rem; line-height: 1.1; color: var(--c-ink); }
 .fahrplan a.halt:hover .halt-titel { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 4px; }
@@ -21,13 +23,13 @@
 .beruf-strecke { --sy: 1.2rem; max-width: 44rem; margin-top: 1.2rem; }
 .beruf-strecke .halt { padding: 0.5rem 0 0.95rem; }
 .beruf-strecke .halt-titel { font-size: 1.3rem; }
-.beruf-strecke li:has(+ li.kat) .halt { padding-bottom: 2.2rem; }
-/* Kategorie: Sackgassen-Bahnhof. Aus der durchgehenden Linie zweigt ein kurzes Gleis nach rechts ab und endet am Prellbock. */
-.beruf-strecke li.kat { padding-left: 4.6rem; }
-.beruf-strecke li.kat::after { left: calc(0.6rem + 5px); top: var(--sy); width: 2.6rem; height: 10px; margin: -5px 0 0; box-sizing: border-box; border: 0; border-radius: 0 6px 6px 0; background: var(--c-linie); }
-.beruf-strecke li.kat::before { z-index: 0; }
-.beruf-strecke .kat-titel { position: relative; margin: 0; padding: 0.45rem 0 1rem; font-family: var(--font-kopf); font-weight: 800; font-size: 1.7rem; line-height: 1; color: var(--c-ink); }
-/* Prellbock am Ende des Abzweigs */
-.beruf-strecke .kat-titel::before { content: ""; position: absolute; left: -1.7rem; top: calc(var(--sy) - 15px); width: 8px; height: 30px; border-radius: 3px; background: var(--c-ink); }
-/* Weiche: kleiner Ring auf der Hauptlinie, wo das Gleis abzweigt */
-.beruf-strecke .kat-titel::after { content: ""; position: absolute; left: calc(-4.6rem + 0.2rem); top: calc(var(--sy) - 9px); width: 18px; height: 18px; box-sizing: border-box; border-radius: 50%; background: var(--c-paper); border: 4px solid var(--c-ink); }
+.beruf-strecke li:has(+ li.kat) .halt { padding-bottom: 1.6rem; }
+
+/* Kategorie: Sackgassen-Bahnhof. Ein Gleis löst sich im Bogen aus der Linie, läuft kurz waagerecht und endet am Prellbock.
+   --ab = Höhe des Bogens, --lang = Länge des Abzweigs ab linker Kante der Linie. Kein Ring: Hier hält keine Bahn. */
+.beruf-strecke li.kat { --ab: 30px; --lang: 58px; --oben: 6px; padding-left: calc(var(--sx) - var(--gleis) / 2 + var(--lang) + 8px + 14px); padding-bottom: 0.9rem; }
+.beruf-strecke li.kat:first-child::before { top: 0; }
+.beruf-strecke li.kat::after { left: calc(var(--sx) - var(--gleis) / 2); top: var(--oben); width: var(--lang); height: var(--ab); margin: 0; border: 0; border-left: var(--gleis) solid var(--c-linie); border-bottom: var(--gleis) solid var(--c-linie); border-radius: 0 0 0 22px; background: transparent; }
+/* Mitte des waagerechten Gleises: --oben + --ab - halbe Gleisbreite. Darauf sitzen Prellbock und Überschrift. */
+.beruf-strecke .kat-titel { position: relative; margin: 0; padding: calc(var(--oben) + var(--ab) - var(--gleis) / 2 - 0.85rem) 0 0; font-family: var(--font-kopf); font-weight: 800; font-size: 1.7rem; line-height: 1; color: var(--c-ink); }
+.beruf-strecke .kat-titel::before { content: ""; position: absolute; left: -22px; top: calc(var(--oben) + var(--ab) - var(--gleis) / 2 - 14px); width: 8px; height: 28px; border-radius: 3px; background: var(--c-ink); }

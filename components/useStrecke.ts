@@ -38,7 +38,8 @@ export function useStrecke(ref: RefObject<HTMLUListElement | null>, abhaengig: u
       const sy = px(cs.getPropertyValue("--sy").trim() || "1.3rem");
       halte = [];
       for (const li of Array.from(ul.children)) {
-        if (li === zug || li.tagName !== "LI") continue;
+        // Kategorie-Abzweige (li.kat) sind keine Haltestellen: Die Bahn fährt daran vorbei.
+        if (li === zug || li.tagName !== "LI" || li.classList.contains("kat")) continue;
         halte.push(li.getBoundingClientRect().top - ur.top + sy);
       }
     };
