@@ -4,6 +4,7 @@ import BerufListe from "@/components/BerufListe";
 import Disclaimer from "@/components/Disclaimer";
 import Legend from "@/components/Legend";
 import HeroZeichnung from "@/components/HeroZeichnung";
+import Fahrplan from "@/components/Fahrplan";
 import { berufe } from "@/data/berufe";
 import { studiengaenge } from "@/data/studiengaenge";
 import { KATEGORIE_LABELS, KATEGORIE_REIHENFOLGE } from "@/types";
@@ -41,6 +42,13 @@ export default function Home() {
       <div className="mt-12 max-w-[46rem]">
         <Disclaimer />
       </div>
+
+      <section className="mt-14 max-w-[46rem]" aria-labelledby="ablauf">
+        <h2 id="ablauf" className="font-kopf text-[2rem] font-bold leading-none text-ink">
+          So läuft es ab
+        </h2>
+        <Fahrplan />
+      </section>
 
       <div id="berufe" className="scroll-mt-6" />
       <BerufListe<BerufKategorie>

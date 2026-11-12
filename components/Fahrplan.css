@@ -1,0 +1,18 @@
+/* Haltestellen-Liste mit Bahn (Logik in Fahrplan.tsx) */
+.fahrplan { --sx: calc(0.6rem + 5px); --sy: 1.3rem; list-style: none; margin: 2rem 0 0; padding: 0; max-width: 40rem; position: relative; }
+.fahrplan li { position: relative; padding-left: 2.6rem; margin: 0; }
+.fahrplan li::before { content: ""; position: absolute; left: 0.6rem; top: 0; bottom: 0; width: 10px; background: var(--c-linie); }
+.fahrplan li:first-child::before { top: var(--sy); }
+.fahrplan li:last-of-type::before { bottom: calc(100% - var(--sy)); }
+.fahrplan li::after { content: ""; position: absolute; left: 0.2rem; top: var(--sy); width: 18px; height: 18px; margin-top: -9px; box-sizing: border-box; border-radius: 50%; background: var(--c-paper); border: 4px solid var(--c-ink); }
+.fahrplan .halt { display: block; padding: 0.55rem 0 1.1rem; color: inherit; text-decoration: none; }
+.fahrplan .halt-titel { display: block; font-family: var(--font-kopf); font-weight: 700; font-size: 1.55rem; line-height: 1.1; color: var(--c-ink); }
+.fahrplan a.halt:hover .halt-titel { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 4px; }
+.fahrplan .halt-text { display: block; margin-top: 0.2rem; color: var(--c-ink-2); font-size: 1rem; line-height: 1.45; }
+
+.fahrplan .zug { position: absolute; left: 0; top: 0; width: 20px; height: 30px; z-index: 2; pointer-events: auto; cursor: pointer; will-change: transform; transition: opacity 0.5s; }
+.fahrplan .zug::after { content: ""; position: absolute; inset: -9px; }
+.fahrplan .zug .k { width: 100%; height: 100%; border-radius: 7px; background: var(--c-linie); border: 2px solid var(--c-ink); box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2); display: flex; flex-direction: column; justify-content: space-evenly; align-items: center; }
+.fahrplan .zug .k span { width: 56%; height: 4px; border-radius: 2px; background: var(--c-paper); }
+.fahrplan .zug .k.hop { animation: fahrplan-hop 0.45s cubic-bezier(0.2, 0.8, 0.3, 1.4); }
+@keyframes fahrplan-hop { 0% { transform: scale(1); } 40% { transform: scale(1.45) rotate(-8deg); } 100% { transform: scale(1); } }
