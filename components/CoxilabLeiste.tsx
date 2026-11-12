@@ -28,7 +28,7 @@ const Mond = () => (
 
 export default function CoxilabLeiste() {
   const pathname = usePathname();
-  const [theme, setT] = useState<Theme>("dark");
+  const [theme, setT] = useState<Theme>("light");
   const [offen, setOffen] = useState(false);
   useEffect(() => setT(currentTheme()), []);
 

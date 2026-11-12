@@ -27,9 +27,9 @@ const barlowCondensed = localFont({
   ],
 });
 
-// Hell/Dunkel vor dem ersten Zeichnen setzen (kein Aufblitzen). Standard: Dunkel.
+// Hell/Dunkel vor dem ersten Zeichnen setzen (kein Aufblitzen). Standard: Hell.
 // ?theme=light oder ?theme=dark wählt die Ansicht und merkt sie sich.
-const THEME_SCRIPT = `(function(){var t="dark";try{var q=new URLSearchParams(location.search).get("theme");if(q==="light"||q==="dark")localStorage.setItem("puz-theme",q);var g=localStorage.getItem("puz-theme");if(g==="light"||g==="dark")t=g;}catch(e){}document.documentElement.setAttribute("data-theme",t);})();`;
+const THEME_SCRIPT = `(function(){var t="light";try{var q=new URLSearchParams(location.search).get("theme");if(q==="light"||q==="dark")localStorage.setItem("puz-theme",q);var g=localStorage.getItem("puz-theme");if(g==="light"||g==="dark")t=g;}catch(e){}document.documentElement.setAttribute("data-theme",t);})();`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -49,7 +49,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="de"
-      data-theme="dark"
+      data-theme="light"
       suppressHydrationWarning
       className={`${barlow.variable} ${barlowCondensed.variable} h-full`}
     >
