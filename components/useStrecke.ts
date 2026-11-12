@@ -16,11 +16,11 @@ const R = 17;
 const TEMPO = 150;
 
 /**
- * Eine kleine Bahn fährt von oben in eine Haltestellen-Liste (<ul data-strecke> mit <li> als Haltestellen), hält an jeder
- * Haltestelle und verschwindet unten. Nicht bei "Bewegung reduzieren".
+ * Eine kleine Bahn pendelt auf einer Haltestellen-Liste (<ul data-strecke> mit <li> als Haltestellen): Sie hält an jeder
+ * Haltestelle, wendet am Ende und fährt zurück. Nicht bei "Bewegung reduzieren".
  * Maße aus der CSS: --sx = Mitte der Linie, --sy = Höhe des Rings ab Oberkante des Eintrags.
- * Sackgassen-Bahnhof (li.kat): Die Bahn biegt über den Gleisbogen in den Abzweig ein, hält am Prellbock und fährt rückwärts
- * zurück auf die Linie. Maße: --gy = Mitte des waagerechten Gleises ab Oberkante, --lang = Länge des Abzweigs, --gleis = Gleisbreite.
+ * Sackgassen-Bahnhof (li.kat): Die Bahn biegt über den Gleisbogen in den Abzweig ein, hält am Prellbock und fährt über den
+ * unteren Bogen der Gabel weiter nach unten auf die Linie. Maße: --gy = Mitte des waagerechten Gleises ab Oberkante, --lang = Länge des Abzweigs, --gleis = Gleisbreite.
  * `abhaengig` startet die Bahn neu, wenn sich die Haltestellen ändern.
  */
 export function useStrecke(ref: RefObject<HTMLUListElement | null>, abhaengig: unknown = 0) {
@@ -46,8 +46,8 @@ export function useStrecke(ref: RefObject<HTMLUListElement | null>, abhaengig: u
 
     let weg: Punkt[] = [];
     let ort = { x: 0, y: 0, w: 0 };
-    let idx = 0, warte = 0.5, letzte = 0, raf = 0, ausblenden = 0;
-    let ende = false, laeuft = false, sichtbar = false;
+    let idx = 0, warte = 0.5, letzte = 0, raf = 0, richtung = 1;
+    let laeuft = false, sichtbar = false;
 
     const messen = () => {
       const cs = getComputedStyle(ul), ur = ul.getBoundingClientRect();
@@ -75,9 +75,19 @@ export function useStrecke(ref: RefObject<HTMLUListElement | null>, abhaengig: u
         }
         if (stopp > x + R) rein.push({ x: stopp, y: yc, w: -90, pause: 0 });
         rein[rein.length - 1] = { ...rein[rein.length - 1], pause: 0.9 };
-        weg.push(...rein);
-        // rückwärts zurück auf die Linie, außer am letzten Eintrag: Dort endet die Fahrt am Prellbock.
-        if (nr < liste.length - 1) for (let z = rein.length - 2; z >= 0; z--) weg.push({ ...rein[z], pause: 0 });
+        // Der erste Abzweig ist der Startbahnhof: Über ihm gibt es kein Gleis, die Bahn steht am Prellbock und fährt von dort los.
+        weg.push(...(nr === 0 ? [rein[rein.length - 1]] : rein));
+        // Gabel: zurück bis zur Weiche und über den unteren Bogen weiter nach unten auf die Linie.
+        // Am letzten Eintrag endet die Fahrt am Prellbock.
+        if (nr < liste.length - 1) {
+          if (stopp > x + R) weg.push({ x: x + R, y: yc, w: -90, pause: 0 });
+          for (let u = 1; u <= 6; u++) {
+            const b = (u / 6) * (Math.PI / 2);
+            weg.push({ x: x + R - R * Math.sin(b), y: yc + R - R * Math.cos(b), w: -90 - (b * 180) / Math.PI, pause: 0 });
+          }
+          // gleiche Stelle, Drehung zurück auf 0: Die Bahn sieht um 180° gedreht gleich aus, so dreht sie sich danach nicht im Kreis.
+          weg.push({ x, y: yc + R, w: 0, pause: 0 });
+        }
       });
     };
     const setzen = () => {
@@ -86,11 +96,11 @@ export function useStrecke(ref: RefObject<HTMLUListElement | null>, abhaengig: u
     const neustart = () => {
       messen();
       if (!weg.length) return;
-      ort = { x: weg[0].x, y: weg[0].y - 24, w: 0 };
-      idx = 0;
-      warte = 0.5;
-      ende = false;
-      zug.style.opacity = "1";
+      // Die Bahn steht am Anfang der Strecke (Startbahnhof oder erste Haltestelle) und pendelt: unten wendet sie und fährt zurück.
+      ort = { x: weg[0].x, y: weg[0].y, w: weg[0].w };
+      idx = weg.length > 1 ? 1 : 0;
+      richtung = 1;
+      warte = 0.8;
       setzen();
     };
     const takt = (ts: number) => {
@@ -99,8 +109,7 @@ export function useStrecke(ref: RefObject<HTMLUListElement | null>, abhaengig: u
       letzte = ts;
       if (warte > 0) {
         warte -= dt;
-        if (warte <= 0 && ende) neustart();
-      } else if (weg.length) {
+      } else if (weg.length > 1) {
         let schritt = TEMPO * dt;
         // mehrere kurze Bogenstücke in einem Takt schaffen
         while (schritt > 0 && warte <= 0) {
@@ -109,15 +118,10 @@ export function useStrecke(ref: RefObject<HTMLUListElement | null>, abhaengig: u
           if (d <= schritt) {
             ort = { x: z.x, y: z.y, w: z.w };
             schritt -= d;
-            if (idx >= weg.length - 1) {
-              warte = Math.max(z.pause, 0.6);
-              ausblenden = window.setTimeout(() => { zug.style.opacity = "0"; }, warte * 1000);
-              warte += 1.2;
-              ende = true;
-            } else {
-              warte = z.pause;
-              idx++;
-            }
+            warte = z.pause;
+            // Ende der Strecke: wenden und denselben Weg zurück (in die Abzweige geht es dann von der anderen Seite)
+            if (idx + richtung < 0 || idx + richtung >= weg.length) { richtung = -richtung; warte = Math.max(z.pause, 1.2); }
+            idx += richtung;
           } else {
             const f = schritt / d;
             ort.x += dx * f;
@@ -165,7 +169,6 @@ export function useStrecke(ref: RefObject<HTMLUListElement | null>, abhaengig: u
     return () => {
       laeuft = false;
       cancelAnimationFrame(raf);
-      window.clearTimeout(ausblenden);
       ro?.disconnect();
       io?.disconnect();
       document.removeEventListener("visibilitychange", anwerfen);

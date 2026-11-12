@@ -28,8 +28,12 @@
 /* Kategorie: Sackgassen-Bahnhof. Ein Gleis löst sich im Bogen aus der Linie, läuft kurz waagerecht und endet am Prellbock.
    --ab = Höhe des Bogens, --lang = Länge des Abzweigs ab linker Kante der Linie. Kein Ring: Hier hält keine Bahn. */
 .beruf-strecke li.kat { --ab: 30px; --lang: 58px; --oben: 6px; --gy: calc(var(--oben) + var(--ab) - var(--gleis) / 2); padding-left: calc(var(--sx) - var(--gleis) / 2 + var(--lang) + 8px + 14px); padding-bottom: 0.9rem; }
-.beruf-strecke li.kat:first-child::before { top: 0; }
+/* Startbahnhof: Über dem ersten Abzweig gibt es kein Gleis. Die Linie beginnt am unteren Bogen der Gabel. */
+.beruf-strecke li.kat:first-child::before { top: calc(var(--gy) + 17px); }
+.beruf-strecke li.kat:first-child::after { left: calc(var(--sx) + 17px); width: calc(var(--lang) - 22px); border-left: 0; border-radius: 0; }
 .beruf-strecke li.kat::after { left: calc(var(--sx) - var(--gleis) / 2); top: var(--oben); width: var(--lang); height: var(--ab); margin: 0; border: 0; border-left: var(--gleis) solid var(--c-linie); border-bottom: var(--gleis) solid var(--c-linie); border-radius: 0 0 0 22px; background: transparent; }
 /* Mitte des waagerechten Gleises: --oben + --ab - halbe Gleisbreite. Darauf sitzen Prellbock und Überschrift. */
 .beruf-strecke .kat-titel { position: relative; margin: 0; padding: calc(var(--oben) + var(--ab) - var(--gleis) / 2 - 0.85rem) 0 0; font-family: var(--font-kopf); font-weight: 800; font-size: 1.7rem; line-height: 1; color: var(--c-ink); }
 .beruf-strecke .kat-titel::before { content: ""; position: absolute; left: -22px; top: calc(var(--oben) + var(--ab) - var(--gleis) / 2 - 14px); width: 8px; height: 28px; border-radius: 3px; background: var(--c-ink); }
+/* Gabel: zweiter Bogen vom Abzweig nach unten zurück auf die Linie */
+.beruf-strecke .kat-titel::after { content: ""; position: absolute; left: calc(-1 * (var(--lang) + 22px)); top: calc(var(--gy) - var(--gleis) / 2); width: 28px; height: var(--ab); box-sizing: border-box; border-left: var(--gleis) solid var(--c-linie); border-top: var(--gleis) solid var(--c-linie); border-radius: 22px 0 0 0; }
