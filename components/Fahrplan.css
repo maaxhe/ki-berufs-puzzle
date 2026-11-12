@@ -21,3 +21,8 @@
 .beruf-strecke { --sy: 1.2rem; max-width: 44rem; margin-top: 1.2rem; }
 .beruf-strecke .halt { padding: 0.5rem 0 0.95rem; }
 .beruf-strecke .halt-titel { font-size: 1.3rem; }
+.beruf-strecke li:has(+ li.kat) .halt { padding-bottom: 2.2rem; }
+/* Kategorie: größere Station auf derselben Linie */
+.beruf-strecke li.kat::after { left: calc(0.6rem + 5px - 14px); width: 28px; height: 28px; margin-top: -14px; border-width: 5px; background: var(--c-linie); }
+
+.beruf-strecke .kat-titel { margin: 0; padding: 0.45rem 0 1rem; font-family: var(--font-kopf); font-weight: 800; font-size: 1.7rem; line-height: 1; color: var(--c-ink); }

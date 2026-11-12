@@ -194,14 +194,12 @@ export default function BerufListe<K extends string>({
           {leerText}
         </p>
       ) : (
-        nachKategorie.map(({ kat, liste }) => (
-          <section key={kat} className="mt-16">
-            <h2 className="border-b-2 border-ink pb-2 font-display text-[1.4rem] font-semibold text-ink">
-              {kategorieLabels[kat]}
-            </h2>
-            <BerufStrecke liste={liste} hrefBase={hrefBase} />
-          </section>
-        ))
+        <section className="mt-16">
+          <BerufStrecke
+            hrefBase={hrefBase}
+            gruppen={nachKategorie.map(({ kat, liste }) => ({ id: String(kat), label: kategorieLabels[kat], liste }))}
+          />
+        </section>
       )}
     </div>
   );
