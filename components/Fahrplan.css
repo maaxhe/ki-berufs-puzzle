@@ -16,3 +16,8 @@
 .fahrplan .zug .k span { width: 56%; height: 4px; border-radius: 2px; background: var(--c-paper); }
 .fahrplan .zug .k.hop { animation: fahrplan-hop 0.45s cubic-bezier(0.2, 0.8, 0.3, 1.4); }
 @keyframes fahrplan-hop { 0% { transform: scale(1); } 40% { transform: scale(1.45) rotate(-8deg); } 100% { transform: scale(1); } }
+
+/* Berufe als Haltestellen (BerufStrecke.tsx) */
+.beruf-strecke { --sy: 1.2rem; max-width: 44rem; margin-top: 1.2rem; }
+.beruf-strecke .halt { padding: 0.5rem 0 0.95rem; }
+.beruf-strecke .halt-titel { font-size: 1.3rem; }

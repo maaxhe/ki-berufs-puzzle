@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import type { PuzzleEinheit } from "@/types";
 import Link from "next/link";
 import BerufCard from "./BerufCard";
+import BerufStrecke from "./BerufStrecke";
 import { suche } from "@/lib/suche";
 import { verwandtBerufe, verwandtStudiengaenge } from "@/data/verwandt";
 
@@ -198,11 +199,7 @@ export default function BerufListe<K extends string>({
             <h2 className="border-b-2 border-ink pb-2 font-display text-[1.4rem] font-semibold text-ink">
               {kategorieLabels[kat]}
             </h2>
-            <div>
-              {liste.map((beruf) => (
-                <BerufCard key={beruf.slug} beruf={beruf} hrefBase={hrefBase} />
-              ))}
-            </div>
+            <BerufStrecke liste={liste} hrefBase={hrefBase} />
           </section>
         ))
       )}
