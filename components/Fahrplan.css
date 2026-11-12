@@ -22,7 +22,12 @@
 .beruf-strecke .halt { padding: 0.5rem 0 0.95rem; }
 .beruf-strecke .halt-titel { font-size: 1.3rem; }
 .beruf-strecke li:has(+ li.kat) .halt { padding-bottom: 2.2rem; }
-/* Kategorie: größere Station auf derselben Linie */
-.beruf-strecke li.kat::after { left: calc(0.6rem + 5px - 14px); width: 28px; height: 28px; margin-top: -14px; border-width: 5px; background: var(--c-linie); }
-
-.beruf-strecke .kat-titel { margin: 0; padding: 0.45rem 0 1rem; font-family: var(--font-kopf); font-weight: 800; font-size: 1.7rem; line-height: 1; color: var(--c-ink); }
+/* Kategorie: Sackgassen-Bahnhof. Aus der durchgehenden Linie zweigt ein kurzes Gleis nach rechts ab und endet am Prellbock. */
+.beruf-strecke li.kat { padding-left: 4.6rem; }
+.beruf-strecke li.kat::after { left: calc(0.6rem + 5px); top: var(--sy); width: 2.6rem; height: 10px; margin: -5px 0 0; box-sizing: border-box; border: 0; border-radius: 0 6px 6px 0; background: var(--c-linie); }
+.beruf-strecke li.kat::before { z-index: 0; }
+.beruf-strecke .kat-titel { position: relative; margin: 0; padding: 0.45rem 0 1rem; font-family: var(--font-kopf); font-weight: 800; font-size: 1.7rem; line-height: 1; color: var(--c-ink); }
+/* Prellbock am Ende des Abzweigs */
+.beruf-strecke .kat-titel::before { content: ""; position: absolute; left: -1.7rem; top: calc(var(--sy) - 15px); width: 8px; height: 30px; border-radius: 3px; background: var(--c-ink); }
+/* Weiche: kleiner Ring auf der Hauptlinie, wo das Gleis abzweigt */
+.beruf-strecke .kat-titel::after { content: ""; position: absolute; left: calc(-4.6rem + 0.2rem); top: calc(var(--sy) - 9px); width: 18px; height: 18px; box-sizing: border-box; border-radius: 50%; background: var(--c-paper); border: 4px solid var(--c-ink); }
