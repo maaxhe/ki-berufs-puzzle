@@ -97,6 +97,18 @@ export default function Header() {
     </a>
   );
 
+  // Gleiche Kopfzeile wie bei Dilemma und KI und Bias: Name links, rechts coxilab und Für Lehrkräfte.
+  const kopfLinks = (
+    <nav className="flex shrink-0 items-center gap-4 text-[0.95rem]" aria-label="coxilab und Lehrkräfte">
+      <a href="https://coxilab.de/" className="text-ink-2 no-underline hover:text-mensch">
+        coxilab
+      </a>
+      <Link href="/lehrkraefte" className="text-ink-2 no-underline hover:text-mensch">
+        Für Lehrkräfte
+      </Link>
+    </nav>
+  );
+
   return (
     <header className="border-b border-rule">
       {/* Akzentleiste: sofort erkennbar, in welchem Bereich man ist, auch
@@ -109,7 +121,10 @@ export default function Header() {
             <PuzzleSignet className="h-7 w-7 shrink-0" />
             KI-Berufs-Puzzle
           </Link>
-          {werkzeugeLink}
+          <div className="flex items-center gap-3">
+            {werkzeugeLink}
+            {kopfLinks}
+          </div>
         </div>
         <nav
           className="-mx-5 mt-3 flex items-center gap-1 overflow-x-auto whitespace-nowrap px-5 pb-3 text-sm [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
@@ -125,20 +140,21 @@ export default function Header() {
       </div>
 
       {werkzeugeLink && <div className="mx-auto hidden max-w-[68rem] px-5 pt-3 sm:block sm:px-8">{werkzeugeLink}</div>}
-      <div className="mx-auto hidden max-w-[68rem] items-center justify-between gap-4 px-5 py-4 sm:flex sm:px-8">
-        <div className="flex items-center gap-5">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 whitespace-nowrap font-display text-[1.05rem] font-semibold tracking-tight text-ink"
-          >
-            <PuzzleSignet className="h-7 w-7 shrink-0" />
-            KI-Berufs-Puzzle
-          </Link>
-          <nav className="flex shrink-0 gap-1 whitespace-nowrap text-sm" aria-label="Bereich wählen">
-            {berufeLink}
-            {studiumLink}
-          </nav>
-        </div>
+      <div className="mx-auto hidden max-w-[68rem] items-center justify-between gap-4 px-5 pt-4 sm:flex sm:px-8">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 whitespace-nowrap font-display text-[1.05rem] font-semibold tracking-tight text-ink"
+        >
+          <PuzzleSignet className="h-7 w-7 shrink-0" />
+          KI-Berufs-Puzzle
+        </Link>
+        {kopfLinks}
+      </div>
+      <div className="mx-auto hidden max-w-[68rem] items-center justify-between gap-4 px-5 py-3 sm:flex sm:px-8">
+        <nav className="flex shrink-0 gap-1 whitespace-nowrap text-sm" aria-label="Bereich wählen">
+          {berufeLink}
+          {studiumLink}
+        </nav>
         <div className="flex items-center gap-5">
           {praxisLink}
           {erkenntnisseLink}
