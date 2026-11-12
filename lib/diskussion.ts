@@ -20,7 +20,7 @@ export function diskussionsfragen(einheit: PuzzleEinheit): string[] {
 
   if (grenzfall) {
     fragen.push(
-      `Bei „${grenzfall.title}“ sind sich sogar die Studien uneins. Wie würdet ihr entscheiden – und woran macht ihr das fest?`,
+      `Bei „${grenzfall.title}“ ist beides gut vertretbar. Wie würdet ihr entscheiden – und woran macht ihr das fest?`,
     );
   }
   if (ueberraschend[0]) {

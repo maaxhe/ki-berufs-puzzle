@@ -1,10 +1,9 @@
 import type { PuzzleEinheit, UserZuordnung } from "@/types";
 
 /**
- * Klassenmodus ohne Server: Jede:r Schüler:in bekommt nach dem Sortieren einen
- * kurzen Code, der nur die Zuordnung enthält (keine Namen, keine Daten). Die
- * Lehrkraft fügt die Codes der Klasse auf /klasse ein und sieht die
- * gemeinsame Auswertung – alles passiert im Browser.
+ * Kurzcode für die Zuordnung (keine Namen, keine Daten). Heute läuft der
+ * Klassenmodus über den Raumdienst (lib/raumApi.ts, QR-Code und Raum); der
+ * Code dient als kompaktes Format für die Zuordnung.
  *
  * Format: `<b|s>.<slug>.<anzahl>.<bits-base36>` – "b" für Berufe, "s" für
  * Studiengänge; die Bits stehen für die Aufgaben in Reihenfolge (1 = KI).

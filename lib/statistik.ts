@@ -7,7 +7,7 @@
 import { clientId } from "./raumApi";
 import type { UserZuordnung, Zuordnung } from "@/types";
 
-const BASE = process.env.NEXT_PUBLIC_RAUM_API ?? "https://api.jobs.coxilab.de";
+const BASE = process.env.NEXT_PUBLIC_RAUM_API ?? (process.env.NEXT_PUBLIC_BASE_PATH ? "/jobs-api" : "/raum-api"); // gleiche Herkunft, nginx reicht an den Raumdienst weiter
 
 export interface Grund {
   id: string;

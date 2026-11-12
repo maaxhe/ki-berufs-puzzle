@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Wie dieses Tool entstanden ist – KI-Berufs-Puzzle",
   description:
-    "Gebaut mit Claude Code in ein paar Tagen – und was das darüber zeigt, wie man heute mit KI arbeitet.",
+    "Gebaut mit Claude Code in einigen Wochen – und was das darüber zeigt, wie man heute mit KI arbeitet.",
 };
 
 export default function EntstehungPage() {
@@ -31,7 +31,7 @@ export default function EntstehungPage() {
             Ein Team von Entwickler:innen?
           </p>
           <p>
-            Ein paar Tage. Allein. Mit einem Werkzeug namens{" "}
+            Die erste Version: ein paar Tage. Allein. Mit einem Werkzeug namens{" "}
             <strong>Claude Code</strong>.
           </p>
         </section>
@@ -85,7 +85,7 @@ export default function EntstehungPage() {
             Und hier wird es spannend – auch für das, worum es in diesem Tool
             geht. Claude Code konnte den Code schreiben. Aber ob die{" "}
             <em>Inhalte</em> stimmten, musste ich beurteilen. Ein Beispiel:
-            Als die Studiengänge fertig kalibriert waren, stand Physiotherapeut
+            Als die Berufe fertig kalibriert waren, stand Physiotherapeut
             bei rund 40 % KI-Anteil. Mein Kommentar dazu, ziemlich genau so
             getippt: „dein Ernst???? Wie soll man so viel KI in den Beruf
             bringen. Der Beruf bleibt natürlich ganz klar beim Menschen!“
@@ -94,12 +94,12 @@ export default function EntstehungPage() {
             Das Modell hatte einfach alle Aufgaben gleich gewichtet –
             Dokumentation und Abrechnung genauso stark wie die eigentliche
             Behandlung am Patienten. Rechnerisch nicht falsch, inhaltlich
-            aber Unsinn: Zwei Verwaltungsaufgaben von acht ziehen den
+            aber Unsinn: Zwei Verwaltungsaufgaben von damals acht ziehen den
             Schnitt nach oben, obwohl sie im echten Arbeitsalltag einer
             Physiotherapeutin einen Bruchteil der Zeit ausmachen. Erst mein
             Widerspruch hat dazu geführt, dass die Werte neu und realistischer
             kalibriert wurden – und danach habe ich <em>jeden einzelnen</em>{" "}
-            der über 350 Werte noch einmal durchgeschaut.
+            der damals rund 350 Werte noch einmal durchgeschaut.
           </p>
           <p>
             Genau das ist die Lektion, die auch bei den{" "}
@@ -121,8 +121,7 @@ export default function EntstehungPage() {
             Ein paar Zahlen zum Prozess
           </h2>
           <p>
-            Von der ersten Zeile Code bis zu dieser Version: knapp 40 Commits
-            über wenige Tage, fast alle direkt live geschaltet, sobald sie
+            Von der ersten Zeile Code bis zu dieser Version: rund 100 Commits über einige Wochen (die erste Version stand nach wenigen Tagen), fast alle direkt live geschaltet, sobald sie
             funktionierten. Kein Entwicklungsteam, kein Lastenheft – nur ein
             Chat mit einem KI-Modell, das direkt im Code arbeitet, und ich als
             jemand, der ständig nachgehakt hat: „nein, überleg nochmal“, „das

@@ -49,7 +49,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     studiengangSlugs: ["betriebswirtschaftslehre"],
     berufTitel: "Kaufmann/-frau im Einzelhandel",
     ort: "Ahlen, NRW",
-    zeitpunkt: "Aktuell",
+    zeitpunkt: "Stand 2024",
     medium: "Westfälische Nachrichten",
     url: "https://www.wn.de/muensterland/kreis-warendorf/ahlen/roboter-supermarkt-rewe-gilke-hilfe-attraktion-2912353?pid=true&ueg=default",
     teaser:
@@ -177,11 +177,11 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     studiengangSlugs: ["maschinenbau"],
     berufTitel: "Berufskraftfahrer:in",
     ort: "HHLA & Fernride (Hamburg / Terminal Tallinn)",
-    zeitpunkt: "Aktuell",
+    zeitpunkt: "Stand 2023",
     medium: "Verkehrsrundschau",
     url: "https://www.verkehrsrundschau.de/nachrichten/lager-umschlag/hhla-und-fernride-bauen-autonomen-gueterverkehr-aus-3397556",
     teaser:
-      "Das Münchner Start-up Fernride rüstet Zugmaschinen mit Kameras und Sensoren aus. Auf dem Gelände von Hafenterminals fahren sie ohne Fahrer an Bord, bei schwierigen Situationen steuert ein Teleoperator per Mobilfunk von einem Bildschirmarbeitsplatz aus.",
+      "Das Münchner Start-up Fernride rüstet Zugmaschinen mit Kameras und Sensoren aus. Im Test am HHLA-Terminal in Tallinn (Estland) fahren sie ferngesteuert ohne Fahrer an Bord, bei schwierigen Situationen steuert ein Teleoperator per Mobilfunk von einem Bildschirmarbeitsplatz aus.",
     wasMachtDieKI:
       "Containerfahrten auf dem Terminalgelände, immer gleiche Strecken, Fahren bei Nacht und im Schichtbetrieb ohne Ermüdung.",
     wasBleibtMenschlich:
@@ -196,7 +196,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     titel: "Selbstfahrender ID. Buzz bringt Fahrgäste durch Hamburg",
     berufTitel: "Taxi- und Fahrdienst-Fahrer:in",
     ort: "Hamburg",
-    zeitpunkt: "Aktuell",
+    zeitpunkt: "Stand 2024",
     medium: "AUTO BILD",
     url: "https://www.autobild.de/artikel/erste-fahrgaeste-im-selbstfahrenden-id-buzz-meldung-25636531.html",
     teaser:
@@ -220,13 +220,13 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     medium: "Business Punk",
     url: "https://www.business-punk.com/tech/roboter-koch-uebernimmt-bei-rewe-ki-serviert-120-mahlzeiten-pro-stunde/",
     teaser:
-      "In einem Düsseldorfer REWE-Markt bereitet der KI-Roboter CA-1 hinter einer Glasscheibe Gerichte zu. Kund:innen wählen am Display eines von acht Gerichten, der Roboter schneidet, erhitzt, serviert und reinigt seine Utensilien selbst.",
+      "In einem Düsseldorfer REWE-Markt bereitet der KI-Roboter CA-1 hinter einer Glasscheibe Gerichte zu. Kund:innen wählen eines der angebotenen Gerichte, der Roboter schneidet, erhitzt, serviert und reinigt seine Utensilien selbst.",
     wasMachtDieKI:
       "Immer gleiche Rezepte nach Bestellung: Zutaten schneiden, braten, portionieren, servieren und die Küchenwerkzeuge säubern.",
     wasBleibtMenschlich:
       "Eigene Rezepte entwickeln, Geschmack abschmecken und anpassen, auf Unverträglichkeiten und Sonderwünsche eingehen, Menüplanung und Warenkunde, Improvisieren, wenn etwas fehlt.",
     diskussionsFrage:
-      "Ein Roboter kocht acht Gerichte immer gleich gut. Was kann eine Köchin oder ein Koch, das darüber hinausgeht?",
+      "Ein Roboter kocht seine Gerichte immer gleich gut. Was kann eine Köchin oder ein Koch, das darüber hinausgeht?",
     video: { id: "vows9BODG7M", titel: "Düsseldorfer Rewe präsentiert KI-Kochroboter", quelle: "RTL West" },
   },
   {
@@ -323,7 +323,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     studiengangSlugs: ["medizin", "biologie"],
     berufTitel: "Pathologe/Pathologin",
     ort: "Charité Berlin & TU Berlin",
-    zeitpunkt: "Entwicklung und Erprobung",
+    zeitpunkt: "Stand 2020, Entwicklung und Erprobung",
     medium: "Deutsches Ärzteblatt",
     url: "https://www.aerzteblatt.de/nachrichten/112337/Digitales-Bildanalysesystem-unterstuetzt-Pathologen-bei-Beurteilung-mikroskopischer-Praeparate",
     teaser:

@@ -91,7 +91,7 @@ export const studiengaenge: Studiengang[] = [
         kiEignung: 52,
         category: "analytisch",
         warum:
-          "KI kommentiert Stil und Muster – die Freigabeentscheidung mit Haftung trifft weiterhin ein Mensch. Hier steckt das „Dürfen“ im Wert: technisch wäre mehr möglich, rechtlich muss ein Mensch haften.",
+          "KI kommentiert Stil und Muster – die Freigabe trifft in der Praxis weiterhin ein Mensch, weil er im Team für die Qualität einsteht. Eine gesetzliche Pflicht dazu gibt es nicht; der Wert ist deshalb eine Einschätzung.",
       },
       {
         id: "inf-7",
@@ -173,7 +173,7 @@ export const studiengaenge: Studiengang[] = [
         kiEignung: 30,
         category: "analytisch",
         warum:
-          "Prüfgeräte liefern die Werte automatisch, die gesetzliche Freigabe unterschreibt trotzdem eine Elektrofachkraft mit persönlicher Haftung. Hier steckt das „Dürfen“ im Wert: technisch wäre mehr möglich, rechtlich muss ein Mensch haften.",
+          "Prüfgeräte liefern die Werte automatisch, die Freigabe verantwortet trotzdem eine Elektrofachkraft (Grundlage sind u. a. die Unfallverhütungsvorschrift DGUV V3 und die Betriebssicherheitsverordnung, nicht VDE-Normen allein). Technisch wäre mehr möglich, in der Praxis bleibt die Verantwortung bei einer Person.",
       },
       {
         id: "et-6",
@@ -825,7 +825,7 @@ export const studiengaenge: Studiengang[] = [
         kiEignung: 30,
         category: "analytisch",
         warum:
-          "Für Sicherheit und Funktion einer in Serie gefertigten Maschine haftet am Ende eine konkrete Person. Hier steckt das „Dürfen“ im Wert: technisch wäre mehr möglich, rechtlich muss ein Mensch haften.",
+          "Für Sicherheit und Funktion einer in Serie gefertigten Maschine haftet in erster Linie der Hersteller (Produkthaftung), intern verantworten Menschen die Freigabe. Technisch wäre mehr möglich, die Verantwortung bleibt aber bei Menschen.",
       },
       {
         id: "mb-5",
@@ -1312,7 +1312,7 @@ export const studiengaenge: Studiengang[] = [
         kiEignung: 47,
         category: "analytisch",
         warum:
-          "Für die Freigabe einer Arzneimittelcharge haftet am Ende eine konkrete approbierte Person. Hier steckt das „Dürfen“ im Wert: technisch wäre mehr möglich, rechtlich muss ein Mensch haften.",
+          "Für die Freigabe einer Arzneimittelcharge verantwortet eine „sachkundige Person“ nach Arzneimittelgesetz (das muss nicht zwingend ein Apotheker sein). Technisch wäre mehr möglich, die Verantwortung bleibt aber bei einem Menschen.",
       },
       {
         id: "pha-7",
@@ -1489,7 +1489,7 @@ export const studiengaenge: Studiengang[] = [
         kiEignung: 47,
         category: "analytisch",
         warum:
-          "Verantwortung für eine größere Investition mit unsicherem Ausgang bleibt eine unternehmerische Entscheidung von Menschen. Hier steckt das „Dürfen“ im Wert: technisch wäre mehr möglich, rechtlich muss ein Mensch haften.",
+          "Verantwortung für eine größere Investition mit unsicherem Ausgang bleibt eine unternehmerische Entscheidung von Menschen; eine gesetzliche Pflicht zur menschlichen Entscheidung gibt es nicht, aber die Leitung haftet für ihre Entscheidungen.",
       },
       {
         id: "wing-6",

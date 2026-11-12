@@ -16,7 +16,7 @@ export function modellZuordnung(task: Task): Zuordnung {
 
 /** Spanne um die 50-Punkte-Schwelle, in der die Einschätzung als echter
  *  Grenzfall gilt – hier ist "richtig" oder "falsch" keine sinnvolle
- *  Kategorie mehr, weil sich selbst die zugrunde liegenden Studien nicht
+ *  Kategorie mehr, weil auch die zugrunde liegenden Schätzwerte nicht
  *  einig wären. */
 const GRENZFALL_MIN = 41;
 const GRENZFALL_MAX = 59;
@@ -98,7 +98,7 @@ export function konfidenzLabel(kiEignung: number): string {
   if (kiEignung <= 20) return "Eindeutig beim Menschen";
   if (kiEignung <= 40) return "Eher beim Menschen, aber diskutierbar";
   if (istGrenzfall(kiEignung))
-    return "Echter Grenzfall – hier widersprechen sich auch die Studien";
+    return "Echter Grenzfall – hier ist beides gut vertretbar";
   if (kiEignung <= 79) return "Eher bei der KI, aber diskutierbar";
   return "Eindeutig bei der KI";
 }

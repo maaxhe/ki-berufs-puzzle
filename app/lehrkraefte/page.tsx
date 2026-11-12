@@ -35,7 +35,8 @@ export default function LehrkraeftePage() {
         <section className="space-y-3">
           <p>
             Das Puzzle ist für Berufsorientierung ab Klasse 8 gedacht. Es
-            braucht keine Anmeldung, speichert keine Namen und funktioniert auf
+            braucht keine Anmeldung für Schüler:innen, speichert keine Namen
+            (nur eine zufällige Geräte-ID, siehe Datenschutz) und funktioniert auf
             dem Handy. Diese Seite sammelt alles, was du für eine Stunde
             brauchst.
           </p>
@@ -64,7 +65,7 @@ export default function LehrkraeftePage() {
             <li>
               <strong>Diskutieren (10 Min.):</strong> Zu jedem Beruf gibt es
               Diskussionsfragen auf dem Arbeitsblatt. Besonders ergiebig sind
-              die Aufgaben mit dem Vermerk „Überraschend“.
+              die Aufgaben mit dem Vermerk „Überraschend“ (bei den Berufen).
             </li>
             <li>
               <strong>Transfer (5 Min.):</strong> Was heißt das für die eigene
@@ -84,9 +85,13 @@ export default function LehrkraeftePage() {
             </Link>{" "}
             einen Raum und zeige den QR-Code. Die Schüler:innen scannen ihn,
             sortieren und ihr Ergebnis kommt automatisch bei dir an. Gespeichert
-            wird nur die anonyme Zuordnung, keine Namen. Du siehst pro Aufgabe,
+            werden die Zuordnung und eine zufällige Geräte-ID, keine Namen. Die
+            Auswertung im Raum bleibt für dich einsehbar, wenn du den Raum mit
+            einem Lehrkraft-Passwort übernimmst. Du siehst pro Aufgabe,
             wie viele für „KI“ oder „Mensch“ gestimmt haben – und wo die Klasse
-            am meisten auseinanderliegt. Räume verfallen nach 24 Stunden.
+            am meisten auseinanderliegt. Räume verfallen nach 24 Stunden; die anonyme Gesamtstatistik („Alle bisher“)
+            bleibt bestehen, Details stehen in der{" "}
+            <a href="https://coxilab.de/impressum/#puzzle" className={linkKlasse}>Datenschutzerklärung</a>.
           </p>
         </section>
 
@@ -107,14 +112,16 @@ export default function LehrkraeftePage() {
               Handzeichen
             </a>
             , verlinkt unten auf jeder Berufsseite. Die Schüler:innen brauchen
-            kein Konto und antworten anonym. Danach sehen sie, wie alle anderen
+            kein Konto und antworten ohne Namen. Am Ende fragt Handzeichen zusätzlich
+            nach Alter und Geschlecht. Danach sehen sie, wie alle anderen
             abgestimmt haben, auch Klassen von anderen Schulen.
           </p>
           <ul className="ml-5 list-disc space-y-1">
             <li>
               <strong>Fragen:</strong> drei Aufgaben aus dem Puzzle mit „KI,
-              Mensch oder beide?“, eine Schätzung in Prozent, eine Rangfolge
-              und eine Karte zur Zukunft des Berufs
+              Mensch oder beide?“, eine Schätzung in Prozent, eine Rangfolge,
+              eine Skala („Könntest du dir vorstellen, in diesem Beruf zu
+              arbeiten?“) und eine Karte zur Zukunft des Berufs
             </li>
             <li>
               <strong>Am Beamer:</strong> Geh die Umfrage nach der Runde selbst

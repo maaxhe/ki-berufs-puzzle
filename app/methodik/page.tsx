@@ -8,8 +8,16 @@ export const metadata: Metadata = {
     "Woher die KI-Werte im KI-Berufs-Puzzle kommen, wie sie zu lesen sind und was sie nicht bedeuten.",
 };
 
-const { freyOsborne, jobFuturomat, iabKurzbericht, ilo, wef, iabBetriebe } =
-  STANDARD_QUELLEN;
+const {
+  freyOsborne,
+  jobFuturomat,
+  iabKurzbericht,
+  ilo,
+  wef,
+  iabBetriebe,
+  eloundou,
+  clioLegal,
+} = STANDARD_QUELLEN;
 
 export default function MethodikPage() {
   return (
@@ -219,7 +227,18 @@ export default function MethodikPage() {
           <p>
             Es ist keine Berufsberatung und keine Vorhersage deiner Zukunft. Die
             Werte sind grob, sie altern, und sie stehen hier vor allem, damit man
-            im Workshop darüber streiten kann. Stand der Zahlen: 2025.
+            im Workshop darüber streiten kann. Stand der Zahlen: 2025/2026.
+          </p>
+          <p>
+            Zur Einordnung der Studiengänge: Das IAB zählt zu den Expertenberufen
+            meist solche mit mindestens vierjährigem Studium. Bachelor-Berufe
+            fallen dort eher unter die Spezialistenberufe, für die der
+            Durchschnittswert höher liegt. Die Orientierungswerte für
+            Studiengänge sind deshalb eher vorsichtig niedrig angesetzt. Die
+            Quellenwerte unter den Berufen (Frey &amp; Osborne: Computerisierung
+            ganzer Berufe in den USA 2013, IAB: technisch mögliche Teilaufgaben
+            in Deutschland) sind nicht direkt mit dem Aufgabenwert vergleichbar.
+            Abweichungen sind möglich und gewollt.
           </p>
           <p>
             Was mir beim Kalibrieren all dieser Aufgaben inhaltlich aufgefallen
@@ -238,7 +257,16 @@ export default function MethodikPage() {
         <section className="space-y-2 border-t border-rule pt-6">
           <h2 className="font-display text-sm font-semibold text-ink">Quellen</h2>
           <ol className="mt-1 list-inside list-decimal space-y-1.5 text-[0.95rem] leading-relaxed">
-            {[freyOsborne, jobFuturomat, iabKurzbericht, ilo, iabBetriebe, wef].map(
+            {[
+              freyOsborne,
+              jobFuturomat,
+              iabKurzbericht,
+              ilo,
+              iabBetriebe,
+              wef,
+              eloundou,
+              clioLegal,
+            ].map(
               (q) => (
                 <li key={q.url}>
                   <a

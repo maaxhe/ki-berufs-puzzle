@@ -287,7 +287,7 @@ export default function TaskPuzzle({
       </h1>
       <p className="prose-text mt-3 text-ink">
         {modus === "schnell"
-          ? "Wer macht diese Aufgabe in Zukunft – Mensch oder KI? Entscheide Karte für Karte und sieh sofort, was die Forschung dazu sagt."
+          ? "Wer macht diese Aufgabe in Zukunft – Mensch oder KI? Entscheide Karte für Karte und sieh sofort, was das Modell dazu sagt."
           : "Zieh jede Aufgabe in die Spalte, die besser passt – oder tipp auf dem Handy erst die Aufgabe an, dann die Spalte."}
       </p>
 

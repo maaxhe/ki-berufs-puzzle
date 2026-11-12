@@ -210,7 +210,7 @@ export default function KlasseAuswertung() {
               Raumcode für die Klasse:{" "}
               <b className="font-mono text-2xl tracking-widest text-ink">{raum.code}</b> · {raumCodes.length} Ergebnis(se)
               eingegangen. Schüler:innen scannen den QR-Code, ihr Ergebnis wird danach automatisch gesendet.
-              Räume verfallen nach 24 Stunden.{" "}
+              Räume verfallen nach 24 Stunden, die anonyme Gesamtstatistik bleibt.{" "}
               <button
                 type="button"
                 onClick={raumWechseln}
@@ -224,7 +224,7 @@ export default function KlasseAuswertung() {
           <>
             <p className="mt-1 font-prose text-[0.95rem] text-ink-2">
               Erstelle einen Raum: Die Klasse scannt den QR-Code, schickt ihre Ergebnisse automatisch und du siehst sie live.
-              Gespeichert wird nur die anonyme Zuordnung.
+              Gespeichert werden die Zuordnung und eine zufällige Geräte-ID, keine Namen.
             </p>
             <button
               type="button"

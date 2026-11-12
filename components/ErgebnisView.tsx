@@ -11,7 +11,6 @@ import {
   modellZuordnung,
   naechsterBerufSlug,
   richtigeAnzahl,
-  risikoStufe,
   risikoStufeInListe,
   treffergenauigkeit,
 } from "@/lib/scoring";
@@ -297,7 +296,7 @@ export default function ErgebnisView({
         </p>
         <p className="prose-text mt-3 text-ink">
           {abweichungen === 0
-            ? "Bei allen eindeutigen Aufgaben deckungsgleich mit der Forschungseinschätzung."
+            ? "Bei allen eindeutigen Aufgaben deckungsgleich mit dem Modell."
             : `Bei ${abweichungen} ${
                 abweichungen === 1 ? "eindeutigen Aufgabe" : "eindeutigen Aufgaben"
               } lagst du anders.`}{" "}
@@ -309,7 +308,7 @@ export default function ErgebnisView({
                 ? "1 weitere Aufgabe war ein echter Grenzfall"
                 : `${grenzfaelle} weitere Aufgaben waren echte Grenzfälle`}{" "}
               – die zählen wir gar nicht erst als richtig oder falsch, denn da
-              wäre auch die Forschung uneins.
+              ist beides gut vertretbar.
             </>
           )}
         </p>
@@ -320,7 +319,7 @@ export default function ErgebnisView({
           value={risiko}
           compareValue={userPct}
           modelLabel={STUFE_TEXT[stufe]}
-          userLabel={STUFE_TEXT[risikoStufe(userPct)]}
+          userLabel={STUFE_TEXT[risikoStufeInListe(userPct, alleWerte)]}
           size="lg"
         />
         <p className="prose-text mt-3 text-ink">
@@ -329,7 +328,7 @@ export default function ErgebnisView({
           Über alle Aufgaben gemittelt schätzt das Modell{" "}
           <span className="font-semibold">{beruf.title}</span> als{" "}
           <span className="font-semibold">{STUFE_TEXT[stufe]}</span>{" "}
-          ein.
+          ein, im Vergleich zu den anderen Berufen.
         </p>
         <p className="mt-4 border-l-2 border-mensch pl-4 font-prose text-[0.95rem] italic leading-relaxed text-ink-2">
           „KI kann das“ heißt nicht „KI macht das“. Ob eine Aufgabe wirklich

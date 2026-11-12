@@ -1,5 +1,5 @@
 /** Client für den kleinen Raumdienst (raumdienst/server.mjs). Ohne Raum bleibt alles wie bisher im Browser. */
-const BASE = process.env.NEXT_PUBLIC_RAUM_API ?? "https://api.jobs.coxilab.de";
+const BASE = process.env.NEXT_PUBLIC_RAUM_API ?? (process.env.NEXT_PUBLIC_BASE_PATH ? "/jobs-api" : "/raum-api"); // gleiche Herkunft, nginx reicht an den Raumdienst weiter
 
 async function call<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(`${BASE}${path}`, {

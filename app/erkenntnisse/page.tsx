@@ -29,7 +29,7 @@ export default function ErkenntnissePage() {
             Vermutung ging eher in die andere Richtung, als man erwarten
             würde: Handwerk trifft es am wenigsten. Da geht es um echte
             Hände, echte Werkstoffe, echte Räume – das übernimmt kein Modell
-            einfach so. Die eigentlich unbequeme Frage ist doch: Lohnt sich
+            einfach so. Meine eigenen Daten bestätigen das allerdings nur teilweise: Pflege, Erziehung und Physiotherapie liegen im Schnitt niedriger als die meisten Handwerksberufe. Die eigentlich unbequeme Frage ist doch: Lohnt sich
             ein Studium überhaupt noch, wenn Sprachmodelle immer
             zuverlässiger akademische Texte schreiben, Code produzieren,
             Analysen liefern – also genau die Dinge, für die man früher
@@ -81,7 +81,7 @@ export default function ErkenntnissePage() {
             Können heißt nicht Machen
           </h2>
           <p>
-            Das war mir vorher schon klar, aber beim Kalibrieren von 350
+            Das war mir vorher schon klar, aber beim Kalibrieren von fast 500
             Aufgaben ist es mir noch mal richtig bewusst geworden: Dass eine
             Aufgabe automatisierbar <em>ist</em>, heißt nicht, dass sie
             automatisiert <em>wird</em>. Dazwischen stehen Kosten, Recht,

@@ -5,7 +5,7 @@ import KlasseAuswertung from "@/components/KlasseAuswertung";
 export const metadata: Metadata = {
   title: "Klassenauswertung – KI-Berufs-Puzzle",
   description:
-    "Die Klasse per QR-Code einladen und gemeinsam auswerten: Wo ist sich die Klasse uneins? Ohne Anmeldung, ohne Namen.",
+    "Die Klasse per QR-Code einladen und gemeinsam auswerten: Wo ist sich die Klasse uneins? Ohne Konto, ohne Namen.",
 };
 
 export default function KlassePage() {
@@ -23,7 +23,7 @@ export default function KlassePage() {
       <p className="prose-text mt-3 max-w-[46rem] text-ink">
         Erstelle einen Raum und lass die Klasse den QR-Code scannen. Die
         Ergebnisse kommen automatisch hier an – dann siehst du, wo die Klasse
-        einig und wo sie gespalten ist. Es werden keine Namen gespeichert.
+        einig und wo sie gespalten ist. Es werden keine Namen gespeichert, nur die Zuordnung mit einer zufälligen Geräte-ID.
       </p>
       <div className="mt-10">
         <KlasseAuswertung />

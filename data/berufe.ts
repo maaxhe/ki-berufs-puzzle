@@ -11,7 +11,10 @@ const { jobFuturomat, iabKurzbericht, freyOsborne, ilo } = STANDARD_QUELLEN;
  *    generativer KI – daher bei IT/Kreativberufen bewusst nach oben korrigiert).
  *  - IAB Job-Futuromat / Dengler & Matthes: Substituierbarkeitspotenzial je
  *    Beruf in Deutschland (Stand 2022, Kurzbericht 5|2024).
- * Die konkreten Vergleichswerte stehen in den `quellen`-Einträgen.
+ * Die konkreten Vergleichswerte stehen in den `quellen`-Einträgen. Sie sind
+ * Orientierung, keine Vorgabe: Der Aufgabenwert kann deutlich abweichen (z. B.
+ * Handwerk), weil Frey/Osborne ganze Berufe in den USA 2013 bewerten und das IAB
+ * technisch mögliche Teilaufgaben, nicht den tatsächlichen Arbeitsalltag.
  */
 export const berufe: Beruf[] = [
   // ─────────────────────────── Gesundheit & Soziales ───────────────────────────
@@ -43,7 +46,7 @@ export const berufe: Beruf[] = [
       { id: "pf-6", title: "Notfallsituationen erkennen und handeln", description: "Verschlechterungen früh bemerken und sofort reagieren.", kiEignung: 5, category: "analytisch", warum: "Wenn es kippt, zählt Erfahrung im Raum und schnelles Handeln am Menschen. Keine Zeit für ein Tool." },
       { id: "pf-7", title: "Ärztliche Anweisungen umsetzen", description: "Verordnete Maßnahmen fachgerecht durchführen.", kiEignung: 50, category: "routine", warum: "Die Anweisung steht digital fest, die Ausführung findet am Bett statt – halb Papier, halb Handarbeit." },
       { id: "pf-8", title: "Angehörige beraten", description: "Familien über Pflege zu Hause und Hilfsangebote informieren.", kiEignung: 20, category: "sozial", warum: "Eine verunsicherte Familie braucht jemanden, der ihre Lage versteht – kein Merkblatt aus dem Automaten." },
-      { id: "pf-9", title: "Lagerungswechsel zur Dekubitusprophylaxe", description: "Bettlägerige Menschen regelmäßig umlagern, um Druckstellen zu vermeiden.", kiEignung: 10, category: "physisch", warum: "Jemanden alle zwei Stunden richtig umlagern ist körperliche Arbeit am Menschen. Nichts davon passiert am PC." },
+      { id: "pf-9", title: "Lagerungswechsel zur Dekubitusprophylaxe", description: "Bettlägerige Menschen regelmäßig umlagern, um Druckstellen zu vermeiden.", kiEignung: 10, category: "physisch", warum: "Jemanden regelmäßig, im individuell festgelegten Rhythmus, richtig umlagern ist körperliche Arbeit am Menschen. Nichts davon passiert am PC." },
       { id: "pf-10", title: "Schichtübergabe im Team besprechen", description: "Wichtige Infos zu jeder Patientin und jedem Patienten weitergeben.", kiEignung: 25, category: "sozial", warum: "KI kann Notizen sortieren. Das Wichtige über zwölf Menschen in fünf Minuten weiterzugeben, kann sie nicht." },
       { id: "pf-11", title: "Frühwarnzeichen einer Verschlechterung aus Messwerten erkennen", description: "Aus Vitalwerten, Laborwerten und Verlauf ein beginnendes Problem ableiten.", kiEignung: 65, category: "analytisch", warum: "Klinische Frühwarnsysteme werten viele Werte gleichzeitig aus und schlagen teils früher an als das geübte Auge. Hinschauen, nachfragen und handeln musst trotzdem du.", ueberraschend: true },
     ],
@@ -168,7 +171,7 @@ export const berufe: Beruf[] = [
       { id: "pt-5", title: "Patient:innen zu Übungen zuhause anleiten", description: "Eigenübungen erklären und korrigieren.", kiEignung: 20, category: "sozial", warum: "Erklären kann eine App. Ob die Ausführung wirklich stimmt und wo nachjustiert werden muss, siehst nur du im Raum." },
       { id: "pt-6", title: "Mit Ärzt:innen Behandlungspläne abstimmen", description: "Diagnosen einholen und Therapieziele klären.", kiEignung: 20, category: "analytisch", warum: "Befunde austauschen läuft digital, die fachliche Abstimmung im Zweifelsfall bleibt ein Gespräch zwischen zwei Fachleuten." },
       { id: "pt-7", title: "Auf akute Schmerzreaktionen reagieren", description: "Während der Behandlung sofort auf Schmerz oder Widerstand eingehen.", kiEignung: 5, category: "sozial", warum: "Wenn jemand vor Schmerz zusammenzuckt, musst du im selben Moment reagieren – keine Zeit für ein Tool." },
-      { id: "pt-8", title: "Abrechnung mit Kassen erstellen", description: "Behandlungen nach Rezept erfassen und abrechnen.", kiEignung: 55, category: "routine", warum: "Behandlungen nach festem Schema abrechnen ist Regelarbeit – aber eben auch nur ein kleiner Randposten des Berufs, kein Kerntätigkeit." },
+      { id: "pt-8", title: "Abrechnung mit Kassen erstellen", description: "Behandlungen nach Rezept erfassen und abrechnen.", kiEignung: 55, category: "routine", warum: "Behandlungen nach festem Schema abrechnen ist Regelarbeit – aber eben auch nur ein kleiner Randposten des Berufs, keine Kerntätigkeit." },
       { id: "pt-9", title: "Bewegungsfehler auf Videoaufnahmen erkennen", description: "Haltung und Ausführung einer Übung anhand von Video bewerten.", kiEignung: 60, category: "analytisch", warum: "Kamera-Apps erkennen Gelenkwinkel und Ausweichbewegungen schon ziemlich zuverlässig. Ob dieser Schmerz beim Bewegen Sorgen machen muss, spürt die Therapeutin mit der Hand.", ueberraschend: true },
     ],
   },
@@ -277,7 +280,7 @@ export const berufe: Beruf[] = [
       "Transportiert Güter im Straßenverkehr und ist für Ladung, Fahrzeug und Termine verantwortlich.",
     kategorie: "technik-handwerk",
     zukunftsausblick:
-      "Frey & Osborne schätzten das Automatisierungsrisiko sehr hoch ein. Inzwischen fahren in Texas die ersten Lkw auf langen Autobahnstrecken ohne Fahrer:in am Steuer (seit 2025), nur die letzten Kilometer beim Kunden übernehmen noch Menschen. In Deutschland ist ein fahrerloser Lkw bisher nur auf einer Pilotstrecke von wenigen hundert Metern zugelassen. Routenplanung und Papierkram sind stark digitalisiert; Beladen, Andocken, Ladungssicherung und Reagieren in kniffligen Verkehrslagen bleiben menschlich. Der Beruf verschiebt sich vermutlich weg von der Fernstrecke hin zu Verteilerfahrten, Kundenkontakt und Überwachung. Routenplanung und Papierkram sind schon heute stark digitalisiert; Beladen, Ladungssicherung und Reagieren in kniffligen Verkehrslagen bleiben menschlich.",
+      "Frey & Osborne schätzten das Automatisierungsrisiko sehr hoch ein. Inzwischen fahren in Texas seit 2025 erste Lkw auf langen Autobahnstrecken ohne Fahrer:in am Steuer (zeitweise saß aus Sicherheitsgründen wieder eine Person im Fahrersitz), nur die letzten Kilometer beim Kunden übernehmen noch Menschen. In Deutschland gilt die erste Zulassung für einen kabinenlosen Lkw im regulären Betrieb auf öffentlichen Straßen nur für eine Pilotstrecke von rund 400 bis 500 Metern. Routenplanung und Papierkram sind stark digitalisiert; Beladen, Andocken, Ladungssicherung und Reagieren in kniffligen Verkehrslagen bleiben menschlich. Der Beruf verschiebt sich vermutlich weg von der Fernstrecke hin zu Verteilerfahrten, Kundenkontakt und Überwachung.",
     tippsMenschlich: [
       "In unübersichtlichen Verkehrs- und Baustellensituationen sicher entscheiden",
       "Ladung fachgerecht sichern und Verantwortung für die Fracht übernehmen",
@@ -299,7 +302,7 @@ export const berufe: Beruf[] = [
       },
     ],
     tasks: [
-      { id: "bkf-1", title: "Güter auf festen Routen transportieren", description: "Planbare Strecken zwischen Depots und Kunden abfahren.", kiEignung: 55, category: "routine", warum: "Planbare Autobahnstrecken sind das erklärte Ziel autonomer Systeme: In Texas fahren erste Lkw dort schon ohne Fahrer:in. In Deutschland läuft bisher nur ein Pilot über wenige hundert Meter, der Alltag ist noch weit davon entfernt." },
+      { id: "bkf-1", title: "Güter auf festen Routen transportieren", description: "Planbare Strecken zwischen Depots und Kunden abfahren.", kiEignung: 55, category: "routine", warum: "Planbare Autobahnstrecken sind das erklärte Ziel autonomer Systeme: In Texas fahren seit 2025 erste Lkw ohne Fahrer:in am Steuer (zeitweise wieder mit Person im Fahrersitz). In Deutschland gilt die erste Zulassung dieser Art nur für einen Pilot über wenige hundert Meter, der Alltag ist noch weit davon entfernt." },
       { id: "bkf-2", title: "Lenk- und Ruhezeiten dokumentieren", description: "Fahrtenschreiber bedienen und gesetzliche Zeiten einhalten.", kiEignung: 80, category: "routine", warum: "Der Fahrtenschreiber erledigt das ohnehin fast von allein." },
       { id: "bkf-3", title: "Fahrzeug beladen und Ladung sichern", description: "Gewicht verteilen, zurren, gegen Verrutschen sichern.", kiEignung: 40, category: "physisch", warum: "Gewicht verteilen und zurren ist körperliche Arbeit mit Verantwortung – ob es hält oder eben nicht." },
       { id: "bkf-4", title: "Route bei Stau und Sperrung anpassen", description: "Kurzfristig umplanen und Kunden über Verzug informieren.", kiEignung: 55, category: "analytisch", warum: "Bei Stau umplanen können Navi und Software. Der Anruf beim Kunden kommt von dir." },
@@ -679,7 +682,7 @@ export const berufe: Beruf[] = [
     ],
     quellen: [
       { ...freyOsborne, wert: "Graphic Designers: 8,2 % (Schätzung von 2013, vor Bildgeneratoren)" },
-      { ...iabKurzbericht, wert: "Produktdesign-Berufe (Segment Fertigungsberufe): z. B. Gestalter:in – Kleidung, Mode: 50 → 88 % (2019 → 2022)" },
+      { ...iabKurzbericht, wert: "Verwandter Beruf als Beispiel (nicht Grafik-/Mediengestaltung selbst): Produktdesign-Berufe (Segment Fertigungsberufe), z. B. Gestalter:in – Kleidung, Mode: 50 → 88 % (2019 → 2022)" },
       { ...ilo, wert: "Kreativ-/Medienberufe: durch generative KI neu betroffen" },
       jobFuturomat,
     ],
@@ -711,7 +714,7 @@ export const berufe: Beruf[] = [
     ],
     quellen: [
       { ...freyOsborne, wert: "Graphic Designers: 8,2 % (Schätzung von 2013, vor Bildgeneratoren)" },
-      { ...iabKurzbericht, wert: "Produktdesign-Berufe (Segment Fertigungsberufe): z. B. Gestalter:in – Kleidung, Mode: 50 → 88 % (2019 → 2022)" },
+      { ...iabKurzbericht, wert: "Verwandter Beruf als Beispiel (nicht Grafik-/Mediengestaltung selbst): Produktdesign-Berufe (Segment Fertigungsberufe), z. B. Gestalter:in – Kleidung, Mode: 50 → 88 % (2019 → 2022)" },
       { ...ilo, wert: "Kreativ-/Medienberufe: durch generative KI neu betroffen" },
       jobFuturomat,
     ],
