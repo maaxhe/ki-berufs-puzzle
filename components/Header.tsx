@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { fokusPfad, klasseVerlassen, useKlasse, useKlassenFokus } from "@/lib/useKlasse";
-import { PuzzleSignet } from "@/components/Signet";
 
 export default function Header() {
   const pathname = usePathname();
@@ -82,9 +81,6 @@ export default function Header() {
   // Gleiche Kopfzeile wie bei Dilemma und KI und Bias: Name links, rechts coxilab und Für Lehrkräfte.
   const kopfLinks = (
     <nav className="flex shrink-0 items-center gap-5 text-[1.05rem]" aria-label="coxilab und Lehrkräfte">
-      <a href="https://coxilab.de/" className="inline-flex min-h-11 items-center font-semibold text-ink underline decoration-transparent decoration-2 underline-offset-4 hover:decoration-ink">
-        coxilab
-      </a>
       <Link href="/lehrkraefte" className="inline-flex min-h-11 items-center font-semibold text-ink underline decoration-transparent decoration-2 underline-offset-4 hover:decoration-ink">
         Für Lehrkräfte
       </Link>
@@ -97,7 +93,7 @@ export default function Header() {
       <div className="mx-auto max-w-[68rem] px-5 pt-4 sm:hidden">
         <div className="flex items-center justify-between gap-3">
           <Link href="/" className="inline-flex items-center gap-2 font-kopf text-[1.7rem] font-extrabold leading-none text-ink">
-            <PuzzleSignet className="h-7 w-7 shrink-0" />
+            <i className="linie" aria-hidden="true">P</i>
             KI-Berufs-Puzzle
           </Link>
           <div className="flex items-center gap-3">
@@ -124,7 +120,7 @@ export default function Header() {
           href="/"
           className="inline-flex items-center gap-2 whitespace-nowrap font-kopf text-[1.7rem] font-extrabold leading-none text-ink"
         >
-          <PuzzleSignet className="h-7 w-7 shrink-0" />
+          <i className="linie" aria-hidden="true">P</i>
           KI-Berufs-Puzzle
         </Link>
         {kopfLinks}

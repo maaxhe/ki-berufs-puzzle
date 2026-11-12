@@ -232,3 +232,6 @@ h3 {
 .beitritt .btn:hover{background:var(--c-paper);color:var(--c-ink)}
 .beitritt .btn:disabled{opacity:.6;cursor:default}
 .beitritt .fehler{margin:.6rem 0 0;color:var(--c-miss);font-weight:600}
+
+/* Linien-Abzeichen im Kopf, identisch zu Dilemma, Bias, Rover und Hub */
+.linie{flex:none;display:inline-grid;place-items:center;width:2.1rem;height:2.1rem;border-radius:.55rem;background:var(--c-linie);color:#132940;font:800 1.45rem/1 var(--font-kopf);font-style:normal}
