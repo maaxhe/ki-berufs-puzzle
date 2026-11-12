@@ -79,11 +79,11 @@ export default function Header() {
 
   // Gleiche Kopfzeile wie bei Dilemma und KI und Bias: Name links, rechts coxilab und Für Lehrkräfte.
   const kopfLinks = (
-    <nav className="flex shrink-0 items-center gap-4 text-[0.95rem]" aria-label="coxilab und Lehrkräfte">
-      <a href="https://coxilab.de/" className="inline-flex min-h-11 items-center text-ink-2 underline decoration-transparent underline-offset-4 hover:text-ink hover:decoration-akzent">
+    <nav className="flex shrink-0 items-center gap-5 text-[1.05rem]" aria-label="coxilab und Lehrkräfte">
+      <a href="https://coxilab.de/" className="inline-flex min-h-11 items-center font-semibold text-ink underline decoration-transparent decoration-2 underline-offset-4 hover:decoration-ink">
         coxilab
       </a>
-      <Link href="/lehrkraefte" className="inline-flex min-h-11 items-center text-ink-2 underline decoration-transparent underline-offset-4 hover:text-ink hover:decoration-akzent">
+      <Link href="/lehrkraefte" className="inline-flex min-h-11 items-center font-semibold text-ink underline decoration-transparent decoration-2 underline-offset-4 hover:decoration-ink">
         Für Lehrkräfte
       </Link>
     </nav>
@@ -91,9 +91,6 @@ export default function Header() {
 
   return (
     <header className="border-b-2 border-rule bg-flaeche">
-      {/* Akzentleiste: sofort erkennbar, in welchem Bereich man ist, auch
-          nach dem Scrollen und bevor man den Text liest. */}
-      <div className="h-[6px] bg-linie" aria-hidden="true" />
       {/* Mobil: oben Logo + Klasse starten, darunter eine wischbare Navigationszeile. */}
       <div className="mx-auto max-w-[68rem] px-5 pt-4 sm:hidden">
         <div className="flex items-center justify-between gap-3">
