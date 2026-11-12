@@ -98,7 +98,7 @@ export default function Footer() {
             <a href="https://bias.coxilab.de/" className="inline-flex min-h-11 items-center text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch">
               KI und Bias
             </a>
-            <a href="https://handzeichen.com/" className="inline-flex min-h-11 items-center text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch">
+            <a href="https://handzeichen.com/lehrkraefte" className="inline-flex min-h-11 items-center text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch">
               Handzeichen
             </a>
             <a href="https://coxilab.de/impressum/" className="inline-flex min-h-11 items-center text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch">
