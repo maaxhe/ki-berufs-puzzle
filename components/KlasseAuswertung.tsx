@@ -34,6 +34,42 @@ export default function KlasseAuswertung() {
   const [aktiv, setAktiv] = useState<string | null>(null);
   const [praesentiert, setPraesentiert] = useState(false);
 
+  // Vollbild für den Beamer: Knopf im Live-Raum oder Taste F, Esc beendet.
+  const [vollbild, setVollbild] = useState(false);
+  const [kannVollbild, setKannVollbild] = useState(false);
+  useEffect(() => {
+    type Doc = Document & { webkitFullscreenElement?: Element; webkitExitFullscreen?: () => void };
+    type El = HTMLElement & { webkitRequestFullscreen?: () => void };
+    const doc = document as Doc;
+    const wurzel = document.documentElement as El;
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- erst im Browser bekannt
+    setKannVollbild(Boolean(wurzel.requestFullscreen || wurzel.webkitRequestFullscreen));
+    const an = () => Boolean(doc.fullscreenElement || doc.webkitFullscreenElement);
+    const stand = () => setVollbild(an());
+    const schalten = () => {
+      try {
+        if (an()) (doc.exitFullscreen || doc.webkitExitFullscreen)?.call(doc);
+        else if (wurzel.requestFullscreen) wurzel.requestFullscreen().catch(() => {});
+        else wurzel.webkitRequestFullscreen?.();
+      } catch {}
+    };
+    const taste = (e: KeyboardEvent) => {
+      if (e.key.toLowerCase() !== "f" || e.metaKey || e.ctrlKey || e.altKey) return;
+      if ((e.target as HTMLElement | null)?.closest?.("input,textarea,select")) return;
+      schalten();
+    };
+    window.addEventListener("klasse-vollbild", schalten);
+    document.addEventListener("keydown", taste);
+    document.addEventListener("fullscreenchange", stand);
+    document.addEventListener("webkitfullscreenchange", stand);
+    return () => {
+      window.removeEventListener("klasse-vollbild", schalten);
+      document.removeEventListener("keydown", taste);
+      document.removeEventListener("fullscreenchange", stand);
+      document.removeEventListener("webkitfullscreenchange", stand);
+    };
+  }, []);
+
   // Live-Raum: Schüler:innen schicken ihr Ergebnis direkt.
   const [raum, setRaum] = useState<{ code: string; hostKey: string } | null>(null);
   const [raumCodes, setRaumCodes] = useState<string[]>([]);
@@ -210,14 +246,27 @@ export default function KlasseAuswertung() {
               Raumcode für die Klasse:{" "}
               <b className="font-mono text-2xl tracking-widest text-ink">{raum.code}</b> · {raumCodes.length} Ergebnis(se)
               eingegangen. Schüler:innen scannen den QR-Code, ihr Ergebnis wird danach automatisch gesendet.
-              Räume verfallen nach 24 Stunden, die anonyme Gesamtstatistik bleibt.{" "}
-              <button
-                type="button"
-                onClick={raumWechseln}
-                className="underline decoration-ink/30 underline-offset-2 hover:text-akzent hover:decoration-akzent"
-              >
-                Anderen Raum öffnen
-              </button>
+              Räume verfallen nach 24 Stunden, die anonyme Gesamtstatistik bleibt.
+              <span className="mt-3 flex flex-wrap gap-2">
+                {kannVollbild && (
+                  <button
+                    type="button"
+                    onClick={() => window.dispatchEvent(new Event("klasse-vollbild"))}
+                    aria-pressed={vollbild}
+                    title="Vollbild an oder aus (Taste F)"
+                    className="min-h-11 rounded-full border-2 border-ink px-3 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-paper"
+                  >
+                    {vollbild ? "Vollbild beenden" : "Vollbild"}
+                  </button>
+                )}
+                <button
+                  type="button"
+                  onClick={raumWechseln}
+                  className="min-h-11 rounded-full border-2 border-ink px-3 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-paper"
+                >
+                  Raum schließen und neu beginnen
+                </button>
+              </span>
             </p>
           </div>
         ) : (
