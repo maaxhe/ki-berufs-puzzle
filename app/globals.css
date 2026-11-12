@@ -1,85 +1,158 @@
 @import "tailwindcss";
 
-@theme {
-  --color-paper: #f5f4f1;
-  --color-paper-2: #efece5;
-  --color-ink: #262019;
-  --color-ink-2: #6a6258;
-  --color-ki: #52646d; /* Maschinen-Seite: kühles Pewter */
-  --color-ki-wash: #e7eaea;
-  --color-mensch: #8a3a2c; /* Menschen-Seite: Ziegelrot */
-  --color-mensch-wash: #efe1dc;
-  --color-rule: #ddd6c9;
+/*
+ * Haltestelle (Liniennetz): das Puzzle ist die violette Linie P.
+ * Farben stehen als --c-* Variablen für Hell und Dunkel (Standard: Dunkel, gesetzt über
+ * data-theme am <html>, siehe Inline-Script in layout.tsx). Die Tailwind-Namen (paper, ink, ...)
+ * zeigen darauf, damit alle Komponenten beide Themes bekommen.
+ */
+@theme inline {
+  --color-paper: var(--c-paper);
+  --color-paper-2: var(--c-paper-2);
+  --color-flaeche: var(--c-flaeche);
+  --color-flaeche-tief: var(--c-flaeche-tief);
+  --color-ink: var(--c-ink);
+  --color-ink-2: var(--c-ink-2);
+  --color-rule: var(--c-rule);
+  --color-akzent: var(--c-akzent);
+  --color-linie: var(--c-linie);
+  --color-karte: var(--c-karte);
 
-  /* Feste Berufe-Farbe (Ziegelrot) für den Reiter-Umschalter in Header.tsx –
-     bewusst NICHT von .theme-studium überschrieben (anders als --color-mensch),
-     damit der "Berufe"-Tab immer rot bleibt, egal auf welcher Seite man
-     gerade steht. */
-  --color-beruf: #8a3a2c;
+  /* Bedeutungsfarben: Mensch = Orange, KI = Blau (auch für Farbfehlsichtige trennbar, zusätzlich immer mit Beschriftung). */
+  --color-ki: var(--c-ki);
+  --color-ki-wash: var(--c-ki-wash);
+  --color-mensch: var(--c-mensch);
+  --color-mensch-wash: var(--c-mensch-wash);
 
-  /* Akzent für den Studiengänge-Reiter: angenehmes Blau statt Ziegelrot –
-     kräftiger als ein reines Pastell, damit der Wechsel auf einen Blick
-     auffällt. */
-  --color-uni: #2a5a8a;
-  --color-uni-wash: #dbe6f0;
+  /* Auswertung: Übereinstimmung vs. Abweichung (immer mit Symbol oder Wort) */
+  --color-ok: var(--c-ok);
+  --color-ok-wash: var(--c-ok-wash);
+  --color-miss: var(--c-miss);
+  --color-miss-wash: var(--c-miss-wash);
 
-  /* Auswertung: Übereinstimmung vs. Abweichung */
-  --color-ok: #47653c;
-  --color-ok-wash: #e7edde;
-  --color-miss: #9c3320;
-  --color-miss-wash: #f1ddd5;
-
-  --font-display: var(--font-gabarito), "Gabarito", system-ui, sans-serif;
-  --font-prose: var(--font-onest), "Onest", system-ui, sans-serif;
-  --font-sans: var(--font-onest), "Onest", system-ui, sans-serif;
+  --font-display: var(--font-barlow), "Barlow", system-ui, sans-serif;
+  --font-prose: var(--font-barlow), "Barlow", system-ui, sans-serif;
+  --font-sans: var(--font-barlow), "Barlow", system-ui, sans-serif;
+  --font-kopf: var(--font-barlow-condensed), "Barlow Condensed", "Arial Narrow", sans-serif;
 }
 
-:root {
+:root,
+:root[data-theme="light"],
+.blatt {
+  --c-paper: #faf8ff;
+  --c-paper-2: #efebfb;
+  --c-flaeche: #e0daf6;
+  --c-flaeche-tief: #cdc4ee;
+  --c-ink: #231c4a;
+  --c-ink-2: #5a557a;
+  --c-rule: #b6abe0;
+  --c-akzent: #5b43b8;
+  --c-linie: #9a86dc;
+  --c-karte: #ffffff;
+  --c-ki: #1d5c92;
+  --c-ki-wash: #dcebf8;
+  --c-mensch: #9a4210;
+  --c-mensch-wash: #fbe7d6;
+  --c-ok: #2c6a3a;
+  --c-ok-wash: #e0f1e4;
+  --c-miss: #a32d20;
+  --c-miss-wash: #fbe3df;
   color-scheme: light;
 }
 
-/*
- * Studiengänge-Reiter: überschreibt Akzent- UND Grundton, damit der Bereich
- * auf einen Blick als "woanders" erkennbar ist – nicht nur der Ziegelrot-
- * Akzent wird zu Blau, auch Papier und Trennlinien bekommen einen leicht
- * kühleren, bläulichen statt warm-beigen Unterton. Komponenten selbst
- * müssen dafür nichts wissen: die Klasse umschließt die ganze Seite
- * (ThemeRoot, siehe layout.tsx) inklusive Header und Footer.
- */
-.theme-studium {
-  --color-mensch: var(--color-uni);
-  --color-mensch-wash: var(--color-uni-wash);
-  --color-paper: #eef2f7;
-  --color-paper-2: #e0e8f1;
-  --color-rule: #b9c9dc;
-  --color-ink: #1c2430;
-  --color-ink-2: #566175;
+:root[data-theme="dark"] {
+  --c-paper: #14102f;
+  --c-paper-2: #1c1743;
+  --c-flaeche: #2a2360;
+  --c-flaeche-tief: #221c52;
+  --c-ink: #ece8ff;
+  --c-ink-2: #b6afdc;
+  --c-rule: #4d4488;
+  --c-akzent: #b9a9f5;
+  --c-linie: #9a86dc;
+  --c-karte: #1c1743;
+  --c-ki: #86bcf0;
+  --c-ki-wash: #132c49;
+  --c-mensch: #f2a468;
+  --c-mensch-wash: #3b2414;
+  --c-ok: #84d39c;
+  --c-ok-wash: #153620;
+  --c-miss: #ff9d8e;
+  --c-miss-wash: #451f1b;
+  color-scheme: dark;
+}
+
+/* Arbeitsblatt: auf dem Bildschirm ein helles Blatt Papier, auch im dunklen Theme. */
+.blatt {
+  background: var(--c-paper);
+  color: var(--c-ink);
+}
+
+/* Druck und Arbeitsblatt: immer hell auf Papier, egal welches Theme gerade gewählt ist. */
+@media print {
+  :root,
+  :root[data-theme] {
+  --c-paper: #faf8ff;
+  --c-paper-2: #efebfb;
+  --c-flaeche: #e0daf6;
+  --c-flaeche-tief: #cdc4ee;
+  --c-ink: #231c4a;
+  --c-ink-2: #5a557a;
+  --c-rule: #b6abe0;
+  --c-akzent: #5b43b8;
+  --c-linie: #9a86dc;
+  --c-karte: #ffffff;
+  --c-ki: #1d5c92;
+  --c-ki-wash: #dcebf8;
+  --c-mensch: #9a4210;
+  --c-mensch-wash: #fbe7d6;
+  --c-ok: #2c6a3a;
+  --c-ok-wash: #e0f1e4;
+  --c-miss: #a32d20;
+  --c-miss-wash: #fbe3df;
+  color-scheme: light;
+  }
 }
 
 body {
   background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans);
-  font-size: 0.9375rem;
+  font-size: 1rem;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
+/* Nur h1 und h2 in Barlow Condensed 800; h3 bleibt normal fett (ruhig, gut lesbar). */
 h1,
-h2,
+h2 {
+  font-family: var(--font-kopf);
+  font-weight: 800;
+  letter-spacing: -0.005em;
+  line-height: 1;
+  text-wrap: balance;
+}
 h3 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  line-height: 1.06;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-/* Fließtext: offene Grotesk, ruhige Zeilenlänge – wie ein gut gesetzter Workshop-Handzettel */
+::selection {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+/* Fließtext: ruhige Zeilenlänge, große Schrift für Klassenzimmer und Beamer */
 .prose-text {
-  font-family: var(--font-prose);
-  font-size: 1.0625rem;
-  line-height: 1.62;
+  font-size: 1.125rem;
+  line-height: 1.6;
 }
 .prose-text p {
   max-width: 62ch;

@@ -1,14 +1,14 @@
 /** Die zwei Pole, an denen im ganzen Tool sortiert wird. */
 export default function Legend() {
   return (
-    <dl className="flex flex-wrap gap-x-10 gap-y-2 text-sm">
+    <dl className="flex flex-wrap gap-x-10 gap-y-2 text-base">
       <div className="flex items-baseline gap-2">
-        <span className="relative top-[1px] h-3 w-3 shrink-0 bg-mensch" />
+        <span className="relative top-[1px] h-3.5 w-3.5 shrink-0 rounded-full bg-mensch" />
         <dt className="font-semibold text-ink">Mensch</dt>
         <dd className="text-ink-2">bleibt menschliche Arbeit</dd>
       </div>
       <div className="flex items-baseline gap-2">
-        <span className="relative top-[1px] h-3 w-3 shrink-0 bg-ki" />
+        <span className="relative top-[1px] h-3.5 w-3.5 shrink-0 rounded-[3px] bg-ki" />
         <dt className="font-semibold text-ink">KI</dt>
         <dd className="text-ink-2">kann das heute übernehmen</dd>
       </div>

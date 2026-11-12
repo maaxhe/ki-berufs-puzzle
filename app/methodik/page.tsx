@@ -24,7 +24,7 @@ export default function MethodikPage() {
     <div className="mx-auto max-w-[68rem] px-5 py-14 sm:px-8 sm:py-20">
       <Link
         href="/"
-        className="font-prose text-sm italic text-ink-2 underline decoration-ink/20 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+        className="font-prose text-sm text-ink-2 underline decoration-ink/20 underline-offset-2 hover:text-akzent hover:decoration-akzent"
       >
         Alle Berufe
       </Link>
@@ -246,7 +246,7 @@ export default function MethodikPage() {
             als eine Ausbildung – steht auf der{" "}
             <Link
               href="/erkenntnisse"
-              className="underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+              className="underline decoration-ink/30 underline-offset-2 hover:text-akzent hover:decoration-akzent"
             >
               Erkenntnisse-Seite
             </Link>
@@ -254,7 +254,7 @@ export default function MethodikPage() {
           </p>
         </section>
 
-        <section className="space-y-2 border-t border-rule pt-6">
+        <section className="space-y-2 border-t-2 border-rule pt-6">
           <h2 className="font-display text-sm font-semibold text-ink">Quellen</h2>
           <ol className="mt-1 list-inside list-decimal space-y-1.5 text-[0.95rem] leading-relaxed">
             {[
@@ -273,7 +273,7 @@ export default function MethodikPage() {
                     href={q.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+                    className="underline decoration-ink/30 underline-offset-2 hover:text-akzent hover:decoration-akzent"
                   >
                     {q.label}
                   </a>
@@ -283,7 +283,7 @@ export default function MethodikPage() {
           </ol>
         </section>
 
-        <section className="space-y-2 border-t border-rule pt-6">
+        <section className="space-y-2 border-t-2 border-rule pt-6">
           <h2 className="font-display text-sm font-semibold text-ink">
             Für Lehrkräfte
           </h2>
@@ -291,7 +291,7 @@ export default function MethodikPage() {
             Wer dieses Tool im Unterricht einsetzen will, findet auf der{" "}
             <Link
               href="/lehrkraefte"
-              className="underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+              className="underline decoration-ink/30 underline-offset-2 hover:text-akzent hover:decoration-akzent"
             >
               Lehrkräfte-Seite
             </Link>{" "}
@@ -302,7 +302,7 @@ export default function MethodikPage() {
               href="https://maximilianherrmann.com/blog/drei-bildungsauftraege-fuer-ki-im-unterricht.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+              className="underline decoration-ink/30 underline-offset-2 hover:text-akzent hover:decoration-akzent"
             >
               Drei Bildungsaufträge für KI im Unterricht
             </a>{" "}
@@ -311,7 +311,7 @@ export default function MethodikPage() {
               href="https://maximilianherrmann.com/blog/welches-tool-fuer-ki-bildung-an-schulen-perfekt-geeignet-ist-und-wie-man-es-richtig-einsetzt.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+              className="underline decoration-ink/30 underline-offset-2 hover:text-akzent hover:decoration-akzent"
             >
               Welches Tool für KI-Bildung an Schulen perfekt geeignet ist
             </a>

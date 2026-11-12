@@ -81,7 +81,7 @@ export default function BerufListe<K extends string>({
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Suchen …"
           aria-label="Suchen"
-          className="w-full max-w-[26rem] rounded-[2px] border border-rule bg-paper px-4 py-3 text-[0.95rem] text-ink placeholder:text-ink-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mensch"
+          className="w-full max-w-[26rem] rounded-xl border-2 border-rule bg-paper px-4 py-3 text-[0.95rem] text-ink placeholder:text-ink-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
         />
 
         <div className="relative -mx-5 sm:mx-0">
@@ -94,7 +94,7 @@ export default function BerufListe<K extends string>({
             type="button"
             onClick={() => setAktivKategorie(null)}
             aria-pressed={aktivKategorie === null}
-            className={`shrink-0 rounded-full border px-3.5 py-1.5 text-sm transition-colors ${
+            className={`shrink-0 rounded-full border-2 px-3.5 py-1.5 text-sm transition-colors ${
               aktivKategorie === null
                 ? "border-ink bg-ink text-paper"
                 : "border-rule text-ink-2 hover:border-ink hover:text-ink"
@@ -112,7 +112,7 @@ export default function BerufListe<K extends string>({
                   setAktivKategorie((cur) => (cur === kat ? null : kat))
                 }
                 aria-pressed={aktivKategorie === kat}
-                className={`shrink-0 rounded-full border px-3.5 py-1.5 text-sm transition-colors ${
+                className={`shrink-0 rounded-full border-2 px-3.5 py-1.5 text-sm transition-colors ${
                   aktivKategorie === kat
                     ? "border-ink bg-ink text-paper"
                     : "border-rule text-ink-2 hover:border-ink hover:text-ink"
@@ -130,8 +130,8 @@ export default function BerufListe<K extends string>({
       </div>
 
       {querTreffer.length > 0 && (
-        <aside className="mt-10 border-l-2 border-mensch bg-paper-2 py-3 pl-4">
-          <p className="font-display text-xs font-semibold uppercase tracking-wider text-mensch">
+        <aside className="mt-10 rounded-xl border-2 border-rule bg-paper-2 px-4 py-3">
+          <p className="font-display text-base font-bold text-ink">
             Auch gefunden bei {querverweis!.label}
           </p>
           <ul className="mt-2 space-y-1.5">
@@ -139,7 +139,7 @@ export default function BerufListe<K extends string>({
               <li key={b.slug}>
                 <Link
                   href={`${querverweis!.hrefBase}/${b.slug}`}
-                  className="font-prose text-[1.02rem] italic text-ink underline decoration-mensch decoration-2 underline-offset-4 hover:text-mensch"
+                  className="font-prose text-[1.02rem] text-ink underline decoration-akzent decoration-2 underline-offset-4 hover:text-akzent"
                 >
                   {b.title} →
                 </Link>
@@ -163,7 +163,7 @@ export default function BerufListe<K extends string>({
           )}
           {ergebnis.verwandt.length > 0 && (
             <section className="mt-12">
-              <h2 className="border-b border-rule pb-2 font-display text-[1.15rem] font-semibold text-ink-2">
+              <h2 className="border-b-2 border-rule pb-2 font-display text-[1.15rem] font-semibold text-ink-2">
                 Verwandt – kommt in der Beschreibung oder den Aufgaben vor
               </h2>
               {ergebnis.verwandt.map((beruf) => (
@@ -173,7 +173,7 @@ export default function BerufListe<K extends string>({
           )}
           {ergebnis.treffer.length + ergebnis.verwandt.length === 0 && (
             <div className="mt-14 font-prose text-[0.95rem] text-ink-2">
-              <p className="italic">{leerText}</p>
+              <p>{leerText}</p>
               <p className="mt-2">
                 Tipp: Such nach dem Berufsfeld („Pflege“, „Bau“, „IT“) oder wähl oben eine Kategorie.
                 {querTreffer.length > 0 && " Bei der anderen Liste gibt es Treffer – siehe oben."}
@@ -181,7 +181,7 @@ export default function BerufListe<K extends string>({
               <button
                 type="button"
                 onClick={() => setQuery("")}
-                className="mt-3 italic text-ink underline decoration-mensch decoration-2 underline-offset-4 hover:text-mensch"
+                className="mt-3 text-ink underline decoration-akzent decoration-2 underline-offset-4 hover:text-akzent"
               >
                 Suche zurücksetzen
               </button>
@@ -189,7 +189,7 @@ export default function BerufListe<K extends string>({
           )}
         </>
       ) : nachKategorie.length === 0 ? (
-        <p className="mt-14 font-prose text-[0.95rem] italic text-ink-2">
+        <p className="mt-14 font-prose text-[0.95rem] text-ink-2">
           {leerText}
         </p>
       ) : (

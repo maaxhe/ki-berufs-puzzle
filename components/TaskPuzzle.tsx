@@ -277,7 +277,7 @@ export default function TaskPuzzle({
     <div className="mx-auto max-w-[68rem] px-5 pt-14 pb-10 sm:px-8 sm:pt-16">
       <Link
         href={zurueckHref}
-        className="font-prose text-sm italic text-ink-2 underline decoration-ink/20 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+        className="font-prose text-sm text-ink-2 underline decoration-ink/20 underline-offset-2 hover:text-akzent hover:decoration-akzent"
       >
         {zurueckLabel}
       </Link>
@@ -310,7 +310,7 @@ export default function TaskPuzzle({
               setModus(id);
               setSelectedId(null);
             }}
-            className={`min-h-9 rounded-[2px] border px-3 py-1.5 font-semibold transition-colors ${
+            className={`min-h-11 rounded-full border-2 px-4 py-1.5 text-base font-semibold transition-colors ${
               modus === id
                 ? "border-ink bg-ink text-paper"
                 : "border-rule text-ink hover:border-ink"
@@ -322,7 +322,7 @@ export default function TaskPuzzle({
       </div>
 
       {modus === "alle" && (
-        <p className="mt-4 max-w-[46rem] border-l-2 border-ink bg-paper-2 px-3 py-2.5 text-sm text-ink sm:hidden">
+        <p className="mt-4 max-w-[46rem] rounded-xl border-2 border-rule bg-paper-2 px-3 py-2.5 text-sm text-ink sm:hidden">
           <span className="font-semibold">So sortierst du auf dem Handy:</span>{" "}
           Entweder <span className="font-semibold">Karte antippen</span>, dann{" "}
           <span className="font-semibold">Spalte antippen</span> – oder die
@@ -333,7 +333,7 @@ export default function TaskPuzzle({
       {selectedId && (
         <p
           role="status"
-          className="mt-6 border-l-2 border-ink bg-paper-2 py-2 pl-3 text-sm text-ink"
+          className="mt-6 rounded-xl border-2 border-rule bg-paper-2 px-3 py-2 text-sm text-ink"
         >
           Aufgabe ausgewählt – tipp jetzt auf eine der beiden Spalten.
         </p>
@@ -369,7 +369,7 @@ export default function TaskPuzzle({
             onZoneClick={() => handleZoneClick("offen")}
           >
             {tasksIn("offen").length === 0 ? (
-              <p className="py-1 font-prose text-sm italic text-ink-2">
+              <p className="py-1 font-prose text-sm text-ink-2">
                 Alles sortiert.
               </p>
             ) : (
@@ -439,7 +439,7 @@ export default function TaskPuzzle({
         </DragOverlay>
       </DndContext>
 
-      <div className="sticky bottom-0 z-10 mt-12 -mx-5 border-t border-rule bg-paper px-5 pb-[calc(1.25rem+env(safe-area-inset-bottom))] pt-4 sm:-mx-8 sm:px-8">
+      <div className="sticky bottom-0 z-10 mt-12 -mx-5 border-t-2 border-rule bg-paper px-5 pb-[calc(1.25rem+env(safe-area-inset-bottom))] pt-4 sm:-mx-8 sm:px-8">
         <div className="flex items-center gap-4">
           <div className="relative hidden h-px flex-1 bg-rule sm:block">
             <span
@@ -454,7 +454,7 @@ export default function TaskPuzzle({
             type="button"
             disabled={!alleZugeordnet}
             onClick={() => setView("ergebnis")}
-            className="ml-auto shrink-0 rounded-[2px] bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition-colors hover:bg-mensch disabled:cursor-not-allowed disabled:border disabled:border-rule disabled:bg-transparent disabled:text-ink-2 sm:ml-0"
+            className="ml-auto shrink-0 rounded-full border-[3px] border-ink bg-ink px-5 py-2.5 text-base font-semibold text-paper transition-colors hover:bg-paper hover:text-ink disabled:cursor-not-allowed disabled:border-2 disabled:border-rule disabled:bg-transparent disabled:text-ink-2 sm:ml-0"
           >
             Ergebnis ansehen
           </button>
@@ -465,7 +465,7 @@ export default function TaskPuzzle({
 
       {zusatz}
 
-      <details className="mt-12 max-w-[46rem] border-t border-rule pt-4">
+      <details className="mt-12 max-w-[46rem] border-t-2 border-rule pt-4">
         <summary className="cursor-pointer text-sm font-semibold text-ink-2 hover:text-ink">
           Woher kommen die Werte?
         </summary>

@@ -13,7 +13,7 @@ export default function EntstehungPage() {
     <div className="mx-auto max-w-[68rem] px-5 py-14 sm:px-8 sm:py-20">
       <Link
         href="/"
-        className="font-prose text-sm italic text-ink-2 underline decoration-ink/20 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+        className="font-prose text-sm text-ink-2 underline decoration-ink/20 underline-offset-2 hover:text-akzent hover:decoration-akzent"
       >
         Alle Berufe
       </Link>
@@ -64,7 +64,7 @@ export default function EntstehungPage() {
               alt="Terminal-Ausschnitt: Claude Code ändert eigenständig CSS-Variablen in app/globals.css, nachdem ich getippt hatte „mache den Kontrast zwischen Beruf und Studium noch etwas deutlicher“."
               width={1962}
               height={1196}
-              className="w-full rounded-[2px] border border-rule"
+              className="w-full rounded-xl border-2 border-rule"
             />
             <figcaption className="text-sm text-ink-2">
               So sieht das in echt aus: Ich tippe „mache den Kontrast
@@ -105,7 +105,7 @@ export default function EntstehungPage() {
             Genau das ist die Lektion, die auch bei den{" "}
             <Link
               href="/erkenntnisse"
-              className="underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+              className="underline decoration-ink/30 underline-offset-2 hover:text-akzent hover:decoration-akzent"
             >
               Erkenntnissen
             </Link>{" "}
@@ -150,21 +150,21 @@ export default function EntstehungPage() {
           </p>
         </section>
 
-        <section className="space-y-2 border-t border-rule pt-6 text-sm">
+        <section className="space-y-2 border-t-2 border-rule pt-6 text-sm">
           <p>
             Mehr zu Claude Code:{" "}
             <a
               href="https://claude.com/product/claude-code"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+              className="underline decoration-ink/30 underline-offset-2 hover:text-akzent hover:decoration-akzent"
             >
               claude.com/product/claude-code
             </a>
             . Woher die Inhalte dieses Tools kommen, steht auf der{" "}
             <Link
               href="/methodik"
-              className="underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+              className="underline decoration-ink/30 underline-offset-2 hover:text-akzent hover:decoration-akzent"
             >
               Methodik-Seite
             </Link>

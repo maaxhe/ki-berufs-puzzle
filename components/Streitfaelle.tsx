@@ -105,7 +105,7 @@ export default function Streitfaelle({
           <button
             type="button"
             onClick={onClose}
-            className="min-h-11 rounded-[2px] border border-rule px-3 py-2 font-semibold text-ink hover:border-ink"
+            className="min-h-11 rounded-xl border-2 border-rule px-3 py-2 font-semibold text-ink hover:border-ink"
           >
             Beenden (Esc)
           </button>
@@ -125,7 +125,7 @@ export default function Streitfaelle({
           </p>
 
           {phase === 0 && (
-            <p className="mt-10 font-display text-[clamp(1.4rem,3vw,2rem)] font-semibold text-mensch">
+            <p className="mt-10 font-display text-[clamp(1.4rem,3vw,2rem)] font-semibold text-akzent">
               Wie hat sich die Klasse entschieden?
               <span className="mt-1 block text-[1rem] font-normal text-ink-2">
                 Schätzt, bevor ihr weiterklickt: Mensch oder KI – und wie
@@ -170,12 +170,12 @@ export default function Streitfaelle({
           )}
 
           {phase === 2 && (
-            <div className="mt-8 max-w-[44rem] border-l-4 border-ink bg-paper-2 p-5">
+            <div className="mt-8 max-w-[44rem] rounded-2xl border-2 border-rule bg-paper-2 p-5">
               <p className="font-display text-xl font-semibold text-ink">
                 Das Modell:{" "}
                 {modell === "ki" ? "eher KI" : "eher Mensch"}
               </p>
-              <p className="mt-1 font-prose italic text-ink-2">
+              <p className="mt-1 font-prose text-ink-2">
                 {konfidenzLabel(task.kiEignung)}
               </p>
               <p className="prose-text mt-2 text-ink">{task.warum}</p>
@@ -189,19 +189,19 @@ export default function Streitfaelle({
           )}
         </div>
 
-        <div className="flex items-center justify-between gap-3 border-t border-rule pt-4">
+        <div className="flex items-center justify-between gap-3 border-t-2 border-rule pt-4">
           <button
             type="button"
             onClick={zurueck}
             disabled={index === 0 && phase === 0}
-            className="min-h-12 rounded-[2px] border border-ink px-5 py-2.5 text-sm font-semibold text-ink hover:bg-ink hover:text-paper disabled:cursor-not-allowed disabled:border-rule disabled:text-ink-2 disabled:hover:bg-transparent"
+            className="min-h-12 rounded-full border-2 border-ink px-5 py-2.5 text-base font-semibold text-ink hover:bg-ink hover:text-paper disabled:cursor-not-allowed disabled:border-rule disabled:text-ink-2 disabled:hover:bg-transparent"
           >
             ← Zurück
           </button>
           <button
             type="button"
             onClick={vor}
-            className="min-h-12 rounded-[2px] bg-ink px-6 py-2.5 text-sm font-semibold text-paper transition-colors hover:bg-mensch"
+            className="min-h-12 rounded-full border-[3px] border-ink bg-ink px-6 py-2.5 text-base font-semibold text-paper transition-colors hover:bg-paper hover:text-ink"
           >
             {letzterSchritt
               ? "Fertig"

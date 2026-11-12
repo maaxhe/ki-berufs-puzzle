@@ -11,7 +11,7 @@ export default function KlasseStartButton() {
     <div className="mt-7">
       <Link
         href="/klasse"
-        className="inline-block rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition-opacity hover:opacity-85"
+        className="inline-flex min-h-12 items-center rounded-full border-[3px] border-ink bg-ink px-6 py-2.5 text-lg font-bold text-paper transition-colors hover:bg-paper hover:text-ink"
       >
         Mit einer Klasse starten
       </Link>

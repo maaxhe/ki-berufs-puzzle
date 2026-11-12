@@ -12,7 +12,7 @@ export default function ErkenntnissePage() {
     <div className="mx-auto max-w-[68rem] px-5 py-14 sm:px-8 sm:py-20">
       <Link
         href="/"
-        className="font-prose text-sm italic text-ink-2 underline decoration-ink/20 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+        className="font-prose text-sm text-ink-2 underline decoration-ink/20 underline-offset-2 hover:text-akzent hover:decoration-akzent"
       >
         Alle Berufe
       </Link>
@@ -118,13 +118,13 @@ export default function ErkenntnissePage() {
           </p>
         </section>
 
-        <section className="space-y-2 border-t border-rule pt-6 text-sm">
+        <section className="space-y-2 border-t-2 border-rule pt-6 text-sm">
           <p>
             Woher die einzelnen Zahlen und Quellen kommen, steht ausführlich
             auf der{" "}
             <Link
               href="/methodik"
-              className="underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+              className="underline decoration-ink/30 underline-offset-2 hover:text-akzent hover:decoration-akzent"
             >
               Methodik-Seite
             </Link>
@@ -132,7 +132,7 @@ export default function ErkenntnissePage() {
             Stellen, an denen ich der KI widersprechen musste – steht auf der{" "}
             <Link
               href="/entstehung"
-              className="underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+              className="underline decoration-ink/30 underline-offset-2 hover:text-akzent hover:decoration-akzent"
             >
               Entstehungs-Seite
             </Link>

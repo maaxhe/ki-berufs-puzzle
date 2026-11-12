@@ -199,7 +199,7 @@ export default function KlasseAuswertung() {
 
   return (
     <div className="space-y-8">
-      <section className="max-w-[46rem] border border-rule bg-paper-2 p-4">
+      <section className="max-w-[46rem] rounded-2xl border-2 border-rule bg-paper-2 p-4">
         <h2 className="font-display text-base font-semibold text-ink">Live-Raum</h2>
         {raum ? (
           <div className="mt-1 flex flex-wrap items-start gap-5">
@@ -214,7 +214,7 @@ export default function KlasseAuswertung() {
               <button
                 type="button"
                 onClick={raumWechseln}
-                className="underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+                className="underline decoration-ink/30 underline-offset-2 hover:text-akzent hover:decoration-akzent"
               >
                 Anderen Raum öffnen
               </button>
@@ -229,11 +229,11 @@ export default function KlasseAuswertung() {
             <button
               type="button"
               onClick={raumErstellen}
-              className="mt-3 inline-flex min-h-11 items-center rounded-[2px] border border-ink px-3 py-2 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-paper"
+              className="mt-3 inline-flex min-h-12 items-center rounded-full border-[3px] border-ink bg-ink px-5 py-2 text-base font-bold text-paper transition-colors hover:bg-paper hover:text-ink"
             >
               Raum erstellen
             </button>
-            <form onSubmit={raumUebernehmen} className="mt-5 border-t border-rule pt-4">
+            <form onSubmit={raumUebernehmen} className="mt-5 border-t-2 border-rule pt-4">
               <h3 className="font-display text-sm font-semibold text-ink">Raum gibt es schon?</h3>
               <p className="mt-1 font-prose text-[0.95rem] text-ink-2">
                 Mit deinem Lehrkraft-Passwort übernimmst du die Leitung eines Raums, der schon einen Code hat.
@@ -250,7 +250,7 @@ export default function KlasseAuswertung() {
                     autoComplete="off"
                     autoCapitalize="characters"
                     spellCheck={false}
-                    className="mt-1 min-h-11 w-28 rounded-[2px] border border-ink bg-paper px-3 py-2 font-mono text-lg tracking-widest text-ink"
+                    className="mt-1 min-h-11 w-28 rounded-full border-2 border-ink bg-paper px-3 py-2 font-mono text-lg tracking-widest text-ink"
                   />
                 </label>
                 <label className="text-sm text-ink">
@@ -261,13 +261,13 @@ export default function KlasseAuswertung() {
                     onChange={(e) => setUebernahme((u) => ({ ...u, passwort: e.target.value }))}
                     required
                     autoComplete="current-password"
-                    className="mt-1 min-h-11 w-56 rounded-[2px] border border-ink bg-paper px-3 py-2 text-ink"
+                    className="mt-1 min-h-11 w-56 rounded-full border-2 border-ink bg-paper px-3 py-2 text-ink"
                   />
                 </label>
                 <button
                   type="submit"
                   disabled={uebernimmt}
-                  className="inline-flex min-h-11 items-center rounded-[2px] border border-ink px-3 py-2 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-paper disabled:opacity-50"
+                  className="inline-flex min-h-11 items-center rounded-full border-2 border-ink px-3 py-2 text-base font-semibold text-ink transition-colors hover:bg-ink hover:text-paper disabled:opacity-50"
                 >
                   {uebernimmt ? "Prüfe …" : "Raum übernehmen"}
                 </button>
@@ -299,7 +299,7 @@ export default function KlasseAuswertung() {
                 <button
                   type="button"
                   onClick={() => springe(-1)}
-                  className="min-h-11 rounded-[2px] border border-ink px-3 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-paper"
+                  className="min-h-11 rounded-full border-2 border-ink px-3 py-2 text-base font-semibold text-ink hover:bg-ink hover:text-paper"
                 >
                   ← Voriger
                 </button>
@@ -309,7 +309,7 @@ export default function KlasseAuswertung() {
                 <button
                   type="button"
                   onClick={() => springe(1)}
-                  className="min-h-11 rounded-[2px] border border-ink px-3 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-paper"
+                  className="min-h-11 rounded-full border-2 border-ink px-3 py-2 text-base font-semibold text-ink hover:bg-ink hover:text-paper"
                 >
                   Nächster →
                 </button>
@@ -321,7 +321,7 @@ export default function KlasseAuswertung() {
                   type="button"
                   onClick={() => sperren(aktuellerFokus)}
                   aria-pressed={gesperrt === aktuellerFokus}
-                  className={`min-h-11 rounded-[2px] border border-ink px-3 py-2 text-sm font-semibold ${
+                  className={`min-h-11 rounded-full border-2 border-ink px-3 py-2 text-sm font-semibold ${
                     gesperrt === aktuellerFokus ? "bg-ink text-paper" : "text-ink hover:bg-ink hover:text-paper"
                   }`}
                 >
@@ -331,7 +331,7 @@ export default function KlasseAuswertung() {
                   <button
                     type="button"
                     onClick={() => sperren(null)}
-                    className="min-h-11 rounded-[2px] border border-rule px-3 py-2 text-sm text-ink hover:border-ink"
+                    className="min-h-11 rounded-xl border-2 border-rule px-3 py-2 text-sm text-ink hover:border-ink"
                   >
                     Sperre aufheben
                   </button>
@@ -351,7 +351,7 @@ export default function KlasseAuswertung() {
                   type="button"
                   aria-pressed={key === aktivKey}
                   onClick={() => setAktiv(key)}
-                  className={`min-h-11 rounded-[2px] border px-3 py-2 text-sm ${
+                  className={`min-h-11 rounded-xl border-2 px-3 py-2 text-sm ${
                     key === aktivKey
                       ? "border-ink bg-ink text-paper"
                       : "border-rule text-ink hover:border-ink"
@@ -375,7 +375,7 @@ export default function KlasseAuswertung() {
                   <button
                     type="button"
                     onClick={() => setPraesentiert(true)}
-                    className="min-h-12 rounded-[2px] bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition-colors hover:bg-mensch"
+                    className="min-h-12 rounded-full border-[3px] border-ink bg-ink px-5 py-2.5 text-base font-semibold text-paper transition-colors hover:bg-paper hover:text-ink"
                   >
                     Streitfälle präsentieren →
                   </button>
@@ -391,7 +391,7 @@ export default function KlasseAuswertung() {
                   type="button"
                   aria-pressed={sortierung === "uneinig"}
                   onClick={() => setSortierung("uneinig")}
-                  className={`min-h-11 rounded-[2px] border px-3 py-2 ${
+                  className={`min-h-11 rounded-xl border-2 px-3 py-2 ${
                     sortierung === "uneinig"
                       ? "border-ink bg-ink text-paper"
                       : "border-rule text-ink"
@@ -403,7 +403,7 @@ export default function KlasseAuswertung() {
                   type="button"
                   aria-pressed={sortierung === "reihenfolge"}
                   onClick={() => setSortierung("reihenfolge")}
-                  className={`min-h-11 rounded-[2px] border px-3 py-2 ${
+                  className={`min-h-11 rounded-xl border-2 px-3 py-2 ${
                     sortierung === "reihenfolge"
                       ? "border-ink bg-ink text-paper"
                       : "border-rule text-ink"
@@ -419,17 +419,17 @@ export default function KlasseAuswertung() {
                   const klasseSagt = kiPct >= 50 ? "ki" : "mensch";
                   const weichtAb = !z.grenzfall && klasseSagt !== z.modell;
                   return (
-                    <li key={z.id} className="border-b border-rule pb-3">
+                    <li key={z.id} className="border-b-2 border-rule pb-3">
                       <div className="flex flex-wrap items-baseline justify-between gap-x-4">
                         <span className="text-[0.95rem] font-semibold text-ink">
                           {z.title}
                           {z.ueberraschend && (
-                            <span className="ml-2 rounded-[2px] bg-paper-2 px-1.5 py-0.5 text-xs font-normal text-ink-2">
+                            <span className="ml-2 rounded-xl bg-paper-2 px-1.5 py-0.5 text-sm font-normal text-ink-2">
                               Überraschend
                             </span>
                           )}
                         </span>
-                        <span className="text-xs text-ink-2">
+                        <span className="text-sm text-ink-2">
                           Modell:{" "}
                           {z.grenzfall
                             ? "Grenzfall"
@@ -440,17 +440,17 @@ export default function KlasseAuswertung() {
                         </span>
                       </div>
                       <div
-                        className="mt-2 flex h-3 w-full overflow-hidden bg-paper-2"
+                        className="mt-2 flex h-3.5 w-full overflow-hidden rounded-full bg-paper-2"
                         role="img"
                         aria-label={`${z.menschAnzahl} Mensch, ${z.kiAnzahl} KI`}
                       >
                         <span
-                          className="bg-mensch"
+                          className="border-r-2 border-paper bg-mensch"
                           style={{ width: `${100 - kiPct}%` }}
                         />
                         <span className="bg-ki" style={{ width: `${kiPct}%` }} />
                       </div>
-                      <p className="mt-1 text-xs text-ink-2">
+                      <p className="mt-1 text-sm text-ink-2">
                         <span className="tnum">{z.menschAnzahl}</span> Mensch ·{" "}
                         <span className="tnum">{z.kiAnzahl}</span> KI
                       </p>

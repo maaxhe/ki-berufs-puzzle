@@ -286,7 +286,7 @@ export default function ErgebnisView({
   return (
     <div className="space-y-14">
       <header>
-        <p className="font-prose text-sm italic text-ink-2">
+        <p className="font-prose text-sm text-ink-2">
           Ergebnis: {beruf.title}
         </p>
         <p className="mt-3 font-display text-[clamp(1.8rem,4.5vw,2.7rem)] font-semibold leading-[1.1] tracking-[-0.015em] text-ink">
@@ -330,7 +330,7 @@ export default function ErgebnisView({
           <span className="font-semibold">{STUFE_TEXT[stufe]}</span>{" "}
           ein, im Vergleich zu den anderen Berufen.
         </p>
-        <p className="mt-4 border-l-2 border-mensch pl-4 font-prose text-[0.95rem] italic leading-relaxed text-ink-2">
+        <p className="mt-4 border-l-2 border-akzent pl-4 font-prose text-[0.95rem] leading-relaxed text-ink-2">
           „KI kann das“ heißt nicht „KI macht das“. Ob eine Aufgabe wirklich
           automatisiert wird, hängt an Kosten, Recht, Verantwortung – und daran,
           ob Menschen das überhaupt wollen. Meist verschwindet nicht der Beruf,
@@ -339,8 +339,8 @@ export default function ErgebnisView({
       </section>
 
       {groessteAbweichung && (
-        <section className="max-w-[46rem] border-l-4 border-miss bg-miss-wash p-4">
-          <p className="text-xs font-semibold uppercase tracking-wide text-miss">
+        <section className="max-w-[46rem] rounded-xl border-2 border-miss/40 bg-miss-wash p-4">
+          <p className="text-sm font-semibold text-miss">
             Deine größte Abweichung
           </p>
           <p className="mt-1 font-display text-lg font-semibold text-ink">
@@ -385,7 +385,7 @@ export default function ErgebnisView({
         </div>
 
         {!statFehler && (
-          <p className="mt-3 max-w-[46rem] text-xs leading-relaxed text-ink-2">
+          <p className="mt-3 max-w-[46rem] text-sm leading-relaxed text-ink-2">
             Die Spalte „Alle bisher“ zeigt, wie alle Menschen sortiert haben,
             die dieses Puzzle schon gemacht haben
             {statistik && statistik.n > 0 && (
@@ -414,8 +414,8 @@ export default function ErgebnisView({
                 ? "ok"
                 : "miss";
             const STATUS_STYLE = {
-              ok: "border-ok bg-ok-wash",
-              miss: "border-miss bg-miss-wash",
+              ok: "border-ok/40 bg-ok-wash",
+              miss: "border-miss/40 bg-miss-wash",
               grenzfall: "border-rule bg-paper-2",
             } as const;
             const STATUS_TEXT_COLOR = {
@@ -440,18 +440,18 @@ export default function ErgebnisView({
             return (
               <li
                 key={task.id}
-                className={`border-l-4 p-3.5 ${STATUS_STYLE[status]}`}
+                className={`rounded-xl border-2 p-3.5 ${STATUS_STYLE[status]}`}
               >
                 <div className="flex items-start justify-between gap-3">
                   <span className="text-[0.95rem] font-semibold leading-snug text-ink">
                     {task.title}
-                    <span className="ml-2 text-xs font-normal text-ink-2">
+                    <span className="ml-2 text-sm font-normal text-ink-2">
                       {CATEGORY_LABELS[task.category]}
                       {task.kontext === "studium" && " · im Studium"}
                       {task.kontext === "beruf" && " · im Beruf danach"}
                     </span>
                     {task.ueberraschend && (
-                      <span className="ml-2 rounded-[2px] bg-paper px-1.5 py-0.5 text-xs font-semibold text-ink-2 ring-1 ring-rule">
+                      <span className="ml-2 rounded-xl bg-paper px-1.5 py-0.5 text-sm font-semibold text-ink-2 ring-1 ring-rule">
                         Überraschend
                       </span>
                     )}
@@ -470,7 +470,7 @@ export default function ErgebnisView({
                   className={`mt-2.5 grid gap-3 text-sm ${statFehler ? "grid-cols-2" : "grid-cols-3"}`}
                 >
                   <span>
-                    <span className="block text-xs text-ink-2">Deine Wahl</span>
+                    <span className="block text-sm text-ink-2">Deine Wahl</span>
                     <span
                       className={
                         status === "miss"
@@ -482,18 +482,18 @@ export default function ErgebnisView({
                     </span>
                   </span>
                   <span>
-                    <span className="block text-xs text-ink-2">Modell</span>
+                    <span className="block text-sm text-ink-2">Modell</span>
                     <span className="text-ink">{ZONE_TEXT[modell]}</span>
                   </span>
                   {!statFehler && (
                     <span>
-                      <span className="block text-xs text-ink-2">
+                      <span className="block text-sm text-ink-2">
                         Alle bisher
                       </span>
                       {stimmen === null ? (
                         <span className="text-ink-2">…</span>
                       ) : stimmen < MIN_STIMMEN ? (
-                        <span className="text-xs text-ink-2">
+                        <span className="text-sm text-ink-2">
                           noch zu wenige
                         </span>
                       ) : (
@@ -506,7 +506,7 @@ export default function ErgebnisView({
                   )}
                 </div>
 
-                <p className="mt-2.5 border-t border-ink/10 pt-2.5 font-prose text-[0.95rem] italic text-ink-2">
+                <p className="mt-2.5 border-t-2 border-ink/10 pt-2.5 font-prose text-[0.95rem] text-ink-2">
                   {konfidenzLabel(task.kiEignung)}
                 </p>
                 <p className="mt-1.5 font-prose text-[0.95rem] leading-relaxed text-ink-2">
@@ -514,8 +514,8 @@ export default function ErgebnisView({
                 </p>
 
                 {deine && !statFehler && (
-                  <div className="mt-3 border-t border-ink/10 pt-2.5">
-                    <p className="text-xs text-ink-2">
+                  <div className="mt-3 border-t-2 border-ink/10 pt-2.5">
+                    <p className="text-sm text-ink-2">
                       Warum hast du „{ZONE_TEXT[deine]}“ gewählt?
                     </p>
                     <div className="mt-1.5 flex flex-wrap gap-1.5">
@@ -528,7 +528,7 @@ export default function ErgebnisView({
                             type="button"
                             aria-pressed={aktiv}
                             onClick={() => waehleGrund(task.id, g.id)}
-                            className={`inline-flex min-h-9 items-center gap-1.5 rounded-full border px-3 py-1 text-xs transition-colors ${
+                            className={`inline-flex min-h-9 items-center gap-1.5 rounded-full border-2 px-3 py-1 text-sm transition-colors ${
                               aktiv
                                 ? "border-ink bg-ink text-paper"
                                 : "border-rule bg-paper text-ink hover:border-ink"
@@ -568,7 +568,7 @@ export default function ErgebnisView({
         <ul className="prose-text mt-2 space-y-1.5 text-ink">
           {beruf.tippsMenschlich.map((tipp) => (
             <li key={tipp} className="flex gap-2.5">
-              <span className="relative top-[0.55em] h-1.5 w-1.5 shrink-0 bg-mensch" />
+              <span className="relative top-[0.55em] h-2 w-2 shrink-0 rounded-full bg-akzent" />
               <span>{tipp}</span>
             </li>
           ))}
@@ -586,30 +586,30 @@ export default function ErgebnisView({
         art={puzzleBasePath === "/studium" ? "studium" : "beruf"}
       />
 
-      <div className="flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-rule pt-6 text-sm">
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-2 border-t-2 border-rule pt-6 text-sm">
         <button
           type="button"
           onClick={onRetry}
-          className="inline-flex min-h-11 items-center font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
+          className="inline-flex min-h-11 items-center font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:text-akzent hover:decoration-akzent"
         >
           Nochmal sortieren
         </button>
         <Link
           href={alleHref}
-          className="inline-flex min-h-11 items-center font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
+          className="inline-flex min-h-11 items-center font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:text-akzent hover:decoration-akzent"
         >
           {alleLabel}
         </Link>
         <Link
           href={vergleichHref}
-          className="inline-flex min-h-11 items-center font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
+          className="inline-flex min-h-11 items-center font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:text-akzent hover:decoration-akzent"
         >
           {vergleichLabel}
         </Link>
         {nextSlug && (
           <Link
             href={`${puzzleBasePath}/${nextSlug}`}
-            className="inline-flex min-h-11 items-center font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch"
+            className="inline-flex min-h-11 items-center font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:text-akzent hover:decoration-akzent"
           >
             {naechstesLabel}
           </Link>
@@ -617,7 +617,7 @@ export default function ErgebnisView({
         <button
           type="button"
           onClick={handleExport}
-          className="ml-auto inline-flex items-center gap-2 rounded-[2px] border border-ink px-4 py-2 font-semibold text-ink transition-colors hover:bg-ink hover:text-paper"
+          className="ml-auto inline-flex items-center gap-2 rounded-full border-2 border-ink px-4 py-2 font-semibold text-ink transition-colors hover:bg-ink hover:text-paper"
         >
           <svg
             width="18"

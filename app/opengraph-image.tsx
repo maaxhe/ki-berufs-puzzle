@@ -16,12 +16,12 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#f5f4f1",
-          color: "#262019",
+          background: "#faf8ff",
+          color: "#231c4a",
           padding: "72px",
         }}
       >
-        <div style={{ display: "flex", fontSize: 30, color: "#8a3a2c" }}>
+        <div style={{ display: "flex", fontSize: 30, color: "#5b43b8" }}>
           KI-Berufs-Puzzle
         </div>
         <div
@@ -40,8 +40,8 @@ export default function OpengraphImage() {
             style={{
               display: "flex",
               padding: "14px 28px",
-              background: "#efe1dc",
-              color: "#8a3a2c",
+              background: "#fbe7d6",
+              color: "#5b43b8",
             }}
           >
             Mensch
@@ -50,7 +50,7 @@ export default function OpengraphImage() {
             style={{
               display: "flex",
               padding: "14px 28px",
-              background: "#e7eaea",
+              background: "#dcebf8",
               color: "#33484d",
             }}
           >

@@ -12,10 +12,10 @@ export default function BerufCard({
   return (
     <Link
       href={`${hrefBase}/${beruf.slug}`}
-      className="group grid grid-cols-[1fr_auto] items-baseline gap-4 border-b border-rule py-5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mensch"
+      className="group grid grid-cols-[1fr_auto] items-baseline gap-4 border-b-2 border-rule py-5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
     >
       <div>
-        <h3 className="font-display text-[1.0625rem] font-semibold text-ink transition-colors group-hover:text-mensch">
+        <h3 className="font-display text-[1.0625rem] font-semibold text-ink transition-colors group-hover:text-akzent">
           {beruf.title}
         </h3>
         <p className="mt-1 font-prose text-[0.95rem] leading-snug text-ink-2">
@@ -23,7 +23,7 @@ export default function BerufCard({
         </p>
       </div>
 
-      <span className="shrink-0 font-prose text-sm italic text-ink-2 opacity-70 transition group-hover:opacity-100 group-focus-visible:opacity-100 sm:opacity-0">
+      <span className="shrink-0 font-prose text-sm text-ink-2 opacity-70 transition group-hover:opacity-100 group-focus-visible:opacity-100 sm:opacity-0">
         Sortieren →
       </span>
     </Link>

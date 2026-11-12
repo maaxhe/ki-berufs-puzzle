@@ -19,7 +19,7 @@ export default function PraxisPage() {
     <div className="mx-auto max-w-[68rem] px-5 py-14 sm:px-8 sm:py-20">
       <Link
         href="/"
-        className="font-prose text-sm italic text-ink-2 underline decoration-ink/20 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+        className="font-prose text-sm text-ink-2 underline decoration-ink/20 underline-offset-2 hover:text-akzent hover:decoration-akzent"
       >
         Alle Berufe
       </Link>
@@ -33,11 +33,11 @@ export default function PraxisPage() {
           rollen in deutschen Supermärkten längst Serviceroboter, scannen
           Algorithmen Verträge und federn Exoskelette schwere Lasten ab. In der Medizin und Forschung helfen KI-Systeme beim Lesen von Gewebeschnitten, Röntgenbildern und Proteinen.
         </p>
-        <p className="prose-text mt-3 italic text-ink-2">
+        <p className="prose-text mt-3 text-ink-2">
           {praxisBeispiele.length} Fälle in {praxisKategorien.length} Bereichen. Bei jedem dieselbe Frage wie im Puzzle:
           Was übernimmt die Maschine – und wo bleibt der Mensch?
         </p>
-        <nav aria-label="Kategorien" className="mt-8 border-t border-rule pt-4">
+        <nav aria-label="Kategorien" className="mt-8 border-t-2 border-rule pt-4">
           <ul className="grid gap-x-8 gap-y-5 font-prose text-sm sm:grid-cols-2">
             {praxisKategorien.map((k) => {
               const faelle = praxisBeispiele.filter((b) => b.kategorie === k.id);
@@ -45,7 +45,7 @@ export default function PraxisPage() {
                 <li key={k.id}>
                   <a
                     href={`#kategorie-${k.id}`}
-                    className="font-display text-[0.95rem] font-semibold text-ink underline decoration-ink/20 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+                    className="font-display text-[0.95rem] font-semibold text-ink underline decoration-ink/20 underline-offset-2 hover:text-akzent hover:decoration-akzent"
                   >
                     {k.titel} <span className="tnum font-normal text-ink-2">({faelle.length})</span>
                   </a>
@@ -55,7 +55,7 @@ export default function PraxisPage() {
                         {i > 0 && " · "}
                         <a
                           href={`#${b.id}`}
-                          className="underline decoration-ink/20 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+                          className="underline decoration-ink/20 underline-offset-2 hover:text-akzent hover:decoration-akzent"
                         >
                           {b.berufTitel.split(" & ")[0].split(" (")[0]}
                         </a>
@@ -78,20 +78,16 @@ export default function PraxisPage() {
             {neueKategorie && (
               <div id={`kategorie-${kat.id}`} className="scroll-mt-20 border-t-2 border-ink pt-10">
                 <h2 className="font-display text-[clamp(1.3rem,2.5vw,1.7rem)] font-semibold text-ink">{kat.titel}</h2>
-                <p className="mt-1 font-prose text-sm italic text-ink-2">{kat.beschreibung}</p>
+                <p className="mt-1 font-prose text-sm text-ink-2">{kat.beschreibung}</p>
               </div>
             )}
           <article
             id={bsp.id}
-            className="scroll-mt-20 border-t border-rule py-12 sm:py-14"
+            className="scroll-mt-20 border-t-2 border-rule py-12 sm:py-14"
           >
             <div className="grid gap-x-12 gap-y-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
               <div>
-                <p className="font-prose text-sm italic text-ink-2">
-                  <span className="tnum not-italic font-display font-semibold text-mensch">
-                    {String(idx + 1).padStart(2, "0")}
-                  </span>
-                  <span className="mx-2">·</span>
+                <p className="font-prose text-sm text-ink-2">
                   {bsp.berufTitel}
                   <span className="mx-2">·</span>
                   {bsp.ort}
@@ -101,7 +97,7 @@ export default function PraxisPage() {
                 </h3>
                 <p className="prose-text mt-4 text-ink">{bsp.teaser}</p>
                 {bsp.einordnung && (
-                  <p className="mt-3 font-prose text-sm italic text-ink-2">
+                  <p className="mt-3 font-prose text-sm text-ink-2">
                     Einordnung: {bsp.einordnung}
                   </p>
                 )}
@@ -123,13 +119,13 @@ export default function PraxisPage() {
                   <div>
                     <VideoEmbed {...bsp.video} />
                     {bsp.video.hinweis && (
-                      <p className="mt-2 font-prose text-xs italic text-ink-2">{bsp.video.hinweis}</p>
+                      <p className="mt-2 font-prose text-sm text-ink-2">{bsp.video.hinweis}</p>
                     )}
                   </div>
                 )}
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div className="border-l-2 border-ki pl-4">
-                    <h3 className="font-display text-xs font-semibold uppercase tracking-wider text-ki">
+                    <h3 className="font-display text-sm font-semibold text-ki">
                       Die Maschine
                     </h3>
                     <p className="mt-2 font-prose text-[0.95rem] leading-snug text-ink">
@@ -137,7 +133,7 @@ export default function PraxisPage() {
                     </p>
                   </div>
                   <div className="border-l-2 border-mensch pl-4">
-                    <h3 className="font-display text-xs font-semibold uppercase tracking-wider text-mensch">
+                    <h3 className="font-display text-sm font-semibold text-mensch">
                       Der Mensch
                     </h3>
                     <p className="mt-2 font-prose text-[0.95rem] leading-snug text-ink">
@@ -150,10 +146,10 @@ export default function PraxisPage() {
 
             <div className="mt-8 grid gap-x-12 gap-y-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
               <blockquote>
-                <p className="font-display text-[0.7rem] font-semibold uppercase tracking-wider text-ink-2">
+                <p className="font-display text-[0.7rem] font-semibold text-ink-2">
                   Zum Diskutieren
                 </p>
-                <p className="mt-1 font-prose text-[1.1rem] italic leading-snug text-ink">
+                <p className="mt-1 font-prose text-[1.1rem] leading-snug text-ink">
                   {bsp.diskussionsFrage}
                 </p>
               </blockquote>
@@ -162,7 +158,7 @@ export default function PraxisPage() {
                   {bsp.berufSlug ? (
                     <Link
                       href={`/puzzle/${bsp.berufSlug}`}
-                      className="font-prose text-[1.02rem] italic text-ink underline decoration-mensch decoration-2 underline-offset-4 hover:text-mensch"
+                      className="font-prose text-[1.02rem] text-ink underline decoration-akzent decoration-2 underline-offset-4 hover:text-akzent"
                     >
                       Diesen Beruf selbst sortieren →
                     </Link>
@@ -174,7 +170,7 @@ export default function PraxisPage() {
                           <Link
                             key={slug}
                             href={`/puzzle/${slug}`}
-                            className="font-prose text-[1.02rem] italic text-ink underline decoration-mensch decoration-2 underline-offset-4 hover:text-mensch"
+                            className="font-prose text-[1.02rem] text-ink underline decoration-akzent decoration-2 underline-offset-4 hover:text-akzent"
                           >
                             Ähnlicher Beruf zum Sortieren: {b.title} →
                           </Link>
@@ -184,7 +180,7 @@ export default function PraxisPage() {
                   ) : (
                     <Link
                       href="/"
-                      className="font-prose text-[1.02rem] italic text-ink underline decoration-mensch decoration-2 underline-offset-4 hover:text-mensch"
+                      className="font-prose text-[1.02rem] text-ink underline decoration-akzent decoration-2 underline-offset-4 hover:text-akzent"
                     >
                       Alle Job-Quizze ansehen →
                     </Link>
@@ -196,7 +192,7 @@ export default function PraxisPage() {
                         <Link
                           key={slug}
                           href={`/studium/${slug}`}
-                          className="font-prose text-[1.02rem] italic text-ink underline decoration-mensch decoration-2 underline-offset-4 hover:text-mensch"
+                          className="font-prose text-[1.02rem] text-ink underline decoration-akzent decoration-2 underline-offset-4 hover:text-akzent"
                         >
                           Passendes Studium: {sg.title} →
                         </Link>
@@ -212,7 +208,7 @@ export default function PraxisPage() {
         })}
       </div>
 
-      <aside className="border-t border-rule pt-10">
+      <aside className="border-t-2 border-rule pt-10">
         <p className="prose-text max-w-[46rem] text-ink">
           Kennst du ein Beispiel aus deiner Region – den Bäcker mit Teig-Scanner,
           die Zahnarztpraxis mit 3D-Druck, den Rettungsdienst mit KI-EKG? Echte
@@ -220,7 +216,7 @@ export default function PraxisPage() {
         </p>
         <Link
           href="/"
-          className="mt-4 inline-block font-prose text-[1.02rem] italic text-ink underline decoration-mensch decoration-2 underline-offset-4 hover:text-mensch"
+          className="mt-4 inline-block font-prose text-[1.02rem] text-ink underline decoration-akzent decoration-2 underline-offset-4 hover:text-akzent"
         >
           Zurück zu allen Berufen →
         </Link>

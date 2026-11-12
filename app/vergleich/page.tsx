@@ -29,7 +29,7 @@ export default function VergleichPage() {
     <div className="mx-auto max-w-[68rem] px-5 py-14 sm:px-8 sm:py-16">
       <Link
         href="/"
-        className="font-prose text-sm italic text-ink-2 underline decoration-ink/20 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+        className="font-prose text-sm text-ink-2 underline decoration-ink/20 underline-offset-2 hover:text-akzent hover:decoration-akzent"
       >
         Alle Berufe
       </Link>
@@ -52,12 +52,12 @@ export default function VergleichPage() {
           <li key={beruf.slug}>
             <Link
               href={`/puzzle/${beruf.slug}`}
-              className="group flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-rule py-3 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mensch"
+              className="group flex flex-wrap items-center gap-x-4 gap-y-2 border-b-2 border-rule py-3 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
             >
               <span className="tnum w-6 shrink-0 text-right text-sm text-ink-2">
                 {i + 1}.
               </span>
-              <span className="min-w-0 flex-1 font-display text-[0.95rem] font-semibold leading-snug text-ink transition-colors group-hover:text-mensch sm:w-56 sm:flex-none">
+              <span className="min-w-0 flex-1 font-display text-[0.95rem] font-semibold leading-snug text-ink transition-colors group-hover:text-akzent sm:w-56 sm:flex-none">
                 {beruf.title}
               </span>
               <span className="shrink-0 text-sm font-semibold text-ink sm:w-44">

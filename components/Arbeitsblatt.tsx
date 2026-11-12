@@ -21,25 +21,25 @@ export default function Arbeitsblatt({
 }) {
   const fragen = diskussionsfragen(einheit);
   return (
-    <div className="mx-auto max-w-[52rem] px-5 py-10 sm:px-8 print:max-w-none print:px-0 print:py-0">
+    <div className="blatt mx-auto my-8 max-w-[52rem] rounded-2xl border-2 border-rule px-5 py-8 sm:px-8 print:my-0 print:max-w-none print:rounded-none print:border-0 print:px-0 print:py-0">
       <div className="mb-6 flex flex-wrap items-center gap-4 print:hidden">
         <PrintButton label="Drucken / als PDF speichern" />
         <Link
           href="/lehrkraefte"
-          className="text-sm text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch"
+          className="text-sm text-ink underline decoration-ink/30 underline-offset-4 hover:text-akzent"
         >
           Zurück zur Lehrkräfte-Seite
         </Link>
         <Link
           href={loesung ? pfad : `${pfad}/loesung`}
-          className="text-sm text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch"
+          className="text-sm text-ink underline decoration-ink/30 underline-offset-4 hover:text-akzent"
         >
           {loesung ? "Zur Schüler:innen-Version" : "Zur Lösungs-Version"}
         </Link>
       </div>
 
       <header className="border-b-2 border-ink pb-3">
-        <p className="text-xs uppercase tracking-wide text-ink-2">
+        <p className="text-sm text-ink-2">
           KI-Berufs-Puzzle · Arbeitsblatt{loesung ? " · Lösung für Lehrkräfte" : ""}
         </p>
         <h1 className="mt-1 font-display text-2xl font-semibold text-ink">
@@ -67,7 +67,7 @@ export default function Arbeitsblatt({
         </p>
         <table className="mt-3 w-full border-collapse text-left text-sm">
           <thead>
-            <tr className="border-b border-ink">
+            <tr className="border-b-2 border-ink">
               <th className="py-2 pr-3 font-semibold">Aufgabe</th>
               <th className="w-20 py-2 text-center font-semibold">Mensch</th>
               <th className="w-20 py-2 text-center font-semibold">KI</th>
@@ -83,11 +83,11 @@ export default function Arbeitsblatt({
               return (
                 <tr
                   key={task.id}
-                  className="break-inside-avoid border-b border-rule align-top"
+                  className="break-inside-avoid border-b-2 border-rule align-top"
                 >
                   <td className="py-2.5 pr-3">
                     <span className="font-semibold text-ink">{task.title}</span>
-                    <span className="ml-2 text-xs text-ink-2">
+                    <span className="ml-2 text-sm text-ink-2">
                       {CATEGORY_LABELS[task.category]}
                       {task.kontext === "studium" && " · im Studium"}
                       {task.kontext === "beruf" && " · im Beruf danach"}
@@ -111,7 +111,7 @@ export default function Arbeitsblatt({
                     {loesung && modell === "ki" && !grenz ? "☒" : "☐"}
                   </td>
                   {loesung && (
-                    <td className="py-2.5 pl-3 text-xs text-ink-2">
+                    <td className="py-2.5 pl-3 text-sm text-ink-2">
                       {konfidenzLabel(task.kiEignung)}
                     </td>
                   )}
@@ -131,14 +131,14 @@ export default function Arbeitsblatt({
             <li key={frage}>
               {frage}
               {!loesung && (
-                <span className="mt-2 block border-b border-ink/40 pb-4" />
+                <span className="mt-2 block border-b-2 border-ink/40 pb-4" />
               )}
             </li>
           ))}
         </ol>
       </section>
 
-      <footer className="mt-8 border-t border-rule pt-3 text-xs text-ink-2">
+      <footer className="mt-8 border-t-2 border-rule pt-3 text-sm text-ink-2">
         Die Werte sind didaktische Schätzungen zur Diskussion, keine Prognosen.
         Mehr unter {SITE_URL}
       </footer>

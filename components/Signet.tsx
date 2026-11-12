@@ -1,13 +1,13 @@
-// Signet des KI-Berufs-Puzzles: zwei Puzzleteile, links Mensch (Ziegelrot), rechts KI (Pewter).
-// Gleiche Kachel wie die übrigen coxilab-Werkzeuge (Papier, gerundet). Auch als app/icon.svg.
+// Signet des KI-Berufs-Puzzles: zwei Puzzleteile auf der violetten Linienfarbe (Linie P).
+// Auch als app/icon.svg.
 export function PuzzleSignet({ className = "h-7 w-7" }: { className?: string }) {
   return (
     <svg viewBox="0 0 32 32" aria-hidden="true" className={className}>
-      <rect width="32" height="32" rx="7" fill="#efece5" />
-      <rect x="16.5" y="8" width="10.5" height="16" rx="2.5" fill="#52646d" />
-      <circle cx="17.5" cy="16" r="4.6" fill="#efece5" />
-      <rect x="5" y="8" width="10.5" height="16" rx="2.5" fill="#8a3a2c" />
-      <circle cx="17.5" cy="16" r="3.2" fill="#8a3a2c" />
+      <rect width="32" height="32" rx="7" fill="#9a86dc" />
+      <rect x="16.5" y="8" width="10.5" height="16" rx="2.5" fill="#faf8ff" />
+      <circle cx="17.5" cy="16" r="4.6" fill="#9a86dc" />
+      <rect x="5" y="8" width="10.5" height="16" rx="2.5" fill="#231c4a" />
+      <circle cx="17.5" cy="16" r="3.2" fill="#231c4a" />
     </svg>
   );
 }

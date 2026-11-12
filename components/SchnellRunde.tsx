@@ -124,14 +124,14 @@ export default function SchnellRunde({
 
   if (!aktuell) {
     return (
-      <div className="mt-8 max-w-[46rem] border border-rule bg-paper-2 p-6">
+      <div className="mt-8 max-w-[46rem] rounded-2xl border-2 border-rule bg-paper-2 p-6">
         <p className="font-display text-xl font-semibold text-ink">
           Alles sortiert.
         </p>
         <button
           type="button"
           onClick={onFinish}
-          className="mt-4 rounded-[2px] bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition-colors hover:bg-mensch"
+          className="mt-4 rounded-full border-[3px] border-ink bg-ink px-5 py-2.5 text-base font-semibold text-paper transition-colors hover:bg-paper hover:text-ink"
         >
           Ergebnis ansehen
         </button>
@@ -197,11 +197,11 @@ export default function SchnellRunde({
             transform: `translateX(${dx}px) rotate(${neigung * 6}deg)`,
             touchAction: "pan-y",
           }}
-          className={`select-none border-2 p-6 sm:p-7 ${tint} ${
+          className={`select-none rounded-2xl border-2 p-6 sm:p-7 ${tint} ${
             dx === 0 ? "transition-transform" : ""
           } ${reveal ? "" : "cursor-grab active:cursor-grabbing"}`}
         >
-          <p className="text-xs text-ink-2">
+          <p className="text-sm text-ink-2">
             <span aria-hidden="true">{CATEGORY_ICONS[aktuell.category]}</span>{" "}
             {CATEGORY_LABELS[aktuell.category]}
             {aktuell.kontext &&
@@ -220,14 +220,14 @@ export default function SchnellRunde({
             <button
               type="button"
               onClick={() => antworten("mensch")}
-              className="min-h-14 rounded-[2px] bg-mensch px-4 py-3 text-base font-semibold text-paper transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+              className="min-h-14 rounded-xl bg-mensch px-4 py-3 text-base font-semibold text-paper transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
             >
               <span aria-hidden="true">← </span>Mensch
             </button>
             <button
               type="button"
               onClick={() => antworten("ki")}
-              className="min-h-14 rounded-[2px] bg-ki px-4 py-3 text-base font-semibold text-paper transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+              className="min-h-14 rounded-xl bg-ki px-4 py-3 text-base font-semibold text-paper transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
             >
               KI<span aria-hidden="true"> →</span>
             </button>
@@ -241,11 +241,11 @@ export default function SchnellRunde({
         <div
           role="status"
           aria-live="polite"
-          className={`mt-5 border-l-4 p-4 ${
+          className={`mt-5 rounded-xl border-2 p-4 ${
             status === "ok"
-              ? "border-ok bg-ok-wash"
+              ? "border-ok/40 bg-ok-wash"
               : status === "miss"
-                ? "border-miss bg-miss-wash"
+                ? "border-miss/40 bg-miss-wash"
                 : "border-rule bg-paper-2"
           }`}
         >
@@ -269,18 +269,18 @@ export default function SchnellRunde({
           </p>
 
           <div className="mt-3" aria-hidden="true">
-            <div className="relative h-2 bg-gradient-to-r from-mensch to-ki">
+            <div className="relative h-2.5 rounded-full bg-gradient-to-r from-mensch to-ki">
               <span
                 className="absolute top-1/2 h-4 w-1 -translate-x-1/2 -translate-y-1/2 bg-ink ring-2 ring-paper"
                 style={{ left: `${aktuell.kiEignung}%` }}
               />
             </div>
-            <div className="mt-1 flex justify-between text-xs text-ink-2">
+            <div className="mt-1 flex justify-between text-sm text-ink-2">
               <span>Mensch</span>
               <span>KI</span>
             </div>
           </div>
-          <p className="mt-2 font-prose text-[0.95rem] italic text-ink-2">
+          <p className="mt-2 font-prose text-[0.95rem] text-ink-2">
             {konfidenzLabel(aktuell.kiEignung)}
           </p>
           <p className="mt-1.5 font-prose text-[0.95rem] leading-relaxed text-ink">
@@ -288,7 +288,7 @@ export default function SchnellRunde({
           </p>
           {aktuell.ueberraschend && (
             <p className="mt-3 text-sm font-semibold text-ink">
-              <span className="rounded-[2px] bg-paper px-1.5 py-0.5 ring-1 ring-rule">
+              <span className="rounded-xl bg-paper px-1.5 py-0.5 ring-1 ring-rule">
                 Überraschung
               </span>{" "}
               Hier führt „Verwaltung = KI, Beziehung = Mensch“ in die Irre.
@@ -298,7 +298,7 @@ export default function SchnellRunde({
             ref={weiterRef}
             type="button"
             onClick={weiter}
-            className="mt-4 w-full rounded-[2px] bg-ink px-5 py-3 text-sm font-semibold text-paper transition-colors hover:bg-mensch sm:w-auto"
+            className="mt-4 w-full rounded-full border-[3px] border-ink bg-ink px-5 py-3 text-base font-semibold text-paper transition-colors hover:bg-paper hover:text-ink sm:w-auto"
           >
             {letzte ? "Ergebnis ansehen" : "Weiter"}{" "}
             <span aria-hidden="true">→</span>

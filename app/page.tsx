@@ -24,7 +24,7 @@ export default function Home() {
           <KlasseStartButton />
           <Link
             href="/praxis"
-            className="font-prose text-[1.02rem] italic text-ink underline decoration-mensch decoration-2 underline-offset-4 hover:text-mensch"
+            className="font-prose text-[1.02rem] text-ink underline decoration-akzent decoration-2 underline-offset-4 hover:text-akzent"
           >
             Schon heute Realität: Fälle aus der Praxis →
           </Link>

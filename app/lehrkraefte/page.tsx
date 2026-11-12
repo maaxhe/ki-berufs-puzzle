@@ -16,14 +16,14 @@ export const metadata: Metadata = {
 };
 
 const linkKlasse =
-  "underline decoration-ink/30 underline-offset-2 hover:text-mensch hover:decoration-mensch";
+  "underline decoration-ink/30 underline-offset-2 hover:text-akzent hover:decoration-akzent";
 
 export default function LehrkraeftePage() {
   return (
     <div className="mx-auto max-w-[68rem] px-5 py-14 sm:px-8 sm:py-20">
       <Link
         href="/"
-        className="font-prose text-sm italic text-ink-2 underline decoration-ink/20 underline-offset-2 hover:text-mensch hover:decoration-mensch"
+        className="font-prose text-sm text-ink-2 underline decoration-ink/20 underline-offset-2 hover:text-akzent hover:decoration-akzent"
       >
         Alle Berufe
       </Link>

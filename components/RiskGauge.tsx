@@ -35,14 +35,14 @@ export default function RiskGauge({
   return (
     <div className={lg ? "space-y-2" : undefined}>
       {lg && user != null && (
-        <div className="flex flex-wrap gap-x-6 gap-y-0.5 text-xs">
+        <div className="flex flex-wrap gap-x-6 gap-y-0.5 text-sm">
           {userLabel && (
             <span className="font-semibold text-ink">
               Deine Aufteilung: {userLabel}
             </span>
           )}
           {modelLabel && (
-            <span className="font-semibold text-mensch">
+            <span className="font-semibold text-akzent">
               Modell: {modelLabel}
             </span>
           )}
@@ -58,7 +58,7 @@ export default function RiskGauge({
             lg
               ? {
                   background:
-                    "linear-gradient(90deg, var(--color-mensch-wash), var(--color-ki-wash))",
+                    "linear-gradient(90deg, var(--color-mensch), var(--color-ki))",
                 }
               : { background: "var(--color-ink)" }
           }
@@ -67,7 +67,7 @@ export default function RiskGauge({
         {/* Modell-Strich */}
         <span
           className={`absolute top-0 h-full -translate-x-1/2 ${
-            lg ? "w-[3px] bg-mensch" : "w-[2px] bg-ink"
+            lg ? "w-[3px] bg-akzent" : "w-[2px] bg-ink"
           }`}
           style={{ left: `${model}%` }}
         />
@@ -87,7 +87,7 @@ export default function RiskGauge({
       </div>
 
       {lg && (
-        <div className="flex justify-between pt-1 font-prose text-xs italic text-ink-2">
+        <div className="flex justify-between pt-1 font-prose text-sm text-ink-2">
           <span>ganz beim Menschen</span>
           <span>ganz bei der KI</span>
         </div>
