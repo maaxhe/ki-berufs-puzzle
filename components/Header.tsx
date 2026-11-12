@@ -33,17 +33,19 @@ export default function Header() {
   const praxisAktiv = pathname === "/praxis";
   const klasseAktiv = pathname === "/klasse";
 
-  const tab = (aktiv: boolean) =>
-    `inline-flex min-h-11 shrink-0 items-center rounded-full border-2 px-4 py-1.5 text-[0.95rem] font-semibold leading-none transition-colors ${
-      aktiv ? "border-ink bg-ink text-paper" : "border-rule text-ink hover:bg-flaeche"
-    }`;
+  const tab = (aktiv: boolean, farbe?: "beruf" | "uni") => {
+    const basis = "inline-flex min-h-11 shrink-0 items-center rounded-full border-2 px-4 py-1.5 text-[0.95rem] font-semibold leading-none transition-colors";
+    if (farbe === "beruf") return `${basis} border-beruf ${aktiv ? "bg-beruf text-paper" : "text-beruf hover:bg-flaeche"}`;
+    if (farbe === "uni") return `${basis} border-uni ${aktiv ? "bg-uni text-paper" : "text-uni hover:bg-flaeche"}`;
+    return `${basis} ${aktiv ? "border-ink bg-ink text-paper" : "border-rule text-ink hover:bg-flaeche"}`;
+  };
   const berufeLink = (
-    <Link href="/" aria-current={!studiumAktiv && pathname === "/" ? "page" : undefined} className={tab(!studiumAktiv && !praxisAktiv && !erkenntnisseAktiv && !klasseAktiv)}>
+    <Link href="/" aria-current={!studiumAktiv && pathname === "/" ? "page" : undefined} className={tab(!studiumAktiv && !praxisAktiv && !erkenntnisseAktiv && !klasseAktiv, "beruf")}>
       Berufe <span className="ml-1 hidden font-normal opacity-80 sm:inline">(Ausbildung)</span>
     </Link>
   );
   const studiumLink = (
-    <Link href="/studium" aria-current={studiumAktiv ? "page" : undefined} className={tab(studiumAktiv)}>
+    <Link href="/studium" aria-current={studiumAktiv ? "page" : undefined} className={tab(studiumAktiv, "uni")}>
       Studiengänge
     </Link>
   );
@@ -90,7 +92,7 @@ export default function Header() {
   );
 
   return (
-    <header className="border-b-2 border-rule bg-flaeche">
+    <header className={`border-b-2 border-rule bg-flaeche ${studiumAktiv ? "theme-studium" : ""}`}>
       {/* Mobil: oben Logo + Klasse starten, darunter eine wischbare Navigationszeile. */}
       <div className="mx-auto max-w-[68rem] px-5 pt-4 sm:hidden">
         <div className="flex items-center justify-between gap-3">

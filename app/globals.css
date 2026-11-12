@@ -16,6 +16,8 @@
   --color-rule: var(--c-rule);
   --color-akzent: var(--c-akzent);
   --color-linie: var(--c-linie);
+  --color-beruf: var(--c-beruf);
+  --color-uni: var(--c-uni);
   --color-karte: var(--c-karte);
 
   /* Bedeutungsfarben: Mensch = Orange, KI = Blau (auch für Farbfehlsichtige trennbar, zusätzlich immer mit Beschriftung). */
@@ -48,6 +50,8 @@
   --c-rule: #b6abe0;
   --c-akzent: #5b43b8;
   --c-linie: #9a86dc;
+  --c-beruf: #8a3f9c;
+  --c-uni: #3b52c4;
   --c-karte: #ffffff;
   --c-ki: #1d5c92;
   --c-ki-wash: #dcebf8;
@@ -70,6 +74,8 @@
   --c-rule: #4d4488;
   --c-akzent: #b9a9f5;
   --c-linie: #9a86dc;
+  --c-beruf: #e0a6f0;
+  --c-uni: #a9b8ff;
   --c-karte: #1c1743;
   --c-ki: #86bcf0;
   --c-ki-wash: #132c49;
@@ -188,4 +194,22 @@ h3 {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Studiengänge: leicht kühlerer, bläulicher Ton als bei den Berufen (wie im ursprünglichen Design). Die Klasse sitzt am Seiteninhalt und am Header. */
+.theme-studium {
+  --c-paper: #f8faff;
+  --c-flaeche: #dde3f8;
+  --c-flaeche-tief: #c6d0f2;
+  --c-rule: #aab6e6;
+  --c-akzent: #3b52c4;
+  --c-linie: #8196e0;
+}
+:root[data-theme="dark"] .theme-studium {
+  --c-paper: #0f1530;
+  --c-flaeche: #232a66;
+  --c-flaeche-tief: #1b2155;
+  --c-rule: #44509a;
+  --c-akzent: #a9b8ff;
+  --c-linie: #8196e0;
 }
