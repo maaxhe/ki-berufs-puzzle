@@ -3,6 +3,7 @@ import Wege from "@/components/Wege";
 import BerufListe from "@/components/BerufListe";
 import Disclaimer from "@/components/Disclaimer";
 import Legend from "@/components/Legend";
+import HeroZeichnung from "@/components/HeroZeichnung";
 import { berufe } from "@/data/berufe";
 import { studiengaenge } from "@/data/studiengaenge";
 import { KATEGORIE_LABELS, KATEGORIE_REIHENFOLGE } from "@/types";
@@ -11,7 +12,8 @@ import type { BerufKategorie } from "@/types";
 export default function Home() {
   return (
     <div className="mx-auto max-w-[68rem] px-5 py-14 sm:px-8 sm:py-20">
-      <section className="max-w-[46rem]">
+      <section className="min-[56rem]:grid min-[56rem]:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] min-[56rem]:items-center min-[56rem]:gap-12">
+      <div className="max-w-[46rem]">
         <h1 className="max-w-[18ch] font-display text-[clamp(2.4rem,6vw,4rem)] font-semibold leading-[1.02] tracking-[-0.02em] text-ink">
           Was in deinem Beruf kann KI – und was bleibt menschlich?
         </h1>
@@ -32,6 +34,8 @@ export default function Home() {
         <div className="mt-7">
           <Legend />
         </div>
+      </div>
+        <HeroZeichnung />
       </section>
 
       <div className="mt-12 max-w-[46rem]">

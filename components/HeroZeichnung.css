@@ -1,0 +1,47 @@
+.hero-zeichnung {
+  display: none;
+  border: 2px solid var(--c-rule);
+  border-radius: 18px;
+  background: var(--c-paper-2);
+  overflow: hidden;
+}
+@media (min-width: 56rem) {
+  .hero-zeichnung {
+    display: block;
+    align-self: center;
+  }
+}
+.hz-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: var(--c-ink);
+}
+.hz-brett { fill: var(--c-paper); stroke: var(--c-ink); stroke-width: 2.5; }
+.hz-mitte { stroke: var(--c-linie); stroke-width: 2.5; stroke-dasharray: 3 9; stroke-linecap: round; }
+.hz-ki { --hz: var(--c-ki); --hz-wash: var(--c-ki-wash); }
+.hz-mensch { --hz: var(--c-mensch); --hz-wash: var(--c-mensch-wash); }
+.hz-kopf { fill: var(--hz); }
+.hz-ki .hz-kopf, .hz-mensch .hz-kopf { stroke: none; }
+.hz-kopf ~ .hz-strich, .hz-kopf ~ g { stroke: var(--c-paper); }
+.hz-kopf ~ .hz-strich { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.hz-kopf ~ path[class="hz-strich"] { fill: var(--c-paper); stroke: none; }
+.hz-karte { fill: var(--c-karte); stroke: var(--hz, var(--c-ink)); stroke-width: 2.5; }
+.hz-strich { fill: none; stroke: var(--hz, var(--c-ink)); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.hz-leise { stroke: var(--c-ink-2); stroke-width: 5; opacity: 0.55; }
+.hz-kopf ~ .hz-leise { stroke: var(--c-paper); opacity: 0.7; }
+.hz-icon { fill: none; stroke: var(--hz, var(--c-ink)); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.hz-lila { stroke: var(--c-akzent); }
+.hz-gezogen { stroke: var(--c-linie); stroke-width: 3; stroke-dasharray: none; filter: drop-shadow(4px 6px 0 color-mix(in srgb, var(--c-linie) 45%, transparent)); }
+.hz-zeiger path { fill: var(--c-ink); stroke: var(--c-paper); stroke-width: 1.5; stroke-linejoin: round; }
+.hz-figur path, .hz-figur circle { fill: var(--c-akzent); }
+.hz-figur.hz-klein path, .hz-figur.hz-klein circle { fill: var(--c-ink-2); }
+.hz-boden { stroke: var(--c-rule); stroke-width: 2.5; stroke-linecap: round; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hz-zug { animation: hz-gleiten 7s ease-in-out infinite alternate; }
+}
+@keyframes hz-gleiten {
+  from { transform: translateX(-28px); }
+  to { transform: translateX(28px); }
+}
