@@ -7,7 +7,7 @@ const LINK =
 export default function Footer() {
   return (
     <footer className="mt-20 rounded-t-[28px] border-t-2 border-rule bg-flaeche-tief">
-      <div className="mx-auto max-w-[68rem] px-5 py-10 sm:px-8 sm:py-12">
+      <div className="mx-auto max-w-[64rem] px-4 py-10 sm:px-4 sm:py-12">
         <p className="inline-flex items-center gap-2 text-base font-bold text-ink">
           <PuzzleSignet className="h-7 w-7 shrink-0" />
           KI-Berufs-Puzzle

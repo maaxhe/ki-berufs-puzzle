@@ -253,7 +253,7 @@ export default function TaskPuzzle({
 
   if (view === "ergebnis") {
     return (
-      <div className="mx-auto max-w-[68rem] px-5 py-14 sm:px-8 sm:py-16">
+      <div className="mx-auto max-w-[64rem] px-4 py-14 sm:px-4 sm:py-16">
         <ErgebnisView
           beruf={beruf}
           userZuordnung={userZuordnung}
@@ -274,7 +274,7 @@ export default function TaskPuzzle({
   }
 
   return (
-    <div className="mx-auto max-w-[68rem] px-5 pt-14 pb-10 sm:px-8 sm:pt-16">
+    <div className="mx-auto max-w-[64rem] px-4 pt-14 pb-10 sm:px-4 sm:pt-16">
       <Link
         href={zurueckHref}
         className="font-prose text-sm text-ink-2 underline decoration-ink/20 underline-offset-2 hover:text-akzent hover:decoration-akzent"

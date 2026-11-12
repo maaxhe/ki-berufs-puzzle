@@ -90,7 +90,7 @@ export default function Header() {
   return (
     <header className={`border-b-2 border-rule bg-flaeche ${studiumAktiv ? "theme-studium" : ""}`}>
       {/* Mobil: oben Logo + Klasse starten, darunter eine wischbare Navigationszeile. */}
-      <div className="mx-auto max-w-[68rem] px-5 pt-4 sm:hidden">
+      <div className="mx-auto max-w-[64rem] px-4 pt-4 sm:hidden">
         <div className="flex items-center justify-between gap-3">
           <Link href="/" className="inline-flex items-center gap-2 font-kopf text-[1.7rem] font-extrabold leading-none text-ink">
             <i className="linie" aria-hidden="true">P</i>
@@ -114,8 +114,8 @@ export default function Header() {
         </nav>
       </div>
 
-      {werkzeugeLink && <div className="mx-auto hidden max-w-[68rem] px-5 pt-3 sm:block sm:px-8">{werkzeugeLink}</div>}
-      <div className="mx-auto hidden max-w-[68rem] items-center justify-between gap-4 px-5 pt-4 sm:flex sm:px-8">
+      {werkzeugeLink && <div className="mx-auto hidden max-w-[64rem] px-4 pt-3 sm:block sm:px-4">{werkzeugeLink}</div>}
+      <div className="mx-auto hidden max-w-[64rem] items-center justify-between gap-4 px-4 pt-4 sm:flex sm:px-4">
         <Link
           href="/"
           className="inline-flex items-center gap-2 whitespace-nowrap font-kopf text-[1.7rem] font-extrabold leading-none text-ink"
@@ -125,7 +125,7 @@ export default function Header() {
         </Link>
         {kopfLinks}
       </div>
-      <div className="mx-auto hidden max-w-[68rem] items-center justify-between gap-4 px-5 py-3 sm:flex sm:px-8">
+      <div className="mx-auto hidden max-w-[64rem] items-center justify-between gap-4 px-4 py-3 sm:flex sm:px-4">
         <nav className="flex shrink-0 gap-1 whitespace-nowrap text-sm" aria-label="Bereich wählen">
           {berufeLink}
           {studiumLink}

@@ -26,7 +26,7 @@ export default function VergleichPage() {
   const alleWerte = sortiert.map((s) => s.risiko);
 
   return (
-    <div className="mx-auto max-w-[68rem] px-5 py-14 sm:px-8 sm:py-16">
+    <div className="mx-auto max-w-[64rem] px-4 py-14 sm:px-4 sm:py-16">
       <Link
         href="/"
         className="font-prose text-sm text-ink-2 underline decoration-ink/20 underline-offset-2 hover:text-akzent hover:decoration-akzent"

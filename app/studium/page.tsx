@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function StudiumPage() {
   return (
-    <div className="theme-studium mx-auto max-w-[68rem] px-5 py-14 sm:px-8 sm:py-20">
+    <div className="theme-studium mx-auto max-w-[64rem] px-4 py-14 sm:px-4 sm:py-20">
       <section className="max-w-[46rem]">
         <h1 className="max-w-[22ch] font-display text-[clamp(2.4rem,6vw,4rem)] font-semibold leading-[1.02] tracking-[-0.02em] text-ink">
           Welches Studium hält KI stand?
