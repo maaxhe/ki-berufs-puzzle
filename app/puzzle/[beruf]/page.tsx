@@ -62,7 +62,7 @@ export default async function PuzzlePage({
               nach dem echte Roboter laufen und greifen lernen.
             </p>
             <a
-              href="https://rover.maximilianherrmann.com"
+              href="https://rover.coxilab.de"
               target="_blank"
               rel="noopener"
               className="mt-2 inline-block underline underline-offset-2"

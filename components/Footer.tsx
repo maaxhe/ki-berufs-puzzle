@@ -92,8 +92,11 @@ export default function Footer() {
             <a href="https://dilemma.coxilab.de/" className="inline-flex min-h-11 items-center text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch">
               Dilemma
             </a>
-            <a href="https://rover.maximilianherrmann.com/" className="inline-flex min-h-11 items-center text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch">
+            <a href="https://rover.coxilab.de/" className="inline-flex min-h-11 items-center text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch">
               Reward Rover
+            </a>
+            <a href="https://bias.coxilab.de/" className="inline-flex min-h-11 items-center text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch">
+              KI und Bias
             </a>
             <a href="https://handzeichen.com/" className="inline-flex min-h-11 items-center text-ink underline decoration-ink/30 underline-offset-4 hover:text-mensch hover:decoration-mensch">
               Handzeichen
