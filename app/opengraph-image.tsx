@@ -33,7 +33,7 @@ export default function OpengraphImage() {
             maxWidth: 980,
           }}
         >
-          Was in deinem Beruf kann KI – und was bleibt menschlich?
+          Was kann KI in deinem Beruf? Und was bleibt menschlich?
         </div>
         <div style={{ display: "flex", gap: 24, fontSize: 30 }}>
           <div

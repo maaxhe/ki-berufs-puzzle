@@ -59,7 +59,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     wasBleibtMenschlich:
       "Warenpräsentation, Reklamationen, persönliche Beratung an der Frischetheke, Einräumen und die soziale Atmosphäre im Markt.",
     diskussionsFrage:
-      "Nimmt der Roboter dem Verkaufspersonal die Arbeit weg – oder nimmt er die nervigsten Routinefragen ab, damit mehr Zeit für echte Kundengespräche bleibt?",
+      "Nimmt der Roboter dem Verkaufspersonal die Arbeit weg, oder nimmt er die nervigsten Routinefragen ab, damit mehr Zeit für echte Kundengespräche bleibt?",
     video: { id: "aiTFvqoSj1E", titel: "Putzroboter sorgt im Supermarkt für Sauberkeit", quelle: "SWR Landesschau Baden-Württemberg", hinweis: "Ein verwandter Fall: ein anderer Roboter, derselbe Alltag im Supermarkt." },
   },
   {
@@ -80,7 +80,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     wasBleibtMenschlich:
       "Die direkte Betreuung nervöser Patient:innen im Wartezimmer, Blutabnahme, Assistenz bei Behandlungen und das Erkennen von echten Notfällen im Empfangsbereich.",
     diskussionsFrage:
-      "Warum ist das Telefon in Praxen oft die größte Stressquelle für MFAs – und warum ist es für Patient:innen trotzdem wichtig, am Tresen von einem echten Menschen empfangen zu werden?",
+      "Warum ist das Telefon in Praxen oft die größte Stressquelle für MFAs? Und warum ist es für Patient:innen trotzdem wichtig, am Tresen von einem echten Menschen empfangen zu werden?",
     video: { id: "CvmFobMmoU4", titel: "KI-Ordinationshilfen: Arztpraxen automatisieren den Erstkontakt", quelle: "ZIB Magazin (ORF)", hinweis: "Beitrag aus Österreich, die Entwicklung ist dieselbe wie in deutschen Praxen." },
   },
   {
@@ -100,7 +100,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     wasBleibtMenschlich:
       "Die herzliche Begrüßung, Weinberatung, Sonderwünsche aufnehmen, Beschwerden lösen und das Gefühl von Gastfreundschaft vermitteln.",
     diskussionsFrage:
-      "Macht der Roboter das Restaurant unpersönlicher – oder ermöglicht er es den Kellner:innen erst, weniger gestresst bei den Gästen am Tisch zu sein?",
+      "Macht der Roboter das Restaurant unpersönlicher, oder ermöglicht er es den Kellner:innen erst, weniger gestresst bei den Gästen am Tisch zu sein?",
     video: { id: "YqraKGOBN2I", titel: "BellaBot: Gastro-Roboter im Einsatz", quelle: "ZDF Drehscheibe (hochgeladen von Alpha11)" },
   },
   {
@@ -139,13 +139,13 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     einordnung:
       "Der Cobot fährt programmierte Bahnen ab. Das ist Automatisierung, keine KI im engeren Sinn.",
     teaser:
-      "Kollaborierende Roboterarme (Cobots) lackieren in Tischlereien Fensterrahmen und Möbeloberflächen mit mikrometergenauer Gleichmäßigkeit – während der Meister nebenan Unikate entwirft.",
+      "Kollaborierende Roboterarme (Cobots) lackieren in Tischlereien Fensterrahmen und Möbeloberflächen mit mikrometergenauer Gleichmäßigkeit, während der Meister nebenan Unikate entwirft.",
     wasMachtDieKI:
       "Stundenlanges, giftiges und monotones Spritzlackieren mit gleichbleibender Schichtdicke ohne Ermüdung.",
     wasBleibtMenschlich:
       "Holzauswahl, Maserungs-Beurteilung, kreativer Möbelentwurf, Kundenberatung vor Ort und die individuelle Montage beim Kunden.",
     diskussionsFrage:
-      "Wird der Tischlerberuf durch Lackier-Roboter weniger handwerklich – oder befreit es Handwerker von gesundheitsschädlicher Monotonie?",
+      "Wird der Tischlerberuf durch Lackier-Roboter weniger handwerklich, oder befreit es Handwerker von gesundheitsschädlicher Monotonie?",
     video: { id: "aGVGgnBvA8s", titel: "Cobots für Tischler und Schreiner", quelle: "BM TV – Matthias checkt’s", hinweis: "Zeigt einen Cobot in der Schreinerei, nicht speziell das Lackieren." },
   },
   {
@@ -187,7 +187,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     wasBleibtMenschlich:
       "Eingreifen bei Sonderfällen aus der Ferne, Verantwortung für Ladung und Sicherheit, Fahren auf öffentlichen Straßen, Be- und Entladen sowie der Kontakt zu Kunden und Disponenten.",
     diskussionsFrage:
-      "Wenn ein Mensch mehrere Lkw von einem Bildschirm aus betreut: Ist das noch Fahren – und wäre das ein Beruf, den du dir vorstellen könntest?",
+      "Wenn ein Mensch mehrere Lkw von einem Bildschirm aus betreut: Ist das noch Fahren? Und wäre das ein Beruf, den du dir vorstellen könntest?",
     video: { id: "1OZe7RNltDQ", titel: "Fernride – fahrerlose Technologie aus Deutschland", quelle: "European Investment Fund (englisch)" },
   },
   {
@@ -200,13 +200,13 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     medium: "AUTO BILD",
     url: "https://www.autobild.de/artikel/erste-fahrgaeste-im-selbstfahrenden-id-buzz-meldung-25636531.html",
     teaser:
-      "MOIA, die Fahrdienst-Tochter von Volkswagen, testet in Hamburg den autonomen ID. Buzz AD. Ausgewählte, vorab registrierte Fahrgäste buchen ihn über die MOIA-App. Zunächst war ein Sicherheitsfahrer an Bord, der nur im Notfall eingreift – später soll er entfallen.",
+      "MOIA, die Fahrdienst-Tochter von Volkswagen, testet in Hamburg den autonomen ID. Buzz AD. Ausgewählte, vorab registrierte Fahrgäste buchen ihn über die MOIA-App. Zunächst war ein Sicherheitsfahrer an Bord, der nur im Notfall eingreift. Später soll er entfallen.",
     wasMachtDieKI:
       "Lenken, Bremsen und Spurwechsel im Stadtverkehr, Erkennen von Ampeln, Radfahrenden und Fußgängern, Routenplanung.",
     wasBleibtMenschlich:
       "Hilfe beim Einsteigen mit Rollator oder Gepäck, Ansprechperson bei Problemen und Notfällen, Ortskenntnis in Sonderlagen, ein Gespräch unterwegs.",
     diskussionsFrage:
-      "Würdest du nachts allein in ein Auto ohne Fahrer steigen – und was müsste passieren, damit du dich sicher fühlst?",
+      "Würdest du nachts allein in ein Auto ohne Fahrer steigen? Und was müsste passieren, damit du dich sicher fühlst?",
     video: { id: "KX9Y4stS76s", titel: "MOIA-Busse ohne Fahrer in Hamburg unterwegs", quelle: "SAT.1 REGIONAL" },
   },
   {
@@ -247,7 +247,7 @@ export const praxisBeispiele: PraxisBeispiel[] = [
     wasBleibtMenschlich:
       "Entscheiden, was wann angebaut wird, Boden und Wetter einschätzen, Technik warten und einrichten, Tiere versorgen, den Betrieb wirtschaftlich führen.",
     diskussionsFrage:
-      "Der Roboter ersetzt Handarbeit auf dem Acker. Verändert das den Beruf eher in Richtung Technik – und wärst du dafür der richtige Typ?",
+      "Der Roboter ersetzt Handarbeit auf dem Acker. Verändert das den Beruf eher in Richtung Technik? Und wärst du dafür der richtige Typ?",
     video: { id: "z22WSxc6Xm4", titel: "Revolution auf dem Acker? Ein Feldroboter gegen Unkraut ohne Gift", quelle: "BR – Schwaben + Altbayern" },
   },
   {

@@ -165,7 +165,7 @@ export default function BerufListe<K extends string>({
           {ergebnis.verwandt.length > 0 && (
             <section className="mt-12">
               <h2 className="border-b-2 border-rule pb-2 font-display text-[1.15rem] font-semibold text-ink-2">
-                Verwandt – kommt in der Beschreibung oder den Aufgaben vor
+                Verwandt: kommt in der Beschreibung oder den Aufgaben vor
               </h2>
               {ergebnis.verwandt.map((beruf) => (
                 <BerufCard key={beruf.slug} beruf={beruf} hrefBase={hrefBase} />
@@ -177,7 +177,7 @@ export default function BerufListe<K extends string>({
               <p>{leerText}</p>
               <p className="mt-2">
                 Tipp: Such nach dem Berufsfeld („Pflege“, „Bau“, „IT“) oder wähl oben eine Kategorie.
-                {querTreffer.length > 0 && " Bei der anderen Liste gibt es Treffer – siehe oben."}
+                {querTreffer.length > 0 && " Bei der anderen Liste gibt es Treffer, siehe oben."}
               </p>
               <button
                 type="button"

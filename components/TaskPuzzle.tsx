@@ -287,8 +287,8 @@ export default function TaskPuzzle({
       </h1>
       <p className="prose-text mt-3 text-ink">
         {modus === "schnell"
-          ? "Wer macht diese Aufgabe in Zukunft – Mensch oder KI? Entscheide Karte für Karte und sieh sofort, was das Modell dazu sagt."
-          : "Zieh jede Aufgabe in die Spalte, die besser passt – oder tipp auf dem Handy erst die Aufgabe an, dann die Spalte."}
+          ? "Wer macht diese Aufgabe in Zukunft, Mensch oder KI? Entscheide Karte für Karte. Danach siehst du sofort, was das Modell dazu sagt."
+          : "Zieh jede Aufgabe in die Spalte, die besser passt. Auf dem Handy kannst du auch erst die Aufgabe antippen und dann die Spalte."}
       </p>
 
       <div className="mt-6">
@@ -325,8 +325,8 @@ export default function TaskPuzzle({
         <p className="mt-4 max-w-[46rem] rounded-xl border-2 border-rule bg-paper-2 px-3 py-2.5 text-sm text-ink sm:hidden">
           <span className="font-semibold">So sortierst du auf dem Handy:</span>{" "}
           Entweder <span className="font-semibold">Karte antippen</span>, dann{" "}
-          <span className="font-semibold">Spalte antippen</span> – oder die
-          Karte direkt mit dem Finger in die Spalte ziehen.
+          <span className="font-semibold">Spalte antippen</span>. Oder du ziehst die
+          Karte direkt mit dem Finger in die Spalte.
         </p>
       )}
 
@@ -335,7 +335,7 @@ export default function TaskPuzzle({
           role="status"
           className="mt-6 rounded-xl border-2 border-rule bg-paper-2 px-3 py-2 text-sm text-ink"
         >
-          Aufgabe ausgewählt – tipp jetzt auf eine der beiden Spalten.
+          Aufgabe ausgewählt. Tipp jetzt auf eine der beiden Spalten.
         </p>
       )}
 

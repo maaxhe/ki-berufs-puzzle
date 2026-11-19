@@ -88,8 +88,8 @@ export default function LehrkraeftePage() {
             werden die Zuordnung und eine zufällige Geräte-ID, keine Namen. Die
             Auswertung im Raum bleibt für dich einsehbar, wenn du den Raum mit
             einem Lehrkraft-Passwort übernimmst. Du siehst pro Aufgabe,
-            wie viele für „KI“ oder „Mensch“ gestimmt haben – und wo die Klasse
-            am meisten auseinanderliegt. Räume verfallen nach 24 Stunden; die anonyme Gesamtstatistik („Alle bisher“)
+            wie viele für „KI“ oder „Mensch“ gestimmt haben und wo die Klasse
+            am meisten auseinanderliegt. Räume verfallen nach 24 Stunden. Die anonyme Gesamtstatistik („Alle bisher“)
             bleibt bestehen, Details stehen in der{" "}
             <a href="https://coxilab.de/impressum/#puzzle" className={linkKlasse}>Datenschutzerklärung</a>.
           </p>
@@ -138,7 +138,7 @@ export default function LehrkraeftePage() {
           <ul className="ml-5 list-disc space-y-1">
             <li>
               Die Werte sind didaktische Schätzungen, keine Prognosen. Sie
-              sollen Streit auslösen, nicht das Gespräch beenden – mehr auf der{" "}
+              sollen Streit auslösen, nicht das Gespräch beenden. Mehr dazu auf der{" "}
               <Link href="/methodik" className={linkKlasse}>
                 Methodik-Seite
               </Link>

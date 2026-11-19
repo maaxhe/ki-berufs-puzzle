@@ -22,8 +22,8 @@ export default function KlassePage() {
       </h1>
       <p className="prose-text mt-3 max-w-[46rem] text-ink">
         Erstelle einen Raum und lass die Klasse den QR-Code scannen. Die
-        Ergebnisse kommen automatisch hier an – dann siehst du, wo die Klasse
-        einig und wo sie gespalten ist. Es werden keine Namen gespeichert, nur die Zuordnung mit einer zufälligen Geräte-ID.
+        Ergebnisse kommen automatisch hier an. Dann siehst du, wo die Klasse
+        einig und wo sie gespalten ist. Namen speichert das Puzzle nicht, nur die Zuordnung mit einer zufälligen Geräte-ID.
       </p>
       <div className="mt-10">
         <KlasseAuswertung />

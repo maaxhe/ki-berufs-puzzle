@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Was mir beim Bauen aufgefallen ist – KI-Berufs-Puzzle",
   description:
-    "Fast 500 Aufgaben aus Berufen und Studiengängen kalibriert – was dabei an Mustern sichtbar wurde.",
+    "Fast 500 Aufgaben aus Berufen und Studiengängen kalibriert. Was dabei an Mustern sichtbar wurde.",
 };
 
 export default function ErkenntnissePage() {
@@ -24,15 +24,15 @@ export default function ErkenntnissePage() {
       <div className="prose-text mt-6 max-w-[46rem] space-y-8 text-ink">
         <section className="space-y-3">
           <p>
-            Studium oder Ausbildung – was ist eigentlich sicherer vor KI? Das
+            Studium oder Ausbildung: Was ist eigentlich sicherer vor KI? Das
             war die Frage, die mich zu diesem Tool gebracht hat. Und meine
             Vermutung ging eher in die andere Richtung, als man erwarten
             würde: Handwerk trifft es am wenigsten. Da geht es um echte
-            Hände, echte Werkstoffe, echte Räume – das übernimmt kein Modell
+            Hände, echte Werkstoffe, echte Räume. Das übernimmt kein Modell
             einfach so. Meine eigenen Daten bestätigen das allerdings nur teilweise: Pflege, Erziehung und Physiotherapie liegen im Schnitt niedriger als die meisten Handwerksberufe. Die eigentlich unbequeme Frage ist doch: Lohnt sich
             ein Studium überhaupt noch, wenn Sprachmodelle immer
             zuverlässiger akademische Texte schreiben, Code produzieren,
-            Analysen liefern – also genau die Dinge, für die man früher
+            Analysen liefern, also genau die Dinge, für die man früher
             jahrelang studiert hat?
           </p>
           <p>
@@ -50,20 +50,20 @@ export default function ErkenntnissePage() {
             Der Titel entscheidet nicht. Die Aufgabe entscheidet.
           </h2>
           <p>
-            Jura und BWL – zwei Studiengänge, die man eher selten mit
+            Jura und BWL. Zwei Studiengänge, die man eher selten mit
             Automatisierungsangst verbindet. Und trotzdem: voller Routine,
             die KI heute schon gut kann. Standardverträge, Kennzahlen
             berechnen, Rechtsrecherche. Bei Kanzleifachangestellten gelten
             laut <em>Clio Legal Trends</em> um die 81 % der Aufgaben als
             automatisierbar. Bei Anwält:innen selbst sind es nur rund 57 %.
             Allein das zeigt schon: Innerhalb eines einzigen Berufsfelds
-            kann der Unterschied riesig sein – je nachdem, wer die Aufgabe
+            kann der Unterschied riesig sein, je nachdem, wer die Aufgabe
             eigentlich macht.
           </p>
           <p>
             Auf der anderen Seite: Pflegefachkraft, Erzieher:in, Soziale
             Arbeit. Alles Berufe bzw. Studiengänge ohne großen akademischen
-            Nimbus – aber mit einem Kern, an den KI nicht rankommt. Da geht
+            Nimbus. Aber mit einem Kern, an den KI nicht rankommt. Da geht
             es um Vertrauen, um Präsenz, um Verantwortung für einen anderen
             Menschen. Das lässt sich nicht outsourcen, egal wie gut das
             nächste Sprachmodell wird.
@@ -71,7 +71,7 @@ export default function ErkenntnissePage() {
           <p>
             Die ehrliche Lektion daraus: Es ist nicht der Bildungsweg, der
             zählt. Es ist, wie viel von dem, was du tatsächlich tust,
-            Beziehungsarbeit oder persönliche Verantwortung ist – und wie
+            Beziehungsarbeit oder persönliche Verantwortung ist und wie
             viel davon strukturierte, wiederholbare Routine.
           </p>
         </section>
@@ -85,7 +85,7 @@ export default function ErkenntnissePage() {
             Aufgaben ist es mir noch mal richtig bewusst geworden: Dass eine
             Aufgabe automatisierbar <em>ist</em>, heißt nicht, dass sie
             automatisiert <em>wird</em>. Dazwischen stehen Kosten, Recht,
-            Haftung – und schlicht der Wunsch, mit einem Menschen zu tun zu
+            Haftung und schlicht der Wunsch, mit einem Menschen zu tun zu
             haben. Ein Sprachmodell kann heute einen Pflegebericht
             formulieren. Heißt das, die Fachkraft wird überflüssig? Nein.
           </p>
@@ -107,12 +107,12 @@ export default function ErkenntnissePage() {
             weniger „welcher Weg ist sicherer“ und mehr „was mache ich in
             diesem Beruf eigentlich den ganzen Tag“. Steckt viel Vertrauen,
             Präsenz oder Verantwortung für andere Menschen drin? Dann bist du
-            vermutlich gut aufgestellt – unabhängig davon, ob davor ein
+            vermutlich gut aufgestellt, unabhängig davon, ob davor ein
             Ausbildungs- oder ein Studienzeugnis stand.
           </p>
           <p>
-            Sortier ein paar Aufgaben selbst durch – bei einem Beruf oder
-            einem Studiengang, der dich interessiert – und schau, wo du mit
+            Sortier ein paar Aufgaben selbst durch, bei einem Beruf oder
+            einem Studiengang, der dich interessiert, und schau, wo du mit
             dem Modell übereinstimmst und wo nicht. Genau diese
             Meinungsverschiedenheiten sind der spannendste Teil.
           </p>
@@ -128,8 +128,8 @@ export default function ErkenntnissePage() {
             >
               Methodik-Seite
             </Link>
-            . Und wie dieses Tool selbst mit KI gebaut wurde – inklusive der
-            Stellen, an denen ich der KI widersprechen musste – steht auf der{" "}
+            . Und wie dieses Tool selbst mit KI gebaut wurde, inklusive der
+            Stellen, an denen ich der KI widersprechen musste. Das steht auf der{" "}
             <Link
               href="/entstehung"
               className="underline decoration-ink/30 underline-offset-2 hover:text-akzent hover:decoration-akzent"

@@ -8,7 +8,7 @@ import { getStudiengang } from "@/data/studiengaenge";
 export const metadata: Metadata = {
   title: "Schon heute Realität – Reale KI- und Roboter-Fälle aus der Praxis",
   description:
-    "Von REWE in Ahlen bis zur Arztpraxis: Wo Roboter und KI in Deutschland schon heute mitarbeiten – und was trotzdem menschlich bleibt.",
+    "Von REWE in Ahlen bis zur Arztpraxis: Wo Roboter und KI in Deutschland schon heute mitarbeiten. Und was trotzdem menschlich bleibt.",
 };
 
 // Nach Kategorie gruppiert, innerhalb der Kategorie bleibt die Reihenfolge aus den Daten.
@@ -35,7 +35,7 @@ export default function PraxisPage() {
         </p>
         <p className="prose-text mt-3 text-ink-2">
           {praxisBeispiele.length} Fälle in {praxisKategorien.length} Bereichen. Bei jedem dieselbe Frage wie im Puzzle:
-          Was übernimmt die Maschine – und wo bleibt der Mensch?
+          Was übernimmt die Maschine? Und wo bleibt der Mensch?
         </p>
         <nav aria-label="Kategorien" className="mt-8 border-t-2 border-rule pt-4">
           <ul className="grid gap-x-8 gap-y-5 font-prose text-sm sm:grid-cols-2">
@@ -210,7 +210,7 @@ export default function PraxisPage() {
 
       <aside className="border-t-2 border-rule pt-10">
         <p className="prose-text max-w-[46rem] text-ink">
-          Kennst du ein Beispiel aus deiner Region – den Bäcker mit Teig-Scanner,
+          Kennst du ein Beispiel aus deiner Region? Den Bäcker mit Teig-Scanner,
           die Zahnarztpraxis mit 3D-Druck, den Rettungsdienst mit KI-EKG? Echte
           Fälle machen Berufsorientierung lebendig.
         </p>

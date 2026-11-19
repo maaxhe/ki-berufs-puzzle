@@ -98,7 +98,7 @@ export function konfidenzLabel(kiEignung: number): string {
   if (kiEignung <= 20) return "Eindeutig beim Menschen";
   if (kiEignung <= 40) return "Eher beim Menschen, aber diskutierbar";
   if (istGrenzfall(kiEignung))
-    return "Echter Grenzfall – hier ist beides gut vertretbar";
+    return "Echter Grenzfall: Hier ist beides gut vertretbar";
   if (kiEignung <= 79) return "Eher bei der KI, aber diskutierbar";
   return "Eindeutig bei der KI";
 }

@@ -44,12 +44,12 @@ export default function MethodikPage() {
             der Aufgabe lässt sich unter guten Bedingungen digital erledigen.
           </p>
           <p>
-            Diese Einzelwerte sind meine Einschätzung – keine Messwerte und keine
+            Diese Einzelwerte sind meine Einschätzung, keine Messwerte und keine
             Prognose. Sie sollen im Workshop ein Gespräch anstoßen.
           </p>
           <p>
             Angezeigt wird die Zahl selbst bewusst nirgends. Niemand kann seriös
-            zwischen „58 %“ und „62 %“ unterscheiden – das wäre eine Präzision,
+            zwischen „58 %“ und „62 %“ unterscheiden. Das wäre eine Präzision,
             die es nicht gibt. Statt einer Zahl siehst du deshalb ein Label wie
             „Eindeutig bei der KI“ oder „Echter Grenzfall“. Der Zahlenwert
             steckt nur noch intern dahinter, um Aufgaben zu sortieren und die
@@ -69,19 +69,19 @@ export default function MethodikPage() {
             <strong>Frey &amp; Osborne (2013)</strong> aus Oxford haben für über
             700 Berufe geschätzt, wie wahrscheinlich es ist, dass Computer den{" "}
             <em>ganzen Beruf</em> übernehmen. Die Studie ist berühmt und wird viel
-            kritisiert – die Zahlen sind eher eine Obergrenze als eine Vorhersage.
+            kritisiert. Die Zahlen sind eher eine Obergrenze als eine Vorhersage.
           </p>
           <p>
             Der <strong>IAB Job-Futuromat</strong> misst etwas anderes: den{" "}
             <em>Anteil der Tätigkeiten</em> eines deutschen Berufs, die sich
-            technisch ersetzen ließen – zuletzt für 2022. Das passt besser auf
+            technisch ersetzen ließen, zuletzt für 2022. Das passt besser auf
             deutsche Ausbildungsberufe.
           </p>
           <p>
             Diese beiden Werte messen also nicht dasselbe und lassen sich nicht
             sauber verrechnen. Ich habe sie als Orientierungsrahmen genommen und
             daraus für jeden Beruf einen <strong>didaktischen Richtwert</strong>{" "}
-            abgeleitet – ein begründetes Urteil, keine statistische Kombination.
+            abgeleitet. Ein begründetes Urteil, keine statistische Kombination.
             Den jeweiligen Vergleichswert der Studie findest du im Ergebnis unter
             „Datengrundlage“.
           </p>
@@ -92,7 +92,7 @@ export default function MethodikPage() {
             Warum IT und Kreativberufe höher stehen, als die Studien sagen
           </h2>
           <p>
-            Frey &amp; Osborne haben 2013 gerechnet – lange vor ChatGPT.
+            Frey &amp; Osborne haben 2013 gerechnet, lange vor ChatGPT.
             Softwareentwicklung stand bei ihnen bei 4 Prozent, Grafikdesign bei 8
             Prozent. Das kann man heute nicht mehr ernst nehmen. Generative KI
             schreibt inzwischen große Teile des Alltagscodes und liefert
@@ -101,7 +101,7 @@ export default function MethodikPage() {
             Umgekehrt beim Berufskraftfahrer: Da war die alte Schätzung sehr hoch.
             Inzwischen fahren in Texas erste Lkw auf Fernstrecken ohne
             Fahrer:in, in Deutschland gibt es bisher nur eine Pilotstrecke von
-            wenigen hundert Metern – der Weg vom Pilotprojekt in den Alltag
+            wenigen hundert Metern. Der Weg vom Pilotprojekt in den Alltag
             dauert länger, als viele erwartet haben.
           </p>
         </section>
@@ -119,8 +119,8 @@ export default function MethodikPage() {
             Koch/Köchin liegt bei mir im mittleren Bereich, obwohl „Cooks,
             Restaurant“ bei Frey &amp; Osborne 96 Prozent hat. Bei
             Landwirt:innen unterscheiden Frey &amp; Osborne sogar zwischen den
-            Betriebsleitungen (4,7 Prozent) und den Hilfskräften (87 Prozent) –
-            mein Wert liegt dazwischen.
+            Betriebsleitungen (4,7 Prozent) und den Hilfskräften (87 Prozent).
+            Mein Wert liegt dazwischen.
           </p>
           <p>
             Die Werte aus dem IAB-Kurzbericht sind <em>Berufssegmente</em>, keine
@@ -152,7 +152,7 @@ export default function MethodikPage() {
             <li>
               Aufgaben mit „… verantworten“ mischen zwei Dinge: was KI{" "}
               <em>könnte</em> und was sie <em>dürfte</em>. Das ist dort bewusst
-              so und in der Begründung ausdrücklich benannt – hier steckt das
+              so und in der Begründung ausdrücklich benannt. Hier steckt das
               „Dürfen“ im Wert.
             </li>
           </ul>
@@ -167,7 +167,7 @@ export default function MethodikPage() {
             <li>Ein System kann die Aufgabe grundsätzlich ausführen.</li>
             <li>Es funktioniert zuverlässig in echten Situationen.</li>
             <li>
-              Es wird in Betrieben schon eingesetzt – und ist rechtlich erlaubt.
+              Es wird in Betrieben schon eingesetzt und ist rechtlich erlaubt.
             </li>
           </ul>
           <p>
@@ -177,7 +177,7 @@ export default function MethodikPage() {
           </p>
           <p>
             In der Praxis nutzt in Deutschland derzeit etwa jeder vierte Betrieb
-            generative KI – stark steigend, aber sehr ungleich verteilt. Manche
+            generative KI. Stark steigend, aber sehr ungleich verteilt. Manche
             Branchen bauen ihre Abläufe schon um, andere probieren gerade erst.
           </p>
         </section>
@@ -189,14 +189,14 @@ export default function MethodikPage() {
           <p>
             Das ist der wichtigste Punkt. Dass eine Aufgabe automatisierbar ist,
             entscheidet nicht, ob sie auch automatisiert wird. Dazwischen stehen:
-            Kosten – ein Mensch ist oft billiger oder flexibler. Recht – manche
-            Entscheidungen darf keine Software treffen. Verantwortung – wenn
+            Kosten: Ein Mensch ist oft billiger oder flexibler. Recht: Manche
+            Entscheidungen darf keine Software treffen. Verantwortung: Wenn
             etwas schiefgeht, muss jemand geradestehen. Und schlicht der Wunsch
             der Kundschaft, mit einem Menschen zu tun zu haben.
           </p>
           <p>
             Ein hoher Wert bedeutet also nicht „dieser Beruf verschwindet“. Er
-            bedeutet: Die Arbeit verschiebt sich – weg von dem, was die KI
+            bedeutet: Die Arbeit verschiebt sich, weg von dem, was die KI
             übernimmt, hin zu dem, was sie nicht kann. Neue Aufgaben kommen
             dazu, andere fallen weg.
           </p>
@@ -207,14 +207,14 @@ export default function MethodikPage() {
             Wie dieses Tool entstanden ist
           </h2>
           <p>
-            Dieses Tool wurde mit Unterstützung generativer KI entwickelt – bei
+            Dieses Tool wurde mit Unterstützung generativer KI entwickelt, bei
             Code, Textentwürfen, Struktur und einzelnen Formulierungen. Die
             Auswahl der Berufe und Aufgaben, die didaktische Gestaltung, die
             Quellenprüfung, die Einordnung und die Verantwortung für die
             Veröffentlichung liegen bei mir.
           </p>
           <p>
-            Genau darum geht es im Workshop: KI kann Vorschläge machen – Menschen
+            Genau darum geht es im Workshop: KI kann Vorschläge machen. Menschen
             müssen Ziele setzen, Ergebnisse prüfen, den Kontext verstehen und
             geradestehen.
           </p>
@@ -242,8 +242,8 @@ export default function MethodikPage() {
           </p>
           <p>
             Was mir beim Kalibrieren all dieser Aufgaben inhaltlich aufgefallen
-            ist – z. B. dass ein Studium nicht automatisch sicherer vor KI ist
-            als eine Ausbildung – steht auf der{" "}
+            ist, z. B. dass ein Studium nicht automatisch sicherer vor KI ist
+            als eine Ausbildung. Das steht auf der{" "}
             <Link
               href="/erkenntnisse"
               className="underline decoration-ink/30 underline-offset-2 hover:text-akzent hover:decoration-akzent"

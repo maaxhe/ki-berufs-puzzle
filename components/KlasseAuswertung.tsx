@@ -244,8 +244,9 @@ export default function KlasseAuswertung() {
             </div>
             <p className="min-w-[16rem] flex-1 font-prose text-[0.95rem] text-ink-2">
               Raumcode für die Klasse:{" "}
-              <b className="font-mono text-2xl tracking-widest text-ink">{raum.code}</b> · {raumCodes.length} Ergebnis(se)
-              eingegangen. Schüler:innen scannen den QR-Code, ihr Ergebnis wird danach automatisch gesendet.
+              <b className="font-mono text-2xl tracking-widest text-ink">{raum.code}</b> ·{" "}
+              {raumCodes.length === 1 ? "1 Ergebnis ist" : `${raumCodes.length} Ergebnisse sind`} da.
+              Die Klasse scannt den QR-Code, die Ergebnisse kommen dann von selbst an.
               Räume verfallen nach 24 Stunden, die anonyme Gesamtstatistik bleibt.
               <span className="mt-3 flex flex-wrap gap-2">
                 {kannVollbild && (

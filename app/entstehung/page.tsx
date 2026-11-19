@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Wie dieses Tool entstanden ist – KI-Berufs-Puzzle",
   description:
-    "Gebaut mit Claude Code in einigen Wochen – und was das darüber zeigt, wie man heute mit KI arbeitet.",
+    "Gebaut mit Claude Code in einigen Wochen. Und was das darüber zeigt, wie man heute mit KI arbeitet.",
 };
 
 export default function EntstehungPage() {
@@ -26,7 +26,7 @@ export default function EntstehungPage() {
         <section className="space-y-3">
           <p>
             Kurze Frage vorweg: Wie lange, glaubst du, hat es gedauert, dieses
-            Tool zu bauen – 35 Berufe, 24 Studiengänge, fast 500 einzelne
+            Tool zu bauen: 35 Berufe, 24 Studiengänge, fast 500 einzelne
             Aufgaben, Drag&amp;Drop, Vergleichsseiten, alles? Ein halbes Jahr?
             Ein Team von Entwickler:innen?
           </p>
@@ -44,7 +44,7 @@ export default function EntstehungPage() {
             Claude Code ist ein KI-Modell von Anthropic, das nicht nur Text
             ausgibt wie ein Chatbot, sondern direkt in einem Projekt
             arbeitet: Es liest Code, schreibt ihn, testet ihn selbst, findet
-            eigene Fehler und behebt sie – und das in einer Endlosschleife,
+            eigene Fehler und behebt sie. Und das in einer Endlosschleife,
             bis etwas Funktionierendes dabei rauskommt. Man nennt das{" "}
             <em>agentisches Coden</em>: Ich gebe eine Aufgabe, und das Modell
             arbeitet sie eigenständig ab, statt nur einen Codeschnipsel
@@ -56,7 +56,7 @@ export default function EntstehungPage() {
             wirken zu ungenau, überleg dir was Besseres“. Und Claude Code hat
             selbstständig Dateien durchsucht, CSS-Variablen umgebaut, Code
             geschrieben, den Build laufen lassen, Fehler gefunden und
-            korrigiert – bis die Seite tatsächlich lief.
+            korrigiert, bis die Seite tatsächlich lief.
           </p>
           <figure className="space-y-2">
             <Image
@@ -68,7 +68,7 @@ export default function EntstehungPage() {
             />
             <figcaption className="text-sm text-ink-2">
               So sieht das in echt aus: Ich tippe „mache den Kontrast
-              zwischen Beruf und Studium noch etwas deutlicher“ – Claude Code
+              zwischen Beruf und Studium noch etwas deutlicher“. Claude Code
               findet selbstständig die richtigen CSS-Variablen in{" "}
               <code className="text-[0.85em]">app/globals.css</code> und
               ändert sie.
@@ -82,7 +82,7 @@ export default function EntstehungPage() {
             eingreifen
           </h2>
           <p>
-            Und hier wird es spannend – auch für das, worum es in diesem Tool
+            Und hier wird es spannend, auch für das, worum es in diesem Tool
             geht. Claude Code konnte den Code schreiben. Aber ob die{" "}
             <em>Inhalte</em> stimmten, musste ich beurteilen. Ein Beispiel:
             Als die Berufe fertig kalibriert waren, stand Physiotherapeut
@@ -91,14 +91,14 @@ export default function EntstehungPage() {
             bringen. Der Beruf bleibt natürlich ganz klar beim Menschen!“
           </p>
           <p>
-            Das Modell hatte einfach alle Aufgaben gleich gewichtet –
+            Das Modell hatte einfach alle Aufgaben gleich gewichtet:
             Dokumentation und Abrechnung genauso stark wie die eigentliche
             Behandlung am Patienten. Rechnerisch nicht falsch, inhaltlich
             aber Unsinn: Zwei Verwaltungsaufgaben von damals acht ziehen den
             Schnitt nach oben, obwohl sie im echten Arbeitsalltag einer
             Physiotherapeutin einen Bruchteil der Zeit ausmachen. Erst mein
             Widerspruch hat dazu geführt, dass die Werte neu und realistischer
-            kalibriert wurden – und danach habe ich <em>jeden einzelnen</em>{" "}
+            kalibriert wurden. Danach habe ich <em>jeden einzelnen</em>{" "}
             der damals rund 350 Werte noch einmal durchgeschaut.
           </p>
           <p>
@@ -122,7 +122,7 @@ export default function EntstehungPage() {
           </h2>
           <p>
             Von der ersten Zeile Code bis zu dieser Version: rund 100 Commits über einige Wochen (die erste Version stand nach wenigen Tagen), fast alle direkt live geschaltet, sobald sie
-            funktionierten. Kein Entwicklungsteam, kein Lastenheft – nur ein
+            funktionierten. Kein Entwicklungsteam, kein Lastenheft. Nur ein
             Chat mit einem KI-Modell, das direkt im Code arbeitet, und ich als
             jemand, der ständig nachgehakt hat: „nein, überleg nochmal“, „das
             ergibt keinen Sinn, warum ist das so eingeordnet?“, „schau dir das
@@ -136,7 +136,7 @@ export default function EntstehungPage() {
           </h2>
           <p>
             Der Punkt hier ist nicht „schaut her, wie schnell KI ein Tool
-            bauen kann“ – auch wenn das beeindruckend ist. Der Punkt ist: Wer
+            bauen kann“, auch wenn das beeindruckend ist. Der Punkt ist: Wer
             heute mit KI arbeitet, muss trotzdem <em>wissen</em>, worüber
             sie oder er urteilt. Ich musste über Berufe und Studiengänge
             nachdenken, um die KI-generierten Werte zu hinterfragen. Ohne

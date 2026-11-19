@@ -20,7 +20,7 @@ export function diskussionsfragen(einheit: PuzzleEinheit): string[] {
 
   if (grenzfall) {
     fragen.push(
-      `Bei „${grenzfall.title}“ ist beides gut vertretbar. Wie würdet ihr entscheiden – und woran macht ihr das fest?`,
+      `Bei „${grenzfall.title}“ ist beides gut vertretbar. Wie würdet ihr entscheiden, und woran macht ihr das fest?`,
     );
   }
   if (ueberraschend[0]) {
@@ -30,7 +30,7 @@ export function diskussionsfragen(einheit: PuzzleEinheit): string[] {
   }
   if (mostKi) {
     fragen.push(
-      `Wenn KI „${mostKi.title}“ übernimmt: Was könnte die Person mit der gewonnenen Zeit anfangen – und wer profitiert davon?`,
+      `Wenn KI „${mostKi.title}“ übernimmt: Was könnte die Person mit der gewonnenen Zeit anfangen? Und wer profitiert davon?`,
     );
   }
   if (mostMensch) {

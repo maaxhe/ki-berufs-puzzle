@@ -62,7 +62,7 @@ export default function Arbeitsblatt({
         <p className="mt-1 font-prose text-[0.95rem] text-ink">
           Wer kann diese Aufgabe <strong>heute</strong> übernehmen? Setze für
           jede Aufgabe ein Kreuz: beim <strong>Menschen</strong> oder bei der{" "}
-          <strong>KI</strong>. Du musst dich entscheiden – aber du darfst
+          <strong>KI</strong>. Du musst dich entscheiden. Aber du darfst
           unsicher sein.
         </p>
         <table className="mt-3 w-full border-collapse text-left text-sm">

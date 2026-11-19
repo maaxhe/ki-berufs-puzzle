@@ -156,7 +156,7 @@ export default function ErgebnisView({
       const grenz = istGrenzfall(task.kiEignung);
       const ok = deine === modell;
       const marker = grenz ? "•" : ok ? "✓" : "✗";
-      return `${marker} ${task.title}: du „${deine ? ZONE_TEXT[deine] : "—"}“, Modell „${ZONE_TEXT[modell]}“ – ${konfidenzLabel(task.kiEignung)}`;
+      return `${marker} ${task.title}: du „${deine ? ZONE_TEXT[deine] : "—"}“, Modell „${ZONE_TEXT[modell]}“. ${konfidenzLabel(task.kiEignung)}`;
     });
     return [
       `${appTitel} – ${beruf.title}`,
@@ -166,7 +166,7 @@ export default function ErgebnisView({
               grenzfaelle === 1
                 ? "1 weitere Aufgabe war ein echter Grenzfall"
                 : `${grenzfaelle} weitere Aufgaben waren echte Grenzfälle`
-            } – die zählen nicht als richtig oder falsch.`
+            }. Grenzfälle zählen nicht als richtig oder falsch.`
           : ""),
       `Eigene Einschätzung: ${userMaschine} von ${total} Aufgaben bei der KI. Modell insgesamt: ${STUFE_TEXT[stufe]}.`,
       "",
@@ -296,7 +296,7 @@ export default function ErgebnisView({
         </p>
         <p className="prose-text mt-3 text-ink">
           {abweichungen === 0
-            ? "Bei allen eindeutigen Aufgaben deckungsgleich mit dem Modell."
+            ? "Bei keiner eindeutigen Aufgabe lagst du anders."
             : `Bei ${abweichungen} ${
                 abweichungen === 1 ? "eindeutigen Aufgabe" : "eindeutigen Aufgaben"
               } lagst du anders.`}{" "}
@@ -306,9 +306,9 @@ export default function ErgebnisView({
               {" "}
               {grenzfaelle === 1
                 ? "1 weitere Aufgabe war ein echter Grenzfall"
-                : `${grenzfaelle} weitere Aufgaben waren echte Grenzfälle`}{" "}
-              – die zählen wir gar nicht erst als richtig oder falsch, denn da
-              ist beides gut vertretbar.
+                : `${grenzfaelle} weitere Aufgaben waren echte Grenzfälle`}
+              . Grenzfälle zählen wir gar nicht erst als richtig oder falsch,
+              denn da ist beides gut vertretbar.
             </>
           )}
         </p>
@@ -332,7 +332,7 @@ export default function ErgebnisView({
         </p>
         <p className="mt-4 border-l-2 border-akzent pl-4 font-prose text-[0.95rem] leading-relaxed text-ink-2">
           „KI kann das“ heißt nicht „KI macht das“. Ob eine Aufgabe wirklich
-          automatisiert wird, hängt an Kosten, Recht, Verantwortung – und daran,
+          automatisiert wird, hängt an Kosten, Recht und Verantwortung. Und daran,
           ob Menschen das überhaupt wollen. Meist verschwindet nicht der Beruf,
           sondern der Aufgabenmix verschiebt sich.
         </p>
@@ -395,7 +395,7 @@ export default function ErgebnisView({
                 {statistik.n === 1 ? "Person" : "Personen"})
               </>
             )}
-            . Deine Zuordnung und deine Gründe zählen anonym mit – ohne Namen,
+            . Deine Zuordnung und deine Gründe zählen anonym mit: ohne Namen,
             ohne Konto, ohne Freitext.
           </p>
         )}

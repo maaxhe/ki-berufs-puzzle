@@ -260,7 +260,7 @@ export default function SchnellRunde({
           >
             {status === "ok" && "Passt!"}
             {status === "miss" && "Das Modell sieht es anders."}
-            {status === "grenzfall" && "Echter Grenzfall – beides vertretbar."}
+            {status === "grenzfall" && "Echter Grenzfall. Hier ist beides vertretbar."}
           </p>
           <p className="mt-1 text-sm text-ink">
             Du: <span className="font-semibold">{ZONE_TEXT[reveal.antwort]}</span>

@@ -26,7 +26,7 @@ export default function Footer() {
 
         <p className="mt-6 max-w-[56ch] text-base leading-relaxed text-ink">
           Ein Werkzeug für Berufsorientierungs-Workshops. Die KI-Werte sind
-          didaktische Schätzungen zur Diskussion, keine Prognosen – grob
+          didaktische Schätzungen zur Diskussion, keine Prognosen. Grob
           kalibriert an Frey &amp; Osborne (2013) und dem IAB Job-Futuromat.
           Konzept und Kuration von{" "}
           <a

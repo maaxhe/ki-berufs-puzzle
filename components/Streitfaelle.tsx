@@ -128,7 +128,7 @@ export default function Streitfaelle({
             <p className="mt-10 font-display text-[clamp(1.4rem,3vw,2rem)] font-semibold text-akzent">
               Wie hat sich die Klasse entschieden?
               <span className="mt-1 block text-[1rem] font-normal text-ink-2">
-                Schätzt, bevor ihr weiterklickt: Mensch oder KI – und wie
+                Schätzt, bevor ihr weiterklickt: Mensch oder KI, und wie
                 knapp?
               </span>
             </p>

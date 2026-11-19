@@ -25,7 +25,7 @@ export default function StudiumPage() {
         </h1>
         <p className="prose-text mt-6 text-ink">
           Sortier die typischen Aufgaben eines Studiengangs und des Berufsfelds
-          dahinter selbst in zwei Spalten – was KI heute übernehmen kann und
+          dahinter selbst in zwei Spalten: was KI heute übernehmen kann und
           was beim Menschen bleibt. Danach siehst du, wie gut dieser
           Studiengang für eine KI-Zukunft gerüstet ist.
         </p>

@@ -38,14 +38,14 @@ export const berufe: Beruf[] = [
       jobFuturomat,
     ],
     tasks: [
-      { id: "pf-1", title: "Medikamente vorbereiten und dosieren", description: "Nach ärztlichem Plan Medikamente richten und kontrollieren.", kiEignung: 40, category: "routine", warum: "Die Dosis nach Plan ausrechnen kann Software – die letzte Kontrolle am Bett, richtige Person, richtige Pille, bleibt Handarbeit." },
-      { id: "pf-2", title: "Patient:innen waschen und pflegen", description: "Körperpflege, Ankleiden und Unterstützung im Alltag.", kiEignung: 10, category: "physisch", warum: "Ein Körper, der gewaschen und bewegt werden muss, im richtigen Moment und mit Gefühl – da hilft kein Bildschirm." },
+      { id: "pf-1", title: "Medikamente vorbereiten und dosieren", description: "Nach ärztlichem Plan Medikamente richten und kontrollieren.", kiEignung: 40, category: "routine", warum: "Die Dosis nach Plan ausrechnen kann Software. Die letzte Kontrolle am Bett, richtige Person, richtige Pille, bleibt Handarbeit." },
+      { id: "pf-2", title: "Patient:innen waschen und pflegen", description: "Körperpflege, Ankleiden und Unterstützung im Alltag.", kiEignung: 10, category: "physisch", warum: "Ein Körper, der gewaschen und bewegt werden muss, im richtigen Moment und mit Gefühl. Da hilft kein Bildschirm." },
       { id: "pf-3", title: "Blutdruck und Vitalwerte messen", description: "Regelmäßige Kontrolle von Puls, Blutdruck und Temperatur.", kiEignung: 60, category: "routine", warum: "Blutdruck misst längst ein Gerät, oft automatisch. Die Zahl ablesen und weitergeben ist der kleinere Teil." },
       { id: "pf-4", title: "Pflegedokumentation schreiben", description: "Maßnahmen, Beobachtungen und Verläufe schriftlich festhalten.", kiEignung: 70, category: "analytisch", warum: "Standardsätze aus Stichpunkten formulieren können Sprachmodelle gut. Die Beobachtung dahinter kommt aber von dir." },
-      { id: "pf-5", title: "Patientengespräche führen", description: "Zuhören, beruhigen und über den Behandlungsverlauf sprechen.", kiEignung: 15, category: "sozial", warum: "Zuhören, beruhigen und merken, wenn jemand mehr sagt als er sagt – das lässt sich nicht an eine App abgeben." },
+      { id: "pf-5", title: "Patientengespräche führen", description: "Zuhören, beruhigen und über den Behandlungsverlauf sprechen.", kiEignung: 15, category: "sozial", warum: "Zuhören, beruhigen und merken, wenn jemand mehr sagt als er sagt. Das lässt sich nicht an eine App abgeben." },
       { id: "pf-6", title: "Notfallsituationen erkennen und handeln", description: "Verschlechterungen früh bemerken und sofort reagieren.", kiEignung: 5, category: "analytisch", warum: "Wenn es kippt, zählt Erfahrung im Raum und schnelles Handeln am Menschen. Keine Zeit für ein Tool." },
-      { id: "pf-7", title: "Ärztliche Anweisungen umsetzen", description: "Verordnete Maßnahmen fachgerecht durchführen.", kiEignung: 50, category: "routine", warum: "Die Anweisung steht digital fest, die Ausführung findet am Bett statt – halb Papier, halb Handarbeit." },
-      { id: "pf-8", title: "Angehörige beraten", description: "Familien über Pflege zu Hause und Hilfsangebote informieren.", kiEignung: 20, category: "sozial", warum: "Eine verunsicherte Familie braucht jemanden, der ihre Lage versteht – kein Merkblatt aus dem Automaten." },
+      { id: "pf-7", title: "Ärztliche Anweisungen umsetzen", description: "Verordnete Maßnahmen fachgerecht durchführen.", kiEignung: 50, category: "routine", warum: "Die Anweisung steht digital fest, die Ausführung findet am Bett statt. Halb Papier, halb Handarbeit." },
+      { id: "pf-8", title: "Angehörige beraten", description: "Familien über Pflege zu Hause und Hilfsangebote informieren.", kiEignung: 20, category: "sozial", warum: "Eine verunsicherte Familie braucht jemanden, der ihre Lage versteht. Kein Merkblatt aus dem Automaten." },
       { id: "pf-9", title: "Lagerungswechsel zur Dekubitusprophylaxe", description: "Bettlägerige Menschen regelmäßig umlagern, um Druckstellen zu vermeiden.", kiEignung: 10, category: "physisch", warum: "Jemanden regelmäßig, im individuell festgelegten Rhythmus, richtig umlagern ist körperliche Arbeit am Menschen. Nichts davon passiert am PC." },
       { id: "pf-10", title: "Schichtübergabe im Team besprechen", description: "Wichtige Infos zu jeder Patientin und jedem Patienten weitergeben.", kiEignung: 25, category: "sozial", warum: "KI kann Notizen sortieren. Das Wichtige über zwölf Menschen in fünf Minuten weiterzugeben, kann sie nicht." },
       { id: "pf-11", title: "Frühwarnzeichen einer Verschlechterung aus Messwerten erkennen", description: "Aus Vitalwerten, Laborwerten und Verlauf ein beginnendes Problem ableiten.", kiEignung: 65, category: "analytisch", warum: "Klinische Frühwarnsysteme werten viele Werte gleichzeitig aus und schlagen teils früher an als das geübte Auge. Hinschauen, nachfragen und handeln musst trotzdem du.", ueberraschend: true },
@@ -59,7 +59,7 @@ export const berufe: Beruf[] = [
       "Organisiert eine Arztpraxis, assistiert bei Behandlungen und betreut Patient:innen an Empfang und Labor.",
     kategorie: "gesundheit-soziales",
     zukunftsausblick:
-      "Der Verwaltungsteil – Termine, Abrechnung, Karteiführung – ist stark automatisierbar und wird es zunehmend. Die Assistenz am Menschen, das Beruhigen ängstlicher Patient:innen und Handgriffe wie Blutabnahme bleiben. Der Beruf verschiebt sich Richtung Patientenbegleitung und Praxiskoordination.",
+      "Der Verwaltungsteil (Termine, Abrechnung, Karteiführung) ist stark automatisierbar und wird es zunehmend. Die Assistenz am Menschen, das Beruhigen ängstlicher Patient:innen und Handgriffe wie Blutabnahme bleiben. Der Beruf verschiebt sich Richtung Patientenbegleitung und Praxiskoordination.",
     tippsMenschlich: [
       "Ängstliche oder kranke Menschen freundlich durch den Praxisbesuch führen",
       "Sicheres, ruhiges Arbeiten bei Blutabnahme und Assistenz",
@@ -71,14 +71,14 @@ export const berufe: Beruf[] = [
       jobFuturomat,
     ],
     tasks: [
-      { id: "mfa-1", title: "Termine und Praxisorganisation koordinieren", description: "Sprechstunde planen, Wartezeiten steuern, Rückrufe managen.", kiEignung: 80, category: "routine", warum: "Termine takten, Wartezeiten steuern, Rückrufe managen – Regeln und Kalender, das schafft Software fast allein." },
+      { id: "mfa-1", title: "Termine und Praxisorganisation koordinieren", description: "Sprechstunde planen, Wartezeiten steuern, Rückrufe managen.", kiEignung: 80, category: "routine", warum: "Termine takten, Wartezeiten steuern, Rückrufe managen: Regeln und Kalender, das schafft Software fast allein." },
       { id: "mfa-2", title: "Patient:innen empfangen und aufnehmen", description: "Begrüßen, Versichertenkarte einlesen, Anliegen aufnehmen.", kiEignung: 35, category: "sozial", warum: "Die Karte einlesen ist Technik. Die Begrüßung und das erste „Was führt Sie her?“ macht ein Mensch." },
-      { id: "mfa-3", title: "Blut abnehmen und Verbände anlegen", description: "Kleine medizinische Eingriffe sicher am Menschen durchführen.", kiEignung: 15, category: "physisch", warum: "Eine Nadel in die Vene setzen und einen Verband anlegen ist Handwerk am Körper – da kommt keine Maschine hin." },
+      { id: "mfa-3", title: "Blut abnehmen und Verbände anlegen", description: "Kleine medizinische Eingriffe sicher am Menschen durchführen.", kiEignung: 15, category: "physisch", warum: "Eine Nadel in die Vene setzen und einen Verband anlegen ist Handwerk am Körper. Da kommt keine Maschine hin." },
       { id: "mfa-4", title: "Abrechnung mit Krankenkassen erstellen", description: "Leistungen nach EBM/GOÄ erfassen und quartalsweise abrechnen.", kiEignung: 85, category: "routine", warum: "Leistungen nach festem Katalog erfassen und abrechnen ist reine Regelarbeit auf digitalen Daten." },
       { id: "mfa-5", title: "Laborproben vorbereiten und versenden", description: "Proben beschriften, dokumentieren und ans Labor weiterleiten.", kiEignung: 60, category: "routine", warum: "Beschriften und dokumentieren läuft digital. Das Abnehmen und Verpacken der Probe nicht." },
-      { id: "mfa-6", title: "Ärzt:innen bei Untersuchungen assistieren", description: "Instrumente reichen, Patient:innen lagern, Abläufe unterstützen.", kiEignung: 20, category: "physisch", warum: "Instrumente reichen, Patient:innen lagern, im richtigen Moment zupacken – körperliche Assistenz im Raum." },
+      { id: "mfa-6", title: "Ärzt:innen bei Untersuchungen assistieren", description: "Instrumente reichen, Patient:innen lagern, Abläufe unterstützen.", kiEignung: 20, category: "physisch", warum: "Instrumente reichen, Patient:innen lagern, im richtigen Moment zupacken: Das ist körperliche Assistenz im Raum." },
       { id: "mfa-7", title: "Patient:innen zu Vorsorge und Abläufen informieren", description: "Erklären, wie eine Untersuchung abläuft oder worauf zu achten ist.", kiEignung: 30, category: "sozial", warum: "Wie eine Untersuchung abläuft, kann ein Text erklären. Ob dein Gegenüber es verstanden hat, merkt nur ein Mensch." },
-      { id: "mfa-8", title: "Karteikarten und Befunde digital pflegen", description: "Befunde einscannen, zuordnen und in der Praxissoftware ablegen.", kiEignung: 75, category: "analytisch", warum: "Befunde einscannen, zuordnen, ablegen – strukturierte Ablage ist ein Heimspiel für Software." },
+      { id: "mfa-8", title: "Karteikarten und Befunde digital pflegen", description: "Befunde einscannen, zuordnen und in der Praxissoftware ablegen.", kiEignung: 75, category: "analytisch", warum: "Befunde einscannen, zuordnen, ablegen: Strukturierte Ablage ist ein Heimspiel für Software." },
       { id: "mfa-9", title: "Unklare Überweisungen und fehlende Versichertendaten klären", description: "Bei Lücken im Papierkram nachfragen und Fehler ausbügeln.", kiEignung: 30, category: "routine", warum: "Standardfälle laufen automatisch. Aber die Karte, die sich nicht lesen lässt, die falsche Nummer, die fehlende Unterschrift: Ausnahmen im Papierkram sind genau der Teil, an dem Automatisierung oft hängen bleibt.", ueberraschend: true },
     ],
   },
@@ -87,10 +87,10 @@ export const berufe: Beruf[] = [
     suchbegriffe: ["Erzieherin", "Kita", "Kindergarten", "Kinderbetreuung"],
     title: "Erzieher:in",
     shortDescription:
-      "Begleitet und fördert Kinder in Kita oder Hort – im Spiel, im Alltag und in ihrer Entwicklung.",
+      "Begleitet und fördert Kinder in Kita oder Hort, im Spiel, im Alltag und in ihrer Entwicklung.",
     kategorie: "bildung-erziehung",
     zukunftsausblick:
-      "Pädagogische Arbeit lebt von Beziehung, Beobachtung und spontanem Reagieren – das lässt sich kaum automatisieren. KI kann bei Entwicklungsberichten und Planung unterstützen. Der Bedarf an Fachkräften ist hoch und steigt.",
+      "Pädagogische Arbeit lebt von Beziehung, Beobachtung und spontanem Reagieren. Das lässt sich kaum automatisieren. KI kann bei Entwicklungsberichten und Planung unterstützen. Der Bedarf an Fachkräften ist hoch und steigt.",
     tippsMenschlich: [
       "Bindung aufbauen und Kinder emotional sicher begleiten",
       "Im Moment reagieren, wenn im Gruppenalltag etwas passiert",
@@ -102,15 +102,15 @@ export const berufe: Beruf[] = [
       jobFuturomat,
     ],
     tasks: [
-      { id: "erz-1", title: "Kinder beim Spielen begleiten und fördern", description: "Spielsituationen aufgreifen und Lernanlässe daraus machen.", kiEignung: 5, category: "sozial", warum: "Aus dem, was ein Kind gerade spielt, im Moment einen Lernanlass machen – das geht nur mit einem Menschen daneben." },
+      { id: "erz-1", title: "Kinder beim Spielen begleiten und fördern", description: "Spielsituationen aufgreifen und Lernanlässe daraus machen.", kiEignung: 5, category: "sozial", warum: "Aus dem, was ein Kind gerade spielt, im Moment einen Lernanlass machen. Das geht nur mit einem Menschen daneben." },
       { id: "erz-2", title: "Konflikte zwischen Kindern schlichten", description: "Streit begleiten und Kindern helfen, Lösungen zu finden.", kiEignung: 5, category: "sozial", warum: "Zwei streitende Kinder brauchen jemanden, der beide ernst nimmt und vermittelt. Kein Programm." },
       { id: "erz-3", title: "Elterngespräche führen", description: "Über Entwicklung, Auffälligkeiten und Alltag der Kinder sprechen.", kiEignung: 10, category: "sozial", warum: "Über die Entwicklung eines Kindes zu sprechen ist Vertrauenssache, kein automatischer Report." },
       { id: "erz-4", title: "Entwicklungsberichte schreiben", description: "Beobachtungen strukturiert für Portfolio und Gespräche festhalten.", kiEignung: 45, category: "analytisch", warum: "Beobachtungen in Sätze gießen kann KI unterstützen. Gesehen haben musst du das Kind selbst." },
       { id: "erz-5", title: "Tagesablauf und Ausflüge planen", description: "Wochenplan, Angebote und Ausflüge organisieren.", kiEignung: 25, category: "analytisch", warum: "Einen Wochenplan bauen geht mit Vorlagen. Die Rücksicht auf genau diese Gruppe kommt von dir." },
       { id: "erz-6", title: "Bastel- und Bewegungsangebote gestalten", description: "Kreative und motorische Angebote für die Gruppe vorbereiten.", kiEignung: 20, category: "kreativ", warum: "Ideen liefert KI reichlich. Ob sie zu dieser Gruppe an diesem Tag passen, entscheidet ein Mensch." },
       { id: "erz-7", title: "Kinder trösten und bei Ängsten begleiten", description: "Nähe geben, wenn ein Kind weint, wütend oder überfordert ist.", kiEignung: 5, category: "sozial", warum: "Ein weinendes Kind braucht Nähe und eine Person, die bleibt. Das ist der Kern des Berufs." },
-      { id: "erz-8", title: "Anwesenheit und Dokumentation pflegen", description: "Anwesenheitslisten, Vorfälle und Formalitäten festhalten.", kiEignung: 45, category: "routine", warum: "Anwesenheit und Vorfälle festhalten ist Formkram – der lässt sich weitgehend automatisieren." },
-      { id: "erz-9", title: "Elternbriefe verständlich formulieren und übersetzen", description: "Informationen für Eltern aufbereiten – auch für Familien mit anderen Sprachen.", kiEignung: 85, category: "sozial", warum: "Ein freundlicher Elternbrief in fünf Sprachen ist für Sprachmodelle Routine. Das Gespräch, ob die Familie ihn wirklich verstanden hat, bleibt beim Menschen.", ueberraschend: true },
+      { id: "erz-8", title: "Anwesenheit und Dokumentation pflegen", description: "Anwesenheitslisten, Vorfälle und Formalitäten festhalten.", kiEignung: 45, category: "routine", warum: "Anwesenheit und Vorfälle festhalten ist Formkram. Der lässt sich weitgehend automatisieren." },
+      { id: "erz-9", title: "Elternbriefe verständlich formulieren und übersetzen", description: "Informationen für Eltern aufbereiten, auch für Familien mit anderen Sprachen.", kiEignung: 85, category: "sozial", warum: "Ein freundlicher Elternbrief in fünf Sprachen ist für Sprachmodelle Routine. Das Gespräch, ob die Familie ihn wirklich verstanden hat, bleibt beim Menschen.", ueberraschend: true },
     ],
   },
   {
@@ -118,10 +118,10 @@ export const berufe: Beruf[] = [
     suchbegriffe: ["Lehrerin", "Lehramt", "Schule", "Pädagoge"],
     title: "Lehrer:in",
     shortDescription:
-      "Unterrichtet, begleitet und bewertet Schüler:innen – vom Stundenplan bis zum Elterngespräch.",
+      "Unterrichtet, begleitet und bewertet Schüler:innen, vom Stundenplan bis zum Elterngespräch.",
     kategorie: "bildung-erziehung",
     zukunftsausblick:
-      "Übungsaufgaben, Korrekturen und individuelle Übungspläne kann KI schon heute gut unterstützen – das entlastet spürbar bei der Vorbereitung. Eine Klasse führen, für einen Streit sensibel bleiben oder merken, wenn es einem Kind gerade nicht gut geht, bleibt an einer Person im Raum hängen. Der Beruf wird sich stärker in Richtung Begleitung und weniger reine Wissensvermittlung verschieben.",
+      "Übungsaufgaben, Korrekturen und individuelle Übungspläne kann KI schon heute gut unterstützen. Das entlastet spürbar bei der Vorbereitung. Eine Klasse führen, für einen Streit sensibel bleiben oder merken, wenn es einem Kind gerade nicht gut geht, bleibt an einer Person im Raum hängen. Der Beruf wird sich stärker in Richtung Begleitung und weniger reine Wissensvermittlung verschieben.",
     tippsMenschlich: [
       "Eine Klasse als Gruppe führen und für Ruhe und Fairness sorgen",
       "Merken, wenn es einem Kind nicht gut geht, auch ohne dass es das sagt",
@@ -136,12 +136,12 @@ export const berufe: Beruf[] = [
       { id: "leh-1", title: "Unterricht vorbereiten", description: "Stundenverlauf, Materialien und Übungsaufgaben zusammenstellen.", kiEignung: 65, category: "analytisch", warum: "Ein Sprachmodell liefert in Minuten einen Entwurf. Ob er zu genau dieser Klasse passt, entscheidest du." },
       { id: "leh-2", title: "Vor der Klasse unterrichten", description: "Inhalte erklären, Fragen beantworten, auf Reaktionen eingehen.", kiEignung: 20, category: "sozial", warum: "Live auf 25 unterschiedliche Reaktionen gleichzeitig eingehen ist etwas anderes als ein Video abzuspielen." },
       { id: "leh-3", title: "Klassenarbeiten und Hausaufgaben korrigieren", description: "Ergebnisse bewerten und Fehler nachvollziehbar markieren.", kiEignung: 45, category: "routine", warum: "Multiple-Choice und Rechtschreibung prüft Software zuverlässig. Bei Aufsätzen und Argumenten bleibt die Einschätzung schwieriger." },
-      { id: "leh-4", title: "Elternabende und Klassenfahrten organisieren", description: "Termine, Einverständnisse und Ablauf planen.", kiEignung: 30, category: "routine", warum: "Einladungen, Listen, Einverständniserklärungen – vieles davon ist Organisation, die Software mittlerweile mitträgt. Die Klassenfahrt mit 28 Kindern begleitet sie nicht." },
+      { id: "leh-4", title: "Elternabende und Klassenfahrten organisieren", description: "Termine, Einverständnisse und Ablauf planen.", kiEignung: 30, category: "routine", warum: "Einladungen, Listen, Einverständniserklärungen: Vieles davon ist Organisation, die Software mittlerweile mitträgt. Die Klassenfahrt mit 28 Kindern begleitet sie nicht." },
       { id: "leh-5", title: "Individuelle Förderpläne erstellen", description: "Übungen und Tempo an einzelne Schüler:innen anpassen.", kiEignung: 40, category: "analytisch", warum: "Adaptive Lernsoftware schlägt passende Übungen vor. Ob sie beim Kind ankommen, siehst nur du im Unterricht." },
       { id: "leh-6", title: "Elterngespräche führen", description: "Über Leistung, Verhalten und Entwicklung des Kindes sprechen.", kiEignung: 10, category: "sozial", warum: "Ein schwieriges Gespräch mit besorgten Eltern führen ist Vertrauensarbeit, kein Bericht zum Vorlesen." },
       { id: "leh-7", title: "Noten und Zeugnisse verwalten", description: "Bewertungen erfassen und Zeugnistexte formulieren.", kiEignung: 70, category: "routine", warum: "Noten eintragen und Standardformulierungen erzeugen ist genau das, was Verwaltungssoftware übernimmt." },
-      { id: "leh-8", title: "Auf schwierige Situationen im Klassenzimmer reagieren", description: "Störungen, Überforderung oder Mobbing im Moment erkennen und handeln.", kiEignung: 5, category: "sozial", warum: "Im Moment merken, dass gerade etwas kippt, und richtig reagieren – das ist Präsenz, die kein Tool ersetzt." },
-      { id: "leh-9", title: "Falsch verstandenen Stoff geduldig anders erklären", description: "Einer Schülerin denselben Inhalt auf einem neuen Weg erklären.", kiEignung: 45, category: "sozial", warum: "Ein Chat-Tutor erklärt dieselbe Sache zum fünften Mal und wird nie ungeduldig – erste Studien zeigen echte Lerneffekte. Was ihm fehlt: merken, dass das Kind gerade wegen etwas ganz anderem abschaltet.", ueberraschend: true },
+      { id: "leh-8", title: "Auf schwierige Situationen im Klassenzimmer reagieren", description: "Störungen, Überforderung oder Mobbing im Moment erkennen und handeln.", kiEignung: 5, category: "sozial", warum: "Im Moment merken, dass gerade etwas kippt, und richtig reagieren. Das ist Präsenz, die kein Tool ersetzt." },
+      { id: "leh-9", title: "Falsch verstandenen Stoff geduldig anders erklären", description: "Einer Schülerin denselben Inhalt auf einem neuen Weg erklären.", kiEignung: 45, category: "sozial", warum: "Ein Chat-Tutor erklärt dieselbe Sache zum fünften Mal und wird nie ungeduldig. Erste Studien zeigen echte Lerneffekte. Was ihm fehlt: merken, dass das Kind gerade wegen etwas ganz anderem abschaltet.", ueberraschend: true },
     ],
   },
   {
@@ -152,7 +152,7 @@ export const berufe: Beruf[] = [
       "Behandelt Bewegungseinschränkungen und Schmerzen durch gezielte Übungen, Massage und manuelle Therapie.",
     kategorie: "gesundheit-soziales",
     zukunftsausblick:
-      "Trainingspläne und Fortschrittsdokumentation kann Software gut unterstützen, Apps leiten inzwischen sogar einfache Übungen an. Die Behandlung am Körper – ertasten, wo es klemmt, mit den Händen mobilisieren – bleibt Handwerk am Menschen. Der Beruf bleibt gefragt und verschiebt sich leicht Richtung Beratung und Eigenübungen zwischen den Terminen.",
+      "Trainingspläne und Fortschrittsdokumentation kann Software gut unterstützen, Apps leiten inzwischen sogar einfache Übungen an. Die Behandlung am Körper (ertasten, wo es klemmt, mit den Händen mobilisieren) bleibt Handwerk am Menschen. Der Beruf bleibt gefragt und verschiebt sich leicht Richtung Beratung und Eigenübungen zwischen den Terminen.",
     tippsMenschlich: [
       "Mit den Händen ertasten, wo genau eine Bewegung blockiert ist",
       "Übungen im Moment an Schmerz und Tagesform anpassen",
@@ -164,14 +164,14 @@ export const berufe: Beruf[] = [
       jobFuturomat,
     ],
     tasks: [
-      { id: "pt-1", title: "Befund erheben und Beweglichkeit testen", description: "Bewegungsausmaß und Schmerzpunkte am Körper prüfen.", kiEignung: 15, category: "physisch", warum: "Ertasten, wo es klemmt, und die Reaktion im Moment spüren – das geht nur mit den Händen am Patienten." },
-      { id: "pt-2", title: "Manuelle Therapie und Massage durchführen", description: "Gelenke mobilisieren und Muskulatur mit den Händen behandeln.", kiEignung: 5, category: "physisch", warum: "Mit den Händen am Körper arbeiten ist der Kern der Behandlung – kein Gerät ersetzt das." },
-      { id: "pt-3", title: "Trainings- und Übungspläne erstellen", description: "Passende Übungen nach Diagnose zusammenstellen.", kiEignung: 30, category: "analytisch", warum: "Software schlägt Standardübungen vor – aber welche Übung zu diesem Körper, dieser Verletzung und diesem Tag wirklich passt, bleibt Erfahrungssache." },
-      { id: "pt-4", title: "Behandlungsfortschritt dokumentieren", description: "Verlauf und Ergebnisse je Sitzung festhalten.", kiEignung: 45, category: "routine", warum: "Stichpunkte in Text bringen kann Software übernehmen, macht aber nur einen kleinen Teil des Arbeitstags aus – der Rest ist Behandlung." },
+      { id: "pt-1", title: "Befund erheben und Beweglichkeit testen", description: "Bewegungsausmaß und Schmerzpunkte am Körper prüfen.", kiEignung: 15, category: "physisch", warum: "Ertasten, wo es klemmt, und die Reaktion im Moment spüren. Das geht nur mit den Händen am Patienten." },
+      { id: "pt-2", title: "Manuelle Therapie und Massage durchführen", description: "Gelenke mobilisieren und Muskulatur mit den Händen behandeln.", kiEignung: 5, category: "physisch", warum: "Mit den Händen am Körper arbeiten ist der Kern der Behandlung. Kein Gerät ersetzt das." },
+      { id: "pt-3", title: "Trainings- und Übungspläne erstellen", description: "Passende Übungen nach Diagnose zusammenstellen.", kiEignung: 30, category: "analytisch", warum: "Software schlägt Standardübungen vor. Aber welche Übung zu diesem Körper, dieser Verletzung und diesem Tag wirklich passt, bleibt Erfahrungssache." },
+      { id: "pt-4", title: "Behandlungsfortschritt dokumentieren", description: "Verlauf und Ergebnisse je Sitzung festhalten.", kiEignung: 45, category: "routine", warum: "Stichpunkte in Text bringen kann Software übernehmen, macht aber nur einen kleinen Teil des Arbeitstags aus. Der Rest ist Behandlung." },
       { id: "pt-5", title: "Patient:innen zu Übungen zuhause anleiten", description: "Eigenübungen erklären und korrigieren.", kiEignung: 20, category: "sozial", warum: "Erklären kann eine App. Ob die Ausführung wirklich stimmt und wo nachjustiert werden muss, siehst nur du im Raum." },
       { id: "pt-6", title: "Mit Ärzt:innen Behandlungspläne abstimmen", description: "Diagnosen einholen und Therapieziele klären.", kiEignung: 20, category: "analytisch", warum: "Befunde austauschen läuft digital, die fachliche Abstimmung im Zweifelsfall bleibt ein Gespräch zwischen zwei Fachleuten." },
-      { id: "pt-7", title: "Auf akute Schmerzreaktionen reagieren", description: "Während der Behandlung sofort auf Schmerz oder Widerstand eingehen.", kiEignung: 5, category: "sozial", warum: "Wenn jemand vor Schmerz zusammenzuckt, musst du im selben Moment reagieren – keine Zeit für ein Tool." },
-      { id: "pt-8", title: "Abrechnung mit Kassen erstellen", description: "Behandlungen nach Rezept erfassen und abrechnen.", kiEignung: 55, category: "routine", warum: "Behandlungen nach festem Schema abrechnen ist Regelarbeit – aber eben auch nur ein kleiner Randposten des Berufs, keine Kerntätigkeit." },
+      { id: "pt-7", title: "Auf akute Schmerzreaktionen reagieren", description: "Während der Behandlung sofort auf Schmerz oder Widerstand eingehen.", kiEignung: 5, category: "sozial", warum: "Wenn jemand vor Schmerz zusammenzuckt, musst du im selben Moment reagieren. Keine Zeit für ein Tool." },
+      { id: "pt-8", title: "Abrechnung mit Kassen erstellen", description: "Behandlungen nach Rezept erfassen und abrechnen.", kiEignung: 55, category: "routine", warum: "Behandlungen nach festem Schema abrechnen ist Regelarbeit. Aber eben auch nur ein kleiner Randposten des Berufs, keine Kerntätigkeit." },
       { id: "pt-9", title: "Bewegungsfehler auf Videoaufnahmen erkennen", description: "Haltung und Ausführung einer Übung anhand von Video bewerten.", kiEignung: 60, category: "analytisch", warum: "Kamera-Apps erkennen Gelenkwinkel und Ausweichbewegungen schon ziemlich zuverlässig. Ob dieser Schmerz beim Bewegen Sorgen machen muss, spürt die Therapeutin mit der Hand.", ueberraschend: true },
     ],
   },
@@ -180,7 +180,7 @@ export const berufe: Beruf[] = [
     suchbegriffe: ["Rettungssanitäter", "Rettungsdienst", "Sanitäter", "Rettungsassistent", "Krankenwagen"],
     title: "Notfallsanitäter:in",
     shortDescription:
-      "Rettet und versorgt Menschen in medizinischen Notfällen – im Rettungswagen und am Einsatzort.",
+      "Rettet und versorgt Menschen in medizinischen Notfällen, im Rettungswagen und am Einsatzort.",
     kategorie: "gesundheit-soziales",
     zukunftsausblick:
       "Software hilft heute schon bei der Einsatzplanung und beim Auswerten von Vitaldaten. Die Versorgung am Einsatzort unter Zeitdruck, oft unter widrigen Bedingungen, mit einer Person, die im Moment entscheiden muss, bleibt zutiefst menschlich. Der Bedarf an Rettungskräften bleibt hoch.",
@@ -195,7 +195,7 @@ export const berufe: Beruf[] = [
       jobFuturomat,
     ],
     tasks: [
-      { id: "ns-1", title: "Notfall am Einsatzort einschätzen", description: "Zustand der Patient:innen schnell beurteilen.", kiEignung: 5, category: "analytisch", warum: "In Sekunden am echten Menschen einschätzen, was los ist – das kann kein Algorithmus aus der Ferne." },
+      { id: "ns-1", title: "Notfall am Einsatzort einschätzen", description: "Zustand der Patient:innen schnell beurteilen.", kiEignung: 5, category: "analytisch", warum: "In Sekunden am echten Menschen einschätzen, was los ist. Das kann kein Algorithmus aus der Ferne." },
       { id: "ns-2", title: "Erste-Hilfe-Maßnahmen durchführen", description: "Wiederbelebung, Wundversorgung und Stabilisierung vor Ort.", kiEignung: 5, category: "physisch", warum: "Reanimation und Wundversorgung sind Handarbeit am Körper unter Zeitdruck." },
       { id: "ns-3", title: "Vitalwerte überwachen und dokumentieren", description: "Puls, Blutdruck und Sauerstoff während des Transports messen.", kiEignung: 55, category: "routine", warum: "Geräte messen und protokollieren Werte längst automatisch mit." },
       { id: "ns-4", title: "Patient:innen ins Krankenhaus übergeben", description: "Befund an die Klinik mündlich und schriftlich weitergeben.", kiEignung: 30, category: "sozial", warum: "Eine mündliche Übergabe unter Zeitdruck, mit allen Nuancen, macht ein Mensch am anderen Ende sicherer." },
@@ -203,7 +203,7 @@ export const berufe: Beruf[] = [
       { id: "ns-6", title: "Rettungswagen und Ausrüstung einsatzbereit halten", description: "Material prüfen, auffüllen und Fahrzeug warten.", kiEignung: 40, category: "routine", warum: "Checklisten abarbeiten ist Routine, aber am realen Fahrzeug und Material." },
       { id: "ns-7", title: "Einsatzberichte schreiben", description: "Verlauf und Maßnahmen für die Dokumentation festhalten.", kiEignung: 70, category: "routine", warum: "Einen Bericht aus Stichpunkten formulieren kann Software gut übernehmen." },
       { id: "ns-8", title: "Unter schwierigen Bedingungen den Einsatzort sichern", description: "Gefahrenstellen einschätzen und Eigen- und Fremdschutz organisieren.", kiEignung: 10, category: "analytisch", warum: "Eine unübersichtliche Unfallstelle einschätzen und sichern braucht Erfahrung vor Ort." },
-      { id: "ns-9", title: "EKG auf Auffälligkeiten auswerten", description: "12-Kanal-EKG lesen und einen Herzinfarkt erkennen.", kiEignung: 70, category: "analytisch", warum: "EKG-Auswertung ist Mustererkennung – Algorithmen leisten das schon im Rettungswagen. Was das für diesen Menschen jetzt heißt, entscheidet weiter die Besatzung.", ueberraschend: true },
+      { id: "ns-9", title: "EKG auf Auffälligkeiten auswerten", description: "12-Kanal-EKG lesen und einen Herzinfarkt erkennen.", kiEignung: 70, category: "analytisch", warum: "EKG-Auswertung ist Mustererkennung. Algorithmen leisten das schon im Rettungswagen. Was das für diesen Menschen jetzt heißt, entscheidet weiter die Besatzung.", ueberraschend: true },
     ],
   },
 
@@ -232,13 +232,13 @@ export const berufe: Beruf[] = [
       { id: "im-2", title: "Maschinen warten und instand halten", description: "Verschleißteile prüfen, schmieren und austauschen.", kiEignung: 35, category: "physisch", warum: "Verschleißteile prüfen und tauschen heißt hinlangen, oft an schwer zugängliche Stellen. Da kommt kein Roboter hin." },
       { id: "im-3", title: "Störungen an Anlagen diagnostizieren", description: "Fehlerursachen an laufenden Produktionslinien eingrenzen.", kiEignung: 50, category: "analytisch", warum: "Software schlägt Fehlerquellen vor. Das Eingrenzen an der laufenden Anlage braucht Erfahrung vor Ort." },
       { id: "im-4", title: "Werkstücke von Hand entgraten und montieren", description: "Kanten säubern und Baugruppen millimetergenau zusammenbauen.", kiEignung: 30, category: "physisch", warum: "Kanten säubern und Teile millimetergenau zusammenfügen ist Handarbeit mit Gefühl." },
-      { id: "im-5", title: "CNC-Programme einrichten", description: "Fertigungsprogramme laden, Werkzeuge einmessen, Nullpunkt setzen.", kiEignung: 70, category: "analytisch", warum: "Programm laden, Werkzeuge einmessen, Nullpunkt setzen – strukturierte Schritte, die Maschinen zunehmend selbst übernehmen." },
+      { id: "im-5", title: "CNC-Programme einrichten", description: "Fertigungsprogramme laden, Werkzeuge einmessen, Nullpunkt setzen.", kiEignung: 70, category: "analytisch", warum: "Programm laden, Werkzeuge einmessen, Nullpunkt setzen: Das sind strukturierte Schritte, die Maschinen zunehmend selbst übernehmen." },
       { id: "im-6", title: "Qualität mit Messmitteln prüfen", description: "Maße mit Messschieber und Lehren gegen die Toleranz prüfen.", kiEignung: 70, category: "routine", warum: "Maße gegen Toleranzen abgleichen macht ein Messautomat schneller und genauer als jede Hand." },
       { id: "im-7", title: "Ersatzteile bestellen und Lager verwalten", description: "Bestände überwachen und Nachschub rechtzeitig auslösen.", kiEignung: 80, category: "routine", warum: "Bestände überwachen und rechtzeitig nachbestellen ist ein klassischer Fall für Software." },
-      { id: "im-8", title: "Arbeitsschritte dokumentieren", description: "Wartungen und Reparaturen für die Nachvollziehbarkeit festhalten.", kiEignung: 75, category: "routine", warum: "Was gemacht wurde in Textform bringen – genau das können Sprachmodelle gut." },
+      { id: "im-8", title: "Arbeitsschritte dokumentieren", description: "Wartungen und Reparaturen für die Nachvollziehbarkeit festhalten.", kiEignung: 75, category: "routine", warum: "Was gemacht wurde in Textform bringen. Genau das können Sprachmodelle gut." },
       { id: "im-9", title: "Auszubildende anleiten", description: "Handgriffe zeigen, Fragen beantworten, Sicherheit vermitteln.", kiEignung: 15, category: "sozial", warum: "Einem Menschen einen Handgriff beibringen, inklusive „nicht so, sondern so“, macht ein Mensch." },
-      { id: "im-10", title: "Prototypen mit der Konstruktion verbessern", description: "Aus der Fertigungspraxis Vorschläge für bessere Bauteile einbringen.", kiEignung: 35, category: "kreativ", warum: "Aus der Praxis heraus sagen, warum ein Bauteil nervt, ist Erfahrungswissen – KI kann nur ergänzen." },
-      { id: "im-11", title: "Ungewöhnliche Vibrationen und Geräusche an Anlagen bemerken", description: "Beginnenden Verschleiß erkennen, bevor die Maschine ausfällt.", kiEignung: 65, category: "analytisch", warum: "Sensoren hören und fühlen Verschleiß oft früher als das beste Ohr – vorausschauende Wartung ist in vielen Fabriken angekommen. Was der Sensor meldet, muss aber jemand an der Anlage einordnen und beheben.", ueberraschend: true },
+      { id: "im-10", title: "Prototypen mit der Konstruktion verbessern", description: "Aus der Fertigungspraxis Vorschläge für bessere Bauteile einbringen.", kiEignung: 35, category: "kreativ", warum: "Aus der Praxis heraus sagen, warum ein Bauteil nervt, ist Erfahrungswissen. KI kann nur ergänzen." },
+      { id: "im-11", title: "Ungewöhnliche Vibrationen und Geräusche an Anlagen bemerken", description: "Beginnenden Verschleiß erkennen, bevor die Maschine ausfällt.", kiEignung: 65, category: "analytisch", warum: "Sensoren hören und fühlen Verschleiß oft früher als das beste Ohr. Vorausschauende Wartung ist in vielen Fabriken angekommen. Was der Sensor meldet, muss aber jemand an der Anlage einordnen und beheben.", ueberraschend: true },
     ],
   },
   {
@@ -246,7 +246,7 @@ export const berufe: Beruf[] = [
     suchbegriffe: ["KFZ", "Kfz-Mechaniker", "Automechaniker", "Mechaniker", "Auto", "Werkstatt"],
     title: "Kraftfahrzeugmechatroniker:in",
     shortDescription:
-      "Wartet, diagnostiziert und repariert Fahrzeuge – von der Bremse bis zum Steuergerät.",
+      "Wartet, diagnostiziert und repariert Fahrzeuge, von der Bremse bis zum Steuergerät.",
     kategorie: "technik-handwerk",
     zukunftsausblick:
       "Diagnosegeräte und Hersteller-Software geben immer mehr vor, wo der Fehler liegt. Die eigentliche Reparatur am Fahrzeug, das Prüfen widersprüchlicher Symptome und der Kundenkontakt bleiben. Mit E-Autos und Assistenzsystemen verschiebt sich der Beruf Richtung Elektronik und Software.",
@@ -266,7 +266,7 @@ export const berufe: Beruf[] = [
       { id: "kfz-3", title: "Motor und Getriebe reparieren", description: "Komplexe mechanische Baugruppen zerlegen und instand setzen.", kiEignung: 20, category: "physisch", warum: "Eine Baugruppe zerlegen und wieder zum Laufen bringen ist Handwerk, oft mit Improvisieren." },
       { id: "kfz-4", title: "Software-Updates und Steuergeräte codieren", description: "Fahrzeugsoftware aktualisieren und neue Teile anlernen.", kiEignung: 70, category: "analytisch", warum: "Steuergeräte flashen und Teile anlernen ist selbst schon fast reine Software." },
       { id: "kfz-5", title: "Hauptuntersuchung vorbereiten", description: "Fahrzeug nach Prüfkatalog kontrollieren und Mängel beheben.", kiEignung: 55, category: "routine", warum: "Nach Prüfkatalog abhaken ist strukturiert. Das Beheben der Mängel danach nicht." },
-      { id: "kfz-6", title: "Kund:innen Reparaturen erklären und beraten", description: "Notwendige Arbeiten und Alternativen nachvollziehbar darstellen.", kiEignung: 20, category: "sozial", warum: "Erklären, warum eine Reparatur 800 Euro kostet, und dabei Vertrauen aufbauen – das macht ein Mensch." },
+      { id: "kfz-6", title: "Kund:innen Reparaturen erklären und beraten", description: "Notwendige Arbeiten und Alternativen nachvollziehbar darstellen.", kiEignung: 20, category: "sozial", warum: "Erklären, warum eine Reparatur 800 Euro kostet, und dabei Vertrauen aufbauen. Das macht ein Mensch." },
       { id: "kfz-7", title: "Kostenvoranschläge erstellen", description: "Arbeitswerte und Teilepreise zu einem Angebot zusammenstellen.", kiEignung: 80, category: "routine", warum: "Arbeitswerte und Teilepreise zu einem Angebot zusammenrechnen ist Tabellenarbeit." },
       { id: "kfz-8", title: "Elektrik und Bordnetz prüfen", description: "Kabelbäume, Sensoren und Verbraucher systematisch durchmessen.", kiEignung: 50, category: "analytisch", warum: "Diagnosegeräte helfen beim Durchmessen. Das Suchen am echten Kabelbaum bleibt Handarbeit." },
       { id: "kfz-9", title: "Sporadische Fehler finden, die nur manchmal auftreten", description: "Ein Problem aufspüren, das in der Werkstatt gerade nicht auftritt.", kiEignung: 25, category: "analytisch", warum: "Den Fehlerspeicher auslesen kann jedes Gerät. Ein Fehler, der nur bei Regen und Kaltstart auftritt, verlangt Erfahrung, Geduld und Bauchgefühl.", ueberraschend: true },
@@ -304,12 +304,12 @@ export const berufe: Beruf[] = [
     tasks: [
       { id: "bkf-1", title: "Güter auf festen Routen transportieren", description: "Planbare Strecken zwischen Depots und Kunden abfahren.", kiEignung: 55, category: "routine", warum: "Planbare Autobahnstrecken sind das erklärte Ziel autonomer Systeme: In Texas fahren seit 2025 erste Lkw ohne Fahrer:in am Steuer (zeitweise wieder mit Person im Fahrersitz). In Deutschland gilt die erste Zulassung dieser Art nur für einen Pilot über wenige hundert Meter, der Alltag ist noch weit davon entfernt." },
       { id: "bkf-2", title: "Lenk- und Ruhezeiten dokumentieren", description: "Fahrtenschreiber bedienen und gesetzliche Zeiten einhalten.", kiEignung: 80, category: "routine", warum: "Der Fahrtenschreiber erledigt das ohnehin fast von allein." },
-      { id: "bkf-3", title: "Fahrzeug beladen und Ladung sichern", description: "Gewicht verteilen, zurren, gegen Verrutschen sichern.", kiEignung: 40, category: "physisch", warum: "Gewicht verteilen und zurren ist körperliche Arbeit mit Verantwortung – ob es hält oder eben nicht." },
+      { id: "bkf-3", title: "Fahrzeug beladen und Ladung sichern", description: "Gewicht verteilen, zurren, gegen Verrutschen sichern.", kiEignung: 40, category: "physisch", warum: "Gewicht verteilen und zurren ist körperliche Arbeit mit Verantwortung, ob es hält oder eben nicht." },
       { id: "bkf-4", title: "Route bei Stau und Sperrung anpassen", description: "Kurzfristig umplanen und Kunden über Verzug informieren.", kiEignung: 55, category: "analytisch", warum: "Bei Stau umplanen können Navi und Software. Der Anruf beim Kunden kommt von dir." },
       { id: "bkf-5", title: "Abfahrtkontrolle am Fahrzeug durchführen", description: "Reifen, Licht, Bremsen und Flüssigkeiten vor Fahrtantritt prüfen.", kiEignung: 45, category: "routine", warum: "Reifen, Licht, Bremsen checken ist Routine, aber am Fahrzeug, nicht am Schreibtisch." },
       { id: "bkf-6", title: "Lieferpapiere und Zollformalitäten abwickeln", description: "Frachtbriefe, Zoll- und Ablieferbelege bearbeiten.", kiEignung: 78, category: "routine", warum: "Frachtbriefe und Zollbelege sind Formulararbeit auf digitalen Daten." },
-      { id: "bkf-7", title: "Ware beim Kunden übergeben", description: "Abladen, Abnahme klären, Reklamationen vor Ort aufnehmen.", kiEignung: 25, category: "sozial", warum: "Abladen, Abnahme klären, eine Reklamation vor Ort aufnehmen – da steht ein Mensch am anderen Ende." },
-      { id: "bkf-8", title: "In schwierigen Verkehrssituationen sicher reagieren", description: "Enge Zufahrten, Baustellen und plötzliche Gefahren meistern.", kiEignung: 30, category: "analytisch", warum: "Enge Baustelle, plötzliche Gefahr – hier entscheidet der Mensch am Steuer noch immer schneller und sicherer." },
+      { id: "bkf-7", title: "Ware beim Kunden übergeben", description: "Abladen, Abnahme klären, Reklamationen vor Ort aufnehmen.", kiEignung: 25, category: "sozial", warum: "Abladen, Abnahme klären, eine Reklamation vor Ort aufnehmen. Da steht ein Mensch am anderen Ende." },
+      { id: "bkf-8", title: "In schwierigen Verkehrssituationen sicher reagieren", description: "Enge Zufahrten, Baustellen und plötzliche Gefahren meistern.", kiEignung: 30, category: "analytisch", warum: "Enge Baustelle, plötzliche Gefahr: Hier entscheidet der Mensch am Steuer noch immer schneller und sicherer." },
       { id: "bkf-9", title: "Rückwärts an einer engen Laderampe andocken", description: "Den Lkw millimetergenau an die Rampe setzen.", kiEignung: 20, category: "physisch", warum: "Auf der Autobahn geradeaus fahren ist für Assistenzsysteme einfacher als der enge Hof mit Staplern, Wetter und parkenden Autos. Schwierig wird es oft auf den letzten 50 Metern.", ueberraschend: true },
     ],
   },
@@ -318,13 +318,13 @@ export const berufe: Beruf[] = [
     suchbegriffe: ["Elektriker", "Elektro", "Strom", "Solar", "Photovoltaik"],
     title: "Elektroniker:in für Energie- und Gebäudetechnik",
     shortDescription:
-      "Installiert und wartet elektrische Anlagen in Gebäuden – von der Verkabelung bis zur Photovoltaikanlage.",
+      "Installiert und wartet elektrische Anlagen in Gebäuden, von der Verkabelung bis zur Photovoltaikanlage.",
     kategorie: "technik-handwerk",
     zukunftsausblick:
-      "Verkabeln, Klemmen und Prüfen vor Ort bleibt körperliche Arbeit, die kein Roboter im engen Altbau oder auf dem Dach übernimmt. Planungssoftware und automatische Fehlerdiagnose entlasten zunehmend – der Umgang mit Smart-Home- und PV-Technik wird wichtiger, die Handarbeit an der Anlage bleibt.",
+      "Verkabeln, Klemmen und Prüfen vor Ort bleibt körperliche Arbeit, die kein Roboter im engen Altbau oder auf dem Dach übernimmt. Planungssoftware und automatische Fehlerdiagnose entlasten zunehmend. Der Umgang mit Smart-Home- und PV-Technik wird wichtiger, die Handarbeit an der Anlage bleibt.",
     tippsMenschlich: [
       "Handwerkliches Geschick bei Verkabelung und Montage unter beengten Bedingungen",
-      "Verantwortung für Sicherheit – ein Fehler kann Brände oder Stromschläge verursachen",
+      "Verantwortung für Sicherheit: Ein Fehler kann Brände oder Stromschläge verursachen",
       "Beratung von Kund:innen zu Smart Home, PV und Fördermöglichkeiten",
     ],
     quellen: [
@@ -333,15 +333,15 @@ export const berufe: Beruf[] = [
       jobFuturomat,
     ],
     tasks: [
-      { id: "eg-1", title: "Elektroinstallationen verlegen", description: "Kabel, Leitungen und Verteiler in Neubau oder Bestand einbauen.", kiEignung: 15, category: "physisch", warum: "Kabel durch Wände und Decken ziehen ist Handarbeit an einem konkreten Gebäude – nichts davon läuft am Bildschirm." },
+      { id: "eg-1", title: "Elektroinstallationen verlegen", description: "Kabel, Leitungen und Verteiler in Neubau oder Bestand einbauen.", kiEignung: 15, category: "physisch", warum: "Kabel durch Wände und Decken ziehen ist Handarbeit an einem konkreten Gebäude. Nichts davon läuft am Bildschirm." },
       { id: "eg-2", title: "Schaltpläne lesen und umsetzen", description: "Technische Zeichnungen in reale Verkabelung übersetzen.", kiEignung: 45, category: "analytisch", warum: "Software kann Pläne generieren. Sie vor Ort korrekt umzusetzen, mit allen Abweichungen im echten Gebäude, bleibt Handwerk." },
       { id: "eg-3", title: "Fehler in der Elektrik diagnostizieren", description: "Störungen mit Messgeräten eingrenzen und beheben.", kiEignung: 40, category: "analytisch", warum: "Diagnosegeräte schlagen Ursachen vor. Das Nachprüfen im echten Sicherungskasten bleibt beim Menschen." },
-      { id: "eg-4", title: "Photovoltaikanlagen installieren", description: "Module montieren, verkabeln und ans Netz anschließen.", kiEignung: 15, category: "physisch", warum: "Module aufs Dach montieren und sicher verkabeln ist körperliche Arbeit in der Höhe – da hilft keine Software." },
+      { id: "eg-4", title: "Photovoltaikanlagen installieren", description: "Module montieren, verkabeln und ans Netz anschließen.", kiEignung: 15, category: "physisch", warum: "Module aufs Dach montieren und sicher verkabeln ist körperliche Arbeit in der Höhe. Da hilft keine Software." },
       { id: "eg-5", title: "Smart-Home-Systeme einrichten", description: "Steuerungen für Licht, Heizung und Sicherheit programmieren.", kiEignung: 55, category: "analytisch", warum: "Standard-Konfigurationen kann Software zunehmend selbst vorschlagen. Die Einrichtung im echten Haus bleibt Handarbeit." },
-      { id: "eg-6", title: "Anlagen auf Sicherheit prüfen (VDE-Prüfung)", description: "Vorgeschriebene Prüfungen durchführen und protokollieren.", kiEignung: 45, category: "routine", warum: "Prüfgeräte liefern die Werte automatisch. Die Freigabe unterschreibt gesetzlich trotzdem die Elektrofachkraft – mit persönlicher Haftung." },
+      { id: "eg-6", title: "Anlagen auf Sicherheit prüfen (VDE-Prüfung)", description: "Vorgeschriebene Prüfungen durchführen und protokollieren.", kiEignung: 45, category: "routine", warum: "Prüfgeräte liefern die Werte automatisch. Die Freigabe unterschreibt gesetzlich trotzdem die Elektrofachkraft, mit persönlicher Haftung." },
       { id: "eg-7", title: "Kund:innen zu Energielösungen beraten", description: "Fördermöglichkeiten und passende Technik erklären.", kiEignung: 30, category: "sozial", warum: "Fördertöpfe kann ein Chatbot auflisten. Welche Lösung zu diesem Haus und Budget passt, wägt ein Mensch ab." },
-      { id: "eg-8", title: "Wartungsprotokolle dokumentieren", description: "Durchgeführte Arbeiten und Messwerte digital festhalten.", kiEignung: 75, category: "routine", warum: "Messwerte und Stichpunkte in ein Protokoll bringen ist strukturierte Textarbeit – ein Fall für Software." },
-      { id: "eg-9", title: "Ausfälle von Anlagen aus Messdaten vorhersagen", description: "Aus Verbrauchs- und Temperaturdaten erkennen, wann etwas kaputtgeht.", kiEignung: 75, category: "analytisch", warum: "Wärmepumpe, Wechselrichter, Speicher – vernetzte Anlagen melden ihre Daten selbst, und Software erkennt Muster darin. Das Kabel ziehen und die Klemme nachziehen macht sie trotzdem nicht.", ueberraschend: true },
+      { id: "eg-8", title: "Wartungsprotokolle dokumentieren", description: "Durchgeführte Arbeiten und Messwerte digital festhalten.", kiEignung: 75, category: "routine", warum: "Messwerte und Stichpunkte in ein Protokoll bringen ist strukturierte Textarbeit. Ein Fall für Software." },
+      { id: "eg-9", title: "Ausfälle von Anlagen aus Messdaten vorhersagen", description: "Aus Verbrauchs- und Temperaturdaten erkennen, wann etwas kaputtgeht.", kiEignung: 75, category: "analytisch", warum: "Wärmepumpe, Wechselrichter, Speicher: Vernetzte Anlagen melden ihre Daten selbst, und Software erkennt Muster darin. Das Kabel ziehen und die Klemme nachziehen macht sie trotzdem nicht.", ueberraschend: true },
     ],
   },
   {
@@ -349,7 +349,7 @@ export const berufe: Beruf[] = [
     suchbegriffe: ["Schreiner", "Holz", "Möbel"],
     title: "Tischler:in",
     shortDescription:
-      "Fertigt und montiert Möbel, Einbauten und Holzkonstruktionen – vom Entwurf bis zur Montage.",
+      "Fertigt und montiert Möbel, Einbauten und Holzkonstruktionen, vom Entwurf bis zur Montage.",
     kategorie: "technik-handwerk",
     zukunftsausblick:
       "CAD-Software plant Möbelstücke längst mit, und CNC-Maschinen übernehmen präzise Zuschnitte. Das Zusammenbauen, Anpassen vor Ort und der handwerkliche Feinschliff bleiben Handarbeit. Individuelle Möbel und Restaurierung bleiben ein Feld, in dem Handwerk gefragt ist.",
@@ -368,7 +368,7 @@ export const berufe: Beruf[] = [
       { id: "ti-2", title: "Holz zuschneiden und bearbeiten", description: "Werkstücke sägen, hobeln und fräsen.", kiEignung: 55, category: "routine", warum: "CNC-Maschinen schneiden längst maßgenau nach Programm." },
       { id: "ti-3", title: "Möbelstücke von Hand zusammenbauen", description: "Bauteile passgenau verleimen und verschrauben.", kiEignung: 15, category: "physisch", warum: "Ein Möbelstück von Hand zusammenfügen, mit Gefühl für Spannung und Passung, ist Handwerk." },
       { id: "ti-4", title: "Oberflächen behandeln und lackieren", description: "Holz schleifen, ölen oder lackieren.", kiEignung: 25, category: "physisch", warum: "Eine Oberfläche gleichmäßig behandeln braucht eine geübte Hand." },
-      { id: "ti-5", title: "Einbaumöbel vor Ort montieren", description: "Fertige Teile im Kundenhaus einbauen und anpassen.", kiEignung: 15, category: "physisch", warum: "Im echten Raum passt selten alles exakt – Nacharbeit vor Ort ist Handarbeit." },
+      { id: "ti-5", title: "Einbaumöbel vor Ort montieren", description: "Fertige Teile im Kundenhaus einbauen und anpassen.", kiEignung: 15, category: "physisch", warum: "Im echten Raum passt selten alles exakt. Nacharbeit vor Ort ist Handarbeit." },
       { id: "ti-6", title: "Kund:innen zu Material und Design beraten", description: "Wünsche aufnehmen und passende Lösungen vorschlagen.", kiEignung: 25, category: "sozial", warum: "Aus einem vagen Wunsch ein passendes Möbelstück entwickeln ist ein Gespräch, kein Katalog." },
       { id: "ti-7", title: "Angebote und Kostenvoranschläge kalkulieren", description: "Material- und Arbeitsaufwand zu einem Preis zusammenstellen.", kiEignung: 75, category: "routine", warum: "Aufwand und Material zu einem Preis rechnen ist strukturierte Kalkulation." },
       { id: "ti-8", title: "Werkstatt und Maschinen instand halten", description: "Werkzeuge pflegen und Maschinen warten.", kiEignung: 30, category: "physisch", warum: "Maschinen warten und Werkzeug pflegen ist Handarbeit in der Werkstatt." },
@@ -380,7 +380,7 @@ export const berufe: Beruf[] = [
     suchbegriffe: ["Bauer", "Landwirtschaft", "Agrar", "Bauernhof"],
     title: "Landwirt:in",
     shortDescription:
-      "Bewirtschaftet Felder und hält Nutztiere – von der Aussaat bis zur Ernte, von der Fütterung bis zum Melken.",
+      "Bewirtschaftet Felder und hält Nutztiere, von der Aussaat bis zur Ernte, von der Fütterung bis zum Melken.",
     kategorie: "technik-handwerk",
     zukunftsausblick:
       "Präzisionslandwirtschaft ist längst Realität: Sensoren, GPS-gesteuerte Maschinen und Software planen Aussaat, Düngung und Ernte zunehmend selbst. Tierpflege, das Reagieren auf Wetter und Boden vor Ort und die körperliche Arbeit bleiben. Der Beruf verschiebt sich stark Richtung Technik-Bedienung und Datenauswertung.",
@@ -429,16 +429,16 @@ export const berufe: Beruf[] = [
       jobFuturomat,
     ],
     tasks: [
-      { id: "st-1", title: "Steuererklärungen vorbereiten", description: "Angaben zusammenstellen und Formulare vorausfüllen.", kiEignung: 88, category: "analytisch", warum: "Belege und Angaben in die Formulare bringen ist strukturierte Arbeit auf digitalen Daten – ein Heimspiel für Software." },
+      { id: "st-1", title: "Steuererklärungen vorbereiten", description: "Angaben zusammenstellen und Formulare vorausfüllen.", kiEignung: 88, category: "analytisch", warum: "Belege und Angaben in die Formulare bringen ist strukturierte Arbeit auf digitalen Daten. Ein Heimspiel für Software." },
       { id: "st-2", title: "Buchungen erfassen", description: "Belege kontieren und in der Finanzbuchhaltung verbuchen.", kiEignung: 92, category: "routine", warum: "Belege kontieren und verbuchen läuft nach festen Regeln und wird schon heute weitgehend automatisch erledigt." },
       { id: "st-3", title: "Mandantengespräche führen", description: "Rückfragen klären und Ergebnisse persönlich besprechen.", kiEignung: 30, category: "sozial", warum: "Rückfragen klären und ein Ergebnis persönlich erklären ist Vertrauensarbeit." },
-      { id: "st-4", title: "Steuerbescheide prüfen", description: "Bescheide des Finanzamts mit den eigenen Berechnungen abgleichen.", kiEignung: 82, category: "analytisch", warum: "Bescheid gegen eigene Berechnung abgleichen ist ein Soll-Ist-Vergleich – genau das, was Software zuverlässig macht." },
+      { id: "st-4", title: "Steuerbescheide prüfen", description: "Bescheide des Finanzamts mit den eigenen Berechnungen abgleichen.", kiEignung: 82, category: "analytisch", warum: "Bescheid gegen eigene Berechnung abgleichen ist ein Soll-Ist-Vergleich. Genau das, was Software zuverlässig macht." },
       { id: "st-5", title: "Gesetzesänderungen recherchieren", description: "Neue Regelungen und Urteile auf Relevanz für Mandate prüfen.", kiEignung: 85, category: "analytisch", warum: "Neue Regeln finden und auf Relevanz prüfen geht mit KI deutlich schneller als per Handbuch." },
       { id: "st-6", title: "Individuelle Steuerstrategien entwickeln", description: "Gestaltungsmöglichkeiten für konkrete Lebenslagen abwägen.", kiEignung: 35, category: "kreativ", warum: "Für eine konkrete Lebenslage den besten Weg abwägen ist Beratung mit Verantwortung. KI liefert nur Bausteine." },
       { id: "st-7", title: "Betriebsprüfungen vorbereiten", description: "Unterlagen sortieren und mögliche Streitpunkte antizipieren.", kiEignung: 78, category: "analytisch", warum: "Das Sortieren der Unterlagen kann Software. Das Ahnen der Streitpunkte kommt aus Erfahrung." },
       { id: "st-8", title: "Fehlende Belege bei Mandant:innen anfordern und nachhaken", description: "Unvollständige Unterlagen einsammeln und Fristen im Blick behalten.", kiEignung: 40, category: "sozial", warum: "Die Erinnerungsmail schreibt sich automatisch. Aber der Mandant, der zum dritten Mal nicht reagiert, braucht einen Anruf von jemandem, der ihn kennt." },
       { id: "st-9", title: "Umsatzsteuer-Voranmeldung erstellen", description: "Monatliche Meldungen berechnen und fristgerecht übermitteln.", kiEignung: 92, category: "routine", warum: "Monatliche Meldung berechnen und übermitteln ist reine Routine nach festem Schema." },
-      { id: "st-10", title: "Lohnabrechnungen durchführen", description: "Gehälter, Abzüge und Sozialabgaben monatlich abrechnen.", kiEignung: 90, category: "routine", warum: "Gehälter, Abzüge und Sozialabgaben nach Tabellen abrechnen – dafür gibt es längst Programme." },
+      { id: "st-10", title: "Lohnabrechnungen durchführen", description: "Gehälter, Abzüge und Sozialabgaben monatlich abrechnen.", kiEignung: 90, category: "routine", warum: "Gehälter, Abzüge und Sozialabgaben nach Tabellen abrechnen. Dafür gibt es längst Programme." },
       { id: "st-11", title: "Unleserliche oder widersprüchliche Belege deuten", description: "Einen Beleg ohne Datum oder Zweck einordnen.", kiEignung: 35, category: "analytisch", warum: "Sauber gescannte Rechnungen liest Software zuverlässig. Bei einem zerknitterten Bewirtungsbeleg mit handschriftlichem Zusatz zählt Erfahrung mit dem Mandanten.", ueberraschend: true },
     ],
   },
@@ -454,7 +454,7 @@ export const berufe: Beruf[] = [
     tippsMenschlich: [
       "Zwischen vielen gleichzeitigen Anfragen sinnvoll priorisieren",
       "Kolleg:innen, Kund:innen und Chef:innen persönlich zusammenbringen",
-      "Verstehen, was gemeint ist – nicht nur, was geschrieben steht",
+      "Verstehen, was gemeint ist, nicht nur, was geschrieben steht",
     ],
     quellen: [
       { ...freyOsborne, wert: "Office Clerks, General: 96 %, Secretaries: 96 %" },
@@ -463,15 +463,15 @@ export const berufe: Beruf[] = [
       jobFuturomat,
     ],
     tasks: [
-      { id: "bm-1", title: "E-Mails und Post bearbeiten", description: "Eingang sichten, zuordnen, beantworten oder weiterleiten.", kiEignung: 82, category: "routine", warum: "Eingang sichten, zuordnen, Standardantworten schreiben – genau das können Assistenzsysteme heute." },
+      { id: "bm-1", title: "E-Mails und Post bearbeiten", description: "Eingang sichten, zuordnen, beantworten oder weiterleiten.", kiEignung: 82, category: "routine", warum: "Eingang sichten, zuordnen, Standardantworten schreiben: Genau das können Assistenzsysteme heute." },
       { id: "bm-2", title: "Termine und Besprechungen organisieren", description: "Kalender abstimmen, Räume buchen, Unterlagen bereitstellen.", kiEignung: 75, category: "routine", warum: "Kalender abstimmen und Räume buchen ist Regelarbeit, die Software fast allein schafft." },
       { id: "bm-3", title: "Rechnungen erstellen und prüfen", description: "Ausgangsrechnungen schreiben, Eingangsrechnungen kontieren.", kiEignung: 88, category: "routine", warum: "Rechnungen schreiben und Eingänge kontieren läuft nach festem Muster." },
       { id: "bm-4", title: "Präsentationen und Serienbriefe erstellen", description: "Aus Stichpunkten fertige Dokumente und Folien bauen.", kiEignung: 80, category: "analytisch", warum: "Aus Stichpunkten fertige Folien und Briefe bauen ist eine Paradedisziplin von Sprachmodellen." },
-      { id: "bm-5", title: "Reisen buchen und abrechnen", description: "Verbindungen und Hotels organisieren, Reisekosten abrechnen.", kiEignung: 85, category: "routine", warum: "Verbindung suchen, Hotel buchen, Reisekosten abrechnen – strukturiert und digital von Anfang bis Ende." },
+      { id: "bm-5", title: "Reisen buchen und abrechnen", description: "Verbindungen und Hotels organisieren, Reisekosten abrechnen.", kiEignung: 85, category: "routine", warum: "Verbindung suchen, Hotel buchen, Reisekosten abrechnen: Das läuft strukturiert und digital von Anfang bis Ende." },
       { id: "bm-6", title: "Telefonate annehmen und weiterleiten", description: "Anliegen erfassen und an die richtige Stelle vermitteln.", kiEignung: 55, category: "sozial", warum: "Ein Anliegen aufnehmen und weiterleiten schaffen Sprachbots zunehmend. Bei allem Untypischen übernimmt ein Mensch." },
       { id: "bm-7", title: "Kolleg:innen und Kund:innen persönlich betreuen", description: "Am Empfang und im Alltag ansprechbar sein und helfen.", kiEignung: 25, category: "sozial", warum: "Am Empfang ansprechbar sein und im Alltag helfen ist Präsenz, die kein Bot ersetzt." },
       { id: "bm-8", title: "Daten in Tabellen auswerten", description: "Listen pflegen, Kennzahlen zusammenstellen, Berichte vorbereiten.", kiEignung: 78, category: "analytisch", warum: "Listen pflegen und Kennzahlen zusammenstellen ist Tabellenarbeit." },
-      { id: "bm-9", title: "Antwort auf eine verärgerte Kundenmail formulieren", description: "Einen freundlichen, deeskalierenden Ton finden.", kiEignung: 80, category: "sozial", warum: "Den Ton treffen ist Formulierungsarbeit – Sprachmodelle können das oft besser als ein gestresster Mensch. Ob man dem Kunden entgegenkommt, entscheidet trotzdem jemand.", ueberraschend: true },
+      { id: "bm-9", title: "Antwort auf eine verärgerte Kundenmail formulieren", description: "Einen freundlichen, deeskalierenden Ton finden.", kiEignung: 80, category: "sozial", warum: "Den Ton treffen ist Formulierungsarbeit. Sprachmodelle können das oft besser als ein gestresster Mensch. Ob man dem Kunden entgegenkommt, entscheidet trotzdem jemand.", ueberraschend: true },
     ],
   },
   {
@@ -510,10 +510,10 @@ export const berufe: Beruf[] = [
     suchbegriffe: ["Personal", "HR", "Recruiter", "Zeitarbeit"],
     title: "Personaldienstleistungskaufmann/-frau",
     shortDescription:
-      "Vermittelt zwischen Unternehmen und Bewerber:innen – von der Stellenausschreibung bis zum Vertragsabschluss.",
+      "Vermittelt zwischen Unternehmen und Bewerber:innen, von der Stellenausschreibung bis zum Vertragsabschluss.",
     kategorie: "buero-verwaltung",
     zukunftsausblick:
-      "Immer mehr Unternehmen lassen eingehende Bewerbungen von KI-Systemen vorsortieren – das spart Zeit, birgt aber ein bekanntes Risiko: Wenn die Trainingsdaten verzerrt sind, sortiert das System systematisch bestimmte Gruppen aus, oft unbemerkt. Genau deshalb bleibt eine Person nötig, die Vorauswahlen gegenprüft und im Gespräch entscheidet, wen sie wirklich vorschlägt.",
+      "Immer mehr Unternehmen lassen eingehende Bewerbungen von KI-Systemen vorsortieren. Das spart Zeit, birgt aber ein bekanntes Risiko: Wenn die Trainingsdaten verzerrt sind, sortiert das System systematisch bestimmte Gruppen aus, oft unbemerkt. Genau deshalb bleibt eine Person nötig, die Vorauswahlen gegenprüft und im Gespräch entscheidet, wen sie wirklich vorschlägt.",
     tippsMenschlich: [
       "Automatisierte Vorauswahlen kritisch gegenprüfen, statt sie blind zu übernehmen",
       "Im persönlichen Gespräch einschätzen, ob jemand ins Team passt",
@@ -526,14 +526,14 @@ export const berufe: Beruf[] = [
     ],
     tasks: [
       { id: "pdk-1", title: "Stellenanzeigen formulieren", description: "Anforderungsprofile in ansprechende Ausschreibungen übersetzen.", kiEignung: 80, category: "routine", warum: "Aus Stichpunkten eine Anzeige formulieren ist Textarbeit, die Sprachmodelle heute zuverlässig übernehmen." },
-      { id: "pdk-2", title: "Bewerbungen vorsortieren", description: "Eingehende Unterlagen nach Kriterien filtern und einordnen.", kiEignung: 75, category: "analytisch", warum: "Software filtert Hunderte Unterlagen in Sekunden nach Kriterien – nur läuft dabei bekanntermaßen Bias mit, den jemand gegenprüfen muss." },
-      { id: "pdk-3", title: "Vorstellungsgespräche führen", description: "Bewerber:innen persönlich kennenlernen und einschätzen.", kiEignung: 15, category: "sozial", warum: "Ob jemand ins Team passt, entscheidet sich im Gespräch – ein Zwischenmenschliches, das kein Score ersetzt." },
+      { id: "pdk-2", title: "Bewerbungen vorsortieren", description: "Eingehende Unterlagen nach Kriterien filtern und einordnen.", kiEignung: 75, category: "analytisch", warum: "Software filtert Hunderte Unterlagen in Sekunden nach Kriterien. Nur läuft dabei bekanntermaßen Bias mit, den jemand gegenprüfen muss." },
+      { id: "pdk-3", title: "Vorstellungsgespräche führen", description: "Bewerber:innen persönlich kennenlernen und einschätzen.", kiEignung: 15, category: "sozial", warum: "Ob jemand ins Team passt, entscheidet sich im Gespräch. Das ist etwas Zwischenmenschliches, das kein Score ersetzt." },
       { id: "pdk-4", title: "Zeugnisse und Referenzen prüfen", description: "Angaben auf Plausibilität und Echtheit kontrollieren.", kiEignung: 60, category: "analytisch", warum: "Formale Prüfung auf Vollständigkeit und Plausibilität kann Software gut vorfiltern." },
       { id: "pdk-5", title: "Gehalt und Vertragskonditionen verhandeln", description: "Zwischen den Interessen von Unternehmen und Bewerber:in vermitteln.", kiEignung: 20, category: "sozial", warum: "Verhandeln heißt, Interessen beider Seiten abzuwägen und im Moment auf Reaktionen einzugehen." },
       { id: "pdk-6", title: "Vertragsunterlagen erstellen", description: "Arbeitsverträge nach Vorlage aufsetzen und anpassen.", kiEignung: 85, category: "routine", warum: "Verträge aus Textbausteinen zusammensetzen ist strukturierte Arbeit nach festen Regeln." },
       { id: "pdk-7", title: "Bewerber:innen zu Absagen und Feedback beraten", description: "Entscheidungen nachvollziehbar und wertschätzend kommunizieren.", kiEignung: 30, category: "sozial", warum: "Eine Absage so zu formulieren, dass sie fair ankommt, ist Fingerspitzengefühl, kein Textbaustein." },
       { id: "pdk-8", title: "Personalstatistiken auswerten", description: "Fluktuation, Bewerbungszahlen und Trends analysieren.", kiEignung: 75, category: "analytisch", warum: "Zahlen aus dem System ziehen und Trends erkennen ist klassische Datenauswertung." },
-      { id: "pdk-9", title: "Fragen von Bewerber:innen im Chat beantworten und Termine vereinbaren", description: "Erste Rückfragen klären und Gespräche einplanen.", kiEignung: 85, category: "sozial", warum: "Erstkontakt per Chat, Terminvorschläge, Erinnerungen – das übernehmen Bots längst. Das Gespräch, in dem sich zeigt, ob jemand zum Team passt, nicht.", ueberraschend: true },
+      { id: "pdk-9", title: "Fragen von Bewerber:innen im Chat beantworten und Termine vereinbaren", description: "Erste Rückfragen klären und Gespräche einplanen.", kiEignung: 85, category: "sozial", warum: "Erstkontakt per Chat, Terminvorschläge, Erinnerungen: Das übernehmen Bots längst. Das Gespräch, in dem sich zeigt, ob jemand zum Team passt, nicht.", ueberraschend: true },
     ],
   },
   {
@@ -541,7 +541,7 @@ export const berufe: Beruf[] = [
     suchbegriffe: ["Rechtsanwalt", "Kanzlei", "Anwaltsgehilfin", "ReFa", "Jurist"],
     title: "Rechtsanwalts- und Notarfachangestellte:r (ReNo)",
     shortDescription:
-      "Organisiert den Alltag in Anwaltskanzlei oder Notariat – Fristen, Schriftsätze, Mandantenkontakt und Abrechnung.",
+      "Organisiert den Alltag in Anwaltskanzlei oder Notariat: Fristen, Schriftsätze, Mandantenkontakt und Abrechnung.",
     kategorie: "buero-verwaltung",
     zukunftsausblick:
       "Standardschreiben, Fristenberechnung und Aktenverwaltung sind stark automatisierbar, KI-Tools entwerfen heute schon Schriftsatz-Rohfassungen. Der direkte Mandantenkontakt in oft belastenden Situationen und die Verantwortung für fehlerfreie Fristen bleiben. Der Beruf verschiebt sich Richtung Koordination und Mandantenbetreuung.",
@@ -565,7 +565,7 @@ export const berufe: Beruf[] = [
       { id: "ra-6", title: "Mit Gerichten und Behörden kommunizieren", description: "Anfragen klären und Termine abstimmen.", kiEignung: 40, category: "analytisch", warum: "Rückfragen bei Gericht klären braucht oft Kontext, den kein Formular abdeckt." },
       { id: "ra-7", title: "Telefonate mit verunsicherten Mandant:innen führen", description: "Fragen zum Verfahrensstand beantworten und beruhigen.", kiEignung: 25, category: "sozial", warum: "Jemandem am Telefon Sicherheit geben, während er sich um sein Verfahren sorgt, ist Menschenarbeit." },
       { id: "ra-8", title: "Termine und Gerichtstermine koordinieren", description: "Kalender von Anwält:innen und Gerichten abstimmen.", kiEignung: 70, category: "routine", warum: "Kalender abstimmen ist Regelarbeit, die Software fast allein schafft." },
-      { id: "ra-9", title: "Fristen bei ungewöhnlichem Sachverhalt richtig einordnen", description: "Wenn die Standardfrist nicht passt: Zustellung, Feiertage, Sonderregeln prüfen.", kiEignung: 35, category: "analytisch", warum: "Standardfristen rechnet die Kanzleisoftware selbst. Beim Sonderfall – ausländische Zustellung, unklarer Fristbeginn – haftet am Ende die Kanzlei, nicht das Programm.", ueberraschend: true },
+      { id: "ra-9", title: "Fristen bei ungewöhnlichem Sachverhalt richtig einordnen", description: "Wenn die Standardfrist nicht passt: Zustellung, Feiertage, Sonderregeln prüfen.", kiEignung: 35, category: "analytisch", warum: "Standardfristen rechnet die Kanzleisoftware selbst. Beim Sonderfall (ausländische Zustellung, unklarer Fristbeginn) haftet am Ende die Kanzlei, nicht das Programm.", ueberraschend: true },
     ],
   },
   {
@@ -573,7 +573,7 @@ export const berufe: Beruf[] = [
     suchbegriffe: ["Makler", "Immobilien", "Immobilienmakler"],
     title: "Immobilienkaufmann/-frau",
     shortDescription:
-      "Vermittelt, verwaltet und vermarktet Immobilien – von der Besichtigung bis zum Kaufvertrag.",
+      "Vermittelt, verwaltet und vermarktet Immobilien, von der Besichtigung bis zum Kaufvertrag.",
     kategorie: "buero-verwaltung",
     zukunftsausblick:
       "Exposés, Preisrecherche und Vorqualifizierung von Interessent:innen sind heute schon stark digitalisiert. Die Besichtigung, das Verhandeln und das Vertrauen, das Menschen bei einer der größten Anschaffungen ihres Lebens brauchen, bleiben menschlich. Der Beruf verschiebt sich Richtung Beratung und Verhandlung.",
@@ -606,10 +606,10 @@ export const berufe: Beruf[] = [
     suchbegriffe: ["Programmierer", "Entwickler", "Coder", "Informatiker", "IT", "Software"],
     title: "Softwareentwickler:in",
     shortDescription:
-      "Entwirft, schreibt und wartet Software – von der Idee über den Code bis zum laufenden Betrieb.",
+      "Entwirft, schreibt und wartet Software, von der Idee über den Code bis zum laufenden Betrieb.",
     kategorie: "it-medien",
     zukunftsausblick:
-      "Frey & Osborne stuften den Beruf 2013 als kaum gefährdet ein – generative KI hat das verändert und schreibt heute große Teile des Routinecodes, erzeugt Tests und erklärt fremden Code. Architektur, das Klären unscharfer Anforderungen, Abwägen von Trade-offs und Verantwortung für Sicherheit bleiben menschlich. Der Beruf verschiebt sich vom Tippen zum Entscheiden und Prüfen.",
+      "Frey & Osborne stuften den Beruf 2013 als kaum gefährdet ein. Generative KI hat das verändert und schreibt heute große Teile des Routinecodes, erzeugt Tests und erklärt fremden Code. Architektur, das Klären unscharfer Anforderungen, Abwägen von Trade-offs und Verantwortung für Sicherheit bleiben menschlich. Der Beruf verschiebt sich vom Tippen zum Entscheiden und Prüfen.",
     tippsMenschlich: [
       "Unklare Wünsche in tragfähige Anforderungen übersetzen",
       "Architektur- und Trade-off-Entscheidungen verantworten",
@@ -625,10 +625,10 @@ export const berufe: Beruf[] = [
       { id: "sw-1", title: "Wiederkehrenden Code schreiben", description: "Standard-Bausteine (Boilerplate) für neue Features anlegen.", kiEignung: 85, category: "routine", warum: "Standard-Bausteine tippen ist das Erste, was KI wirklich besser und schneller kann als ein Mensch." },
       { id: "sw-2", title: "Automatisierte Tests erstellen", description: "Unit- und Integrationstests für bestehende Funktionen schreiben.", kiEignung: 70, category: "analytisch", warum: "Tests für bestehende Funktionen sind ein dankbares Feld für Codegeneratoren." },
       { id: "sw-3", title: "Bugs in bestehendem Code finden", description: "Fehlermeldungen nachvollziehen und Ursachen eingrenzen.", kiEignung: 55, category: "analytisch", warum: "KI schlägt Ursachen vor. Das Nachvollziehen im echten System bleibt oft Kopfarbeit." },
-      { id: "sw-4", title: "Software-Architektur entwerfen", description: "Module, Schnittstellen und Datenflüsse eines Systems festlegen.", kiEignung: 35, category: "kreativ", warum: "Module und Datenflüsse festlegen heißt abwägen und verantworten – das bleibt beim Menschen." },
-      { id: "sw-5", title: "Anforderungen mit Kundschaft klären", description: "Wünsche hinterfragen und in umsetzbare Aufgaben übersetzen.", kiEignung: 20, category: "sozial", warum: "Herausfinden, was jemand wirklich will statt was er sagt, ist ein Gespräch – kein Prompt." },
+      { id: "sw-4", title: "Software-Architektur entwerfen", description: "Module, Schnittstellen und Datenflüsse eines Systems festlegen.", kiEignung: 35, category: "kreativ", warum: "Module und Datenflüsse festlegen heißt abwägen und verantworten. Das bleibt beim Menschen." },
+      { id: "sw-5", title: "Anforderungen mit Kundschaft klären", description: "Wünsche hinterfragen und in umsetzbare Aufgaben übersetzen.", kiEignung: 20, category: "sozial", warum: "Herausfinden, was jemand wirklich will statt was er sagt, ist ein Gespräch, kein Prompt." },
       { id: "sw-6", title: "Code im Team reviewen", description: "Änderungen von Kolleg:innen auf Qualität und Risiken prüfen.", kiEignung: 45, category: "analytisch", warum: "KI findet Muster. Ob eine Änderung fürs Team tragbar ist, entscheidet ein Mensch." },
-      { id: "sw-7", title: "Dokumentation schreiben", description: "Funktionen, Setup und Entscheidungen nachvollziehbar festhalten.", kiEignung: 75, category: "routine", warum: "Funktionen und Setup in Worte fassen – eine der nervigen Aufgaben, die KI gut abnimmt." },
+      { id: "sw-7", title: "Dokumentation schreiben", description: "Funktionen, Setup und Entscheidungen nachvollziehbar festhalten.", kiEignung: 75, category: "routine", warum: "Funktionen und Setup in Worte fassen. Eine der nervigen Aufgaben, die KI gut abnimmt." },
       { id: "sw-8", title: "Bibliotheken und Frameworks auswählen", description: "Werkzeuge nach Reife, Wartung und Passung bewerten.", kiEignung: 50, category: "analytisch", warum: "Werkzeuge nach Reife und Wartung bewerten geht mit KI-Recherche. Die Entscheidung trägst du." },
       { id: "sw-9", title: "Legacy-System verstehen und umbauen", description: "Alten, schlecht dokumentierten Code sicher weiterentwickeln.", kiEignung: 40, category: "analytisch", warum: "Alten, undokumentierten Code sicher ändern ist Detektivarbeit, bei der KI nur assistiert." },
       { id: "sw-10", title: "Im Team über Lösungswege diskutieren", description: "Ansätze vergleichen und sich auf einen Weg einigen.", kiEignung: 25, category: "sozial", warum: "Im Team Ansätze vergleichen und sich einigen ist Aushandeln zwischen Menschen." },
@@ -640,7 +640,7 @@ export const berufe: Beruf[] = [
     suchbegriffe: ["IT", "Administrator", "Netzwerk", "Informatiker", "FISI", "Systemadministrator"],
     title: "Fachinformatiker:in Systemintegration",
     shortDescription:
-      "Plant, richtet ein und betreibt IT-Systeme, Netzwerke und Server – und hilft, wenn es klemmt.",
+      "Plant, richtet ein und betreibt IT-Systeme, Netzwerke und Server und hilft, wenn es klemmt.",
     kategorie: "it-medien",
     zukunftsausblick:
       "Standard-Setups, Monitoring und Skripte übernehmen viel Routine, Cloud-Dienste reduzieren eigene Serverarbeit. Vor-Ort-Support an Hardware, das Zusammendenken vieler Systeme und der geduldige Umgang mit ratlosen Nutzer:innen bleiben. Der Beruf verschiebt sich Richtung Cloud, Automatisierung und Sicherheit.",
@@ -661,7 +661,7 @@ export const berufe: Beruf[] = [
       { id: "fi-4", title: "Backups einrichten und Wiederherstellung testen", description: "Sicherungen automatisieren und regelmäßig prüfen.", kiEignung: 55, category: "routine", warum: "Sicherungen automatisieren ist Routine. Der ernste Wiederherstellungsfall braucht einen kühlen Kopf." },
       { id: "fi-5", title: "Störungen vor Ort an Hardware beheben", description: "Defekte Geräte, Kabel und Peripherie austauschen.", kiEignung: 20, category: "physisch", warum: "Ein defektes Gerät tauschen und Kabel ziehen passiert im Serverraum, nicht am Bildschirm." },
       { id: "fi-6", title: "IT-Sicherheitsvorfälle analysieren", description: "Verdächtige Ereignisse untersuchen und Gegenmaßnahmen einleiten.", kiEignung: 35, category: "analytisch", warum: "KI hilft beim Sichten der Logs. Die Bewertung und die Reaktion trägt ein Mensch." },
-      { id: "fi-7", title: "Systeme dokumentieren", description: "Netzpläne, Konfigurationen und Abläufe schriftlich festhalten.", kiEignung: 70, category: "routine", warum: "Netzpläne und Konfigurationen aufschreiben – genau das, was Sprachmodelle gut können." },
+      { id: "fi-7", title: "Systeme dokumentieren", description: "Netzpläne, Konfigurationen und Abläufe schriftlich festhalten.", kiEignung: 70, category: "routine", warum: "Netzpläne und Konfigurationen aufschreiben. Genau das, was Sprachmodelle gut können." },
       { id: "fi-8", title: "Anwender:innen schulen", description: "Neue Tools und Sicherheitsregeln verständlich erklären.", kiEignung: 20, category: "sozial", warum: "Menschen ohne IT-Wissen etwas geduldig erklären ist ein Gespräch." },
       { id: "fi-9", title: "Logdateien nach der Ursache einer Störung durchsuchen", description: "In langen Protokollen die entscheidende Zeile finden.", kiEignung: 80, category: "analytisch", warum: "Tausende Zeilen nach Mustern durchsuchen ist genau das, was KI schnell erledigt. Ob man das System dafür jetzt neu startet, ist deine Verantwortung.", ueberraschend: true },
     ],
@@ -671,10 +671,10 @@ export const berufe: Beruf[] = [
     suchbegriffe: ["Designer", "Grafiker", "Webdesigner", "Gestalter"],
     title: "Grafikdesigner:in",
     shortDescription:
-      "Gestaltet visuelle Kommunikation – Logos, Layouts, Anzeigen, Social-Media- und Printmedien.",
+      "Gestaltet visuelle Kommunikation: Logos, Layouts, Anzeigen, Social-Media- und Printmedien.",
     kategorie: "it-medien",
     zukunftsausblick:
-      "Frey & Osborne sahen hier fast kein Risiko – Bildgeneratoren haben das Bild stark verändert und liefern in Sekunden Varianten, Freisteller und Reinzeichnungen. Konzept, Markenverständnis, Kundenführung und der geschmackssichere letzte Schliff bleiben. Der Beruf verschiebt sich vom Ausführen zum Kuratieren und Konzipieren.",
+      "Frey & Osborne sahen hier fast kein Risiko. Bildgeneratoren haben das Bild stark verändert und liefern in Sekunden Varianten, Freisteller und Reinzeichnungen. Konzept, Markenverständnis, Kundenführung und der geschmackssichere letzte Schliff bleiben. Der Beruf verschiebt sich vom Ausführen zum Kuratieren und Konzipieren.",
     tippsMenschlich: [
       "Aus einem vagen Briefing die eigentliche Gestaltungsaufgabe herausarbeiten",
       "Eine Marke über viele Medien hinweg konsistent halten",
@@ -689,7 +689,7 @@ export const berufe: Beruf[] = [
     tasks: [
       { id: "gd-1", title: "Bildvarianten und Moodboards erzeugen", description: "Schnell viele visuelle Richtungen zur Auswahl erstellen.", kiEignung: 70, category: "kreativ", warum: "In Sekunden viele Richtungen erzeugen ist genau das, wofür Bildgeneratoren gebaut sind." },
       { id: "gd-2", title: "Layouts für Print und Web umsetzen", description: "Inhalte in Raster, Typografie und Format bringen.", kiEignung: 55, category: "analytisch", warum: "Inhalte in Raster und Format bringen geht zunehmend automatisch. Der Feinschliff nicht." },
-      { id: "gd-3", title: "Logos und Corporate Design entwickeln", description: "Eine tragfähige visuelle Identität für eine Marke erarbeiten.", kiEignung: 35, category: "kreativ", warum: "Eine tragfähige Markenidentität erarbeiten heißt verstehen, wofür eine Firma steht – das bleibt beim Menschen." },
+      { id: "gd-3", title: "Logos und Corporate Design entwickeln", description: "Eine tragfähige visuelle Identität für eine Marke erarbeiten.", kiEignung: 35, category: "kreativ", warum: "Eine tragfähige Markenidentität erarbeiten heißt verstehen, wofür eine Firma steht. Das bleibt beim Menschen." },
       { id: "gd-4", title: "Fotos freistellen und retuschieren", description: "Bilder ausschneiden, Farben und Makel korrigieren.", kiEignung: 80, category: "routine", warum: "Ausschneiden und Korrigieren macht KI heute mit einem Klick." },
       { id: "gd-5", title: "Mit Kund:innen Briefings klären", description: "Ziele, Zielgruppe und Geschmack im Gespräch herausarbeiten.", kiEignung: 15, category: "sozial", warum: "Ziel, Zielgruppe und Geschmack im Gespräch herausarbeiten ist Menschenarbeit." },
       { id: "gd-6", title: "Konzept und Gestaltungsidee entwickeln", description: "Die inhaltliche Leitidee hinter der Gestaltung festlegen.", kiEignung: 25, category: "kreativ", warum: "Die Leitidee hinter der Gestaltung festlegen ist der kreative Kern. KI liefert nur Material." },
@@ -703,7 +703,7 @@ export const berufe: Beruf[] = [
     suchbegriffe: ["Designer", "Grafiker", "Layout", "Druck", "Medien"],
     title: "Mediengestalter:in Digital und Print",
     shortDescription:
-      "Produziert Bild-, Video- und Druckmedien – von Social-Media-Content bis zur fertigen Broschüre.",
+      "Produziert Bild-, Video- und Druckmedien, von Social-Media-Content bis zur fertigen Broschüre.",
     kategorie: "it-medien",
     zukunftsausblick:
       "Bild- und Videogeneratoren sowie automatisches Layout haben die Produktion von Standardcontent stark beschleunigt. Konzeption, das Zusammenspiel von Text, Bild und Marke sowie der letzte qualitative Check bleiben. Der Beruf verschiebt sich von der reinen Umsetzung hin zu Auswahl, Konzept und Qualitätssicherung.",
@@ -727,7 +727,7 @@ export const berufe: Beruf[] = [
       { id: "me-6", title: "Videos schneiden und vertonen", description: "Rohmaterial zu einem fertigen Video zusammenschneiden.", kiEignung: 50, category: "analytisch", warum: "KI schneidet erste Fassungen inzwischen mit. Timing und Wirkung prüft ein Mensch." },
       { id: "me-7", title: "Druckdaten und Farbprofile prüfen", description: "Dateien für den Druck technisch korrekt vorbereiten.", kiEignung: 75, category: "routine", warum: "Technische Druckvorgaben prüfen ist regelbasiert." },
       { id: "me-8", title: "Corporate-Design-Vorgaben einhalten", description: "Alle Materialien konsistent zur Marke gestalten.", kiEignung: 35, category: "analytisch", warum: "Ob etwas wirklich zur Marke passt, ist eine Geschmacksfrage, die ein Mensch entscheidet." },
-      { id: "me-9", title: "Inhalte für verschiedene Kanäle und Formate anpassen", description: "Aus einer Kampagne Story, Plakat, Anzeige und Newsletter machen.", kiEignung: 85, category: "routine", warum: "Formate umrechnen, Zuschnitte anpassen, Texte kürzen – wiederkehrende Umsetzung übernimmt Software immer besser. Welche Version zu welcher Zielgruppe passt, muss weiter jemand entscheiden.", ueberraschend: true },
+      { id: "me-9", title: "Inhalte für verschiedene Kanäle und Formate anpassen", description: "Aus einer Kampagne Story, Plakat, Anzeige und Newsletter machen.", kiEignung: 85, category: "routine", warum: "Formate umrechnen, Zuschnitte anpassen, Texte kürzen: Wiederkehrende Umsetzung übernimmt Software immer besser. Welche Version zu welcher Zielgruppe passt, muss weiter jemand entscheiden.", ueberraschend: true },
     ],
   },
 
@@ -773,7 +773,7 @@ export const berufe: Beruf[] = [
       "Schneidet, färbt und stylt Haare und berät Kund:innen rund um Frisur und Pflege.",
     kategorie: "handel-dienstleistung",
     zukunftsausblick:
-      "Die eigentliche Arbeit ist Handwerk am Menschen – Schneiden, Färben, Föhnen lassen sich nicht automatisieren. Nur die Organisation (Termine, Kasse, Warenwirtschaft) ist digitalisierbar. Persönlicher Kontakt und Vertrauen machen den Beruf krisenfest.",
+      "Die eigentliche Arbeit ist Handwerk am Menschen. Schneiden, Färben, Föhnen lassen sich nicht automatisieren. Nur die Organisation (Termine, Kasse, Warenwirtschaft) ist digitalisierbar. Persönlicher Kontakt und Vertrauen machen den Beruf krisenfest.",
     tippsMenschlich: [
       "Mit ruhiger Hand am Kopf der Kund:innen arbeiten",
       "Aus Wünschen und Haartyp eine machbare Frisur ableiten",
@@ -816,15 +816,15 @@ export const berufe: Beruf[] = [
       jobFuturomat,
     ],
     tasks: [
-      { id: "ko-1", title: "Speisen nach Rezept zubereiten", description: "Komponenten vorbereiten, garen und würzen.", kiEignung: 30, category: "physisch", warum: "Kochen heißt schneiden, garen, abschmecken – Handarbeit am Herd, kaum automatisierbar." },
+      { id: "ko-1", title: "Speisen nach Rezept zubereiten", description: "Komponenten vorbereiten, garen und würzen.", kiEignung: 30, category: "physisch", warum: "Kochen heißt schneiden, garen, abschmecken. Das ist Handarbeit am Herd, kaum automatisierbar." },
       { id: "ko-2", title: "Gerichte anrichten und garnieren", description: "Teller ansprechend und gleichmäßig präsentieren.", kiEignung: 25, category: "physisch", warum: "Einen Teller gleichmäßig und schön anrichten macht die Hand, nicht der Rechner." },
-      { id: "ko-3", title: "Neue Gerichte und Menüs entwickeln", description: "Saisonale Karten und eigene Kreationen erarbeiten.", kiEignung: 20, category: "kreativ", warum: "Eine Karte mit Handschrift entwickeln ist der kreative Kern – KI kann höchstens Ideen zuspielen." },
+      { id: "ko-3", title: "Neue Gerichte und Menüs entwickeln", description: "Saisonale Karten und eigene Kreationen erarbeiten.", kiEignung: 20, category: "kreativ", warum: "Eine Karte mit Handschrift entwickeln ist der kreative Kern. KI kann höchstens Ideen zuspielen." },
       { id: "ko-4", title: "Waren bestellen und Lager verwalten", description: "Bedarf planen, bestellen, Verfall und Bestand kontrollieren.", kiEignung: 80, category: "routine", warum: "Bedarf planen und bestellen ist ein Fall für die Warenwirtschaft." },
       { id: "ko-5", title: "Speisekarten kalkulieren", description: "Wareneinsatz und Preise pro Gericht berechnen.", kiEignung: 75, category: "analytisch", warum: "Wareneinsatz und Preise pro Gericht ausrechnen ist Tabellenarbeit." },
       { id: "ko-6", title: "Küche reinigen und HACCP-Hygiene dokumentieren", description: "Temperaturen, Reinigung und Kühlketten protokollieren.", kiEignung: 55, category: "routine", warum: "Temperaturen und Reinigung protokollieren lässt sich weitgehend automatisch erfassen." },
       { id: "ko-7", title: "Küchenteam während des Service koordinieren", description: "Bestellungen takten, Posten abstimmen, Ausgabe steuern.", kiEignung: 25, category: "sozial", warum: "Im Service-Stress Bestellungen takten und Posten abstimmen ist Führung im Moment." },
       { id: "ko-8", title: "Lebensmittelqualität bei Anlieferung prüfen", description: "Frische, Temperatur und Menge der Ware kontrollieren.", kiEignung: 45, category: "analytisch", warum: "Frische und Temperatur bei der Anlieferung checken heißt anfassen und riechen." },
-      { id: "ko-9", title: "Rezepte nach Vorräten und Allergenen vorschlagen", description: "Aus dem, was da ist, ein passendes Gericht planen.", kiEignung: 80, category: "kreativ", warum: "Rezeptideen aus Vorräten liefert ein Sprachmodell in Sekunden – Kreativität im Kleinen. Ob es schmeckt und in den Stress der Küche passt, entscheidet, wer abschmeckt.", ueberraschend: true },
+      { id: "ko-9", title: "Rezepte nach Vorräten und Allergenen vorschlagen", description: "Aus dem, was da ist, ein passendes Gericht planen.", kiEignung: 80, category: "kreativ", warum: "Rezeptideen aus Vorräten liefert ein Sprachmodell in Sekunden. Kreativität im Kleinen. Ob es schmeckt und in den Stress der Küche passt, entscheidet, wer abschmeckt.", ueberraschend: true },
     ],
   },
   {
@@ -835,21 +835,21 @@ export const berufe: Beruf[] = [
       "Berät zu Reisen, bucht Leistungen und stellt Reisepakete für Kund:innen zusammen.",
     kategorie: "handel-dienstleistung",
     zukunftsausblick:
-      "Der Beruf steht stark unter Druck: Buchungsplattformen und KI-Chatbots übernehmen längst, was früher am Schalter passierte – Preise vergleichen, Flüge buchen, Standardreisen zusammenstellen. Das klassische Reisebüro ist dadurch real geschrumpft – Frey & Osborne sahen Reisebüros 2013 noch bei rund 10 Prozent, ein Beispiel dafür, wie schnell Plattformen Prognosen überholen. Wer bleibt, verschiebt sich in Richtung komplexer, individueller Beratung und Krisenmanagement, wo ein Mensch am anderen Ende noch einen echten Unterschied macht.",
+      "Der Beruf steht stark unter Druck: Buchungsplattformen und KI-Chatbots übernehmen längst, was früher am Schalter passierte: Preise vergleichen, Flüge buchen, Standardreisen zusammenstellen. Das klassische Reisebüro ist dadurch real geschrumpft. Frey & Osborne sahen Reisebüros 2013 noch bei rund 10 Prozent, ein Beispiel dafür, wie schnell Plattformen Prognosen überholen. Wer bleibt, verschiebt sich in Richtung komplexer, individueller Beratung und Krisenmanagement, wo ein Mensch am anderen Ende noch einen echten Unterschied macht.",
     tippsMenschlich: [
       "Komplexe, individuelle Wünsche verstehen, die keine Suchmaske erfasst",
       "In Krisen (Ausfälle, Naturkatastrophen, Insolvenzen) schnell und verantwortlich reagieren",
       "Vertrauen aufbauen bei Menschen, die viel Geld für ihren Urlaub ausgeben",
     ],
     quellen: [
-      { ...freyOsborne, wert: "Travel Agents: 9,9 % – Frey & Osborne unterschätzten hier die Wirkung von Buchungsplattformen" },
+      { ...freyOsborne, wert: "Travel Agents: 9,9 %. Frey & Osborne unterschätzten hier die Wirkung von Buchungsplattformen" },
       { ...iabKurzbericht, wert: "Segment Lebensmittel- und Gastgewerbeberufe: 49,5 %" },
       jobFuturomat,
     ],
     tasks: [
       { id: "tk-1", title: "Standardreisen zusammenstellen", description: "Pauschalreisen aus Flug, Hotel und Transfer buchen.", kiEignung: 90, category: "routine", warum: "Flug, Hotel und Transfer zu einem Paket kombinieren ist genau das, was Buchungsplattformen längst automatisch machen." },
       { id: "tk-2", title: "Preise und Verfügbarkeiten vergleichen", description: "Angebote verschiedener Anbieter gegenüberstellen.", kiEignung: 90, category: "routine", warum: "Preise über Anbieter hinweg vergleichen ist eine Datenbankabfrage, keine Beratungsleistung." },
-      { id: "tk-3", title: "Individuelle Reisewünsche beraten", description: "Ungewöhnliche oder komplexe Reiseziele passend planen.", kiEignung: 40, category: "sozial", warum: "Wenn Wünsche vage oder widersprüchlich sind, hilft Nachfragen und Erfahrung – mehr als eine Suchmaske leisten kann." },
+      { id: "tk-3", title: "Individuelle Reisewünsche beraten", description: "Ungewöhnliche oder komplexe Reiseziele passend planen.", kiEignung: 40, category: "sozial", warum: "Wenn Wünsche vage oder widersprüchlich sind, hilft Nachfragen und Erfahrung mehr, als eine Suchmaske leisten kann." },
       { id: "tk-4", title: "Reiseunterlagen und Buchungen abwickeln", description: "Tickets, Vouchers und Bestätigungen erstellen und versenden.", kiEignung: 92, category: "routine", warum: "Dokumente aus Buchungsdaten generieren läuft heute fast vollständig automatisch." },
       { id: "tk-5", title: "Bei Reiseproblemen vor Ort helfen", description: "Ausfälle, Umbuchungen oder Notfälle während der Reise klären.", kiEignung: 20, category: "sozial", warum: "Wenn ein Flug gestrichen wird und jemand am Flughafen feststeckt, zählt ein Mensch, der wirklich hilft, nicht ein FAQ." },
       { id: "tk-6", title: "Reiseversicherungen und Zusatzleistungen erklären", description: "Bedingungen und Sinnhaftigkeit verständlich vermitteln.", kiEignung: 65, category: "analytisch", warum: "Standardbedingungen erklären kann ein Chatbot inzwischen ordentlich." },
@@ -863,7 +863,7 @@ export const berufe: Beruf[] = [
     suchbegriffe: ["Hotel", "Rezeption", "Hotelfachfrau", "Gastronomie"],
     title: "Hotelfachmann/-frau",
     shortDescription:
-      "Sorgt für den Aufenthalt der Gäste – von der Reservierung über den Check-in bis zum Service.",
+      "Sorgt für den Aufenthalt der Gäste, von der Reservierung über den Check-in bis zum Service.",
     kategorie: "handel-dienstleistung",
     zukunftsausblick:
       "Buchung, Check-in und Rechnungsstellung laufen zunehmend über Automaten und Apps. Was bleibt, ist echte Gastfreundschaft: auf besondere Wünsche eingehen, in Beschwerdefällen souverän bleiben und einen Aufenthalt persönlich machen. Der Beruf verschiebt sich klar Richtung Gästebetreuung und Erlebnis.",
@@ -895,14 +895,14 @@ export const berufe: Beruf[] = [
     suchbegriffe: ["Bau", "Bauarbeiter", "Baustelle", "Hochbau"],
     title: "Maurer:in",
     shortDescription:
-      "Mauert Wände, baut Schalungen und betoniert Rohbauten – von der Baugrube bis zur fertigen Decke.",
+      "Mauert Wände, baut Schalungen und betoniert Rohbauten, von der Baugrube bis zur fertigen Decke.",
     kategorie: "bau-ausbau",
     zukunftsausblick:
       "Auf der Baustelle ist jeder Tag anders: Wetter, Untergrund und Maße machen jedes Gebäude zum Einzelfall. Software plant Bauablauf und Mengen zunehmend selbst, Drohnen vermessen, Maschinen helfen beim Heben. Das Mauern, Schalen und Betonieren unter wechselnden Bedingungen bleibt Handarbeit. Gefragt sind künftig mehr Technikverständnis und digitale Kompetenz.",
     tippsMenschlich: [
       "Körperliche Arbeit an Wand und Decke, präzise auf den Millimeter",
       "Auf der Baustelle improvisieren, wenn Plan und Wirklichkeit nicht zusammenpassen",
-      "Im Team abstimmen, wer wann was baut – und Verantwortung für Sicherheit übernehmen",
+      "Im Team abstimmen, wer wann was baut und Verantwortung für Sicherheit übernehmen",
     ],
     quellen: [
       { ...freyOsborne, wert: "Brickmasons and Blockmasons: 82 %, Construction Laborers: 88 %" },
@@ -932,7 +932,7 @@ export const berufe: Beruf[] = [
       "Streichen, Spachteln und Lackieren verlangt Fingerspitzengefühl für Untergründe, die nie gleich sind. Beratung, Aufmaß und Angebot sind dagegen stark digitalisierbar, und erste Streich- und Sprühroboter werden erprobt. Der Beruf verschiebt sich Richtung Beratung, Sanierung und Spezialtechniken.",
     tippsMenschlich: [
       "Sicherer Blick für Untergründe, Licht und Farbwirkung",
-      "Saubere Handarbeit in fremden Wohnungen – mit Vertrauen bei den Kund:innen",
+      "Saubere Handarbeit in fremden Wohnungen, mit Vertrauen bei den Kund:innen",
       "Improvisieren, wenn eine Wand nicht so ist wie im Angebot",
     ],
     quellen: [
@@ -957,10 +957,10 @@ export const berufe: Beruf[] = [
     suchbegriffe: ["Klempner", "Installateur", "Heizung", "Sanitär", "Klima", "Wasser"],
     title: "Anlagenmechaniker:in für Sanitär-, Heizungs- und Klimatechnik",
     shortDescription:
-      "Installiert und wartet Heizungs-, Sanitär- und Klimaanlagen – von der Wärmepumpe bis zum Badezimmer.",
+      "Installiert und wartet Heizungs-, Sanitär- und Klimaanlagen, von der Wärmepumpe bis zum Badezimmer.",
     kategorie: "bau-ausbau",
     zukunftsausblick:
-      "Durch Wärmepumpen, Solarthermie und Gebäudeautomation verändert sich der Beruf stark. Planungs- und Diagnosesoftware erleichtert Auslegung und Fehlersuche, aber Rohre verlegen, Anlagen einbauen und im Keller improvisieren erledigt niemand aus der Ferne. Gefragt sind künftig mehr Elektronik- und Softwarekenntnisse – und der Bedarf an Fachkräften bleibt hoch.",
+      "Durch Wärmepumpen, Solarthermie und Gebäudeautomation verändert sich der Beruf stark. Planungs- und Diagnosesoftware erleichtert Auslegung und Fehlersuche, aber Rohre verlegen, Anlagen einbauen und im Keller improvisieren erledigt niemand aus der Ferne. Gefragt sind künftig mehr Elektronik- und Softwarekenntnisse. Und der Bedarf an Fachkräften bleibt hoch.",
     tippsMenschlich: [
       "Handwerkliches Können an engen, schwer zugänglichen Stellen",
       "Kund:innen verständlich erklären, was ihre Anlage braucht",
@@ -1020,7 +1020,7 @@ export const berufe: Beruf[] = [
     suchbegriffe: ["Polizist", "Polizistin", "Polizei", "Beamter"],
     title: "Polizeivollzugsbeamt:in",
     shortDescription:
-      "Schützt die öffentliche Sicherheit, ermittelt bei Straftaten und hilft in Notlagen – Ausbildung oder duales Studium bei Landes- oder Bundespolizei.",
+      "Schützt die öffentliche Sicherheit, ermittelt bei Straftaten und hilft in Notlagen. Ausbildung oder duales Studium bei Landes- oder Bundespolizei.",
     kategorie: "logistik-sicherheit",
     zukunftsausblick:
       "Auswertung von Videomaterial, Datenabgleich und Fahndungsunterstützung werden zunehmend digital gestützt, in Deutschland aber eng durch Datenschutz und Grundrechte begrenzt. Konflikte entschärfen, in Sekunden Lagen beurteilen und Verantwortung für Eingriffe übernehmen bleibt an Menschen mit Befugnissen gebunden.",
@@ -1039,7 +1039,7 @@ export const berufe: Beruf[] = [
       { id: "po-2", title: "Streit schlichten und Situationen deeskalieren", description: "Konflikte beruhigen, bevor sie eskalieren.", kiEignung: 5, category: "sozial", warum: "Wer zwischen streitenden Menschen steht, braucht Präsenz, Ruhe und Autorität." },
       { id: "po-3", title: "Unfälle aufnehmen und dokumentieren", description: "Spuren sichern, Aussagen und Fotos erfassen.", kiEignung: 60, category: "routine", warum: "Vermessung per Drohne, automatische Skizzen und Diktierfunktionen übernehmen viel, zumal das Erfassen standardisiert ist." },
       { id: "po-4", title: "Anzeigen und Berichte schreiben", description: "Sachverhalte sachlich festhalten.", kiEignung: 80, category: "routine", warum: "Berichte aus Stichpunkten und Spracheingabe zu formulieren, gelingt Sprachmodellen gut." },
-      { id: "po-5", title: "Zeug:innen und Beschuldigte vernehmen", description: "Gespräche führen und Aussagen aufnehmen.", kiEignung: 15, category: "sozial", warum: "In einer Vernehmung zählen Ton, Pausen und Vertrauen – und was nicht gesagt wird." },
+      { id: "po-5", title: "Zeug:innen und Beschuldigte vernehmen", description: "Gespräche führen und Aussagen aufnehmen.", kiEignung: 15, category: "sozial", warum: "In einer Vernehmung zählen Ton, Pausen und Vertrauen. Und was nicht gesagt wird." },
       { id: "po-6", title: "Überwachungsvideos und Daten auswerten", description: "Aus großen Materialmengen Hinweise gewinnen.", kiEignung: 70, category: "analytisch", warum: "Stundenlanges Videomaterial zu sichten ist technisch machbar. Was erlaubt ist, entscheidet das Recht." },
       { id: "po-7", title: "Verkehrskontrollen durchführen", description: "Fahrzeuge und Papiere prüfen.", kiEignung: 25, category: "physisch", warum: "Am Straßenrand entscheidet die Situation, wie viel Vorsicht gefragt ist." },
       { id: "po-8", title: "Erste Hilfe leisten und Betroffene betreuen", description: "Verletzte versorgen und beruhigen.", kiEignung: 10, category: "sozial", warum: "Bis der Rettungsdienst kommt, hilft, wer da ist, mit Händen und ruhiger Stimme." },
@@ -1051,7 +1051,7 @@ export const berufe: Beruf[] = [
     suchbegriffe: ["Kaufmann", "Industrie", "Einkauf", "Vertrieb"],
     title: "Industriekaufmann/-frau",
     shortDescription:
-      "Steuert kaufmännische Abläufe in Industrieunternehmen – von Einkauf und Produktionsplanung bis Rechnungswesen und Vertrieb.",
+      "Steuert kaufmännische Abläufe in Industrieunternehmen, von Einkauf und Produktionsplanung bis Rechnungswesen und Vertrieb.",
     kategorie: "buero-verwaltung",
     zukunftsausblick:
       "Bestellwesen, Auftragsabwicklung und Rechnungen laufen zunehmend automatisiert über Unternehmenssoftware, KI-Assistenten schreiben Angebote und fassen Berichte zusammen. Verhandlungen mit Lieferanten, Abstimmung zwischen Abteilungen und das Lösen von Engpässen bleiben Menschenarbeit. Der Beruf wandelt sich Richtung Prozesssteuerung und Koordination.",
@@ -1089,7 +1089,7 @@ export const berufe: Beruf[] = [
     tippsMenschlich: [
       "Ängstliche Patient:innen freundlich durch die Behandlung begleiten",
       "Ruhig und sicher assistieren, auch wenn es schnell gehen muss",
-      "Hygiene ernst nehmen – ein Fehler betrifft echte Menschen",
+      "Hygiene ernst nehmen: Ein Fehler betrifft echte Menschen",
     ],
     quellen: [
       { ...freyOsborne, wert: "Dental Assistants: 51 %, Dental Hygienists: 68 %" },
@@ -1097,10 +1097,10 @@ export const berufe: Beruf[] = [
       jobFuturomat,
     ],
     tasks: [
-      { id: "za-1", title: "Bei der Zahnbehandlung assistieren", description: "Instrumente reichen, absaugen, Material anmischen.", kiEignung: 10, category: "physisch", warum: "Am Stuhl assistiert man mit den Händen und im Takt der Ärztin – das lässt sich nicht aus der Ferne erledigen." },
+      { id: "za-1", title: "Bei der Zahnbehandlung assistieren", description: "Instrumente reichen, absaugen, Material anmischen.", kiEignung: 10, category: "physisch", warum: "Am Stuhl assistiert man mit den Händen und im Takt der Ärztin. Das lässt sich nicht aus der Ferne erledigen." },
       { id: "za-2", title: "Instrumente vorbereiten und sterilisieren", description: "Hygiene sicherstellen.", kiEignung: 35, category: "physisch", warum: "Sterilisationsgeräte laufen automatisch. Das Vorbereiten und Kontrollieren bleibt Handarbeit." },
       { id: "za-3", title: "Ängstliche Patient:innen beruhigen", description: "Zuwendung und ruhige Worte.", kiEignung: 10, category: "sozial", warum: "Wer Angst vor dem Bohrer hat, braucht eine Stimme und eine Hand, keine App." },
-      { id: "za-4", title: "Zahnärztliche Leistungen abrechnen", description: "Leistungen erfassen und abrechnen.", kiEignung: 85, category: "routine", warum: "Abrechnung folgt festen Gebührenordnungen – ein Paradebeispiel für Software." },
+      { id: "za-4", title: "Zahnärztliche Leistungen abrechnen", description: "Leistungen erfassen und abrechnen.", kiEignung: 85, category: "routine", warum: "Abrechnung folgt festen Gebührenordnungen. Ein Paradebeispiel für Software." },
       { id: "za-5", title: "Termine vergeben und Recall organisieren", description: "Patient:innen zur Kontrolle einladen.", kiEignung: 85, category: "routine", warum: "Online-Terminbuchung und automatische Erinnerungen übernehmen den Großteil." },
       { id: "za-6", title: "Röntgenaufnahmen anfertigen und vorsortieren", description: "Aufnahmen machen und für die Ärztin bereitstellen.", kiEignung: 45, category: "analytisch", warum: "Die Aufnahme selbst braucht jemanden, der den Patienten richtig positioniert. Bei der Bildvorsortierung hilft Software." },
       { id: "za-7", title: "Prophylaxe durchführen und Zahnreinigung erklären", description: "Zähne reinigen und Pflege zeigen.", kiEignung: 20, category: "physisch", warum: "Zahnreinigung passiert im Mund eines Menschen. Wer zeigen soll, wie es besser geht, braucht Gespräch." },
@@ -1113,7 +1113,7 @@ export const berufe: Beruf[] = [
     suchbegriffe: ["Programmierer", "Entwickler", "Fachinformatiker", "Software", "IT", "FIAE"],
     title: "Fachinformatiker:in Anwendungsentwicklung",
     shortDescription:
-      "Entwickelt Software für Unternehmen – von der Anforderung über den Code bis zu Test und Betrieb.",
+      "Entwickelt Software für Unternehmen, von der Anforderung über den Code bis zu Test und Betrieb.",
     kategorie: "it-medien",
     zukunftsausblick:
       "Der Beruf trifft KI-Assistenten mitten im Kerngeschäft: Standardcode, Tests und Dokumentation entstehen zunehmend im Dialog mit Copilot und Co. Anforderungen verstehen, Systeme sauber strukturieren und Fehler im Zusammenspiel finden bleiben menschlich. Der Beruf verschiebt sich vom Tippen zum Prüfen und Entscheiden.",

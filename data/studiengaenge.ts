@@ -27,7 +27,7 @@ export const studiengaenge: Studiengang[] = [
       "Verantwortung für Entscheidungen übernehmen, die KI nicht treffen kann",
     ],
     quellen: [
-      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus; Beruf Softwareentwickler:in: rund +30 Prozentpunkte" },
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019, stärkster Anstieg aller Anforderungsniveaus; Beruf Softwareentwickler:in: rund +30 Prozentpunkte" },
       eloundou,
       wef,
       jobFuturomat,
@@ -41,7 +41,7 @@ export const studiengaenge: Studiengang[] = [
         kiEignung: 90,
         category: "routine",
         warum:
-          "Boilerplate, CRUD-Funktionen und Standardalgorithmen generieren Copilot & Co. heute zuverlässig aus einer kurzen Beschreibung – „Computer and Mathematical“ zählt bei Eloundou et al. zu den am stärksten exponierten Berufsgruppen.",
+          "Boilerplate, CRUD-Funktionen und Standardalgorithmen generieren Copilot & Co. heute zuverlässig aus einer kurzen Beschreibung. „Computer and Mathematical“ zählt bei Eloundou et al. zu den am stärksten exponierten Berufsgruppen.",
       },
       {
         id: "inf-2",
@@ -91,7 +91,7 @@ export const studiengaenge: Studiengang[] = [
         kiEignung: 52,
         category: "analytisch",
         warum:
-          "KI kommentiert Stil und Muster – die Freigabe trifft in der Praxis weiterhin ein Mensch, weil er im Team für die Qualität einsteht. Eine gesetzliche Pflicht dazu gibt es nicht; der Wert ist deshalb eine Einschätzung.",
+          "KI kommentiert Stil und Muster. Die Freigabe trifft in der Praxis weiterhin ein Mensch, weil er im Team für die Qualität einsteht. Eine gesetzliche Pflicht dazu gibt es nicht; der Wert ist deshalb eine Einschätzung.",
       },
       {
         id: "inf-7",
@@ -113,14 +113,14 @@ export const studiengaenge: Studiengang[] = [
       "Von der Schaltung auf dem Papier bis zur Anlage, die tatsächlich läuft.",
     kategorie: "technik-informatik",
     zukunftsausblick:
-      "Simulation und Berechnung übernimmt Software immer selbstständiger. Der Aufbau realer Anlagen, ihre Abnahme und die Haftung dafür bleiben aber an eine Person gebunden – Elektrotechnik verlagert sich vom Rechnen zum Verantworten.",
+      "Simulation und Berechnung übernimmt Software immer selbstständiger. Der Aufbau realer Anlagen, ihre Abnahme und die Haftung dafür bleiben aber an eine Person gebunden. Elektrotechnik verlagert sich vom Rechnen zum Verantworten.",
     tippsMenschlich: [
       "Praxiserfahrung mit realer Hardware sammeln, nicht nur simulieren",
       "Normen und rechtliche Verantwortung wirklich verstehen",
       "Kundengespräche und Vor-Ort-Diagnose üben",
     ],
     quellen: [
-      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019, stärkster Anstieg aller Anforderungsniveaus" },
       freyOsborne,
       jobFuturomat,
     ],
@@ -207,14 +207,14 @@ export const studiengaenge: Studiengang[] = [
       "Grundlagenforschung zwischen Rechenpower und dem einen überraschenden Messwert.",
     kategorie: "naturwissenschaft-medizin",
     zukunftsausblick:
-      "KI beschleunigt Physik enorm bei Auswertung und Simulation – ganze Forschungsschritte, für die früher Wochen nötig waren, laufen heute automatisiert. Die eigentliche wissenschaftliche Leistung, aus Daten eine neue Idee zu machen und sie zu verteidigen, bleibt menschlich.",
+      "KI beschleunigt Physik enorm bei Auswertung und Simulation. Ganze Forschungsschritte, für die früher Wochen nötig waren, laufen heute automatisiert. Die eigentliche wissenschaftliche Leistung, aus Daten eine neue Idee zu machen und sie zu verteidigen, bleibt menschlich.",
     tippsMenschlich: [
       "Kritisches Hinterfragen von Modellen und Daten trainieren",
       "Eigenständig neue Fragestellungen entwickeln",
       "Ergebnisse überzeugend vor Fachpublikum vertreten",
     ],
     quellen: [
-      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019, stärkster Anstieg aller Anforderungsniveaus" },
       { ...freyOsborne, wert: "Physicists: 10 %" },
       wef,
       jobFuturomat,
@@ -297,10 +297,10 @@ export const studiengaenge: Studiengang[] = [
     suchbegriffe: ["Arzt", "Ärztin", "Mediziner", "Chirurg", "Hausarzt", "Zahnarzt", "Doktor"],
     title: "Medizin",
     shortDescription:
-      "Gilt als KI-fest – bei genauerem Hinsehen ist das nur die halbe Wahrheit.",
+      "Gilt als KI-fest. Bei genauerem Hinsehen ist das nur die halbe Wahrheit.",
     kategorie: "naturwissenschaft-medizin",
     zukunftsausblick:
-      "Bildbefundung und Dokumentation werden zunehmend KI-gestützt, teils schon heute treffsicherer als Menschen. Untersuchung, Aufklärung und die Verantwortung für eine Diagnose bleiben aber an eine approbierte Person gebunden – Medizin bleibt ein Beruf mit Menschen, nicht nur über Menschen.",
+      "Bildbefundung und Dokumentation werden zunehmend KI-gestützt, teils schon heute treffsicherer als Menschen. Untersuchung, Aufklärung und die Verantwortung für eine Diagnose bleiben aber an eine approbierte Person gebunden. Medizin bleibt ein Beruf mit Menschen, nicht nur über Menschen.",
     tippsMenschlich: [
       "Empathisches Gespräch und Aufklärung als Kernkompetenz begreifen",
       "Verantwortung für Diagnosen bewusst übernehmen, nicht outsourcen",
@@ -393,10 +393,10 @@ export const studiengaenge: Studiengang[] = [
     suchbegriffe: ["Manager", "Controller", "Marketing"],
     title: "Betriebswirtschaftslehre (BWL)",
     shortDescription:
-      "Der Klassiker unter den Studiengängen – und einer mit vielen automatisierbaren Routinen.",
+      "Der Klassiker unter den Studiengängen und einer mit vielen automatisierbaren Routinen.",
     kategorie: "wirtschaft-recht",
     zukunftsausblick:
-      "Viele klassische BWL-Aufgaben – Reporting, Analyse, Foliensätze – lassen sich heute größtenteils von KI vorbereiten. Wer im Beruf bestehen will, muss zunehmend das liefern, was danach kommt: Entscheidung, Verhandlung, Führung.",
+      "Viele klassische BWL-Aufgaben (Reporting, Analyse, Foliensätze) lassen sich heute größtenteils von KI vorbereiten. Wer im Beruf bestehen will, muss zunehmend das liefern, was danach kommt: Entscheidung, Verhandlung, Führung.",
     tippsMenschlich: [
       "Verhandlungs- und Präsentationskompetenz gezielt trainieren",
       "Entscheidungsfähigkeit unter Unsicherheit üben, nicht nur Zahlen liefern",
@@ -487,17 +487,17 @@ export const studiengaenge: Studiengang[] = [
     suchbegriffe: ["Anwalt", "Anwältin", "Richter", "Staatsanwalt", "Jurist"],
     title: "Rechtswissenschaft (Jura)",
     shortDescription:
-      "Viel Textarbeit, viel Recherche – und trotzdem ein zutiefst menschlicher Kern.",
+      "Viel Textarbeit, viel Recherche und trotzdem ein zutiefst menschlicher Kern.",
     kategorie: "wirtschaft-recht",
     zukunftsausblick:
-      "Rechtsrecherche und Standardverträge werden schon heute KI-gestützt erledigt – Legal-Tech ist eine der am schnellsten wachsenden Branchen im Recht. Die Vertretung vor Gericht, die Beratung in Vertrauensfragen und ethische Abwägungen bleiben aber an eine zugelassene Person gebunden.",
+      "Rechtsrecherche und Standardverträge werden schon heute KI-gestützt erledigt. Legal-Tech ist eine der am schnellsten wachsenden Branchen im Recht. Die Vertretung vor Gericht, die Beratung in Vertrauensfragen und ethische Abwägungen bleiben aber an eine zugelassene Person gebunden.",
     tippsMenschlich: [
       "Argumentation und freies Sprechen vor Publikum trainieren",
       "Mandant:innenvertrauen als eigenständige Kompetenz begreifen",
       "Ethisches Urteilsvermögen bei Grenzfällen bewusst schärfen",
     ],
     quellen: [
-      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019, stärkster Anstieg aller Anforderungsniveaus" },
       { ...freyOsborne, wert: "Lawyers: 3,5 %, Paralegals and Legal Assistants: 94 %" },
       clioLegal,
       wef,
@@ -513,7 +513,7 @@ export const studiengaenge: Studiengang[] = [
         kiEignung: 90,
         category: "routine",
         warum:
-          "KI-gestützte Rechtsdatenbanken durchsuchen Urteile und Gesetze deutlich schneller als eine Recherche von Hand – laut Clio Legal Trends sind rund 81% der Aufgaben von Kanzleifachangestellten automatisierbar.",
+          "KI-gestützte Rechtsdatenbanken durchsuchen Urteile und Gesetze deutlich schneller als eine Recherche von Hand. Laut Clio Legal Trends sind rund 81% der Aufgaben von Kanzleifachangestellten automatisierbar.",
       },
       {
         id: "jur-2",
@@ -573,7 +573,7 @@ export const studiengaenge: Studiengang[] = [
         kiEignung: 37,
         category: "analytisch",
         warum:
-          "Wo Recht und Moral in Konflikt geraten, braucht es eine Person, die die Entscheidung verantwortet – keinen Algorithmus.",
+          "Wo Recht und Moral in Konflikt geraten, braucht es eine Person, die die Entscheidung verantwortet, keinen Algorithmus.",
       },
     ],
   },
@@ -587,7 +587,7 @@ export const studiengaenge: Studiengang[] = [
       "Zwischen harter Statistik im Studium und zutiefst menschlicher Arbeit im Beruf.",
     kategorie: "geistes-sozialwissenschaft",
     zukunftsausblick:
-      "Der methodische Teil des Studiums – Statistik, Studiendesign, Literaturarbeit – wird zunehmend KI-unterstützt. Der eigentliche Beruf, Menschen in Krisen zu begleiten und eine tragfähige therapeutische Beziehung aufzubauen, gehört zu den Tätigkeiten mit dem geringsten Automatisierungsrisiko überhaupt.",
+      "Der methodische Teil des Studiums (Statistik, Studiendesign, Literaturarbeit) wird zunehmend KI-unterstützt. Der eigentliche Beruf, Menschen in Krisen zu begleiten und eine tragfähige therapeutische Beziehung aufzubauen, gehört zu den Tätigkeiten mit dem geringsten Automatisierungsrisiko überhaupt.",
     tippsMenschlich: [
       "Beziehungsaufbau und aktives Zuhören als zentrale Fähigkeit üben",
       "Belastbarkeit für emotional fordernde Situationen entwickeln",
@@ -638,7 +638,7 @@ export const studiengaenge: Studiengang[] = [
         kiEignung: 5,
         category: "sozial",
         warum:
-          "Vertrauen wächst durch wiederholte echte Begegnung – eine der am wenigsten automatisierbaren menschlichen Erfahrungen.",
+          "Vertrauen wächst durch wiederholte echte Begegnung. Eine der am wenigsten automatisierbaren menschlichen Erfahrungen.",
       },
       {
         id: "psy-5",
@@ -677,7 +677,7 @@ export const studiengaenge: Studiengang[] = [
     suchbegriffe: ["Lektor", "Autor"],
     title: "Germanistik",
     shortDescription:
-      "Oft als „brotlos“ belächelt – ausgerechnet hier zeigt sich, was KI wirklich nicht kann.",
+      "Oft als „brotlos“ belächelt. Ausgerechnet hier zeigt sich, was KI wirklich nicht kann.",
     kategorie: "geistes-sozialwissenschaft",
     zukunftsausblick:
       "Sprachliche KI ist in Grammatik und Zusammenfassung stark, bei eigenständiger Interpretation, echter literarischer Stimme und der Vermittlung von Inhalten an Menschen bleibt sie deutlich schwächer. Germanistik verschiebt sich vom reinen Textwissen zur Fähigkeit, mit Sprache und Menschen umzugehen.",
@@ -687,7 +687,7 @@ export const studiengaenge: Studiengang[] = [
       "Eigenständige kreative Stimme in Texten bewusst pflegen",
     ],
     quellen: [
-      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019, stärkster Anstieg aller Anforderungsniveaus" },
       { ...freyOsborne, wert: "Writers and Authors: 3,8 %, Editors: 5,5 %, Interpreters and Translators: 38 %" },
       ilo,
       jobFuturomat,
@@ -782,7 +782,7 @@ export const studiengaenge: Studiengang[] = [
       "Interdisziplinäre Projektarbeit mit anderen Gewerken üben",
     ],
     quellen: [
-      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019, stärkster Anstieg aller Anforderungsniveaus" },
       { ...freyOsborne, wert: "Mechanical Engineers: 1,1 %" },
       jobFuturomat,
     ],
@@ -863,17 +863,17 @@ export const studiengaenge: Studiengang[] = [
     slug: "wirtschaftsinformatik",
     title: "Wirtschaftsinformatik",
     shortDescription:
-      "Die Schnittstelle zwischen IT und Business – wer hier arbeitet, übersetzt zwischen zwei Welten.",
+      "Die Schnittstelle zwischen IT und Business. Wer hier arbeitet, übersetzt zwischen zwei Welten.",
     kategorie: "technik-informatik",
     zukunftsausblick:
-      "Wirtschaftsinformatik verbindet zwei Felder, in denen KI viel übernimmt: Programmieren und Prozessanalyse werden beide KI-unterstützt. Wer übrig bleibt, übersetzt zwischen Business-Bedarf und technischer Umsetzung – eine Rolle, die KI bisher schlecht ausfüllt.",
+      "Wirtschaftsinformatik verbindet zwei Felder, in denen KI viel übernimmt: Programmieren und Prozessanalyse werden beide KI-unterstützt. Wer übrig bleibt, übersetzt zwischen Business-Bedarf und technischer Umsetzung. Eine Rolle, die KI bisher schlecht ausfüllt.",
     tippsMenschlich: [
       "Vermittlung zwischen Fachabteilung und IT als Kernkompetenz ausbauen",
       "Projektverantwortung und Priorisierung üben",
       "Prozesse End-to-End verstehen, nicht nur einzelne Tools bedienen",
     ],
     quellen: [
-      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus; Beruf Softwareentwickler:in: rund +30 Prozentpunkte" },
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019, stärkster Anstieg aller Anforderungsniveaus; Beruf Softwareentwickler:in: rund +30 Prozentpunkte" },
       { ...freyOsborne, wert: "Computer Systems Analysts: 0,65 %" },
       eloundou,
       jobFuturomat,
@@ -966,7 +966,7 @@ export const studiengaenge: Studiengang[] = [
       "Verantwortung für Statik und Bauausführung ernst nehmen",
     ],
     quellen: [
-      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019, stärkster Anstieg aller Anforderungsniveaus" },
       { ...freyOsborne, wert: "Architects, Except Landscape and Naval: 1,8 %" },
       wef,
       jobFuturomat,
@@ -1030,7 +1030,7 @@ export const studiengaenge: Studiengang[] = [
         kiEignung: 15,
         category: "physisch",
         warum:
-          "Was auf der Baustelle wirklich passiert, weicht oft vom Plan ab – Vor-Ort-Improvisation bleibt menschlich.",
+          "Was auf der Baustelle wirklich passiert, weicht oft vom Plan ab. Vor-Ort-Improvisation bleibt menschlich.",
       },
       {
         id: "arch-7",
@@ -1061,7 +1061,7 @@ export const studiengaenge: Studiengang[] = [
       "Interdisziplinäre Zusammenarbeit mit Informatik und Chemie suchen",
     ],
     quellen: [
-      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019, stärkster Anstieg aller Anforderungsniveaus" },
       { ...freyOsborne, wert: "Biological Scientists, All Other: 1,5 %" },
       ilo,
       jobFuturomat,
@@ -1154,7 +1154,7 @@ export const studiengaenge: Studiengang[] = [
       "Anwendungsfelder abseits reiner Berechnung im Blick behalten",
     ],
     quellen: [
-      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019, stärkster Anstieg aller Anforderungsniveaus" },
       { ...freyOsborne, wert: "Chemists: 10 %" },
       wef,
       jobFuturomat,
@@ -1240,7 +1240,7 @@ export const studiengaenge: Studiengang[] = [
       "Zwischen Wirkstoffentwicklung am Rechner und persönlicher Beratung am Apothekentresen.",
     kategorie: "naturwissenschaft-medizin",
     zukunftsausblick:
-      "KI beschleunigt die Wirkstoffsuche massiv – Kandidatenmoleküle, für die früher Jahre nötig waren, schlägt Software heute in Tagen vor. Beratung, Herstellung in der Apotheke und die Verantwortung für die Arzneimittelsicherheit bleiben aber an approbierte Personen gebunden.",
+      "KI beschleunigt die Wirkstoffsuche massiv. Kandidatenmoleküle, für die früher Jahre nötig waren, schlägt Software heute in Tagen vor. Beratung, Herstellung in der Apotheke und die Verantwortung für die Arzneimittelsicherheit bleiben aber an approbierte Personen gebunden.",
     tippsMenschlich: [
       "Beratungskompetenz am Tresen als eigenständige Stärke pflegen",
       "Verantwortung für Arzneimittelsicherheit bewusst wahrnehmen",
@@ -1262,7 +1262,7 @@ export const studiengaenge: Studiengang[] = [
         kiEignung: 70,
         category: "analytisch",
         warum:
-          "KI-Modelle durchsuchen riesige Molekülräume deutlich schneller als klassisches Screening – aber das ist ein Spezialgebiet weniger Forschungspharmazeut:innen, nicht der Alltag der meisten Apotheker:innen.",
+          "KI-Modelle durchsuchen riesige Molekülräume deutlich schneller als klassisches Screening. Aber das ist ein Spezialgebiet weniger Forschungspharmazeut:innen, nicht der Alltag der meisten Apotheker:innen.",
       },
       {
         id: "pha-2",
@@ -1302,7 +1302,7 @@ export const studiengaenge: Studiengang[] = [
         kiEignung: 50,
         category: "analytisch",
         warum:
-          "Statistische Auswertung ist eine Stärke von KI-Systemen – aber auch das betrifft vor allem Forschung und Zulassung, nicht die tägliche Arbeit am Tresen.",
+          "Statistische Auswertung ist eine Stärke von KI-Systemen. Aber auch das betrifft vor allem Forschung und Zulassung, nicht die tägliche Arbeit am Tresen.",
       },
       {
         id: "pha-6",
@@ -1332,7 +1332,7 @@ export const studiengaenge: Studiengang[] = [
     slug: "volkswirtschaftslehre",
     title: "Volkswirtschaftslehre (VWL)",
     shortDescription:
-      "Modelle bauen, Politik beraten – und verstehen, warum Menschen sich nicht wie Modelle verhalten.",
+      "Modelle bauen, Politik beraten und verstehen, warum Menschen sich nicht wie Modelle verhalten.",
     kategorie: "wirtschaft-recht",
     zukunftsausblick:
       "Datenanalyse und Modellrechnungen erledigt KI heute in einem Bruchteil der bisherigen Zeit. Die politische Beratung, das Abwägen konkurrierender Interessen und die Kommunikation komplexer Zusammenhänge an Entscheider:innen bleiben aber menschliche Aufgaben.",
@@ -1342,7 +1342,7 @@ export const studiengaenge: Studiengang[] = [
       "Kritisches Hinterfragen von Modellannahmen trainieren",
     ],
     quellen: [
-      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019, stärkster Anstieg aller Anforderungsniveaus" },
       { ...freyOsborne, wert: "Economists: 43 %, Statisticians: 22 %" },
       eloundou,
       wef,
@@ -1425,7 +1425,7 @@ export const studiengaenge: Studiengang[] = [
     slug: "wirtschaftsingenieurwesen",
     title: "Wirtschaftsingenieurwesen",
     shortDescription:
-      "Bewusst zwischen Technik und Wirtschaft – und damit auf beiden Seiten von KI betroffen.",
+      "Bewusst zwischen Technik und Wirtschaft und damit auf beiden Seiten von KI betroffen.",
     kategorie: "wirtschaft-recht",
     zukunftsausblick:
       "Sowohl die technische als auch die betriebswirtschaftliche Seite dieses Studiums enthalten Aufgaben, die KI heute gut übernimmt. Was bleibt, ist genau die Vermittlerrolle, für die der Studiengang ursprünglich erfunden wurde: zwischen Technik, Zahlen und Menschen übersetzen.",
@@ -1435,7 +1435,7 @@ export const studiengaenge: Studiengang[] = [
       "Verhandlungs- und Präsentationskompetenz gezielt trainieren",
     ],
     quellen: [
-      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019, stärkster Anstieg aller Anforderungsniveaus" },
       { ...freyOsborne, wert: "Industrial Engineers: 2,9 %" },
       wef,
       jobFuturomat,
@@ -1459,7 +1459,7 @@ export const studiengaenge: Studiengang[] = [
         kiEignung: 35,
         category: "sozial",
         warum:
-          "Technik-Wissen mit Kostendruck, Lieferzeiten und Kundenwünschen zusammenzubringen ist genau die Verknüpfung zweier Fachwelten, für die dieser Studiengang erfunden wurde – und die KI bislang nicht leisten kann.",
+          "Technik-Wissen mit Kostendruck, Lieferzeiten und Kundenwünschen zusammenzubringen ist genau die Verknüpfung zweier Fachwelten, für die dieser Studiengang erfunden wurde und die KI bislang nicht leisten kann.",
       },
       {
         id: "wing-3",
@@ -1520,10 +1520,10 @@ export const studiengaenge: Studiengang[] = [
     suchbegriffe: ["Sozialarbeiter", "Sozialpädagoge"],
     title: "Soziale Arbeit",
     shortDescription:
-      "Einer der Studiengänge mit dem geringsten KI-Risiko überhaupt – aus gutem Grund.",
+      "Einer der Studiengänge mit dem geringsten KI-Risiko überhaupt, aus gutem Grund.",
     kategorie: "geistes-sozialwissenschaft",
     zukunftsausblick:
-      "Verwaltung und Dokumentation lassen sich zunehmend KI-gestützt beschleunigen. Der Kern des Berufs – Vertrauen zu Menschen in schwierigen Lebenslagen aufbauen und sie durch Krisen begleiten – gehört zu den am wenigsten automatisierbaren Tätigkeiten überhaupt.",
+      "Verwaltung und Dokumentation lassen sich zunehmend KI-gestützt beschleunigen. Der Kern des Berufs (Vertrauen zu Menschen in schwierigen Lebenslagen aufbauen und sie durch Krisen begleiten) gehört zu den am wenigsten automatisierbaren Tätigkeiten überhaupt.",
     tippsMenschlich: [
       "Beziehungsaufbau und Vertrauen als zentrale Kompetenz begreifen",
       "Belastbarkeit für emotional fordernde Situationen entwickeln",
@@ -1554,7 +1554,7 @@ export const studiengaenge: Studiengang[] = [
         kiEignung: 5,
         category: "sozial",
         warum:
-          "Vertrauen entsteht durch echte, wiederholte menschliche Begegnung – eine der am wenigsten automatisierbaren Erfahrungen.",
+          "Vertrauen entsteht durch echte, wiederholte menschliche Begegnung. Eine der am wenigsten automatisierbaren Erfahrungen.",
       },
       {
         id: "sa-3",
@@ -1613,7 +1613,7 @@ export const studiengaenge: Studiengang[] = [
     suchbegriffe: ["Lehrer", "Lehramt", "Erzieher"],
     title: "Pädagogik / Erziehungswissenschaft",
     shortDescription:
-      "Lernen erforschen und gestalten – in einem Berufsfeld, das explizit als Wachstumsbranche gilt.",
+      "Lernen erforschen und gestalten, in einem Berufsfeld, das explizit als Wachstumsbranche gilt.",
     kategorie: "geistes-sozialwissenschaft",
     zukunftsausblick:
       "Der WEF Future of Jobs Report zählt Bildungsberufe zu den wachsenden Berufsfeldern, während administrative Aufgaben schrumpfen. KI übernimmt Materialerstellung und Verwaltung, die Beziehung zu Lernenden und die pädagogische Urteilsfähigkeit bleiben menschlich.",
@@ -1706,7 +1706,7 @@ export const studiengaenge: Studiengang[] = [
     suchbegriffe: ["Politiker"],
     title: "Politikwissenschaft",
     shortDescription:
-      "Analyse politischer Prozesse – zwischen Datenauswertung und dem Ringen um Deutungshoheit.",
+      "Analyse politischer Prozesse, zwischen Datenauswertung und dem Ringen um Deutungshoheit.",
     kategorie: "geistes-sozialwissenschaft",
     zukunftsausblick:
       "KI wertet politische Texte, Umfragen und Wahldaten heute schnell aus. Die Einordnung, was ein Ereignis politisch bedeutet, und die Fähigkeit, in einer hitzigen Debatte zu überzeugen, bleiben menschliche Fähigkeiten mit hohem Wert.",
@@ -1716,7 +1716,7 @@ export const studiengaenge: Studiengang[] = [
       "Kritische Distanz zu KI-generierten Einordnungen bewahren",
     ],
     quellen: [
-      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019, stärkster Anstieg aller Anforderungsniveaus" },
       { ...freyOsborne, wert: "Political Scientists: 3,9 %" },
       wef,
       jobFuturomat,
@@ -1802,7 +1802,7 @@ export const studiengaenge: Studiengang[] = [
       "Ausgerechnet der Studiengang, der Medien erforscht, steht mitten im KI-Umbruch der Medienbranche.",
     kategorie: "geistes-sozialwissenschaft",
     zukunftsausblick:
-      "Textproduktion und Medienanalyse werden in der Kommunikationsbranche bereits breit KI-unterstützt erledigt – der WEF-Report nennt Redakteur:innen unter den Berufen mit spürbarem Wandel. Strategische Beratung, Krisenkommunikation und der persönliche Kontakt zu Medien bleiben aber menschlich.",
+      "Textproduktion und Medienanalyse werden in der Kommunikationsbranche bereits breit KI-unterstützt erledigt. Der WEF-Report nennt Redakteur:innen unter den Berufen mit spürbarem Wandel. Strategische Beratung, Krisenkommunikation und der persönliche Kontakt zu Medien bleiben aber menschlich.",
     tippsMenschlich: [
       "Strategisches Denken statt reiner Textproduktion in den Vordergrund stellen",
       "Persönliche Netzwerke zu Journalist:innen und Multiplikator:innen pflegen",
@@ -1894,17 +1894,17 @@ export const studiengaenge: Studiengang[] = [
     slug: "cognitive-science",
     title: "Cognitive Science",
     shortDescription:
-      "Der Studiengang, der KI selbst mit erforscht – aus Psychologie, Informatik, Linguistik und Philosophie.",
+      "Der Studiengang, der KI selbst mit erforscht, aus Psychologie, Informatik, Linguistik und Philosophie.",
     kategorie: "interdisziplinaer",
     zukunftsausblick:
-      "Cognitive Science steht in einer besonderen Position: Es ist der Studiengang, dessen Grundlagenforschung KI-Systeme wie neuronale Netze überhaupt erst mit hervorgebracht hat. Programmier- und Analyseaufgaben lassen sich zunehmend KI-gestützt erledigen, das eigenständige Verknüpfen von Erkenntnissen aus ganz unterschiedlichen Disziplinen bleibt aber eine genuin menschliche Stärke – und genau die wird gerade wichtiger, nicht überflüssiger.",
+      "Cognitive Science steht in einer besonderen Position: Es ist der Studiengang, dessen Grundlagenforschung KI-Systeme wie neuronale Netze überhaupt erst mit hervorgebracht hat. Programmier- und Analyseaufgaben lassen sich zunehmend KI-gestützt erledigen, das eigenständige Verknüpfen von Erkenntnissen aus ganz unterschiedlichen Disziplinen bleibt aber eine genuin menschliche Stärke. Und genau die wird gerade wichtiger, nicht überflüssiger.",
     tippsMenschlich: [
       "Interdisziplinäres Verknüpfen von Wissen als Kernkompetenz aktiv trainieren",
       "Experimentelle Studien mit echten Proband:innen selbst durchführen",
       "Philosophische und ethische Fragen zu KI nicht der KI überlassen",
     ],
     quellen: [
-      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019, stärkster Anstieg aller Anforderungsniveaus" },
       { ...freyOsborne, wert: "Computer and Information Research Scientists: 1,5 %" },
       eloundou,
       ilo,
@@ -1988,17 +1988,17 @@ export const studiengaenge: Studiengang[] = [
     suchbegriffe: ["Data Scientist", "KI-Entwickler"],
     title: "Data Science",
     shortDescription:
-      "Der Studiengang, der die eigene Automatisierung mitentwickelt – mit interessanten Folgen für sich selbst.",
+      "Der Studiengang, der die eigene Automatisierung mitentwickelt, mit interessanten Folgen für sich selbst.",
     kategorie: "interdisziplinaer",
     zukunftsausblick:
-      "Kaum ein Feld ist so eng mit dem eigenen Automatisierungswerkzeug verflochten: Modelltraining und Standardanalysen erledigen KI-Assistenten inzwischen selbst weite Strecken. Was bleibt, ist die Frage, die kein Modell sich selbst stellt – ob die Daten überhaupt die richtige Frage beantworten und wem das Ergebnis nützt.",
+      "Kaum ein Feld ist so eng mit dem eigenen Automatisierungswerkzeug verflochten: Modelltraining und Standardanalysen erledigen KI-Assistenten inzwischen selbst weite Strecken. Was bleibt, ist die Frage, die kein Modell sich selbst stellt: ob die Daten überhaupt die richtige Frage beantworten und wem das Ergebnis nützt.",
     tippsMenschlich: [
       "Kritisches Hinterfragen von Daten, Modellen und ihren Grenzen trainieren",
       "Verantwortung für Entscheidungen übernehmen, die auf Modellen basieren",
       "Domänenwissen aufbauen, um Ergebnisse richtig einzuordnen",
     ],
     quellen: [
-      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019, stärkster Anstieg aller Anforderungsniveaus" },
       { ...freyOsborne, wert: "Statisticians: 22 %, Mathematicians: 4,7 %" },
       eloundou,
       wef,
@@ -2039,7 +2039,7 @@ export const studiengaenge: Studiengang[] = [
         id: "ds-4",
         kontext: "beruf",
         title: "Modellergebnis für Entscheider:innen einordnen",
-        description: "Erklären, was ein Modell tatsächlich aussagt – und was nicht.",
+        description: "Erklären, was ein Modell tatsächlich aussagt. Und was nicht.",
         kiEignung: 20,
         category: "sozial",
         warum:
@@ -2081,7 +2081,7 @@ export const studiengaenge: Studiengang[] = [
     slug: "nachhaltigkeitswissenschaft",
     title: "Nachhaltigkeits- & Umweltwissenschaften",
     shortDescription:
-      "Klima, Ökonomie und Politik zusammendenken – in einem der laut WEF am stärksten wachsenden Berufsfelder.",
+      "Klima, Ökonomie und Politik zusammendenken, in einem der laut WEF am stärksten wachsenden Berufsfelder.",
     kategorie: "interdisziplinaer",
     zukunftsausblick:
       "Der WEF Future of Jobs Report zählt Rollen im Bereich Umwelt und grüner Transformation zu den am stärksten wachsenden Berufsfeldern bis 2030. KI hilft enorm bei Modellierung und Monitoring, die politische Abwägung zwischen ökologischen, wirtschaftlichen und sozialen Interessen bleibt aber eine zutiefst menschliche Aufgabe.",
@@ -2091,7 +2091,7 @@ export const studiengaenge: Studiengang[] = [
       "Kritische Distanz zu Modellprognosen bewahren",
     ],
     quellen: [
-      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019, stärkster Anstieg aller Anforderungsniveaus" },
       { ...freyOsborne, wert: "Environmental Scientists and Specialists: 3,3 %" },
       wef,
       ilo,
@@ -2174,17 +2174,17 @@ export const studiengaenge: Studiengang[] = [
     slug: "digital-humanities",
     title: "Digital Humanities",
     shortDescription:
-      "Geisteswissenschaft mit Rechenpower – Texte, Kultur und Geschichte computergestützt erschließen.",
+      "Geisteswissenschaft mit Rechenpower: Texte, Kultur und Geschichte computergestützt erschließen.",
     kategorie: "interdisziplinaer",
     zukunftsausblick:
-      "KI beschleunigt die computergestützte Analyse riesiger Textkorpora enorm – Aufgaben, für die früher Jahre manueller Auszeichnung nötig waren, laufen heute automatisiert. Die geisteswissenschaftliche Interpretation, die kuratorische Auswahl und der Umgang mit unvollständigen historischen Quellen bleiben aber eine Fachleistung von Menschen.",
+      "KI beschleunigt die computergestützte Analyse riesiger Textkorpora enorm. Aufgaben, für die früher Jahre manueller Auszeichnung nötig waren, laufen heute automatisiert. Die geisteswissenschaftliche Interpretation, die kuratorische Auswahl und der Umgang mit unvollständigen historischen Quellen bleiben aber eine Fachleistung von Menschen.",
     tippsMenschlich: [
       "Fundierte geisteswissenschaftliche Interpretation nicht an KI delegieren",
       "Quellenkritik bei historischen und kulturellen Materialien schärfen",
       "Programmierkenntnisse als Werkzeug begreifen, nicht als Selbstzweck",
     ],
     quellen: [
-      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019 – stärkster Anstieg aller Anforderungsniveaus" },
+      { ...iabKurzbericht, wert: "Expertenberufe (meist Hochschulstudium): Ø 35,8 % (2022), +9,7 Prozentpunkte seit 2019, stärkster Anstieg aller Anforderungsniveaus" },
       { ...freyOsborne, wert: "Historians: 44 %, Curators: 0,7 %" },
       eloundou,
       jobFuturomat,
