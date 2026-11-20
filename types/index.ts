@@ -127,14 +127,6 @@ export const STUFE_TEXT: Record<RisikoStufe, string> = {
 /** Zuordnung der Nutzer:innen: Task-ID -> Spalte. */
 export type UserZuordnung = Record<string, Zuordnung>;
 
-export const CATEGORY_ICONS: Record<TaskCategory, string> = {
-  routine: "⚙️",
-  kreativ: "🎨",
-  sozial: "💚",
-  analytisch: "📊",
-  physisch: "🛠️",
-};
-
 export const CATEGORY_LABELS: Record<TaskCategory, string> = {
   routine: "Routine",
   kreativ: "Kreativ",

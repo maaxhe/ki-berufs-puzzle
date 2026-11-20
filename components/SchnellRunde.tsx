@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import type { PointerEvent as ReactPointerEvent } from "react";
 import type { PuzzleEinheit, Task, Zuordnung } from "@/types";
-import { CATEGORY_ICONS, CATEGORY_LABELS } from "@/types";
+import { CATEGORY_LABELS } from "@/types";
+import { FlammeIcon, KategorieIcon } from "@/components/Icons";
 import { istGrenzfall, konfidenzLabel, modellZuordnung } from "@/lib/scoring";
 import type { ZoneId } from "./DropZone";
 
@@ -162,7 +163,7 @@ export default function SchnellRunde({
         <span className="flex items-center gap-4">
           {serie >= 2 && (
             <span className="font-semibold text-ok" aria-live="polite">
-              <span aria-hidden="true">🔥</span> {serie} in Folge
+              <FlammeIcon /> {serie} in Folge
             </span>
           )}
           {eindeutigBisher > 0 && (
@@ -202,7 +203,7 @@ export default function SchnellRunde({
           } ${reveal ? "" : "cursor-grab active:cursor-grabbing"}`}
         >
           <p className="text-sm text-ink-2">
-            <span aria-hidden="true">{CATEGORY_ICONS[aktuell.category]}</span>{" "}
+            <KategorieIcon category={aktuell.category} />{" "}
             {CATEGORY_LABELS[aktuell.category]}
             {aktuell.kontext &&
               ` · ${aktuell.kontext === "studium" ? "im Studium" : "im Beruf danach"}`}
