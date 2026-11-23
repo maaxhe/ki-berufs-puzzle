@@ -214,7 +214,7 @@ h3 {
   --c-linie: #8196e0;
 }
 
-/* Startseite: zwei gleich große Wege und Codefeld, identisch zum Dilemma (dilemma.coxilab.de) */
+/* Startseite: zwei gleich große Wege und Codefeld, identisch zum Dilemma (coxilab.de/dilemma) */
 .wege{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1.75rem}
 .weg{display:flex;flex-direction:column;gap:.35rem;padding:1.1rem 1.2rem 1.2rem;border:3px solid var(--c-ink);border-radius:16px;background:var(--c-ink);color:var(--c-paper);text-decoration:none;transition:transform .15s}
 .weg strong{font-family:var(--font-kopf);font-weight:800;font-size:1.9rem;line-height:1.05}

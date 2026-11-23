@@ -53,7 +53,7 @@ const decks = berufe.map((beruf) => {
     slug: beruf.slug,
     link: handzeichenLink(beruf.slug),
     title: `${beruf.title}: Was soll KI machen?`,
-    description: `Was soll in diesem Beruf eine KI übernehmen, was ein Mensch? Stimm ab und sieh, wie andere denken. Passend zum KI-Berufs-Puzzle auf jobs.coxilab.de.`,
+    description: `Was soll in diesem Beruf eine KI übernehmen, was ein Mensch? Stimm ab und sieh, wie andere denken. Passend zum KI-Berufs-Puzzle auf coxilab.de/jobs.`,
     slides: [
       ["info", `${beruf.title}: Was soll eine KI übernehmen, was ein Mensch? Anonym und ohne richtige Antwort.`],
       ["scale", "Könntest du dir vorstellen, in diesem Beruf zu arbeiten?", { labels: { lo: "auf keinen Fall", hi: "sehr gut" } }],

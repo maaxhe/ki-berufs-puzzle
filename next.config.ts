@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 // BASE_PATH: nur gesetzt, wenn die App unter einem Unterpfad läuft (z. B. /jobs auf future.maximilianherrmann.com).
-// Auf Netlify (jobs.coxilab.de) bleibt die Variable leer und alles verhält sich wie bisher.
+// Auch auf coxilab.de läuft sie unter /jobs. Lokal bleibt die Variable leer.
 const basePath = process.env.BASE_PATH || undefined;
 
 const nextConfig: NextConfig = {
